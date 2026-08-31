@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
@@ -7,7 +8,8 @@
 
 <title>OBD Decoder — AutoDecode</title>
 
-<meta name="description" content="Decode OBD-II diagnostic trouble codes with AutoDecode.">
+<meta name="description"
+content="Decode thousands of generic OBD-II diagnostic trouble codes with AutoDecode.">
 
 <style>
 
@@ -60,7 +62,7 @@ header a:hover {
 /* MAIN */
 
 .container {
-    max-width: 900px;
+    max-width: 950px;
     margin: auto;
     padding: 65px 20px 90px;
 }
@@ -71,12 +73,12 @@ header a:hover {
 .search {
     display: flex;
     gap: 10px;
-    margin-bottom: 50px;
+    margin-bottom: 45px;
 }
 
 .search input {
     flex: 1;
-    height: 58px;
+    height: 60px;
     background: #14181d;
     border: 1px solid #303842;
     border-radius: 10px;
@@ -93,7 +95,7 @@ header a:hover {
 .search button {
     border: none;
     background: #4da3ff;
-    padding: 0 25px;
+    padding: 0 28px;
     border-radius: 10px;
     font-weight: bold;
     cursor: pointer;
@@ -101,6 +103,15 @@ header a:hover {
 
 .search button:hover {
     background: #78baff;
+}
+
+
+/* LOADING */
+
+.loading {
+    text-align: center;
+    padding: 50px;
+    color: #7f8995;
 }
 
 
@@ -124,7 +135,7 @@ header a:hover {
 
 .title {
     font-size: 25px;
-    line-height: 1.3;
+    line-height: 1.35;
     margin-bottom: 35px;
 }
 
@@ -144,8 +155,7 @@ header a:hover {
     margin-bottom: 14px;
 }
 
-.card p,
-.card li {
+.card p {
     color: #9ba4af;
     line-height: 1.7;
     font-size: 14px;
@@ -153,6 +163,12 @@ header a:hover {
 
 .card ul {
     padding-left: 20px;
+}
+
+.card li {
+    color: #9ba4af;
+    line-height: 1.7;
+    font-size: 14px;
 }
 
 
@@ -165,11 +181,85 @@ header a:hover {
 }
 
 
+/* BADGES */
+
+.badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.badge {
+    background: #171c22;
+    border: 1px solid #29313a;
+    border-radius: 7px;
+    padding: 7px 10px;
+    color: #aeb7c1;
+    font-size: 12px;
+}
+
+
+/* LIKELIHOOD */
+
+.high {
+    color: #ff8d8d;
+}
+
+.medium {
+    color: #e6c46a;
+}
+
+.low {
+    color: #7ebcff;
+}
+
+
+/* REPAIR */
+
+.repair-value {
+    font-size: 20px;
+    font-weight: bold;
+    color: #4da3ff;
+    margin-bottom: 8px;
+}
+
+.repair-label {
+    color: #68717d;
+    font-size: 12px;
+}
+
+
+/* RELATED CODES */
+
+.related {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.related-code {
+    color: #4da3ff;
+    background: #151a20;
+    border: 1px solid #29313a;
+    padding: 8px 12px;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.related-code:hover {
+    border-color: #4da3ff;
+}
+
+
 /* ERROR */
 
 .error {
+    background: #12161b;
+    border: 1px solid #252c34;
+    border-radius: 12px;
+    padding: 40px;
     text-align: center;
-    padding: 50px 20px;
 }
 
 .error h2 {
@@ -178,16 +268,25 @@ header a:hover {
 
 .error p {
     color: #78818c;
+    line-height: 1.6;
+}
+
+
+/* FOOTER */
+
+footer {
+    border-top: 1px solid #20242a;
+    padding: 30px 6%;
+    color: #59616b;
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
 }
 
 
 /* MOBILE */
 
 @media(max-width:700px) {
-
-    .grid {
-        grid-template-columns: 1fr;
-    }
 
     .search {
         flex-direction: column;
@@ -197,8 +296,21 @@ header a:hover {
         height: 50px;
     }
 
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
     .code {
         font-size: 44px;
+    }
+
+    .title {
+        font-size: 21px;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 10px;
     }
 
 }
@@ -227,8 +339,6 @@ header a:hover {
 <div class="container">
 
 
-    <!-- SEARCH -->
-
     <div class="search">
 
         <input
@@ -244,417 +354,193 @@ header a:hover {
     </div>
 
 
-    <!-- RESULT -->
-
     <div id="result"></div>
 
 
 </div>
 
 
-<script>
+<footer>
 
+    <div>
+        © 2026 AutoDecode
+    </div>
+
+    <div>
+        Automotive data & tools
+    </div>
+
+</footer>
+
+
+<script>
 
 /*
 ====================================================
 AUTODECODE OBD DATABASE
 ====================================================
+
+Public CC0 dataset:
+OBDex — 9,533 generic OBD-II codes.
+
+We load the compressed database directly
+from GitHub Pages.
+
+No API key.
+No account.
+No paid API.
 */
 
-const obd = {
 
+const DATABASE_URL =
+    "https://foerbsnavi.github.io/obdex/generic.min.json";
 
-    P0420: {
 
-        title:
-        "Catalyst System Efficiency Below Threshold",
-
-        meaning:
-        "The engine control module has detected that the catalytic converter is not operating as efficiently as expected.",
-
-        symptoms: [
-
-            "Check Engine Light",
-            "Reduced fuel economy",
-            "Possible loss of performance",
-            "Increased exhaust emissions"
-
-        ],
-
-        causes: [
-
-            "Worn or damaged catalytic converter",
-            "Faulty oxygen sensor",
-            "Exhaust leak",
-            "Engine misfire",
-            "Incorrect fuel mixture"
-
-        ],
-
-        checks: [
-
-            "Check for other stored OBD codes",
-            "Inspect the exhaust system for leaks",
-            "Check upstream and downstream O2 sensor readings",
-            "Check for engine misfires",
-            "Evaluate catalytic converter efficiency"
-
-        ]
-
-    },
-
-
-    P0300: {
-
-        title:
-        "Random/Multiple Cylinder Misfire Detected",
-
-        meaning:
-        "The engine control module has detected misfires occurring on multiple cylinders or in a random pattern.",
-
-        symptoms: [
-
-            "Engine vibration",
-            "Rough idle",
-            "Loss of power",
-            "Check Engine Light",
-            "Poor fuel economy"
-
-        ],
-
-        causes: [
-
-            "Spark plug problems",
-            "Ignition coil failure",
-            "Fuel delivery problems",
-            "Vacuum leak",
-            "Low compression"
-
-        ],
-
-        checks: [
-
-            "Check ignition system",
-            "Inspect spark plugs",
-            "Check fuel pressure",
-            "Check intake system for leaks",
-            "Perform a compression test if necessary"
-
-        ]
-
-    },
-
-
-    P0171: {
-
-        title:
-        "System Too Lean — Bank 1",
-
-        meaning:
-        "The engine is receiving too much air or not enough fuel for the expected air-fuel ratio.",
-
-        symptoms: [
-
-            "Rough idle",
-            "Poor acceleration",
-            "Check Engine Light",
-            "Higher fuel consumption"
-
-        ],
-
-        causes: [
-
-            "Vacuum leak",
-            "Dirty or faulty MAF sensor",
-            "Low fuel pressure",
-            "Fuel injector problem",
-            "Exhaust leak before oxygen sensor"
-
-        ],
-
-        checks: [
-
-            "Inspect intake hoses",
-            "Check MAF readings",
-            "Check fuel pressure",
-            "Inspect fuel injectors",
-            "Check fuel trims"
-
-        ]
-
-    },
-
-
-    P0299: {
-
-        title:
-        "Turbocharger/Supercharger Underboost",
-
-        meaning:
-        "The engine control module has detected that boost pressure is lower than the expected value.",
-
-        symptoms: [
-
-            "Reduced engine power",
-            "Poor acceleration",
-            "Turbocharger may be inactive",
-            "Check Engine Light"
-
-        ],
-
-        causes: [
-
-            "Boost leak",
-            "Faulty turbocharger actuator",
-            "Vacuum problem",
-            "Turbocharger failure",
-            "Faulty boost pressure sensor"
-
-        ],
-
-        checks: [
-
-            "Inspect boost hoses",
-            "Check vacuum system",
-            "Check turbocharger actuator operation",
-            "Compare requested and actual boost",
-            "Inspect intercooler system"
-
-        ]
-
-    },
-
-
-    P0234: {
-
-        title:
-        "Engine Overboost Condition",
-
-        meaning:
-        "The measured turbocharger or supercharger boost pressure is higher than the permitted value.",
-
-        symptoms: [
-
-            "Reduced power",
-            "Limp mode",
-            "Check Engine Light",
-            "Sudden loss of boost"
-
-        ],
-
-        causes: [
-
-            "Sticking turbocharger actuator",
-            "Variable geometry mechanism problem",
-            "Faulty boost control valve",
-            "Vacuum control problem",
-            "Boost pressure sensor fault"
-
-        ],
-
-        checks: [
-
-            "Inspect turbocharger actuator",
-            "Check vacuum lines",
-            "Compare requested and actual boost",
-            "Inspect turbocharger mechanism",
-            "Check boost control system"
-
-        ]
-
-    },
-
-
-    P0401: {
-
-        title:
-        "Exhaust Gas Recirculation Flow Insufficient",
-
-        meaning:
-        "The engine control module has detected insufficient EGR flow.",
-
-        symptoms: [
-
-            "Check Engine Light",
-            "Rough running",
-            "Reduced performance",
-            "Increased emissions"
-
-        ],
-
-        causes: [
-
-            "Blocked EGR valve",
-            "Carbon buildup",
-            "Faulty EGR valve",
-            "Vacuum problem",
-            "Blocked EGR passages"
-
-        ],
-
-        checks: [
-
-            "Inspect EGR valve",
-            "Check EGR passages",
-            "Check vacuum supply",
-            "Check EGR position feedback"
-
-        ]
-
-    },
-
-
-    P0101: {
-
-        title:
-        "Mass Air Flow Sensor Performance",
-
-        meaning:
-        "The measured airflow signal is outside the expected operating range.",
-
-        symptoms: [
-
-            "Poor acceleration",
-            "Rough idle",
-            "Poor fuel economy",
-            "Check Engine Light"
-
-        ],
-
-        causes: [
-
-            "Dirty MAF sensor",
-            "Air intake leak",
-            "Faulty MAF sensor",
-            "Air filter restriction"
-
-        ],
-
-        checks: [
-
-            "Inspect air intake",
-            "Check air filter",
-            "Clean or test MAF sensor",
-            "Compare measured airflow with expected values"
-
-        ]
-
-    },
-
-
-    P0113: {
-
-        title:
-        "Intake Air Temperature Sensor High Input",
-
-        meaning:
-        "The intake air temperature sensor signal is higher than the expected range.",
-
-        symptoms: [
-
-            "Check Engine Light",
-            "Poor engine performance",
-            "Incorrect fuel mixture"
-
-        ],
-
-        causes: [
-
-            "Disconnected sensor",
-            "Damaged wiring",
-            "Faulty IAT sensor",
-            "Electrical connection problem"
-
-        ],
-
-        checks: [
-
-            "Inspect sensor connector",
-            "Check wiring",
-            "Compare sensor reading with ambient temperature"
-
-        ]
-
-    },
-
-
-    P0128: {
-
-        title:
-        "Coolant Thermostat Temperature Below Regulating Temperature",
-
-        meaning:
-        "The engine is taking too long to reach its expected operating temperature.",
-
-        symptoms: [
-
-            "Engine runs cooler than expected",
-            "Poor fuel economy",
-            "Weak cabin heating",
-            "Check Engine Light"
-
-        ],
-
-        causes: [
-
-            "Thermostat stuck open",
-            "Coolant temperature sensor issue",
-            "Cooling system problem"
-
-        ],
-
-        checks: [
-
-            "Monitor coolant temperature",
-            "Check thermostat operation",
-            "Check coolant temperature sensor"
-
-        ]
-
-    },
-
-
-    P0455: {
-
-        title:
-        "EVAP System Large Leak Detected",
-
-        meaning:
-        "The evaporative emissions system has detected a significant leak.",
-
-        symptoms: [
-
-            "Check Engine Light",
-            "Fuel smell may be present",
-            "Usually no major drivability symptoms"
-
-        ],
-
-        causes: [
-
-            "Loose fuel cap",
-            "Cracked EVAP hose",
-            "Faulty purge valve",
-            "Damaged EVAP component"
-
-        ],
-
-        checks: [
-
-            "Check fuel cap",
-            "Inspect EVAP hoses",
-            "Perform an EVAP smoke test if necessary"
-
-        ]
-
-    }
-
-};
+let obdDatabase = null;
 
 
 /*
 ====================================================
-DECODE FUNCTION
+LOAD DATABASE
+====================================================
+*/
+
+async function loadDatabase() {
+
+    const result =
+        document.getElementById("result");
+
+
+    result.innerHTML = `
+
+        <div class="loading">
+
+            Loading OBD database...
+
+        </div>
+
+    `;
+
+
+    try {
+
+        const response =
+            await fetch(DATABASE_URL);
+
+
+        if (!response.ok) {
+
+            throw new Error(
+                "Database request failed."
+            );
+
+        }
+
+
+        obdDatabase =
+            await response.json();
+
+
+        /*
+        Once database is loaded,
+        check if URL contains a code.
+        */
+
+        const params =
+            new URLSearchParams(
+                window.location.search
+            );
+
+
+        const urlCode =
+            params.get("code");
+
+
+        if (urlCode) {
+
+            document
+            .getElementById("codeInput")
+            .value =
+                urlCode.toUpperCase();
+
+            decode();
+
+        } else {
+
+            result.innerHTML = `
+
+                <div class="loading">
+
+                    <h2>
+                        OBD Database Ready
+                    </h2>
+
+                    <p>
+                        Search thousands of generic
+                        OBD-II diagnostic codes.
+                    </p>
+
+                </div>
+
+            `;
+
+        }
+
+
+    } catch (error) {
+
+        console.error(error);
+
+
+        result.innerHTML = `
+
+            <div class="error">
+
+                <h2>
+                    Database unavailable
+                </h2>
+
+                <p>
+                    AutoDecode could not load the
+                    OBD database. Please try again.
+                </p>
+
+            </div>
+
+        `;
+
+    }
+
+}
+
+
+/*
+====================================================
+FIND CODE
+====================================================
+*/
+
+function findCode(code) {
+
+    if (!obdDatabase) {
+
+        return null;
+
+    }
+
+
+    return obdDatabase.find(
+        item =>
+            item.code &&
+            item.code.toUpperCase() === code
+    );
+
+}
+
+
+/*
+====================================================
+DECODE
 ====================================================
 */
 
@@ -668,11 +554,13 @@ function decode() {
         .toUpperCase();
 
 
+    const result =
+        document.getElementById("result");
+
+
     if (!input) {
 
-        document
-        .getElementById("result")
-        .innerHTML = `
+        result.innerHTML = `
 
             <div class="error">
 
@@ -689,17 +577,34 @@ function decode() {
         `;
 
         return;
+
     }
 
 
-    const data = obd[input];
+    if (!obdDatabase) {
+
+        result.innerHTML = `
+
+            <div class="loading">
+
+                Loading database...
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    const data =
+        findCode(input);
 
 
     if (!data) {
 
-        document
-        .getElementById("result")
-        .innerHTML = `
+        result.innerHTML = `
 
             <div class="error">
 
@@ -708,8 +613,8 @@ function decode() {
                 </h2>
 
                 <p>
-                    AutoDecode does not have information
-                    for this code yet.
+                    AutoDecode could not find this
+                    code in the generic OBD-II database.
                 </p>
 
             </div>
@@ -717,25 +622,374 @@ function decode() {
         `;
 
         return;
+
     }
 
 
-    document
-    .getElementById("result")
-    .innerHTML = `
+    displayCode(data);
+
+}
+
+
+/*
+====================================================
+DISPLAY CODE
+====================================================
+*/
+
+function displayCode(data) {
+
+
+    const result =
+        document.getElementById("result");
+
+
+    /*
+    TITLE
+    */
+
+    const title =
+        data.title?.en ||
+        data.title ||
+        "Diagnostic Trouble Code";
+
+
+    /*
+    DESCRIPTION
+    */
+
+    const description =
+        data.description?.en ||
+        data.description ||
+        "No description available.";
+
+
+    /*
+    COMPONENTS
+    */
+
+    const components =
+        data.affected_components || [];
+
+
+    const componentHTML =
+        components.length
+
+        ?
+
+        components
+        .map(item => {
+
+            return `
+                <span class="badge">
+                    ${formatText(item)}
+                </span>
+            `;
+
+        })
+        .join("")
+
+        :
+
+        `<span class="badge">
+            No component information
+        </span>`;
+
+
+    /*
+    CAUSES
+    */
+
+    const causes =
+        data.common_causes || [];
+
+
+    const causesHTML =
+        causes.length
+
+        ?
+
+        causes
+        .map(item => {
+
+            const label =
+                item.label?.en ||
+                item.label ||
+                item.id ||
+                "Unknown cause";
+
+
+            const likelihood =
+                item.likelihood ||
+                "";
+
+
+            return `
+
+                <li>
+
+                    ${label}
+
+                    ${
+                        likelihood
+
+                        ?
+
+                        `<strong class="${likelihood}">
+                            — ${likelihood}
+                        </strong>`
+
+                        :
+
+                        ""
+                    }
+
+                </li>
+
+            `;
+
+        })
+        .join("")
+
+        :
+
+        "<li>No common causes listed.</li>";
+
+
+    /*
+    SYMPTOMS
+    */
+
+    const symptoms =
+        data.symptoms || [];
+
+
+    const symptomsHTML =
+        symptoms.length
+
+        ?
+
+        symptoms
+        .map(item => {
+
+            return `
+
+                <li>
+                    ${
+                        item.en ||
+                        item.label?.en ||
+                        item.label ||
+                        item
+                    }
+                </li>
+
+            `;
+
+        })
+        .join("")
+
+        :
+
+        "<li>No symptoms listed.</li>";
+
+
+    /*
+    REPAIR
+    */
+
+    const repair =
+        data.repair || {};
+
+
+    const difficulty =
+        repair.difficulty ||
+        "unknown";
+
+
+    const cost =
+        repair.estimated_cost_eur;
+
+
+    const hours =
+        repair.estimated_hours;
+
+
+    let repairHTML = `
+
+        <div class="repair-value">
+            ${formatText(difficulty)}
+        </div>
+
+        <div class="repair-label">
+            Repair difficulty
+        </div>
+
+    `;
+
+
+    if (
+        Array.isArray(cost) &&
+        cost.length >= 2
+    ) {
+
+        repairHTML += `
+
+            <div style="margin-top:20px;">
+
+                <div class="repair-value">
+                    €${cost[0]} – €${cost[1]}
+                </div>
+
+                <div class="repair-label">
+                    Estimated repair cost
+                </div>
+
+            </div>
+
+        `;
+
+    }
+
+
+    if (
+        Array.isArray(hours) &&
+        hours.length >= 2
+    ) {
+
+        repairHTML += `
+
+            <div style="margin-top:20px;">
+
+                <div class="repair-value">
+                    ${hours[0]} – ${hours[1]} h
+                </div>
+
+                <div class="repair-label">
+                    Estimated labour time
+                </div>
+
+            </div>
+
+        `;
+
+    }
+
+
+    /*
+    RELATED CODES
+    */
+
+    const related =
+        data.related_codes || [];
+
+
+    const relatedHTML =
+        related.length
+
+        ?
+
+        related
+        .map(code => {
+
+            return `
+
+                <div
+                    class="related-code"
+                    onclick="searchRelated('${code}')"
+                >
+
+                    ${code}
+
+                </div>
+
+            `;
+
+        })
+        .join("")
+
+        :
+
+        `<span class="badge">
+            No related codes
+        </span>`;
+
+
+    /*
+    FLAGS
+    */
+
+    const flags = [];
+
+
+    if (data.flags?.mil) {
+
+        flags.push("Check Engine Light");
+
+    }
+
+
+    if (data.flags?.emissions_relevant) {
+
+        flags.push("Emissions Relevant");
+
+    }
+
+
+    if (data.flags?.limp_mode) {
+
+        flags.push("Possible Limp Mode");
+
+    }
+
+
+    const flagsHTML =
+        flags.length
+
+        ?
+
+        flags
+        .map(flag => {
+
+            return `
+                <span class="badge">
+                    ${flag}
+                </span>
+            `;
+
+        })
+        .join("")
+
+        :
+
+        `<span class="badge">
+            No additional flags
+        </span>`;
+
+
+    /*
+    FINAL HTML
+    */
+
+    result.innerHTML = `
 
         <div class="breadcrumb">
-            Home / OBD Decoder / ${input}
+
+            Home / OBD Decoder / ${data.code}
+
         </div>
 
 
         <div class="code">
-            ${input}
+
+            ${data.code}
+
         </div>
 
 
         <div class="title">
-            ${data.title}
+
+            ${title}
+
         </div>
 
 
@@ -746,8 +1000,23 @@ function decode() {
             </h2>
 
             <p>
-                ${data.meaning}
+                ${description}
             </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h2>
+                Affected Components
+            </h2>
+
+            <div class="badges">
+
+                ${componentHTML}
+
+            </div>
 
         </div>
 
@@ -758,17 +1027,12 @@ function decode() {
             <div class="card">
 
                 <h2>
-                    Common Symptoms
+                    Common Causes
                 </h2>
 
                 <ul>
 
-                    ${data.symptoms
-                        .map(item =>
-                            `<li>${item}</li>`
-                        )
-                        .join("")
-                    }
+                    ${causesHTML}
 
                 </ul>
 
@@ -778,19 +1042,46 @@ function decode() {
             <div class="card">
 
                 <h2>
-                    Possible Causes
+                    Common Symptoms
                 </h2>
 
                 <ul>
 
-                    ${data.causes
-                        .map(item =>
-                            `<li>${item}</li>`
-                        )
-                        .join("")
-                    }
+                    ${symptomsHTML}
 
                 </ul>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="grid">
+
+
+            <div class="card">
+
+                <h2>
+                    Repair
+                </h2>
+
+                ${repairHTML}
+
+            </div>
+
+
+            <div class="card">
+
+                <h2>
+                    Vehicle / System Status
+                </h2>
+
+                <div class="badges">
+
+                    ${flagsHTML}
+
+                </div>
 
             </div>
 
@@ -801,19 +1092,34 @@ function decode() {
         <div class="card">
 
             <h2>
-                What Should You Check?
+                Related Codes
             </h2>
 
-            <ul>
+            <div class="related">
 
-                ${data.checks
-                    .map(item =>
-                        `<li>${item}</li>`
-                    )
-                    .join("")
-                }
+                ${relatedHTML}
 
-            </ul>
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <h2>
+                AutoDecode Disclaimer
+            </h2>
+
+            <p>
+
+                Diagnostic trouble codes describe
+                symptoms and system conditions; they
+                do not necessarily identify the failed
+                component. Always confirm the fault
+                using appropriate diagnostic procedures
+                and vehicle-specific service information.
+
+            </p>
 
         </div>
 
@@ -824,38 +1130,51 @@ function decode() {
 
 /*
 ====================================================
-READ CODE FROM URL
+FORMAT TEXT
 ====================================================
 */
 
-const params =
-    new URLSearchParams(
-        window.location.search
-    );
+function formatText(text) {
+
+    if (!text) {
+
+        return "";
+
+    }
 
 
-const urlCode =
-    params.get("code");
-
-
-if (urlCode) {
-
-    document
-    .getElementById("codeInput")
-    .value =
-        urlCode
-        .toUpperCase();
+    return String(text)
+        .replaceAll("_", " ")
+        .replace(/\b\w/g, c => c.toUpperCase());
 
 }
 
 
 /*
 ====================================================
-INITIAL LOAD
+RELATED CODE SEARCH
 ====================================================
 */
 
-decode();
+function searchRelated(code) {
+
+    document
+    .getElementById("codeInput")
+    .value = code;
+
+
+    decode();
+
+
+    window.scrollTo({
+
+        top: 0,
+
+        behavior: "smooth"
+
+    });
+
+}
 
 
 /*
@@ -879,7 +1198,17 @@ document
     }
 );
 
+
+/*
+====================================================
+START
+====================================================
+*/
+
+loadDatabase();
+
 </script>
 
 </body>
+
 </html>
