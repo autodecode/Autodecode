@@ -186,7 +186,7 @@ async function loadDatabase() {
     try {
 
         const response =
-            await fetch("database/codes.json");
+            await fetch("Database/Codes.json");
 
         if (!response.ok) {
             throw new Error("Database not found");
