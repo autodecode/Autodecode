@@ -1,151 +1,289 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>OBD Decoder — AutoDecode</title>
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>
+    OBD Decoder — AutoDecode
+</title>
+
+<meta
+    name="description"
+    content="Decode OBD-II diagnostic trouble codes with AutoDecode."
+>
+
 
 <style>
+
+
 * {
     box-sizing: border-box;
+
     margin: 0;
+
     padding: 0;
 }
 
+
 body {
-    font-family: Arial, Helvetica, sans-serif;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
     background: #0b0d10;
+
     color: #f2f4f7;
+
     min-height: 100vh;
 }
 
+
+/* HEADER */
+
+
 header {
+
     height: 72px;
-    border-bottom: 1px solid #20242a;
+
+    border-bottom:
+        1px solid #20242a;
+
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
+
     padding: 0 6%;
 }
 
+
 .logo {
+
     font-size: 24px;
+
     font-weight: 800;
+
+    letter-spacing: -1px;
 }
 
+
 .logo span {
+
     color: #4da3ff;
 }
 
+
 header a {
+
     color: #9da5b0;
+
     text-decoration: none;
+
     font-size: 14px;
 }
 
+
+/* MAIN */
+
+
 .container {
+
     max-width: 900px;
+
     margin: auto;
-    padding: 65px 20px 90px;
+
+    padding:
+        65px 20px 90px;
 }
 
+
+/* SEARCH */
+
+
 .search {
+
     display: flex;
+
     gap: 10px;
+
     margin-bottom: 40px;
 }
 
+
 input {
+
     flex: 1;
+
     height: 60px;
+
     background: #14181d;
-    border: 1px solid #303842;
+
+    border:
+        1px solid #303842;
+
     border-radius: 10px;
+
     color: white;
+
     padding: 0 18px;
+
     font-size: 18px;
+
     outline: none;
 }
 
+
 input:focus {
+
     border-color: #4da3ff;
 }
 
+
 button {
+
     border: none;
+
     background: #4da3ff;
+
     padding: 0 28px;
+
     border-radius: 10px;
+
     font-weight: bold;
+
     cursor: pointer;
 }
 
+
 button:hover {
+
     background: #78baff;
 }
 
+
+/* RESULT */
+
+
 .result {
+
     background: #12161b;
-    border: 1px solid #252c34;
+
+    border:
+        1px solid #252c34;
+
     border-radius: 12px;
+
     padding: 30px;
 }
 
+
 .code {
+
     color: #4da3ff;
+
     font-size: 48px;
+
     font-weight: 800;
+
     margin-bottom: 15px;
 }
 
+
 .description {
+
     color: #c4cbd3;
+
     font-size: 20px;
+
     line-height: 1.6;
 }
 
+
 .error {
+
     text-align: center;
+
     color: #8b949e;
+
     padding: 30px;
 }
+
 
 .loading {
+
     text-align: center;
+
     color: #8b949e;
+
     padding: 30px;
 }
 
+
+/* MOBILE */
+
+
 @media(max-width:600px) {
+
     .search {
+
         flex-direction: column;
+
     }
 
     button {
+
         height: 50px;
+
     }
 
     .code {
+
         font-size: 38px;
+
     }
+
 }
+
+
 </style>
+
 </head>
 
+
 <body>
+
 
 <header>
 
     <div class="logo">
+
         Auto<span>Decode</span>
+
     </div>
 
-    <a href="index.html">← Home</a>
+
+    <a href="index.html">
+
+        ← Home
+
+    </a>
 
 </header>
 
+
+
 <div class="container">
+
 
     <div class="search">
 
@@ -156,73 +294,154 @@ button:hover {
             autocomplete="off"
         >
 
+
         <button onclick="decodeCode()">
+
             Decode
+
         </button>
 
     </div>
 
+
+
     <div id="result">
 
         <div class="loading">
+
             Loading OBD database...
+
         </div>
 
     </div>
 
+
 </div>
 
+
+
 <script>
+
 
 let obdDatabase = [];
 
 
+
 /*
-Load our local JSON database
+==================================================
+LOAD DATABASE
+==================================================
 */
+
 
 async function loadDatabase() {
 
     try {
 
         const response =
-            await fetch("Database/Codes.json");
+            await fetch(
+                "Database/Codes.json"
+            );
+
 
         if (!response.ok) {
-            throw new Error("Database not found");
+
+            throw new Error(
+                "Database not found"
+            );
+
         }
+
 
         obdDatabase =
             await response.json();
 
-        document.getElementById("result").innerHTML = `
-            <div class="loading">
-                OBD database loaded successfully.
-                Enter a code above.
-            </div>
-        `;
 
-    } catch (error) {
+        /*
+        Check URL for OBD code
+        */
+
+
+        const params =
+            new URLSearchParams(
+                window.location.search
+            );
+
+
+        const urlCode =
+            params.get("code");
+
+
+        if (urlCode) {
+
+            document
+            .getElementById("codeInput")
+            .value =
+                urlCode
+                .toUpperCase();
+
+
+            decodeCode();
+
+        } else {
+
+            document
+            .getElementById("result")
+            .innerHTML = `
+
+                <div class="loading">
+
+                    OBD database loaded.
+                    Enter a code above.
+
+                </div>
+
+            `;
+
+        }
+
+
+    }
+
+    catch(error) {
 
         console.error(error);
 
-        document.getElementById("result").innerHTML = `
+
+        document
+        .getElementById("result")
+        .innerHTML = `
+
             <div class="error">
-                <h2>Database unavailable</h2>
+
+                <h2>
+                    Database unavailable
+                </h2>
+
                 <p>
-                    Could not load database/codes.json
+                    Could not load
+                    Database/Codes.json
                 </p>
+
             </div>
+
         `;
+
     }
+
 }
 
 
+
 /*
-Decode OBD code
+==================================================
+DECODE
+==================================================
 */
 
+
 function decodeCode() {
+
 
     const input =
         document
@@ -231,45 +450,67 @@ function decodeCode() {
         .trim()
         .toUpperCase();
 
+
     const result =
-        document.getElementById("result");
+        document
+        .getElementById("result");
 
 
     if (!input) {
 
         result.innerHTML = `
+
             <div class="error">
+
                 Enter an OBD-II code.
+
             </div>
+
         `;
 
         return;
+
     }
 
 
+
     const found =
-        obdDatabase.find(item =>
-            item.Code &&
-            item.Code.toUpperCase() === input
+        obdDatabase.find(
+
+            item =>
+
+                item.Code &&
+
+                item.Code
+                .toUpperCase() === input
+
         );
+
 
 
     if (!found) {
 
         result.innerHTML = `
+
             <div class="error">
 
-                <h2>${input}</h2>
+                <h2>
+                    ${input}
+                </h2>
 
                 <p>
-                    Code not found in the database.
+                    Code not found
+                    in the database.
                 </p>
 
             </div>
+
         `;
 
         return;
+
     }
+
 
 
     result.innerHTML = `
@@ -277,37 +518,68 @@ function decodeCode() {
         <div class="result">
 
             <div class="code">
+
                 ${found.Code}
+
             </div>
 
+
             <div class="description">
+
                 ${found.Description}
+
             </div>
 
         </div>
 
     `;
+
 }
 
 
+
 /*
-Enter key
+==================================================
+ENTER KEY
+==================================================
 */
+
 
 document
 .getElementById("codeInput")
-.addEventListener("keydown", function(event) {
+.addEventListener(
 
-    if (event.key === "Enter") {
-        decodeCode();
+    "keydown",
+
+    function(event) {
+
+        if (
+            event.key === "Enter"
+        ) {
+
+            decodeCode();
+
+        }
+
     }
 
-});
+);
+
+
+
+/*
+==================================================
+START
+==================================================
+*/
 
 
 loadDatabase();
 
+
 </script>
 
+
 </body>
+
 </html>
