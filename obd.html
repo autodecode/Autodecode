@@ -1,18 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>OBD Decoder — AutoDecode</title>
 
-<meta name="description"
-content="Decode thousands of generic OBD-II diagnostic trouble codes with AutoDecode.">
-
 <style>
-
 * {
     box-sizing: border-box;
     margin: 0;
@@ -26,9 +20,6 @@ body {
     min-height: 100vh;
 }
 
-
-/* HEADER */
-
 header {
     height: 72px;
     border-bottom: 1px solid #20242a;
@@ -41,7 +32,6 @@ header {
 .logo {
     font-size: 24px;
     font-weight: 800;
-    letter-spacing: -1px;
 }
 
 .logo span {
@@ -54,29 +44,19 @@ header a {
     font-size: 14px;
 }
 
-header a:hover {
-    color: white;
-}
-
-
-/* MAIN */
-
 .container {
-    max-width: 950px;
+    max-width: 900px;
     margin: auto;
     padding: 65px 20px 90px;
 }
 
-
-/* SEARCH */
-
 .search {
     display: flex;
     gap: 10px;
-    margin-bottom: 45px;
+    margin-bottom: 40px;
 }
 
-.search input {
+input {
     flex: 1;
     height: 60px;
     background: #14181d;
@@ -84,15 +64,15 @@ header a:hover {
     border-radius: 10px;
     color: white;
     padding: 0 18px;
-    font-size: 17px;
+    font-size: 18px;
     outline: none;
 }
 
-.search input:focus {
+input:focus {
     border-color: #4da3ff;
 }
 
-.search button {
+button {
     border: none;
     background: #4da3ff;
     padding: 0 28px;
@@ -101,227 +81,59 @@ header a:hover {
     cursor: pointer;
 }
 
-.search button:hover {
+button:hover {
     background: #78baff;
 }
 
-
-/* LOADING */
-
-.loading {
-    text-align: center;
-    padding: 50px;
-    color: #7f8995;
+.result {
+    background: #12161b;
+    border: 1px solid #252c34;
+    border-radius: 12px;
+    padding: 30px;
 }
-
-
-/* BREADCRUMB */
-
-.breadcrumb {
-    color: #68717d;
-    font-size: 13px;
-    margin-bottom: 18px;
-}
-
-
-/* CODE */
 
 .code {
-    font-size: 54px;
+    color: #4da3ff;
+    font-size: 48px;
     font-weight: 800;
-    color: #4da3ff;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
-.title {
-    font-size: 25px;
-    line-height: 1.35;
-    margin-bottom: 35px;
-}
-
-
-/* CARDS */
-
-.card {
-    background: #12161b;
-    border: 1px solid #252c34;
-    border-radius: 12px;
-    padding: 25px;
-    margin-bottom: 16px;
-}
-
-.card h2 {
-    font-size: 17px;
-    margin-bottom: 14px;
-}
-
-.card p {
-    color: #9ba4af;
-    line-height: 1.7;
-    font-size: 14px;
-}
-
-.card ul {
-    padding-left: 20px;
-}
-
-.card li {
-    color: #9ba4af;
-    line-height: 1.7;
-    font-size: 14px;
-}
-
-
-/* GRID */
-
-.grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-}
-
-
-/* BADGES */
-
-.badges {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-}
-
-.badge {
-    background: #171c22;
-    border: 1px solid #29313a;
-    border-radius: 7px;
-    padding: 7px 10px;
-    color: #aeb7c1;
-    font-size: 12px;
-}
-
-
-/* LIKELIHOOD */
-
-.high {
-    color: #ff8d8d;
-}
-
-.medium {
-    color: #e6c46a;
-}
-
-.low {
-    color: #7ebcff;
-}
-
-
-/* REPAIR */
-
-.repair-value {
+.description {
+    color: #c4cbd3;
     font-size: 20px;
-    font-weight: bold;
-    color: #4da3ff;
-    margin-bottom: 8px;
-}
-
-.repair-label {
-    color: #68717d;
-    font-size: 12px;
-}
-
-
-/* RELATED CODES */
-
-.related {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-}
-
-.related-code {
-    color: #4da3ff;
-    background: #151a20;
-    border: 1px solid #29313a;
-    padding: 8px 12px;
-    border-radius: 7px;
-    cursor: pointer;
-    font-size: 13px;
-}
-
-.related-code:hover {
-    border-color: #4da3ff;
-}
-
-
-/* ERROR */
-
-.error {
-    background: #12161b;
-    border: 1px solid #252c34;
-    border-radius: 12px;
-    padding: 40px;
-    text-align: center;
-}
-
-.error h2 {
-    margin-bottom: 12px;
-}
-
-.error p {
-    color: #78818c;
     line-height: 1.6;
 }
 
-
-/* FOOTER */
-
-footer {
-    border-top: 1px solid #20242a;
-    padding: 30px 6%;
-    color: #59616b;
-    font-size: 12px;
-    display: flex;
-    justify-content: space-between;
+.error {
+    text-align: center;
+    color: #8b949e;
+    padding: 30px;
 }
 
+.loading {
+    text-align: center;
+    color: #8b949e;
+    padding: 30px;
+}
 
-/* MOBILE */
-
-@media(max-width:700px) {
-
+@media(max-width:600px) {
     .search {
         flex-direction: column;
     }
 
-    .search button {
+    button {
         height: 50px;
     }
 
-    .grid {
-        grid-template-columns: 1fr;
-    }
-
     .code {
-        font-size: 44px;
+        font-size: 38px;
     }
-
-    .title {
-        font-size: 21px;
-    }
-
-    footer {
-        flex-direction: column;
-        gap: 10px;
-    }
-
 }
-
 </style>
-
 </head>
 
-
 <body>
-
 
 <header>
 
@@ -329,222 +141,88 @@ footer {
         Auto<span>Decode</span>
     </div>
 
-    <a href="index.html">
-        ← Home
-    </a>
+    <a href="index.html">← Home</a>
 
 </header>
 
-
 <div class="container">
-
 
     <div class="search">
 
         <input
             id="codeInput"
-            placeholder="Enter OBD-II code..."
+            type="text"
+            placeholder="Enter OBD-II code (e.g. P0420)"
             autocomplete="off"
         >
 
-        <button onclick="decode()">
+        <button onclick="decodeCode()">
             Decode
         </button>
 
     </div>
 
+    <div id="result">
 
-    <div id="result"></div>
+        <div class="loading">
+            Loading OBD database...
+        </div>
 
+    </div>
 
 </div>
 
-
-<footer>
-
-    <div>
-        © 2026 AutoDecode
-    </div>
-
-    <div>
-        Automotive data & tools
-    </div>
-
-</footer>
-
-
 <script>
 
-/*
-====================================================
-AUTODECODE OBD DATABASE
-====================================================
-
-Public CC0 dataset:
-OBDex — 9,533 generic OBD-II codes.
-
-We load the compressed database directly
-from GitHub Pages.
-
-No API key.
-No account.
-No paid API.
-*/
-
-
-const DATABASE_URL =
-    "https://foerbsnavi.github.io/obdex/generic.min.json";
-
-
-let obdDatabase = null;
+let obdDatabase = [];
 
 
 /*
-====================================================
-LOAD DATABASE
-====================================================
+Load our local JSON database
 */
 
 async function loadDatabase() {
 
-    const result =
-        document.getElementById("result");
-
-
-    result.innerHTML = `
-
-        <div class="loading">
-
-            Loading OBD database...
-
-        </div>
-
-    `;
-
-
     try {
 
         const response =
-            await fetch(DATABASE_URL);
-
+            await fetch("database/codes.json");
 
         if (!response.ok) {
-
-            throw new Error(
-                "Database request failed."
-            );
-
+            throw new Error("Database not found");
         }
-
 
         obdDatabase =
             await response.json();
 
-
-        /*
-        Once database is loaded,
-        check if URL contains a code.
-        */
-
-        const params =
-            new URLSearchParams(
-                window.location.search
-            );
-
-
-        const urlCode =
-            params.get("code");
-
-
-        if (urlCode) {
-
-            document
-            .getElementById("codeInput")
-            .value =
-                urlCode.toUpperCase();
-
-            decode();
-
-        } else {
-
-            result.innerHTML = `
-
-                <div class="loading">
-
-                    <h2>
-                        OBD Database Ready
-                    </h2>
-
-                    <p>
-                        Search thousands of generic
-                        OBD-II diagnostic codes.
-                    </p>
-
-                </div>
-
-            `;
-
-        }
-
+        document.getElementById("result").innerHTML = `
+            <div class="loading">
+                OBD database loaded successfully.
+                Enter a code above.
+            </div>
+        `;
 
     } catch (error) {
 
         console.error(error);
 
-
-        result.innerHTML = `
-
+        document.getElementById("result").innerHTML = `
             <div class="error">
-
-                <h2>
-                    Database unavailable
-                </h2>
-
+                <h2>Database unavailable</h2>
                 <p>
-                    AutoDecode could not load the
-                    OBD database. Please try again.
+                    Could not load database/codes.json
                 </p>
-
             </div>
-
         `;
-
     }
-
 }
 
 
 /*
-====================================================
-FIND CODE
-====================================================
+Decode OBD code
 */
 
-function findCode(code) {
-
-    if (!obdDatabase) {
-
-        return null;
-
-    }
-
-
-    return obdDatabase.find(
-        item =>
-            item.code &&
-            item.code.toUpperCase() === code
-    );
-
-}
-
-
-/*
-====================================================
-DECODE
-====================================================
-*/
-
-function decode() {
+function decodeCode() {
 
     const input =
         document
@@ -553,7 +231,6 @@ function decode() {
         .trim()
         .toUpperCase();
 
-
     const result =
         document.getElementById("result");
 
@@ -561,654 +238,76 @@ function decode() {
     if (!input) {
 
         result.innerHTML = `
+            <div class="error">
+                Enter an OBD-II code.
+            </div>
+        `;
 
+        return;
+    }
+
+
+    const found =
+        obdDatabase.find(item =>
+            item.Code &&
+            item.Code.toUpperCase() === input
+        );
+
+
+    if (!found) {
+
+        result.innerHTML = `
             <div class="error">
 
-                <h2>
-                    Enter an OBD-II code
-                </h2>
+                <h2>${input}</h2>
 
                 <p>
-                    Example: P0420
+                    Code not found in the database.
                 </p>
 
             </div>
-
         `;
 
         return;
-
     }
 
-
-    if (!obdDatabase) {
-
-        result.innerHTML = `
-
-            <div class="loading">
-
-                Loading database...
-
-            </div>
-
-        `;
-
-        return;
-
-    }
-
-
-    const data =
-        findCode(input);
-
-
-    if (!data) {
-
-        result.innerHTML = `
-
-            <div class="error">
-
-                <h2>
-                    ${input}
-                </h2>
-
-                <p>
-                    AutoDecode could not find this
-                    code in the generic OBD-II database.
-                </p>
-
-            </div>
-
-        `;
-
-        return;
-
-    }
-
-
-    displayCode(data);
-
-}
-
-
-/*
-====================================================
-DISPLAY CODE
-====================================================
-*/
-
-function displayCode(data) {
-
-
-    const result =
-        document.getElementById("result");
-
-
-    /*
-    TITLE
-    */
-
-    const title =
-        data.title?.en ||
-        data.title ||
-        "Diagnostic Trouble Code";
-
-
-    /*
-    DESCRIPTION
-    */
-
-    const description =
-        data.description?.en ||
-        data.description ||
-        "No description available.";
-
-
-    /*
-    COMPONENTS
-    */
-
-    const components =
-        data.affected_components || [];
-
-
-    const componentHTML =
-        components.length
-
-        ?
-
-        components
-        .map(item => {
-
-            return `
-                <span class="badge">
-                    ${formatText(item)}
-                </span>
-            `;
-
-        })
-        .join("")
-
-        :
-
-        `<span class="badge">
-            No component information
-        </span>`;
-
-
-    /*
-    CAUSES
-    */
-
-    const causes =
-        data.common_causes || [];
-
-
-    const causesHTML =
-        causes.length
-
-        ?
-
-        causes
-        .map(item => {
-
-            const label =
-                item.label?.en ||
-                item.label ||
-                item.id ||
-                "Unknown cause";
-
-
-            const likelihood =
-                item.likelihood ||
-                "";
-
-
-            return `
-
-                <li>
-
-                    ${label}
-
-                    ${
-                        likelihood
-
-                        ?
-
-                        `<strong class="${likelihood}">
-                            — ${likelihood}
-                        </strong>`
-
-                        :
-
-                        ""
-                    }
-
-                </li>
-
-            `;
-
-        })
-        .join("")
-
-        :
-
-        "<li>No common causes listed.</li>";
-
-
-    /*
-    SYMPTOMS
-    */
-
-    const symptoms =
-        data.symptoms || [];
-
-
-    const symptomsHTML =
-        symptoms.length
-
-        ?
-
-        symptoms
-        .map(item => {
-
-            return `
-
-                <li>
-                    ${
-                        item.en ||
-                        item.label?.en ||
-                        item.label ||
-                        item
-                    }
-                </li>
-
-            `;
-
-        })
-        .join("")
-
-        :
-
-        "<li>No symptoms listed.</li>";
-
-
-    /*
-    REPAIR
-    */
-
-    const repair =
-        data.repair || {};
-
-
-    const difficulty =
-        repair.difficulty ||
-        "unknown";
-
-
-    const cost =
-        repair.estimated_cost_eur;
-
-
-    const hours =
-        repair.estimated_hours;
-
-
-    let repairHTML = `
-
-        <div class="repair-value">
-            ${formatText(difficulty)}
-        </div>
-
-        <div class="repair-label">
-            Repair difficulty
-        </div>
-
-    `;
-
-
-    if (
-        Array.isArray(cost) &&
-        cost.length >= 2
-    ) {
-
-        repairHTML += `
-
-            <div style="margin-top:20px;">
-
-                <div class="repair-value">
-                    €${cost[0]} – €${cost[1]}
-                </div>
-
-                <div class="repair-label">
-                    Estimated repair cost
-                </div>
-
-            </div>
-
-        `;
-
-    }
-
-
-    if (
-        Array.isArray(hours) &&
-        hours.length >= 2
-    ) {
-
-        repairHTML += `
-
-            <div style="margin-top:20px;">
-
-                <div class="repair-value">
-                    ${hours[0]} – ${hours[1]} h
-                </div>
-
-                <div class="repair-label">
-                    Estimated labour time
-                </div>
-
-            </div>
-
-        `;
-
-    }
-
-
-    /*
-    RELATED CODES
-    */
-
-    const related =
-        data.related_codes || [];
-
-
-    const relatedHTML =
-        related.length
-
-        ?
-
-        related
-        .map(code => {
-
-            return `
-
-                <div
-                    class="related-code"
-                    onclick="searchRelated('${code}')"
-                >
-
-                    ${code}
-
-                </div>
-
-            `;
-
-        })
-        .join("")
-
-        :
-
-        `<span class="badge">
-            No related codes
-        </span>`;
-
-
-    /*
-    FLAGS
-    */
-
-    const flags = [];
-
-
-    if (data.flags?.mil) {
-
-        flags.push("Check Engine Light");
-
-    }
-
-
-    if (data.flags?.emissions_relevant) {
-
-        flags.push("Emissions Relevant");
-
-    }
-
-
-    if (data.flags?.limp_mode) {
-
-        flags.push("Possible Limp Mode");
-
-    }
-
-
-    const flagsHTML =
-        flags.length
-
-        ?
-
-        flags
-        .map(flag => {
-
-            return `
-                <span class="badge">
-                    ${flag}
-                </span>
-            `;
-
-        })
-        .join("")
-
-        :
-
-        `<span class="badge">
-            No additional flags
-        </span>`;
-
-
-    /*
-    FINAL HTML
-    */
 
     result.innerHTML = `
 
-        <div class="breadcrumb">
+        <div class="result">
 
-            Home / OBD Decoder / ${data.code}
-
-        </div>
-
-
-        <div class="code">
-
-            ${data.code}
-
-        </div>
-
-
-        <div class="title">
-
-            ${title}
-
-        </div>
-
-
-        <div class="card">
-
-            <h2>
-                What does it mean?
-            </h2>
-
-            <p>
-                ${description}
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <h2>
-                Affected Components
-            </h2>
-
-            <div class="badges">
-
-                ${componentHTML}
-
+            <div class="code">
+                ${found.Code}
             </div>
 
-        </div>
-
-
-        <div class="grid">
-
-
-            <div class="card">
-
-                <h2>
-                    Common Causes
-                </h2>
-
-                <ul>
-
-                    ${causesHTML}
-
-                </ul>
-
+            <div class="description">
+                ${found.Description}
             </div>
-
-
-            <div class="card">
-
-                <h2>
-                    Common Symptoms
-                </h2>
-
-                <ul>
-
-                    ${symptomsHTML}
-
-                </ul>
-
-            </div>
-
-
-        </div>
-
-
-        <div class="grid">
-
-
-            <div class="card">
-
-                <h2>
-                    Repair
-                </h2>
-
-                ${repairHTML}
-
-            </div>
-
-
-            <div class="card">
-
-                <h2>
-                    Vehicle / System Status
-                </h2>
-
-                <div class="badges">
-
-                    ${flagsHTML}
-
-                </div>
-
-            </div>
-
-
-        </div>
-
-
-        <div class="card">
-
-            <h2>
-                Related Codes
-            </h2>
-
-            <div class="related">
-
-                ${relatedHTML}
-
-            </div>
-
-        </div>
-
-
-        <div class="card">
-
-            <h2>
-                AutoDecode Disclaimer
-            </h2>
-
-            <p>
-
-                Diagnostic trouble codes describe
-                symptoms and system conditions; they
-                do not necessarily identify the failed
-                component. Always confirm the fault
-                using appropriate diagnostic procedures
-                and vehicle-specific service information.
-
-            </p>
 
         </div>
 
     `;
-
 }
 
 
 /*
-====================================================
-FORMAT TEXT
-====================================================
-*/
-
-function formatText(text) {
-
-    if (!text) {
-
-        return "";
-
-    }
-
-
-    return String(text)
-        .replaceAll("_", " ")
-        .replace(/\b\w/g, c => c.toUpperCase());
-
-}
-
-
-/*
-====================================================
-RELATED CODE SEARCH
-====================================================
-*/
-
-function searchRelated(code) {
-
-    document
-    .getElementById("codeInput")
-    .value = code;
-
-
-    decode();
-
-
-    window.scrollTo({
-
-        top: 0,
-
-        behavior: "smooth"
-
-    });
-
-}
-
-
-/*
-====================================================
-ENTER KEY
-====================================================
+Enter key
 */
 
 document
 .getElementById("codeInput")
-.addEventListener(
-    "keydown",
-    function(event) {
+.addEventListener("keydown", function(event) {
 
-        if (event.key === "Enter") {
-
-            decode();
-
-        }
-
+    if (event.key === "Enter") {
+        decodeCode();
     }
-);
 
+});
 
-/*
-====================================================
-START
-====================================================
-*/
 
 loadDatabase();
 
 </script>
 
 </body>
-
 </html>
