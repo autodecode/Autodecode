@@ -1,12 +1,386 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AutoDecode — Automotive Database</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AutoDecode — Know Your Car. Know Your Parts.</title>
+<meta name="description" content="AutoDecode — automotive parts, OEM cross-reference, OBD codes, VIN decoding and vehicle information.">
+
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: #0b0d10;
+        color: #f2f4f7;
+        min-height: 100vh;
+    }
+
+    header {
+        height: 72px;
+        border-bottom: 1px solid #20242a;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 6%;
+        background: #0b0d10;
+    }
+
+    .logo {
+        font-size: 24px;
+        font-weight: 800;
+        letter-spacing: -1px;
+    }
+
+    .logo span {
+        color: #4da3ff;
+    }
+
+    nav {
+        display: flex;
+        gap: 28px;
+    }
+
+    nav a {
+        color: #9da5b0;
+        text-decoration: none;
+        font-size: 14px;
+    }
+
+    nav a:hover {
+        color: white;
+    }
+
+    .hero {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 95px 20px 70px;
+        text-align: center;
+    }
+
+    .badge {
+        display: inline-block;
+        border: 1px solid #28313c;
+        background: #11151a;
+        color: #7ebcff;
+        padding: 7px 13px;
+        border-radius: 20px;
+        font-size: 12px;
+        margin-bottom: 25px;
+        letter-spacing: .5px;
+    }
+
+    h1 {
+        font-size: clamp(42px, 8vw, 76px);
+        line-height: 1;
+        letter-spacing: -4px;
+        margin-bottom: 22px;
+    }
+
+    h1 span {
+        color: #4da3ff;
+    }
+
+    .subtitle {
+        color: #8f98a5;
+        font-size: 18px;
+        max-width: 650px;
+        margin: 0 auto 38px;
+        line-height: 1.6;
+    }
+
+    .search-box {
+        max-width: 720px;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    .search-box input {
+        width: 100%;
+        height: 64px;
+        background: #14181d;
+        border: 1px solid #303842;
+        border-radius: 12px;
+        color: white;
+        font-size: 16px;
+        padding: 0 125px 0 22px;
+        outline: none;
+    }
+
+    .search-box input:focus {
+        border-color: #4da3ff;
+    }
+
+    .search-box button {
+        position: absolute;
+        right: 7px;
+        top: 7px;
+        height: 50px;
+        padding: 0 22px;
+        border: none;
+        border-radius: 8px;
+        background: #4da3ff;
+        color: #07101a;
+        font-weight: 700;
+        cursor: pointer;
+    }
+
+    .search-box button:hover {
+        background: #78baff;
+    }
+
+    .search-hint {
+        color: #68717d;
+        font-size: 12px;
+        margin-top: 12px;
+    }
+
+    .section {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 30px 20px 80px;
+    }
+
+    .section-title {
+        margin-bottom: 20px;
+        font-size: 20px;
+    }
+
+    .tools {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 14px;
+    }
+
+    .tool {
+        background: #12161b;
+        border: 1px solid #252c34;
+        border-radius: 12px;
+        padding: 24px;
+        min-height: 150px;
+        transition: .2s;
+        cursor: pointer;
+    }
+
+    .tool:hover {
+        transform: translateY(-3px);
+        border-color: #4da3ff;
+        background: #151a20;
+    }
+
+    .icon {
+        font-size: 28px;
+        margin-bottom: 18px;
+    }
+
+    .tool h3 {
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
+
+    .tool p {
+        color: #78818c;
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    .popular {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    .tag {
+        padding: 9px 14px;
+        border-radius: 8px;
+        background: #12161b;
+        border: 1px solid #252c34;
+        color: #9ba4af;
+        font-size: 13px;
+    }
+
+    footer {
+        border-top: 1px solid #20242a;
+        padding: 30px 6%;
+        color: #59616b;
+        font-size: 12px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    @media (max-width: 800px) {
+        nav {
+            display: none;
+        }
+
+        .tools {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .hero {
+            padding-top: 65px;
+        }
+    }
+
+    @media (max-width: 500px) {
+        .tools {
+            grid-template-columns: 1fr;
+        }
+
+        h1 {
+            letter-spacing: -2px;
+        }
+
+        .search-box input {
+            padding-right: 105px;
+        }
+
+        footer {
+            flex-direction: column;
+            gap: 10px;
+        }
+    }
+</style>
 </head>
+
 <body>
-    <h1>AutoDecode</h1>
-    <p>Know Your Car. Know Your Parts.</p>
+
+<header>
+    <div class="logo">Auto<span>Decode</span></div>
+
+    <nav>
+        <a href="#">Vehicle</a>
+        <a href="#">Parts</a>
+        <a href="#">OBD</a>
+        <a href="#">VIN</a>
+    </nav>
+</header>
+
+<main>
+
+<section class="hero">
+
+    <div class="badge">AUTOMOTIVE DATABASE & TOOLS</div>
+
+    <h1>Know Your Car.<br><span>Know Your Parts.</span></h1>
+
+    <p class="subtitle">
+        Identify parts, decode fault codes, find OEM numbers,
+        discover aftermarket alternatives and explore vehicle specifications.
+    </p>
+
+    <div class="search-box">
+        <input
+            type="text"
+            placeholder="Search VIN, part number, OBD code or vehicle..."
+            id="mainSearch"
+        >
+        <button onclick="searchAuto()">Search</button>
+    </div>
+
+    <div class="search-hint">
+        Try: P0420 · 1234567 · Ford Focus 1.6 TDCi
+    </div>
+
+</section>
+
+<section class="section">
+
+    <h2 class="section-title">AutoDecode Tools</h2>
+
+    <div class="tools">
+
+        <div class="tool">
+            <div class="icon">🚗</div>
+            <h3>Vehicle Lookup</h3>
+            <p>Find vehicle specifications, engines, generations and compatible parts.</p>
+        </div>
+
+        <div class="tool">
+            <div class="icon">🔧</div>
+            <h3>Part Finder</h3>
+            <p>Find the correct replacement part for your vehicle.</p>
+        </div>
+
+        <div class="tool">
+            <div class="icon">🔄</div>
+            <h3>OEM Cross Reference</h3>
+            <p>Compare OEM part numbers with aftermarket equivalents.</p>
+        </div>
+
+        <div class="tool">
+            <div class="icon">⚠️</div>
+            <h3>OBD Decoder</h3>
+            <p>Decode diagnostic trouble codes and understand possible causes.</p>
+        </div>
+
+        <div class="tool">
+            <div class="icon">🔢</div>
+            <h3>VIN Decoder</h3>
+            <p>Decode vehicle identification numbers and retrieve vehicle data.</p>
+        </div>
+
+        <div class="tool">
+            <div class="icon">🛠️</div>
+            <h3>Engine Database</h3>
+            <p>Explore engine codes, specifications and applications.</p>
+        </div>
+
+        <div class="tool">
+            <div class="icon">🛞</div>
+            <h3>Tyre & Wheel Tools</h3>
+            <p>Calculate tyre sizes, circumference, offset and wheel fitment.</p>
+        </div>
+
+        <div class="tool">
+            <div class="icon">💡</div>
+            <h3>Warning Lights</h3>
+            <p>Identify dashboard warning lights and understand what they mean.</p>
+        </div>
+
+    </div>
+
+    <h2 class="section-title" style="margin-top:55px;">Popular Searches</h2>
+
+    <div class="popular">
+        <div class="tag">OBD-II Codes</div>
+        <div class="tag">OEM Part Numbers</div>
+        <div class="tag">Ford</div>
+        <div class="tag">BMW</div>
+        <div class="tag">Volkswagen</div>
+        <div class="tag">Mercedes-Benz</div>
+        <div class="tag">Toyota</div>
+        <div class="tag">Engine Codes</div>
+        <div class="tag">VIN Decoder</div>
+    </div>
+
+</section>
+
+</main>
+
+<footer>
+    <div>© 2026 AutoDecode</div>
+    <div>Automotive data & tools</div>
+</footer>
+
+<script>
+function searchAuto() {
+    const input = document.getElementById("mainSearch").value.trim();
+
+    if (!input) {
+        alert("Enter a VIN, part number, OBD code or vehicle.");
+        return;
+    }
+
+    alert("AutoDecode search: " + input);
+}
+</script>
+
 </body>
 </html>
