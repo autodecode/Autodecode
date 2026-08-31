@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>OBD Code Decoder — AutoDecode</title>
+<title>OBD Decoder — AutoDecode</title>
+
+<meta name="description" content="Decode OBD-II diagnostic trouble codes with AutoDecode.">
 
 <style>
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -17,7 +21,11 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     background: #0b0d10;
     color: #f2f4f7;
+    min-height: 100vh;
 }
+
+
+/* HEADER */
 
 header {
     height: 72px;
@@ -31,6 +39,7 @@ header {
 .logo {
     font-size: 24px;
     font-weight: 800;
+    letter-spacing: -1px;
 }
 
 .logo span {
@@ -40,13 +49,24 @@ header {
 header a {
     color: #9da5b0;
     text-decoration: none;
+    font-size: 14px;
 }
+
+header a:hover {
+    color: white;
+}
+
+
+/* MAIN */
 
 .container {
     max-width: 900px;
     margin: auto;
-    padding: 70px 20px;
+    padding: 65px 20px 90px;
 }
+
+
+/* SEARCH */
 
 .search {
     display: flex;
@@ -63,6 +83,11 @@ header a {
     color: white;
     padding: 0 18px;
     font-size: 17px;
+    outline: none;
+}
+
+.search input:focus {
+    border-color: #4da3ff;
 }
 
 .search button {
@@ -74,11 +99,21 @@ header a {
     cursor: pointer;
 }
 
+.search button:hover {
+    background: #78baff;
+}
+
+
+/* BREADCRUMB */
+
 .breadcrumb {
     color: #68717d;
     font-size: 13px;
-    margin-bottom: 20px;
+    margin-bottom: 18px;
 }
+
+
+/* CODE */
 
 .code {
     font-size: 54px;
@@ -89,8 +124,12 @@ header a {
 
 .title {
     font-size: 25px;
+    line-height: 1.3;
     margin-bottom: 35px;
 }
+
+
+/* CARDS */
 
 .card {
     background: #12161b;
@@ -116,13 +155,36 @@ header a {
     padding-left: 20px;
 }
 
+
+/* GRID */
+
 .grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 16px;
 }
 
+
+/* ERROR */
+
+.error {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.error h2 {
+    margin-bottom: 12px;
+}
+
+.error p {
+    color: #78818c;
+}
+
+
+/* MOBILE */
+
 @media(max-width:700px) {
+
     .grid {
         grid-template-columns: 1fr;
     }
@@ -134,341 +196,688 @@ header a {
     .search button {
         height: 50px;
     }
+
+    .code {
+        font-size: 44px;
+    }
+
 }
+
 </style>
+
 </head>
+
 
 <body>
 
+
 <header>
-    <div class="logo">Auto<span>Decode</span></div>
-    <a href="index.html">← Home</a>
+
+    <div class="logo">
+        Auto<span>Decode</span>
+    </div>
+
+    <a href="index.html">
+        ← Home
+    </a>
+
 </header>
+
 
 <div class="container">
 
+
+    <!-- SEARCH -->
+
     <div class="search">
-        <input id="codeInput" placeholder="Enter OBD-II code..." value="P0420">
-        <button onclick="decode()">Decode</button>
+
+        <input
+            id="codeInput"
+            placeholder="Enter OBD-II code..."
+            autocomplete="off"
+        >
+
+        <button onclick="decode()">
+            Decode
+        </button>
+
     </div>
+
+
+    <!-- RESULT -->
 
     <div id="result"></div>
 
+
 </div>
+
 
 <script>
 
+
+/*
+====================================================
+AUTODECODE OBD DATABASE
+====================================================
+*/
+
 const obd = {
 
+
     P0420: {
-        title: "Catalyst System Efficiency Below Threshold",
-        meaning: "The engine control module has detected that the catalytic converter is not operating as efficiently as expected.",
+
+        title:
+        "Catalyst System Efficiency Below Threshold",
+
+        meaning:
+        "The engine control module has detected that the catalytic converter is not operating as efficiently as expected.",
+
         symptoms: [
+
             "Check Engine Light",
             "Reduced fuel economy",
             "Possible loss of performance",
-            "Exhaust emissions may increase"
+            "Increased exhaust emissions"
+
         ],
+
         causes: [
+
             "Worn or damaged catalytic converter",
             "Faulty oxygen sensor",
             "Exhaust leak",
             "Engine misfire",
             "Incorrect fuel mixture"
+
         ],
+
         checks: [
+
             "Check for other stored OBD codes",
-            "Inspect exhaust system for leaks",
+            "Inspect the exhaust system for leaks",
             "Check upstream and downstream O2 sensor readings",
-            "Check for misfires",
+            "Check for engine misfires",
             "Evaluate catalytic converter efficiency"
+
         ]
+
     },
 
+
     P0300: {
-        title: "Random/Multiple Cylinder Misfire Detected",
-        meaning: "The engine control module has detected misfires occurring on multiple cylinders or in a random pattern.",
+
+        title:
+        "Random/Multiple Cylinder Misfire Detected",
+
+        meaning:
+        "The engine control module has detected misfires occurring on multiple cylinders or in a random pattern.",
+
         symptoms: [
+
             "Engine vibration",
             "Rough idle",
             "Loss of power",
             "Check Engine Light",
             "Poor fuel economy"
+
         ],
+
         causes: [
+
             "Spark plug problems",
             "Ignition coil failure",
             "Fuel delivery problems",
             "Vacuum leak",
             "Low compression"
+
         ],
+
         checks: [
+
             "Check ignition system",
             "Inspect spark plugs",
             "Check fuel pressure",
             "Check intake system for leaks",
-            "Perform compression test if necessary"
+            "Perform a compression test if necessary"
+
         ]
+
     },
 
+
     P0171: {
-        title: "System Too Lean — Bank 1",
-        meaning: "The engine is receiving too much air or not enough fuel for the expected air-fuel ratio.",
+
+        title:
+        "System Too Lean — Bank 1",
+
+        meaning:
+        "The engine is receiving too much air or not enough fuel for the expected air-fuel ratio.",
+
         symptoms: [
+
             "Rough idle",
             "Poor acceleration",
             "Check Engine Light",
             "Higher fuel consumption"
+
         ],
+
         causes: [
+
             "Vacuum leak",
             "Dirty or faulty MAF sensor",
             "Low fuel pressure",
             "Fuel injector problem",
             "Exhaust leak before oxygen sensor"
+
         ],
+
         checks: [
+
             "Inspect intake hoses",
             "Check MAF readings",
             "Check fuel pressure",
-            "Inspect injectors",
+            "Inspect fuel injectors",
             "Check fuel trims"
+
         ]
+
     },
 
+
     P0299: {
-        title: "Turbocharger/Supercharger Underboost",
-        meaning: "The engine control module has detected that boost pressure is lower than the expected value.",
+
+        title:
+        "Turbocharger/Supercharger Underboost",
+
+        meaning:
+        "The engine control module has detected that boost pressure is lower than the expected value.",
+
         symptoms: [
+
             "Reduced engine power",
             "Poor acceleration",
             "Turbocharger may be inactive",
             "Check Engine Light"
+
         ],
+
         causes: [
+
             "Boost leak",
             "Faulty turbocharger actuator",
             "Vacuum problem",
             "Turbocharger failure",
             "Faulty boost pressure sensor"
+
         ],
+
         checks: [
+
             "Inspect boost hoses",
             "Check vacuum system",
-            "Check turbo actuator operation",
+            "Check turbocharger actuator operation",
             "Compare requested and actual boost",
             "Inspect intercooler system"
+
         ]
+
     },
 
+
     P0234: {
-        title: "Engine Overboost Condition",
-        meaning: "The measured turbocharger or supercharger boost pressure is higher than the permitted value.",
+
+        title:
+        "Engine Overboost Condition",
+
+        meaning:
+        "The measured turbocharger or supercharger boost pressure is higher than the permitted value.",
+
         symptoms: [
+
             "Reduced power",
             "Limp mode",
             "Check Engine Light",
             "Sudden loss of boost"
+
         ],
+
         causes: [
+
             "Sticking turbocharger actuator",
             "Variable geometry mechanism problem",
             "Faulty boost control valve",
             "Vacuum control problem",
             "Boost pressure sensor fault"
+
         ],
+
         checks: [
-            "Inspect turbo actuator",
+
+            "Inspect turbocharger actuator",
             "Check vacuum lines",
             "Compare requested and actual boost",
             "Inspect turbocharger mechanism",
             "Check boost control system"
+
         ]
+
     },
 
+
     P0401: {
-        title: "Exhaust Gas Recirculation Flow Insufficient",
-        meaning: "The engine control module has detected insufficient EGR flow.",
+
+        title:
+        "Exhaust Gas Recirculation Flow Insufficient",
+
+        meaning:
+        "The engine control module has detected insufficient EGR flow.",
+
         symptoms: [
+
             "Check Engine Light",
             "Rough running",
             "Reduced performance",
             "Increased emissions"
+
         ],
+
         causes: [
+
             "Blocked EGR valve",
             "Carbon buildup",
             "Faulty EGR valve",
             "Vacuum problem",
             "Blocked EGR passages"
+
         ],
+
         checks: [
+
             "Inspect EGR valve",
             "Check EGR passages",
             "Check vacuum supply",
             "Check EGR position feedback"
+
         ]
+
     },
 
+
     P0101: {
-        title: "Mass Air Flow Sensor Performance",
-        meaning: "The measured airflow signal is outside the expected operating range.",
+
+        title:
+        "Mass Air Flow Sensor Performance",
+
+        meaning:
+        "The measured airflow signal is outside the expected operating range.",
+
         symptoms: [
+
             "Poor acceleration",
             "Rough idle",
             "Poor fuel economy",
             "Check Engine Light"
+
         ],
+
         causes: [
+
             "Dirty MAF sensor",
             "Air intake leak",
             "Faulty MAF sensor",
             "Air filter restriction"
+
         ],
+
         checks: [
+
             "Inspect air intake",
             "Check air filter",
             "Clean or test MAF sensor",
             "Compare measured airflow with expected values"
+
         ]
+
     },
 
+
     P0113: {
-        title: "Intake Air Temperature Sensor High Input",
-        meaning: "The intake air temperature sensor signal is higher than the expected range.",
+
+        title:
+        "Intake Air Temperature Sensor High Input",
+
+        meaning:
+        "The intake air temperature sensor signal is higher than the expected range.",
+
         symptoms: [
+
             "Check Engine Light",
             "Poor engine performance",
             "Incorrect fuel mixture"
+
         ],
+
         causes: [
+
             "Disconnected sensor",
             "Damaged wiring",
             "Faulty IAT sensor",
             "Electrical connection problem"
+
         ],
+
         checks: [
+
             "Inspect sensor connector",
             "Check wiring",
             "Compare sensor reading with ambient temperature"
+
         ]
+
     },
 
+
     P0128: {
-        title: "Coolant Thermostat Temperature Below Regulating Temperature",
-        meaning: "The engine is taking too long to reach its expected operating temperature.",
+
+        title:
+        "Coolant Thermostat Temperature Below Regulating Temperature",
+
+        meaning:
+        "The engine is taking too long to reach its expected operating temperature.",
+
         symptoms: [
+
             "Engine runs cooler than expected",
             "Poor fuel economy",
             "Weak cabin heating",
             "Check Engine Light"
+
         ],
+
         causes: [
+
             "Thermostat stuck open",
             "Coolant temperature sensor issue",
             "Cooling system problem"
+
         ],
+
         checks: [
+
             "Monitor coolant temperature",
             "Check thermostat operation",
             "Check coolant temperature sensor"
+
         ]
+
     },
 
+
     P0455: {
-        title: "EVAP System Large Leak Detected",
-        meaning: "The evaporative emissions system has detected a significant leak.",
+
+        title:
+        "EVAP System Large Leak Detected",
+
+        meaning:
+        "The evaporative emissions system has detected a significant leak.",
+
         symptoms: [
+
             "Check Engine Light",
             "Fuel smell may be present",
             "Usually no major drivability symptoms"
+
         ],
+
         causes: [
+
             "Loose fuel cap",
             "Cracked EVAP hose",
             "Faulty purge valve",
             "Damaged EVAP component"
+
         ],
+
         checks: [
+
             "Check fuel cap",
             "Inspect EVAP hoses",
-            "Perform EVAP smoke test if necessary"
+            "Perform an EVAP smoke test if necessary"
+
         ]
+
     }
 
 };
 
+
+/*
+====================================================
+DECODE FUNCTION
+====================================================
+*/
+
 function decode() {
 
-    let code = document
+    const input =
+        document
         .getElementById("codeInput")
         .value
         .trim()
         .toUpperCase();
 
-    const data = obd[code];
 
-    if (!data) {
+    if (!input) {
 
-        document.getElementById("result").innerHTML = `
-            <div class="card">
-                <h2>Code not found</h2>
+        document
+        .getElementById("result")
+        .innerHTML = `
+
+            <div class="error">
+
+                <h2>
+                    Enter an OBD-II code
+                </h2>
+
                 <p>
-                    AutoDecode does not have information for
-                    <strong>${code}</strong> yet.
+                    Example: P0420
                 </p>
+
             </div>
+
         `;
 
         return;
     }
 
-    document.getElementById("result").innerHTML = `
+
+    const data = obd[input];
+
+
+    if (!data) {
+
+        document
+        .getElementById("result")
+        .innerHTML = `
+
+            <div class="error">
+
+                <h2>
+                    ${input}
+                </h2>
+
+                <p>
+                    AutoDecode does not have information
+                    for this code yet.
+                </p>
+
+            </div>
+
+        `;
+
+        return;
+    }
+
+
+    document
+    .getElementById("result")
+    .innerHTML = `
 
         <div class="breadcrumb">
-            Home / OBD Decoder / ${code}
+            Home / OBD Decoder / ${input}
         </div>
 
-        <div class="code">${code}</div>
+
+        <div class="code">
+            ${input}
+        </div>
+
 
         <div class="title">
             ${data.title}
         </div>
 
+
         <div class="card">
-            <h2>What does it mean?</h2>
-            <p>${data.meaning}</p>
+
+            <h2>
+                What does it mean?
+            </h2>
+
+            <p>
+                ${data.meaning}
+            </p>
+
         </div>
+
 
         <div class="grid">
 
-            <div class="card">
-                <h2>Common Symptoms</h2>
-                <ul>
-                    ${data.symptoms.map(x => `<li>${x}</li>`).join("")}
-                </ul>
-            </div>
 
             <div class="card">
-                <h2>Possible Causes</h2>
+
+                <h2>
+                    Common Symptoms
+                </h2>
+
                 <ul>
-                    ${data.causes.map(x => `<li>${x}</li>`).join("")}
+
+                    ${data.symptoms
+                        .map(item =>
+                            `<li>${item}</li>`
+                        )
+                        .join("")
+                    }
+
                 </ul>
+
             </div>
+
+
+            <div class="card">
+
+                <h2>
+                    Possible Causes
+                </h2>
+
+                <ul>
+
+                    ${data.causes
+                        .map(item =>
+                            `<li>${item}</li>`
+                        )
+                        .join("")
+                    }
+
+                </ul>
+
+            </div>
+
 
         </div>
 
+
         <div class="card">
-            <h2>What Should You Check?</h2>
+
+            <h2>
+                What Should You Check?
+            </h2>
+
             <ul>
-                ${data.checks.map(x => `<li>${x}</li>`).join("")}
+
+                ${data.checks
+                    .map(item =>
+                        `<li>${item}</li>`
+                    )
+                    .join("")
+                }
+
             </ul>
+
         </div>
 
     `;
+
 }
 
+
+/*
+====================================================
+READ CODE FROM URL
+====================================================
+*/
+
+const params =
+    new URLSearchParams(
+        window.location.search
+    );
+
+
+const urlCode =
+    params.get("code");
+
+
+if (urlCode) {
+
+    document
+    .getElementById("codeInput")
+    .value =
+        urlCode
+        .toUpperCase();
+
+}
+
+
+/*
+====================================================
+INITIAL LOAD
+====================================================
+*/
+
 decode();
+
+
+/*
+====================================================
+ENTER KEY
+====================================================
+*/
+
+document
+.getElementById("codeInput")
+.addEventListener(
+    "keydown",
+    function(event) {
+
+        if (event.key === "Enter") {
+
+            decode();
+
+        }
+
+    }
+);
 
 </script>
 
