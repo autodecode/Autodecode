@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>AutoDecode — Know Your Car. Know Your Parts.</title>
+<title>AutoDecode — Automotive Diagnostic Tools</title>
 
-<meta name="description" content="AutoDecode — automotive parts, OEM cross-reference, OBD codes, VIN decoding and vehicle information.">
+<meta name="description"
+content="AutoDecode automotive diagnostic tools, OBD decoder and automotive part finder.">
 
 <style>
 
@@ -23,16 +25,18 @@ body {
     min-height: 100vh;
 }
 
+
 /* HEADER */
 
 header {
     height: 72px;
     border-bottom: 1px solid #20242a;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     padding: 0 6%;
-    background: #0b0d10;
 }
 
 .logo {
@@ -47,252 +51,206 @@ header {
 
 nav {
     display: flex;
-    gap: 28px;
+    gap: 24px;
 }
 
 nav a {
     color: #9da5b0;
     text-decoration: none;
     font-size: 14px;
-    transition: 0.2s;
 }
 
 nav a:hover {
     color: white;
 }
 
+
 /* HERO */
 
 .hero {
     max-width: 1000px;
-    margin: 0 auto;
-    padding: 95px 20px 70px;
-    text-align: center;
+    margin: auto;
+    padding: 80px 20px 55px;
 }
 
-.badge {
-    display: inline-block;
-    border: 1px solid #28313c;
-    background: #11151a;
-    color: #7ebcff;
-    padding: 7px 13px;
-    border-radius: 20px;
-    font-size: 12px;
-    margin-bottom: 25px;
-    letter-spacing: .5px;
+.hero h1 {
+    font-size: 52px;
+    line-height: 1.1;
+    margin-bottom: 18px;
 }
 
-h1 {
-    font-size: clamp(42px, 8vw, 76px);
-    line-height: 1;
-    letter-spacing: -4px;
-    margin-bottom: 22px;
-}
-
-h1 span {
+.hero h1 span {
     color: #4da3ff;
 }
 
-.subtitle {
-    color: #8f98a5;
-    font-size: 18px;
-    max-width: 650px;
-    margin: 0 auto 38px;
+.hero p {
+    color: #858f9b;
+    font-size: 17px;
     line-height: 1.6;
+    max-width: 650px;
 }
 
-/* SEARCH */
+
+/* OBD SEARCH */
+
+.obd-search {
+    max-width: 1000px;
+    margin: 0 auto 60px;
+    padding: 0 20px;
+}
 
 .search-box {
-    max-width: 720px;
-    margin: 0 auto;
-    position: relative;
+    display: flex;
+    gap: 10px;
 }
 
 .search-box input {
-    width: 100%;
-    height: 64px;
+    flex: 1;
+
+    height: 60px;
+
     background: #14181d;
     border: 1px solid #303842;
-    border-radius: 12px;
+    border-radius: 10px;
+
     color: white;
-    font-size: 16px;
-    padding: 0 125px 0 22px;
+
+    padding: 0 18px;
+
+    font-size: 17px;
+
     outline: none;
-    transition: 0.2s;
 }
 
 .search-box input:focus {
     border-color: #4da3ff;
-    box-shadow: 0 0 0 3px rgba(77,163,255,0.08);
 }
 
 .search-box button {
-    position: absolute;
-    right: 7px;
-    top: 7px;
-    height: 50px;
-    padding: 0 22px;
     border: none;
-    border-radius: 8px;
+
     background: #4da3ff;
-    color: #07101a;
-    font-weight: 700;
+
+    padding: 0 28px;
+
+    border-radius: 10px;
+
+    font-weight: bold;
+
     cursor: pointer;
-    transition: 0.2s;
 }
 
 .search-box button:hover {
     background: #78baff;
-    transform: translateY(-1px);
 }
 
-.search-hint {
-    color: #68717d;
-    font-size: 12px;
-    margin-top: 12px;
-}
 
-/* SEARCH STATUS */
-
-.search-status {
-    max-width: 720px;
-    margin: 15px auto 0;
-    min-height: 20px;
-    color: #7ebcff;
-    font-size: 13px;
-}
-
-/* SECTIONS */
-
-.section {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 30px 20px 80px;
-}
-
-.section-title {
-    margin-bottom: 20px;
-    font-size: 20px;
-}
-
-/* TOOL CARDS */
+/* TOOLS */
 
 .tools {
+    max-width: 1000px;
+    margin: auto;
+
+    padding: 0 20px 90px;
+
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 14px;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 18px;
 }
 
 .tool {
     background: #12161b;
+
     border: 1px solid #252c34;
+
     border-radius: 12px;
-    padding: 24px;
-    min-height: 150px;
-    transition: 0.2s;
-    cursor: pointer;
+
+    padding: 28px;
+
+    text-decoration: none;
+
+    color: white;
+
+    transition:
+        transform .15s,
+        border-color .15s;
 }
 
 .tool:hover {
     transform: translateY(-3px);
+
     border-color: #4da3ff;
-    background: #151a20;
 }
 
-.icon {
-    font-size: 28px;
-    margin-bottom: 18px;
-}
+.tool h2 {
+    margin-bottom: 10px;
 
-.tool h3 {
-    font-size: 16px;
-    margin-bottom: 8px;
+    font-size: 20px;
 }
 
 .tool p {
-    color: #78818c;
-    font-size: 13px;
-    line-height: 1.5;
+    color: #7f8995;
+
+    font-size: 14px;
+
+    line-height: 1.6;
 }
 
-/* POPULAR SEARCHES */
-
-.popular {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 20px;
-}
-
-.tag {
-    padding: 9px 14px;
-    border-radius: 8px;
-    background: #12161b;
-    border: 1px solid #252c34;
-    color: #9ba4af;
-    font-size: 13px;
-    cursor: pointer;
-    transition: 0.2s;
-}
-
-.tag:hover {
-    border-color: #4da3ff;
-    color: white;
-}
 
 /* FOOTER */
 
 footer {
     border-top: 1px solid #20242a;
+
     padding: 30px 6%;
+
     color: #59616b;
+
     font-size: 12px;
+
     display: flex;
+
     justify-content: space-between;
 }
 
+
 /* MOBILE */
 
-@media (max-width: 800px) {
+@media(max-width:700px) {
 
-    nav {
-        display: none;
+    .hero h1 {
+        font-size: 38px;
     }
 
-    .tools {
-        grid-template-columns: repeat(2, 1fr);
+    .search-box {
+        flex-direction: column;
     }
 
-    .hero {
-        padding-top: 65px;
+    .search-box button {
+        height: 50px;
     }
-}
-
-@media (max-width: 500px) {
 
     .tools {
         grid-template-columns: 1fr;
-    }
-
-    h1 {
-        letter-spacing: -2px;
-    }
-
-    .search-box input {
-        padding-right: 105px;
     }
 
     footer {
         flex-direction: column;
         gap: 10px;
     }
+
 }
 
 </style>
+
 </head>
 
+
 <body>
+
 
 <header>
 
@@ -301,257 +259,98 @@ footer {
     </div>
 
     <nav>
-        <a href="#">Vehicle</a>
-        <a href="obd.html">OBD</a>
-        <a href="#">Parts</a>
-        <a href="#">VIN</a>
+
+        <a href="obd.html">
+            OBD Decoder
+        </a>
+
+        <a href="parts.html">
+            Part Finder
+        </a>
+
     </nav>
 
 </header>
 
 
-<main>
 
 <section class="hero">
 
-    <div class="badge">
-        AUTOMOTIVE DATABASE & TOOLS
-    </div>
-
     <h1>
-        Know Your Car.<br>
-        <span>Know Your Parts.</span>
+        Automotive
+        <span>Intelligence.</span>
     </h1>
 
-    <p class="subtitle">
-        Identify parts, decode fault codes, find OEM numbers,
-        discover aftermarket alternatives and explore vehicle specifications.
+    <p>
+        Decode diagnostic trouble codes,
+        identify automotive parts and find
+        technical information faster.
     </p>
 
+</section>
+
+
+
+<section class="obd-search">
 
     <div class="search-box">
 
         <input
+            id="obdCode"
             type="text"
-            id="mainSearch"
-            placeholder="Search VIN, part number, OBD code or vehicle..."
+            placeholder="Enter OBD-II code (e.g. P0420)"
             autocomplete="off"
         >
 
-        <button onclick="searchAuto()">
-            Search
+        <button onclick="decodeOBD()">
+            Decode
         </button>
 
     </div>
 
-
-    <div class="search-hint">
-        Try: P0420 · P0234 · 1234567 · Ford Focus 1.6 TDCi
-    </div>
-
-    <div id="searchStatus" class="search-status"></div>
-
 </section>
 
 
-<section class="section">
 
-    <h2 class="section-title">
-        AutoDecode Tools
-    </h2>
+<section class="tools">
 
 
-    <div class="tools">
-
-        <div class="tool" onclick="goTo('vehicle')">
-
-            <div class="icon">🚗</div>
-
-            <h3>
-                Vehicle Lookup
-            </h3>
-
-            <p>
-                Find vehicle specifications, engines,
-                generations and compatible parts.
-            </p>
-
-        </div>
-
-
-        <div class="tool" onclick="goTo('parts')">
-
-            <div class="icon">🔧</div>
-
-            <h3>
-                Part Finder
-            </h3>
-
-            <p>
-                Find the correct replacement part
-                for your vehicle.
-            </p>
-
-        </div>
-
-
-        <div class="tool" onclick="goTo('cross-reference')">
-
-            <div class="icon">🔄</div>
-
-            <h3>
-                OEM Cross Reference
-            </h3>
-
-            <p>
-                Compare OEM part numbers with
-                aftermarket equivalents.
-            </p>
-
-        </div>
-
-
-        <div class="tool" onclick="window.location.href='obd.html'">
-
-            <div class="icon">⚠️</div>
-
-            <h3>
-                OBD Decoder
-            </h3>
-
-            <p>
-                Decode diagnostic trouble codes
-                and understand possible causes.
-            </p>
-
-        </div>
-
-
-        <div class="tool" onclick="goTo('vin')">
-
-            <div class="icon">🔢</div>
-
-            <h3>
-                VIN Decoder
-            </h3>
-
-            <p>
-                Decode vehicle identification numbers
-                and retrieve vehicle data.
-            </p>
-
-        </div>
-
-
-        <div class="tool" onclick="goTo('engines')">
-
-            <div class="icon">🛠️</div>
-
-            <h3>
-                Engine Database
-            </h3>
-
-            <p>
-                Explore engine codes, specifications
-                and applications.
-            </p>
-
-        </div>
-
-
-        <div class="tool" onclick="goTo('wheels')">
-
-            <div class="icon">🛞</div>
-
-            <h3>
-                Tyre & Wheel Tools
-            </h3>
-
-            <p>
-                Calculate tyre sizes, circumference,
-                offset and wheel fitment.
-            </p>
-
-        </div>
-
-
-        <div class="tool" onclick="goTo('warning-lights')">
-
-            <div class="icon">💡</div>
-
-            <h3>
-                Warning Lights
-            </h3>
-
-            <p>
-                Identify dashboard warning lights
-                and understand what they mean.
-            </p>
-
-        </div>
-
-    </div>
-
-
-    <h2
-        class="section-title"
-        style="margin-top:55px;"
+    <a
+        class="tool"
+        href="obd.html"
     >
-        Popular Searches
-    </h2>
+
+        <h2>
+            🔧 OBD Decoder
+        </h2>
+
+        <p>
+            Decode OBD-II diagnostic trouble
+            codes and understand what they mean.
+        </p>
+
+    </a>
 
 
-    <div class="popular">
+    <a
+        class="tool"
+        href="parts.html"
+    >
 
-        <div class="tag" onclick="searchCode('P0420')">
-            P0420
-        </div>
+        <h2>
+            🔩 Part Finder
+        </h2>
 
-        <div class="tag" onclick="searchCode('P0234')">
-            P0234
-        </div>
+        <p>
+            Search OEM part numbers and
+            aftermarket alternatives.
+        </p>
 
-        <div class="tag" onclick="searchCode('P0299')">
-            P0299
-        </div>
+    </a>
 
-        <div class="tag">
-            OEM Part Numbers
-        </div>
-
-        <div class="tag">
-            Ford
-        </div>
-
-        <div class="tag">
-            BMW
-        </div>
-
-        <div class="tag">
-            Volkswagen
-        </div>
-
-        <div class="tag">
-            Mercedes-Benz
-        </div>
-
-        <div class="tag">
-            Toyota
-        </div>
-
-        <div class="tag">
-            Engine Codes
-        </div>
-
-        <div class="tag">
-            VIN Decoder
-        </div>
-
-    </div>
 
 </section>
 
-</main>
 
 
 <footer>
@@ -561,262 +360,58 @@ footer {
     </div>
 
     <div>
-        Automotive data & tools
+        Automotive diagnostic tools
     </div>
 
 </footer>
 
 
+
 <script>
 
-/*
-====================================================
-AUTODECODE UNIVERSAL SEARCH
-====================================================
-*/
-
-function searchAuto() {
-
-    const inputElement =
-        document.getElementById("mainSearch");
-
-    const status =
-        document.getElementById("searchStatus");
+function decodeOBD() {
 
     const input =
-        inputElement.value.trim().toUpperCase();
+        document
+        .getElementById("obdCode")
+        .value
+        .trim()
+        .toUpperCase();
 
 
     if (!input) {
 
-        status.textContent =
-            "Enter a VIN, part number, OBD code or vehicle.";
-
         return;
+
     }
 
 
-    /*
-    -----------------------------------------------
-    OBD-II CODE DETECTION
-    -----------------------------------------------
-    Examples:
-    P0420
-    P0234
-    P0300
-    B1234
-    C1234
-    U0100
-    -----------------------------------------------
-    */
-
-    const obdPattern =
-        /^[PBCU][0-3][0-9A-F]{3}$/;
-
-
-    if (obdPattern.test(input)) {
-
-        status.textContent =
-            "OBD code detected — opening decoder...";
-
-        setTimeout(function() {
-
-            window.location.href =
-                "obd.html?code=" +
-                encodeURIComponent(input);
-
-        }, 250);
-
-        return;
-    }
-
-
-    /*
-    -----------------------------------------------
-    VIN DETECTION
-    -----------------------------------------------
-    Standard VIN = 17 characters
-    -----------------------------------------------
-    */
-
-    const vinPattern =
-        /^[A-HJ-NPR-Z0-9]{17}$/;
-
-
-    if (vinPattern.test(input)) {
-
-        status.textContent =
-            "VIN detected — VIN Decoder coming soon.";
-
-        return;
-    }
-
-
-    /*
-    -----------------------------------------------
-    PART NUMBER DETECTION
-    -----------------------------------------------
-    Detects alphanumeric part numbers.
-    -----------------------------------------------
-    */
-
-    const partPattern =
-        /^[A-Z0-9][A-Z0-9._-]{4,}$/;
-
-
-    if (
-        partPattern.test(input) &&
-        /\d/.test(input)
-    ) {
-
-        status.textContent =
-            "Part number detected — Part Finder coming soon.";
-
-        return;
-    }
-
-
-    /*
-    -----------------------------------------------
-    VEHICLE DETECTION
-    -----------------------------------------------
-    -----------------------------------------------
-    */
-
-    const vehicleBrands = [
-
-        "FORD",
-        "BMW",
-        "VOLKSWAGEN",
-        "VW",
-        "AUDI",
-        "MERCEDES",
-        "MERCEDES-BENZ",
-        "TOYOTA",
-        "OPEL",
-        "RENAULT",
-        "PEUGEOT",
-        "CITROEN",
-        "VOLVO",
-        "SKODA",
-        "SEAT",
-        "NISSAN",
-        "HONDA",
-        "MAZDA",
-        "KIA",
-        "HYUNDAI",
-        "FIAT",
-        "ALFA ROMEO",
-        "JEEP",
-        "SUBARU",
-        "MITSUBISHI",
-        "SUZUKI",
-        "DACIA",
-        "LAND ROVER",
-        "PORSCHE",
-        "TESLA"
-
-    ];
-
-
-    const isVehicle =
-        vehicleBrands.some(function(brand) {
-
-            return input.includes(brand);
-
-        });
-
-
-    if (isVehicle) {
-
-        status.textContent =
-            "Vehicle detected — Vehicle Database coming soon.";
-
-        return;
-    }
-
-
-    /*
-    -----------------------------------------------
-    UNKNOWN SEARCH
-    -----------------------------------------------
-    */
-
-    status.textContent =
-        'AutoDecode couldn’t identify "' +
-        input +
-        '" yet.';
-
+    window.location.href =
+        "obd.html?code=" +
+        encodeURIComponent(input);
 
 }
 
 
-/*
-====================================================
-QUICK SEARCH
-====================================================
-*/
-
-function searchCode(code) {
-
-    document.getElementById("mainSearch").value =
-        code;
-
-    searchAuto();
-
-}
-
-
-/*
-====================================================
-FUTURE TOOL ROUTING
-====================================================
-*/
-
-function goTo(tool) {
-
-    const status =
-        document.getElementById("searchStatus");
-
-    const names = {
-
-        vehicle: "Vehicle Lookup",
-        parts: "Part Finder",
-        "cross-reference": "OEM Cross Reference",
-        vin: "VIN Decoder",
-        engines: "Engine Database",
-        wheels: "Tyre & Wheel Tools",
-        "warning-lights": "Warning Lights"
-
-    };
-
-
-    status.textContent =
-        names[tool] +
-        " is coming soon.";
-
-}
-
-
-/*
-====================================================
-ENTER KEY SUPPORT
-====================================================
-*/
+/* ENTER KEY */
 
 document
-    .getElementById("mainSearch")
-    .addEventListener("keydown", function(event) {
+.getElementById("obdCode")
+.addEventListener(
+    "keydown",
+    function(event) {
 
         if (event.key === "Enter") {
 
-            searchAuto();
+            decodeOBD();
 
         }
 
-    });
+    }
+);
 
 </script>
+
 
 </body>
 </html>
