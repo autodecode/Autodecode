@@ -7,8 +7,10 @@
 
 <title>AutoDecode — Automotive Diagnostic Tools</title>
 
-<meta name="description"
-content="AutoDecode automotive diagnostic tools, OBD decoder and automotive part finder.">
+<meta
+    name="description"
+    content="AutoDecode automotive diagnostic tools, OBD decoder and automotive part finder."
+>
 
 <style>
 
@@ -49,6 +51,12 @@ header {
     color: #4da3ff;
 }
 
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
 nav {
     display: flex;
     gap: 24px;
@@ -65,11 +73,53 @@ nav a:hover {
 }
 
 
+/* LANGUAGE SWITCH */
+
+.language-switch {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    background: #14181d;
+    border: 1px solid #303842;
+
+    border-radius: 8px;
+
+    padding: 3px;
+}
+
+.language-switch button {
+    border: none;
+    background: transparent;
+
+    color: #7f8995;
+
+    padding: 6px 9px;
+
+    border-radius: 6px;
+
+    font-size: 11px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.language-switch button:hover {
+    color: white;
+}
+
+.language-switch button.active {
+    background: #4da3ff;
+    color: #ffffff;
+}
+
+
 /* HERO */
 
 .hero {
     max-width: 1000px;
     margin: auto;
+
     padding: 80px 20px 55px;
 }
 
@@ -85,8 +135,11 @@ nav a:hover {
 
 .hero p {
     color: #858f9b;
+
     font-size: 17px;
+
     line-height: 1.6;
+
     max-width: 650px;
 }
 
@@ -95,7 +148,9 @@ nav a:hover {
 
 .obd-search {
     max-width: 1000px;
+
     margin: 0 auto 60px;
+
     padding: 0 20px;
 }
 
@@ -110,7 +165,9 @@ nav a:hover {
     height: 60px;
 
     background: #14181d;
+
     border: 1px solid #303842;
+
     border-radius: 10px;
 
     color: white;
@@ -149,6 +206,7 @@ nav a:hover {
 
 .tools {
     max-width: 1000px;
+
     margin: auto;
 
     padding: 0 20px 90px;
@@ -221,6 +279,26 @@ footer {
 
 @media(max-width:700px) {
 
+    header {
+        padding: 0 20px;
+    }
+
+    .header-right {
+        gap: 12px;
+    }
+
+    nav {
+        gap: 12px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+    .language-switch button {
+        padding: 5px 7px;
+    }
+
     .hero h1 {
         font-size: 38px;
     }
@@ -254,21 +332,49 @@ footer {
 
 <header>
 
+
     <div class="logo">
         Auto<span>Decode</span>
     </div>
 
-    <nav>
 
-        <a href="obd.html">
-            OBD Decoder
-        </a>
+    <div class="header-right">
 
-        <a href="parts.html">
-            Part Finder
-        </a>
 
-    </nav>
+        <nav>
+
+            <a href="obd.html" data-i18n="obd">
+                OBD Decoder
+            </a>
+
+            <a href="parts.html" data-i18n="parts">
+                Part Finder
+            </a>
+
+        </nav>
+
+
+        <div class="language-switch">
+
+            <button
+                id="langEN"
+                onclick="setLanguage('en')"
+            >
+                EN
+            </button>
+
+            <button
+                id="langDE"
+                onclick="setLanguage('de')"
+            >
+                DE
+            </button>
+
+        </div>
+
+
+    </div>
+
 
 </header>
 
@@ -277,14 +383,22 @@ footer {
 <section class="hero">
 
     <h1>
-        Automotive
-        <span>Intelligence.</span>
+        <span data-i18n="heroTitle">
+            Automotive
+        </span>
+
+        <span data-i18n="heroTitleAccent">
+            Intelligence.
+        </span>
     </h1>
 
-    <p>
+
+    <p data-i18n="heroDescription">
+
         Decode diagnostic trouble codes,
         identify automotive parts and find
         technical information faster.
+
     </p>
 
 </section>
@@ -293,20 +407,30 @@ footer {
 
 <section class="obd-search">
 
+
     <div class="search-box">
+
 
         <input
             id="obdCode"
             type="text"
+            data-placeholder-en="Enter OBD-II code (e.g. P0420)"
+            data-placeholder-de="OBD-II-Code eingeben (z. B. P0420)"
             placeholder="Enter OBD-II code (e.g. P0420)"
             autocomplete="off"
         >
 
-        <button onclick="decodeOBD()">
+
+        <button
+            onclick="decodeOBD()"
+            data-i18n="decode"
+        >
             Decode
         </button>
 
+
     </div>
+
 
 </section>
 
@@ -320,16 +444,19 @@ footer {
         href="obd.html"
     >
 
-        <h2>
+        <h2 data-i18n="obdTitle">
             🔧 OBD Decoder
         </h2>
 
-        <p>
+        <p data-i18n="obdDescription">
+
             Decode OBD-II diagnostic trouble
             codes and understand what they mean.
+
         </p>
 
     </a>
+
 
 
     <a
@@ -337,13 +464,15 @@ footer {
         href="parts.html"
     >
 
-        <h2>
+        <h2 data-i18n="partsTitle">
             🔩 Part Finder
         </h2>
 
-        <p>
+        <p data-i18n="partsDescription">
+
             Search OEM part numbers and
             aftermarket alternatives.
+
         </p>
 
     </a>
@@ -359,7 +488,7 @@ footer {
         © 2026 AutoDecode
     </div>
 
-    <div>
+    <div data-i18n="footer">
         Automotive diagnostic tools
     </div>
 
@@ -368,6 +497,196 @@ footer {
 
 
 <script>
+
+
+/* =====================================================
+   TRANSLATIONS
+===================================================== */
+
+const translations = {
+
+    en: {
+
+        obd:
+            "OBD Decoder",
+
+        parts:
+            "Part Finder",
+
+        heroTitle:
+            "Automotive",
+
+        heroTitleAccent:
+            "Intelligence.",
+
+        heroDescription:
+            "Decode diagnostic trouble codes, identify automotive parts and find technical information faster.",
+
+        decode:
+            "Decode",
+
+        obdTitle:
+            "🔧 OBD Decoder",
+
+        obdDescription:
+            "Decode OBD-II diagnostic trouble codes and understand what they mean.",
+
+        partsTitle:
+            "🔩 Part Finder",
+
+        partsDescription:
+            "Search OEM part numbers and aftermarket alternatives.",
+
+        footer:
+            "Automotive diagnostic tools"
+
+    },
+
+
+    de: {
+
+        obd:
+            "OBD-Decoder",
+
+        parts:
+            "Teilefinder",
+
+        heroTitle:
+            "Automobil",
+
+        heroTitleAccent:
+            "Intelligenz.",
+
+        heroDescription:
+            "Diagnosefehlercodes entschlüsseln, Fahrzeugteile identifizieren und technische Informationen schneller finden.",
+
+        decode:
+            "Suchen",
+
+        obdTitle:
+            "🔧 OBD-Decoder",
+
+        obdDescription:
+            "OBD-II-Diagnosefehlercodes entschlüsseln und ihre Bedeutung verstehen.",
+
+        partsTitle:
+            "🔩 Teilefinder",
+
+        partsDescription:
+            "OEM-Teilenummern und passende Zubehörteile suchen.",
+
+        footer:
+            "Werkzeuge für die Fahrzeugdiagnose"
+
+    }
+
+};
+
+
+/* =====================================================
+   SET LANGUAGE
+===================================================== */
+
+function setLanguage(language) {
+
+    localStorage.setItem(
+        "autodecode_language",
+        language
+    );
+
+
+    document.documentElement.lang =
+        language;
+
+
+    /*
+       Translate normal elements
+    */
+
+    document
+        .querySelectorAll("[data-i18n]")
+        .forEach(function(element) {
+
+            const key =
+                element.getAttribute(
+                    "data-i18n"
+                );
+
+
+            if (
+                translations[language] &&
+                translations[language][key]
+            ) {
+
+                element.textContent =
+                    translations[language][key];
+
+            }
+
+        });
+
+
+    /*
+       Translate search placeholder
+    */
+
+    const input =
+        document.getElementById(
+            "obdCode"
+        );
+
+
+    if (input) {
+
+        input.placeholder =
+            input.getAttribute(
+                "data-placeholder-" +
+                language
+            );
+
+    }
+
+
+    /*
+       Active language button
+    */
+
+    document
+        .getElementById("langEN")
+        .classList.toggle(
+            "active",
+            language === "en"
+        );
+
+
+    document
+        .getElementById("langDE")
+        .classList.toggle(
+            "active",
+            language === "de"
+        );
+
+}
+
+
+/* =====================================================
+   LOAD SAVED LANGUAGE
+===================================================== */
+
+const savedLanguage =
+    localStorage.getItem(
+        "autodecode_language"
+    ) || "en";
+
+
+setLanguage(
+    savedLanguage
+);
+
+
+/* =====================================================
+   OBD SEARCH
+===================================================== */
 
 function decodeOBD() {
 
@@ -386,14 +705,29 @@ function decodeOBD() {
     }
 
 
+    /*
+       Preserve selected language
+       when opening OBD decoder.
+    */
+
+    const language =
+        localStorage.getItem(
+            "autodecode_language"
+        ) || "en";
+
+
     window.location.href =
         "obd.html?code=" +
-        encodeURIComponent(input);
+        encodeURIComponent(input) +
+        "&lang=" +
+        language;
 
 }
 
 
-/* ENTER KEY */
+/* =====================================================
+   ENTER KEY
+===================================================== */
 
 document
 .getElementById("obdCode")
