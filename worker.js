@@ -2,13 +2,21 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
 
+    // =========================================================
+    // D1 PARTS API
+    // =========================================================
+
     if (url.pathname === "/api/parts") {
       const code = url.searchParams.get("code");
 
       if (!code) {
         return Response.json(
-          { error: "Missing parameter: code" },
-          { status: 400 }
+          {
+            error: "Missing parameter: code"
+          },
+          {
+            status: 400
+          }
         );
       }
 
@@ -112,8 +120,8 @@ export default {
             m.name,
             pn.part_number
         `)
-        .bind(normalizedCode)
-        .all();
+          .bind(normalizedCode)
+          .all();
 
         if (!result.results.length) {
           return Response.json(
@@ -122,7 +130,9 @@ export default {
               query: code,
               results: []
             },
-            { status: 404 }
+            {
+              status: 404
+            }
           );
         }
 
@@ -138,11 +148,17 @@ export default {
             error: "Database query failed",
             message: error.message
           },
-          { status: 500 }
+          {
+            status: 500
+          }
         );
       }
     }
 
-    return new Response("AutoDecode API OK");
+    // =========================================================
+    // WEBSITE / STATIC FILES
+    // =========================================================
+
+    return env.ASSETS.fetch(request);
   }
 };
