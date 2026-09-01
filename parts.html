@@ -11,8 +11,6 @@
 <meta name="description"
 content="AutoDecode automotive part finder. Search OEM and aftermarket automotive parts.">
 
-<script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
-
 <style>
 
 * {
@@ -1629,683 +1627,304 @@ function escapeHTML(value) {
 
 
 /* =====================================================
-   NORMALIZE SEARCH TEXT
-===================================================== */
-
-function normalizeSearch(value) {
-
-    return String(value || "")
-        .trim()
-        .toLowerCase()
-        .replace(/\s+/g, " ");
-
-}
-
-
-/* =====================================================
-   PART DATABASE
+   D1 API
 =====================================================
 
-   IMPORTANT:
-
-   There is NO parts.yaml anymore.
-
-   Every manufacturer gets its own YAML file:
-
-       data/parts/ford.yaml
-       data/parts/bmw.yaml
-       data/parts/volkswagen.yaml
-       data/parts/audi.yaml
-       data/parts/mercedes-benz.yaml
-       data/parts/opel.yaml
-       etc.
+   parts.html
+        ↓
+   /api/parts?code=...
+        ↓
+   Cloudflare Worker
+        ↓
+   D1 database
 
 ===================================================== */
 
 
 /*
-   Manufacturer routing table.
+   Relative API URL.
 
-   Add a manufacturer here when its YAML file is created.
+   This assumes parts.html is served from the
+   same domain as the Cloudflare Worker.
 
-   The key is what the user can type into the Make field.
+   Example:
 
-   The value is the actual filename.
+       https://autodecode.example.com/parts.html
+
+       https://autodecode.example.com/api/parts?code=GDB1330
+
 */
 
-const partDatabaseFiles = {
-
-    ford:
-        "data/parts/ford.yaml",
-
-    bmw:
-        "data/parts/bmw.yaml",
-
-    audi:
-        "data/parts/audi.yaml",
-
-    volkswagen:
-        "data/parts/volkswagen.yaml",
-
-    mercedes:
-        "data/parts/mercedes.yaml",
-
-    "mercedes-benz":
-        "data/parts/mercedes.yaml",
-
-    opel:
-        "data/parts/opel.yaml",
-
-    vauxhall:
-        "data/parts/opel.yaml",
-
-    peugeot:
-        "data/parts/peugeot.yaml",
-
-    citroen:
-        "data/parts/citroen.yaml",
-
-    renault:
-        "data/parts/renault.yaml",
-
-    dacia:
-        "data/parts/dacia.yaml",
-
-    volvo:
-        "data/parts/volvo.yaml",
-
-    mazda:
-        "data/parts/mazda.yaml",
-
-    toyota:
-        "data/parts/toyota.yaml",
-
-    honda:
-        "data/parts/honda.yaml",
-
-    nissan:
-        "data/parts/nissan.yaml",
-
-    hyundai:
-        "data/parts/hyundai.yaml",
-
-    kia:
-        "data/parts/kia.yaml",
-
-    fiat:
-        "data/parts/fiat.yaml",
-
-    alfa:
-        "data/parts/alfa.yaml",
-
-    "alfa romeo":
-        "data/parts/alfa.yaml",
-
-    seat:
-        "data/parts/seat.yaml",
-
-    skoda:
-        "data/parts/skoda.yaml",
-
-    skoda:
-        "data/parts/skoda.yaml",
-
-    suzuki:
-        "data/parts/suzuki.yaml",
-
-    mitsubishi:
-        "data/parts/mitsubishi.yaml",
-
-    subaru:
-        "data/parts/subaru.yaml",
-
-    saab:
-        "data/parts/saab.yaml",
-
-    landrover:
-        "data/parts/landrover.yaml",
-
-    "land rover":
-        "data/parts/landrover.yaml",
-
-    jaguar:
-        "data/parts/jaguar.yaml",
-
-    porsche:
-        "data/parts/porsche.yaml"
-
-};
-
-
-/*
-   Cache.
-
-   Once a manufacturer YAML is loaded,
-   it remains in memory for the current page session.
-*/
-
-const partsDatabaseCache = {};
+const PARTS_API_URL = "/api/parts";
 
 
 /* =====================================================
-   DATABASE FILE RESOLUTION
+   NORMALIZE API RESULT
 ===================================================== */
 
-function resolveManufacturerFile(make) {
+function normalizeApiPart(row) {
 
-    const normalizedMake =
-        normalizeSearch(make);
-
-    if (!normalizedMake) {
+    if (!row) {
 
         return null;
 
     }
 
-    return (
-        partDatabaseFiles[
-            normalizedMake
-        ] || null
-    );
-
-}
-
-
-/* =====================================================
-   LOAD ONE MANUFACTURER DATABASE
-===================================================== */
-
-async function loadManufacturerDatabase(make) {
-
-    const file =
-        resolveManufacturerFile(make);
-
-
-    if (!file) {
-
-        return [];
-
-    }
-
 
     /*
-       Already loaded?
+       Worker returns:
+
+       part_id
+       part_name
+       description
+       part_type
+       quantity_per_vehicle
+       requires_coding
+       manufacturer
+       part_number
+       oe_numbers
+       equivalents
+       compatible_engines
+       generations
+       compatible_from
+       compatible_to
     */
 
-    if (
-        Object.prototype.hasOwnProperty.call(
-            partsDatabaseCache,
-            file
-        )
-    ) {
 
-        return partsDatabaseCache[file];
+    const part = {
+
+        id:
+            row.part_id ?? "",
+
+        name:
+            row.part_name ||
+            row.part_number ||
+            "",
+
+        description:
+            row.description ||
+            "",
+
+        type:
+            row.part_type ||
+            "",
+
+        category:
+            row.part_type ||
+            "",
+
+        quantity_per_vehicle:
+            row.quantity_per_vehicle,
+
+        requires_coding:
+            row.requires_coding,
+
+        manufacturer:
+            row.manufacturer ||
+            "",
+
+        part_number:
+            row.part_number ||
+            "",
+
+        oe_numbers: [],
+
+        equivalents: [],
+
+        compatible_vehicles: []
+
+    };
+
+
+    /* =================================================
+       OEM NUMBERS
+    ================================================= */
+
+    if (row.oe_numbers) {
+
+        const values =
+            String(row.oe_numbers)
+                .split(",")
+                .map(function(value) {
+
+                    return value.trim();
+
+                })
+                .filter(Boolean);
+
+
+        part.oe_numbers =
+            values.map(function(value) {
+
+                return {
+
+                    manufacturer: "",
+
+                    number: value
+
+                };
+
+            });
 
     }
 
 
-    const response =
-        await fetch(file);
+    /* =================================================
+       EQUIVALENTS
+    ================================================= */
 
+    if (row.equivalents) {
 
-    if (!response.ok) {
+        const values =
+            String(row.equivalents)
+                .split(",")
+                .map(function(value) {
 
-        throw new Error(
-            getTranslation("databaseError") +
-            " (" +
-            response.status +
-            "): " +
-            file
-        );
+                    return value.trim();
 
-    }
+                })
+                .filter(Boolean);
 
 
-    const yamlText =
-        await response.text();
+        part.equivalents =
+            values.map(function(value) {
 
+                const separator =
+                    value.indexOf(":");
 
-    const data =
-        jsyaml.load(yamlText);
 
+                if (separator !== -1) {
 
-    if (!Array.isArray(data)) {
+                    return {
 
-        throw new Error(
-            "Invalid database format: " +
-            file
-        );
-
-    }
-
-
-    partsDatabaseCache[file] =
-        data;
-
-
-    return data;
-
-}
-
-
-/* =====================================================
-   LOAD ALL MANUFACTURER DATABASES
-===================================================== */
-
-async function loadAllPartsDatabases() {
-
-    const files =
-        [
-            ...new Set(
-                Object.values(
-                    partDatabaseFiles
-                )
-            )
-        ];
-
-
-    const databases =
-        await Promise.all(
-            files.map(
-                async function(file) {
-
-                    if (
-                        Object.prototype.hasOwnProperty.call(
-                            partsDatabaseCache,
-                            file
-                        )
-                    ) {
-
-                        return partsDatabaseCache[file];
-
-                    }
-
-
-                    const response =
-                        await fetch(file);
-
-
-                    /*
-                       Missing manufacturer files are ignored.
-
-                       This allows us to register future manufacturers
-                       in the routing table before their database exists.
-                    */
-
-                    if (!response.ok) {
-
-                        console.warn(
-                            "Manufacturer database not available:",
-                            file
-                        );
-
-                        return [];
-
-                    }
-
-
-                    const yamlText =
-                        await response.text();
-
-
-                    const data =
-                        jsyaml.load(
-                            yamlText
-                        );
-
-
-                    if (
-                        !Array.isArray(data)
-                    ) {
-
-                        console.warn(
-                            "Invalid database format:",
-                            file
-                        );
-
-                        return [];
-
-                    }
-
-
-                    partsDatabaseCache[file] =
-                        data;
-
-
-                    return data;
-
-                }
-            )
-        );
-
-
-    return databases.flat();
-
-}
-
-
-/* =====================================================
-   GET SEARCH DATABASE
-===================================================== */
-
-async function getSearchDatabase(make) {
-
-    /*
-       If Make is supplied:
-       load ONLY that manufacturer's database.
-
-       This is much faster and is the normal vehicle search.
-    */
-
-    if (make) {
-
-        const file =
-            resolveManufacturerFile(
-                make
-            );
-
-
-        /*
-           Unknown manufacturer.
-
-           Do not automatically scan every database.
-           This avoids unnecessary network requests.
-        */
-
-        if (!file) {
-
-            return [];
-
-        }
-
-
-        return loadManufacturerDatabase(
-            make
-        );
-
-    }
-
-
-    /*
-       No Make supplied.
-
-       This normally happens when the user searches
-       only by OEM / part number.
-
-       In that case we search every registered manufacturer.
-    */
-
-    return loadAllPartsDatabases();
-
-}
-
-
-/* =====================================================
-   CHECK VEHICLE COMPATIBILITY
-===================================================== */
-
-function vehicleMatches(part, filters) {
-
-    if (
-        !part.compatible_vehicles ||
-        !Array.isArray(
-            part.compatible_vehicles
-        )
-    ) {
-
-        return false;
-
-    }
-
-
-    return part.compatible_vehicles.some(
-        function(vehicle) {
-
-            if (
-                filters.make &&
-                normalizeSearch(vehicle.make)
-                    .indexOf(filters.make) === -1
-            ) {
-
-                return false;
-
-            }
-
-
-            if (
-                filters.model &&
-                normalizeSearch(vehicle.model)
-                    .indexOf(filters.model) === -1
-            ) {
-
-                return false;
-
-            }
-
-
-            if (filters.year) {
-
-                const year =
-                    Number(filters.year);
-
-
-                const from =
-                    Number(
-                        vehicle.years &&
-                        vehicle.years.from
-                    );
-
-
-                const to =
-                    Number(
-                        vehicle.years &&
-                        vehicle.years.to
-                    );
-
-
-                if (
-                    !isNaN(from) &&
-                    !isNaN(to)
-                ) {
-
-                    if (
-                        year < from ||
-                        year > to
-                    ) {
-
-                        return false;
-
-                    }
-
-                }
-
-            }
-
-
-            if (filters.engine) {
-
-                const searchEngine =
-                    normalizeSearch(
-                        filters.engine
-                    );
-
-
-                const engineMatch =
-                    Array.isArray(
-                        vehicle.engines
-                    ) &&
-                    vehicle.engines.some(
-                        function(engine) {
-
-                            if (
-                                normalizeSearch(
-                                    engine.engine
-                                ).indexOf(
-                                    searchEngine
-                                ) !== -1
-                            ) {
-
-                                return true;
-
-                            }
-
-
-                            if (
-                                Array.isArray(
-                                    engine.engine_codes
+                        manufacturer:
+                            value
+                                .substring(
+                                    0,
+                                    separator
                                 )
-                            ) {
+                                .trim(),
 
-                                return engine.engine_codes.some(
-                                    function(code) {
+                        part_number:
+                            value
+                                .substring(
+                                    separator + 1
+                                )
+                                .trim()
 
-                                        return normalizeSearch(
-                                            code
-                                        ) === searchEngine;
-
-                                    }
-                                );
-
-                            }
-
-
-                            return false;
-
-                        }
-                    );
-
-
-                if (!engineMatch) {
-
-                    return false;
+                    };
 
                 }
 
-            }
+
+                return {
+
+                    manufacturer: "",
+
+                    part_number: value
+
+                };
+
+            });
+
+    }
 
 
-            return true;
+    /* =================================================
+       COMPATIBLE VEHICLES
+    ================================================= */
+
+    if (
+        row.compatible_engines ||
+        row.generations ||
+        row.compatible_from ||
+        row.compatible_to
+    ) {
+
+        const engines = [];
+
+
+        if (row.compatible_engines) {
+
+            String(row.compatible_engines)
+                .split(",")
+                .map(function(value) {
+
+                    return value.trim();
+
+                })
+                .filter(Boolean)
+                .forEach(function(value) {
+
+                    engines.push({
+
+                        engine: value,
+
+                        engine_codes: []
+
+                    });
+
+                });
 
         }
-    );
+
+
+        part.compatible_vehicles.push({
+
+            make:
+                row.vehicle_make ||
+                "",
+
+            model:
+                row.vehicle_model ||
+                "",
+
+            generation:
+                row.generations ||
+                "",
+
+            years: {
+
+                from:
+                    row.compatible_from,
+
+                to:
+                    row.compatible_to
+
+            },
+
+            engines:
+
+                engines
+
+        });
+
+    }
+
+
+    return part;
 
 }
 
 
 /* =====================================================
-   PART NUMBER MATCH
-===================================================== */
-
-function partNumberMatches(part, search) {
-
-    if (!search) {
-
-        return false;
-
-    }
-
-
-    const target =
-        normalizeSearch(search)
-            .replace(
-                /[^a-z0-9]/g,
-                ""
-            );
-
-
-    function clean(value) {
-
-        return normalizeSearch(value)
-            .replace(
-                /[^a-z0-9]/g,
-                ""
-            );
-
-    }
-
-
-    if (
-        clean(part.part_number) === target
-    ) {
-
-        return true;
-
-    }
-
-
-    if (
-        Array.isArray(
-            part.oe_numbers
-        )
-    ) {
-
-        for (
-            const oe of part.oe_numbers
-        ) {
-
-            if (
-                oe &&
-                clean(oe.number) === target
-            ) {
-
-                return true;
-
-            }
-
-        }
-
-    }
-
-
-    if (
-        Array.isArray(
-            part.equivalents
-        )
-    ) {
-
-        for (
-            const eq of part.equivalents
-        ) {
-
-            if (
-                eq &&
-                clean(eq.part_number) === target
-            ) {
-
-                return true;
-
-            }
-
-        }
-
-    }
-
-
-    return false;
-
-}
-
-
-/* =====================================================
-   SEARCH PARTS
+   SEARCH PARTS — D1 API
 ===================================================== */
 
 async function searchParts() {
 
     const make =
-        normalizeSearch(
-            document
-                .getElementById("make")
-                .value
-        );
+        document
+            .getElementById("make")
+            .value
+            .trim();
 
 
     const model =
-        normalizeSearch(
-            document
-                .getElementById("model")
-                .value
-        );
+        document
+            .getElementById("model")
+            .value
+            .trim();
 
 
     const year =
@@ -2316,17 +1935,17 @@ async function searchParts() {
 
 
     const engine =
-        normalizeSearch(
-            document
-                .getElementById("engine")
-                .value
-        );
+        document
+            .getElementById("engine")
+            .value
+            .trim();
 
 
     const category =
         document
             .getElementById("category")
-            .value;
+            .value
+            .trim();
 
 
     const partNumber =
@@ -2335,6 +1954,10 @@ async function searchParts() {
             .value
             .trim();
 
+
+    /*
+       At least one search parameter is required.
+    */
 
     if (
         !make &&
@@ -2361,90 +1984,222 @@ async function searchParts() {
 
     try {
 
-        const database =
-            await getSearchDatabase(
+        /*
+           The current Worker requires "code".
+
+           Therefore a part-number search is sent
+           directly to /api/parts.
+
+           If no part number is supplied, we currently
+           cannot perform a vehicle-only search with the
+           existing Worker endpoint.
+        */
+
+        if (!partNumber) {
+
+            showDatabaseError(
+                getTranslation(
+                    "databaseError"
+                ) +
+                " — enter an OEM / Part Number."
+            );
+
+            return;
+
+        }
+
+
+        const params =
+            new URLSearchParams();
+
+
+        params.set(
+            "code",
+            partNumber
+        );
+
+
+        /*
+           These parameters are included so the frontend
+           is already prepared for Worker-side filtering.
+        */
+
+        if (make) {
+
+            params.set(
+                "make",
                 make
             );
 
+        }
 
-        const filters = {
 
-            make,
-            model,
-            year,
-            engine,
-            category,
-            partNumber
+        if (model) {
 
-        };
+            params.set(
+                "model",
+                model
+            );
 
+        }
+
+
+        if (year) {
+
+            params.set(
+                "year",
+                year
+            );
+
+        }
+
+
+        if (engine) {
+
+            params.set(
+                "engine",
+                engine
+            );
+
+        }
+
+
+        if (category) {
+
+            params.set(
+                "category",
+                category
+            );
+
+        }
+
+
+        const response =
+            await fetch(
+                PARTS_API_URL +
+                "?" +
+                params.toString(),
+                {
+
+                    method: "GET",
+
+                    headers: {
+
+                        "Accept":
+                            "application/json"
+
+                    }
+
+                }
+            );
+
+
+        let data;
+
+
+        try {
+
+            data =
+                await response.json();
+
+        }
+
+        catch(parseError) {
+
+            throw new Error(
+                "Invalid response from parts API."
+            );
+
+        }
+
+
+        /*
+           Worker returns 404 when no part exists.
+        */
+
+        if (
+            response.status === 404 ||
+            !data ||
+            data.found === false
+        ) {
+
+            displayResults([]);
+
+            return;
+
+        }
+
+
+        if (!response.ok) {
+
+            throw new Error(
+                data.error ||
+                "HTTP " +
+                response.status
+            );
+
+        }
+
+
+        if (
+            !data.results ||
+            !Array.isArray(
+                data.results
+            )
+        ) {
+
+            throw new Error(
+                "The parts API returned an invalid result."
+            );
+
+        }
+
+
+        /*
+           Convert D1 rows into the format
+           expected by the existing renderer.
+        */
 
         const results =
-            database.filter(
+            data.results
+                .map(
+                    normalizeApiPart
+                )
+                .filter(Boolean);
+
+
+        /*
+           Optional client-side filtering.
+
+           This is useful with the current Worker,
+           which primarily searches by part number.
+        */
+
+        const filteredResults =
+            results.filter(
                 function(part) {
-
-                    if (!part) {
-
-                        return false;
-
-                    }
-
-
-                    /*
-                       PART NUMBER
-
-                       Search is exact after removing
-                       separators such as -, spaces and /.
-                    */
-
-                    if (partNumber) {
-
-                        if (
-                            !partNumberMatches(
-                                part,
-                                partNumber
-                            )
-                        ) {
-
-                            return false;
-
-                        }
-
-                    }
-
 
                     /*
                        CATEGORY
+
+                       Only apply if the Worker has returned
+                       a part type/category.
                     */
 
-                    if (
-                        category &&
-                        normalizeSearch(
-                            part.category
-                        ) !== category
-                    ) {
+                    if (category) {
 
-                        return false;
+                        const partCategory =
+                            normalizeSearch(
+                                part.category
+                            );
 
-                    }
-
-
-                    /*
-                       VEHICLE
-                    */
-
-                    if (
-                        make ||
-                        model ||
-                        year ||
-                        engine
-                    ) {
 
                         if (
-                            !vehicleMatches(
-                                part,
-                                filters
-                            )
+                            partCategory &&
+                            partCategory !==
+                                normalizeSearch(
+                                    category
+                                )
                         ) {
 
                             return false;
@@ -2461,7 +2216,7 @@ async function searchParts() {
 
 
         displayResults(
-            results
+            filteredResults
         );
 
     }
@@ -2469,13 +2224,34 @@ async function searchParts() {
 
     catch(error) {
 
-        console.error(error);
+        console.error(
+            "AutoDecode Parts API error:",
+            error
+        );
+
 
         showDatabaseError(
-            error.message
+            error.message ||
+            getTranslation(
+                "databaseError"
+            )
         );
 
     }
+
+}
+
+
+/* =====================================================
+   NORMALIZE SEARCH
+===================================================== */
+
+function normalizeSearch(value) {
+
+    return String(value || "")
+        .trim()
+        .toLowerCase()
+        .replace(/\s+/g, " ");
 
 }
 
@@ -2668,13 +2444,42 @@ function renderPart(part) {
             }
 
             ${
-                part.category
+                part.category &&
+                part.category !== part.type
                 ?
                 `
                 <span class="part-badge">
                     ${escapeHTML(
                         part.category
                     )}
+                </span>
+                `
+                :
+                ""
+            }
+
+            ${
+                part.quantity_per_vehicle !== null &&
+                part.quantity_per_vehicle !== undefined
+                ?
+                `
+                <span class="part-badge">
+                    ×
+                    ${escapeHTML(
+                        part.quantity_per_vehicle
+                    )}
+                </span>
+                `
+                :
+                ""
+            }
+
+            ${
+                part.requires_coding
+                ?
+                `
+                <span class="part-badge">
+                    Coding required
                 </span>
                 `
                 :
@@ -2717,6 +2522,13 @@ function renderPart(part) {
         part.oe_numbers.forEach(
             function(oe) {
 
+                if (!oe) {
+
+                    return;
+
+                }
+
+
                 html += `
 
                     <span class="number-badge">
@@ -2733,7 +2545,7 @@ function renderPart(part) {
                         }
 
                         ${escapeHTML(
-                            oe.number
+                            oe.number || ""
                         )}
 
                     </span>
@@ -2786,6 +2598,13 @@ function renderPart(part) {
         part.equivalents.forEach(
             function(eq) {
 
+                if (!eq) {
+
+                    return;
+
+                }
+
+
                 html += `
 
                     <span class="number-badge">
@@ -2802,7 +2621,7 @@ function renderPart(part) {
                         }
 
                         ${escapeHTML(
-                            eq.part_number
+                            eq.part_number || ""
                         )}
 
                     </span>
@@ -2902,7 +2721,11 @@ function renderVehicle(vehicle) {
     if (vehicle.model) {
 
         title +=
-            " " +
+            (
+                title
+                ? " "
+                : ""
+            ) +
             vehicle.model;
 
     }
@@ -2911,8 +2734,25 @@ function renderVehicle(vehicle) {
     if (vehicle.generation) {
 
         title +=
-            " " +
+            (
+                title
+                ? " "
+                : ""
+            ) +
             vehicle.generation;
+
+    }
+
+
+    /*
+       If the Worker currently doesn't return
+       make/model, don't display an empty title.
+    */
+
+    if (!title) {
+
+        title =
+            "Vehicle compatibility";
 
     }
 
@@ -2923,7 +2763,9 @@ function renderVehicle(vehicle) {
     if (
         vehicle.years &&
         vehicle.years.from !== undefined &&
-        vehicle.years.to !== undefined
+        vehicle.years.from !== null &&
+        vehicle.years.to !== undefined &&
+        vehicle.years.to !== null
     ) {
 
         details +=
@@ -2954,6 +2796,13 @@ function renderVehicle(vehicle) {
 
         vehicle.engines.forEach(
             function(engine) {
+
+                if (!engine) {
+
+                    return;
+
+                }
+
 
                 details +=
                     details
