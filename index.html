@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
@@ -73,44 +74,35 @@ nav a:hover {
 }
 
 
-/* LANGUAGE SWITCH */
+/* LANGUAGE SELECTOR */
 
-.language-switch {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-
+.language-select {
     background: #14181d;
+
     border: 1px solid #303842;
+
+    color: #dce2e8;
 
     border-radius: 8px;
 
-    padding: 3px;
-}
+    padding: 7px 10px;
 
-.language-switch button {
-    border: none;
-    background: transparent;
+    font-size: 12px;
 
-    color: #7f8995;
-
-    padding: 6px 9px;
-
-    border-radius: 6px;
-
-    font-size: 11px;
     font-weight: bold;
 
     cursor: pointer;
+
+    outline: none;
 }
 
-.language-switch button:hover {
+.language-select:focus {
+    border-color: #4da3ff;
+}
+
+.language-select option {
+    background: #14181d;
     color: white;
-}
-
-.language-switch button.active {
-    background: #4da3ff;
-    color: #ffffff;
 }
 
 
@@ -118,6 +110,7 @@ nav a:hover {
 
 .hero {
     max-width: 1000px;
+
     margin: auto;
 
     padding: 80px 20px 55px;
@@ -125,7 +118,9 @@ nav a:hover {
 
 .hero h1 {
     font-size: 52px;
+
     line-height: 1.1;
+
     margin-bottom: 18px;
 }
 
@@ -156,6 +151,7 @@ nav a:hover {
 
 .search-box {
     display: flex;
+
     gap: 10px;
 }
 
@@ -295,8 +291,12 @@ footer {
         font-size: 12px;
     }
 
-    .language-switch button {
-        padding: 5px 7px;
+    .language-select {
+        font-size: 11px;
+
+        padding: 6px 7px;
+
+        max-width: 85px;
     }
 
     .hero h1 {
@@ -317,6 +317,7 @@ footer {
 
     footer {
         flex-direction: column;
+
         gap: 10px;
     }
 
@@ -343,34 +344,59 @@ footer {
 
         <nav>
 
-            <a href="obd.html" data-i18n="obd">
+            <a
+                href="obd.html"
+                data-i18n="obd"
+            >
                 OBD Decoder
             </a>
 
-            <a href="parts.html" data-i18n="parts">
+            <a
+                href="parts.html"
+                data-i18n="parts"
+            >
                 Part Finder
             </a>
 
         </nav>
 
 
-        <div class="language-switch">
+        <select
+            id="languageSelect"
+            class="language-select"
+            onchange="setLanguage(this.value)"
+            aria-label="Language"
+        >
 
-            <button
-                id="langEN"
-                onclick="setLanguage('en')"
-            >
-                EN
-            </button>
+            <option value="en">
+                🇬🇧 EN
+            </option>
 
-            <button
-                id="langDE"
-                onclick="setLanguage('de')"
-            >
-                DE
-            </button>
+            <option value="de">
+                🇩🇪 DE
+            </option>
 
-        </div>
+            <option value="ro">
+                🇷🇴 RO
+            </option>
+
+            <option value="fr">
+                🇫🇷 FR
+            </option>
+
+            <option value="es">
+                🇪🇸 ES
+            </option>
+
+            <option value="it">
+                🇮🇹 IT
+            </option>
+
+            <option value="nl">
+                🇳🇱 NL
+            </option>
+
+        </select>
 
 
     </div>
@@ -382,7 +408,9 @@ footer {
 
 <section class="hero">
 
+
     <h1>
+
         <span data-i18n="heroTitle">
             Automotive
         </span>
@@ -390,6 +418,7 @@ footer {
         <span data-i18n="heroTitleAccent">
             Intelligence.
         </span>
+
     </h1>
 
 
@@ -400,6 +429,7 @@ footer {
         technical information faster.
 
     </p>
+
 
 </section>
 
@@ -416,8 +446,14 @@ footer {
             type="text"
             data-placeholder-en="Enter OBD-II code (e.g. P0420)"
             data-placeholder-de="OBD-II-Code eingeben (z. B. P0420)"
+            data-placeholder-ro="Introdu codul OBD-II (ex. P0420)"
+            data-placeholder-fr="Entrez le code OBD-II (ex. P0420)"
+            data-placeholder-es="Introduce el código OBD-II (ej. P0420)"
+            data-placeholder-it="Inserisci il codice OBD-II (es. P0420)"
+            data-placeholder-nl="Voer OBD-II-code in (bijv. P0420)"
             placeholder="Enter OBD-II code (e.g. P0420)"
             autocomplete="off"
+            spellcheck="false"
         >
 
 
@@ -484,13 +520,18 @@ footer {
 
 <footer>
 
+
     <div>
         © 2026 AutoDecode
     </div>
 
+
     <div data-i18n="footer">
+
         Automotive diagnostic tools
+
     </div>
+
 
 </footer>
 
@@ -504,6 +545,7 @@ footer {
 ===================================================== */
 
 const translations = {
+
 
     en: {
 
@@ -578,6 +620,196 @@ const translations = {
         footer:
             "Werkzeuge für die Fahrzeugdiagnose"
 
+    },
+
+
+    ro: {
+
+        obd:
+            "Decodor OBD",
+
+        parts:
+            "Căutare piese",
+
+        heroTitle:
+            "Inteligență",
+
+        heroTitleAccent:
+            "Auto.",
+
+        heroDescription:
+            "Decodează codurile de eroare, identifică piesele auto și găsește mai rapid informațiile tehnice.",
+
+        decode:
+            "Decodează",
+
+        obdTitle:
+            "🔧 Decodor OBD",
+
+        obdDescription:
+            "Decodează codurile de diagnosticare OBD-II și află ce înseamnă.",
+
+        partsTitle:
+            "🔩 Căutare piese",
+
+        partsDescription:
+            "Caută coduri OEM și alternative aftermarket.",
+
+        footer:
+            "Instrumente pentru diagnosticare auto"
+
+    },
+
+
+    fr: {
+
+        obd:
+            "Décodeur OBD",
+
+        parts:
+            "Recherche de pièces",
+
+        heroTitle:
+            "Intelligence",
+
+        heroTitleAccent:
+            "Automobile.",
+
+        heroDescription:
+            "Décodez les codes défaut, identifiez les pièces automobiles et trouvez plus rapidement les informations techniques.",
+
+        decode:
+            "Décoder",
+
+        obdTitle:
+            "🔧 Décodeur OBD",
+
+        obdDescription:
+            "Décodez les codes défaut OBD-II et comprenez leur signification.",
+
+        partsTitle:
+            "🔩 Recherche de pièces",
+
+        partsDescription:
+            "Recherchez les références OEM et les alternatives aftermarket.",
+
+        footer:
+            "Outils de diagnostic automobile"
+
+    },
+
+
+    es: {
+
+        obd:
+            "Decodificador OBD",
+
+        parts:
+            "Buscador de piezas",
+
+        heroTitle:
+            "Inteligencia",
+
+        heroTitleAccent:
+            "Automotriz.",
+
+        heroDescription:
+            "Decodifica códigos de avería, identifica piezas de automóviles y encuentra información técnica más rápidamente.",
+
+        decode:
+            "Decodificar",
+
+        obdTitle:
+            "🔧 Decodificador OBD",
+
+        obdDescription:
+            "Decodifica los códigos de diagnóstico OBD-II y comprende su significado.",
+
+        partsTitle:
+            "🔩 Buscador de piezas",
+
+        partsDescription:
+            "Busca referencias OEM y alternativas aftermarket.",
+
+        footer:
+            "Herramientas de diagnóstico automotriz"
+
+    },
+
+
+    it: {
+
+        obd:
+            "Decoder OBD",
+
+        parts:
+            "Ricerca ricambi",
+
+        heroTitle:
+            "Intelligenza",
+
+        heroTitleAccent:
+            "Automobilistica.",
+
+        heroDescription:
+            "Decodifica i codici di errore, identifica i ricambi automobilistici e trova più rapidamente le informazioni tecniche.",
+
+        decode:
+            "Decodifica",
+
+        obdTitle:
+            "🔧 Decoder OBD",
+
+        obdDescription:
+            "Decodifica i codici diagnostici OBD-II e scopri cosa significano.",
+
+        partsTitle:
+            "🔩 Ricerca ricambi",
+
+        partsDescription:
+            "Cerca codici OEM e alternative aftermarket.",
+
+        footer:
+            "Strumenti di diagnosi automobilistica"
+
+    },
+
+
+    nl: {
+
+        obd:
+            "OBD-decoder",
+
+        parts:
+            "Onderdelenzoeker",
+
+        heroTitle:
+            "Automotive",
+
+        heroTitleAccent:
+            "Intelligentie.",
+
+        heroDescription:
+            "Decodeer foutcodes, identificeer auto-onderdelen en vind sneller technische informatie.",
+
+        decode:
+            "Decoderen",
+
+        obdTitle:
+            "🔧 OBD-decoder",
+
+        obdDescription:
+            "Decodeer OBD-II-diagnosecodes en begrijp wat ze betekenen.",
+
+        partsTitle:
+            "🔩 Onderdelenzoeker",
+
+        partsDescription:
+            "Zoek OEM-onderdeelnummers en aftermarket-alternatieven.",
+
+        footer:
+            "Diagnosetools voor auto's"
+
     }
 
 };
@@ -589,23 +821,44 @@ const translations = {
 
 function setLanguage(language) {
 
+
+    /*
+       Safety fallback
+    */
+
+    if (!translations[language]) {
+
+        language = "en";
+
+    }
+
+
+    /*
+       Save language
+    */
+
     localStorage.setItem(
         "autodecode_language",
         language
     );
 
 
+    /*
+       HTML language
+    */
+
     document.documentElement.lang =
         language;
 
 
     /*
-       Translate normal elements
+       Translate interface
     */
 
     document
         .querySelectorAll("[data-i18n]")
         .forEach(function(element) {
+
 
             const key =
                 element.getAttribute(
@@ -614,7 +867,6 @@ function setLanguage(language) {
 
 
             if (
-                translations[language] &&
                 translations[language][key]
             ) {
 
@@ -627,7 +879,7 @@ function setLanguage(language) {
 
 
     /*
-       Translate search placeholder
+       Search placeholder
     */
 
     const input =
@@ -638,33 +890,39 @@ function setLanguage(language) {
 
     if (input) {
 
-        input.placeholder =
+        const placeholder =
             input.getAttribute(
                 "data-placeholder-" +
                 language
             );
 
+
+        if (placeholder) {
+
+            input.placeholder =
+                placeholder;
+
+        }
+
     }
 
 
     /*
-       Active language button
+       Selector
     */
 
-    document
-        .getElementById("langEN")
-        .classList.toggle(
-            "active",
-            language === "en"
+    const selector =
+        document.getElementById(
+            "languageSelect"
         );
 
 
-    document
-        .getElementById("langDE")
-        .classList.toggle(
-            "active",
-            language === "de"
-        );
+    if (selector) {
+
+        selector.value =
+            language;
+
+    }
 
 }
 
@@ -690,6 +948,7 @@ setLanguage(
 
 function decodeOBD() {
 
+
     const input =
         document
         .getElementById("obdCode")
@@ -706,8 +965,7 @@ function decodeOBD() {
 
 
     /*
-       Preserve selected language
-       when opening OBD decoder.
+       Keep selected language
     */
 
     const language =
@@ -730,22 +988,23 @@ function decodeOBD() {
 ===================================================== */
 
 document
-.getElementById("obdCode")
-.addEventListener(
-    "keydown",
-    function(event) {
+    .getElementById("obdCode")
+    .addEventListener(
+        "keydown",
+        function(event) {
 
-        if (event.key === "Enter") {
+            if (event.key === "Enter") {
 
-            decodeOBD();
+                decodeOBD();
+
+            }
 
         }
-
-    }
-);
+    );
 
 </script>
 
 
 </body>
+
 </html>
