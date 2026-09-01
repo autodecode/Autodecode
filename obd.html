@@ -99,6 +99,7 @@ button:hover {
     background: #78baff;
 }
 
+
 /* RESULT */
 
 .result-container {
@@ -142,6 +143,7 @@ button:hover {
     font-size: 12px;
 }
 
+
 /* GRID */
 
 .info-grid {
@@ -184,6 +186,7 @@ button:hover {
     line-height: 1.5;
 }
 
+
 /* SEVERITY */
 
 .severity {
@@ -196,6 +199,7 @@ button:hover {
     background: #1b222a;
     color: #d0d6dd;
 }
+
 
 /* ERROR */
 
@@ -218,6 +222,7 @@ button:hover {
     color: #8b949e;
     padding: 40px;
 }
+
 
 /* MOBILE */
 
@@ -250,6 +255,7 @@ button:hover {
     .info-card.full {
         grid-column: auto;
     }
+
 }
 
 </style>
@@ -307,11 +313,19 @@ button:hover {
 <script>
 
 
+/* ==================================================
+   DATABASE
+================================================== */
+
+
 let obdDatabase = [];
+
+let diagnosticDatabase = {};
+
 
 
 /* ==================================================
-   DATABASE
+   LOAD DATABASES
 ================================================== */
 
 
@@ -319,15 +333,71 @@ async function loadDatabase() {
 
     try {
 
+
+        /* ------------------------------------------
+           LOAD MAIN CODE DATABASE
+        ------------------------------------------ */
+
+
         const response =
             await fetch("Database/Codes.json");
 
+
         if (!response.ok) {
-            throw new Error("Database not found");
+
+            throw new Error(
+                "Codes.json not found"
+            );
+
         }
+
 
         obdDatabase =
             await response.json();
+
+
+
+        /* ------------------------------------------
+           LOAD DIAGNOSTIC DATABASE
+        ------------------------------------------ */
+
+
+        const diagnosticResponse =
+            await fetch(
+                "Database/diagnostic.json"
+            );
+
+
+        if (!diagnosticResponse.ok) {
+
+            throw new Error(
+                "diagnostic.json not found"
+            );
+
+        }
+
+
+        diagnosticDatabase =
+            await diagnosticResponse.json();
+
+
+
+        console.log(
+            "Codes database loaded:",
+            obdDatabase.length
+        );
+
+
+        console.log(
+            "Diagnostic database loaded:",
+            Object.keys(diagnosticDatabase).length
+        );
+
+
+
+        /* ------------------------------------------
+           URL CODE
+        ------------------------------------------ */
 
 
         const params =
@@ -335,84 +405,113 @@ async function loadDatabase() {
                 window.location.search
             );
 
+
         const urlCode =
             params.get("code");
 
 
         if (urlCode) {
 
+
             document
                 .getElementById("codeInput")
                 .value =
                 urlCode.toUpperCase();
 
+
             decodeCode();
 
+
         } else {
+
 
             document
                 .getElementById("result")
                 .innerHTML = `
+
                     <div class="loading">
+
                         OBD database loaded.
                         Enter a code above.
+
                     </div>
+
                 `;
+
         }
 
 
     } catch(error) {
 
+
         console.error(error);
+
 
         document
             .getElementById("result")
             .innerHTML = `
+
                 <div class="error">
-                    <h2>Database unavailable</h2>
+
+                    <h2>
+                        Database unavailable
+                    </h2>
+
                     <p>
                         Could not load
                         Database/Codes.json
+                        or
+                        Database/diagnostic.json
                     </p>
+
                 </div>
+
             `;
+
     }
 
 }
 
 
+
 /* ==================================================
-   CODE INFORMATION
+   SYSTEM FROM CODE
 ================================================== */
 
 
-function getCodeInfo(code, description) {
+function getSystemFromCode(
+    code,
+    description
+) {
 
-    const prefix = code.charAt(0);
+
+    const prefix =
+        code.charAt(0);
+
 
     const second =
-        parseInt(code.charAt(1), 10);
-
-    let system = "Vehicle Diagnostic System";
-
-    let severity = "Medium";
-
-    let symptoms = [];
-
-    let causes = [];
-
-    let checks = [];
-
-    let tip =
-        "Use the fault code together with the vehicle's symptoms and live diagnostic data. Do not replace parts based on the code alone.";
+        parseInt(
+            code.charAt(1),
+            10
+        );
 
 
-    /* SYSTEM */
+    let system =
+        "Vehicle Diagnostic System";
+
+
+
+    /* ------------------------------------------
+       POWERTRAIN
+    ------------------------------------------ */
 
 
     if (prefix === "P") {
 
-        system = "Powertrain";
+
+        system =
+            "Powertrain";
+
 
         if (second === 0) {
 
@@ -444,6 +543,13 @@ function getCodeInfo(code, description) {
 
     }
 
+
+
+    /* ------------------------------------------
+       BODY
+    ------------------------------------------ */
+
+
     else if (prefix === "B") {
 
         system =
@@ -451,12 +557,26 @@ function getCodeInfo(code, description) {
 
     }
 
+
+
+    /* ------------------------------------------
+       CHASSIS
+    ------------------------------------------ */
+
+
     else if (prefix === "C") {
 
         system =
             "Chassis / ABS / Suspension / Steering";
 
     }
+
+
+
+    /* ------------------------------------------
+       NETWORK
+    ------------------------------------------ */
+
 
     else if (prefix === "U") {
 
@@ -466,7 +586,10 @@ function getCodeInfo(code, description) {
     }
 
 
-    /* COMMON SYSTEM KEYWORDS */
+
+    /* ------------------------------------------
+       DESCRIPTION BASED SYSTEM
+    ------------------------------------------ */
 
 
     const text =
@@ -481,34 +604,7 @@ function getCodeInfo(code, description) {
         system =
             "Engine Management — Oxygen Sensor";
 
-        symptoms = [
-            "Check Engine light",
-            "Possible increased fuel consumption",
-            "Rough running or hesitation",
-            "Emissions may increase"
-        ];
-
-        causes = [
-            "Faulty oxygen sensor",
-            "Damaged sensor wiring or connector",
-            "Exhaust leak",
-            "Vacuum or intake leak",
-            "Fuel mixture problem"
-        ];
-
-        checks = [
-            "Inspect the sensor wiring and connector",
-            "Check for exhaust leaks near the sensor",
-            "Compare live O2 sensor readings",
-            "Check fuel trims",
-            "Verify related intake and fuel-system faults"
-        ];
-
-        tip =
-            "Do not replace the oxygen sensor automatically. Exhaust leaks, wiring faults and incorrect air/fuel mixture can produce similar codes.";
-
     }
-
 
     else if (
         text.includes("catalyst") ||
@@ -518,36 +614,7 @@ function getCodeInfo(code, description) {
         system =
             "Emissions — Catalytic Converter";
 
-        symptoms = [
-            "Check Engine light",
-            "Increased emissions",
-            "Possible loss of performance",
-            "Possible increased fuel consumption"
-        ];
-
-        causes = [
-            "Aged or damaged catalytic converter",
-            "Engine misfire",
-            "Incorrect fuel mixture",
-            "Faulty oxygen sensor",
-            "Exhaust leak"
-        ];
-
-        checks = [
-            "Check for other engine fault codes first",
-            "Inspect for exhaust leaks",
-            "Check upstream and downstream O2 readings",
-            "Check fuel trims",
-            "Verify engine is operating correctly"
-        ];
-
-        severity = "Medium";
-
-        tip =
-            "A catalyst code does not automatically mean the catalytic converter needs replacement. Fixing an underlying misfire or mixture problem may resolve the fault.";
-
     }
-
 
     else if (
         text.includes("misfire") ||
@@ -557,38 +624,7 @@ function getCodeInfo(code, description) {
         system =
             "Engine — Ignition / Misfire";
 
-        severity = "High";
-
-        symptoms = [
-            "Rough or unstable engine operation",
-            "Loss of power",
-            "Engine vibration",
-            "Check Engine light",
-            "Possible flashing Check Engine light"
-        ];
-
-        causes = [
-            "Worn or faulty spark plug",
-            "Ignition coil problem",
-            "Fuel injector problem",
-            "Low compression",
-            "Vacuum or intake leak",
-            "Fuel delivery problem"
-        ];
-
-        checks = [
-            "Check ignition components",
-            "Inspect spark plugs",
-            "Check injector operation",
-            "Check fuel trims",
-            "Perform compression testing if necessary"
-        ];
-
-        tip =
-            "A severe or flashing misfire can damage the catalytic converter. Avoid prolonged driving until the cause is identified.";
-
     }
-
 
     else if (
         text.includes("temperature") ||
@@ -598,33 +634,7 @@ function getCodeInfo(code, description) {
         system =
             "Engine Cooling System";
 
-        severity = "High";
-
-        symptoms = [
-            "Engine overheating or incorrect temperature",
-            "Cooling fan operating abnormally",
-            "Check Engine light",
-            "Poor fuel economy"
-        ];
-
-        causes = [
-            "Faulty temperature sensor",
-            "Damaged wiring",
-            "Low coolant level",
-            "Thermostat problem",
-            "Cooling system fault"
-        ];
-
-        checks = [
-            "Check coolant level",
-            "Inspect sensor connector and wiring",
-            "Compare coolant temperature with live data",
-            "Check thermostat operation",
-            "Inspect cooling fan operation"
-        ];
-
     }
-
 
     else if (
         text.includes("voltage") ||
@@ -635,62 +645,528 @@ function getCodeInfo(code, description) {
         system =
             "Electrical / Charging System";
 
-        severity = "High";
+    }
+
+
+
+    return system;
+
+}
+
+
+
+/* ==================================================
+   GENERIC CODE INFORMATION
+================================================== */
+
+
+function getCodeInfo(
+    code,
+    description
+) {
+
+
+    const prefix =
+        code.charAt(0);
+
+
+    const second =
+        parseInt(
+            code.charAt(1),
+            10
+        );
+
+
+    let system =
+        "Vehicle Diagnostic System";
+
+
+    let severity =
+        "Medium";
+
+
+    let symptoms = [];
+
+
+    let causes = [];
+
+
+    let checks = [];
+
+
+    let repairs = [];
+
+
+    let tip =
+        "Use the fault code together with the vehicle's symptoms and live diagnostic data. Do not replace parts based on the code alone.";
+
+
+
+    /* ------------------------------------------
+       SYSTEM
+    ------------------------------------------ */
+
+
+    system =
+        getSystemFromCode(
+            code,
+            description
+        );
+
+
+
+    /* ------------------------------------------
+       MISFIRE
+    ------------------------------------------ */
+
+
+    const text =
+        description.toLowerCase();
+
+
+    if (
+        text.includes("misfire") ||
+        text.includes("cylinder")
+    ) {
+
+
+        severity =
+            "High";
+
 
         symptoms = [
-            "Battery or charging warning",
-            "Starting problems",
-            "Electrical system instability",
-            "Multiple warning lights"
+
+            "Rough or unstable engine operation",
+
+            "Loss of power",
+
+            "Engine vibration",
+
+            "Check Engine light",
+
+            "Possible flashing Check Engine light"
+
         ];
+
 
         causes = [
-            "Weak battery",
-            "Alternator problem",
-            "Poor electrical connection",
-            "Damaged wiring",
-            "Incorrect system voltage"
+
+            "Worn or faulty spark plug",
+
+            "Ignition coil problem",
+
+            "Fuel injector problem",
+
+            "Low compression",
+
+            "Vacuum or intake leak",
+
+            "Fuel delivery problem"
+
         ];
 
+
         checks = [
-            "Measure battery voltage",
-            "Check charging voltage with engine running",
-            "Inspect battery terminals",
-            "Inspect grounds and power connections",
-            "Check related wiring"
+
+            "Check ignition components",
+
+            "Inspect spark plugs",
+
+            "Check injector operation",
+
+            "Check fuel trims",
+
+            "Perform compression testing if necessary"
+
+        ];
+
+
+        repairs = [
+
+            "Replace faulty ignition components",
+
+            "Repair fuel delivery problems",
+
+            "Repair vacuum or intake leaks",
+
+            "Repair mechanical faults"
+
+        ];
+
+
+        tip =
+            "A severe or flashing misfire can damage the catalytic converter. Avoid prolonged driving until the cause is identified.";
+
+    }
+
+
+
+    /* ------------------------------------------
+       OXYGEN SENSOR
+    ------------------------------------------ */
+
+
+    else if (
+        text.includes("oxygen sensor") ||
+        text.includes("o2 sensor")
+    ) {
+
+
+        symptoms = [
+
+            "Check Engine light",
+
+            "Possible increased fuel consumption",
+
+            "Rough running or hesitation",
+
+            "Increased emissions"
+
+        ];
+
+
+        causes = [
+
+            "Faulty oxygen sensor",
+
+            "Damaged sensor wiring or connector",
+
+            "Exhaust leak",
+
+            "Vacuum or intake leak",
+
+            "Fuel mixture problem"
+
+        ];
+
+
+        checks = [
+
+            "Inspect sensor wiring and connector",
+
+            "Check for exhaust leaks near the sensor",
+
+            "Compare live O2 sensor readings",
+
+            "Check fuel trims",
+
+            "Verify related intake and fuel-system faults"
+
+        ];
+
+
+        repairs = [
+
+            "Repair damaged wiring",
+
+            "Repair exhaust leaks",
+
+            "Correct air/fuel mixture problems",
+
+            "Replace faulty oxygen sensor"
+
+        ];
+
+
+        tip =
+            "Do not replace the oxygen sensor automatically. Exhaust leaks, wiring faults and incorrect air/fuel mixture can produce similar codes.";
+
+    }
+
+
+
+    /* ------------------------------------------
+       CATALYST
+    ------------------------------------------ */
+
+
+    else if (
+        text.includes("catalyst") ||
+        text.includes("catalytic converter")
+    ) {
+
+
+        symptoms = [
+
+            "Check Engine light",
+
+            "Increased emissions",
+
+            "Possible loss of performance",
+
+            "Possible increased fuel consumption"
+
+        ];
+
+
+        causes = [
+
+            "Aged or damaged catalytic converter",
+
+            "Engine misfire",
+
+            "Incorrect fuel mixture",
+
+            "Faulty oxygen sensor",
+
+            "Exhaust leak"
+
+        ];
+
+
+        checks = [
+
+            "Check for other engine fault codes first",
+
+            "Inspect for exhaust leaks",
+
+            "Check upstream and downstream O2 readings",
+
+            "Check fuel trims",
+
+            "Verify engine operation"
+
+        ];
+
+
+        repairs = [
+
+            "Repair exhaust leaks",
+
+            "Repair underlying engine faults",
+
+            "Replace faulty oxygen sensor",
+
+            "Replace catalytic converter if confirmed defective"
+
+        ];
+
+
+        tip =
+            "A catalyst code does not automatically mean the catalytic converter needs replacement. Fix the underlying engine problem first.";
+
+    }
+
+
+
+    /* ------------------------------------------
+       COOLANT / TEMPERATURE
+    ------------------------------------------ */
+
+
+    else if (
+        text.includes("temperature") ||
+        text.includes("coolant")
+    ) {
+
+
+        severity =
+            "High";
+
+
+        symptoms = [
+
+            "Engine overheating or incorrect temperature",
+
+            "Cooling fan operating abnormally",
+
+            "Check Engine light",
+
+            "Poor fuel economy"
+
+        ];
+
+
+        causes = [
+
+            "Faulty temperature sensor",
+
+            "Damaged wiring",
+
+            "Low coolant level",
+
+            "Thermostat problem",
+
+            "Cooling system fault"
+
+        ];
+
+
+        checks = [
+
+            "Check coolant level",
+
+            "Inspect sensor connector and wiring",
+
+            "Compare coolant temperature with live data",
+
+            "Check thermostat operation",
+
+            "Inspect cooling fan operation"
+
+        ];
+
+
+        repairs = [
+
+            "Repair wiring or connector",
+
+            "Replace faulty temperature sensor",
+
+            "Replace thermostat if defective",
+
+            "Repair cooling system fault"
+
         ];
 
     }
+
+
+
+    /* ------------------------------------------
+       VOLTAGE / BATTERY
+    ------------------------------------------ */
+
+
+    else if (
+        text.includes("voltage") ||
+        text.includes("battery") ||
+        text.includes("charging")
+    ) {
+
+
+        severity =
+            "High";
+
+
+        symptoms = [
+
+            "Battery or charging warning",
+
+            "Starting problems",
+
+            "Electrical system instability",
+
+            "Multiple warning lights"
+
+        ];
+
+
+        causes = [
+
+            "Weak battery",
+
+            "Alternator problem",
+
+            "Poor electrical connection",
+
+            "Damaged wiring",
+
+            "Incorrect system voltage"
+
+        ];
+
+
+        checks = [
+
+            "Measure battery voltage",
+
+            "Check charging voltage with engine running",
+
+            "Inspect battery terminals",
+
+            "Inspect grounds and power connections",
+
+            "Check related wiring"
+
+        ];
+
+
+        repairs = [
+
+            "Charge or replace battery if necessary",
+
+            "Repair charging system",
+
+            "Repair wiring and connections",
+
+            "Repair poor grounds"
+
+        ];
+
+    }
+
+
+
+    /* ------------------------------------------
+       NETWORK
+    ------------------------------------------ */
 
 
     else if (
         prefix === "U"
     ) {
 
-        severity = "High";
+
+        severity =
+            "High";
+
 
         symptoms = [
+
             "Multiple warning lights",
+
             "Modules unavailable",
+
             "Intermittent electrical problems",
+
             "Communication-related faults"
+
         ];
+
 
         causes = [
+
             "Low system voltage",
+
             "CAN bus wiring problem",
+
             "Poor ground or power supply",
+
             "Faulty module",
+
             "Communication network fault"
+
         ];
 
+
         checks = [
+
             "Check battery and charging voltage",
+
             "Check module power and grounds",
+
             "Inspect CAN wiring",
+
             "Scan all control modules",
+
             "Look for additional communication codes"
+
         ];
+
+
+        repairs = [
+
+            "Repair CAN wiring",
+
+            "Repair module power or ground",
+
+            "Correct low-voltage problems",
+
+            "Replace faulty module after proper diagnosis"
+
+        ];
+
 
         tip =
             "Network codes should normally be diagnosed together with all other module codes. A single failed module can generate multiple communication faults.";
@@ -698,56 +1174,104 @@ function getCodeInfo(code, description) {
     }
 
 
-    /* GENERIC FALLBACK */
+
+    /* ------------------------------------------
+       GENERIC FALLBACK
+    ------------------------------------------ */
 
 
     if (symptoms.length === 0) {
 
         symptoms = [
+
             "Check Engine or warning indicator may be illuminated",
+
             "Vehicle symptoms depend on the affected system",
+
             "Performance or fuel economy may be affected"
+
         ];
 
     }
+
 
 
     if (causes.length === 0) {
 
         causes = [
+
             "Sensor or actuator fault",
+
             "Damaged wiring or connector",
+
             "Electrical supply problem",
+
             "Mechanical problem",
+
             "Underlying fault in a related system"
+
         ];
 
     }
+
 
 
     if (checks.length === 0) {
 
         checks = [
+
             "Read all stored and pending fault codes",
+
             "Inspect related wiring and connectors",
+
             "Check relevant live data",
+
             "Check electrical power and grounds",
+
             "Verify the fault before replacing components"
+
         ];
 
     }
 
 
+
+    if (repairs.length === 0) {
+
+        repairs = [
+
+            "Repair or replace the faulty component after confirmation",
+
+            "Repair damaged wiring or connectors",
+
+            "Correct any underlying mechanical or electrical fault"
+
+        ];
+
+    }
+
+
+
     return {
+
         system,
+
         severity,
+
         symptoms,
+
         causes,
+
         checks,
+
+        repairs,
+
         tip
+
     };
 
 }
+
 
 
 /* ==================================================
@@ -756,6 +1280,7 @@ function getCodeInfo(code, description) {
 
 
 function decodeCode() {
+
 
     const input =
         document
@@ -766,22 +1291,45 @@ function decodeCode() {
 
 
     const result =
-        document.getElementById("result");
+        document
+            .getElementById("result");
+
+
+
+    /* ------------------------------------------
+       EMPTY INPUT
+    ------------------------------------------ */
 
 
     if (!input) {
 
+
         result.innerHTML = `
+
             <div class="error">
-                <h2>Enter an OBD-II code</h2>
+
+                <h2>
+                    Enter an OBD-II code
+                </h2>
+
                 <p>
                     Example: P0420
                 </p>
+
             </div>
+
         `;
 
+
         return;
+
     }
+
+
+
+    /* ------------------------------------------
+       FIND CODE IN CODES.JSON
+    ------------------------------------------ */
 
 
     const found =
@@ -797,87 +1345,228 @@ function decodeCode() {
         );
 
 
+
+    /* ------------------------------------------
+       CODE NOT FOUND
+    ------------------------------------------ */
+
+
     if (!found) {
 
+
         result.innerHTML = `
+
             <div class="error">
 
-                <h2>${escapeHTML(input)}</h2>
+                <h2>
+                    ${escapeHTML(input)}
+                </h2>
 
                 <p>
                     Code not found in the database.
                 </p>
 
             </div>
+
         `;
 
+
         return;
+
     }
 
 
+
+    /* ------------------------------------------
+       DESCRIPTION
+    ------------------------------------------ */
+
+
     const description =
-        found.Description || "No description available.";
+        found.Description ||
+        "No description available.";
 
 
-    const info =
-        getCodeInfo(
-            input,
-            description
-        );
+
+    /* ------------------------------------------
+       CHECK DETAILED DATABASE
+    ------------------------------------------ */
+
+
+    const diagnostic =
+        diagnosticDatabase[input];
+
+
+
+    let info;
+
+
+
+    /* ------------------------------------------
+       USE DETAILED DIAGNOSTIC DATA
+    ------------------------------------------ */
+
+
+    if (diagnostic) {
+
+
+        info = {
+
+            system:
+                getSystemFromCode(
+                    input,
+                    description
+                ),
+
+            severity:
+                diagnostic.severity ||
+                "Medium",
+
+            symptoms:
+                diagnostic.symptoms ||
+                [],
+
+            causes:
+                diagnostic.causes ||
+                [],
+
+            checks:
+                diagnostic.diagnostic ||
+                [],
+
+            repairs:
+                diagnostic.repairs ||
+                [],
+
+            tip:
+                diagnostic.tip ||
+                "Use the fault code together with the vehicle's symptoms and live diagnostic data. Do not replace parts based on the code alone."
+
+        };
+
+    }
+
+
+
+    /* ------------------------------------------
+       FALLBACK TO GENERIC SYSTEM
+    ------------------------------------------ */
+
+
+    else {
+
+
+        info =
+            getCodeInfo(
+                input,
+                description
+            );
+
+    }
+
+
+
+    /* ------------------------------------------
+       BUILD HTML
+    ------------------------------------------ */
 
 
     const symptomsHTML =
         info.symptoms
-            .map(item => `<li>${item}</li>`)
+            .map(
+                item =>
+                    `<li>${escapeHTML(item)}</li>`
+            )
             .join("");
 
 
     const causesHTML =
         info.causes
-            .map(item => `<li>${item}</li>`)
+            .map(
+                item =>
+                    `<li>${escapeHTML(item)}</li>`
+            )
             .join("");
 
 
     const checksHTML =
         info.checks
-            .map(item => `<li>${item}</li>`)
+            .map(
+                item =>
+                    `<li>${escapeHTML(item)}</li>`
+            )
             .join("");
+
+
+    const repairsHTML =
+        (info.repairs || [])
+            .map(
+                item =>
+                    `<li>${escapeHTML(item)}</li>`
+            )
+            .join("");
+
+
+
+    /* ------------------------------------------
+       DISPLAY RESULT
+    ------------------------------------------ */
 
 
     result.innerHTML = `
 
-        <div class="result-container"
-             style="display:block">
+        <div
+            class="result-container"
+            style="display:block"
+        >
 
 
             <div class="result-header">
 
+
                 <div class="code">
+
                     ${escapeHTML(input)}
+
                 </div>
 
+
                 <div class="description">
+
                     ${escapeHTML(description)}
+
                 </div>
 
 
                 <div class="badges">
 
+
                     <div class="badge">
+
                         ${escapeHTML(info.system)}
+
                     </div>
+
 
                     <div class="severity">
-                        Severity: ${escapeHTML(info.severity)}
+
+                        Severity:
+                        ${escapeHTML(info.severity)}
+
                     </div>
 
+
                 </div>
+
 
             </div>
 
 
 
             <div class="info-grid">
+
+
+                <!-- SYMPTOMS -->
 
 
                 <div class="info-card">
@@ -887,11 +1576,16 @@ function decodeCode() {
                     </h3>
 
                     <ul>
+
                         ${symptomsHTML}
+
                     </ul>
 
                 </div>
 
+
+
+                <!-- CAUSES -->
 
 
                 <div class="info-card">
@@ -901,11 +1595,16 @@ function decodeCode() {
                     </h3>
 
                     <ul>
+
                         ${causesHTML}
+
                     </ul>
 
                 </div>
 
+
+
+                <!-- DIAGNOSTIC CHECKS -->
 
 
                 <div class="info-card">
@@ -915,21 +1614,47 @@ function decodeCode() {
                     </h3>
 
                     <ul>
+
                         ${checksHTML}
+
                     </ul>
 
                 </div>
 
 
 
+                <!-- REPAIRS -->
+
+
                 <div class="info-card">
+
+                    <h3>
+                        🔧 Recommended Repairs
+                    </h3>
+
+                    <ul>
+
+                        ${repairsHTML}
+
+                    </ul>
+
+                </div>
+
+
+
+                <!-- DIAGNOSTIC TIP -->
+
+
+                <div class="info-card full">
 
                     <h3>
                         💡 Diagnostic Tip
                     </h3>
 
                     <p>
+
                         ${escapeHTML(info.tip)}
+
                     </p>
 
                 </div>
@@ -937,11 +1662,13 @@ function decodeCode() {
 
             </div>
 
+
         </div>
 
     `;
 
 }
+
 
 
 /* ==================================================
@@ -951,19 +1678,36 @@ function decodeCode() {
 
 function escapeHTML(value) {
 
+
     return String(value)
 
-        .replace(/&/g, "&amp;")
+        .replace(
+            /&/g,
+            "&amp;"
+        )
 
-        .replace(/</g, "&lt;")
+        .replace(
+            /</g,
+            "&lt;"
+        )
 
-        .replace(/>/g, "&gt;")
+        .replace(
+            />/g,
+            "&gt;"
+        )
 
-        .replace(/"/g, "&quot;")
+        .replace(
+            /"/g,
+            "&quot;"
+        )
 
-        .replace(/'/g, "&#039;");
+        .replace(
+            /'/g,
+            "&#039;"
+        );
 
 }
+
 
 
 /* ==================================================
@@ -977,7 +1721,10 @@ document
         "keydown",
         function(event) {
 
-            if (event.key === "Enter") {
+
+            if (
+                event.key === "Enter"
+            ) {
 
                 decodeCode();
 
@@ -985,6 +1732,7 @@ document
 
         }
     );
+
 
 
 /* ==================================================
