@@ -1,452 +1,6 @@
 {
-  "P0001": {
-    "causes": ["Fuel volume regulator circuit open", "Damaged wiring or connector", "Faulty fuel volume regulator", "ECU driver fault"],
-    "symptoms": ["Hard starting", "No-start condition", "Poor engine performance", "Check Engine light"],
-    "diagnostic": ["Inspect regulator wiring and connector", "Check power, ground and control signal", "Compare commanded and actual fuel pressure"],
-    "repairs": ["Repair wiring or connectors", "Replace faulty regulator", "Verify ECU control before replacing the ECU"],
-    "severity": "High"
-  },
-
-  "P0002": {
-    "causes": ["Fuel volume regulator performance problem", "Restricted fuel supply", "Sticking quantity control valve", "Electrical resistance in the circuit"],
-    "symptoms": ["Hard starting", "Loss of power", "Rough running", "Check Engine light"],
-    "diagnostic": ["Check fuel supply restriction", "Inspect regulator wiring", "Compare commanded and actual rail pressure"],
-    "repairs": ["Repair wiring", "Correct fuel restriction", "Replace regulator if confirmed faulty"],
-    "severity": "High"
-  },
-
-  "P0010": {
-    "causes": ["Camshaft actuator circuit fault", "Open or shorted wiring", "Faulty VVT solenoid", "Poor connector contact"],
-    "symptoms": ["Check Engine light", "Rough idle", "Reduced power", "Poor fuel economy"],
-    "diagnostic": ["Inspect VVT wiring", "Measure solenoid resistance", "Check commanded actuator operation", "Verify engine oil condition"],
-    "repairs": ["Repair wiring", "Replace VVT solenoid", "Correct oil supply problem"],
-    "severity": "Medium"
-  },
-
-  "P0011": {
-    "causes": ["Camshaft timing over-advanced", "Low or dirty engine oil", "Sticking VVT actuator", "Timing chain problem"],
-    "symptoms": ["Rough idle", "Loss of power", "Poor fuel economy", "Engine rattle"],
-    "diagnostic": ["Check oil level and condition", "Compare commanded and actual camshaft position", "Test VVT actuator", "Verify mechanical timing"],
-    "repairs": ["Correct oil problem", "Service or replace VVT actuator", "Repair timing system if required"],
-    "severity": "High"
-  },
-
-  "P0012": {
-    "causes": ["Camshaft timing over-retarded", "Restricted oil flow", "Sticking VVT actuator", "Timing chain or belt problem"],
-    "symptoms": ["Poor acceleration", "Rough idle", "Poor fuel economy", "Check Engine light"],
-    "diagnostic": ["Check oil pressure and condition", "Monitor camshaft timing", "Test VVT actuator", "Verify mechanical timing"],
-    "repairs": ["Correct oil problem", "Service VVT system", "Repair mechanical timing fault"],
-    "severity": "High"
-  },
-
-  "P0013": {
-    "causes": ["Exhaust camshaft actuator circuit fault", "Open or shorted wiring", "Faulty VVT solenoid"],
-    "symptoms": ["Check Engine light", "Poor performance", "Rough idle"],
-    "diagnostic": ["Inspect connector and wiring", "Measure solenoid resistance", "Check actuator command"],
-    "repairs": ["Repair wiring", "Replace VVT solenoid", "Verify oil supply"],
-    "severity": "Medium"
-  },
-
-  "P0014": {
-    "causes": ["Exhaust camshaft timing over-advanced", "Sticking VVT actuator", "Oil flow problem", "Timing chain problem"],
-    "symptoms": ["Loss of power", "Rough idle", "Poor fuel economy", "Check Engine light"],
-    "diagnostic": ["Check engine oil", "Monitor camshaft angle", "Test VVT solenoid", "Verify mechanical timing"],
-    "repairs": ["Correct oil or VVT fault", "Replace actuator if necessary", "Repair timing system"],
-    "severity": "High"
-  },
-
-  "P0016": {
-    "causes": ["Crankshaft/camshaft correlation error", "Timing chain or belt wear", "Incorrect mechanical timing", "Camshaft or crankshaft sensor signal problem"],
-    "symptoms": ["Hard starting", "No-start condition", "Misfire", "Rough running"],
-    "diagnostic": ["Check cam/crank sensor signals", "Verify mechanical timing", "Inspect timing chain or belt", "Check sensor wiring"],
-    "repairs": ["Correct mechanical timing", "Replace worn timing components", "Repair sensor or wiring fault"],
-    "severity": "High"
-  },
-
-  "P0030": {
-    "causes": ["Bank 1 Sensor 1 O2 heater circuit fault", "Open or shorted wiring", "Failed oxygen sensor heater", "Fuse or power supply problem"],
-    "symptoms": ["Check Engine light", "Increased emissions", "Delayed closed-loop operation"],
-    "diagnostic": ["Check heater power and ground", "Measure heater resistance", "Inspect fuse and connector"],
-    "repairs": ["Repair wiring", "Repair power supply", "Replace O2 sensor if heater is defective"],
-    "severity": "Low"
-  },
-
-  "P0100": {
-    "causes": ["MAF circuit malfunction", "Damaged MAF wiring", "Poor connector contact", "Failed MAF sensor"],
-    "symptoms": ["Poor acceleration", "Rough idle", "Poor fuel economy", "Check Engine light"],
-    "diagnostic": ["Inspect intake system", "Check MAF power and ground", "Check live airflow readings", "Inspect sensor wiring"],
-    "repairs": ["Repair wiring", "Service or replace MAF", "Repair intake fault"],
-    "severity": "Medium"
-  },
-
-  "P0101": {
-    "causes": ["MAF range/performance problem", "Dirty or inaccurate MAF", "Air intake leak", "Restricted air filter"],
-    "symptoms": ["Hesitation", "Loss of power", "Poor fuel economy", "Rough running"],
-    "diagnostic": ["Inspect intake tract", "Check MAF readings at idle and load", "Check fuel trims", "Inspect air filter"],
-    "repairs": ["Repair intake leak", "Service or replace MAF", "Replace restricted air filter"],
-    "severity": "Medium"
-  },
-
-  "P0102": {
-    "causes": ["MAF signal too low", "Sensor wiring fault", "Low sensor output", "Airflow restriction"],
-    "symptoms": ["Poor acceleration", "Rough running", "Stalling"],
-    "diagnostic": ["Check MAF signal", "Inspect wiring", "Check intake restriction", "Compare airflow with engine load"],
-    "repairs": ["Repair circuit", "Replace MAF if confirmed faulty", "Correct intake restriction"],
-    "severity": "Medium"
-  },
-
-  "P0103": {
-    "causes": ["MAF signal too high", "Short to voltage", "Faulty MAF", "Incorrect airflow measurement"],
-    "symptoms": ["Poor running", "Incorrect fuel trims", "Check Engine light"],
-    "diagnostic": ["Check MAF signal against specification", "Inspect wiring for short to voltage", "Inspect intake system"],
-    "repairs": ["Repair wiring", "Replace faulty MAF", "Correct intake fault"],
-    "severity": "Medium"
-  },
-
-  "P0110": {
-    "causes": ["Intake air temperature sensor circuit fault", "Open or shorted wiring", "Failed IAT sensor"],
-    "symptoms": ["Check Engine light", "Poor cold or hot running", "Fuel economy changes"],
-    "diagnostic": ["Compare IAT reading with ambient temperature", "Check sensor resistance or voltage", "Inspect connector"],
-    "repairs": ["Repair wiring", "Replace IAT sensor"],
-    "severity": "Low"
-  },
-
-  "P0115": {
-    "causes": ["Engine coolant temperature sensor circuit fault", "Open or shorted wiring", "Failed ECT sensor"],
-    "symptoms": ["Hard starting", "Incorrect cooling fan operation", "Poor fuel economy", "Check Engine light"],
-    "diagnostic": ["Compare cold ECT reading with ambient temperature", "Check sensor resistance", "Inspect wiring and connector"],
-    "repairs": ["Repair circuit", "Replace ECT sensor", "Verify cooling fan control"],
-    "severity": "Medium"
-  },
-
-  "P0128": {
-    "causes": ["Thermostat stuck open", "Incorrect coolant temperature reading", "Low coolant level", "Cooling system fault"],
-    "symptoms": ["Engine takes too long to warm", "Low cabin heat", "Poor fuel economy", "Check Engine light"],
-    "diagnostic": ["Monitor coolant temperature during warm-up", "Check thermostat operation", "Verify coolant level"],
-    "repairs": ["Replace thermostat if faulty", "Correct coolant level or leak", "Replace inaccurate sensor"],
-    "severity": "Low"
-  },
-
-  "P0131": {
-    "causes": ["Bank 1 Sensor 1 O2 signal low", "Lean air/fuel mixture", "Exhaust leak", "Faulty O2 sensor or wiring"],
-    "symptoms": ["Check Engine light", "Poor fuel economy", "Rough running"],
-    "diagnostic": ["Check fuel trims", "Inspect exhaust for leaks", "Monitor O2 sensor signal", "Inspect sensor wiring"],
-    "repairs": ["Repair exhaust leak", "Correct lean condition", "Replace O2 sensor if confirmed faulty"],
-    "severity": "Medium"
-  },
-
-  "P0133": {
-    "causes": ["Slow O2 sensor response", "Aging oxygen sensor", "Exhaust leak", "Unstable fuel mixture"],
-    "symptoms": ["Check Engine light", "Poor fuel economy", "Increased emissions"],
-    "diagnostic": ["Monitor O2 switching rate", "Check exhaust leaks", "Review fuel trims and misfire data"],
-    "repairs": ["Repair exhaust or mixture fault", "Replace slow O2 sensor when confirmed"],
-    "severity": "Low"
-  },
-
-  "P0138": {
-    "causes": ["Bank 1 Sensor 2 O2 voltage too high", "Rich exhaust condition", "Short to voltage", "Faulty downstream O2 sensor"],
-    "symptoms": ["Check Engine light", "Increased emissions", "Possible fuel economy change"],
-    "diagnostic": ["Check downstream O2 waveform", "Check fuel trims", "Inspect wiring and exhaust"],
-    "repairs": ["Repair wiring", "Correct rich condition", "Replace O2 sensor if defective"],
-    "severity": "Low"
-  },
-
-  "P0141": {
-    "causes": ["Bank 1 Sensor 2 O2 heater fault", "Open or shorted heater wiring", "Failed sensor heater", "Fuse or power problem"],
-    "symptoms": ["Check Engine light", "Increased emissions during warm-up"],
-    "diagnostic": ["Check heater power and ground", "Measure heater resistance", "Inspect fuse and connector"],
-    "repairs": ["Repair wiring or fuse", "Replace downstream O2 sensor if heater has failed"],
-    "severity": "Low"
-  },
-
-  "P0171": {
-    "causes": ["Vacuum or intake leak", "MAF under-reporting", "Low fuel pressure", "Restricted injector", "Exhaust leak before O2 sensor"],
-    "symptoms": ["Rough idle", "Hesitation", "Poor acceleration", "Possible misfire", "Check Engine light"],
-    "diagnostic": ["Check fuel trims at idle and under load", "Smoke-test intake", "Check MAF readings", "Measure fuel pressure", "Inspect exhaust before O2 sensor"],
-    "repairs": ["Repair intake leak", "Correct fuel delivery problem", "Service or replace MAF if confirmed", "Repair exhaust leak"],
-    "severity": "Medium"
-  },
-
-  "P0172": {
-    "causes": ["Excessive fuel delivery", "Leaking injector", "High fuel pressure", "Incorrect MAF/O2 reading", "Restricted air supply"],
-    "symptoms": ["Poor fuel economy", "Rough idle", "Fuel smell", "Black smoke on some engines"],
-    "diagnostic": ["Check fuel trims", "Measure fuel pressure", "Test injector leak-down", "Check MAF and O2 data"],
-    "repairs": ["Repair fuel pressure fault", "Replace leaking injector", "Correct sensor or intake fault"],
-    "severity": "Medium"
-  },
-
-  "P0174": {
-    "causes": ["Vacuum or intake leak on Bank 2", "MAF under-reporting", "Low fuel pressure", "Injector restriction", "Exhaust leak"],
-    "symptoms": ["Rough idle", "Hesitation", "Poor acceleration", "Check Engine light"],
-    "diagnostic": ["Compare Bank 1 and Bank 2 fuel trims", "Smoke-test intake", "Check fuel pressure and MAF"],
-    "repairs": ["Repair intake leaks", "Correct fuel delivery problem", "Service or replace MAF if confirmed"],
-    "severity": "Medium"
-  },
-
-  "P0175": {
-    "causes": ["Excessive fuel on Bank 2", "Leaking injector", "High fuel pressure", "Incorrect sensor reading"],
-    "symptoms": ["Poor fuel economy", "Rough idle", "Fuel smell", "Possible black smoke"],
-    "diagnostic": ["Compare bank fuel trims", "Check fuel pressure", "Test injectors", "Verify MAF and O2 readings"],
-    "repairs": ["Repair fuel pressure fault", "Replace leaking injector", "Correct sensor fault"],
-    "severity": "Medium"
-  },
-
-  "P0201": {
-    "causes": ["Cylinder 1 injector circuit fault", "Open or shorted injector wiring", "Poor connector contact", "Failed injector"],
-    "symptoms": ["Cylinder 1 misfire", "Rough running", "Loss of power", "Check Engine light"],
-    "diagnostic": ["Inspect injector connector", "Measure injector resistance", "Check injector control pulse", "Check wiring continuity"],
-    "repairs": ["Repair wiring", "Replace injector if confirmed faulty", "Verify ECU driver"],
-    "severity": "High"
-  },
-
-  "P0202": {
-    "causes": ["Cylinder 2 injector circuit fault", "Open or shorted wiring", "Poor connector", "Failed injector"],
-    "symptoms": ["Cylinder 2 misfire", "Rough idle", "Reduced power"],
-    "diagnostic": ["Inspect connector and harness", "Measure injector resistance", "Verify injector control pulse"],
-    "repairs": ["Repair wiring", "Replace injector if confirmed faulty"],
-    "severity": "High"
-  },
-
-  "P0203": {
-    "causes": ["Cylinder 3 injector circuit fault", "Open or shorted wiring", "Poor connector", "Failed injector"],
-    "symptoms": ["Cylinder 3 misfire", "Rough running", "Reduced power"],
-    "diagnostic": ["Inspect injector circuit", "Test injector resistance", "Verify control pulse"],
-    "repairs": ["Repair wiring", "Replace injector if confirmed faulty"],
-    "severity": "High"
-  },
-
-  "P0204": {
-    "causes": ["Cylinder 4 injector circuit fault", "Open or shorted wiring", "Poor connector", "Failed injector"],
-    "symptoms": ["Cylinder 4 misfire", "Rough running", "Reduced power"],
-    "diagnostic": ["Inspect injector circuit", "Test injector resistance", "Verify control pulse"],
-    "repairs": ["Repair wiring", "Replace injector if confirmed faulty"],
-    "severity": "High"
-  },
-
-  "P0234": {
-    "causes": ["Turbocharger overboost", "Wastegate or VGT actuator stuck", "Boost control solenoid fault", "Vacuum/control problem"],
-    "symptoms": ["Loss of power", "Limp mode", "Boost-related hesitation", "Check Engine light"],
-    "diagnostic": ["Compare commanded and actual boost", "Inspect actuator movement", "Check vacuum/control lines", "Inspect turbo mechanism"],
-    "repairs": ["Repair boost control system", "Repair vacuum lines", "Service actuator", "Repair turbocharger if mechanically faulty"],
-    "severity": "High"
-  },
-
-  "P0299": {
-    "causes": ["Turbocharger underboost", "Boost leak", "Intercooler hose leak", "Wastegate/VGT control fault", "Turbocharger wear"],
-    "symptoms": ["Loss of power", "Slow acceleration", "Limp mode", "Possible turbo noise"],
-    "diagnostic": ["Pressure-test charge-air system", "Compare commanded and actual boost", "Inspect actuator and vacuum lines", "Check exhaust restriction where applicable"],
-    "repairs": ["Repair boost leaks", "Repair actuator/control system", "Service turbocharger if mechanically faulty"],
-    "severity": "High"
-  },
-
-  "P0300": {
-    "causes": ["Ignition fault", "Fuel delivery problem", "Vacuum leak", "Injector fault", "Low compression", "Incorrect timing"],
-    "symptoms": ["Rough running", "Engine vibration", "Loss of power", "Flashing Check Engine possible"],
-    "diagnostic": ["Check misfire counters", "Inspect ignition components", "Check fuel trims", "Test compression if necessary"],
-    "repairs": ["Repair ignition or fuel fault", "Repair intake leak", "Correct mechanical compression or timing problem"],
-    "severity": "High"
-  },
-
-  "P0301": {
-    "causes": ["Cylinder 1 ignition fault", "Injector problem", "Vacuum leak", "Low compression", "Timing issue"],
-    "symptoms": ["Cylinder 1 misfire", "Rough idle", "Loss of power"],
-    "diagnostic": ["Test ignition components", "Check injector operation", "Perform compression test if needed", "Inspect intake"],
-    "repairs": ["Replace failed ignition or injector component", "Repair vacuum or mechanical fault"],
-    "severity": "High"
-  },
-
-  "P0302": {
-    "causes": ["Cylinder 2 ignition fault", "Injector problem", "Vacuum leak", "Low compression", "Timing issue"],
-    "symptoms": ["Cylinder 2 misfire", "Rough idle", "Loss of power"],
-    "diagnostic": ["Test ignition and injector", "Check compression", "Inspect intake"],
-    "repairs": ["Repair confirmed ignition, fuel or mechanical fault"],
-    "severity": "High"
-  },
-
-  "P0303": {
-    "causes": ["Cylinder 3 ignition fault", "Injector problem", "Vacuum leak", "Low compression", "Timing issue"],
-    "symptoms": ["Cylinder 3 misfire", "Rough running", "Reduced power"],
-    "diagnostic": ["Test ignition and injector", "Check compression", "Inspect intake"],
-    "repairs": ["Repair confirmed ignition, fuel or mechanical fault"],
-    "severity": "High"
-  },
-
-  "P0304": {
-    "causes": ["Cylinder 4 ignition fault", "Injector problem", "Vacuum leak", "Low compression", "Timing issue"],
-    "symptoms": ["Cylinder 4 misfire", "Rough running", "Reduced power"],
-    "diagnostic": ["Test ignition and injector", "Check compression", "Inspect intake"],
-    "repairs": ["Repair confirmed ignition, fuel or mechanical fault"],
-    "severity": "High"
-  },
-
-  "P0325": {
-    "causes": ["Knock sensor circuit fault", "Damaged wiring", "Poor connector contact", "Failed knock sensor"],
-    "symptoms": ["Check Engine light", "Reduced performance", "Possible reduced ignition timing"],
-    "diagnostic": ["Inspect sensor and harness", "Check sensor signal according to manufacturer procedure", "Check for actual engine knock"],
-    "repairs": ["Repair wiring", "Replace knock sensor if confirmed faulty", "Correct underlying engine knock"],
-    "severity": "Medium"
-  },
-
-  "P0335": {
-    "causes": ["Crankshaft position sensor circuit fault", "Failed CKP sensor", "Damaged wiring", "Reluctor/tone wheel problem"],
-    "symptoms": ["Hard starting", "No-start", "Stalling", "Loss of RPM signal"],
-    "diagnostic": ["Check RPM signal while cranking", "Inspect sensor wiring", "Check sensor gap where applicable", "Inspect reluctor"],
-    "repairs": ["Repair wiring", "Replace CKP sensor", "Repair damaged reluctor"],
-    "severity": "High"
-  },
-
-  "P0340": {
-    "causes": ["Camshaft position sensor circuit fault", "Failed CMP sensor", "Wiring/connector problem", "Mechanical timing issue"],
-    "symptoms": ["Hard starting", "Poor running", "Stalling", "Reduced power"],
-    "diagnostic": ["Check camshaft signal", "Inspect wiring", "Compare cam/crank synchronization", "Verify mechanical timing"],
-    "repairs": ["Repair wiring", "Replace CMP sensor if faulty", "Correct mechanical timing"],
-    "severity": "High"
-  },
-
-  "P0380": {
-    "causes": ["Glow plug circuit fault", "Failed glow plug", "Glow plug relay/module fault", "Wiring problem"],
-    "symptoms": ["Hard cold starting", "White/gray smoke during cold start", "Rough cold idle"],
-    "diagnostic": ["Measure glow plug resistance/current", "Check module/relay output", "Inspect glow plug wiring"],
-    "repairs": ["Replace failed glow plug", "Repair wiring", "Replace control module/relay if confirmed"],
-    "severity": "Medium"
-  },
-
-  "P0401": {
-    "causes": ["Insufficient EGR flow", "Carbon-blocked EGR valve/passages", "EGR valve not opening", "Vacuum/control fault"],
-    "symptoms": ["Check Engine light", "Hesitation", "Poor low-speed running", "Possible increased emissions"],
-    "diagnostic": ["Command EGR and observe response", "Inspect EGR passages", "Check EGR position/flow data", "Inspect vacuum/control system"],
-    "repairs": ["Clean EGR passages", "Repair EGR control", "Replace EGR valve if faulty"],
-    "severity": "Medium"
-  },
-
-  "P0402": {
-    "causes": ["Excessive EGR flow", "EGR valve stuck open", "Incorrect EGR position feedback", "Control fault"],
-    "symptoms": ["Rough idle", "Stalling", "Hesitation", "Poor combustion"],
-    "diagnostic": ["Compare commanded and actual EGR position", "Inspect valve for sticking", "Check control system"],
-    "repairs": ["Clean/service EGR", "Repair control circuit", "Replace EGR valve if defective"],
-    "severity": "Medium"
-  },
-
-  "P0410": {
-    "causes": ["Secondary air injection system fault", "Failed air pump", "Blocked air passages", "Faulty valve or relay"],
-    "symptoms": ["Check Engine light", "Increased cold-start emissions", "Possible pump noise"],
-    "diagnostic": ["Command secondary air pump", "Check pump power and ground", "Inspect valves and air passages"],
-    "repairs": ["Repair wiring", "Replace pump or valve", "Clear blocked air passages"],
-    "severity": "Low"
-  },
-
-  "P0420": {
-    "causes": ["Catalytic converter efficiency below threshold", "Exhaust leak", "Aging or damaged catalyst", "Incorrect fuel mixture", "O2 sensor problem"],
-    "symptoms": ["Check Engine light", "Possible increased emissions", "Usually little change in drivability"],
-    "diagnostic": ["Check for other engine faults first", "Inspect exhaust for leaks", "Compare upstream and downstream O2 behavior", "Check fuel trims and misfire history"],
-    "repairs": ["Repair exhaust or engine fault", "Replace O2 sensor only if proven faulty", "Replace catalytic converter after confirmation"],
-    "severity": "Medium"
-  },
-
-  "P0430": {
-    "causes": ["Bank 2 catalyst efficiency below threshold", "Exhaust leak", "Aging catalyst", "Fuel mixture problem", "O2 sensor fault"],
-    "symptoms": ["Check Engine light", "Increased emissions", "Usually normal drivability"],
-    "diagnostic": ["Check other engine codes", "Inspect Bank 2 exhaust", "Compare O2 sensor behavior", "Check fuel trims"],
-    "repairs": ["Repair underlying engine/exhaust fault", "Replace catalyst only after diagnosis"],
-    "severity": "Medium"
-  },
-
-  "P0440": {
-    "causes": ["EVAP system malfunction", "Loose or damaged fuel cap", "Cracked EVAP hose", "Purge or vent valve fault"],
-    "symptoms": ["Check Engine light", "Possible fuel odor"],
-    "diagnostic": ["Inspect fuel cap", "Smoke-test EVAP system", "Test purge and vent valves"],
-    "repairs": ["Repair EVAP leak", "Replace damaged hose/cap", "Replace faulty valve"],
-    "severity": "Low"
-  },
-
-  "P0442": {
-    "causes": ["Small EVAP leak", "Fuel cap sealing problem", "Small hose crack", "EVAP valve not sealing"],
-    "symptoms": ["Check Engine light", "Usually no drivability symptoms"],
-    "diagnostic": ["Inspect cap seal", "Smoke-test EVAP system", "Check purge/vent valve sealing"],
-    "repairs": ["Replace cap if faulty", "Repair hose/leak", "Replace faulty valve"],
-    "severity": "Low"
-  },
-
-  "P0455": {
-    "causes": ["Large EVAP leak", "Missing or loose fuel cap", "Disconnected hose", "Large crack in EVAP plumbing"],
-    "symptoms": ["Check Engine light", "Possible fuel odor"],
-    "diagnostic": ["Inspect EVAP plumbing", "Perform smoke test", "Check purge and vent valves"],
-    "repairs": ["Reconnect or replace hose", "Replace fuel cap", "Repair EVAP leak"],
-    "severity": "Low"
-  },
-
-  "P0456": {
-    "causes": ["Very small EVAP leak", "Fuel cap seal problem", "Hairline hose or canister leak", "Valve not sealing completely"],
-    "symptoms": ["Check Engine light", "Usually no drivability symptoms"],
-    "diagnostic": ["Inspect cap seal", "Perform EVAP smoke test", "Check valve sealing"],
-    "repairs": ["Replace cap", "Repair small leak", "Replace faulty EVAP valve"],
-    "severity": "Low"
-  },
-
-  "P0500": {
-    "causes": ["Vehicle speed sensor circuit fault", "Failed speed sensor", "Wiring/connector fault", "Wheel-speed signal problem"],
-    "symptoms": ["Speedometer malfunction", "Transmission shift problems", "Cruise control may stop working"],
-    "diagnostic": ["Check vehicle speed in live data", "Inspect sensor and wiring", "Scan ABS and transmission modules"],
-    "repairs": ["Repair wiring", "Replace speed sensor", "Correct wheel-speed signal fault"],
-    "severity": "Medium"
-  },
-
-  "P0506": {
-    "causes": ["Idle speed lower than expected", "Dirty throttle body", "Vacuum leak", "Idle control fault"],
-    "symptoms": ["Low idle", "Unstable idle", "Stalling", "Engine vibration"],
-    "diagnostic": ["Compare commanded and actual idle", "Inspect throttle body", "Check vacuum leaks", "Review fuel trims"],
-    "repairs": ["Clean/service throttle body", "Repair vacuum leak", "Repair idle control system"],
-    "severity": "Medium"
-  },
-
-  "P0562": {
-    "causes": ["System voltage too low", "Weak battery", "Alternator/charging fault", "Poor power or ground connection"],
-    "symptoms": ["Multiple warning lights", "Hard starting", "Electrical glitches", "Battery warning"],
-    "diagnostic": ["Measure battery voltage", "Measure charging voltage", "Check charging ripple", "Inspect terminals and grounds"],
-    "repairs": ["Charge or replace battery", "Repair alternator/charging system", "Clean or repair connections"],
-    "severity": "High"
-  },
-
-  "P0601": {
-    "causes": ["ECU internal memory/checksum error", "Voltage interruption", "ECU internal fault"],
-    "symptoms": ["Check Engine light", "Starting problems", "Drivability problems", "Possible limp mode"],
-    "diagnostic": ["Check battery and charging voltage", "Scan for related power/communication codes", "Follow manufacturer ECU test procedure"],
-    "repairs": ["Correct voltage supply issue", "Reprogram ECU where applicable", "Replace ECU only after confirming internal failure"],
-    "severity": "High"
-  },
-
-  "P0622": {
-    "causes": ["Generator field control circuit fault", "Alternator regulator fault", "Open or shorted wiring", "Control module fault"],
-    "symptoms": ["Charging warning", "Low battery voltage", "Electrical system problems"],
-    "diagnostic": ["Measure charging voltage", "Check alternator field/control circuit", "Inspect wiring and connector"],
-    "repairs": ["Repair wiring", "Repair or replace alternator/regulator", "Verify control signal"],
-    "severity": "High"
-  },
-
-  "P0700": {
-    "causes": ["Transmission control module has stored a fault", "Transmission electrical fault", "Transmission mechanical fault", "Communication problem"],
-    "symptoms": ["Transmission warning", "Harsh shifting", "Limp mode", "Check Engine light"],
-    "diagnostic": ["Scan TCM for specific codes", "Check transmission fluid where applicable", "Inspect transmission wiring and power supply"],
-    "repairs": ["Diagnose the specific TCM code", "Correct electrical, fluid or mechanical fault"],
-    "severity": "High"
-  },
-
-  "P0715": {
-    "causes": ["Transmission input speed sensor circuit fault", "Failed sensor", "Wiring/connector problem", "Reluctor problem"],
-    "symptoms": ["Harsh shifting", "Incorrect shift timing", "Transmission limp mode"],
-    "diagnostic": ["Check input speed data", "Inspect sensor wiring", "Compare input and output speeds"],
-    "repairs": ["Repair wiring", "Replace sensor", "Repair reluctor/mechanical fault"],
-    "severity": "High"
-  },
-
-  "P0720": {
-    "causes": ["Transmission output speed sensor circuit fault", "Failed sensor", "Wiring/connector fault"],
-    "symptoms": ["Erratic shifting", "Transmission limp mode", "Speedometer problems on some vehicles"],
-    "diagnostic": ["Check output speed data", "Inspect sensor and harness", "Compare output speed with vehicle speed"],
-    "repairs": ["Repair wiring", "Replace output speed sensor"],
-    "severity": "High"
-  }
-    "P0001": {
+  
+ "P0001": {
     "causes": ["Open fuel volume regulator circuit", "Damaged wiring or connector", "Faulty fuel volume regulator", "ECU driver fault"],
     "symptoms": ["Hard starting", "No-start condition", "Poor engine performance", "Check Engine light"],
     "diagnostic": ["Inspect regulator wiring and connector", "Check power, ground and control signal", "Compare commanded and actual fuel pressure"],
@@ -1146,4 +700,2363 @@
     "repairs": ["Clean or replace MAF sensor", "Repair wiring", "Repair intake system"],
     "severity": "Medium"
   }
+    "P0101": {
+    "causes": ["Mass air flow sensor range/performance fault", "Dirty MAF sensor", "Air intake leak", "Restricted air filter", "Wiring or connector fault"],
+    "symptoms": ["Poor acceleration", "Rough idle", "Poor fuel economy", "Engine hesitation", "Check Engine light"],
+    "diagnostic": ["Inspect air filter and intake system", "Check MAF live data", "Inspect MAF wiring and connector", "Check for vacuum or intake leaks"],
+    "repairs": ["Clean or replace MAF sensor", "Repair intake leaks", "Replace restricted air filter", "Repair wiring"],
+    "severity": "Medium"
+  },
+  "P0102": {
+    "causes": ["MAF sensor circuit low", "Short to ground", "Faulty MAF sensor", "Damaged wiring", "Poor electrical connection"],
+    "symptoms": ["Poor acceleration", "Rough idle", "Stalling", "Poor fuel economy", "Check Engine light"],
+    "diagnostic": ["Measure MAF signal voltage", "Inspect wiring for shorts", "Check connector terminals", "Compare MAF readings with engine load"],
+    "repairs": ["Repair shorted wiring", "Repair connector", "Clean or replace MAF sensor"],
+    "severity": "Medium"
+  },
+  "P0103": {
+    "causes": ["MAF sensor circuit high", "Short to voltage", "Faulty MAF sensor", "Open circuit", "Wiring fault"],
+    "symptoms": ["Poor engine performance", "Rough idle", "Poor fuel economy", "Hesitation", "Check Engine light"],
+    "diagnostic": ["Measure MAF signal voltage", "Inspect wiring", "Check connector", "Compare sensor output with expected airflow"],
+    "repairs": ["Repair wiring", "Repair connector", "Replace faulty MAF sensor"],
+    "severity": "Medium"
+  },
+  "P0104": {
+    "causes": ["MAF sensor intermittent circuit", "Loose connector", "Intermittent wiring fault", "Failing MAF sensor", "Air intake problem"],
+    "symptoms": ["Intermittent hesitation", "Stalling", "Fluctuating idle", "Poor acceleration", "Check Engine light"],
+    "diagnostic": ["Monitor MAF live data", "Wiggle-test wiring", "Inspect connector terminals", "Check intake system"],
+    "repairs": ["Repair wiring", "Secure connector", "Replace faulty MAF sensor", "Repair intake leaks"],
+    "severity": "Medium"
+  },
+  "P0105": {
+    "causes": ["MAP sensor circuit fault", "Damaged wiring", "Faulty MAP sensor", "Vacuum problem", "Connector fault"],
+    "symptoms": ["Poor acceleration", "Rough idle", "Hard starting", "Stalling", "Check Engine light"],
+    "diagnostic": ["Check MAP signal", "Inspect vacuum hose", "Measure sensor voltage", "Inspect wiring and connector"],
+    "repairs": ["Repair vacuum hose", "Repair wiring", "Replace MAP sensor"],
+    "severity": "Medium"
+  },
+  "P0106": {
+    "causes": ["MAP sensor range/performance fault", "Vacuum leak", "Faulty MAP sensor", "Restricted intake", "Engine mechanical problem"],
+    "symptoms": ["Poor acceleration", "Rough idle", "Poor fuel economy", "Hesitation", "Check Engine light"],
+    "diagnostic": ["Compare MAP reading with atmospheric pressure", "Check vacuum", "Inspect intake system", "Test sensor response"],
+    "repairs": ["Repair vacuum leaks", "Replace MAP sensor", "Correct intake restriction"],
+    "severity": "Medium"
+  },
+  "P0107": {
+    "causes": ["MAP sensor circuit low", "Short to ground", "Faulty MAP sensor", "Damaged wiring"],
+    "symptoms": ["Rough idle", "Poor acceleration", "Stalling", "Hard starting", "Check Engine light"],
+    "diagnostic": ["Measure MAP signal voltage", "Inspect wiring", "Check sensor ground", "Compare live data with actual manifold pressure"],
+    "repairs": ["Repair short", "Repair wiring", "Replace MAP sensor"],
+    "severity": "Medium"
+  },
+  "P0108": {
+    "causes": ["MAP sensor circuit high", "Short to voltage", "Open ground circuit", "Faulty MAP sensor", "Wiring fault"],
+    "symptoms": ["Poor acceleration", "Rough running", "Hard starting", "Poor fuel economy", "Check Engine light"],
+    "diagnostic": ["Measure MAP signal voltage", "Inspect sensor ground and supply", "Check wiring continuity", "Compare MAP reading with engine condition"],
+    "repairs": ["Repair wiring", "Restore sensor ground", "Replace MAP sensor"],
+    "severity": "Medium"
+  },
+  "P0109": {
+    "causes": ["MAP sensor intermittent circuit", "Loose connector", "Intermittent wiring", "Failing MAP sensor", "Vacuum instability"],
+    "symptoms": ["Intermittent hesitation", "Rough idle", "Stalling", "Fluctuating engine performance"],
+    "diagnostic": ["Monitor MAP live data", "Wiggle-test connector and harness", "Inspect vacuum system", "Test sensor response"],
+    "repairs": ["Repair wiring", "Secure connector", "Repair vacuum system", "Replace MAP sensor"],
+    "severity": "Medium"
+  },
+  "P0110": {
+    "causes": ["Intake air temperature sensor circuit fault", "Damaged wiring", "Faulty IAT sensor", "Connector corrosion"],
+    "symptoms": ["Poor fuel economy", "Hard starting", "Poor performance", "Check Engine light"],
+    "diagnostic": ["Compare IAT reading with ambient temperature", "Measure sensor resistance", "Inspect wiring and connector"],
+    "repairs": ["Repair wiring", "Clean connector", "Replace IAT sensor"],
+    "severity": "Low"
+  },
+  "P0111": {
+    "causes": ["IAT sensor range/performance fault", "Faulty sensor", "Wiring resistance", "Poor connector contact", "Incorrect intake temperature reading"],
+    "symptoms": ["Poor fuel economy", "Poor acceleration", "Rough running", "Check Engine light"],
+    "diagnostic": ["Compare IAT reading with actual temperature", "Monitor sensor response", "Inspect wiring and connector"],
+    "repairs": ["Repair wiring", "Repair connector", "Replace IAT sensor"],
+    "severity": "Low"
+  },
+  "P0112": {
+    "causes": ["IAT sensor circuit low", "Short to ground", "Faulty IAT sensor", "Damaged wiring"],
+    "symptoms": ["Poor fuel economy", "Poor engine performance", "Hard starting", "Check Engine light"],
+    "diagnostic": ["Measure IAT signal voltage", "Inspect wiring for shorts", "Test sensor resistance"],
+    "repairs": ["Repair short", "Repair wiring", "Replace IAT sensor"],
+    "severity": "Low"
+  },
+  "P0113": {
+    "causes": ["IAT sensor circuit high", "Open circuit", "Disconnected connector", "Faulty IAT sensor", "Damaged wiring"],
+    "symptoms": ["Poor fuel economy", "Hard starting", "Poor acceleration", "Check Engine light"],
+    "diagnostic": ["Measure signal voltage", "Inspect connector", "Check wiring continuity", "Test sensor resistance"],
+    "repairs": ["Repair open circuit", "Reconnect connector", "Repair wiring", "Replace sensor"],
+    "severity": "Low"
+  },
+  "P0114": {
+    "causes": ["IAT sensor intermittent circuit", "Loose connector", "Intermittent wiring", "Failing sensor"],
+    "symptoms": ["Intermittent poor performance", "Fluctuating temperature reading", "Hesitation", "Check Engine light"],
+    "diagnostic": ["Monitor IAT live data", "Wiggle-test harness", "Inspect connector pins", "Test sensor resistance"],
+    "repairs": ["Repair wiring", "Secure connector", "Replace faulty IAT sensor"],
+    "severity": "Low"
+  },
+  "P0115": {
+    "causes": ["Engine coolant temperature sensor circuit fault", "Damaged wiring", "Faulty ECT sensor", "Connector corrosion"],
+    "symptoms": ["Hard starting", "Poor fuel economy", "Cooling fan problems", "Incorrect temperature reading", "Check Engine light"],
+    "diagnostic": ["Compare ECT reading with actual coolant temperature", "Measure sensor resistance", "Inspect wiring and connector"],
+    "repairs": ["Repair wiring", "Clean connector", "Replace ECT sensor"],
+    "severity": "Medium"
+  },
+  "P0116": {
+    "causes": ["ECT sensor range/performance fault", "Faulty coolant temperature sensor", "Thermostat problem", "Cooling system issue", "Wiring fault"],
+    "symptoms": ["Slow warm-up", "Overheating", "Poor fuel economy", "Hard starting", "Check Engine light"],
+    "diagnostic": ["Monitor coolant temperature from cold start", "Check thermostat operation", "Compare scan data with actual temperature"],
+    "repairs": ["Replace thermostat if faulty", "Replace ECT sensor", "Repair wiring", "Correct cooling system fault"],
+    "severity": "High"
+  },
+  "P0117": {
+    "causes": ["ECT sensor circuit low", "Short to ground", "Faulty ECT sensor", "Damaged wiring"],
+    "symptoms": ["Incorrect temperature reading", "Poor fuel economy", "Hard starting", "Cooling fan operation may change"],
+    "diagnostic": ["Measure ECT signal voltage", "Inspect wiring", "Test sensor resistance", "Compare live data with actual temperature"],
+    "repairs": ["Repair short", "Repair wiring", "Replace ECT sensor"],
+    "severity": "Medium"
+  },
+  "P0118": {
+    "causes": ["ECT sensor circuit high", "Open circuit", "Disconnected connector", "Faulty ECT sensor", "Damaged wiring"],
+    "symptoms": ["Hard starting", "Poor fuel economy", "Cooling fan running excessively", "Incorrect temperature reading"],
+    "diagnostic": ["Check sensor voltage", "Inspect connector", "Check wiring continuity", "Measure sensor resistance"],
+    "repairs": ["Repair open circuit", "Reconnect connector", "Repair wiring", "Replace ECT sensor"],
+    "severity": "Medium"
+  },
+  "P0119": {
+    "causes": ["ECT sensor intermittent circuit", "Loose connector", "Intermittent wiring", "Failing sensor"],
+    "symptoms": ["Fluctuating temperature reading", "Intermittent cooling fan operation", "Poor drivability", "Check Engine light"],
+    "diagnostic": ["Monitor ECT live data", "Wiggle-test wiring", "Inspect connector", "Compare scan temperature with actual temperature"],
+    "repairs": ["Repair wiring", "Secure connector", "Replace ECT sensor"],
+    "severity": "Medium"
+  },
+  "P0120": {
+    "causes": ["Throttle position sensor circuit fault", "Damaged wiring", "Faulty TPS", "Throttle body problem", "Connector fault"],
+    "symptoms": ["Poor acceleration", "Hesitation", "Rough idle", "Stalling", "Check Engine light"],
+    "diagnostic": ["Monitor throttle position data", "Check TPS voltage sweep", "Inspect throttle body wiring", "Check connector"],
+    "repairs": ["Repair wiring", "Repair connector", "Replace TPS or throttle body as required"],
+    "severity": "High"
+  },
+  "P0121": {
+    "causes": ["Throttle position sensor range/performance fault", "Faulty TPS", "Throttle body contamination", "Wiring problem"],
+    "symptoms": ["Poor acceleration", "Hesitation", "Rough idle", "Stalling", "Check Engine light"],
+    "diagnostic": ["Check throttle position sensor sweep", "Inspect throttle body", "Monitor commanded and actual throttle position"],
+    "repairs": ["Clean throttle body", "Repair wiring", "Replace TPS or throttle body"],
+    "severity": "High"
+  },
+  "P0122": {
+    "causes": ["Throttle position sensor circuit low", "Short to ground", "Faulty TPS", "Damaged wiring"],
+    "symptoms": ["Poor acceleration", "Hesitation", "Stalling", "Limp mode", "Check Engine light"],
+    "diagnostic": ["Measure TPS signal voltage", "Inspect wiring for shorts", "Check sensor ground and reference voltage"],
+    "repairs": ["Repair short", "Repair wiring", "Replace TPS or throttle body"],
+    "severity": "High"
+  },
+  "P0123": {
+    "causes": ["Throttle position sensor circuit high", "Short to voltage", "Open ground", "Faulty TPS", "Wiring fault"],
+    "symptoms": ["Unstable throttle response", "Poor acceleration", "Limp mode", "Stalling", "Check Engine light"],
+    "diagnostic": ["Measure TPS signal", "Check reference and ground", "Inspect wiring", "Monitor throttle position"],
+    "repairs": ["Repair wiring", "Restore sensor ground", "Replace TPS or throttle body"],
+    "severity": "High"
+  },
+  "P0124": {
+    "causes": ["Throttle position sensor intermittent circuit", "Loose connector", "Intermittent wiring", "Failing TPS"],
+    "symptoms": ["Intermittent hesitation", "Unstable throttle response", "Stalling", "Limp mode"],
+    "diagnostic": ["Monitor TPS live data", "Wiggle-test wiring", "Inspect connector", "Check sensor signal stability"],
+    "repairs": ["Repair wiring", "Secure connector", "Replace TPS or throttle body"],
+    "severity": "High"
+  },
+  "P0125": {
+    "causes": ["Insufficient coolant temperature for closed-loop operation", "Thermostat stuck open", "Low coolant level", "Faulty ECT sensor", "Cooling system problem"],
+    "symptoms": ["Slow engine warm-up", "Poor fuel economy", "Heater performance may be reduced", "Check Engine light"],
+    "diagnostic": ["Monitor coolant temperature during warm-up", "Check thermostat operation", "Inspect coolant level", "Verify ECT sensor accuracy"],
+    "repairs": ["Replace thermostat", "Correct coolant level", "Replace ECT sensor if faulty", "Repair cooling system"],
+    "severity": "Medium"
+  },
+  "P0126": {
+    "causes": ["Insufficient coolant temperature for stable operation", "Thermostat stuck open", "Low coolant level", "Faulty ECT sensor"],
+    "symptoms": ["Engine runs too cool", "Poor fuel economy", "Reduced heater performance", "Check Engine light"],
+    "diagnostic": ["Monitor warm-up temperature", "Check thermostat", "Inspect coolant level", "Verify ECT readings"],
+    "repairs": ["Replace thermostat", "Correct coolant level", "Replace faulty ECT sensor"],
+    "severity": "Medium"
+  },
+  "P0127": {
+    "causes": ["Intake air temperature too high", "Restricted intercooler or intake", "Boost system problem", "Faulty IAT sensor", "Excessive engine bay heat"],
+    "symptoms": ["Reduced engine power", "Poor acceleration", "Knock or detonation on gasoline engines", "Check Engine light"],
+    "diagnostic": ["Check IAT live data", "Inspect intake and intercooler", "Check boost system", "Compare sensor reading with actual temperature"],
+    "repairs": ["Repair intake or intercooler restriction", "Repair boost system", "Replace faulty IAT sensor"],
+    "severity": "High"
+  },
+  "P0128": {
+    "causes": ["Coolant temperature below thermostat regulating temperature", "Thermostat stuck open", "Faulty ECT sensor", "Cooling system issue"],
+    "symptoms": ["Slow warm-up", "Poor fuel economy", "Low heater output", "Check Engine light"],
+    "diagnostic": ["Monitor coolant temperature from cold start", "Check thermostat opening behavior", "Verify ECT sensor accuracy"],
+    "repairs": ["Replace thermostat", "Replace ECT sensor if faulty", "Repair cooling system"],
+    "severity": "Medium"
+  },
+  "P0129": {
+    "causes": ["Barometric pressure reading too low", "Faulty MAP/barometric sensor", "Wiring fault", "Incorrect atmospheric pressure reading"],
+    "symptoms": ["Poor engine performance", "Hard starting", "Poor fuel economy", "Check Engine light"],
+    "diagnostic": ["Compare barometric pressure with local atmospheric pressure", "Check MAP/BARO sensor", "Inspect wiring"],
+    "repairs": ["Repair wiring", "Replace faulty sensor", "Correct sensor reference problem"],
+    "severity": "Medium"
+  },
+  "P0130": {
+    "causes": ["Oxygen sensor circuit fault bank 1 sensor 1", "Damaged wiring", "Exhaust leak", "Faulty oxygen sensor", "Connector problem"],
+    "symptoms": ["Poor fuel economy", "Rough running", "Increased emissions", "Check Engine light"],
+    "diagnostic": ["Monitor oxygen sensor voltage", "Inspect wiring", "Check for exhaust leaks", "Verify sensor response"],
+    "repairs": ["Repair wiring", "Repair exhaust leak", "Replace oxygen sensor"],
+    "severity": "Medium"
+  },
+  "P0131": {
+    "causes": ["Oxygen sensor circuit low voltage bank 1 sensor 1", "Vacuum leak", "Lean fuel mixture", "Faulty oxygen sensor", "Wiring short"],
+    "symptoms": ["Poor fuel economy", "Rough idle", "Hesitation", "Increased emissions"],
+    "diagnostic": ["Monitor O2 sensor voltage", "Check fuel trims", "Inspect for vacuum leaks", "Test sensor wiring"],
+    "repairs": ["Repair vacuum leaks", "Repair wiring", "Correct fuel delivery problem", "Replace oxygen sensor"],
+    "severity": "Medium"
+  },
+  "P0132": {
+    "causes": ["Oxygen sensor circuit high voltage bank 1 sensor 1", "Rich fuel mixture", "Fuel injector problem", "Faulty O2 sensor", "Wiring short to voltage"],
+    "symptoms": ["Poor fuel economy", "Black exhaust smoke", "Rough running", "Increased emissions"],
+    "diagnostic": ["Monitor O2 sensor voltage", "Check short- and long-term fuel trims", "Inspect injectors", "Check sensor wiring"],
+    "repairs": ["Correct rich fuel condition", "Repair wiring", "Replace faulty injector or O2 sensor"],
+    "severity": "Medium"
+  },
+  "P0133": {
+    "causes": ["Oxygen sensor slow response bank 1 sensor 1", "Aged sensor", "Contaminated sensor", "Exhaust leak", "Fuel mixture problem"],
+    "symptoms": ["Poor fuel economy", "Increased emissions", "Hesitation", "Check Engine light"],
+    "diagnostic": ["Monitor O2 sensor switching rate", "Check fuel trims", "Inspect exhaust for leaks", "Check sensor condition"],
+    "repairs": ["Repair exhaust leak", "Correct fuel mixture", "Replace slow oxygen sensor"],
+    "severity": "Medium"
+  },
+  "P0134": {
+    "causes": ["No oxygen sensor activity detected bank 1 sensor 1", "Open circuit", "Faulty sensor", "Exhaust leak", "Fuel mixture issue"],
+    "symptoms": ["Poor fuel economy", "Increased emissions", "Rough running", "Check Engine light"],
+    "diagnostic": ["Monitor O2 sensor signal", "Check heater operation", "Inspect wiring", "Check exhaust system"],
+    "repairs": ["Repair wiring", "Repair exhaust leak", "Replace oxygen sensor"],
+    "severity": "Medium"
+  },
+  "P0135": {
+    "causes": ["Oxygen sensor heater circuit fault bank 1 sensor 1", "Blown fuse", "Damaged wiring", "Faulty sensor heater"],
+    "symptoms": ["Check Engine light", "Increased emissions", "Poor fuel economy", "Delayed closed-loop operation"],
+    "diagnostic": ["Check heater fuse", "Measure heater resistance", "Check power and ground", "Inspect wiring"],
+    "repairs": ["Repair wiring", "Replace fuse after correcting cause", "Replace oxygen sensor"],
+    "severity": "Low"
+  },
+  "P0136": {
+    "causes": ["Oxygen sensor circuit fault bank 1 sensor 2", "Damaged wiring", "Faulty sensor", "Exhaust leak"],
+    "symptoms": ["Check Engine light", "Increased emissions", "Poor fuel economy"],
+    "diagnostic": ["Monitor downstream O2 signal", "Inspect wiring", "Check exhaust for leaks", "Test sensor"],
+    "repairs": ["Repair wiring", "Repair exhaust leak", "Replace oxygen sensor"],
+    "severity": "Low"
+  },
+  "P0137": {
+    "causes": ["Oxygen sensor circuit low voltage bank 1 sensor 2", "Exhaust leak", "Faulty sensor", "Wiring short", "Fuel mixture problem"],
+    "symptoms": ["Check Engine light", "Increased emissions", "Poor fuel economy"],
+    "diagnostic": ["Monitor downstream O2 voltage", "Inspect exhaust", "Check wiring", "Test sensor response"],
+    "repairs": ["Repair exhaust leak", "Repair wiring", "Replace oxygen sensor"],
+    "severity": "Low"
+  },
+  "P0138": {
+    "causes": ["Oxygen sensor circuit high voltage bank 1 sensor 2", "Rich mixture", "Faulty sensor", "Wiring short to voltage", "Fuel injector problem"],
+    "symptoms": ["Poor fuel economy", "Increased emissions", "Check Engine light", "Possible black exhaust"],
+    "diagnostic": ["Monitor downstream O2 signal", "Check fuel mixture", "Inspect wiring", "Test sensor"],
+    "repairs": ["Correct rich condition", "Repair wiring", "Replace oxygen sensor"],
+    "severity": "Medium"
+  },
+  "P0139": {
+    "causes": ["Oxygen sensor slow response bank 1 sensor 2", "Aged sensor", "Sensor contamination", "Exhaust leak", "Fuel system issue"],
+    "symptoms": ["Check Engine light", "Increased emissions", "Reduced fuel economy"],
+    "diagnostic": ["Monitor downstream sensor response", "Inspect exhaust", "Check sensor condition", "Verify fuel control"],
+    "repairs": ["Repair exhaust leak", "Correct fuel system fault", "Replace oxygen sensor"],
+    "severity": "Low"
+  },
+  "P0140": {
+    "causes": ["No oxygen sensor activity bank 1 sensor 2", "Faulty sensor", "Open circuit", "Sensor heater problem", "Wiring fault"],
+    "symptoms": ["Check Engine light", "Increased emissions", "Possible fuel economy reduction"],
+    "diagnostic": ["Monitor O2 sensor signal", "Check heater circuit", "Inspect wiring and connector"],
+    "repairs": ["Repair wiring", "Repair heater circuit", "Replace oxygen sensor"],
+    "severity": "Low"
+  },
+  "P0141": {
+    "causes": ["Oxygen sensor heater circuit fault bank 1 sensor 2", "Blown fuse", "Damaged wiring", "Faulty sensor heater"],
+    "symptoms": ["Check Engine light", "Increased emissions", "Reduced fuel economy"],
+    "diagnostic": ["Check heater fuse", "Measure heater resistance", "Check power supply", "Inspect wiring"],
+    "repairs": ["Repair wiring", "Replace fuse after identifying cause", "Replace oxygen sensor"],
+    "severity": "Low"
+  },
+  "P0142": {
+    "causes": ["Oxygen sensor circuit fault bank 1 sensor 3", "Damaged wiring", "Faulty sensor", "Connector problem"],
+    "symptoms": ["Check Engine light", "Increased emissions", "Poor fuel economy"],
+    "diagnostic": ["Monitor sensor signal", "Inspect wiring", "Check connector", "Test sensor"],
+    "repairs": ["Repair wiring", "Repair connector", "Replace oxygen sensor"],
+    "severity": "Low"
+  },
+  "P0143": {
+    "causes": ["Oxygen sensor circuit low voltage bank 1 sensor 3", "Faulty sensor", "Short to ground", "Exhaust leak", "Wiring fault"],
+    "symptoms": ["Check Engine light", "Increased emissions", "Poor fuel economy"],
+    "diagnostic": ["Measure sensor signal", "Inspect wiring", "Check exhaust system", "Test sensor"],
+    "repairs": ["Repair short", "Repair exhaust leak", "Replace oxygen sensor"],
+    "severity": "Low"
+  },
+  "P0144": {
+    "causes": ["Oxygen sensor circuit high voltage bank 1 sensor 3", "Rich mixture", "Faulty sensor", "Short to voltage", "Fuel system problem"],
+    "symptoms": ["Poor fuel economy", "Increased emissions", "Check Engine light"],
+    "diagnostic": ["Monitor sensor voltage", "Check fuel trims", "Inspect wiring", "Test sensor"],
+    "repairs": ["Correct rich mixture", "Repair wiring", "Replace faulty sensor"],
+    "severity": "Medium"
+  },
+  "P0145": {
+    "causes": ["Oxygen sensor slow response bank 1 sensor 3", "Aged sensor", "Contaminated sensor", "Exhaust leak", "Fuel mixture problem"],
+    "symptoms": ["Check Engine light", "Increased emissions", "Poor fuel economy"],
+    "diagnostic": ["Monitor sensor switching", "Inspect exhaust", "Check fuel trims", "Test sensor response"],
+    "repairs": ["Repair exhaust leak", "Correct fuel mixture", "Replace oxygen sensor"],
+    "severity": "Low"
+  },
+  "P0146": {
+    "causes": ["No oxygen sensor activity bank 1 sensor 3", "Faulty sensor", "Open circuit", "Wiring fault", "Heater failure"],
+    "symptoms": ["Check Engine light", "Increased emissions", "Reduced fuel economy"],
+    "diagnostic": ["Monitor sensor signal", "Check heater operation", "Inspect wiring and connector"],
+    "repairs": ["Repair wiring", "Repair heater circuit", "Replace oxygen sensor"],
+    "severity": "Low"
+  },
+  "P0147": {
+    "causes": ["Oxygen sensor heater circuit fault bank 1 sensor 3", "Blown fuse", "Damaged wiring", "Faulty sensor heater"],
+    "symptoms": ["Check Engine light", "Increased emissions", "Poor fuel economy"],
+    "diagnostic": ["Check heater power", "Measure heater resistance", "Inspect wiring and fuse"],
+    "repairs": ["Repair wiring", "Replace fuse after correcting fault", "Replace oxygen sensor"],
+    "severity": "Low"
+  },
+  "P0150": {
+    "causes": ["Oxygen sensor circuit fault bank 2 sensor 1", "Damaged wiring", "Faulty oxygen sensor", "Exhaust leak", "Connector fault"],
+    "symptoms": ["Poor fuel economy", "Rough running", "Increased emissions", "Check Engine light"],
+    "diagnostic": ["Monitor O2 sensor signal", "Inspect wiring", "Check exhaust for leaks", "Test sensor response"],
+    "repairs": ["Repair wiring", "Repair exhaust leak", "Replace oxygen sensor"],
+    "severity": "Medium"
+  },
+  "P0151": {
+    "causes": ["Oxygen sensor circuit low voltage bank 2 sensor 1", "Lean mixture", "Vacuum leak", "Faulty sensor", "Wiring short"],
+    "symptoms": ["Poor fuel economy", "Rough idle", "Hesitation", "Check Engine light"],
+    "diagnostic": ["Monitor O2 signal", "Check fuel trims", "Inspect for vacuum leaks", "Test sensor circuit"],
+    "repairs": ["Repair vacuum leaks", "Correct fuel delivery problem", "Repair wiring", "Replace sensor"],
+    "severity": "Medium"
+  },
+  "P0152": {
+    "causes": ["Oxygen sensor circuit high voltage bank 2 sensor 1", "Rich mixture", "Faulty sensor", "Short to voltage", "Fuel injector fault"],
+    "symptoms": ["Poor fuel economy", "Rough running", "Black exhaust smoke", "Check Engine light"],
+    "diagnostic": ["Monitor O2 voltage", "Check fuel trims", "Inspect injectors", "Check sensor wiring"],
+    "repairs": ["Correct rich condition", "Repair wiring", "Repair injector fault", "Replace oxygen sensor"],
+    "severity": "Medium"
+  },
+  "P0153": {
+    "causes": ["Oxygen sensor slow response bank 2 sensor 1", "Aged sensor", "Contaminated sensor", "Exhaust leak", "Fuel mixture problem"],
+    "symptoms": ["Poor fuel economy", "Increased emissions", "Hesitation", "Check Engine light"],
+    "diagnostic": ["Monitor O2 switching speed", "Check exhaust for leaks", "Inspect sensor", "Check fuel trims"],
+    "repairs": ["Repair exhaust leak", "Correct mixture problem", "Replace oxygen sensor"],
+    "severity": "Medium"
+  },
+  "P0154": {
+    "causes": ["No oxygen sensor activity bank 2 sensor 1", "Faulty sensor", "Open circuit", "Wiring fault", "Heater problem"],
+    "symptoms": ["Poor fuel economy", "Increased emissions", "Rough running", "Check Engine light"],
+    "diagnostic": ["Monitor O2 sensor signal", "Check heater operation", "Inspect wiring and connector"],
+    "repairs": ["Repair wiring", "Repair heater circuit", "Replace oxygen sensor"],
+    "severity": "Medium"
+  },
+  "P0155": {
+    "causes": ["Oxygen sensor heater circuit fault bank 2 sensor 1", "Blown fuse", "Damaged wiring", "Faulty sensor heater"],
+    "symptoms": ["Check Engine light", "Increased emissions", "Poor fuel economy", "Delayed closed-loop operation"],
+    "diagnostic": ["Check heater fuse", "Measure heater resistance", "Inspect wiring", "Verify power supply"],
+    "repairs": ["Repair wiring", "Replace fuse after finding cause", "Replace oxygen sensor"],
+    "severity": "Low"
+  },
+  "P0156": {
+    "causes": ["Oxygen sensor circuit fault bank 2 sensor 2", "Damaged wiring", "Faulty sensor", "Exhaust leak"],
+    "symptoms": ["Check Engine light", "Increased emissions", "Poor fuel economy"],
+    "diagnostic": ["Monitor downstream O2 signal", "Inspect wiring", "Check exhaust leaks", "Test sensor"],
+    "repairs": ["Repair wiring", "Repair exhaust leak", "Replace oxygen sensor"],
+    "severity": "Low"
+  },
+  "P0157": {
+    "causes": ["Oxygen sensor circuit low voltage bank 2 sensor 2", "Faulty sensor", "Exhaust leak", "Short to ground", "Fuel mixture issue"],
+    "symptoms": ["Check Engine light", "Increased emissions", "Poor fuel economy"],
+    "diagnostic": ["Monitor O2 voltage", "Inspect exhaust", "Check wiring", "Verify fuel mixture"],
+    "repairs": ["Repair exhaust leak", "Repair wiring", "Correct fuel mixture", "Replace sensor"],
+    "severity": "Low"
+  },
+  "P0158": {
+    "causes": ["Oxygen sensor circuit high voltage bank 2 sensor 2", "Rich mixture", "Faulty sensor", "Short to voltage", "Fuel injector problem"],
+    "symptoms": ["Poor fuel economy", "Increased emissions", "Black exhaust smoke", "Check Engine light"],
+    "diagnostic": ["Monitor downstream O2 signal", "Check fuel trims", "Inspect wiring and injectors", "Test sensor"],
+    "repairs": ["Correct rich condition", "Repair wiring", "Repair injector fault", "Replace sensor"],
+    "severity": "Medium"
+  },
+  "P0159": {
+    "causes": ["Oxygen sensor slow response bank 2 sensor 2", "Aged sensor", "Sensor contamination", "Exhaust leak", "Fuel system issue"],
+    "symptoms": ["Check Engine light", "Increased emissions", "Reduced fuel economy"],
+    "diagnostic": ["Monitor sensor response", "Inspect exhaust", "Check fuel trims", "Test sensor"],
+    "repairs": ["Repair exhaust leak", "Correct fuel system problem", "Replace oxygen sensor"],
+    "severity": "Low"
+  },
+  "P0160": {
+    "causes": ["No oxygen sensor activity bank 2 sensor 2", "Faulty sensor", "Open circuit", "Wiring fault", "Heater failure"],
+    "symptoms": ["Check Engine light", "Increased emissions", "Possible fuel economy reduction"],
+    "diagnostic": ["Monitor sensor signal", "Check heater circuit", "Inspect wiring and connector"],
+    "repairs": ["Repair wiring", "Repair heater circuit", "Replace oxygen sensor"],
+    "severity": "Low"
+  },
+  "P0161": {
+    "causes": ["Oxygen sensor heater circuit fault bank 2 sensor 2", "Blown fuse", "Damaged wiring", "Faulty sensor heater"],
+    "symptoms": ["Check Engine light", "Increased emissions", "Reduced fuel economy"],
+    "diagnostic": ["Check heater fuse", "Measure heater resistance", "Inspect power and ground", "Check wiring"],
+    "repairs": ["Repair wiring", "Replace fuse after correcting cause", "Replace oxygen sensor"],
+    "severity": "Low"
+  },
+  "P0162": {
+    "causes": ["Oxygen sensor circuit fault bank 2 sensor 3", "Damaged wiring", "Faulty sensor", "Connector problem"],
+    "symptoms": ["Check Engine light", "Increased emissions", "Poor fuel economy"],
+    "diagnostic": ["Monitor sensor signal", "Inspect wiring and connector", "Test sensor operation"],
+    "repairs": ["Repair wiring", "Repair connector", "Replace oxygen sensor"],
+    "severity": "Low"
+  },
+  "P0163": {
+    "causes": ["Oxygen sensor circuit low voltage bank 2 sensor 3", "Faulty sensor", "Short to ground", "Exhaust leak", "Wiring fault"],
+    "symptoms": ["Check Engine light", "Increased emissions", "Poor fuel economy"],
+    "diagnostic": ["Measure sensor signal", "Inspect wiring", "Check exhaust system", "Test sensor"],
+    "repairs": ["Repair short", "Repair exhaust leak", "Replace oxygen sensor"],
+    "severity": "Low"
+  },
+  "P0164": {
+    "causes": ["Oxygen sensor circuit high voltage bank 2 sensor 3", "Rich mixture", "Faulty sensor", "Short to voltage", "Fuel system problem"],
+    "symptoms": ["Poor fuel economy", "Increased emissions", "Check Engine light"],
+    "diagnostic": ["Monitor sensor voltage", "Check fuel trims", "Inspect wiring", "Test sensor"],
+    "repairs": ["Correct rich mixture", "Repair wiring", "Replace faulty oxygen sensor"],
+    "severity": "Medium"
+  },
+  "P0165": {
+    "causes": ["Oxygen sensor slow response bank 2 sensor 3", "Aged sensor", "Contaminated sensor", "Exhaust leak", "Fuel mixture problem"],
+    "symptoms": ["Check Engine light", "Increased emissions", "Poor fuel economy"],
+    "diagnostic": ["Monitor sensor switching", "Inspect exhaust", "Check fuel trims", "Test sensor response"],
+    "repairs": ["Repair exhaust leak", "Correct fuel mixture", "Replace oxygen sensor"],
+    "severity": "Low"
+  },
+  "P0166": {
+    "causes": ["No oxygen sensor activity bank 2 sensor 3", "Faulty sensor", "Open circuit", "Wiring fault", "Heater failure"],
+    "symptoms": ["Check Engine light", "Increased emissions", "Reduced fuel economy"],
+    "diagnostic": ["Monitor sensor signal", "Check heater operation", "Inspect wiring and connector"],
+    "repairs": ["Repair wiring", "Repair heater circuit", "Replace oxygen sensor"],
+    "severity": "Low"
+  },
+  "P0167": {
+    "causes": ["Oxygen sensor heater circuit fault bank 2 sensor 3", "Blown fuse", "Damaged wiring", "Faulty sensor heater"],
+    "symptoms": ["Check Engine light", "Increased emissions", "Poor fuel economy"],
+    "diagnostic": ["Check heater power", "Measure heater resistance", "Inspect fuse and wiring"],
+    "repairs": ["Repair wiring", "Replace fuse after correcting cause", "Replace oxygen sensor"],
+    "severity": "Low"
+  }
+    "P0168": {
+    "causes": ["Fuel temperature too high", "Low fuel level", "Fuel system heating", "Faulty fuel temperature sensor", "Wiring fault"],
+    "symptoms": ["Poor engine performance", "Hard starting", "Reduced power", "Check Engine light"],
+    "diagnostic": ["Monitor fuel temperature data", "Compare reading with actual fuel temperature", "Inspect fuel system and sensor wiring"],
+    "repairs": ["Repair fuel system cooling issue", "Repair wiring", "Replace faulty fuel temperature sensor"],
+    "severity": "Medium"
+  },
+  "P0169": {
+    "causes": ["Incorrect fuel composition detected", "Contaminated fuel", "Incorrect fuel type", "Fuel composition sensor fault"],
+    "symptoms": ["Poor running", "Hard starting", "Misfire", "Poor fuel economy", "Check Engine light"],
+    "diagnostic": ["Check fuel quality", "Inspect fuel composition sensor", "Compare sensor data with known fuel composition"],
+    "repairs": ["Drain contaminated fuel", "Repair wiring", "Replace faulty fuel composition sensor"],
+    "severity": "High"
+  },
+  "P0170": {
+    "causes": ["Fuel trim malfunction bank 1", "Vacuum leak", "MAF sensor fault", "Fuel pressure problem", "Oxygen sensor fault"],
+    "symptoms": ["Rough idle", "Poor acceleration", "Poor fuel economy", "Stalling", "Check Engine light"],
+    "diagnostic": ["Check short- and long-term fuel trims", "Inspect intake for leaks", "Check MAF readings", "Verify fuel pressure"],
+    "repairs": ["Repair vacuum leaks", "Correct fuel pressure", "Clean or replace MAF sensor", "Repair fuel system"],
+    "severity": "Medium"
+  },
+  "P0171": {
+    "causes": ["System too lean bank 1", "Vacuum leak", "MAF sensor contamination", "Low fuel pressure", "Intake leak", "Exhaust leak before O2 sensor"],
+    "symptoms": ["Rough idle", "Hesitation", "Poor acceleration", "Misfire", "Poor fuel economy", "Check Engine light"],
+    "diagnostic": ["Check fuel trims", "Inspect intake and vacuum hoses", "Check MAF readings", "Measure fuel pressure", "Inspect exhaust for leaks"],
+    "repairs": ["Repair vacuum or intake leaks", "Clean or replace MAF sensor", "Correct fuel pressure problem", "Repair exhaust leak"],
+    "severity": "High"
+  },
+  "P0172": {
+    "causes": ["System too rich bank 1", "Excessive fuel pressure", "Leaking injector", "Faulty MAF sensor", "Faulty oxygen sensor", "EVAP purge problem"],
+    "symptoms": ["Poor fuel economy", "Rough idle", "Black exhaust smoke", "Fuel odor", "Misfire", "Check Engine light"],
+    "diagnostic": ["Check fuel trims", "Measure fuel pressure", "Inspect injectors", "Check MAF and O2 sensor data", "Test EVAP purge valve"],
+    "repairs": ["Correct fuel pressure", "Replace leaking injector", "Repair EVAP system", "Replace faulty sensor"],
+    "severity": "High"
+  },
+  "P0173": {
+    "causes": ["Fuel trim malfunction bank 2", "Vacuum leak", "MAF sensor fault", "Fuel pressure problem", "Oxygen sensor fault"],
+    "symptoms": ["Rough idle", "Poor acceleration", "Poor fuel economy", "Misfire", "Check Engine light"],
+    "diagnostic": ["Check fuel trims", "Inspect intake system", "Check MAF readings", "Verify fuel pressure", "Check oxygen sensor operation"],
+    "repairs": ["Repair intake leaks", "Correct fuel pressure", "Repair wiring", "Replace faulty sensor"],
+    "severity": "Medium"
+  },
+  "P0174": {
+    "causes": ["System too lean bank 2", "Vacuum leak", "MAF sensor contamination", "Low fuel pressure", "Intake leak", "Exhaust leak"],
+    "symptoms": ["Rough idle", "Hesitation", "Poor acceleration", "Misfire", "Poor fuel economy"],
+    "diagnostic": ["Check fuel trims", "Inspect vacuum hoses", "Check MAF sensor", "Measure fuel pressure", "Inspect exhaust"],
+    "repairs": ["Repair vacuum leaks", "Clean or replace MAF", "Correct fuel pressure", "Repair exhaust leak"],
+    "severity": "High"
+  },
+  "P0175": {
+    "causes": ["System too rich bank 2", "High fuel pressure", "Leaking injector", "Faulty MAF sensor", "Faulty oxygen sensor", "EVAP purge fault"],
+    "symptoms": ["Poor fuel economy", "Black exhaust smoke", "Fuel odor", "Rough running", "Misfire"],
+    "diagnostic": ["Check fuel trims", "Measure fuel pressure", "Inspect injectors", "Check MAF/O2 data", "Test EVAP purge"],
+    "repairs": ["Correct fuel pressure", "Replace leaking injector", "Repair EVAP system", "Replace faulty sensor"],
+    "severity": "High"
+  },
+  "P0176": {
+    "causes": ["Fuel composition sensor circuit fault", "Damaged wiring", "Faulty fuel composition sensor", "Connector corrosion"],
+    "symptoms": ["Poor engine performance", "Hard starting", "Poor fuel economy", "Check Engine light"],
+    "diagnostic": ["Inspect sensor wiring", "Check sensor supply and ground", "Monitor fuel composition data"],
+    "repairs": ["Repair wiring", "Clean connector", "Replace fuel composition sensor"],
+    "severity": "Medium"
+  },
+  "P0177": {
+    "causes": ["Fuel composition sensor range/performance fault", "Contaminated fuel", "Faulty sensor", "Incorrect fuel composition", "Wiring problem"],
+    "symptoms": ["Poor running", "Hard starting", "Poor fuel economy", "Check Engine light"],
+    "diagnostic": ["Check fuel quality", "Compare sensor reading with fuel type", "Inspect sensor wiring"],
+    "repairs": ["Replace contaminated fuel", "Repair wiring", "Replace faulty sensor"],
+    "severity": "Medium"
+  },
+  "P0178": {
+    "causes": ["Fuel composition sensor circuit low", "Short to ground", "Faulty sensor", "Damaged wiring"],
+    "symptoms": ["Poor engine performance", "Hard starting", "Poor fuel economy", "Check Engine light"],
+    "diagnostic": ["Measure sensor signal voltage", "Inspect wiring", "Check sensor ground", "Verify sensor operation"],
+    "repairs": ["Repair short", "Repair wiring", "Replace fuel composition sensor"],
+    "severity": "Medium"
+  },
+  "P0179": {
+    "causes": ["Fuel composition sensor circuit high", "Short to voltage", "Open circuit", "Faulty sensor", "Wiring fault"],
+    "symptoms": ["Poor engine performance", "Hard starting", "Poor fuel economy", "Check Engine light"],
+    "diagnostic": ["Measure sensor voltage", "Inspect wiring", "Check connector", "Test sensor output"],
+    "repairs": ["Repair wiring", "Correct circuit voltage", "Replace faulty sensor"],
+    "severity": "Medium"
+  },
+  "P0180": {
+    "causes": ["Fuel temperature sensor A circuit fault", "Damaged wiring", "Faulty sensor", "Connector problem"],
+    "symptoms": ["Hard starting", "Poor fuel economy", "Poor engine performance", "Check Engine light"],
+    "diagnostic": ["Compare fuel temperature reading with actual temperature", "Measure sensor resistance", "Inspect wiring"],
+    "repairs": ["Repair wiring", "Repair connector", "Replace fuel temperature sensor"],
+    "severity": "Medium"
+  },
+  "P0181": {
+    "causes": ["Fuel temperature sensor A range/performance fault", "Faulty sensor", "Fuel heating problem", "Wiring resistance"],
+    "symptoms": ["Hard starting", "Poor performance", "Poor fuel economy", "Check Engine light"],
+    "diagnostic": ["Monitor fuel temperature data", "Compare with actual temperature", "Inspect sensor and wiring"],
+    "repairs": ["Repair wiring", "Correct fuel system temperature problem", "Replace sensor"],
+    "severity": "Medium"
+  },
+  "P0182": {
+    "causes": ["Fuel temperature sensor A circuit low", "Short to ground", "Faulty sensor", "Damaged wiring"],
+    "symptoms": ["Hard starting", "Poor fuel economy", "Poor performance", "Check Engine light"],
+    "diagnostic": ["Measure sensor signal voltage", "Inspect wiring for shorts", "Test sensor resistance"],
+    "repairs": ["Repair short", "Repair wiring", "Replace fuel temperature sensor"],
+    "severity": "Medium"
+  },
+  "P0183": {
+    "causes": ["Fuel temperature sensor A circuit high", "Open circuit", "Faulty sensor", "Disconnected connector"],
+    "symptoms": ["Hard starting", "Poor performance", "Poor fuel economy", "Check Engine light"],
+    "diagnostic": ["Check signal voltage", "Inspect connector", "Check wiring continuity", "Measure sensor resistance"],
+    "repairs": ["Repair open circuit", "Reconnect connector", "Repair wiring", "Replace sensor"],
+    "severity": "Medium"
+  },
+  "P0184": {
+    "causes": ["Fuel temperature sensor A intermittent circuit", "Loose connector", "Intermittent wiring", "Failing sensor"],
+    "symptoms": ["Intermittent poor performance", "Hard starting", "Fluctuating fuel temperature reading", "Check Engine light"],
+    "diagnostic": ["Monitor live sensor data", "Wiggle-test wiring", "Inspect connector", "Test sensor resistance"],
+    "repairs": ["Repair wiring", "Secure connector", "Replace faulty sensor"],
+    "severity": "Medium"
+  },
+  "P0185": {
+    "causes": ["Fuel temperature sensor B circuit fault", "Damaged wiring", "Faulty sensor", "Connector problem"],
+    "symptoms": ["Hard starting", "Poor fuel economy", "Poor performance", "Check Engine light"],
+    "diagnostic": ["Inspect sensor wiring", "Measure sensor resistance", "Compare reading with actual fuel temperature"],
+    "repairs": ["Repair wiring", "Repair connector", "Replace fuel temperature sensor"],
+    "severity": "Medium"
+  },
+  "P0186": {
+    "causes": ["Fuel temperature sensor B range/performance fault", "Faulty sensor", "Fuel temperature abnormality", "Wiring resistance"],
+    "symptoms": ["Poor engine performance", "Hard starting", "Poor fuel economy", "Check Engine light"],
+    "diagnostic": ["Monitor fuel temperature", "Compare sensor data with actual temperature", "Inspect wiring"],
+    "repairs": ["Repair wiring", "Correct fuel temperature issue", "Replace sensor"],
+    "severity": "Medium"
+  },
+  "P0187": {
+    "causes": ["Fuel temperature sensor B circuit low", "Short to ground", "Faulty sensor", "Damaged wiring"],
+    "symptoms": ["Hard starting", "Poor performance", "Poor fuel economy", "Check Engine light"],
+    "diagnostic": ["Measure signal voltage", "Inspect wiring", "Check sensor ground", "Test resistance"],
+    "repairs": ["Repair short", "Repair wiring", "Replace sensor"],
+    "severity": "Medium"
+  },
+  "P0188": {
+    "causes": ["Fuel temperature sensor B circuit high", "Open circuit", "Faulty sensor", "Connector fault"],
+    "symptoms": ["Hard starting", "Poor performance", "Poor fuel economy", "Check Engine light"],
+    "diagnostic": ["Measure signal voltage", "Check continuity", "Inspect connector", "Test sensor"],
+    "repairs": ["Repair open circuit", "Repair connector", "Replace sensor"],
+    "severity": "Medium"
+  },
+  "P0189": {
+    "causes": ["Fuel temperature sensor B intermittent circuit", "Loose connector", "Intermittent wiring", "Failing sensor"],
+    "symptoms": ["Intermittent drivability problems", "Hard starting", "Fluctuating sensor reading", "Check Engine light"],
+    "diagnostic": ["Monitor live data", "Wiggle-test wiring", "Inspect connector", "Test sensor"],
+    "repairs": ["Repair wiring", "Secure connector", "Replace sensor"],
+    "severity": "Medium"
+  },
+  "P0190": {
+    "causes": ["Fuel rail pressure sensor circuit fault", "Damaged wiring", "Faulty pressure sensor", "Connector problem"],
+    "symptoms": ["Hard starting", "Loss of power", "Rough running", "Stalling", "Check Engine light"],
+    "diagnostic": ["Inspect pressure sensor wiring", "Check sensor supply and ground", "Compare rail pressure reading with actual pressure"],
+    "repairs": ["Repair wiring", "Repair connector", "Replace fuel rail pressure sensor"],
+    "severity": "High"
+  },
+  "P0191": {
+    "causes": ["Fuel rail pressure sensor range/performance fault", "Incorrect fuel pressure", "Faulty pressure sensor", "Fuel pressure regulator problem"],
+    "symptoms": ["Hard starting", "Loss of power", "Hesitation", "Stalling", "Poor fuel economy"],
+    "diagnostic": ["Compare commanded and actual rail pressure", "Test pressure sensor", "Check fuel pressure regulator and supply"],
+    "repairs": ["Correct fuel pressure", "Replace faulty sensor", "Repair regulator or fuel supply"],
+    "severity": "High"
+  },
+  "P0192": {
+    "causes": ["Fuel rail pressure sensor circuit low", "Short to ground", "Faulty sensor", "Damaged wiring"],
+    "symptoms": ["Hard starting", "Poor performance", "Stalling", "Loss of power", "Check Engine light"],
+    "diagnostic": ["Measure sensor signal voltage", "Inspect wiring", "Check sensor ground and reference voltage"],
+    "repairs": ["Repair short", "Repair wiring", "Replace pressure sensor"],
+    "severity": "High"
+  },
+  "P0193": {
+    "causes": ["Fuel rail pressure sensor circuit high", "Short to voltage", "Open ground circuit", "Faulty sensor", "Wiring fault"],
+    "symptoms": ["Hard starting", "Poor acceleration", "Stalling", "Fuel pressure control problems"],
+    "diagnostic": ["Measure sensor signal voltage", "Inspect wiring", "Check reference and ground", "Compare pressure data"],
+    "repairs": ["Repair wiring", "Restore sensor ground", "Replace pressure sensor"],
+    "severity": "High"
+  },
+  "P0194": {
+    "causes": ["Fuel rail pressure sensor intermittent circuit", "Loose connector", "Intermittent wiring", "Failing pressure sensor"],
+    "symptoms": ["Intermittent stalling", "Hesitation", "Loss of power", "Hard starting"],
+    "diagnostic": ["Monitor rail pressure live data", "Wiggle-test harness", "Inspect connector", "Compare commanded and actual pressure"],
+    "repairs": ["Repair wiring", "Secure connector", "Replace pressure sensor"],
+    "severity": "High"
+  },
+  "P0195": {
+    "causes": ["Engine oil temperature sensor circuit fault", "Damaged wiring", "Faulty oil temperature sensor", "Connector fault"],
+    "symptoms": ["Incorrect oil temperature reading", "Poor engine control", "Check Engine light"],
+    "diagnostic": ["Compare sensor reading with actual temperature", "Measure sensor resistance", "Inspect wiring"],
+    "repairs": ["Repair wiring", "Repair connector", "Replace oil temperature sensor"],
+    "severity": "Medium"
+  },
+  "P0196": {
+    "causes": ["Engine oil temperature sensor range/performance fault", "Faulty sensor", "Oil temperature abnormality", "Wiring resistance"],
+    "symptoms": ["Incorrect temperature reading", "Poor engine performance", "Check Engine light"],
+    "diagnostic": ["Monitor oil temperature data", "Compare with actual temperature", "Inspect sensor and wiring"],
+    "repairs": ["Repair wiring", "Replace sensor", "Correct oil temperature problem"],
+    "severity": "Medium"
+  },
+  "P0197": {
+    "causes": ["Engine oil temperature sensor circuit low", "Short to ground", "Faulty sensor", "Damaged wiring"],
+    "symptoms": ["Incorrect oil temperature reading", "Poor engine control", "Check Engine light"],
+    "diagnostic": ["Measure sensor signal voltage", "Inspect wiring", "Test sensor resistance"],
+    "repairs": ["Repair short", "Repair wiring", "Replace oil temperature sensor"],
+    "severity": "Medium"
+  },
+  "P0198": {
+    "causes": ["Engine oil temperature sensor circuit high", "Open circuit", "Disconnected connector", "Faulty sensor"],
+    "symptoms": ["Incorrect oil temperature reading", "Poor engine control", "Check Engine light"],
+    "diagnostic": ["Measure signal voltage", "Check wiring continuity", "Inspect connector", "Test sensor"],
+    "repairs": ["Repair open circuit", "Reconnect connector", "Replace sensor"],
+    "severity": "Medium"
+  },
+  "P0199": {
+    "causes": ["Engine oil temperature sensor intermittent circuit", "Loose connector", "Intermittent wiring", "Failing sensor"],
+    "symptoms": ["Fluctuating oil temperature reading", "Intermittent Check Engine light", "Possible drivability changes"],
+    "diagnostic": ["Monitor live data", "Wiggle-test harness", "Inspect connector", "Test sensor"],
+    "repairs": ["Repair wiring", "Secure connector", "Replace sensor"],
+    "severity": "Medium"
+  },
+  "P0200": {
+    "causes": ["Fuel injector circuit malfunction", "Open or shorted injector wiring", "Faulty injector", "ECU injector driver fault"],
+    "symptoms": ["Misfire", "Rough idle", "Loss of power", "Poor fuel economy", "Check Engine light"],
+    "diagnostic": ["Inspect injector wiring", "Measure injector resistance", "Check injector command with scan tool", "Verify ECU driver"],
+    "repairs": ["Repair injector wiring", "Replace faulty injector", "Repair connector", "Diagnose ECU driver before replacement"],
+    "severity": "High"
+  },
+  "P0201": {
+    "causes": ["Injector 1 circuit fault", "Open or shorted wiring", "Faulty injector 1", "ECU driver fault"],
+    "symptoms": ["Engine misfire", "Rough idle", "Loss of power", "Poor fuel economy", "Check Engine light"],
+    "diagnostic": ["Inspect injector 1 wiring and connector", "Measure injector resistance", "Check injector pulse", "Compare cylinder contribution"],
+    "repairs": ["Repair wiring", "Replace injector 1", "Repair connector", "Verify ECU driver"],
+    "severity": "High"
+  },
+  "P0202": {
+    "causes": ["Injector 2 circuit fault", "Damaged wiring", "Faulty injector 2", "ECU driver fault"],
+    "symptoms": ["Misfire", "Rough idle", "Loss of power", "Poor fuel economy", "Check Engine light"],
+    "diagnostic": ["Inspect injector 2 wiring", "Measure injector resistance", "Check injector pulse", "Perform cylinder contribution test"],
+    "repairs": ["Repair wiring", "Replace injector 2", "Repair connector", "Verify ECU driver"],
+    "severity": "High"
+  },
+  "P0203": {
+    "causes": ["Injector 3 circuit fault", "Damaged wiring", "Faulty injector 3", "ECU driver fault"],
+    "symptoms": ["Misfire", "Rough idle", "Loss of power", "Poor fuel economy", "Check Engine light"],
+    "diagnostic": ["Inspect injector 3 circuit", "Measure injector resistance", "Check injector pulse", "Perform cylinder contribution test"],
+    "repairs": ["Repair wiring", "Replace injector 3", "Repair connector", "Verify ECU driver"],
+    "severity": "High"
+  },
+  "P0204": {
+    "causes": ["Injector 4 circuit fault", "Damaged wiring", "Faulty injector 4", "ECU driver fault"],
+    "symptoms": ["Misfire", "Rough idle", "Loss of power", "Poor fuel economy", "Check Engine light"],
+    "diagnostic": ["Inspect injector 4 wiring", "Measure injector resistance", "Check injector pulse", "Perform cylinder contribution test"],
+    "repairs": ["Repair wiring", "Replace injector 4", "Repair connector", "Verify ECU driver"],
+    "severity": "High"
+  },
+  "P0205": {
+    "causes": ["Injector 5 circuit fault", "Damaged wiring", "Faulty injector 5", "ECU driver fault"],
+    "symptoms": ["Misfire", "Rough running", "Loss of power", "Poor fuel economy", "Check Engine light"],
+    "diagnostic": ["Inspect injector 5 circuit", "Measure injector resistance", "Check injector pulse", "Perform cylinder contribution test"],
+    "repairs": ["Repair wiring", "Replace injector 5", "Repair connector", "Verify ECU driver"],
+    "severity": "High"
+  },
+  "P0206": {
+    "causes": ["Injector 6 circuit fault", "Damaged wiring", "Faulty injector 6", "ECU driver fault"],
+    "symptoms": ["Misfire", "Rough idle", "Loss of power", "Poor fuel economy", "Check Engine light"],
+    "diagnostic": ["Inspect injector 6 wiring", "Measure injector resistance", "Check injector pulse", "Perform cylinder contribution test"],
+    "repairs": ["Repair wiring", "Replace injector 6", "Repair connector", "Verify ECU driver"],
+    "severity": "High"
+  },
+  "P0207": {
+    "causes": ["Injector 7 circuit fault", "Damaged wiring", "Faulty injector 7", "ECU driver fault"],
+    "symptoms": ["Misfire", "Rough running", "Loss of power", "Poor fuel economy", "Check Engine light"],
+    "diagnostic": ["Inspect injector 7 wiring", "Measure injector resistance", "Check injector pulse", "Perform cylinder contribution test"],
+    "repairs": ["Repair wiring", "Replace injector 7", "Repair connector", "Verify ECU driver"],
+    "severity": "High"
+  },
+  "P0208": {
+    "causes": ["Injector 8 circuit fault", "Damaged wiring", "Faulty injector 8", "ECU driver fault"],
+    "symptoms": ["Misfire", "Rough running", "Loss of power", "Poor fuel economy", "Check Engine light"],
+    "diagnostic": ["Inspect injector 8 wiring", "Measure injector resistance", "Check injector pulse", "Perform cylinder contribution test"],
+    "repairs": ["Repair wiring", "Replace injector 8", "Repair connector", "Verify ECU driver"],
+    "severity": "High"
+  },
+  "P0209": {
+    "causes": ["Injector 9 circuit fault", "Damaged wiring", "Faulty injector 9", "ECU driver fault"],
+    "symptoms": ["Misfire", "Rough running", "Loss of power", "Poor fuel economy"],
+    "diagnostic": ["Inspect injector 9 circuit", "Measure injector resistance", "Check injector command"],
+    "repairs": ["Repair wiring", "Replace injector 9", "Repair connector", "Verify ECU driver"],
+    "severity": "High"
+  },
+  "P0210": {
+    "causes": ["Injector 10 circuit fault", "Damaged wiring", "Faulty injector 10", "ECU driver fault"],
+    "symptoms": ["Misfire", "Rough running", "Loss of power", "Poor fuel economy"],
+    "diagnostic": ["Inspect injector 10 wiring", "Measure injector resistance", "Check injector pulse and driver"],
+    "repairs": ["Repair wiring", "Replace injector 10", "Repair connector", "Verify ECU driver"],
+    "severity": "High"
+  },
+  "P0211": {
+    "causes": ["Injector 11 circuit fault", "Damaged wiring", "Faulty injector 11", "ECU driver fault"],
+    "symptoms": ["Misfire", "Rough running", "Loss of power", "Poor fuel economy"],
+    "diagnostic": ["Inspect injector 11 circuit", "Measure injector resistance", "Check injector command"],
+    "repairs": ["Repair wiring", "Replace injector 11", "Repair connector", "Verify ECU driver"],
+    "severity": "High"
+  },
+  "P0212": {
+    "causes": ["Injector 12 circuit fault", "Damaged wiring", "Faulty injector 12", "ECU driver fault"],
+    "symptoms": ["Misfire", "Rough running", "Loss of power", "Poor fuel economy"],
+    "diagnostic": ["Inspect injector 12 wiring", "Measure injector resistance", "Check injector command"],
+    "repairs": ["Repair wiring", "Replace injector 12", "Repair connector", "Verify ECU driver"],
+    "severity": "High"
+  },
+  "P0213": {
+    "causes": ["Cold start injector 1 circuit fault", "Damaged wiring", "Faulty cold start injector", "ECU driver fault"],
+    "symptoms": ["Hard cold starting", "Poor cold idle", "Increased emissions", "Check Engine light"],
+    "diagnostic": ["Inspect injector wiring", "Measure injector resistance", "Check injector activation", "Verify ECU control"],
+    "repairs": ["Repair wiring", "Replace cold start injector", "Repair connector", "Verify ECU driver"],
+    "severity": "Medium"
+  },
+  "P0214": {
+    "causes": ["Cold start injector 2 circuit fault", "Damaged wiring", "Faulty injector", "ECU driver fault"],
+    "symptoms": ["Hard cold starting", "Poor cold running", "Increased emissions", "Check Engine light"],
+    "diagnostic": ["Inspect injector circuit", "Measure resistance", "Check injector command", "Verify ECU driver"],
+    "repairs": ["Repair wiring", "Replace injector", "Repair connector", "Verify ECU driver"],
+    "severity": "Medium"
+  },
+  "P0215": {
+    "causes": ["Engine shutoff solenoid circuit fault", "Damaged wiring", "Faulty shutoff solenoid", "ECU driver fault"],
+    "symptoms": ["Engine may not start", "Unexpected stalling", "Engine shutdown problems", "Check Engine light"],
+    "diagnostic": ["Inspect solenoid wiring", "Check power and ground", "Test solenoid resistance and operation"],
+    "repairs": ["Repair wiring", "Replace shutoff solenoid", "Verify ECU control"],
+    "severity": "High"
+  },
+  "P0216": {
+    "causes": ["Injection timing control circuit malfunction", "Fuel injection timing problem", "Faulty timing actuator", "Wiring fault"],
+    "symptoms": ["Hard starting", "Poor acceleration", "Rough running", "Excessive smoke", "Loss of power"],
+    "diagnostic": ["Check commanded and actual injection timing", "Inspect timing actuator", "Check wiring", "Verify fuel system condition"],
+    "repairs": ["Repair timing control circuit", "Replace faulty actuator", "Correct injection timing"],
+    "severity": "High"
+  },
+  "P0217": {
+    "causes": ["Engine coolant over-temperature condition", "Low coolant level", "Thermostat fault", "Cooling fan failure", "Radiator restriction", "Water pump problem"],
+    "symptoms": ["High coolant temperature", "Cooling fan running continuously", "Reduced power", "Steam or coolant loss", "Check Engine light"],
+    "diagnostic": ["Check coolant level", "Monitor coolant temperature", "Test cooling fan", "Inspect thermostat, radiator and water pump"],
+    "repairs": ["Correct coolant level", "Repair cooling fan", "Replace thermostat", "Repair radiator or water pump"],
+    "severity": "Critical"
+  },
+  "P0218": {
+    "causes": ["Transmission fluid over-temperature condition", "Low transmission fluid", "Transmission overheating", "Cooling system restriction", "Internal transmission fault"],
+    "symptoms": ["Transmission slipping", "Harsh shifting", "Reduced transmission performance", "Overheat warning"],
+    "diagnostic": ["Check transmission fluid level and condition", "Monitor transmission temperature", "Inspect transmission cooler", "Check for stored transmission codes"],
+    "repairs": ["Correct fluid level", "Repair transmission cooling system", "Service transmission", "Repair internal fault"],
+    "severity": "High"
+  },
+  "P0219": {
+    "causes": ["Engine overspeed condition", "Excessive engine RPM", "Transmission downshift fault", "Throttle control problem", "ECU calibration issue"],
+    "symptoms": ["Engine over-revving", "Unexpected high RPM", "Engine noise", "Reduced power or limp mode"],
+    "diagnostic": ["Check engine RPM data", "Inspect throttle control", "Check transmission operation", "Review ECU data and stored faults"],
+    "repairs": ["Correct throttle control fault", "Repair transmission problem", "Verify ECU calibration"],
+    "severity": "Critical"
+  },
+  "P0220": {
+    "causes": ["Throttle/pedal position sensor B circuit fault", "Damaged wiring", "Faulty sensor", "Connector problem"],
+    "symptoms": ["Poor acceleration", "Hesitation", "Limp mode", "Stalling", "Check Engine light"],
+    "diagnostic": ["Monitor pedal/throttle position B", "Check sensor voltage", "Inspect wiring and connector", "Compare redundant sensor signals"],
+    "repairs": ["Repair wiring", "Repair connector", "Replace faulty throttle or pedal sensor"],
+    "severity": "High"
+  },
+  "P0221": {
+    "causes": ["Throttle/pedal position sensor B range/performance fault", "Faulty sensor", "Throttle body problem", "Wiring fault"],
+    "symptoms": ["Poor throttle response", "Hesitation", "Limp mode", "Reduced power"],
+    "diagnostic": ["Monitor sensor B signal", "Compare redundant position signals", "Inspect throttle body and wiring"],
+    "repairs": ["Repair wiring", "Replace sensor", "Repair or replace throttle body"],
+    "severity": "High"
+  },
+  "P0222": {
+    "causes": ["Throttle/pedal position sensor B circuit low", "Short to ground", "Faulty sensor", "Damaged wiring"],
+    "symptoms": ["Poor acceleration", "Limp mode", "Hesitation", "Stalling"],
+    "diagnostic": ["Measure sensor B voltage", "Inspect wiring for shorts", "Check sensor ground and reference voltage"],
+    "repairs": ["Repair short", "Repair wiring", "Replace faulty sensor"],
+    "severity": "High"
+  },
+  "P0223": {
+    "causes": ["Throttle/pedal position sensor B circuit high", "Short to voltage", "Open ground", "Faulty sensor", "Wiring fault"],
+    "symptoms": ["Unstable throttle response", "Limp mode", "Poor acceleration", "Check Engine light"],
+    "diagnostic": ["Measure sensor voltage", "Inspect wiring", "Check reference and ground", "Compare redundant sensor signals"],
+    "repairs": ["Repair wiring", "Restore sensor ground", "Replace sensor"],
+    "severity": "High"
+  },
+  "P0224": {
+    "causes": ["Throttle/pedal position sensor B intermittent circuit", "Loose connector", "Intermittent wiring", "Failing sensor"],
+    "symptoms": ["Intermittent hesitation", "Unstable throttle response", "Limp mode", "Stalling"],
+    "diagnostic": ["Monitor live sensor data", "Wiggle-test wiring", "Inspect connector", "Compare sensor signals"],
+    "repairs": ["Repair wiring", "Secure connector", "Replace faulty sensor"],
+    "severity": "High"
+  },
+  "P0225": {
+    "causes": ["Throttle/pedal position sensor C circuit fault", "Damaged wiring", "Faulty sensor", "Connector problem"],
+    "symptoms": ["Poor acceleration", "Hesitation", "Limp mode", "Check Engine light"],
+    "diagnostic": ["Monitor sensor C signal", "Inspect wiring", "Check power and ground", "Compare redundant sensor signals"],
+    "repairs": ["Repair wiring", "Repair connector", "Replace faulty sensor"],
+    "severity": "High"
+  },
+  "P0226": {
+    "causes": ["Throttle/pedal position sensor C range/performance fault", "Faulty sensor", "Throttle body problem", "Wiring fault"],
+    "symptoms": ["Poor throttle response", "Reduced power", "Limp mode", "Hesitation"],
+    "diagnostic": ["Monitor sensor C", "Compare commanded and actual throttle position", "Inspect wiring and throttle body"],
+    "repairs": ["Repair wiring", "Replace sensor", "Repair throttle body"],
+    "severity": "High"
+  },
+  "P0227": {
+    "causes": ["Throttle/pedal position sensor C circuit low", "Short to ground", "Faulty sensor", "Damaged wiring"],
+    "symptoms": ["Poor acceleration", "Limp mode", "Hesitation", "Stalling"],
+    "diagnostic": ["Measure sensor voltage", "Inspect wiring", "Check sensor ground and reference voltage"],
+    "repairs": ["Repair short", "Repair wiring", "Replace sensor"],
+    "severity": "High"
+  },
+  "P0228": {
+    "causes": ["Throttle/pedal position sensor C circuit high", "Short to voltage", "Open ground", "Faulty sensor", "Wiring fault"],
+    "symptoms": ["Unstable throttle response", "Limp mode", "Poor acceleration", "Check Engine light"],
+    "diagnostic": ["Measure sensor voltage", "Inspect wiring", "Check reference and ground", "Compare sensor signals"],
+    "repairs": ["Repair wiring", "Restore sensor ground", "Replace sensor"],
+    "severity": "High"
+  },
+  "P0229": {
+    "causes": ["Throttle/pedal position sensor C intermittent circuit", "Loose connector", "Intermittent wiring", "Failing sensor"],
+    "symptoms": ["Intermittent hesitation", "Unstable throttle response", "Limp mode", "Stalling"],
+    "diagnostic": ["Monitor sensor data", "Wiggle-test harness", "Inspect connector", "Check signal stability"],
+    "repairs": ["Repair wiring", "Secure connector", "Replace sensor"],
+    "severity": "High"
+  },
+  "P0230": {
+    "causes": ["Fuel pump primary circuit fault", "Open wiring", "Blown fuse", "Faulty fuel pump relay", "Fuel pump fault"],
+    "symptoms": ["No-start condition", "Hard starting", "Engine stalling", "Loss of power"],
+    "diagnostic": ["Check fuel pump fuse and relay", "Measure pump voltage", "Inspect wiring", "Check fuel pressure"],
+    "repairs": ["Replace failed fuse after correcting cause", "Replace relay", "Repair wiring", "Replace fuel pump"],
+    "severity": "High"
+  },
+  "P0231": {
+    "causes": ["Fuel pump secondary circuit low", "Low supply voltage", "Short to ground", "Faulty relay or pump", "Wiring resistance"],
+    "symptoms": ["Hard starting", "Stalling", "Low fuel pressure", "Loss of power"],
+    "diagnostic": ["Measure fuel pump voltage", "Check voltage drop", "Inspect relay and wiring", "Measure fuel pressure"],
+    "repairs": ["Repair wiring", "Replace relay", "Replace fuel pump if faulty"],
+    "severity": "High"
+  },
+  "P0232": {
+    "causes": ["Fuel pump secondary circuit high", "Short to voltage", "Faulty relay", "Wiring fault"],
+    "symptoms": ["Fuel pump running incorrectly", "Poor engine performance", "Hard starting", "Check Engine light"],
+    "diagnostic": ["Measure pump circuit voltage", "Inspect relay contacts", "Check wiring", "Verify pump operation"],
+    "repairs": ["Repair wiring", "Replace relay", "Replace fuel pump if damaged"],
+    "severity": "High"
+  },
+  "P0233": {
+    "causes": ["Fuel pump secondary circuit intermittent", "Loose connector", "Intermittent wiring", "Failing relay", "Failing fuel pump"],
+    "symptoms": ["Intermittent stalling", "Hard starting", "Loss of power", "Fuel pressure fluctuations"],
+    "diagnostic": ["Monitor pump voltage", "Wiggle-test wiring", "Inspect relay and connector", "Monitor fuel pressure"],
+    "repairs": ["Repair wiring", "Replace relay", "Repair connector", "Replace failing pump"],
+    "severity": "High"
+  },
+  "P0234": {
+    "causes": ["Turbocharger or supercharger overboost condition", "Sticking boost actuator", "Faulty boost control solenoid", "Wastegate problem", "Boost sensor fault"],
+    "symptoms": ["Limp mode", "Reduced power", "Surging", "Turbocharger noise", "Check Engine light"],
+    "diagnostic": ["Compare commanded and actual boost pressure", "Inspect wastegate/actuator", "Check boost control solenoid", "Inspect boost hoses"],
+    "repairs": ["Repair boost control system", "Replace actuator or solenoid", "Repair boost leaks or mechanical turbo fault"],
+    "severity": "High"
+  },
+  "P0235": {
+    "causes": ["Turbocharger boost sensor A circuit fault", "Damaged wiring", "Faulty boost pressure sensor", "Connector problem"],
+    "symptoms": ["Reduced power", "Poor acceleration", "Limp mode", "Incorrect boost control"],
+    "diagnostic": ["Check boost sensor voltage", "Compare boost reading with actual pressure", "Inspect wiring and connector"],
+    "repairs": ["Repair wiring", "Repair connector", "Replace boost pressure sensor"],
+    "severity": "High"
+  },
+  "P0236": {
+    "causes": ["Turbocharger boost sensor A range/performance fault", "Faulty boost sensor", "Boost leak", "Wiring fault"],
+    "symptoms": ["Loss of power", "Limp mode", "Poor acceleration", "Boost fluctuations"],
+    "diagnostic": ["Compare commanded and measured boost", "Inspect boost hoses", "Test sensor response", "Check wiring"],
+    "repairs": ["Repair boost leaks", "Repair wiring", "Replace boost sensor"],
+    "severity": "High"
+  },
+  "P0237": {
+    "causes": ["Turbocharger boost sensor A circuit low", "Short to ground", "Faulty sensor", "Damaged wiring"],
+    "symptoms": ["Low boost", "Reduced power", "Poor acceleration", "Limp mode"],
+    "diagnostic": ["Measure sensor signal voltage", "Inspect wiring", "Check sensor ground and reference voltage"],
+    "repairs": ["Repair short", "Repair wiring", "Replace boost sensor"],
+    "severity": "High"
+  },
+  "P0238": {
+    "causes": ["Turbocharger boost sensor A circuit high", "Short to voltage", "Open ground", "Faulty sensor", "Wiring fault"],
+    "symptoms": ["Incorrect boost control", "Limp mode", "Poor acceleration", "Check Engine light"],
+    "diagnostic": ["Measure sensor signal", "Inspect wiring", "Check sensor ground and reference", "Compare pressure data"],
+    "repairs": ["Repair wiring", "Restore sensor ground", "Replace boost sensor"],
+    "severity": "High"
+  },
+  "P0239": {
+    "causes": ["Turbocharger boost sensor B circuit fault", "Damaged wiring", "Faulty boost sensor", "Connector problem"],
+    "symptoms": ["Reduced power", "Poor acceleration", "Limp mode", "Boost control problems"],
+    "diagnostic": ["Check sensor voltage", "Compare boost readings", "Inspect wiring and connector"],
+    "repairs": ["Repair wiring", "Repair connector", "Replace boost sensor"],
+    "severity": "High"
+  },
+  "P0240": {
+    "causes": ["Turbocharger boost sensor B range/performance fault", "Faulty sensor", "Boost leak", "Wiring problem"],
+    "symptoms": ["Loss of power", "Limp mode", "Boost fluctuations", "Poor acceleration"],
+    "diagnostic": ["Compare commanded and actual boost", "Inspect boost system", "Test sensor response"],
+    "repairs": ["Repair boost leaks", "Repair wiring", "Replace boost sensor"],
+    "severity": "High"
+  },
+  "P0241": {
+    "causes": ["Turbocharger boost sensor B circuit low", "Short to ground", "Faulty sensor", "Damaged wiring"],
+    "symptoms": ["Low boost", "Reduced power", "Poor acceleration", "Limp mode"],
+    "diagnostic": ["Measure signal voltage", "Inspect wiring", "Check sensor ground", "Compare boost data"],
+    "repairs": ["Repair short", "Repair wiring", "Replace boost sensor"],
+    "severity": "High"
+  },
+  "P0242": {
+    "causes": ["Turbocharger boost sensor B circuit high", "Short to voltage", "Open circuit", "Faulty sensor"],
+    "symptoms": ["Incorrect boost control", "Limp mode", "Reduced power", "Check Engine light"],
+    "diagnostic": ["Measure sensor voltage", "Inspect wiring", "Check reference and ground", "Verify boost pressure"],
+    "repairs": ["Repair wiring", "Correct circuit fault", "Replace boost sensor"],
+    "severity": "High"
+  },
+  "P0243": {
+    "causes": ["Turbocharger wastegate solenoid A circuit fault", "Damaged wiring", "Faulty solenoid", "ECU driver fault"],
+    "symptoms": ["Low boost", "Overboost", "Poor acceleration", "Limp mode"],
+    "diagnostic": ["Inspect solenoid wiring", "Measure solenoid resistance", "Test actuator movement", "Check ECU control"],
+    "repairs": ["Repair wiring", "Replace wastegate solenoid", "Repair actuator system"],
+    "severity": "High"
+  },
+  "P0244": {
+    "causes": ["Turbocharger wastegate solenoid A range/performance fault", "Sticking wastegate", "Faulty solenoid", "Vacuum leak"],
+    "symptoms": ["Boost fluctuations", "Poor acceleration", "Overboost or underboost", "Limp mode"],
+    "diagnostic": ["Test wastegate movement", "Check vacuum lines", "Monitor boost pressure", "Test solenoid"],
+    "repairs": ["Repair vacuum leaks", "Clean or replace wastegate actuator/solenoid", "Repair boost control"],
+    "severity": "High"
+  },
+  "P0245": {
+    "causes": ["Turbocharger wastegate solenoid A circuit low", "Short to ground", "Faulty solenoid", "Damaged wiring"],
+    "symptoms": ["Low boost", "Poor acceleration", "Limp mode", "Check Engine light"],
+    "diagnostic": ["Measure solenoid control voltage", "Inspect wiring", "Test solenoid resistance"],
+    "repairs": ["Repair short", "Repair wiring", "Replace wastegate solenoid"],
+    "severity": "High"
+  },
+  "P0246": {
+    "causes": ["Turbocharger wastegate solenoid A circuit high", "Short to voltage", "Open circuit", "Faulty solenoid"],
+    "symptoms": ["Overboost", "Boost control problems", "Reduced power", "Limp mode"],
+    "diagnostic": ["Measure control voltage", "Inspect wiring", "Test solenoid", "Verify ECU driver"],
+    "repairs": ["Repair wiring", "Replace solenoid", "Repair ECU control if confirmed"],
+    "severity": "High"
+  },
+  "P0247": {
+    "causes": ["Turbocharger wastegate solenoid B circuit fault", "Damaged wiring", "Faulty solenoid", "ECU driver fault"],
+    "symptoms": ["Low boost", "Overboost", "Poor acceleration", "Limp mode"],
+    "diagnostic": ["Inspect solenoid circuit", "Measure resistance", "Test actuator", "Check ECU control"],
+    "repairs": ["Repair wiring", "Replace solenoid", "Repair actuator system"],
+    "severity": "High"
+  },
+  "P0248": {
+    "causes": ["Turbocharger wastegate solenoid B range/performance fault", "Sticking actuator", "Vacuum leak", "Faulty solenoid"],
+    "symptoms": ["Boost fluctuations", "Poor acceleration", "Overboost", "Underboost"],
+    "diagnostic": ["Check actuator movement", "Inspect vacuum hoses", "Monitor boost pressure", "Test solenoid"],
+    "repairs": ["Repair vacuum leaks", "Replace solenoid", "Repair wastegate actuator"],
+    "severity": "High"
+  },
+  "P0249": {
+    "causes": ["Turbocharger wastegate solenoid B circuit low", "Short to ground", "Faulty solenoid", "Wiring damage"],
+    "symptoms": ["Low boost", "Poor acceleration", "Limp mode", "Check Engine light"],
+    "diagnostic": ["Measure control voltage", "Inspect wiring", "Test solenoid resistance"],
+    "repairs": ["Repair short", "Repair wiring", "Replace solenoid"],
+    "severity": "High"
+  },
+  "P0250": {
+    "causes": ["Turbocharger wastegate solenoid B circuit high", "Short to voltage", "Open circuit", "Faulty solenoid", "ECU driver fault"],
+    "symptoms": ["Overboost", "Poor acceleration", "Limp mode", "Boost control fault"],
+    "diagnostic": ["Measure circuit voltage", "Inspect wiring", "Test solenoid", "Verify ECU driver"],
+    "repairs": ["Repair wiring", "Replace solenoid", "Repair ECU control if confirmed"],
+    "severity": "High"
+  }
+    "P0251": {
+    "causes": ["Injection pump fuel metering control malfunction", "Faulty fuel metering actuator", "Damaged wiring", "Fuel pressure problem", "Injection pump fault"],
+    "symptoms": ["Hard starting", "Loss of power", "Rough running", "Poor acceleration", "Check Engine light"],
+    "diagnostic": ["Check commanded and actual fuel quantity", "Inspect metering actuator wiring", "Check fuel pressure", "Test injection pump operation"],
+    "repairs": ["Repair wiring", "Replace fuel metering actuator", "Correct fuel supply problem", "Repair or replace injection pump"],
+    "severity": "High"
+  },
+  "P0252": {
+    "causes": ["Injection pump fuel metering control range/performance fault", "Fuel metering actuator fault", "Restricted fuel supply", "Injection pump wear"],
+    "symptoms": ["Loss of power", "Poor acceleration", "Hard starting", "Rough running", "Poor fuel economy"],
+    "diagnostic": ["Compare commanded and actual fuel quantity", "Check fuel supply pressure", "Inspect metering actuator", "Check injection pump"],
+    "repairs": ["Repair fuel supply", "Replace metering actuator", "Repair injection pump"],
+    "severity": "High"
+  },
+  "P0253": {
+    "causes": ["Injection pump fuel metering control circuit low", "Short to ground", "Faulty metering actuator", "Damaged wiring"],
+    "symptoms": ["Hard starting", "Loss of power", "Stalling", "Poor engine performance"],
+    "diagnostic": ["Measure actuator control voltage", "Inspect wiring", "Check actuator resistance", "Verify ECU control signal"],
+    "repairs": ["Repair short to ground", "Repair wiring", "Replace metering actuator"],
+    "severity": "High"
+  },
+  "P0254": {
+    "causes": ["Injection pump fuel metering control circuit high", "Short to voltage", "Open circuit", "Faulty actuator", "ECU driver fault"],
+    "symptoms": ["Poor engine performance", "Loss of power", "Hard starting", "Stalling"],
+    "diagnostic": ["Measure control voltage", "Check wiring continuity", "Inspect actuator", "Verify ECU driver"],
+    "repairs": ["Repair wiring", "Replace actuator", "Repair ECU driver if confirmed faulty"],
+    "severity": "High"
+  },
+  "P0255": {
+    "causes": ["Injection pump fuel metering control intermittent", "Loose connector", "Intermittent wiring", "Failing metering actuator"],
+    "symptoms": ["Intermittent loss of power", "Hesitation", "Stalling", "Hard starting"],
+    "diagnostic": ["Monitor actuator command", "Wiggle-test wiring", "Inspect connector", "Check fuel pressure stability"],
+    "repairs": ["Repair wiring", "Secure connector", "Replace metering actuator"],
+    "severity": "High"
+  },
+  "P0256": {
+    "causes": ["Injection pump fuel metering control B malfunction", "Fuel metering actuator fault", "Damaged wiring", "Injection pump fault"],
+    "symptoms": ["Poor acceleration", "Loss of power", "Hard starting", "Rough running"],
+    "diagnostic": ["Inspect actuator circuit", "Check commanded fuel quantity", "Measure fuel pressure", "Test injection pump"],
+    "repairs": ["Repair wiring", "Replace metering actuator", "Repair injection pump"],
+    "severity": "High"
+  },
+  "P0257": {
+    "causes": ["Injection pump fuel metering control B range/performance fault", "Restricted fuel supply", "Faulty actuator", "Injection pump wear"],
+    "symptoms": ["Loss of power", "Poor acceleration", "Hard starting", "Rough running"],
+    "diagnostic": ["Compare commanded and actual fuel quantity", "Check fuel supply", "Inspect actuator", "Test injection pump"],
+    "repairs": ["Correct fuel supply", "Replace actuator", "Repair injection pump"],
+    "severity": "High"
+  },
+  "P0258": {
+    "causes": ["Injection pump fuel metering control B circuit low", "Short to ground", "Faulty actuator", "Damaged wiring"],
+    "symptoms": ["Loss of power", "Hard starting", "Stalling", "Poor engine performance"],
+    "diagnostic": ["Measure actuator signal voltage", "Inspect wiring", "Check actuator resistance", "Verify ECU control"],
+    "repairs": ["Repair short", "Repair wiring", "Replace metering actuator"],
+    "severity": "High"
+  },
+  "P0259": {
+    "causes": ["Injection pump fuel metering control B circuit high", "Short to voltage", "Open circuit", "Faulty actuator", "ECU driver fault"],
+    "symptoms": ["Poor engine performance", "Loss of power", "Hard starting", "Stalling"],
+    "diagnostic": ["Measure circuit voltage", "Check continuity", "Inspect actuator", "Verify ECU driver"],
+    "repairs": ["Repair wiring", "Replace actuator", "Repair ECU driver if confirmed"],
+    "severity": "High"
+  },
+  "P0260": {
+    "causes": ["Injection pump fuel metering control B intermittent", "Loose connector", "Intermittent wiring", "Failing actuator"],
+    "symptoms": ["Intermittent loss of power", "Hesitation", "Stalling", "Hard starting"],
+    "diagnostic": ["Monitor actuator command", "Wiggle-test harness", "Inspect connector", "Check fuel pressure"],
+    "repairs": ["Repair wiring", "Secure connector", "Replace metering actuator"],
+    "severity": "High"
+  },
+  "P0261": {
+    "causes": ["Cylinder 1 injector circuit low", "Short to ground", "Faulty injector", "Damaged wiring", "ECU driver fault"],
+    "symptoms": ["Cylinder 1 misfire", "Rough idle", "Loss of power", "Poor fuel economy", "Check Engine light"],
+    "diagnostic": ["Measure injector resistance", "Check injector voltage and control signal", "Inspect wiring", "Perform cylinder contribution test"],
+    "repairs": ["Repair wiring", "Replace injector 1", "Repair connector", "Verify ECU driver"],
+    "severity": "High"
+  },
+  "P0262": {
+    "causes": ["Cylinder 1 injector circuit high", "Short to voltage", "Faulty injector", "Open ground circuit", "ECU driver fault"],
+    "symptoms": ["Misfire", "Rough running", "Loss of power", "Poor fuel economy"],
+    "diagnostic": ["Measure injector control voltage", "Inspect wiring", "Test injector resistance", "Check ECU driver"],
+    "repairs": ["Repair wiring", "Repair ground circuit", "Replace injector 1", "Verify ECU driver"],
+    "severity": "High"
+  },
+  "P0263": {
+    "causes": ["Cylinder 1 contribution/balance fault", "Injector problem", "Low compression", "Fuel delivery problem", "Valve or mechanical fault"],
+    "symptoms": ["Rough idle", "Misfire", "Loss of power", "Engine vibration", "Poor acceleration"],
+    "diagnostic": ["Perform cylinder contribution test", "Check injector operation", "Test compression", "Check fuel delivery"],
+    "repairs": ["Repair or replace injector", "Correct fuel delivery", "Repair mechanical engine fault"],
+    "severity": "High"
+  },
+  "P0264": {
+    "causes": ["Cylinder 2 injector circuit low", "Short to ground", "Faulty injector", "Damaged wiring", "ECU driver fault"],
+    "symptoms": ["Cylinder 2 misfire", "Rough idle", "Loss of power", "Poor fuel economy"],
+    "diagnostic": ["Measure injector resistance", "Check control signal", "Inspect wiring", "Perform cylinder contribution test"],
+    "repairs": ["Repair wiring", "Replace injector 2", "Repair connector", "Verify ECU driver"],
+    "severity": "High"
+  },
+  "P0265": {
+    "causes": ["Cylinder 2 injector circuit high", "Short to voltage", "Faulty injector", "Open circuit", "ECU driver fault"],
+    "symptoms": ["Misfire", "Rough running", "Loss of power", "Poor fuel economy"],
+    "diagnostic": ["Measure injector control voltage", "Inspect wiring", "Test injector", "Check ECU driver"],
+    "repairs": ["Repair wiring", "Repair circuit", "Replace injector 2", "Verify ECU driver"],
+    "severity": "High"
+  },
+  "P0266": {
+    "causes": ["Cylinder 2 contribution/balance fault", "Faulty injector", "Low compression", "Fuel delivery problem", "Mechanical engine fault"],
+    "symptoms": ["Rough idle", "Misfire", "Engine vibration", "Loss of power", "Poor acceleration"],
+    "diagnostic": ["Perform contribution test", "Check injector", "Test compression", "Check fuel delivery"],
+    "repairs": ["Replace faulty injector", "Correct fuel delivery", "Repair mechanical fault"],
+    "severity": "High"
+  },
+  "P0267": {
+    "causes": ["Cylinder 3 injector circuit low", "Short to ground", "Faulty injector", "Damaged wiring", "ECU driver fault"],
+    "symptoms": ["Cylinder 3 misfire", "Rough idle", "Loss of power", "Poor fuel economy"],
+    "diagnostic": ["Measure injector resistance", "Check control signal", "Inspect wiring", "Perform cylinder contribution test"],
+    "repairs": ["Repair wiring", "Replace injector 3", "Repair connector", "Verify ECU driver"],
+    "severity": "High"
+  },
+  "P0268": {
+    "causes": ["Cylinder 3 injector circuit high", "Short to voltage", "Faulty injector", "Open circuit", "ECU driver fault"],
+    "symptoms": ["Misfire", "Rough running", "Loss of power", "Poor fuel economy"],
+    "diagnostic": ["Measure injector control voltage", "Inspect wiring", "Test injector", "Check ECU driver"],
+    "repairs": ["Repair wiring", "Repair circuit", "Replace injector 3", "Verify ECU driver"],
+    "severity": "High"
+  },
+  "P0269": {
+    "causes": ["Cylinder 3 contribution/balance fault", "Faulty injector", "Low compression", "Fuel delivery problem", "Mechanical engine fault"],
+    "symptoms": ["Rough idle", "Misfire", "Engine vibration", "Loss of power", "Poor acceleration"],
+    "diagnostic": ["Perform cylinder contribution test", "Check injector operation", "Test compression", "Inspect fuel delivery"],
+    "repairs": ["Replace injector", "Correct fuel delivery", "Repair mechanical engine fault"],
+    "severity": "High"
+  },
+  "P0270": {
+    "causes": ["Cylinder 4 injector circuit low", "Short to ground", "Faulty injector", "Damaged wiring", "ECU driver fault"],
+    "symptoms": ["Cylinder 4 misfire", "Rough idle", "Loss of power", "Poor fuel economy"],
+    "diagnostic": ["Measure injector resistance", "Check control signal", "Inspect wiring", "Perform contribution test"],
+    "repairs": ["Repair wiring", "Replace injector 4", "Repair connector", "Verify ECU driver"],
+    "severity": "High"
+  },
+  "P0271": {
+    "causes": ["Cylinder 4 injector circuit high", "Short to voltage", "Faulty injector", "Open circuit", "ECU driver fault"],
+    "symptoms": ["Misfire", "Rough running", "Loss of power", "Poor fuel economy"],
+    "diagnostic": ["Measure injector control voltage", "Inspect wiring", "Test injector", "Check ECU driver"],
+    "repairs": ["Repair wiring", "Repair circuit", "Replace injector 4", "Verify ECU driver"],
+    "severity": "High"
+  },
+  "P0272": {
+    "causes": ["Cylinder 4 contribution/balance fault", "Faulty injector", "Low compression", "Fuel delivery problem", "Mechanical engine fault"],
+    "symptoms": ["Rough idle", "Misfire", "Engine vibration", "Loss of power", "Poor acceleration"],
+    "diagnostic": ["Perform contribution test", "Check injector", "Test compression", "Check fuel delivery"],
+    "repairs": ["Replace faulty injector", "Correct fuel delivery", "Repair mechanical fault"],
+    "severity": "High"
+  },
+  "P0273": {
+    "causes": ["Cylinder 5 injector circuit low", "Short to ground", "Faulty injector", "Damaged wiring", "ECU driver fault"],
+    "symptoms": ["Cylinder 5 misfire", "Rough idle", "Loss of power", "Poor fuel economy"],
+    "diagnostic": ["Measure injector resistance", "Check injector signal", "Inspect wiring", "Perform contribution test"],
+    "repairs": ["Repair wiring", "Replace injector 5", "Repair connector", "Verify ECU driver"],
+    "severity": "High"
+  },
+  "P0274": {
+    "causes": ["Cylinder 5 injector circuit high", "Short to voltage", "Faulty injector", "Open circuit", "ECU driver fault"],
+    "symptoms": ["Misfire", "Rough running", "Loss of power", "Poor fuel economy"],
+    "diagnostic": ["Measure injector control voltage", "Inspect wiring", "Test injector", "Check ECU driver"],
+    "repairs": ["Repair wiring", "Repair circuit", "Replace injector 5", "Verify ECU driver"],
+    "severity": "High"
+  },
+  "P0275": {
+    "causes": ["Cylinder 5 contribution/balance fault", "Faulty injector", "Low compression", "Fuel delivery problem", "Mechanical engine fault"],
+    "symptoms": ["Rough idle", "Misfire", "Engine vibration", "Loss of power", "Poor acceleration"],
+    "diagnostic": ["Perform cylinder contribution test", "Check injector", "Test compression", "Inspect fuel delivery"],
+    "repairs": ["Replace injector", "Correct fuel delivery", "Repair mechanical fault"],
+    "severity": "High"
+  },
+  "P0276": {
+    "causes": ["Cylinder 6 injector circuit low", "Short to ground", "Faulty injector", "Damaged wiring", "ECU driver fault"],
+    "symptoms": ["Cylinder 6 misfire", "Rough idle", "Loss of power", "Poor fuel economy"],
+    "diagnostic": ["Measure injector resistance", "Check control signal", "Inspect wiring", "Perform contribution test"],
+    "repairs": ["Repair wiring", "Replace injector 6", "Repair connector", "Verify ECU driver"],
+    "severity": "High"
+  },
+  "P0277": {
+    "causes": ["Cylinder 6 injector circuit high", "Short to voltage", "Faulty injector", "Open circuit", "ECU driver fault"],
+    "symptoms": ["Misfire", "Rough running", "Loss of power", "Poor fuel economy"],
+    "diagnostic": ["Measure injector control voltage", "Inspect wiring", "Test injector", "Check ECU driver"],
+    "repairs": ["Repair wiring", "Repair circuit", "Replace injector 6", "Verify ECU driver"],
+    "severity": "High"
+  },
+  "P0278": {
+    "causes": ["Cylinder 6 contribution/balance fault", "Faulty injector", "Low compression", "Fuel delivery problem", "Mechanical engine fault"],
+    "symptoms": ["Rough idle", "Misfire", "Engine vibration", "Loss of power", "Poor acceleration"],
+    "diagnostic": ["Perform contribution test", "Check injector operation", "Test compression", "Check fuel delivery"],
+    "repairs": ["Replace faulty injector", "Correct fuel delivery", "Repair mechanical engine fault"],
+    "severity": "High"
+  },
+  "P0279": {
+    "causes": ["Cylinder 7 injector circuit low", "Short to ground", "Faulty injector", "Damaged wiring", "ECU driver fault"],
+    "symptoms": ["Cylinder 7 misfire", "Rough idle", "Loss of power", "Poor fuel economy"],
+    "diagnostic": ["Measure injector resistance", "Check injector signal", "Inspect wiring", "Perform contribution test"],
+    "repairs": ["Repair wiring", "Replace injector 7", "Repair connector", "Verify ECU driver"],
+    "severity": "High"
+  },
+  "P0280": {
+    "causes": ["Cylinder 7 injector circuit high", "Short to voltage", "Faulty injector", "Open circuit", "ECU driver fault"],
+    "symptoms": ["Misfire", "Rough running", "Loss of power", "Poor fuel economy"],
+    "diagnostic": ["Measure injector control voltage", "Inspect wiring", "Test injector", "Check ECU driver"],
+    "repairs": ["Repair wiring", "Repair circuit", "Replace injector 7", "Verify ECU driver"],
+    "severity": "High"
+  },
+  "P0281": {
+    "causes": ["Cylinder 7 contribution/balance fault", "Faulty injector", "Low compression", "Fuel delivery problem", "Mechanical engine fault"],
+    "symptoms": ["Rough idle", "Misfire", "Engine vibration", "Loss of power", "Poor acceleration"],
+    "diagnostic": ["Perform contribution test", "Check injector", "Test compression", "Inspect fuel delivery"],
+    "repairs": ["Replace injector", "Correct fuel delivery", "Repair mechanical fault"],
+    "severity": "High"
+  },
+  "P0282": {
+    "causes": ["Cylinder 8 injector circuit low", "Short to ground", "Faulty injector", "Damaged wiring", "ECU driver fault"],
+    "symptoms": ["Cylinder 8 misfire", "Rough idle", "Loss of power", "Poor fuel economy"],
+    "diagnostic": ["Measure injector resistance", "Check injector signal", "Inspect wiring", "Perform contribution test"],
+    "repairs": ["Repair wiring", "Replace injector 8", "Repair connector", "Verify ECU driver"],
+    "severity": "High"
+  },
+  "P0283": {
+    "causes": ["Cylinder 8 injector circuit high", "Short to voltage", "Faulty injector", "Open circuit", "ECU driver fault"],
+    "symptoms": ["Misfire", "Rough running", "Loss of power", "Poor fuel economy"],
+    "diagnostic": ["Measure injector control voltage", "Inspect wiring", "Test injector", "Check ECU driver"],
+    "repairs": ["Repair wiring", "Repair circuit", "Replace injector 8", "Verify ECU driver"],
+    "severity": "High"
+  },
+  "P0284": {
+    "causes": ["Cylinder 8 contribution/balance fault", "Faulty injector", "Low compression", "Fuel delivery problem", "Mechanical engine fault"],
+    "symptoms": ["Rough idle", "Misfire", "Engine vibration", "Loss of power", "Poor acceleration"],
+    "diagnostic": ["Perform contribution test", "Check injector operation", "Test compression", "Check fuel delivery"],
+    "repairs": ["Replace faulty injector", "Correct fuel delivery", "Repair mechanical engine fault"],
+    "severity": "High"
+  },
+  "P0285": {
+    "causes": ["Cylinder 9 injector circuit low", "Short to ground", "Faulty injector", "Damaged wiring", "ECU driver fault"],
+    "symptoms": ["Cylinder 9 misfire", "Rough running", "Loss of power", "Poor fuel economy"],
+    "diagnostic": ["Measure injector resistance", "Check injector signal", "Inspect wiring", "Perform contribution test"],
+    "repairs": ["Repair wiring", "Replace injector 9", "Repair connector", "Verify ECU driver"],
+    "severity": "High"
+  },
+  "P0286": {
+    "causes": ["Cylinder 9 injector circuit high", "Short to voltage", "Faulty injector", "Open circuit", "ECU driver fault"],
+    "symptoms": ["Misfire", "Rough running", "Loss of power", "Poor fuel economy"],
+    "diagnostic": ["Measure injector control voltage", "Inspect wiring", "Test injector", "Check ECU driver"],
+    "repairs": ["Repair wiring", "Repair circuit", "Replace injector 9", "Verify ECU driver"],
+    "severity": "High"
+  },
+  "P0287": {
+    "causes": ["Cylinder 9 contribution/balance fault", "Faulty injector", "Low compression", "Fuel delivery problem", "Mechanical engine fault"],
+    "symptoms": ["Rough idle", "Misfire", "Engine vibration", "Loss of power", "Poor acceleration"],
+    "diagnostic": ["Perform contribution test", "Check injector", "Test compression", "Inspect fuel delivery"],
+    "repairs": ["Replace injector", "Correct fuel delivery", "Repair mechanical fault"],
+    "severity": "High"
+  },
+  "P0288": {
+    "causes": ["Cylinder 10 injector circuit low", "Short to ground", "Faulty injector", "Damaged wiring", "ECU driver fault"],
+    "symptoms": ["Cylinder 10 misfire", "Rough running", "Loss of power", "Poor fuel economy"],
+    "diagnostic": ["Measure injector resistance", "Check injector signal", "Inspect wiring", "Perform contribution test"],
+    "repairs": ["Repair wiring", "Replace injector 10", "Repair connector", "Verify ECU driver"],
+    "severity": "High"
+  },
+  "P0289": {
+    "causes": ["Cylinder 10 injector circuit high", "Short to voltage", "Faulty injector", "Open circuit", "ECU driver fault"],
+    "symptoms": ["Misfire", "Rough running", "Loss of power", "Poor fuel economy"],
+    "diagnostic": ["Measure injector control voltage", "Inspect wiring", "Test injector", "Check ECU driver"],
+    "repairs": ["Repair wiring", "Repair circuit", "Replace injector 10", "Verify ECU driver"],
+    "severity": "High"
+  },
+  "P0290": {
+    "causes": ["Cylinder 10 contribution/balance fault", "Faulty injector", "Low compression", "Fuel delivery problem", "Mechanical engine fault"],
+    "symptoms": ["Rough idle", "Misfire", "Engine vibration", "Loss of power", "Poor acceleration"],
+    "diagnostic": ["Perform contribution test", "Check injector operation", "Test compression", "Check fuel delivery"],
+    "repairs": ["Replace faulty injector", "Correct fuel delivery", "Repair mechanical engine fault"],
+    "severity": "High"
+  },
+  "P0291": {
+    "causes": ["Cylinder 11 injector circuit low", "Short to ground", "Faulty injector", "Damaged wiring", "ECU driver fault"],
+    "symptoms": ["Cylinder 11 misfire", "Rough running", "Loss of power", "Poor fuel economy"],
+    "diagnostic": ["Measure injector resistance", "Check injector signal", "Inspect wiring", "Perform contribution test"],
+    "repairs": ["Repair wiring", "Replace injector 11", "Repair connector", "Verify ECU driver"],
+    "severity": "High"
+  },
+  "P0292": {
+    "causes": ["Cylinder 11 injector circuit high", "Short to voltage", "Faulty injector", "Open circuit", "ECU driver fault"],
+    "symptoms": ["Misfire", "Rough running", "Loss of power", "Poor fuel economy"],
+    "diagnostic": ["Measure injector control voltage", "Inspect wiring", "Test injector", "Check ECU driver"],
+    "repairs": ["Repair wiring", "Repair circuit", "Replace injector 11", "Verify ECU driver"],
+    "severity": "High"
+  },
+  "P0293": {
+    "causes": ["Cylinder 11 contribution/balance fault", "Faulty injector", "Low compression", "Fuel delivery problem", "Mechanical engine fault"],
+    "symptoms": ["Rough idle", "Misfire", "Engine vibration", "Loss of power", "Poor acceleration"],
+    "diagnostic": ["Perform contribution test", "Check injector", "Test compression", "Inspect fuel delivery"],
+    "repairs": ["Replace injector", "Correct fuel delivery", "Repair mechanical fault"],
+    "severity": "High"
+  },
+  "P0294": {
+    "causes": ["Cylinder 12 injector circuit low", "Short to ground", "Faulty injector", "Damaged wiring", "ECU driver fault"],
+    "symptoms": ["Cylinder 12 misfire", "Rough running", "Loss of power", "Poor fuel economy"],
+    "diagnostic": ["Measure injector resistance", "Check injector signal", "Inspect wiring", "Perform contribution test"],
+    "repairs": ["Repair wiring", "Replace injector 12", "Repair connector", "Verify ECU driver"],
+    "severity": "High"
+  },
+  "P0295": {
+    "causes": ["Cylinder 12 injector circuit high", "Short to voltage", "Faulty injector", "Open circuit", "ECU driver fault"],
+    "symptoms": ["Misfire", "Rough running", "Loss of power", "Poor fuel economy"],
+    "diagnostic": ["Measure injector control voltage", "Inspect wiring", "Test injector", "Check ECU driver"],
+    "repairs": ["Repair wiring", "Repair circuit", "Replace injector 12", "Verify ECU driver"],
+    "severity": "High"
+  },
+  "P0296": {
+    "causes": ["Cylinder 12 contribution/balance fault", "Faulty injector", "Low compression", "Fuel delivery problem", "Mechanical engine fault"],
+    "symptoms": ["Rough idle", "Misfire", "Engine vibration", "Loss of power", "Poor acceleration"],
+    "diagnostic": ["Perform contribution test", "Check injector operation", "Test compression", "Check fuel delivery"],
+    "repairs": ["Replace faulty injector", "Correct fuel delivery", "Repair mechanical engine fault"],
+    "severity": "High"
+  },
+  "P0297": {
+    "causes": ["Vehicle overspeed condition", "Excessive vehicle speed", "Transmission control fault", "Incorrect vehicle speed signal"],
+    "symptoms": ["Engine or transmission protection mode", "Reduced power", "Warning light", "Unexpected speed limitation"],
+    "diagnostic": ["Check vehicle speed data", "Compare wheel speed signals", "Inspect transmission operation", "Check stored ABS/ESC faults"],
+    "repairs": ["Repair vehicle speed sensor circuit", "Correct transmission fault", "Repair ABS/ESC signal problem"],
+    "severity": "High"
+  },
+  "P0298": {
+    "causes": ["Engine oil over-temperature condition", "Low engine oil level", "Engine overheating", "Oil cooling problem", "Faulty oil temperature sensor"],
+    "symptoms": ["High oil temperature", "Reduced engine power", "Oil warning", "Engine overheating", "Check Engine light"],
+    "diagnostic": ["Check oil level and condition", "Monitor oil temperature", "Inspect oil cooling system", "Verify temperature sensor"],
+    "repairs": ["Correct oil level", "Repair oil cooling system", "Replace faulty sensor", "Investigate engine overheating"],
+    "severity": "Critical"
+  },
+  "P0299": {
+    "causes": ["Turbocharger or supercharger underboost condition", "Boost leak", "Faulty wastegate or actuator", "Boost control solenoid fault", "Turbocharger wear", "Restricted intake or exhaust"],
+    "symptoms": ["Loss of power", "Poor acceleration", "Limp mode", "Slow turbo response", "Poor fuel economy", "Check Engine light"],
+    "diagnostic": ["Compare commanded and actual boost", "Inspect boost hoses and intercooler", "Test wastegate/actuator", "Check boost control solenoid", "Inspect turbocharger"],
+    "repairs": ["Repair boost leaks", "Repair or replace actuator/solenoid", "Repair intake or exhaust restriction", "Repair or replace turbocharger"],
+    "severity": "High"
+  },
+  "P0300": {
+    "causes": ["Random or multiple cylinder misfire", "Ignition fault", "Fuel delivery problem", "Vacuum leak", "Low compression", "Engine timing problem"],
+    "symptoms": ["Engine misfire", "Rough idle", "Loss of power", "Hesitation", "Engine vibration", "Check Engine light"],
+    "diagnostic": ["Identify misfire counters by cylinder", "Inspect ignition system", "Check fuel pressure and injectors", "Test compression", "Inspect intake and timing"],
+    "repairs": ["Repair ignition fault", "Repair fuel system", "Repair vacuum leaks", "Correct mechanical or timing fault"],
+    "severity": "Critical"
+  },
+  "P0301": {
+    "causes": ["Cylinder 1 misfire", "Faulty spark plug or glow system", "Ignition coil fault", "Injector problem", "Low compression", "Vacuum leak"],
+    "symptoms": ["Rough idle", "Engine vibration", "Loss of power", "Poor acceleration", "Check Engine light"],
+    "diagnostic": ["Check cylinder 1 misfire counter", "Inspect ignition components", "Test injector", "Perform compression test", "Check intake leaks"],
+    "repairs": ["Replace faulty ignition component", "Repair injector circuit", "Repair vacuum leak", "Repair mechanical fault"],
+    "severity": "High"
+  },
+  "P0302": {
+    "causes": ["Cylinder 2 misfire", "Faulty spark plug or glow system", "Ignition coil fault", "Injector problem", "Low compression", "Vacuum leak"],
+    "symptoms": ["Rough idle", "Engine vibration", "Loss of power", "Poor acceleration", "Check Engine light"],
+    "diagnostic": ["Check cylinder 2 misfire counter", "Inspect ignition system", "Test injector", "Perform compression test", "Check intake leaks"],
+    "repairs": ["Replace faulty ignition component", "Repair injector circuit", "Repair vacuum leak", "Repair mechanical fault"],
+    "severity": "High"
+  },
+  "P0303": {
+    "causes": ["Cylinder 3 misfire", "Faulty spark plug or glow system", "Ignition coil fault", "Injector problem", "Low compression", "Vacuum leak"],
+    "symptoms": ["Rough idle", "Engine vibration", "Loss of power", "Poor acceleration", "Check Engine light"],
+    "diagnostic": ["Check cylinder 3 misfire counter", "Inspect ignition system", "Test injector", "Perform compression test", "Check intake leaks"],
+    "repairs": ["Replace faulty ignition component", "Repair injector circuit", "Repair vacuum leak", "Repair mechanical fault"],
+    "severity": "High"
+  },
+  "P0304": {
+    "causes": ["Cylinder 4 misfire", "Faulty spark plug or glow system", "Ignition coil fault", "Injector problem", "Low compression", "Vacuum leak"],
+    "symptoms": ["Rough idle", "Engine vibration", "Loss of power", "Poor acceleration", "Check Engine light"],
+    "diagnostic": ["Check cylinder 4 misfire counter", "Inspect ignition system", "Test injector", "Perform compression test", "Check intake leaks"],
+    "repairs": ["Replace faulty ignition component", "Repair injector circuit", "Repair vacuum leak", "Repair mechanical fault"],
+    "severity": "High"
+  },
+  "P0305": {
+    "causes": ["Cylinder 5 misfire", "Faulty spark plug or glow system", "Ignition coil fault", "Injector problem", "Low compression", "Vacuum leak"],
+    "symptoms": ["Rough idle", "Engine vibration", "Loss of power", "Poor acceleration", "Check Engine light"],
+    "diagnostic": ["Check cylinder 5 misfire counter", "Inspect ignition system", "Test injector", "Perform compression test", "Check intake leaks"],
+    "repairs": ["Replace faulty ignition component", "Repair injector circuit", "Repair vacuum leak", "Repair mechanical fault"],
+    "severity": "High"
+  },
+  "P0306": {
+    "causes": ["Cylinder 6 misfire", "Faulty spark plug or glow system", "Ignition coil fault", "Injector problem", "Low compression", "Vacuum leak"],
+    "symptoms": ["Rough idle", "Engine vibration", "Loss of power", "Poor acceleration", "Check Engine light"],
+    "diagnostic": ["Check cylinder 6 misfire counter", "Inspect ignition system", "Test injector", "Perform compression test", "Check intake leaks"],
+    "repairs": ["Replace faulty ignition component", "Repair injector circuit", "Repair vacuum leak", "Repair mechanical fault"],
+    "severity": "High"
+  },
+  "P0307": {
+    "causes": ["Cylinder 7 misfire", "Faulty spark plug or ignition component", "Injector problem", "Low compression", "Vacuum leak"],
+    "symptoms": ["Rough idle", "Engine vibration", "Loss of power", "Poor acceleration", "Check Engine light"],
+    "diagnostic": ["Check cylinder 7 misfire counter", "Inspect ignition and fuel system", "Test compression", "Check intake leaks"],
+    "repairs": ["Repair ignition or fuel fault", "Repair vacuum leak", "Repair mechanical fault"],
+    "severity": "High"
+  },
+  "P0308": {
+    "causes": ["Cylinder 8 misfire", "Faulty spark plug or ignition component", "Injector problem", "Low compression", "Vacuum leak"],
+    "symptoms": ["Rough idle", "Engine vibration", "Loss of power", "Poor acceleration", "Check Engine light"],
+    "diagnostic": ["Check cylinder 8 misfire counter", "Inspect ignition and fuel system", "Test compression", "Check intake leaks"],
+    "repairs": ["Repair ignition or fuel fault", "Repair vacuum leak", "Repair mechanical fault"],
+    "severity": "High"
+  },
+  "P0309": {
+    "causes": ["Cylinder 9 misfire", "Faulty ignition component", "Injector problem", "Low compression", "Vacuum leak"],
+    "symptoms": ["Rough idle", "Engine vibration", "Loss of power", "Poor acceleration", "Check Engine light"],
+    "diagnostic": ["Check cylinder 9 misfire counter", "Inspect ignition and fuel system", "Test compression", "Check intake leaks"],
+    "repairs": ["Repair ignition or fuel fault", "Repair vacuum leak", "Repair mechanical fault"],
+    "severity": "High"
+  },
+  "P0310": {
+    "causes": ["Cylinder 10 misfire", "Faulty ignition component", "Injector problem", "Low compression", "Vacuum leak"],
+    "symptoms": ["Rough idle", "Engine vibration", "Loss of power", "Poor acceleration", "Check Engine light"],
+    "diagnostic": ["Check cylinder 10 misfire counter", "Inspect ignition and fuel system", "Test compression", "Check intake leaks"],
+    "repairs": ["Repair ignition or fuel fault", "Repair vacuum leak", "Repair mechanical fault"],
+    "severity": "High"
+  },
+  "P0311": {
+    "causes": ["Cylinder 11 misfire", "Faulty ignition component", "Injector problem", "Low compression", "Vacuum leak"],
+    "symptoms": ["Rough idle", "Engine vibration", "Loss of power", "Poor acceleration", "Check Engine light"],
+    "diagnostic": ["Check cylinder 11 misfire counter", "Inspect ignition and fuel system", "Test compression", "Check intake leaks"],
+    "repairs": ["Repair ignition or fuel fault", "Repair vacuum leak", "Repair mechanical fault"],
+    "severity": "High"
+  },
+  "P0312": {
+    "causes": ["Cylinder 12 misfire", "Faulty ignition component", "Injector problem", "Low compression", "Vacuum leak"],
+    "symptoms": ["Rough idle", "Engine vibration", "Loss of power", "Poor acceleration", "Check Engine light"],
+    "diagnostic": ["Check cylinder 12 misfire counter", "Inspect ignition and fuel system", "Test compression", "Check intake leaks"],
+    "repairs": ["Repair ignition or fuel fault", "Repair vacuum leak", "Repair mechanical fault"],
+    "severity": "High"
+  },
+  "P0313": {
+    "causes": ["Misfire detected with low fuel level", "Low fuel pressure", "Fuel starvation", "Fuel pump problem", "Fuel system restriction"],
+    "symptoms": ["Engine misfire", "Hesitation", "Loss of power", "Stalling", "Poor acceleration"],
+    "diagnostic": ["Check fuel level", "Measure fuel pressure", "Inspect fuel pump and filter", "Check misfire counters"],
+    "repairs": ["Refuel vehicle", "Repair fuel delivery system", "Replace fuel pump or filter if faulty"],
+    "severity": "High"
+  },
+  "P0314": {
+    "causes": ["Single-cylinder misfire detected but cylinder not identified", "Ignition fault", "Fuel injector problem", "Vacuum leak", "Mechanical engine fault"],
+    "symptoms": ["Rough idle", "Engine vibration", "Hesitation", "Loss of power", "Check Engine light"],
+    "diagnostic": ["Monitor individual cylinder misfire counters", "Inspect ignition system", "Check fuel delivery", "Perform compression test"],
+    "repairs": ["Repair ignition fault", "Repair injector or fuel system", "Repair vacuum leak", "Repair mechanical fault"],
+    "severity": "High"
+  },
+  "P0315": {
+    "causes": ["Crankshaft position system variation not learned", "Battery disconnect", "Crankshaft sensor replacement", "Timing component replacement", "ECU relearn required"],
+    "symptoms": ["Rough running", "Misfire codes", "Hard starting", "Check Engine light", "Reduced performance"],
+    "diagnostic": ["Check crankshaft sensor signal", "Verify timing components", "Perform crankshaft variation relearn procedure"],
+    "repairs": ["Perform crankshaft position relearn", "Repair timing or sensor faults", "Replace faulty crankshaft sensor if necessary"],
+    "severity": "Medium"
+  },
+  "P0316": {
+    "causes": ["Misfire detected during engine startup", "Ignition fault", "Fuel delivery problem", "Low compression", "Timing problem"],
+    "symptoms": ["Rough startup", "Engine vibration", "Hard starting", "Stalling", "Check Engine light"],
+    "diagnostic": ["Check startup misfire counters", "Inspect ignition system", "Check fuel pressure", "Test compression", "Verify engine timing"],
+    "repairs": ["Repair ignition system", "Correct fuel delivery", "Repair timing or mechanical fault"],
+    "severity": "High"
+  },
+  "P0317": {
+    "causes": ["Rough road sensor signal missing", "Faulty wheel speed sensor", "ABS/ESC communication fault", "Damaged wiring", "Faulty rough road sensor"],
+    "symptoms": ["Misfire monitoring disabled", "ABS/ESC warning", "Check Engine light", "Incorrect traction control operation"],
+    "diagnostic": ["Scan ABS/ESC module", "Check wheel speed signals", "Inspect rough road sensor and wiring", "Check CAN communication"],
+    "repairs": ["Repair wheel speed sensor circuit", "Repair wiring", "Replace faulty sensor", "Correct ABS/ESC communication fault"],
+    "severity": "Medium"
+  },
+  "P0318": {
+    "causes": ["Rough road sensor A signal fault", "Faulty sensor", "Damaged wiring", "Wheel speed signal problem", "ABS/ESC fault"],
+    "symptoms": ["Misfire detection problems", "ABS/ESC warning", "Check Engine light", "Traction control issues"],
+    "diagnostic": ["Check rough road sensor data", "Inspect wheel speed sensors", "Check wiring and connectors", "Scan ABS/ESC module"],
+    "repairs": ["Repair wiring", "Replace faulty sensor", "Repair ABS/ESC system"],
+    "severity": "Medium"
+  },
+  "P0319": {
+    "causes": ["Rough road sensor B signal fault", "Faulty sensor", "Damaged wiring", "Wheel speed signal problem", "ABS/ESC fault"],
+    "symptoms": ["Misfire detection problems", "ABS/ESC warning", "Check Engine light", "Traction control issues"],
+    "diagnostic": ["Monitor rough road data", "Check wheel speed sensors", "Inspect wiring", "Scan ABS/ESC module"],
+    "repairs": ["Repair wiring", "Replace faulty sensor", "Repair ABS/ESC system"],
+    "severity": "Medium"
+  },
+  "P0320": {
+    "causes": ["Ignition/distributor engine speed input circuit fault", "Crankshaft sensor fault", "Camshaft sensor fault", "Damaged wiring", "ECU signal processing fault"],
+    "symptoms": ["No-start condition", "Stalling", "Misfire", "Tachometer malfunction", "Check Engine light"],
+    "diagnostic": ["Check crankshaft and camshaft signals", "Inspect sensor wiring", "Check signal waveform", "Verify ECU synchronization"],
+    "repairs": ["Repair wiring", "Replace faulty position sensor", "Correct timing/synchronization fault"],
+    "severity": "High"
+  },
+  "P0321": {
+    "causes": ["Engine speed input range/performance fault", "Crankshaft position sensor fault", "Damaged tone wheel", "Wiring problem", "ECU synchronization issue"],
+    "symptoms": ["Hard starting", "Stalling", "Misfire", "Erratic RPM reading", "Check Engine light"],
+    "diagnostic": ["Monitor engine RPM signal", "Inspect crankshaft sensor", "Check tone wheel", "Verify wiring and synchronization"],
+    "repairs": ["Repair wiring", "Replace crankshaft sensor", "Repair damaged reluctor/tone wheel"],
+    "severity": "High"
+  },
+  "P0322": {
+    "causes": ["Engine speed input circuit no signal", "Crankshaft sensor failure", "Open wiring", "Sensor power or ground fault", "ECU signal fault"],
+    "symptoms": ["No-start condition", "Engine stalling", "No RPM signal", "Misfire", "Check Engine light"],
+    "diagnostic": ["Check RPM signal while cranking", "Inspect crankshaft sensor power and ground", "Check wiring continuity", "Verify sensor waveform"],
+    "repairs": ["Repair wiring", "Restore sensor power/ground", "Replace crankshaft position sensor"],
+    "severity": "Critical"
+  },
+  "P0323": {
+    "causes": ["Engine speed input intermittent", "Loose connector", "Intermittent crankshaft sensor wiring", "Failing sensor", "ECU synchronization problem"],
+    "symptoms": ["Intermittent stalling", "Hard starting", "Misfire", "Erratic RPM", "Check Engine light"],
+    "diagnostic": ["Monitor RPM signal", "Wiggle-test sensor harness", "Inspect connector", "Check synchronization"],
+    "repairs": ["Repair wiring", "Secure connector", "Replace crankshaft sensor"],
+    "severity": "High"
+  },
+  "P0324": {
+    "causes": ["Knock control system error", "Faulty knock sensor", "Damaged wiring", "Engine detonation", "ECU processing fault"],
+    "symptoms": ["Reduced power", "Poor acceleration", "Engine pinging", "Poor fuel economy", "Check Engine light"],
+    "diagnostic": ["Inspect knock sensor", "Check wiring", "Monitor knock retard data", "Check for abnormal combustion"],
+    "repairs": ["Repair wiring", "Replace knock sensor", "Correct engine combustion problem"],
+    "severity": "Medium"
+  },
+  "P0325": {
+    "causes": ["Knock sensor 1 circuit fault", "Damaged wiring", "Faulty knock sensor", "Connector problem", "ECU fault"],
+    "symptoms": ["Reduced performance", "Poor fuel economy", "Engine knock", "Check Engine light"],
+    "diagnostic": ["Inspect knock sensor wiring", "Check sensor resistance", "Monitor knock signal", "Verify ECU reference circuit"],
+    "repairs": ["Repair wiring", "Repair connector", "Replace knock sensor"],
+    "severity": "Medium"
+  },
+  "P0326": {
+    "causes": ["Knock sensor 1 range/performance fault", "Faulty sensor", "Engine vibration", "Incorrect sensor installation", "Wiring fault"],
+    "symptoms": ["Reduced power", "Poor acceleration", "Engine knock", "Poor fuel economy"],
+    "diagnostic": ["Monitor knock sensor signal", "Inspect sensor mounting", "Check engine for abnormal vibration", "Inspect wiring"],
+    "repairs": ["Correct sensor mounting", "Repair wiring", "Replace knock sensor", "Correct engine knock condition"],
+    "severity": "Medium"
+  },
+  "P0327": {
+    "causes": ["Knock sensor 1 circuit low", "Short to ground", "Faulty sensor", "Damaged wiring"],
+    "symptoms": ["Reduced engine performance", "Poor acceleration", "Poor fuel economy", "Check Engine light"],
+    "diagnostic": ["Measure knock sensor signal", "Inspect wiring for shorts", "Check sensor ground and mounting"],
+    "repairs": ["Repair short", "Repair wiring", "Replace knock sensor"],
+    "severity": "Medium"
+  },
+  "P0328": {
+    "causes": ["Knock sensor 1 circuit high", "Short to voltage", "Open circuit", "Faulty sensor", "Wiring fault"],
+    "symptoms": ["Reduced performance", "Poor acceleration", "Engine knock", "Check Engine light"],
+    "diagnostic": ["Measure sensor signal voltage", "Inspect wiring", "Check connector and ground", "Test sensor"],
+    "repairs": ["Repair wiring", "Repair circuit", "Replace knock sensor"],
+    "severity": "Medium"
+  },
+  "P0329": {
+    "causes": ["Knock sensor 1 intermittent circuit", "Loose connector", "Intermittent wiring", "Failing sensor"],
+    "symptoms": ["Intermittent reduced power", "Engine knock", "Poor acceleration", "Check Engine light"],
+    "diagnostic": ["Monitor knock sensor signal", "Wiggle-test harness", "Inspect connector", "Test sensor"],
+    "repairs": ["Repair wiring", "Secure connector", "Replace knock sensor"],
+    "severity": "Medium"
+  },
+  "P0330": {
+    "causes": ["Knock sensor 2 circuit fault", "Damaged wiring", "Faulty knock sensor", "Connector problem", "ECU fault"],
+    "symptoms": ["Reduced performance", "Poor acceleration", "Engine knock", "Poor fuel economy"],
+    "diagnostic": ["Inspect knock sensor 2 wiring", "Check sensor signal", "Inspect connector", "Monitor knock control"],
+    "repairs": ["Repair wiring", "Repair connector", "Replace knock sensor 2"],
+    "severity": "Medium"
+  },
+  "P0331": {
+    "causes": ["Knock sensor 2 range/performance fault", "Faulty sensor", "Engine vibration", "Incorrect sensor mounting", "Wiring fault"],
+    "symptoms": ["Reduced power", "Poor acceleration", "Engine knock", "Poor fuel economy"],
+    "diagnostic": ["Monitor knock sensor data", "Inspect mounting", "Check wiring", "Check for abnormal engine vibration"],
+    "repairs": ["Correct mounting", "Repair wiring", "Replace knock sensor", "Correct engine knock"],
+    "severity": "Medium"
+  },
+  "P0332": {
+    "causes": ["Knock sensor 2 circuit low", "Short to ground", "Faulty sensor", "Damaged wiring"],
+    "symptoms": ["Reduced engine performance", "Poor acceleration", "Poor fuel economy", "Check Engine light"],
+    "diagnostic": ["Measure sensor signal", "Inspect wiring", "Check sensor ground", "Test sensor"],
+    "repairs": ["Repair short", "Repair wiring", "Replace knock sensor 2"],
+    "severity": "Medium"
+  },
+  "P0333": {
+    "causes": ["Knock sensor 2 circuit high", "Short to voltage", "Open circuit", "Faulty sensor", "Wiring fault"],
+    "symptoms": ["Reduced performance", "Poor acceleration", "Engine knock", "Check Engine light"],
+    "diagnostic": ["Measure signal voltage", "Inspect wiring", "Check connector", "Test sensor"],
+    "repairs": ["Repair wiring", "Repair circuit", "Replace knock sensor 2"],
+    "severity": "Medium"
+  },
+  "P0334": {
+    "causes": ["Knock sensor 2 intermittent circuit", "Loose connector", "Intermittent wiring", "Failing sensor"],
+    "symptoms": ["Intermittent reduced power", "Poor acceleration", "Engine knock", "Check Engine light"],
+    "diagnostic": ["Monitor sensor signal", "Wiggle-test wiring", "Inspect connector", "Test sensor"],
+    "repairs": ["Repair wiring", "Secure connector", "Replace knock sensor 2"],
+    "severity": "Medium"
+  },
+  "P0335": {
+    "causes": ["Crankshaft position sensor A circuit fault", "Faulty crankshaft sensor", "Damaged wiring", "Damaged reluctor wheel", "Sensor power/ground fault"],
+    "symptoms": ["No-start condition", "Stalling", "Misfire", "Erratic RPM", "Check Engine light"],
+    "diagnostic": ["Check crankshaft signal while cranking", "Inspect sensor wiring", "Check sensor power and ground", "Inspect reluctor wheel"],
+    "repairs": ["Repair wiring", "Restore power or ground", "Replace crankshaft sensor", "Repair reluctor wheel"],
+    "severity": "Critical"
+  },
+  "P0336": {
+    "causes": ["Crankshaft position sensor A range/performance fault", "Damaged reluctor wheel", "Incorrect sensor gap", "Faulty sensor", "Timing problem"],
+    "symptoms": ["Hard starting", "Stalling", "Misfire", "Erratic RPM", "Poor engine performance"],
+    "diagnostic": ["Monitor crankshaft waveform", "Inspect sensor gap", "Check reluctor wheel", "Verify engine timing"],
+    "repairs": ["Correct sensor installation", "Replace sensor", "Repair reluctor wheel", "Correct timing problem"],
+    "severity": "High"
+  },
+  "P0337": {
+    "causes": ["Crankshaft position sensor A circuit low", "Short to ground", "Faulty sensor", "Damaged wiring"],
+    "symptoms": ["Hard starting", "Stalling", "No-start condition", "Erratic RPM"],
+    "diagnostic": ["Measure sensor signal voltage", "Inspect wiring", "Check sensor power and ground", "Test sensor waveform"],
+    "repairs": ["Repair short", "Repair wiring", "Replace crankshaft sensor"],
+    "severity": "Critical"
+  },
+  "P0338": {
+    "causes": ["Crankshaft position sensor A circuit high", "Short to voltage", "Open circuit", "Faulty sensor", "Wiring fault"],
+    "symptoms": ["Hard starting", "Stalling", "Erratic RPM", "Misfire"],
+    "diagnostic": ["Measure signal voltage", "Inspect wiring", "Check connector", "Test sensor waveform"],
+    "repairs": ["Repair wiring", "Correct circuit fault", "Replace crankshaft sensor"],
+    "severity": "Critical"
+  },
+  "P0339": {
+    "causes": ["Crankshaft position sensor A intermittent circuit", "Loose connector", "Intermittent wiring", "Failing sensor", "Damaged reluctor wheel"],
+    "symptoms": ["Intermittent stalling", "Hard starting", "Misfire", "Erratic RPM"],
+    "diagnostic": ["Monitor crankshaft signal", "Wiggle-test harness", "Inspect connector", "Check reluctor wheel"],
+    "repairs": ["Repair wiring", "Secure connector", "Replace crankshaft sensor", "Repair reluctor wheel"],
+    "severity": "Critical"
+  },
+  "P0340": {
+    "causes": ["Camshaft position sensor circuit fault", "Faulty camshaft sensor", "Damaged wiring", "Timing problem", "ECU synchronization fault"],
+    "symptoms": ["Hard starting", "No-start condition", "Stalling", "Misfire", "Poor acceleration"],
+    "diagnostic": ["Check camshaft signal", "Inspect sensor wiring", "Compare camshaft and crankshaft synchronization", "Verify timing"],
+    "repairs": ["Repair wiring", "Replace camshaft sensor", "Correct timing or synchronization fault"],
+    "severity": "High"
+  }
+    "P0341": {
+    "causes": ["Camshaft position sensor A range/performance fault", "Faulty camshaft sensor", "Damaged reluctor wheel", "Incorrect engine timing", "Wiring or connector fault"],
+    "symptoms": ["Hard starting", "Rough running", "Misfire", "Loss of power", "Poor fuel economy", "Check Engine light"],
+    "diagnostic": ["Check camshaft sensor signal", "Compare camshaft and crankshaft signals", "Inspect sensor wiring and connector", "Verify mechanical timing"],
+    "repairs": ["Repair wiring", "Replace camshaft sensor", "Repair reluctor wheel", "Correct engine timing"],
+    "severity": "High"
+  },
+  "P0342": {
+    "causes": ["Camshaft position sensor A circuit low", "Short to ground", "Faulty sensor", "Damaged wiring", "Poor electrical connection"],
+    "symptoms": ["Hard starting", "Stalling", "Misfire", "Poor engine performance", "Check Engine light"],
+    "diagnostic": ["Measure sensor signal voltage", "Check sensor power and ground", "Inspect wiring for shorts", "Test sensor waveform"],
+    "repairs": ["Repair short to ground", "Repair wiring", "Replace camshaft sensor", "Repair connector"],
+    "severity": "High"
+  },
+  "P0343": {
+    "causes": ["Camshaft position sensor A circuit high", "Short to voltage", "Open circuit", "Faulty sensor", "Wiring fault"],
+    "symptoms": ["Hard starting", "Stalling", "Misfire", "Erratic engine operation"],
+    "diagnostic": ["Measure sensor signal voltage", "Inspect wiring", "Check connector", "Test sensor output"],
+    "repairs": ["Repair wiring", "Correct short to voltage", "Replace camshaft sensor"],
+    "severity": "High"
+  },
+  "P0344": {
+    "causes": ["Camshaft position sensor A intermittent circuit", "Loose connector", "Intermittent wiring", "Failing sensor", "Damaged reluctor wheel"],
+    "symptoms": ["Intermittent stalling", "Hard starting", "Misfire", "Loss of power"],
+    "diagnostic": ["Monitor camshaft signal", "Wiggle-test harness", "Inspect connector", "Compare camshaft and crankshaft signals"],
+    "repairs": ["Repair wiring", "Secure connector", "Replace camshaft sensor", "Repair reluctor wheel"],
+    "severity": "High"
+  },
+  "P0345": {
+    "causes": ["Camshaft position sensor A circuit fault bank 2", "Faulty sensor", "Damaged wiring", "Connector fault", "Timing problem"],
+    "symptoms": ["Hard starting", "Misfire", "Rough running", "Loss of power"],
+    "diagnostic": ["Check sensor signal", "Inspect wiring", "Verify sensor power and ground", "Check engine timing"],
+    "repairs": ["Repair wiring", "Replace camshaft sensor", "Correct timing fault"],
+    "severity": "High"
+  },
+  "P0346": {
+    "causes": ["Camshaft position sensor A range/performance bank 2", "Faulty sensor", "Timing error", "Damaged reluctor", "Wiring fault"],
+    "symptoms": ["Hard starting", "Rough running", "Misfire", "Poor acceleration"],
+    "diagnostic": ["Compare camshaft and crankshaft signals", "Inspect sensor", "Check reluctor wheel", "Verify timing"],
+    "repairs": ["Replace sensor", "Repair wiring", "Repair reluctor", "Correct timing"],
+    "severity": "High"
+  },
+  "P0347": {
+    "causes": ["Camshaft position sensor A circuit low bank 2", "Short to ground", "Faulty sensor", "Damaged wiring"],
+    "symptoms": ["Hard starting", "Stalling", "Misfire", "Reduced power"],
+    "diagnostic": ["Measure signal voltage", "Inspect wiring", "Check sensor ground", "Test sensor"],
+    "repairs": ["Repair short", "Repair wiring", "Replace camshaft sensor"],
+    "severity": "High"
+  },
+  "P0348": {
+    "causes": ["Camshaft position sensor A circuit high bank 2", "Short to voltage", "Open circuit", "Faulty sensor"],
+    "symptoms": ["Hard starting", "Misfire", "Stalling", "Poor engine performance"],
+    "diagnostic": ["Measure signal voltage", "Check wiring continuity", "Inspect connector", "Test sensor"],
+    "repairs": ["Repair wiring", "Correct short", "Replace camshaft sensor"],
+    "severity": "High"
+  },
+  "P0349": {
+    "causes": ["Camshaft position sensor A intermittent bank 2", "Loose connector", "Intermittent wiring", "Failing sensor"],
+    "symptoms": ["Intermittent stalling", "Hard starting", "Misfire", "Loss of power"],
+    "diagnostic": ["Monitor camshaft signal", "Wiggle-test harness", "Inspect connector", "Check synchronization"],
+    "repairs": ["Repair wiring", "Secure connector", "Replace camshaft sensor"],
+    "severity": "High"
+  },
+  "P0350": {
+    "causes": ["Ignition coil primary/secondary circuit fault", "Faulty ignition coil", "Damaged wiring", "Poor connector connection", "ECU ignition driver fault"],
+    "symptoms": ["Engine misfire", "Rough idle", "Loss of power", "Hard starting", "Check Engine light"],
+    "diagnostic": ["Inspect ignition coils", "Check coil power and ground", "Test primary and secondary circuits", "Check ECU control signal"],
+    "repairs": ["Repair wiring", "Replace faulty ignition coil", "Repair connector", "Verify ECU driver"],
+    "severity": "High"
+  },
+  "P0351": {
+    "causes": ["Ignition coil A primary/secondary circuit fault", "Faulty coil", "Damaged wiring", "Poor connector", "ECU driver fault"],
+    "symptoms": ["Cylinder misfire", "Rough idle", "Loss of power", "Poor acceleration"],
+    "diagnostic": ["Check coil A power and ground", "Test primary resistance", "Inspect wiring", "Check ignition control signal"],
+    "repairs": ["Repair wiring", "Replace coil A", "Repair connector", "Verify ECU driver"],
+    "severity": "High"
+  },
+  "P0352": {
+    "causes": ["Ignition coil B primary/secondary circuit fault", "Faulty coil", "Damaged wiring", "Poor connector", "ECU driver fault"],
+    "symptoms": ["Misfire", "Rough running", "Loss of power", "Poor acceleration"],
+    "diagnostic": ["Check coil B circuit", "Test coil resistance", "Inspect wiring", "Verify ECU control signal"],
+    "repairs": ["Repair wiring", "Replace coil B", "Repair connector", "Verify ECU driver"],
+    "severity": "High"
+  },
+  "P0353": {
+    "causes": ["Ignition coil C primary/secondary circuit fault", "Faulty coil", "Damaged wiring", "Poor connector", "ECU driver fault"],
+    "symptoms": ["Misfire", "Rough idle", "Loss of power", "Poor acceleration"],
+    "diagnostic": ["Check coil C circuit", "Measure coil resistance", "Inspect wiring", "Verify ECU driver"],
+    "repairs": ["Repair wiring", "Replace coil C", "Repair connector", "Verify ECU driver"],
+    "severity": "High"
+  },
+  "P0354": {
+    "causes": ["Ignition coil D primary/secondary circuit fault", "Faulty coil", "Damaged wiring", "Poor connector", "ECU driver fault"],
+    "symptoms": ["Misfire", "Rough running", "Loss of power", "Hard starting"],
+    "diagnostic": ["Check coil D circuit", "Test coil resistance", "Inspect wiring", "Check ECU control signal"],
+    "repairs": ["Repair wiring", "Replace coil D", "Repair connector", "Verify ECU driver"],
+    "severity": "High"
+  },
+  "P0355": {
+    "causes": ["Ignition coil E primary/secondary circuit fault", "Faulty coil", "Damaged wiring", "Poor connector", "ECU driver fault"],
+    "symptoms": ["Misfire", "Rough running", "Loss of power", "Poor acceleration"],
+    "diagnostic": ["Check coil E circuit", "Test coil", "Inspect wiring", "Verify ECU control"],
+    "repairs": ["Repair wiring", "Replace coil E", "Repair connector", "Verify ECU driver"],
+    "severity": "High"
+  },
+  "P0356": {
+    "causes": ["Ignition coil F primary/secondary circuit fault", "Faulty coil", "Damaged wiring", "Poor connector", "ECU driver fault"],
+    "symptoms": ["Misfire", "Rough running", "Loss of power", "Hard starting"],
+    "diagnostic": ["Check coil F circuit", "Test coil resistance", "Inspect wiring", "Verify ECU control"],
+    "repairs": ["Repair wiring", "Replace coil F", "Repair connector", "Verify ECU driver"],
+    "severity": "High"
+  },
+  "P0357": {
+    "causes": ["Ignition coil G primary/secondary circuit fault", "Faulty coil", "Damaged wiring", "Poor connector", "ECU driver fault"],
+    "symptoms": ["Misfire", "Rough running", "Loss of power", "Poor acceleration"],
+    "diagnostic": ["Check coil G circuit", "Test coil", "Inspect wiring", "Verify ECU control"],
+    "repairs": ["Repair wiring", "Replace coil G", "Repair connector", "Verify ECU driver"],
+    "severity": "High"
+  },
+  "P0358": {
+    "causes": ["Ignition coil H primary/secondary circuit fault", "Faulty coil", "Damaged wiring", "Poor connector", "ECU driver fault"],
+    "symptoms": ["Misfire", "Rough running", "Loss of power", "Hard starting"],
+    "diagnostic": ["Check coil H circuit", "Test coil", "Inspect wiring", "Verify ECU control"],
+    "repairs": ["Repair wiring", "Replace coil H", "Repair connector", "Verify ECU driver"],
+    "severity": "High"
+  },
+  "P0359": {
+    "causes": ["Ignition coil I primary/secondary circuit fault", "Faulty coil", "Damaged wiring", "Poor connector", "ECU driver fault"],
+    "symptoms": ["Misfire", "Rough running", "Loss of power", "Poor acceleration"],
+    "diagnostic": ["Check coil I circuit", "Test coil", "Inspect wiring", "Verify ECU control"],
+    "repairs": ["Repair wiring", "Replace coil I", "Repair connector", "Verify ECU driver"],
+    "severity": "High"
+  },
+  "P0360": {
+    "causes": ["Ignition coil J primary/secondary circuit fault", "Faulty coil", "Damaged wiring", "Poor connector", "ECU driver fault"],
+    "symptoms": ["Misfire", "Rough running", "Loss of power", "Hard starting"],
+    "diagnostic": ["Check coil J circuit", "Test coil", "Inspect wiring", "Verify ECU control"],
+    "repairs": ["Repair wiring", "Replace coil J", "Repair connector", "Verify ECU driver"],
+    "severity": "High"
+  },
+  "P0361": {
+    "causes": ["Ignition coil K primary/secondary circuit fault", "Faulty coil", "Damaged wiring", "Poor connector", "ECU driver fault"],
+    "symptoms": ["Misfire", "Rough idle", "Loss of power", "Poor acceleration"],
+    "diagnostic": ["Check coil K circuit", "Test coil", "Inspect wiring", "Verify ECU control"],
+    "repairs": ["Repair wiring", "Replace coil K", "Repair connector", "Verify ECU driver"],
+    "severity": "High"
+  },
+  "P0362": {
+    "causes": ["Ignition coil L primary/secondary circuit fault", "Faulty coil", "Damaged wiring", "Poor connector", "ECU driver fault"],
+    "symptoms": ["Misfire", "Rough running", "Loss of power", "Hard starting"],
+    "diagnostic": ["Check coil L circuit", "Test coil", "Inspect wiring", "Verify ECU control"],
+    "repairs": ["Repair wiring", "Replace coil L", "Repair connector", "Verify ECU driver"],
+    "severity": "High"
+  },
+  "P0363": {
+    "causes": ["Misfire detected with fuel injector shutoff", "Severe misfire", "Ignition fault", "Fuel delivery problem", "Mechanical engine fault"],
+    "symptoms": ["Engine misfire", "Reduced power", "Rough running", "Flashing Check Engine light", "Fuel injector disabled"],
+    "diagnostic": ["Check cylinder misfire counters", "Identify affected cylinder", "Inspect ignition and fuel systems", "Check compression"],
+    "repairs": ["Repair ignition fault", "Repair injector or fuel system", "Correct mechanical fault"],
+    "severity": "Critical"
+  },
+  "P0365": {
+    "causes": ["Camshaft position sensor B circuit bank 1", "Faulty camshaft sensor", "Damaged wiring", "Connector fault", "Timing problem"],
+    "symptoms": ["Hard starting", "Misfire", "Stalling", "Loss of power"],
+    "diagnostic": ["Check camshaft B signal", "Inspect wiring", "Check sensor power and ground", "Verify timing"],
+    "repairs": ["Repair wiring", "Replace camshaft sensor", "Correct timing fault"],
+    "severity": "High"
+  },
+  "P0366": {
+    "causes": ["Camshaft position sensor B range/performance bank 1", "Faulty sensor", "Timing error", "Damaged reluctor", "Wiring fault"],
+    "symptoms": ["Hard starting", "Rough running", "Misfire", "Poor acceleration"],
+    "diagnostic": ["Compare camshaft and crankshaft signals", "Inspect sensor", "Check reluctor wheel", "Verify timing"],
+    "repairs": ["Replace sensor", "Repair wiring", "Repair reluctor", "Correct timing"],
+    "severity": "High"
+  },
+  "P0367": {
+    "causes": ["Camshaft position sensor B circuit low bank 1", "Short to ground", "Faulty sensor", "Damaged wiring"],
+    "symptoms": ["Hard starting", "Stalling", "Misfire", "Reduced power"],
+    "diagnostic": ["Measure signal voltage", "Inspect wiring", "Check sensor ground", "Test sensor"],
+    "repairs": ["Repair short", "Repair wiring", "Replace camshaft sensor"],
+    "severity": "High"
+  },
+  "P0368": {
+    "causes": ["Camshaft position sensor B circuit high bank 1", "Short to voltage", "Open circuit", "Faulty sensor", "Wiring fault"],
+    "symptoms": ["Hard starting", "Misfire", "Stalling", "Poor engine performance"],
+    "diagnostic": ["Measure signal voltage", "Check wiring continuity", "Inspect connector", "Test sensor"],
+    "repairs": ["Repair wiring", "Correct short", "Replace camshaft sensor"],
+    "severity": "High"
+  },
+  "P0369": {
+    "causes": ["Camshaft position sensor B intermittent bank 1", "Loose connector", "Intermittent wiring", "Failing sensor"],
+    "symptoms": ["Intermittent stalling", "Hard starting", "Misfire", "Loss of power"],
+    "diagnostic": ["Monitor camshaft signal", "Wiggle-test harness", "Inspect connector", "Check synchronization"],
+    "repairs": ["Repair wiring", "Secure connector", "Replace camshaft sensor"],
+    "severity": "High"
+  },
+  "P0370": {
+    "causes": ["Timing reference high-resolution signal A malfunction", "Faulty sensor", "Damaged reluctor", "Wiring fault", "Timing synchronization problem"],
+    "symptoms": ["Hard starting", "Stalling", "Misfire", "Erratic engine operation"],
+    "diagnostic": ["Check timing reference signal", "Inspect sensor and wiring", "Check reluctor wheel", "Verify synchronization"],
+    "repairs": ["Repair wiring", "Replace sensor", "Repair reluctor", "Correct timing synchronization"],
+    "severity": "High"
+  },
+  "P0371": {
+    "causes": ["Timing reference high-resolution signal A excessive pulses", "Damaged reluctor", "Sensor fault", "Timing system problem"],
+    "symptoms": ["Misfire", "Erratic RPM", "Poor engine performance", "Stalling"],
+    "diagnostic": ["Inspect reluctor pattern", "Check sensor waveform", "Compare expected and actual pulse count"],
+    "repairs": ["Repair or replace reluctor", "Replace sensor", "Correct timing system fault"],
+    "severity": "High"
+  },
+  "P0372": {
+    "causes": ["Timing reference high-resolution signal A missing pulses", "Damaged reluctor", "Faulty sensor", "Wiring problem"],
+    "symptoms": ["Misfire", "Stalling", "Hard starting", "Erratic RPM"],
+    "diagnostic": ["Check sensor waveform", "Inspect reluctor wheel", "Check sensor wiring and connector"],
+    "repairs": ["Repair wiring", "Replace sensor", "Repair reluctor wheel"],
+    "severity": "High"
+  },
+  "P0373": {
+    "causes": ["Timing reference high-resolution signal A intermittent pulses", "Loose connector", "Intermittent wiring", "Failing sensor", "Damaged reluctor"],
+    "symptoms": ["Intermittent stalling", "Misfire", "Erratic RPM", "Hard starting"],
+    "diagnostic": ["Monitor signal waveform", "Wiggle-test harness", "Inspect reluctor", "Check sensor"],
+    "repairs": ["Repair wiring", "Secure connector", "Replace sensor", "Repair reluctor"],
+    "severity": "High"
+  },
+  "P0374": {
+    "causes": ["Timing reference high-resolution signal A no pulses", "Sensor failure", "Open circuit", "Sensor power loss", "Damaged reluctor"],
+    "symptoms": ["No-start condition", "Stalling", "No RPM signal", "Misfire"],
+    "diagnostic": ["Check sensor power and ground", "Measure signal while cranking", "Inspect wiring and reluctor"],
+    "repairs": ["Restore power or ground", "Repair wiring", "Replace sensor", "Repair reluctor"],
+    "severity": "Critical"
+  },
+  "P0375": {
+    "causes": ["Timing reference medium-resolution signal B malfunction", "Faulty sensor", "Damaged reluctor", "Wiring fault", "Synchronization problem"],
+    "symptoms": ["Hard starting", "Misfire", "Stalling", "Poor engine performance"],
+    "diagnostic": ["Check reference signal", "Inspect sensor and wiring", "Check reluctor", "Verify timing"],
+    "repairs": ["Repair wiring", "Replace sensor", "Repair reluctor", "Correct synchronization"],
+    "severity": "High"
+  },
+  "P0376": {
+    "causes": ["Timing reference medium-resolution signal B excessive pulses", "Damaged reluctor", "Sensor fault", "Timing problem"],
+    "symptoms": ["Misfire", "Erratic RPM", "Stalling", "Poor performance"],
+    "diagnostic": ["Check pulse pattern", "Inspect reluctor", "Test sensor waveform"],
+    "repairs": ["Repair reluctor", "Replace sensor", "Correct timing fault"],
+    "severity": "High"
+  },
+  "P0377": {
+    "causes": ["Timing reference medium-resolution signal B missing pulses", "Damaged reluctor", "Faulty sensor", "Wiring fault"],
+    "symptoms": ["Misfire", "Stalling", "Hard starting", "Erratic RPM"],
+    "diagnostic": ["Inspect sensor waveform", "Check reluctor wheel", "Inspect wiring"],
+    "repairs": ["Repair wiring", "Replace sensor", "Repair reluctor"],
+    "severity": "High"
+  },
+  "P0378": {
+    "causes": ["Timing reference medium-resolution signal B intermittent pulses", "Loose connector", "Intermittent wiring", "Failing sensor"],
+    "symptoms": ["Intermittent stalling", "Misfire", "Erratic RPM"],
+    "diagnostic": ["Monitor reference signal", "Wiggle-test wiring", "Inspect connector", "Test sensor"],
+    "repairs": ["Repair wiring", "Secure connector", "Replace sensor"],
+    "severity": "High"
+  },
+  "P0379": {
+    "causes": ["Timing reference medium-resolution signal B no pulses", "Sensor failure", "Open circuit", "Power/ground fault", "Damaged reluctor"],
+    "symptoms": ["No-start condition", "Stalling", "No RPM signal", "Misfire"],
+    "diagnostic": ["Check sensor power and ground", "Check signal while cranking", "Inspect reluctor and wiring"],
+    "repairs": ["Repair wiring", "Restore power or ground", "Replace sensor", "Repair reluctor"],
+    "severity": "Critical"
+  },
+  "P0380": {
+    "causes": ["Glow plug/heater circuit A malfunction", "Faulty glow plug", "Glow plug relay fault", "Damaged wiring", "Control module fault"],
+    "symptoms": ["Hard cold starting", "Excessive white smoke", "Rough cold idle", "Glow plug warning light"],
+    "diagnostic": ["Check glow plug resistance", "Measure voltage at glow plugs", "Test glow plug relay/module", "Inspect wiring"],
+    "repairs": ["Replace faulty glow plug", "Repair wiring", "Replace glow plug relay/module"],
+    "severity": "Medium"
+  },
+  "P0381": {
+    "causes": ["Glow plug/heater indicator circuit fault", "Faulty indicator", "Instrument cluster wiring fault", "Glow plug control fault"],
+    "symptoms": ["Glow plug warning light malfunction", "Hard cold starting", "Diesel cold-start issues"],
+    "diagnostic": ["Check indicator operation", "Scan glow plug module", "Inspect wiring and cluster communication"],
+    "repairs": ["Repair wiring", "Repair or replace indicator/cluster", "Repair glow plug control system"],
+    "severity": "Medium"
+  },
+  "P0382": {
+    "causes": ["Glow plug/heater circuit B malfunction", "Faulty glow plug", "Relay/module fault", "Damaged wiring"],
+    "symptoms": ["Hard cold starting", "Rough cold idle", "White smoke", "Glow plug warning"],
+    "diagnostic": ["Test glow plugs", "Measure circuit voltage", "Check relay/module", "Inspect wiring"],
+    "repairs": ["Replace glow plug", "Repair wiring", "Replace relay/module"],
+    "severity": "Medium"
+  },
+  "P0383": {
+    "causes": ["Glow plug/heater control circuit low", "Short to ground", "Faulty control module", "Damaged wiring"],
+    "symptoms": ["Hard cold starting", "Glow plug warning", "Cold misfire"],
+    "diagnostic": ["Measure control circuit voltage", "Inspect wiring", "Check glow plug module"],
+    "repairs": ["Repair short", "Repair wiring", "Replace control module"],
+    "severity": "Medium"
+  },
+  "P0384": {
+    "causes": ["Glow plug/heater control circuit high", "Short to voltage", "Open circuit", "Faulty control module"],
+    "symptoms": ["Glow plug warning", "Hard starting", "Cold running problems"],
+    "diagnostic": ["Measure control voltage", "Inspect wiring", "Test glow plug controller"],
+    "repairs": ["Repair wiring", "Correct short", "Replace control module"],
+    "severity": "Medium"
+  },
+  "P0385": {
+    "causes": ["Crankshaft position sensor B circuit fault", "Faulty sensor", "Damaged wiring", "Reluctor problem", "Power/ground fault"],
+    "symptoms": ["Hard starting", "Stalling", "Misfire", "Erratic RPM"],
+    "diagnostic": ["Check sensor signal", "Inspect wiring", "Check sensor power and ground", "Inspect reluctor"],
+    "repairs": ["Repair wiring", "Replace sensor", "Repair reluctor"],
+    "severity": "High"
+  },
+  "P0386": {
+    "causes": ["Crankshaft position sensor B range/performance fault", "Faulty sensor", "Incorrect sensor gap", "Damaged reluctor", "Timing problem"],
+    "symptoms": ["Hard starting", "Misfire", "Stalling", "Erratic RPM"],
+    "diagnostic": ["Check sensor waveform", "Inspect sensor gap", "Check reluctor", "Verify timing"],
+    "repairs": ["Correct sensor installation", "Replace sensor", "Repair reluctor", "Correct timing"],
+    "severity": "High"
+  },
+  "P0387": {
+    "causes": ["Crankshaft position sensor B circuit low", "Short to ground", "Faulty sensor", "Damaged wiring"],
+    "symptoms": ["Hard starting", "Stalling", "No-start condition", "Erratic RPM"],
+    "diagnostic": ["Measure sensor signal", "Check wiring", "Verify sensor power and ground"],
+    "repairs": ["Repair short", "Repair wiring", "Replace sensor"],
+    "severity": "Critical"
+  },
+  "P0388": {
+    "causes": ["Crankshaft position sensor B circuit high", "Short to voltage", "Open circuit", "Faulty sensor"],
+    "symptoms": ["Hard starting", "Stalling", "Misfire", "Erratic RPM"],
+    "diagnostic": ["Measure signal voltage", "Inspect wiring", "Check connector", "Test sensor"],
+    "repairs": ["Repair wiring", "Correct circuit fault", "Replace sensor"],
+    "severity": "Critical"
+  },
+  "P0389": {
+    "causes": ["Crankshaft position sensor B intermittent circuit", "Loose connector", "Intermittent wiring", "Failing sensor", "Damaged reluctor"],
+    "symptoms": ["Intermittent stalling", "Hard starting", "Misfire", "Erratic RPM"],
+    "diagnostic": ["Monitor sensor signal", "Wiggle-test harness", "Inspect connector", "Check reluctor"],
+    "repairs": ["Repair wiring", "Secure connector", "Replace sensor", "Repair reluctor"],
+    "severity": "Critical"
+  },
+  "P0390": {
+    "causes": ["Camshaft position sensor B circuit bank 2", "Faulty sensor", "Damaged wiring", "Connector fault", "Timing problem"],
+    "symptoms": ["Hard starting", "Misfire", "Stalling", "Loss of power"],
+    "diagnostic": ["Check sensor signal", "Inspect wiring", "Check power and ground", "Verify timing"],
+    "repairs": ["Repair wiring", "Replace camshaft sensor", "Correct timing fault"],
+    "severity": "High"
+  },
+  "P0391": {
+    "causes": ["Camshaft position sensor B range/performance bank 2", "Faulty sensor", "Timing error", "Damaged reluctor", "Wiring fault"],
+    "symptoms": ["Hard starting", "Rough running", "Misfire", "Poor acceleration"],
+    "diagnostic": ["Compare camshaft and crankshaft signals", "Inspect sensor", "Check reluctor", "Verify timing"],
+    "repairs": ["Replace sensor", "Repair wiring", "Repair reluctor", "Correct timing"],
+    "severity": "High"
+  },
+  "P0392": {
+    "causes": ["Camshaft position sensor B circuit low bank 2", "Short to ground", "Faulty sensor", "Damaged wiring"],
+    "symptoms": ["Hard starting", "Stalling", "Misfire", "Reduced power"],
+    "diagnostic": ["Measure sensor signal", "Inspect wiring", "Check sensor ground", "Test sensor"],
+    "repairs": ["Repair short", "Repair wiring", "Replace sensor"],
+    "severity": "High"
+  },
+  "P0393": {
+    "causes": ["Camshaft position sensor B circuit high bank 2", "Short to voltage", "Open circuit", "Faulty sensor"],
+    "symptoms": ["Hard starting", "Misfire", "Stalling", "Poor engine performance"],
+    "diagnostic": ["Measure signal voltage", "Check wiring continuity", "Inspect connector", "Test sensor"],
+    "repairs": ["Repair wiring", "Correct short", "Replace sensor"],
+    "severity": "High"
+  },
+  "P0394": {
+    "causes": ["Camshaft position sensor B intermittent bank 2", "Loose connector", "Intermittent wiring", "Failing sensor"],
+    "symptoms": ["Intermittent stalling", "Hard starting", "Misfire", "Loss of power"],
+    "diagnostic": ["Monitor camshaft signal", "Wiggle-test harness", "Inspect connector", "Check synchronization"],
+    "repairs": ["Repair wiring", "Secure connector", "Replace camshaft sensor"],
+    "severity": "High"
+  },
+  "P0395": {
+    "causes": ["Camshaft position sensor B circuit fault", "Faulty sensor", "Damaged wiring", "Connector fault", "Timing problem"],
+    "symptoms": ["Hard starting", "Misfire", "Stalling", "Poor engine performance"],
+    "diagnostic": ["Check sensor signal", "Inspect wiring", "Check sensor power and ground", "Verify timing"],
+    "repairs": ["Repair wiring", "Replace sensor", "Correct timing fault"],
+    "severity": "High"
+  },
+  "P0396": {
+    "causes": ["Camshaft position sensor B range/performance fault", "Faulty sensor", "Damaged reluctor", "Timing error", "Wiring fault"],
+    "symptoms": ["Hard starting", "Misfire", "Rough running", "Loss of power"],
+    "diagnostic": ["Compare camshaft and crankshaft signals", "Inspect sensor", "Check reluctor", "Verify timing"],
+    "repairs": ["Replace sensor", "Repair wiring", "Repair reluctor", "Correct timing"],
+    "severity": "High"
+  },
+  "P0397": {
+    "causes": ["Camshaft position sensor B circuit low", "Short to ground", "Faulty sensor", "Damaged wiring"],
+    "symptoms": ["Hard starting", "Stalling", "Misfire", "Reduced performance"],
+    "diagnostic": ["Measure sensor signal voltage", "Inspect wiring", "Check ground", "Test sensor"],
+    "repairs": ["Repair short", "Repair wiring", "Replace sensor"],
+    "severity": "High"
+  },
+  "P0398": {
+    "causes": ["Camshaft position sensor B circuit high", "Short to voltage", "Open circuit", "Faulty sensor"],
+    "symptoms": ["Hard starting", "Misfire", "Stalling", "Poor performance"],
+    "diagnostic": ["Measure signal voltage", "Check wiring", "Inspect connector", "Test sensor"],
+    "repairs": ["Repair wiring", "Correct short", "Replace sensor"],
+    "severity": "High"
+  },
+  "P0399": {
+    "causes": ["Camshaft position sensor B intermittent circuit", "Loose connector", "Intermittent wiring", "Failing sensor", "Reluctor problem"],
+    "symptoms": ["Intermittent stalling", "Misfire", "Hard starting", "Erratic engine operation"],
+    "diagnostic": ["Monitor sensor signal", "Wiggle-test wiring", "Inspect connector", "Check reluctor"],
+    "repairs": ["Repair wiring", "Secure connector", "Replace sensor", "Repair reluctor"],
+    "severity": "High"
+  },
+  "P0400": {
+    "causes": ["Exhaust gas recirculation flow malfunction", "Clogged EGR valve", "Faulty EGR valve", "Blocked EGR passages", "Faulty EGR control solenoid", "Vacuum or electrical fault"],
+    "symptoms": ["Rough idle", "Poor acceleration", "Reduced power", "Increased emissions", "Engine hesitation", "Check Engine light"],
+    "diagnostic": ["Check commanded and actual EGR operation", "Inspect EGR valve and passages", "Test EGR control circuit", "Check vacuum supply if applicable"],
+    "repairs": ["Clean EGR valve and passages", "Repair vacuum or wiring faults", "Replace faulty EGR valve or control solenoid"],
+    "severity": "Medium"
+  },
+    "P0401": {
+    "causes": ["Insufficient EGR flow", "Clogged EGR valve or passages", "Faulty EGR valve", "Faulty EGR control solenoid", "Restricted intake or exhaust passage"],
+    "symptoms": ["Check Engine light", "Engine hesitation", "Poor acceleration", "Rough idle", "Increased emissions"],
+    "diagnostic": ["Test EGR command and feedback", "Inspect EGR valve and passages", "Check vacuum or electrical control", "Verify differential pressure or flow sensor operation"],
+    "repairs": ["Clean EGR valve and passages", "Repair control circuit", "Replace faulty EGR valve or sensor"],
+    "severity": "Medium"
+  },
+  "P0402": {
+    "causes": ["Excessive EGR flow", "EGR valve stuck open", "Faulty EGR control solenoid", "Incorrect EGR feedback", "Carbon contamination"],
+    "symptoms": ["Rough idle", "Stalling", "Poor acceleration", "Engine hesitation", "Check Engine light"],
+    "diagnostic": ["Check EGR position", "Inspect valve for sticking", "Monitor commanded versus actual EGR flow", "Inspect EGR passages"],
+    "repairs": ["Clean EGR valve", "Repair control circuit", "Replace faulty EGR valve or solenoid"],
+    "severity": "High"
+  },
+  "P0403": {
+    "causes": ["EGR control circuit malfunction", "Faulty EGR solenoid", "Open circuit", "Short circuit", "Damaged wiring", "ECU driver fault"],
+    "symptoms": ["Check Engine light", "Poor engine performance", "Rough idle", "Increased emissions"],
+    "diagnostic": ["Check EGR control voltage", "Test solenoid resistance", "Inspect wiring and connector", "Verify ECU command"],
+    "repairs": ["Repair wiring", "Replace EGR solenoid", "Repair connector", "Verify ECU driver"],
+    "severity": "Medium"
+  },
+  "P0404": {
+    "causes": ["EGR control circuit range/performance fault", "EGR valve sticking", "Faulty position sensor", "Carbon buildup", "Wiring fault"],
+    "symptoms": ["Hesitation", "Rough idle", "Poor acceleration", "Check Engine light"],
+    "diagnostic": ["Compare commanded and actual EGR position", "Inspect valve movement", "Check position sensor signal", "Inspect wiring"],
+    "repairs": ["Clean EGR system", "Repair wiring", "Replace EGR valve or position sensor"],
+    "severity": "Medium"
+  },
+  "P0405": {
+    "causes": ["EGR sensor A circuit low", "Short to ground", "Faulty EGR position sensor", "Damaged wiring", "Connector fault"],
+    "symptoms": ["Check Engine light", "Rough running", "Poor acceleration", "Increased emissions"],
+    "diagnostic": ["Measure sensor reference and signal voltage", "Check ground", "Inspect wiring", "Test sensor output"],
+    "repairs": ["Repair short", "Repair wiring", "Replace EGR position sensor or valve"],
+    "severity": "Medium"
+  },
+  "P0406": {
+    "causes": ["EGR sensor A circuit high", "Short to voltage", "Faulty position sensor", "Open circuit", "Wiring fault"],
+    "symptoms": ["Check Engine light", "Rough idle", "Poor engine response", "Increased emissions"],
+    "diagnostic": ["Measure sensor signal voltage", "Inspect wiring", "Check connector", "Test EGR position sensor"],
+    "repairs": ["Repair wiring", "Correct short", "Replace EGR sensor or valve"],
+    "severity": "Medium"
+  },
+  "P0407": {
+    "causes": ["EGR sensor B circuit low", "Short to ground", "Faulty sensor", "Damaged wiring", "Connector fault"],
+    "symptoms": ["Check Engine light", "Poor engine performance", "Rough running"],
+    "diagnostic": ["Check sensor reference voltage", "Measure signal voltage", "Inspect wiring and connector"],
+    "repairs": ["Repair short", "Repair wiring", "Replace EGR sensor"],
+    "severity": "Medium"
+  },
+  "P0408": {
+    "causes": ["EGR sensor B circuit high", "Short to voltage", "Faulty sensor", "Open circuit", "Wiring fault"],
+    "symptoms": ["Check Engine light", "Poor acceleration", "Rough running", "Increased emissions"],
+    "diagnostic": ["Measure sensor signal", "Inspect wiring", "Check connector", "Test sensor"],
+    "repairs": ["Repair wiring", "Correct short", "Replace EGR sensor"],
+    "severity": "Medium"
+  },
+  "P0409": {
+    "causes": ["EGR sensor A circuit intermittent", "Loose connector", "Intermittent wiring", "Failing position sensor", "EGR valve sticking"],
+    "symptoms": ["Intermittent Check Engine light", "Hesitation", "Rough idle", "Poor acceleration"],
+    "diagnostic": ["Monitor EGR sensor signal", "Wiggle-test harness", "Inspect connector", "Check valve movement"],
+    "repairs": ["Repair wiring", "Secure connector", "Replace EGR sensor or valve", "Clean EGR system"],
+    "severity": "Medium"
+  },
+  "P0410": {
+    "causes": ["Secondary air injection system malfunction", "Faulty air injection pump", "Blocked air passages", "Faulty valve", "Electrical fault"],
+    "symptoms": ["Check Engine light", "Increased cold-start emissions", "Rough cold running", "Secondary air pump noise"],
+    "diagnostic": ["Test secondary air pump", "Check valve operation", "Inspect air hoses and passages", "Check electrical supply"],
+    "repairs": ["Repair wiring", "Replace air pump", "Replace secondary air valve", "Clean blocked passages"],
+    "severity": "Medium"
+  },
+  "P0411": {
+    "causes": ["Secondary air injection incorrect flow", "Restricted air passages", "Faulty pump", "Faulty check valve", "Air leak"],
+    "symptoms": ["Check Engine light", "Cold-start roughness", "Increased emissions"],
+    "diagnostic": ["Verify secondary air flow", "Inspect hoses", "Test pump", "Check valves"],
+    "repairs": ["Repair air leaks", "Clean passages", "Replace pump or valve"],
+    "severity": "Medium"
+  },
+  "P0412": {
+    "causes": ["Secondary air injection switching valve A circuit malfunction", "Faulty valve", "Open circuit", "Short circuit", "Damaged wiring"],
+    "symptoms": ["Check Engine light", "Cold-start emissions", "Poor cold running"],
+    "diagnostic": ["Check valve resistance", "Test power and ground", "Inspect wiring", "Verify ECU control"],
+    "repairs": ["Repair wiring", "Replace switching valve", "Repair connector"],
+    "severity": "Medium"
+  },
+  "P0413": {
+    "causes": ["Secondary air injection switching valve A circuit open", "Broken wiring", "Disconnected connector", "Faulty valve"],
+    "symptoms": ["Check Engine light", "Secondary air system inactive", "Increased emissions"],
+    "diagnostic": ["Check circuit continuity", "Inspect connector", "Measure valve resistance"],
+    "repairs": ["Repair open circuit", "Repair connector", "Replace valve"],
+    "severity": "Medium"
+  },
+  "P0414": {
+    "causes": ["Secondary air injection switching valve A circuit shorted", "Short to ground", "Short to voltage", "Faulty valve", "Damaged wiring"],
+    "symptoms": ["Check Engine light", "Secondary air system malfunction", "Increased emissions"],
+    "diagnostic": ["Test valve circuit", "Check wiring for shorts", "Measure valve resistance", "Check ECU driver"],
+    "repairs": ["Repair short circuit", "Repair wiring", "Replace valve"],
+    "severity": "Medium"
+  },
+  "P0415": {
+    "causes": ["Secondary air injection switching valve B circuit malfunction", "Faulty valve", "Damaged wiring", "Connector fault"],
+    "symptoms": ["Check Engine light", "Cold-start emissions", "Poor cold operation"],
+    "diagnostic": ["Test valve B", "Check wiring", "Measure resistance", "Verify control signal"],
+    "repairs": ["Repair wiring", "Replace valve B", "Repair connector"],
+    "severity": "Medium"
+  },
+  "P0416": {
+    "causes": ["Secondary air injection switching valve B circuit open", "Broken wiring", "Disconnected connector", "Faulty valve"],
+    "symptoms": ["Check Engine light", "Increased emissions", "Secondary air system inactive"],
+    "diagnostic": ["Check continuity", "Inspect connector", "Test valve resistance"],
+    "repairs": ["Repair wiring", "Repair connector", "Replace valve"],
+    "severity": "Medium"
+  },
+  "P0417": {
+    "causes": ["Secondary air injection switching valve B circuit shorted", "Short to ground", "Short to voltage", "Faulty valve", "Damaged wiring"],
+    "symptoms": ["Check Engine light", "Cold-start emissions", "Secondary air malfunction"],
+    "diagnostic": ["Check circuit for shorts", "Test valve", "Inspect wiring", "Verify ECU driver"],
+    "repairs": ["Repair short", "Repair wiring", "Replace valve"],
+    "severity": "Medium"
+  },
+  "P0418": {
+    "causes": ["Secondary air injection system control A circuit malfunction", "Faulty relay", "Faulty pump", "Damaged wiring", "Control module fault"],
+    "symptoms": ["Check Engine light", "Secondary air pump inactive", "Increased emissions"],
+    "diagnostic": ["Test relay", "Check pump power supply", "Inspect wiring", "Verify ECU control"],
+    "repairs": ["Replace relay", "Repair wiring", "Replace pump", "Repair control circuit"],
+    "severity": "Medium"
+  },
+  "P0419": {
+    "causes": ["Secondary air injection system control B circuit malfunction", "Faulty relay", "Damaged wiring", "Control module fault"],
+    "symptoms": ["Check Engine light", "Secondary air malfunction", "Increased emissions"],
+    "diagnostic": ["Check relay operation", "Measure circuit voltage", "Inspect wiring", "Verify ECU control"],
+    "repairs": ["Replace relay", "Repair wiring", "Repair control circuit"],
+    "severity": "Medium"
+  },
+  "P0420": {
+    "causes": ["Catalyst system efficiency below threshold bank 1", "Worn catalytic converter", "Oxygen sensor fault", "Exhaust leak", "Engine running rich or lean", "Oil or coolant contamination"],
+    "symptoms": ["Check Engine light", "Reduced fuel economy", "Increased emissions", "Sulfur smell", "Usually normal drivability"],
+    "diagnostic": ["Compare upstream and downstream oxygen sensor signals", "Check exhaust for leaks", "Check fuel trims", "Verify engine is operating correctly"],
+    "repairs": ["Repair exhaust leak", "Correct engine mixture fault", "Replace faulty oxygen sensor", "Replace catalytic converter if confirmed defective"],
+    "severity": "Medium"
+  },
+  "P0421": {
+    "causes": ["Warm-up catalyst efficiency below threshold bank 1", "Aging catalytic converter", "Faulty oxygen sensor", "Exhaust leak", "Incorrect air-fuel mixture"],
+    "symptoms": ["Check Engine light", "Increased emissions", "Poor fuel economy"],
+    "diagnostic": ["Monitor catalyst temperature", "Compare oxygen sensor signals", "Check exhaust leaks", "Check fuel trims"],
+    "repairs": ["Repair exhaust leak", "Correct mixture problem", "Replace sensor or catalytic converter if confirmed faulty"],
+    "severity": "Medium"
+  },
+  "P0422": {
+    "causes": ["Main catalyst efficiency below threshold bank 1", "Degraded catalytic converter", "Oxygen sensor fault", "Exhaust leak", "Engine mixture problem"],
+    "symptoms": ["Check Engine light", "Increased emissions", "Reduced fuel economy"],
+    "diagnostic": ["Check upstream and downstream O2 sensor behavior", "Inspect catalyst", "Check exhaust leaks", "Review fuel trims"],
+    "repairs": ["Repair exhaust leak", "Correct mixture issue", "Replace faulty catalyst or sensor"],
+    "severity": "Medium"
+  },
+  "P0423": {
+    "causes": ["Heated catalyst efficiency below threshold bank 1", "Catalyst degradation", "Heater malfunction", "Oxygen sensor fault", "Exhaust leak"],
+    "symptoms": ["Check Engine light", "Increased emissions", "Poor fuel economy"],
+    "diagnostic": ["Check catalyst heating operation", "Test oxygen sensors", "Inspect exhaust system"],
+    "repairs": ["Repair heater circuit", "Repair exhaust leak", "Replace faulty sensor or catalyst"],
+    "severity": "Medium"
+  },
+  "P0424": {
+    "causes": ["Heated catalyst temperature below threshold bank 1", "Catalyst heater fault", "Oxygen sensor issue", "Exhaust leak", "Fuel mixture problem"],
+    "symptoms": ["Check Engine light", "Increased emissions", "Poor catalyst performance"],
+    "diagnostic": ["Check catalyst temperature", "Test heater circuit", "Inspect oxygen sensor signals", "Check exhaust leaks"],
+    "repairs": ["Repair heater circuit", "Repair exhaust leak", "Replace catalyst or sensor if necessary"],
+    "severity": "Medium"
+  },
+  "P0430": {
+    "causes": ["Catalyst system efficiency below threshold bank 2", "Worn catalytic converter", "Oxygen sensor fault", "Exhaust leak", "Incorrect air-fuel mixture"],
+    "symptoms": ["Check Engine light", "Increased emissions", "Poor fuel economy"],
+    "diagnostic": ["Compare oxygen sensor signals", "Check exhaust leaks", "Check fuel trims", "Inspect catalyst"],
+    "repairs": ["Repair exhaust leak", "Correct mixture problem", "Replace faulty oxygen sensor or catalyst"],
+    "severity": "Medium"
+  },
+  "P0431": {
+    "causes": ["Warm-up catalyst efficiency below threshold bank 2", "Aging catalyst", "Faulty oxygen sensor", "Exhaust leak", "Mixture problem"],
+    "symptoms": ["Check Engine light", "Increased emissions", "Reduced fuel economy"],
+    "diagnostic": ["Check catalyst warm-up", "Monitor oxygen sensors", "Inspect exhaust leaks"],
+    "repairs": ["Repair exhaust leak", "Correct mixture", "Replace sensor or catalyst"],
+    "severity": "Medium"
+  },
+  "P0432": {
+    "causes": ["Main catalyst efficiency below threshold bank 2", "Degraded catalyst", "Oxygen sensor fault", "Exhaust leak", "Engine mixture fault"],
+    "symptoms": ["Check Engine light", "Increased emissions", "Poor fuel economy"],
+    "diagnostic": ["Compare O2 sensor activity", "Inspect catalyst", "Check fuel trims", "Inspect exhaust"],
+    "repairs": ["Repair exhaust leak", "Correct mixture problem", "Replace catalyst or oxygen sensor"],
+    "severity": "Medium"
+  },
+  "P0433": {
+    "causes": ["Heated catalyst efficiency below threshold bank 2", "Catalyst degradation", "Heater malfunction", "Oxygen sensor fault"],
+    "symptoms": ["Check Engine light", "Increased emissions", "Poor catalyst performance"],
+    "diagnostic": ["Check catalyst heater", "Test oxygen sensors", "Inspect exhaust system"],
+    "repairs": ["Repair heater circuit", "Replace faulty sensor", "Replace catalyst"],
+    "severity": "Medium"
+  },
+  "P0434": {
+    "causes": ["Heated catalyst temperature below threshold bank 2", "Catalyst heater fault", "Oxygen sensor fault", "Exhaust leak"],
+    "symptoms": ["Check Engine light", "Increased emissions", "Poor emissions performance"],
+    "diagnostic": ["Check catalyst temperature", "Test heater circuit", "Inspect exhaust leaks"],
+    "repairs": ["Repair heater circuit", "Repair exhaust leak", "Replace faulty catalyst or sensor"],
+    "severity": "Medium"
+  },
+  "P0440": {
+    "causes": ["EVAP emission control system malfunction", "Loose fuel cap", "EVAP hose leak", "Faulty purge valve", "Faulty vent valve"],
+    "symptoms": ["Check Engine light", "Fuel odor", "Possible hard starting after refueling", "Usually normal drivability"],
+    "diagnostic": ["Inspect fuel cap", "Perform EVAP leak test", "Test purge and vent valves", "Inspect EVAP hoses"],
+    "repairs": ["Replace fuel cap", "Repair EVAP hoses", "Replace purge or vent valve"],
+    "severity": "Low"
+  },
+  "P0441": {
+    "causes": ["EVAP purge flow incorrect", "Faulty purge valve", "Blocked EVAP line", "Vacuum leak", "Electrical fault"],
+    "symptoms": ["Check Engine light", "Rough idle", "Hard starting after refueling", "Fuel odor"],
+    "diagnostic": ["Test purge valve", "Check commanded versus actual purge flow", "Inspect EVAP lines", "Check electrical circuit"],
+    "repairs": ["Replace purge valve", "Repair EVAP lines", "Repair wiring"],
+    "severity": "Medium"
+  },
+  "P0442": {
+    "causes": ["Small EVAP system leak", "Loose fuel cap", "Cracked hose", "Leaking purge or vent valve", "Leaking fuel tank component"],
+    "symptoms": ["Check Engine light", "Fuel odor", "Usually no noticeable drivability symptoms"],
+    "diagnostic": ["Perform EVAP smoke test", "Inspect fuel cap and hoses", "Test purge and vent valves"],
+    "repairs": ["Tighten or replace fuel cap", "Repair leaking hose", "Replace leaking valve or component"],
+    "severity": "Low"
+  },
+  "P0443": {
+    "causes": ["EVAP purge control valve circuit malfunction", "Faulty purge valve", "Open circuit", "Short circuit", "Damaged wiring"],
+    "symptoms": ["Check Engine light", "Hard starting", "Rough idle", "Fuel odor"],
+    "diagnostic": ["Measure purge valve resistance", "Check power and ground", "Test ECU control", "Inspect wiring"],
+    "repairs": ["Repair wiring", "Replace purge valve", "Repair connector"],
+    "severity": "Medium"
+  },
+  "P0444": {
+    "causes": ["EVAP purge control valve circuit open", "Broken wire", "Disconnected connector", "Faulty purge valve"],
+    "symptoms": ["Check Engine light", "Fuel odor", "Possible rough idle"],
+    "diagnostic": ["Check circuit continuity", "Inspect connector", "Measure valve resistance"],
+    "repairs": ["Repair open circuit", "Repair connector", "Replace purge valve"],
+    "severity": "Medium"
+  },
+  "P0445": {
+    "causes": ["EVAP purge control valve circuit shorted", "Short to ground", "Short to voltage", "Faulty valve", "Damaged wiring"],
+    "symptoms": ["Check Engine light", "Rough idle", "Hard starting", "Fuel odor"],
+    "diagnostic": ["Check valve circuit for shorts", "Measure resistance", "Inspect wiring", "Verify ECU driver"],
+    "repairs": ["Repair short circuit", "Repair wiring", "Replace purge valve"],
+    "severity": "Medium"
+  },
+  "P0446": {
+    "causes": ["EVAP vent control circuit malfunction", "Faulty vent valve", "Blocked vent", "Damaged wiring", "Connector fault"],
+    "symptoms": ["Check Engine light", "Fuel odor", "Difficulty refueling", "EVAP test failure"],
+    "diagnostic": ["Test vent valve", "Inspect vent filter", "Check wiring", "Perform EVAP leak test"],
+    "repairs": ["Clean or replace vent filter", "Replace vent valve", "Repair wiring"],
+    "severity": "Medium"
+  },
+  "P0447": {
+    "causes": ["EVAP vent control valve circuit open", "Broken wiring", "Disconnected connector", "Faulty vent valve"],
+    "symptoms": ["Check Engine light", "Fuel odor", "Difficulty refueling"],
+    "diagnostic": ["Check circuit continuity", "Inspect connector", "Measure valve resistance"],
+    "repairs": ["Repair wiring", "Repair connector", "Replace vent valve"],
+    "severity": "Medium"
+  },
+  "P0448": {
+    "causes": ["EVAP vent control valve circuit shorted", "Short to ground", "Short to voltage", "Faulty vent valve", "Damaged wiring"],
+    "symptoms": ["Check Engine light", "Fuel odor", "EVAP system malfunction"],
+    "diagnostic": ["Test valve circuit", "Inspect wiring", "Check valve resistance", "Verify ECU control"],
+    "repairs": ["Repair short", "Repair wiring", "Replace vent valve"],
+    "severity": "Medium"
+  },
+  "P0449": {
+    "causes": ["EVAP vent valve/solenoid circuit malfunction", "Faulty vent solenoid", "Open or shorted circuit", "Damaged wiring", "Connector fault"],
+    "symptoms": ["Check Engine light", "Fuel odor", "EVAP emissions failure"],
+    "diagnostic": ["Test solenoid resistance", "Check power and ground", "Inspect wiring", "Verify ECU control"],
+    "repairs": ["Repair wiring", "Replace vent solenoid", "Repair connector"],
+    "severity": "Medium"
+  },
+  "P0450": {
+    "causes": ["EVAP pressure sensor circuit malfunction", "Faulty fuel tank pressure sensor", "Damaged wiring", "Connector fault", "Reference voltage problem"],
+    "symptoms": ["Check Engine light", "Fuel odor", "EVAP system malfunction", "Possible fuel economy changes"],
+    "diagnostic": ["Check sensor reference voltage", "Measure signal voltage", "Inspect wiring and connector", "Compare sensor reading with actual tank pressure"],
+    "repairs": ["Repair wiring", "Repair connector", "Replace EVAP pressure sensor"],
+    "severity": "Medium"
+  },
 }
