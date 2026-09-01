@@ -11,11 +11,9 @@
 <meta name="description"
 content="AutoDecode automotive part finder. Search OEM and aftermarket automotive parts.">
 
-<style>
+<script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
 
-/* =====================================================
-   GLOBAL
-===================================================== */
+<style>
 
 * {
     box-sizing: border-box;
@@ -37,7 +35,6 @@ body {
 
 header {
     height: 72px;
-
     border-bottom: 1px solid #20242a;
 
     display: flex;
@@ -75,7 +72,7 @@ header {
 
 
 /* =====================================================
-   LANGUAGE SELECTOR
+   LANGUAGE
 ===================================================== */
 
 .language-selector {
@@ -158,12 +155,11 @@ header {
 
 
 /* =====================================================
-   MAIN CONTAINER
+   CONTAINER
 ===================================================== */
 
 .container {
     max-width: 1000px;
-
     margin: auto;
 
     padding: 55px 20px 90px;
@@ -171,7 +167,7 @@ header {
 
 
 /* =====================================================
-   PAGE TITLE
+   TITLE
 ===================================================== */
 
 .page-title {
@@ -217,7 +213,6 @@ header {
 
 .search-panel h2 {
     font-size: 18px;
-
     margin-bottom: 22px;
 }
 
@@ -426,7 +421,82 @@ header {
 
 
 /* =====================================================
-   EMPTY STATE
+   OEM / EQUIVALENTS
+===================================================== */
+
+.part-section {
+    margin-top: 18px;
+}
+
+.part-section-title {
+    color: #7f8995;
+
+    font-size: 11px;
+
+    text-transform: uppercase;
+
+    font-weight: bold;
+
+    margin-bottom: 9px;
+}
+
+.number-list {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 7px;
+}
+
+.number-badge {
+    background: #171c22;
+
+    border: 1px solid #303842;
+
+    color: #cbd2da;
+
+    padding: 7px 10px;
+
+    border-radius: 6px;
+
+    font-family: monospace;
+
+    font-size: 12px;
+}
+
+.vehicle {
+    background: #171c22;
+
+    border: 1px solid #252c34;
+
+    border-radius: 9px;
+
+    padding: 12px;
+
+    margin-top: 8px;
+}
+
+.vehicle-title {
+    color: #e3e7eb;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    margin-bottom: 5px;
+}
+
+.vehicle-details {
+    color: #8d98a4;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   EMPTY
 ===================================================== */
 
 .empty {
@@ -641,7 +711,7 @@ footer {
 
 
     <!-- =================================================
-         SEARCH PANEL
+         SEARCH
     ================================================= -->
 
     <section class="search-panel">
@@ -866,7 +936,7 @@ footer {
 
 
     <!-- =================================================
-         INITIAL EMPTY STATE
+         EMPTY STATE
     ================================================= -->
 
     <section
@@ -924,11 +994,9 @@ const translations = {
 
     en: {
 
-        home:
-            "← Home",
+        home: "← Home",
 
-        partFinder:
-            "Part Finder.",
+        partFinder: "Part Finder.",
 
         intro:
             "Find automotive parts using vehicle information, OEM numbers and part categories.",
@@ -936,35 +1004,25 @@ const translations = {
         searchTitle:
             "Search for a part",
 
-        make:
-            "Make",
+        make: "Make",
 
-        model:
-            "Model",
+        model: "Model",
 
-        year:
-            "Year",
+        year: "Year",
 
-        engine:
-            "Engine",
+        engine: "Engine",
 
-        category:
-            "Part Category",
+        category: "Part Category",
 
-        partNumber:
-            "OEM / Part Number",
+        partNumber: "OEM / Part Number",
 
-        makePlaceholder:
-            "e.g. Ford",
+        makePlaceholder: "e.g. Ford",
 
-        modelPlaceholder:
-            "e.g. Focus",
+        modelPlaceholder: "e.g. Focus",
 
-        yearPlaceholder:
-            "e.g. 2005",
+        yearPlaceholder: "e.g. 2005",
 
-        enginePlaceholder:
-            "e.g. 1.6 TDCi",
+        enginePlaceholder: "e.g. 1.6 TDCi",
 
         partNumberPlaceholder:
             "e.g. 3M5Q-9A299-AA",
@@ -972,41 +1030,29 @@ const translations = {
         selectCategory:
             "Select a category",
 
-        catEngine:
-            "Engine",
+        catEngine: "Engine",
 
-        catBrakes:
-            "Brakes",
+        catBrakes: "Brakes",
 
-        catSuspension:
-            "Suspension",
+        catSuspension: "Suspension",
 
-        catElectrical:
-            "Electrical",
+        catElectrical: "Electrical",
 
-        catBody:
-            "Body",
+        catBody: "Body",
 
-        catFilters:
-            "Filters",
+        catFilters: "Filters",
 
-        catCooling:
-            "Cooling System",
+        catCooling: "Cooling System",
 
-        catTransmission:
-            "Transmission",
+        catTransmission: "Transmission",
 
-        catOther:
-            "Other",
+        catOther: "Other",
 
-        search:
-            "Search Parts",
+        search: "Search Parts",
 
-        results:
-            "Results",
+        results: "Results",
 
-        ready:
-            "Ready to find a part?",
+        ready: "Ready to find a part?",
 
         readyText:
             "Enter vehicle information or an OEM part number to search the AutoDecode parts database.",
@@ -1021,18 +1067,43 @@ const translations = {
             "The parts database does not contain a matching part yet.",
 
         fieldsRequired:
-            "Enter at least one search parameter."
+            "Enter at least one search parameter.",
+
+        databaseError:
+            "Could not load the parts database.",
+
+        loading:
+            "Searching parts...",
+
+        oemNumbers:
+            "OEM Numbers",
+
+        equivalents:
+            "Equivalent Parts",
+
+        compatibleVehicles:
+            "Compatible Vehicles",
+
+        engineCodes:
+            "Engine codes",
+
+        from:
+            "from",
+
+        to:
+            "to",
+
+        type:
+            "Type"
 
     },
 
 
     de: {
 
-        home:
-            "← Startseite",
+        home: "← Startseite",
 
-        partFinder:
-            "Teilesuche.",
+        partFinder: "Teilesuche.",
 
         intro:
             "Finden Sie Fahrzeugteile anhand von Fahrzeugdaten, OEM-Nummern und Teilekategorien.",
@@ -1040,35 +1111,25 @@ const translations = {
         searchTitle:
             "Nach einem Teil suchen",
 
-        make:
-            "Marke",
+        make: "Marke",
 
-        model:
-            "Modell",
+        model: "Modell",
 
-        year:
-            "Baujahr",
+        year: "Baujahr",
 
-        engine:
-            "Motor",
+        engine: "Motor",
 
-        category:
-            "Teilekategorie",
+        category: "Teilekategorie",
 
-        partNumber:
-            "OEM- / Teilenummer",
+        partNumber: "OEM- / Teilenummer",
 
-        makePlaceholder:
-            "z. B. Ford",
+        makePlaceholder: "z. B. Ford",
 
-        modelPlaceholder:
-            "z. B. Focus",
+        modelPlaceholder: "z. B. Focus",
 
-        yearPlaceholder:
-            "z. B. 2005",
+        yearPlaceholder: "z. B. 2005",
 
-        enginePlaceholder:
-            "z. B. 1.6 TDCi",
+        enginePlaceholder: "z. B. 1.6 TDCi",
 
         partNumberPlaceholder:
             "z. B. 3M5Q-9A299-AA",
@@ -1076,41 +1137,29 @@ const translations = {
         selectCategory:
             "Kategorie auswählen",
 
-        catEngine:
-            "Motor",
+        catEngine: "Motor",
 
-        catBrakes:
-            "Bremsen",
+        catBrakes: "Bremsen",
 
-        catSuspension:
-            "Fahrwerk",
+        catSuspension: "Fahrwerk",
 
-        catElectrical:
-            "Elektrik",
+        catElectrical: "Elektrik",
 
-        catBody:
-            "Karosserie",
+        catBody: "Karosserie",
 
-        catFilters:
-            "Filter",
+        catFilters: "Filter",
 
-        catCooling:
-            "Kühlsystem",
+        catCooling: "Kühlsystem",
 
-        catTransmission:
-            "Getriebe",
+        catTransmission: "Getriebe",
 
-        catOther:
-            "Sonstiges",
+        catOther: "Sonstiges",
 
-        search:
-            "Teile suchen",
+        search: "Teile suchen",
 
-        results:
-            "Ergebnisse",
+        results: "Ergebnisse",
 
-        ready:
-            "Bereit, ein Teil zu finden?",
+        ready: "Bereit, ein Teil zu finden?",
 
         readyText:
             "Geben Sie Fahrzeugdaten oder eine OEM-Teilenummer ein, um die AutoDecode-Teiledatenbank zu durchsuchen.",
@@ -1118,25 +1167,46 @@ const translations = {
         footer:
             "Automotive-Diagnosewerkzeuge",
 
-        noResults:
-            "Keine Teile gefunden",
+        noResults: "Keine Teile gefunden",
 
         noResultsText:
             "Die Teiledatenbank enthält noch kein passendes Teil.",
 
         fieldsRequired:
-            "Geben Sie mindestens einen Suchparameter ein."
+            "Geben Sie mindestens einen Suchparameter ein.",
+
+        databaseError:
+            "Die Teiledatenbank konnte nicht geladen werden.",
+
+        loading:
+            "Teile werden gesucht...",
+
+        oemNumbers:
+            "OEM-Nummern",
+
+        equivalents:
+            "Äquivalente Teile",
+
+        compatibleVehicles:
+            "Kompatible Fahrzeuge",
+
+        engineCodes:
+            "Motorkennbuchstaben",
+
+        from: "von",
+
+        to: "bis",
+
+        type: "Typ"
 
     },
 
 
     ro: {
 
-        home:
-            "← Acasă",
+        home: "← Acasă",
 
-        partFinder:
-            "Căutare piese.",
+        partFinder: "Căutare piese.",
 
         intro:
             "Găsește piese auto folosind informațiile vehiculului, coduri OEM și categorii de piese.",
@@ -1144,35 +1214,25 @@ const translations = {
         searchTitle:
             "Caută o piesă",
 
-        make:
-            "Marcă",
+        make: "Marcă",
 
-        model:
-            "Model",
+        model: "Model",
 
-        year:
-            "An",
+        year: "An",
 
-        engine:
-            "Motor",
+        engine: "Motor",
 
-        category:
-            "Categorie piesă",
+        category: "Categorie piesă",
 
-        partNumber:
-            "Cod OEM / piesă",
+        partNumber: "Cod OEM / piesă",
 
-        makePlaceholder:
-            "ex. Ford",
+        makePlaceholder: "ex. Ford",
 
-        modelPlaceholder:
-            "ex. Focus",
+        modelPlaceholder: "ex. Focus",
 
-        yearPlaceholder:
-            "ex. 2005",
+        yearPlaceholder: "ex. 2005",
 
-        enginePlaceholder:
-            "ex. 1.6 TDCi",
+        enginePlaceholder: "ex. 1.6 TDCi",
 
         partNumberPlaceholder:
             "ex. 3M5Q-9A299-AA",
@@ -1180,41 +1240,29 @@ const translations = {
         selectCategory:
             "Selectează categoria",
 
-        catEngine:
-            "Motor",
+        catEngine: "Motor",
 
-        catBrakes:
-            "Frâne",
+        catBrakes: "Frâne",
 
-        catSuspension:
-            "Suspensie",
+        catSuspension: "Suspensie",
 
-        catElectrical:
-            "Electrică",
+        catElectrical: "Electrică",
 
-        catBody:
-            "Caroserie",
+        catBody: "Caroserie",
 
-        catFilters:
-            "Filtre",
+        catFilters: "Filtre",
 
-        catCooling:
-            "Sistem de răcire",
+        catCooling: "Sistem de răcire",
 
-        catTransmission:
-            "Transmisie",
+        catTransmission: "Transmisie",
 
-        catOther:
-            "Altele",
+        catOther: "Altele",
 
-        search:
-            "Caută piese",
+        search: "Caută piese",
 
-        results:
-            "Rezultate",
+        results: "Rezultate",
 
-        ready:
-            "Gata să găsești o piesă?",
+        ready: "Gata să găsești o piesă?",
 
         readyText:
             "Introdu informațiile vehiculului sau un cod OEM pentru a căuta în baza de date AutoDecode.",
@@ -1229,18 +1277,40 @@ const translations = {
             "Baza de date de piese nu conține încă o piesă compatibilă.",
 
         fieldsRequired:
-            "Introdu cel puțin un criteriu de căutare."
+            "Introdu cel puțin un criteriu de căutare.",
+
+        databaseError:
+            "Baza de date de piese nu a putut fi încărcată.",
+
+        loading:
+            "Se caută piese...",
+
+        oemNumbers:
+            "Coduri OEM",
+
+        equivalents:
+            "Piese echivalente",
+
+        compatibleVehicles:
+            "Vehicule compatibile",
+
+        engineCodes:
+            "Coduri motor",
+
+        from: "din",
+
+        to: "până în",
+
+        type: "Tip"
 
     },
 
 
     fr: {
 
-        home:
-            "← Accueil",
+        home: "← Accueil",
 
-        partFinder:
-            "Recherche de pièces.",
+        partFinder: "Recherche de pièces.",
 
         intro:
             "Trouvez des pièces automobiles à l'aide des informations du véhicule, des références OEM et des catégories.",
@@ -1248,35 +1318,25 @@ const translations = {
         searchTitle:
             "Rechercher une pièce",
 
-        make:
-            "Marque",
+        make: "Marque",
 
-        model:
-            "Modèle",
+        model: "Modèle",
 
-        year:
-            "Année",
+        year: "Année",
 
-        engine:
-            "Moteur",
+        engine: "Moteur",
 
-        category:
-            "Catégorie de pièce",
+        category: "Catégorie de pièce",
 
-        partNumber:
-            "Référence OEM / pièce",
+        partNumber: "Référence OEM / pièce",
 
-        makePlaceholder:
-            "ex. Ford",
+        makePlaceholder: "ex. Ford",
 
-        modelPlaceholder:
-            "ex. Focus",
+        modelPlaceholder: "ex. Focus",
 
-        yearPlaceholder:
-            "ex. 2005",
+        yearPlaceholder: "ex. 2005",
 
-        enginePlaceholder:
-            "ex. 1.6 TDCi",
+        enginePlaceholder: "ex. 1.6 TDCi",
 
         partNumberPlaceholder:
             "ex. 3M5Q-9A299-AA",
@@ -1284,38 +1344,28 @@ const translations = {
         selectCategory:
             "Sélectionner une catégorie",
 
-        catEngine:
-            "Moteur",
+        catEngine: "Moteur",
 
-        catBrakes:
-            "Freins",
+        catBrakes: "Freins",
 
-        catSuspension:
-            "Suspension",
+        catSuspension: "Suspension",
 
-        catElectrical:
-            "Électricité",
+        catElectrical: "Électricité",
 
-        catBody:
-            "Carrosserie",
+        catBody: "Carrosserie",
 
-        catFilters:
-            "Filtres",
+        catFilters: "Filtres",
 
         catCooling:
             "Système de refroidissement",
 
-        catTransmission:
-            "Transmission",
+        catTransmission: "Transmission",
 
-        catOther:
-            "Autre",
+        catOther: "Autre",
 
-        search:
-            "Rechercher",
+        search: "Rechercher",
 
-        results:
-            "Résultats",
+        results: "Résultats",
 
         ready:
             "Prêt à trouver une pièce ?",
@@ -1333,18 +1383,40 @@ const translations = {
             "La base de données ne contient pas encore de pièce correspondante.",
 
         fieldsRequired:
-            "Saisissez au moins un critère de recherche."
+            "Saisissez au moins un critère de recherche.",
+
+        databaseError:
+            "Impossible de charger la base de données des pièces.",
+
+        loading:
+            "Recherche de pièces...",
+
+        oemNumbers:
+            "Numéros OEM",
+
+        equivalents:
+            "Pièces équivalentes",
+
+        compatibleVehicles:
+            "Véhicules compatibles",
+
+        engineCodes:
+            "Codes moteur",
+
+        from: "de",
+
+        to: "à",
+
+        type: "Type"
 
     },
 
 
     es: {
 
-        home:
-            "← Inicio",
+        home: "← Inicio",
 
-        partFinder:
-            "Buscador de piezas.",
+        partFinder: "Buscador de piezas.",
 
         intro:
             "Encuentra piezas de automóviles mediante los datos del vehículo, números OEM y categorías.",
@@ -1352,35 +1424,25 @@ const translations = {
         searchTitle:
             "Buscar una pieza",
 
-        make:
-            "Marca",
+        make: "Marca",
 
-        model:
-            "Modelo",
+        model: "Modelo",
 
-        year:
-            "Año",
+        year: "Año",
 
-        engine:
-            "Motor",
+        engine: "Motor",
 
-        category:
-            "Categoría de pieza",
+        category: "Categoría de pieza",
 
-        partNumber:
-            "Número OEM / pieza",
+        partNumber: "Número OEM / pieza",
 
-        makePlaceholder:
-            "ej. Ford",
+        makePlaceholder: "ej. Ford",
 
-        modelPlaceholder:
-            "ej. Focus",
+        modelPlaceholder: "ej. Focus",
 
-        yearPlaceholder:
-            "ej. 2005",
+        yearPlaceholder: "ej. 2005",
 
-        enginePlaceholder:
-            "ej. 1.6 TDCi",
+        enginePlaceholder: "ej. 1.6 TDCi",
 
         partNumberPlaceholder:
             "ej. 3M5Q-9A299-AA",
@@ -1388,38 +1450,29 @@ const translations = {
         selectCategory:
             "Seleccionar categoría",
 
-        catEngine:
-            "Motor",
+        catEngine: "Motor",
 
-        catBrakes:
-            "Frenos",
+        catBrakes: "Frenos",
 
-        catSuspension:
-            "Suspensión",
+        catSuspension: "Suspensión",
 
         catElectrical:
             "Sistema eléctrico",
 
-        catBody:
-            "Carrocería",
+        catBody: "Carrocería",
 
-        catFilters:
-            "Filtros",
+        catFilters: "Filtros",
 
         catCooling:
             "Sistema de refrigeración",
 
-        catTransmission:
-            "Transmisión",
+        catTransmission: "Transmisión",
 
-        catOther:
-            "Otros",
+        catOther: "Otros",
 
-        search:
-            "Buscar piezas",
+        search: "Buscar piezas",
 
-        results:
-            "Resultados",
+        results: "Resultados",
 
         ready:
             "¿Listo para encontrar una pieza?",
@@ -1437,18 +1490,40 @@ const translations = {
             "La base de datos todavía no contiene una pieza compatible.",
 
         fieldsRequired:
-            "Introduce al menos un criterio de búsqueda."
+            "Introduce al menos un criterio de búsqueda.",
+
+        databaseError:
+            "No se pudo cargar la base de datos de piezas.",
+
+        loading:
+            "Buscando piezas...",
+
+        oemNumbers:
+            "Números OEM",
+
+        equivalents:
+            "Piezas equivalentes",
+
+        compatibleVehicles:
+            "Vehículos compatibles",
+
+        engineCodes:
+            "Códigos de motor",
+
+        from: "desde",
+
+        to: "hasta",
+
+        type: "Tipo"
 
     },
 
 
     it: {
 
-        home:
-            "← Home",
+        home: "← Home",
 
-        partFinder:
-            "Ricerca ricambi.",
+        partFinder: "Ricerca ricambi.",
 
         intro:
             "Trova ricambi auto utilizzando i dati del veicolo, i codici OEM e le categorie.",
@@ -1456,35 +1531,25 @@ const translations = {
         searchTitle:
             "Cerca un ricambio",
 
-        make:
-            "Marca",
+        make: "Marca",
 
-        model:
-            "Modello",
+        model: "Modello",
 
-        year:
-            "Anno",
+        year: "Anno",
 
-        engine:
-            "Motore",
+        engine: "Motore",
 
-        category:
-            "Categoria ricambio",
+        category: "Categoria ricambio",
 
-        partNumber:
-            "Codice OEM / ricambio",
+        partNumber: "Codice OEM / ricambio",
 
-        makePlaceholder:
-            "es. Ford",
+        makePlaceholder: "es. Ford",
 
-        modelPlaceholder:
-            "es. Focus",
+        modelPlaceholder: "es. Focus",
 
-        yearPlaceholder:
-            "es. 2005",
+        yearPlaceholder: "es. 2005",
 
-        enginePlaceholder:
-            "es. 1.6 TDCi",
+        enginePlaceholder: "es. 1.6 TDCi",
 
         partNumberPlaceholder:
             "es. 3M5Q-9A299-AA",
@@ -1492,38 +1557,28 @@ const translations = {
         selectCategory:
             "Seleziona una categoria",
 
-        catEngine:
-            "Motore",
+        catEngine: "Motore",
 
-        catBrakes:
-            "Freni",
+        catBrakes: "Freni",
 
-        catSuspension:
-            "Sospensioni",
+        catSuspension: "Sospensioni",
 
-        catElectrical:
-            "Elettrico",
+        catElectrical: "Elettrico",
 
-        catBody:
-            "Carrozzeria",
+        catBody: "Carrozzeria",
 
-        catFilters:
-            "Filtri",
+        catFilters: "Filtri",
 
         catCooling:
             "Sistema di raffreddamento",
 
-        catTransmission:
-            "Trasmissione",
+        catTransmission: "Trasmissione",
 
-        catOther:
-            "Altro",
+        catOther: "Altro",
 
-        search:
-            "Cerca ricambi",
+        search: "Cerca ricambi",
 
-        results:
-            "Risultati",
+        results: "Risultati",
 
         ready:
             "Pronto a trovare un ricambio?",
@@ -1541,18 +1596,40 @@ const translations = {
             "Il database non contiene ancora un ricambio compatibile.",
 
         fieldsRequired:
-            "Inserisci almeno un criterio di ricerca."
+            "Inserisci almeno un criterio di ricerca.",
+
+        databaseError:
+            "Impossibile caricare il database dei ricambi.",
+
+        loading:
+            "Ricerca ricambi...",
+
+        oemNumbers:
+            "Numeri OEM",
+
+        equivalents:
+            "Ricambi equivalenti",
+
+        compatibleVehicles:
+            "Veicoli compatibili",
+
+        engineCodes:
+            "Codici motore",
+
+        from: "dal",
+
+        to: "al",
+
+        type: "Tipo"
 
     },
 
 
     nl: {
 
-        home:
-            "← Home",
+        home: "← Home",
 
-        partFinder:
-            "Onderdelen zoeken.",
+        partFinder: "Onderdelen zoeken.",
 
         intro:
             "Vind auto-onderdelen op basis van voertuiggegevens, OEM-nummers en onderdelencategorieën.",
@@ -1560,20 +1637,15 @@ const translations = {
         searchTitle:
             "Zoek een onderdeel",
 
-        make:
-            "Merk",
+        make: "Merk",
 
-        model:
-            "Model",
+        model: "Model",
 
-        year:
-            "Bouwjaar",
+        year: "Bouwjaar",
 
-        engine:
-            "Motor",
+        engine: "Motor",
 
-        category:
-            "Onderdeelcategorie",
+        category: "Onderdeelcategorie",
 
         partNumber:
             "OEM- / onderdeelnummer",
@@ -1596,38 +1668,28 @@ const translations = {
         selectCategory:
             "Selecteer een categorie",
 
-        catEngine:
-            "Motor",
+        catEngine: "Motor",
 
-        catBrakes:
-            "Remmen",
+        catBrakes: "Remmen",
 
-        catSuspension:
-            "Ophanging",
+        catSuspension: "Ophanging",
 
-        catElectrical:
-            "Elektrisch",
+        catElectrical: "Elektrisch",
 
-        catBody:
-            "Carrosserie",
+        catBody: "Carrosserie",
 
-        catFilters:
-            "Filters",
+        catFilters: "Filters",
 
-        catCooling:
-            "Koelsysteem",
+        catCooling: "Koelsysteem",
 
-        catTransmission:
-            "Transmissie",
+        catTransmission: "Transmissie",
 
-        catOther:
-            "Overig",
+        catOther: "Overig",
 
         search:
             "Onderdelen zoeken",
 
-        results:
-            "Resultaten",
+        results: "Resultaten",
 
         ready:
             "Klaar om een onderdeel te vinden?",
@@ -1645,7 +1707,31 @@ const translations = {
             "De onderdelendatabase bevat nog geen overeenkomend onderdeel.",
 
         fieldsRequired:
-            "Voer minimaal één zoekcriterium in."
+            "Voer minimaal één zoekcriterium in.",
+
+        databaseError:
+            "De onderdelendatabase kon niet worden geladen.",
+
+        loading:
+            "Onderdelen zoeken...",
+
+        oemNumbers:
+            "OEM-nummers",
+
+        equivalents:
+            "Gelijkwaardige onderdelen",
+
+        compatibleVehicles:
+            "Compatibele voertuigen",
+
+        engineCodes:
+            "Motorcodes",
+
+        from: "van",
+
+        to: "tot",
+
+        type: "Type"
 
     }
 
@@ -1653,39 +1739,25 @@ const translations = {
 
 
 /* =====================================================
-   LANGUAGE FLAGS
+   LANGUAGE
 ===================================================== */
 
 const languageFlags = {
 
     en: "🇬🇧",
-
     de: "🇩🇪",
-
     ro: "🇷🇴",
-
     fr: "🇫🇷",
-
     es: "🇪🇸",
-
     it: "🇮🇹",
-
     nl: "🇳🇱"
 
 };
 
 
-/* =====================================================
-   CURRENT LANGUAGE
-===================================================== */
-
 let currentLanguage =
     localStorage.getItem("autodecode_language") || "en";
 
-
-/* =====================================================
-   TRANSLATION HELPER
-===================================================== */
 
 function getTranslation(key) {
 
@@ -1698,15 +1770,10 @@ function getTranslation(key) {
 
     }
 
-
     return translations.en[key] || key;
 
 }
 
-
-/* =====================================================
-   APPLY LANGUAGE
-===================================================== */
 
 function applyLanguage() {
 
@@ -1748,17 +1815,8 @@ function applyLanguage() {
         currentLanguage.toUpperCase() +
         " ▾";
 
-
-    document.title =
-        getTranslation("partFinder") +
-        " AutoDecode";
-
 }
 
-
-/* =====================================================
-   SET LANGUAGE
-===================================================== */
 
 function setLanguage(language) {
 
@@ -1768,19 +1826,15 @@ function setLanguage(language) {
 
     }
 
-
     currentLanguage =
         language;
-
 
     localStorage.setItem(
         "autodecode_language",
         language
     );
 
-
     applyLanguage();
-
 
     document
         .getElementById("languageMenu")
@@ -1789,10 +1843,6 @@ function setLanguage(language) {
 
 }
 
-
-/* =====================================================
-   LANGUAGE MENU
-===================================================== */
 
 function toggleLanguageMenu() {
 
@@ -1813,7 +1863,6 @@ document.addEventListener(
                 ".language-selector"
             );
 
-
         if (
             selector &&
             !selector.contains(event.target)
@@ -1831,22 +1880,355 @@ document.addEventListener(
 
 
 /* =====================================================
-   PART SEARCH
+   HTML ESCAPE
 ===================================================== */
 
-function searchParts() {
+function escapeHTML(value) {
+
+    return String(value ?? "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+
+}
+
+
+/* =====================================================
+   NORMALIZE SEARCH TEXT
+===================================================== */
+
+function normalizeSearch(value) {
+
+    return String(value || "")
+        .trim()
+        .toLowerCase()
+        .replace(/\s+/g, " ");
+
+}
+
+
+/* =====================================================
+   PART DATABASE
+===================================================== */
+
+let partsDatabase = null;
+
+
+/* =====================================================
+   LOAD DATABASE
+===================================================== */
+
+async function loadPartsDatabase() {
+
+    if (partsDatabase !== null) {
+
+        return partsDatabase;
+
+    }
+
+
+    const response =
+        await fetch(
+            "data/parts/parts.yaml"
+        );
+
+
+    if (!response.ok) {
+
+        throw new Error(
+            getTranslation("databaseError") +
+            " (" +
+            response.status +
+            ")"
+        );
+
+    }
+
+
+    const yamlText =
+        await response.text();
+
+
+    const data =
+        jsyaml.load(yamlText);
+
+
+    if (!Array.isArray(data)) {
+
+        throw new Error(
+            "Invalid parts database format."
+        );
+
+    }
+
+
+    partsDatabase =
+        data;
+
+
+    return partsDatabase;
+
+}
+
+
+/* =====================================================
+   CHECK VEHICLE COMPATIBILITY
+===================================================== */
+
+function vehicleMatches(part, filters) {
+
+    if (
+        !part.compatible_vehicles ||
+        !Array.isArray(
+            part.compatible_vehicles
+        )
+    ) {
+
+        return false;
+
+    }
+
+
+    return part.compatible_vehicles.some(
+        function(vehicle) {
+
+            if (
+                filters.make &&
+                normalizeSearch(vehicle.make)
+                    .indexOf(filters.make) === -1
+            ) {
+
+                return false;
+
+            }
+
+
+            if (
+                filters.model &&
+                normalizeSearch(vehicle.model)
+                    .indexOf(filters.model) === -1
+            ) {
+
+                return false;
+
+            }
+
+
+            if (filters.year) {
+
+                const year =
+                    Number(filters.year);
+
+
+                const from =
+                    Number(
+                        vehicle.years &&
+                        vehicle.years.from
+                    );
+
+
+                const to =
+                    Number(
+                        vehicle.years &&
+                        vehicle.years.to
+                    );
+
+
+                if (
+                    !isNaN(from) &&
+                    !isNaN(to)
+                ) {
+
+                    if (
+                        year < from ||
+                        year > to
+                    ) {
+
+                        return false;
+
+                    }
+
+                }
+
+            }
+
+
+            if (filters.engine) {
+
+                const searchEngine =
+                    normalizeSearch(
+                        filters.engine
+                    );
+
+
+                const engineMatch =
+                    Array.isArray(
+                        vehicle.engines
+                    )
+                    &&
+                    vehicle.engines.some(
+                        function(engine) {
+
+                            if (
+                                normalizeSearch(
+                                    engine.engine
+                                ).indexOf(
+                                    searchEngine
+                                ) !== -1
+                            ) {
+
+                                return true;
+
+                            }
+
+
+                            if (
+                                Array.isArray(
+                                    engine.engine_codes
+                                )
+                            ) {
+
+                                return engine.engine_codes.some(
+                                    function(code) {
+
+                                        return normalizeSearch(
+                                            code
+                                        ) === searchEngine;
+
+                                    }
+                                );
+
+                            }
+
+
+                            return false;
+
+                        }
+                    );
+
+
+                if (!engineMatch) {
+
+                    return false;
+
+                }
+
+            }
+
+
+            return true;
+
+        }
+    );
+
+}
+
+
+/* =====================================================
+   PART NUMBER MATCH
+===================================================== */
+
+function partNumberMatches(part, search) {
+
+    if (!search) {
+
+        return false;
+
+    }
+
+
+    const target =
+        normalizeSearch(search)
+            .replace(/[^a-z0-9]/g, "");
+
+
+    function clean(value) {
+
+        return normalizeSearch(value)
+            .replace(/[^a-z0-9]/g, "");
+
+    }
+
+
+    if (
+        clean(part.part_number) === target
+    ) {
+
+        return true;
+
+    }
+
+
+    if (
+        Array.isArray(part.oe_numbers)
+    ) {
+
+        for (
+            const oe of part.oe_numbers
+        ) {
+
+            if (
+                oe &&
+                clean(oe.number) === target
+            ) {
+
+                return true;
+
+            }
+
+        }
+
+    }
+
+
+    if (
+        Array.isArray(part.equivalents)
+    ) {
+
+        for (
+            const eq of part.equivalents
+        ) {
+
+            if (
+                eq &&
+                clean(eq.part_number) === target
+            ) {
+
+                return true;
+
+            }
+
+        }
+
+    }
+
+
+    return false;
+
+}
+
+
+/* =====================================================
+   SEARCH PARTS
+===================================================== */
+
+async function searchParts() {
 
     const make =
-        document
-            .getElementById("make")
-            .value
-            .trim();
+        normalizeSearch(
+            document
+                .getElementById("make")
+                .value
+        );
 
     const model =
-        document
-            .getElementById("model")
-            .value
-            .trim();
+        normalizeSearch(
+            document
+                .getElementById("model")
+                .value
+        );
 
     const year =
         document
@@ -1855,10 +2237,11 @@ function searchParts() {
             .trim();
 
     const engine =
-        document
-            .getElementById("engine")
-            .value
-            .trim();
+        normalizeSearch(
+            document
+                .getElementById("engine")
+                .value
+        );
 
     const category =
         document
@@ -1882,7 +2265,9 @@ function searchParts() {
     ) {
 
         showMessage(
-            getTranslation("fieldsRequired")
+            getTranslation(
+                "fieldsRequired"
+            )
         );
 
         return;
@@ -1890,33 +2275,717 @@ function searchParts() {
     }
 
 
-    /*
-       PART DATABASE CONNECTION
-       WILL BE ADDED LATER.
-    */
+    showLoading();
 
-    showNoResults();
+
+    try {
+
+        const database =
+            await loadPartsDatabase();
+
+
+        const filters = {
+
+            make,
+            model,
+            year,
+            engine,
+            category,
+            partNumber
+
+        };
+
+
+        const results =
+            database.filter(
+                function(part) {
+
+                    if (!part) {
+
+                        return false;
+
+                    }
+
+
+                    /*
+                       Direct part number search.
+                    */
+
+                    if (partNumber) {
+
+                        if (
+                            !partNumberMatches(
+                                part,
+                                partNumber
+                            )
+                        ) {
+
+                            return false;
+
+                        }
+
+                    }
+
+
+                    /*
+                       Category filter.
+                    */
+
+                    if (
+                        category &&
+                        normalizeSearch(
+                            part.category
+                        ) !== category
+                    ) {
+
+                        return false;
+
+                    }
+
+
+                    /*
+                       Vehicle filter.
+                    */
+
+                    if (
+                        make ||
+                        model ||
+                        year ||
+                        engine
+                    ) {
+
+                        if (
+                            !vehicleMatches(
+                                part,
+                                filters
+                            )
+                        ) {
+
+                            return false;
+
+                        }
+
+                    }
+
+
+                    return true;
+
+                }
+            );
+
+
+        displayResults(results);
+
+    }
+
+
+    catch(error) {
+
+        console.error(error);
+
+        showDatabaseError(
+            error.message
+        );
+
+    }
 
 }
 
 
 /* =====================================================
-   NO RESULTS
+   DISPLAY RESULTS
 ===================================================== */
 
-function showNoResults() {
+function displayResults(results) {
 
-    const results =
-        document.getElementById("results");
+    const resultsSection =
+        document.getElementById(
+            "results"
+        );
 
     const empty =
-        document.getElementById("emptyState");
+        document.getElementById(
+            "emptyState"
+        );
 
     const list =
-        document.getElementById("resultList");
+        document.getElementById(
+            "resultList"
+        );
 
     const count =
-        document.getElementById("resultCount");
+        document.getElementById(
+            "resultCount"
+        );
+
+
+    empty.style.display =
+        "none";
+
+    resultsSection.style.display =
+        "block";
+
+
+    count.textContent =
+        results.length;
+
+
+    if (!results.length) {
+
+        list.innerHTML = `
+
+            <div class="empty">
+
+                <div class="empty-icon">
+                    🔍
+                </div>
+
+                <h2>
+                    ${escapeHTML(
+                        getTranslation(
+                            "noResults"
+                        )
+                    )}
+                </h2>
+
+                <p>
+                    ${escapeHTML(
+                        getTranslation(
+                            "noResultsText"
+                        )
+                    )}
+                </p>
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    list.innerHTML =
+        results
+            .map(
+                function(part) {
+
+                    return renderPart(
+                        part
+                    );
+
+                }
+            )
+            .join("");
+
+}
+
+
+/* =====================================================
+   RENDER PART
+===================================================== */
+
+function renderPart(part) {
+
+    const name =
+        part.name
+        ? getLocalizedValue(
+            part.name
+        )
+        : part.part_number;
+
+
+    const description =
+        part.description
+        ? getLocalizedValue(
+            part.description
+        )
+        : "";
+
+
+    let html = `
+
+        <article class="part-card">
+
+            <div class="part-top">
+
+                <div class="part-name">
+                    ${escapeHTML(name)}
+                </div>
+
+                <div class="part-number">
+                    ${escapeHTML(
+                        part.part_number || ""
+                    )}
+                </div>
+
+            </div>
+
+    `;
+
+
+    if (description) {
+
+        html += `
+
+            <div class="part-description">
+                ${escapeHTML(
+                    description
+                )}
+            </div>
+
+        `;
+
+    }
+
+
+    html += `
+
+        <div class="part-meta">
+
+            ${
+                part.manufacturer
+                ?
+                `
+                <span class="part-badge">
+                    ${escapeHTML(
+                        part.manufacturer
+                    )}
+                </span>
+                `
+                :
+                ""
+            }
+
+            ${
+                part.type
+                ?
+                `
+                <span class="part-badge">
+                    ${escapeHTML(
+                        getTranslation("type")
+                    )}
+                    :
+                    ${escapeHTML(
+                        part.type
+                    )}
+                </span>
+                `
+                :
+                ""
+            }
+
+            ${
+                part.category
+                ?
+                `
+                <span class="part-badge">
+                    ${escapeHTML(
+                        part.category
+                    )}
+                </span>
+                `
+                :
+                ""
+            }
+
+        </div>
+
+    `;
+
+
+    /* OEM NUMBERS */
+
+    if (
+        Array.isArray(
+            part.oe_numbers
+        ) &&
+        part.oe_numbers.length
+    ) {
+
+        html += `
+
+            <div class="part-section">
+
+                <div class="part-section-title">
+                    ${escapeHTML(
+                        getTranslation(
+                            "oemNumbers"
+                        )
+                    )}
+                </div>
+
+                <div class="number-list">
+
+        `;
+
+
+        part.oe_numbers.forEach(
+            function(oe) {
+
+                html += `
+
+                    <span class="number-badge">
+
+                        ${
+                            oe.manufacturer
+                            ?
+                            escapeHTML(
+                                oe.manufacturer
+                            ) +
+                            " · "
+                            :
+                            ""
+                        }
+
+                        ${escapeHTML(
+                            oe.number
+                        )}
+
+                    </span>
+
+                `;
+
+            }
+        );
+
+
+        html += `
+
+                </div>
+
+            </div>
+
+        `;
+
+    }
+
+
+    /* EQUIVALENTS */
+
+    if (
+        Array.isArray(
+            part.equivalents
+        ) &&
+        part.equivalents.length
+    ) {
+
+        html += `
+
+            <div class="part-section">
+
+                <div class="part-section-title">
+                    ${escapeHTML(
+                        getTranslation(
+                            "equivalents"
+                        )
+                    )}
+                </div>
+
+                <div class="number-list">
+
+        `;
+
+
+        part.equivalents.forEach(
+            function(eq) {
+
+                html += `
+
+                    <span class="number-badge">
+
+                        ${
+                            eq.manufacturer
+                            ?
+                            escapeHTML(
+                                eq.manufacturer
+                            ) +
+                            " · "
+                            :
+                            ""
+                        }
+
+                        ${escapeHTML(
+                            eq.part_number
+                        )}
+
+                    </span>
+
+                `;
+
+            }
+        );
+
+
+        html += `
+
+                </div>
+
+            </div>
+
+        `;
+
+    }
+
+
+    /* VEHICLES */
+
+    if (
+        Array.isArray(
+            part.compatible_vehicles
+        ) &&
+        part.compatible_vehicles.length
+    ) {
+
+        html += `
+
+            <div class="part-section">
+
+                <div class="part-section-title">
+                    ${escapeHTML(
+                        getTranslation(
+                            "compatibleVehicles"
+                        )
+                    )}
+                </div>
+
+        `;
+
+
+        part.compatible_vehicles.forEach(
+            function(vehicle) {
+
+                html += renderVehicle(
+                    vehicle
+                );
+
+            }
+        );
+
+
+        html += `
+
+            </div>
+
+        `;
+
+    }
+
+
+    html += `
+
+        </article>
+
+    `;
+
+
+    return html;
+
+}
+
+
+/* =====================================================
+   RENDER VEHICLE
+===================================================== */
+
+function renderVehicle(vehicle) {
+
+    let title = "";
+
+
+    if (vehicle.make) {
+
+        title +=
+            vehicle.make;
+
+    }
+
+
+    if (vehicle.model) {
+
+        title +=
+            " " +
+            vehicle.model;
+
+    }
+
+
+    if (vehicle.generation) {
+
+        title +=
+            " " +
+            vehicle.generation;
+
+    }
+
+
+    let details = "";
+
+
+    if (
+        vehicle.years &&
+        vehicle.years.from !== undefined &&
+        vehicle.years.to !== undefined
+    ) {
+
+        details +=
+            escapeHTML(
+                getTranslation("from")
+            ) +
+            " " +
+            escapeHTML(
+                vehicle.years.from
+            ) +
+            " " +
+            escapeHTML(
+                getTranslation("to")
+            ) +
+            " " +
+            escapeHTML(
+                vehicle.years.to
+            );
+
+    }
+
+
+    if (
+        Array.isArray(
+            vehicle.engines
+        )
+    ) {
+
+        vehicle.engines.forEach(
+            function(engine) {
+
+                details +=
+                    details
+                    ? "<br>"
+                    : "";
+
+
+                details +=
+                    escapeHTML(
+                        engine.engine ||
+                        ""
+                    );
+
+
+                if (
+                    Array.isArray(
+                        engine.engine_codes
+                    ) &&
+                    engine.engine_codes.length
+                ) {
+
+                    details +=
+                        " · " +
+                        escapeHTML(
+                            getTranslation(
+                                "engineCodes"
+                            )
+                        ) +
+                        ": " +
+                        escapeHTML(
+                            engine.engine_codes
+                                .join(", ")
+                        );
+
+                }
+
+            }
+        );
+
+    }
+
+
+    return `
+
+        <div class="vehicle">
+
+            <div class="vehicle-title">
+                ${escapeHTML(title)}
+            </div>
+
+            <div class="vehicle-details">
+                ${details}
+            </div>
+
+        </div>
+
+    `;
+
+}
+
+
+/* =====================================================
+   LOCALIZED VALUE
+===================================================== */
+
+function getLocalizedValue(value) {
+
+    if (!value) {
+
+        return "";
+
+    }
+
+
+    if (
+        typeof value === "object"
+    ) {
+
+        if (
+            value[currentLanguage]
+        ) {
+
+            return value[
+                currentLanguage
+            ];
+
+        }
+
+
+        if (value.en) {
+
+            return value.en;
+
+        }
+
+
+        const first =
+            Object.values(value)[0];
+
+
+        return first || "";
+
+    }
+
+
+    return String(value);
+
+}
+
+
+/* =====================================================
+   LOADING
+===================================================== */
+
+function showLoading() {
+
+    const results =
+        document.getElementById(
+            "results"
+        );
+
+    const empty =
+        document.getElementById(
+            "emptyState"
+        );
+
+    const list =
+        document.getElementById(
+            "resultList"
+        );
 
 
     empty.style.display =
@@ -1926,8 +2995,11 @@ function showNoResults() {
         "block";
 
 
-    count.textContent =
-        "0";
+    document
+        .getElementById(
+            "resultCount"
+        )
+        .textContent = "";
 
 
     list.innerHTML = `
@@ -1935,18 +3007,79 @@ function showNoResults() {
         <div class="empty">
 
             <div class="empty-icon">
-                🔍
+                ⏳
             </div>
 
             <h2>
                 ${escapeHTML(
-                    getTranslation("noResults")
+                    getTranslation(
+                        "loading"
+                    )
+                )}
+            </h2>
+
+        </div>
+
+    `;
+
+}
+
+
+/* =====================================================
+   DATABASE ERROR
+===================================================== */
+
+function showDatabaseError(message) {
+
+    const results =
+        document.getElementById(
+            "results"
+        );
+
+    const empty =
+        document.getElementById(
+            "emptyState"
+        );
+
+    const list =
+        document.getElementById(
+            "resultList"
+        );
+
+
+    empty.style.display =
+        "none";
+
+    results.style.display =
+        "block";
+
+
+    document
+        .getElementById(
+            "resultCount"
+        )
+        .textContent = "";
+
+
+    list.innerHTML = `
+
+        <div class="empty">
+
+            <div class="empty-icon">
+                ⚠️
+            </div>
+
+            <h2>
+                ${escapeHTML(
+                    getTranslation(
+                        "databaseError"
+                    )
                 )}
             </h2>
 
             <p>
                 ${escapeHTML(
-                    getTranslation("noResultsText")
+                    message
                 )}
             </p>
 
@@ -1964,13 +3097,19 @@ function showNoResults() {
 function showMessage(message) {
 
     const results =
-        document.getElementById("results");
+        document.getElementById(
+            "results"
+        );
 
     const empty =
-        document.getElementById("emptyState");
+        document.getElementById(
+            "emptyState"
+        );
 
     const list =
-        document.getElementById("resultList");
+        document.getElementById(
+            "resultList"
+        );
 
 
     empty.style.display =
@@ -1981,7 +3120,9 @@ function showMessage(message) {
 
 
     document
-        .getElementById("resultCount")
+        .getElementById(
+            "resultCount"
+        )
         .textContent = "";
 
 
@@ -2005,22 +3146,6 @@ function showMessage(message) {
 
 
 /* =====================================================
-   HTML ESCAPE
-===================================================== */
-
-function escapeHTML(value) {
-
-    return String(value ?? "")
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&#039;");
-
-}
-
-
-/* =====================================================
    ENTER KEY
 ===================================================== */
 
@@ -2028,31 +3153,38 @@ document
     .querySelectorAll(
         "#make, #model, #year, #engine, #partNumber"
     )
-    .forEach(function(input) {
+    .forEach(
+        function(input) {
 
-        input.addEventListener(
-            "keydown",
-            function(event) {
+            input.addEventListener(
+                "keydown",
+                function(event) {
 
-                if (event.key === "Enter") {
+                    if (
+                        event.key === "Enter"
+                    ) {
 
-                    searchParts();
+                        searchParts();
+
+                    }
 
                 }
+            );
 
-            }
-        );
-
-    });
+        }
+    );
 
 
 /* =====================================================
    INITIAL LANGUAGE
 ===================================================== */
 
-if (!translations[currentLanguage]) {
+if (
+    !translations[currentLanguage]
+) {
 
-    currentLanguage = "en";
+    currentLanguage =
+        "en";
 
 }
 
