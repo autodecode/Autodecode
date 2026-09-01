@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>OBD Decoder — AutoDecode</title>
+
+<meta
+    name="description"
+    content="Decode OBD-II diagnostic trouble codes with AutoDecode."
+>
+
+<style>
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #0b0d10;
+    color: #f2f4f7;
+    min-height: 100vh;
+}
+
+header {
+    height: 72px;
+    border-bottom: 1px solid #20242a;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 6%;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.logo span {
+    color: #4da3ff;
+}
+
+header a {
+    color: #9da5b0;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+header a:hover {
+    color: white;
+}
+
+.container {
+    max-width: 950px;
+    margin: auto;
+    padding: 60px 20px 90px;
+}
+
+.search {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 35px;
+}
+
+input {
+    flex: 1;
+    height: 60px;
+    background: #14181d;
+    border: 1px solid #303842;
+    border-radius: 10px;
+    color: white;
+    padding: 0 18px;
+    font-size: 18px;
+    outline: none;
+}
+
+input:focus {
+    border-color: #4da3ff;
+}
+
+button {
+    border: none;
+    background: #4da3ff;
+    padding: 0 28px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #78baff;
+}
+
+.result-container {
+    display: none;
+}
+
+.result-header {
+    background: #12161b;
+    border: 1px solid #252c34;
+    border-radius: 14px;
+    padding: 30px;
+    margin-bottom: 15px;
+}
+
+.code {
+    color: #4da3ff;
+    font-size: 48px;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.description {
+    color: #d1d7de;
+    font-size: 20px;
+    line-height: 1.55;
+}
+
+.badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.badge {
+    background: #1b222a;
+    border: 1px solid #303842;
+    color: #aeb7c2;
+    padding: 7px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+.severity {
+    display: inline-block;
+    padding: 7px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: #1b222a;
+    color: #d0d6dd;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.info-card {
+    background: #12161b;
+    border: 1px solid #252c34;
+    border-radius: 14px;
+    padding: 25px;
+}
+
+.info-card.full {
+    grid-column: 1 / -1;
+}
+
+.info-card h3 {
+    font-size: 15px;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.info-card p {
+    color: #9da7b2;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.info-card ul {
+    padding-left: 20px;
+    color: #9da7b2;
+}
+
+.info-card li {
+    margin-bottom: 9px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.error {
+    text-align: center;
+    color: #8b949e;
+    padding: 40px;
+    background: #12161b;
+    border: 1px solid #252c34;
+    border-radius: 14px;
+}
+
+.error h2 {
+    color: #f2f4f7;
+    margin-bottom: 10px;
+}
+
+.loading {
+    text-align: center;
+    color: #8b949e;
+    padding: 40px;
+}
+
+@media(max-width:650px) {
+
+    .container {
+        padding-top: 40px;
+    }
+
+    .search {
+        flex-direction: column;
+    }
+
+    button {
+        height: 52px;
+    }
+
+    .code {
+        font-size: 38px;
+    }
+
+    .description {
+        font-size: 17px;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .info-card.full {
+        grid-column: auto;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <div class="logo">
+        Auto<span>Decode</span>
+    </div>
+
+    <a href="index.html">
+        ← Home
+    </a>
+
+</header>
+
+
+<div class="container">
+
+
+    <div class="search">
+
+        <input
+            id="codeInput"
+            type="text"
+            placeholder="Enter OBD-II code (e.g. P0420)"
+            autocomplete="off"
+        >
+
+        <button id="decodeButton">
+            Decode
+        </button>
+
+    </div>
+
+
+    <div id="result">
+
+        <div class="loading">
+            Loading OBD database...
+        </div>
+
+    </div>
+
+
+</div>
+
+
+<script>
+
+/* ==================================================
+   DATABASE
+================================================== */
+
+let codesDatabase = [];
+let diagnosticDatabase = {};
+
+
+/* ==================================================
+   NORMALIZE CODE
+================================================== */
+
+function normalizeCode(value) {
+
+    let code = String(value || "")
+        .trim()
+        .toUpperCase()
+        .replace(/\s+/g, "")
+        .replace(/-/g, "");
+
+
+    /*
+     * P0001
+     * B0001
+     * C0001
+     * U0001
+     */
+
+    if (/^[PBCU][0-9]{4}$/.test(code)) {
+        return code;
+    }
+
+
+    /*
+     * P1
+     * P01
+     * P001
+     */
+
+    if (/^[PBCU][0-9]{1,3}$/.test(code)) {
+
+        return (
+            code.charAt(0) +
+            code.substring(1).padStart(4, "0")
+        );
+
+    }
+
+
+    /*
+     * 0001
+     *
+     * Assume P-code
+     */
+
+    if (/^[0-9]{1,4}$/.test(code)) {
+
+        return "P" + code.padStart(4, "0");
+
+    }
+
+
+    return code;
+}
+
+
+/* ==================================================
+   LOAD CODES
+================================================== */
+
+async function loadCodes() {
+
+    const response =
+        await fetch(
+            "./Database/Codes.json",
+            {
+                cache: "no-store"
+            }
+        );
+
+
+    if (!response.ok) {
+
+        throw new Error(
+            "Could not load Database/Codes.json"
+        );
+
+    }
+
+
+    codesDatabase =
+        await response.json();
+
+}
+
+
+/* ==================================================
+   LOAD DIAGNOSTIC
+================================================== */
+
+async function loadDiagnostic() {
+
+    try {
+
+        const response =
+            await fetch(
+                "./Database/Diagnostic.json",
+                {
+                    cache: "no-store"
+                }
+            );
+
+
+        if (!response.ok) {
+
+            console.warn(
+                "Diagnostic.json unavailable"
+            );
+
+            return;
+
+        }
+
+
+        diagnosticDatabase =
+            await response.json();
+
+
+        console.log(
+            "Diagnostic database loaded:",
+            Object.keys(
+                diagnosticDatabase
+            ).length,
+            "codes"
+        );
+
+    }
+
+    catch(error) {
+
+        console.warn(
+            "Diagnostic database error:",
+            error
+        );
+
+    }
+
+}
+
+
+/* ==================================================
+   DESCRIPTION
+================================================== */
+
+function getDescription(code) {
+
+    if (
+        !Array.isArray(
+            codesDatabase
+        )
+    ) {
+
+        return "No description available.";
+
+    }
+
+
+    const found =
+        codesDatabase.find(
+            item => {
+
+                if (
+                    !item ||
+                    !item.Code
+                ) {
+
+                    return false;
+
+                }
+
+
+                return (
+                    normalizeCode(
+                        item.Code
+                    ) === code
+                );
+
+            }
+        );
+
+
+    if (
+        found &&
+        found.Description
+    ) {
+
+        return found.Description;
+
+    }
+
+
+    return "No description available.";
+
+}
+
+
+/* ==================================================
+   DIAGNOSTIC LOOKUP
+================================================== */
+
+function getDiagnostic(code) {
+
+    if (
+        !diagnosticDatabase ||
+        typeof diagnosticDatabase !== "object"
+    ) {
+
+        return null;
+
+    }
+
+
+    /*
+     * Direct lookup
+     */
+
+    if (
+        diagnosticDatabase[code]
+    ) {
+
+        return diagnosticDatabase[code];
+
+    }
+
+
+    /*
+     * Normalized lookup
+     */
+
+    for (
+        const key of Object.keys(
+            diagnosticDatabase
+        )
+    ) {
+
+        if (
+            normalizeCode(key) === code
+        ) {
+
+            return diagnosticDatabase[key];
+
+        }
+
+    }
+
+
+    return null;
+
+}
+
+
+/* ==================================================
+   GENERIC FALLBACK
+================================================== */
+
+function genericInfo(code) {
+
+    let system =
+        "Vehicle Diagnostic System";
+
+    let severity =
+        "Medium";
+
+
+    if (
+        code.startsWith("P")
+    ) {
+
+        system =
+            "Powertrain";
+
+    }
+
+    else if (
+        code.startsWith("B")
+    ) {
+
+        system =
+            "Body / Comfort / Safety Systems";
+
+    }
+
+    else if (
+        code.startsWith("C")
+    ) {
+
+        system =
+            "Chassis / ABS / Suspension / Steering";
+
+    }
+
+    else if (
+        code.startsWith("U")
+    ) {
+
+        system =
+            "Network / Communication System";
+
+        severity =
+            "High";
+
+    }
+
+
+    return {
+
+        system,
+
+        severity,
+
+        symptoms: [
+
+            "Check Engine or warning indicator may be illuminated",
+
+            "Vehicle symptoms depend on the affected system",
+
+            "Performance or fuel economy may be affected"
+
+        ],
+
+        causes: [
+
+            "Sensor or actuator fault",
+
+            "Damaged wiring or connector",
+
+            "Electrical supply problem",
+
+            "Mechanical problem",
+
+            "Underlying fault in a related system"
+
+        ],
+
+        diagnostic: [
+
+            "Read all stored and pending fault codes",
+
+            "Inspect related wiring and connectors",
+
+            "Check relevant live data",
+
+            "Check electrical power and grounds",
+
+            "Verify the fault before replacing components"
+
+        ],
+
+        repairs: [
+
+            "Repair damaged wiring or connectors",
+
+            "Repair or replace the confirmed faulty component",
+
+            "Correct any underlying mechanical or electrical fault"
+
+        ],
+
+        tip:
+            "Use the fault code together with the vehicle's symptoms and live diagnostic data. Do not replace parts based on the code alone."
+
+    };
+
+}
+
+
+/* ==================================================
+   ESCAPE HTML
+================================================== */
+
+function escapeHTML(value) {
+
+    return String(value ?? "")
+
+        .replace(
+            /&/g,
+            "&amp;"
+        )
+
+        .replace(
+            /</g,
+            "&lt;"
+        )
+
+        .replace(
+            />/g,
+            "&gt;"
+        )
+
+        .replace(
+            /"/g,
+            "&quot;"
+        )
+
+        .replace(
+            /'/g,
+            "&#039;"
+        );
+
+}
+
+
+/* ==================================================
+   ARRAY HTML
+================================================== */
+
+function makeList(items) {
+
+    if (
+        !Array.isArray(items) ||
+        items.length === 0
+    ) {
+
+        return `
+            <li>
+                No specific information available.
+            </li>
+        `;
+
+    }
+
+
+    return items
+        .map(
+            item =>
+                `<li>${escapeHTML(item)}</li>`
+        )
+        .join("");
+
+}
+
+
+/* ==================================================
+   DECODE
+================================================== */
+
+function decodeCode() {
+
+    const input =
+        document
+            .getElementById(
+                "codeInput"
+            )
+            .value;
+
+
+    const code =
+        normalizeCode(input);
+
+
+    const result =
+        document
+            .getElementById(
+                "result"
+            );
+
+
+    if (!code) {
+
+        result.innerHTML = `
+
+            <div class="error">
+
+                <h2>
+                    Enter an OBD-II code
+                </h2>
+
+                <p>
+                    Example: P0420
+                </p>
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    /*
+     * Normalize visible input
+     */
+
+    document
+        .getElementById(
+            "codeInput"
+        )
+        .value = code;
+
+
+    /*
+     * Get description
+     */
+
+    const description =
+        getDescription(code);
+
+
+    /*
+     * FIRST PRIORITY:
+     * Diagnostic.json
+     */
+
+    const specific =
+        getDiagnostic(code);
+
+
+    let info;
+
+
+    if (specific) {
+
+        /*
+         * USE ONLY SPECIFIC DATA
+         */
+
+        info = {
+
+            system:
+                specific.system ||
+                "Vehicle Diagnostic System",
+
+            severity:
+                specific.severity ||
+                "Medium",
+
+            symptoms:
+                Array.isArray(
+                    specific.symptoms
+                )
+                    ? specific.symptoms
+                    : [],
+
+            causes:
+                Array.isArray(
+                    specific.causes
+                )
+                    ? specific.causes
+                    : [],
+
+            diagnostic:
+                Array.isArray(
+                    specific.diagnostic
+                )
+                    ? specific.diagnostic
+                    : [],
+
+            repairs:
+                Array.isArray(
+                    specific.repairs
+                )
+                    ? specific.repairs
+                    : [],
+
+            tip:
+                specific.tip ||
+                "Use the fault code together with the vehicle's symptoms and live diagnostic data. Do not replace parts based on the code alone."
+
+        };
+
+
+        console.log(
+            "Using Diagnostic.json for:",
+            code
+        );
+
+    }
+
+    else {
+
+        /*
+         * FALLBACK
+         */
+
+        info =
+            genericInfo(code);
+
+
+        console.log(
+            "Using generic data for:",
+            code
+        );
+
+    }
+
+
+    /*
+     * DISPLAY
+     */
+
+    result.innerHTML = `
+
+        <div
+            class="result-container"
+            style="display:block"
+        >
+
+
+            <div class="result-header">
+
+
+                <div class="code">
+
+                    ${escapeHTML(code)}
+
+                </div>
+
+
+                <div class="description">
+
+                    ${escapeHTML(
+                        description
+                    )}
+
+                </div>
+
+
+                <div class="badges">
+
+
+                    <div class="badge">
+
+                        ${escapeHTML(
+                            info.system
+                        )}
+
+                    </div>
+
+
+                    <div class="severity">
+
+                        Severity:
+                        ${escapeHTML(
+                            info.severity
+                        )}
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+            <div class="info-grid">
+
+
+                <div class="info-card">
+
+                    <h3>
+                        ⚠️ Common Symptoms
+                    </h3>
+
+                    <ul>
+
+                        ${makeList(
+                            info.symptoms
+                        )}
+
+                    </ul>
+
+                </div>
+
+
+                <div class="info-card">
+
+                    <h3>
+                        🔍 Possible Causes
+                    </h3>
+
+                    <ul>
+
+                        ${makeList(
+                            info.causes
+                        )}
+
+                    </ul>
+
+                </div>
+
+
+                <div class="info-card">
+
+                    <h3>
+                        🛠️ Recommended Checks
+                    </h3>
+
+                    <ul>
+
+                        ${makeList(
+                            info.diagnostic
+                        )}
+
+                    </ul>
+
+                </div>
+
+
+                <div class="info-card">
+
+                    <h3>
+                        🔧 Recommended Repairs
+                    </h3>
+
+                    <ul>
+
+                        ${makeList(
+                            info.repairs
+                        )}
+
+                    </ul>
+
+                </div>
+
+
+                <div class="info-card full">
+
+                    <h3>
+                        💡 Diagnostic Tip
+                    </h3>
+
+                    <p>
+
+                        ${escapeHTML(
+                            info.tip
+                        )}
+
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    `;
+
+}
+
+
+/* ==================================================
+   START
+================================================== */
+
+async function start() {
+
+    const result =
+        document.getElementById(
+            "result"
+        );
+
+
+    try {
+
+        /*
+         * Codes.json MUST load
+         */
+
+        await loadCodes();
+
+
+        /*
+         * Diagnostic.json loads
+         * independently.
+         *
+         * Failure here does NOT
+         * break the page.
+         */
+
+        await loadDiagnostic();
+
+
+        /*
+         * Check URL
+         */
+
+        const params =
+            new URLSearchParams(
+                window.location.search
+            );
+
+
+        const urlCode =
+            params.get("code");
+
+
+        if (urlCode) {
+
+            document
+                .getElementById(
+                    "codeInput"
+                )
+                .value =
+                normalizeCode(
+                    urlCode
+                );
+
+
+            decodeCode();
+
+        }
+
+        else {
+
+            result.innerHTML = `
+
+                <div class="loading">
+
+                    OBD database loaded.
+                    Enter a code above.
+
+                </div>
+
+            `;
+
+        }
+
+    }
+
+    catch(error) {
+
+        console.error(
+            error
+        );
+
+
+        result.innerHTML = `
+
+            <div class="error">
+
+                <h2>
+                    Database unavailable
+                </h2>
+
+                <p>
+
+                    ${escapeHTML(
+                        error.message
+                    )}
+
+                </p>
+
+            </div>
+
+        `;
+
+    }
+
+}
+
+
+/* ==================================================
+   EVENTS
+================================================== */
+
+document
+    .getElementById(
+        "decodeButton"
+    )
+    .addEventListener(
+        "click",
+        decodeCode
+    );
+
+
+document
+    .getElementById(
+        "codeInput"
+    )
+    .addEventListener(
+        "keydown",
+        function(event) {
+
+            if (
+                event.key === "Enter"
+            ) {
+
+                decodeCode();
+
+            }
+
+        }
+    );
+
+
+/* ==================================================
+   RUN
+================================================== */
+
+start();
+
+</script>
+
+</body>
+
+</html>
