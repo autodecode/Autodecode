@@ -50,9 +50,9 @@ header a {
 }
 
 .container {
-    max-width: 950px;
+    max-width: 1000px;
     margin: auto;
-    padding: 55px 20px 80px;
+    padding: 45px 20px 80px;
 }
 
 .search {
@@ -101,15 +101,22 @@ button:hover {
 
 .code {
     color: #4da3ff;
-    font-size: 44px;
+    font-size: 42px;
     font-weight: 800;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
+}
+
+.title {
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.4;
 }
 
 .description {
-    color: #d1d7de;
-    font-size: 20px;
-    line-height: 1.5;
+    color: #aeb7c1;
+    font-size: 15px;
+    line-height: 1.7;
+    margin-top: 18px;
 }
 
 .badges {
@@ -120,11 +127,10 @@ button:hover {
 }
 
 .badge {
-    display: inline-block;
     background: #1b222a;
     border: 1px solid #303842;
     color: #c5ccd4;
-    padding: 7px 13px;
+    padding: 7px 12px;
     border-radius: 20px;
     font-size: 12px;
 }
@@ -147,15 +153,8 @@ button:hover {
 }
 
 .card h3 {
-    font-size: 15px;
-    margin-bottom: 15px;
-}
-
-.card p,
-.card li {
-    color: #9da7b2;
-    font-size: 14px;
-    line-height: 1.6;
+    font-size: 16px;
+    margin-bottom: 18px;
 }
 
 .card ul {
@@ -163,7 +162,79 @@ button:hover {
 }
 
 .card li {
-    margin-bottom: 9px;
+    color: #aeb7c1;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.description-box {
+    color: #aeb7c1;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.cause {
+    margin-bottom: 14px;
+}
+
+.likelihood {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 3px 7px;
+    border-radius: 5px;
+    margin-right: 6px;
+    background: #252c34;
+}
+
+.cause-label {
+    color: #cbd2da;
+    font-size: 14px;
+}
+
+.component {
+    display: inline-block;
+    background: #1b222a;
+    border: 1px solid #303842;
+    color: #cbd2da;
+    padding: 7px 10px;
+    border-radius: 7px;
+    margin: 0 5px 7px 0;
+    font-size: 12px;
+}
+
+.repair-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.repair-item {
+    background: #171c22;
+    border-radius: 9px;
+    padding: 14px;
+}
+
+.repair-label {
+    color: #7f8995;
+    font-size: 11px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.repair-value {
+    color: #e3e7eb;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.source {
+    color: #8d98a4;
+    font-size: 12px;
+    word-break: break-all;
+    margin-bottom: 7px;
 }
 
 .error,
@@ -182,7 +253,7 @@ button:hover {
 @media(max-width:650px) {
 
     .container {
-        padding-top: 35px;
+        padding-top: 30px;
     }
 
     .search {
@@ -197,13 +268,22 @@ button:hover {
         grid-template-columns: 1fr;
     }
 
+    .card.full {
+        grid-column: auto;
+    }
+
     .code {
         font-size: 36px;
     }
 
-    .description {
-        font-size: 18px;
+    .title {
+        font-size: 19px;
     }
+
+    .repair-grid {
+        grid-template-columns: 1fr;
+    }
+
 }
 
 </style>
@@ -237,6 +317,7 @@ button:hover {
             type="text"
             placeholder="Enter OBD-II code (e.g. P0001)"
             autocomplete="off"
+            spellcheck="false"
         >
 
         <button onclick="decodeCode()">
@@ -261,9 +342,9 @@ button:hover {
 <script>
 
 
-/* =========================================
+/* =====================================================
    NORMALIZE CODE
-========================================= */
+===================================================== */
 
 function normalizeCode(value) {
 
@@ -275,8 +356,7 @@ function normalizeCode(value) {
 
     /*
        0001 → P0001
-       001  → P0001
-       p001 → P0001
+       001 → P0001
     */
 
     if (/^\d+$/.test(code)) {
@@ -287,6 +367,11 @@ function normalizeCode(value) {
 
     }
 
+
+    /*
+       p001 → P0001
+       b1   → B0001
+    */
 
     else if (/^[PBCU]\d+$/.test(code)) {
 
@@ -302,32 +387,32 @@ function normalizeCode(value) {
 }
 
 
-/* =========================================
-   DETERMINE YAML FILE
-========================================= */
+/* =====================================================
+   DETERMINE FILE
+===================================================== */
 
 function getDatabaseFile(code) {
 
     const prefix =
-        code.charAt(0);
+        code.charAt(0).toUpperCase();
 
-    const firstDigit =
+    const digit =
         code.charAt(1);
 
 
     return (
         "data/generic/" +
         prefix +
-        firstDigit +
+        digit +
         "xxx_enriched.yaml"
     );
 
 }
 
 
-/* =========================================
-   ESCAPE HTML
-========================================= */
+/* =====================================================
+   HTML ESCAPE
+===================================================== */
 
 function escapeHTML(value) {
 
@@ -341,176 +426,41 @@ function escapeHTML(value) {
 }
 
 
-/* =========================================
-   CONVERT VALUE TO LIST
-========================================= */
+/* =====================================================
+   FIND DTC
+===================================================== */
 
-function toArray(value) {
+function findDTC(data, code) {
 
-    if (Array.isArray(value)) {
+    /*
+       OBDex enriched YAML is an ARRAY:
 
-        return value;
+       - code: B0001
+         category: body
+         title:
+           en: ...
+    */
 
-    }
-
-    if (value === undefined || value === null) {
-
-        return [];
-
-    }
-
-    return [value];
-
-}
-
-
-/* =========================================
-   CREATE LIST HTML
-========================================= */
-
-function makeList(value) {
-
-    const items =
-        toArray(value);
-
-
-    if (!items.length) {
-
-        return `
-            <li>
-                No information available.
-            </li>
-        `;
-
-    }
-
-
-    return items
-        .map(function(item) {
-
-            /*
-               YAML can contain objects.
-               Convert them safely to text.
-            */
-
-            if (
-                typeof item === "object"
-            ) {
-
-                return `
-                    <li>
-                        ${escapeHTML(
-                            JSON.stringify(item)
-                        )}
-                    </li>
-                `;
-
-            }
-
-
-            return `
-                <li>
-                    ${escapeHTML(item)}
-                </li>
-            `;
-
-        })
-        .join("");
-
-}
-
-
-/* =========================================
-   FIND CODE INSIDE YAML
-========================================= */
-
-function findCode(data, code) {
-
-    if (!data) {
+    if (!Array.isArray(data)) {
 
         return null;
 
     }
 
 
-    /*
-       Case 1:
-       YAML root is an object:
+    for (const item of data) {
 
-       P0001:
-         ...
-
-    */
-
-    if (
-        typeof data === "object" &&
-        !Array.isArray(data)
-    ) {
-
-        if (data[code]) {
-
-            return data[code];
-
-        }
+        if (!item) continue;
 
 
-        /*
-           Case-insensitive search
-        */
+        if (
+            item.code &&
+            String(item.code)
+                .trim()
+                .toUpperCase() === code
+        ) {
 
-        const keys =
-            Object.keys(data);
-
-
-        for (const key of keys) {
-
-            if (
-                String(key).toUpperCase() === code
-            ) {
-
-                return data[key];
-
-            }
-
-        }
-
-    }
-
-
-    /*
-       Case 2:
-       YAML contains an array
-       of objects.
-
-    */
-
-    if (Array.isArray(data)) {
-
-        for (const item of data) {
-
-            if (!item) continue;
-
-
-            if (
-                item.code &&
-                String(item.code)
-                    .toUpperCase() === code
-            ) {
-
-                return item;
-
-            }
-
-
-            if (
-                item.Code &&
-                String(item.Code)
-                    .toUpperCase() === code
-            ) {
-
-                return item;
-
-            }
+            return item;
 
         }
 
@@ -522,35 +472,492 @@ function findCode(data, code) {
 }
 
 
-/* =========================================
-   FIND DESCRIPTION
-========================================= */
+/* =====================================================
+   ARRAY NORMALIZATION
+===================================================== */
 
-function getDescription(item) {
+function asArray(value) {
 
-    if (!item) {
+    if (Array.isArray(value)) {
 
-        return "OBD-II Diagnostic Trouble Code";
+        return value;
 
     }
 
+    if (
+        value === undefined ||
+        value === null
+    ) {
 
-    return (
-        item.description ||
-        item.Description ||
-        item.name ||
-        item.Name ||
-        item.title ||
-        item.Title ||
-        "OBD-II Diagnostic Trouble Code"
-    );
+        return [];
+
+    }
+
+    return [value];
 
 }
 
 
-/* =========================================
+/* =====================================================
+   GET ENGLISH TEXT
+===================================================== */
+
+function english(value) {
+
+    if (!value) {
+
+        return "";
+
+    }
+
+
+    if (
+        typeof value === "object" &&
+        value.en
+    ) {
+
+        return value.en;
+
+    }
+
+
+    return String(value);
+
+}
+
+
+/* =====================================================
+   SYMPTOMS
+===================================================== */
+
+function renderSymptoms(symptoms) {
+
+    const list =
+        asArray(symptoms);
+
+
+    if (!list.length) {
+
+        return `
+            <li>
+                No symptom information available.
+            </li>
+        `;
+
+    }
+
+
+    return list
+        .map(function(item) {
+
+            return `
+                <li>
+                    ${escapeHTML(
+                        english(item)
+                    )}
+                </li>
+            `;
+
+        })
+        .join("");
+
+}
+
+
+/* =====================================================
+   CAUSES
+===================================================== */
+
+function renderCauses(causes) {
+
+    const list =
+        asArray(causes);
+
+
+    if (!list.length) {
+
+        return `
+            <div class="description-box">
+                No cause information available.
+            </div>
+        `;
+
+    }
+
+
+    return list
+        .map(function(cause) {
+
+            if (
+                typeof cause !== "object"
+            ) {
+
+                return `
+                    <div class="cause">
+                        <span class="cause-label">
+                            ${escapeHTML(cause)}
+                        </span>
+                    </div>
+                `;
+
+            }
+
+
+            const likelihood =
+                cause.likelihood || "";
+
+
+            const label =
+                cause.label
+                ? english(cause.label)
+                : "";
+
+
+            return `
+                <div class="cause">
+
+                    ${
+                        likelihood
+                        ?
+                        `
+                        <span class="likelihood">
+                            ${escapeHTML(likelihood)}
+                        </span>
+                        `
+                        :
+                        ""
+                    }
+
+                    <span class="cause-label">
+                        ${escapeHTML(label)}
+                    </span>
+
+                </div>
+            `;
+
+        })
+        .join("");
+
+}
+
+
+/* =====================================================
+   COMPONENTS
+===================================================== */
+
+function renderComponents(components) {
+
+    const list =
+        asArray(components);
+
+
+    if (!list.length) {
+
+        return `
+            <div class="description-box">
+                No affected components listed.
+            </div>
+        `;
+
+    }
+
+
+    return list
+        .map(function(component) {
+
+            return `
+                <span class="component">
+                    ${escapeHTML(
+                        String(component)
+                            .replace(/_/g, " ")
+                    )}
+                </span>
+            `;
+
+        })
+        .join("");
+
+}
+
+
+/* =====================================================
+   REPAIR
+===================================================== */
+
+function renderRepair(repair) {
+
+    if (!repair) {
+
+        return `
+            <div class="description-box">
+                No repair information available.
+            </div>
+        `;
+
+    }
+
+
+    let cost = "Not specified";
+
+
+    if (
+        Array.isArray(
+            repair.estimated_cost_eur
+        )
+    ) {
+
+        cost =
+            "€" +
+            repair.estimated_cost_eur[0] +
+            " – €" +
+            repair.estimated_cost_eur[1];
+
+    }
+
+
+    let hours = "Not specified";
+
+
+    if (
+        Array.isArray(
+            repair.estimated_hours
+        )
+    ) {
+
+        hours =
+            repair.estimated_hours[0] +
+            " – " +
+            repair.estimated_hours[1] +
+            " hours";
+
+    }
+
+
+    const diy =
+        repair.diy_possible === true
+            ? "Yes"
+            : repair.diy_possible === false
+                ? "No"
+                : "Not specified";
+
+
+    return `
+
+        <div class="repair-grid">
+
+            <div class="repair-item">
+
+                <div class="repair-label">
+                    Difficulty
+                </div>
+
+                <div class="repair-value">
+                    ${escapeHTML(
+                        repair.difficulty ||
+                        "Not specified"
+                    )}
+                </div>
+
+            </div>
+
+
+            <div class="repair-item">
+
+                <div class="repair-label">
+                    DIY Possible
+                </div>
+
+                <div class="repair-value">
+                    ${diy}
+                </div>
+
+            </div>
+
+
+            <div class="repair-item">
+
+                <div class="repair-label">
+                    Estimated Cost
+                </div>
+
+                <div class="repair-value">
+                    ${escapeHTML(cost)}
+                </div>
+
+            </div>
+
+
+            <div class="repair-item">
+
+                <div class="repair-label">
+                    Estimated Time
+                </div>
+
+                <div class="repair-value">
+                    ${escapeHTML(hours)}
+                </div>
+
+            </div>
+
+        </div>
+
+    `;
+
+}
+
+
+/* =====================================================
+   FLAGS
+===================================================== */
+
+function renderFlags(flags) {
+
+    if (!flags) {
+
+        return "";
+
+    }
+
+
+    let html = "";
+
+
+    if (
+        flags.mil !== undefined
+    ) {
+
+        html += `
+            <span class="badge">
+                MIL:
+                ${flags.mil ? "Yes" : "No"}
+            </span>
+        `;
+
+    }
+
+
+    if (
+        flags.emissions_relevant !== undefined
+    ) {
+
+        html += `
+            <span class="badge">
+                Emissions:
+                ${
+                    flags.emissions_relevant
+                    ? "Relevant"
+                    : "Not relevant"
+                }
+            </span>
+        `;
+
+    }
+
+
+    return html;
+
+}
+
+
+/* =====================================================
+   REFERENCES
+===================================================== */
+
+function renderReferences(references) {
+
+    const list =
+        asArray(references);
+
+
+    if (!list.length) {
+
+        return "";
+
+    }
+
+
+    return `
+
+        <div class="card full">
+
+            <h3>
+                📚 References
+            </h3>
+
+            <ul>
+
+                ${
+                    list
+                        .map(function(ref) {
+
+                            return `
+                                <li>
+                                    ${escapeHTML(ref)}
+                                </li>
+                            `;
+
+                        })
+                        .join("")
+                }
+
+            </ul>
+
+        </div>
+
+    `;
+
+}
+
+
+/* =====================================================
+   SOURCES
+===================================================== */
+
+function renderSources(sources) {
+
+    const list =
+        asArray(sources);
+
+
+    if (!list.length) {
+
+        return "";
+
+    }
+
+
+    return `
+
+        <div class="card full">
+
+            <h3>
+                🔗 Sources
+            </h3>
+
+            ${
+                list
+                    .map(function(source) {
+
+                        return `
+                            <div class="source">
+                                ${escapeHTML(source)}
+                            </div>
+                        `;
+
+                    })
+                    .join("")
+            }
+
+        </div>
+
+    `;
+
+}
+
+
+/* =====================================================
    DECODE
-========================================= */
+===================================================== */
 
 async function decodeCode() {
 
@@ -593,14 +1000,19 @@ async function decodeCode() {
         .value = code;
 
 
-    const databaseFile =
+    const file =
         getDatabaseFile(code);
 
 
     result.innerHTML = `
 
         <div class="loading">
-            Loading ${escapeHTML(code)}...
+
+            Loading
+            <strong>
+                ${escapeHTML(code)}
+            </strong>...
+
         </div>
 
     `;
@@ -609,18 +1021,18 @@ async function decodeCode() {
     try {
 
         /*
-           Load the appropriate YAML file.
+           Load OBDex YAML.
         */
 
         const response =
-            await fetch(databaseFile);
+            await fetch(file);
 
 
         if (!response.ok) {
 
             throw new Error(
                 "Could not load " +
-                databaseFile +
+                file +
                 " (" +
                 response.status +
                 ")"
@@ -642,17 +1054,17 @@ async function decodeCode() {
 
 
         /*
-           Find exact DTC.
+           Find exact code.
         */
 
-        const item =
-            findCode(
+        const dtc =
+            findDTC(
                 data,
                 code
             );
 
 
-        if (!item) {
+        if (!dtc) {
 
             result.innerHTML = `
 
@@ -663,8 +1075,8 @@ async function decodeCode() {
                     </h2>
 
                     <p>
-                        Code not found in
-                        ${escapeHTML(databaseFile)}
+                        This code was not found
+                        in ${escapeHTML(file)}.
                     </p>
 
                 </div>
@@ -676,59 +1088,45 @@ async function decodeCode() {
         }
 
 
-        /*
-           Extract fields.
-        */
+        /* =========================================
+           DATA EXTRACTION
+        ========================================= */
+
+        const title =
+            english(dtc.title);
+
 
         const description =
-            getDescription(item);
+            english(dtc.description);
+
+
+        const category =
+            dtc.category || "";
 
 
         const symptoms =
-            item.symptoms ||
-            item.Symptoms ||
-            item.common_symptoms ||
-            [];
+            dtc.symptoms || [];
 
 
         const causes =
-            item.causes ||
-            item.Causes ||
-            [];
+            dtc.common_causes || [];
 
 
-        const diagnostic =
-            item.diagnostic ||
-            item.diagnostics ||
-            item.Diagnostic ||
-            item.Diagnosis ||
-            [];
+        const components =
+            dtc.affected_components || [];
 
 
-        const repairs =
-            item.repairs ||
-            item.repair ||
-            item.Repairs ||
-            [];
+        const repair =
+            dtc.repair || null;
 
 
-        const severity =
-            item.severity ||
-            item.Severity ||
-            "Not specified";
+        const flags =
+            dtc.flags || null;
 
 
-        const system =
-            item.system ||
-            item.System ||
-            item.category ||
-            item.Category ||
-            "";
-
-
-        /*
+        /* =========================================
            DISPLAY
-        */
+        ========================================= */
 
         result.innerHTML = `
 
@@ -738,29 +1136,40 @@ async function decodeCode() {
                     ${escapeHTML(code)}
                 </div>
 
-                <div class="description">
-                    ${escapeHTML(description)}
+
+                <div class="title">
+                    ${escapeHTML(title)}
                 </div>
+
+
+                ${
+                    description
+                    ?
+                    `
+                    <div class="description">
+                        ${escapeHTML(description)}
+                    </div>
+                    `
+                    :
+                    ""
+                }
 
 
                 <div class="badges">
 
-                    <span class="badge">
-                        Severity:
-                        ${escapeHTML(severity)}
-                    </span>
-
                     ${
-                        system
+                        category
                         ?
                         `
                         <span class="badge">
-                            ${escapeHTML(system)}
+                            ${escapeHTML(category)}
                         </span>
                         `
                         :
                         ""
                     }
+
+                    ${renderFlags(flags)}
 
                 </div>
 
@@ -777,7 +1186,7 @@ async function decodeCode() {
                     </h3>
 
                     <ul>
-                        ${makeList(symptoms)}
+                        ${renderSymptoms(symptoms)}
                     </ul>
 
                 </div>
@@ -786,48 +1195,52 @@ async function decodeCode() {
                 <div class="card">
 
                     <h3>
-                        🔍 Possible Causes
+                        🔍 Common Causes
                     </h3>
 
-                    <ul>
-                        ${makeList(causes)}
-                    </ul>
+                    ${renderCauses(causes)}
 
                 </div>
 
 
-                <div class="card">
+                <div class="card full">
 
                     <h3>
-                        🛠️ Recommended Checks
+                        🔧 Affected Components
                     </h3>
 
-                    <ul>
-                        ${makeList(diagnostic)}
-                    </ul>
+                    <div>
+                        ${renderComponents(components)}
+                    </div>
 
                 </div>
 
 
-                <div class="card">
+                <div class="card full">
 
                     <h3>
-                        🔧 Recommended Repairs
+                        🛠️ Repair Information
                     </h3>
 
-                    <ul>
-                        ${makeList(repairs)}
-                    </ul>
+                    ${renderRepair(repair)}
 
                 </div>
 
+
+                ${renderReferences(
+                    dtc.references
+                )}
+
+                ${renderSources(
+                    dtc.sources
+                )}
 
             </div>
 
         `;
 
-
     }
+
 
     catch(error) {
 
@@ -843,7 +1256,9 @@ async function decodeCode() {
                 </h2>
 
                 <p>
-                    ${escapeHTML(error.message)}
+                    ${escapeHTML(
+                        error.message
+                    )}
                 </p>
 
             </div>
@@ -855,9 +1270,9 @@ async function decodeCode() {
 }
 
 
-/* =========================================
+/* =====================================================
    ENTER KEY
-========================================= */
+===================================================== */
 
 document
     .getElementById("codeInput")
@@ -875,9 +1290,9 @@ document
     );
 
 
-/* =========================================
-   URL CODE
-========================================= */
+/* =====================================================
+   URL SEARCH
+===================================================== */
 
 const params =
     new URLSearchParams(
