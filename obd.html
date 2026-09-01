@@ -2,12 +2,16 @@
 <html lang="en">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>OBD Decoder — AutoDecode</title>
 
+<script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+
 <style>
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -109,6 +113,9 @@ button:hover {
 }
 
 .badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
     margin-top: 18px;
 }
 
@@ -144,14 +151,18 @@ button:hover {
     margin-bottom: 15px;
 }
 
+.card p,
+.card li {
+    color: #9da7b2;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
 .card ul {
     padding-left: 20px;
 }
 
 .card li {
-    color: #9da7b2;
-    font-size: 14px;
-    line-height: 1.55;
     margin-bottom: 9px;
 }
 
@@ -168,7 +179,7 @@ button:hover {
     margin-bottom: 10px;
 }
 
-@media (max-width: 650px) {
+@media(max-width:650px) {
 
     .container {
         padding-top: 35px;
@@ -186,10 +197,6 @@ button:hover {
         grid-template-columns: 1fr;
     }
 
-    .card.full {
-        grid-column: auto;
-    }
-
     .code {
         font-size: 36px;
     }
@@ -198,6 +205,7 @@ button:hover {
         font-size: 18px;
     }
 }
+
 </style>
 
 </head>
@@ -205,18 +213,22 @@ button:hover {
 
 <body>
 
+
 <header>
 
     <div class="logo">
         Auto<span>Decode</span>
     </div>
 
-    <a href="index.html">← Home</a>
+    <a href="index.html">
+        ← Home
+    </a>
 
 </header>
 
 
 <div class="container">
+
 
     <div class="search">
 
@@ -237,23 +249,21 @@ button:hover {
     <div id="result">
 
         <div class="loading">
-            Loading database...
+            Enter an OBD-II code.
         </div>
 
     </div>
+
 
 </div>
 
 
 <script>
 
-let diagnosticDatabase = {};
-let codesDatabase = [];
 
-
-/* ==========================================
-   NORMALIZE INPUT
-========================================== */
+/* =========================================
+   NORMALIZE CODE
+========================================= */
 
 function normalizeCode(value) {
 
@@ -262,11 +272,11 @@ function normalizeCode(value) {
         .toUpperCase()
         .replace(/\s+/g, "");
 
+
     /*
-       0001 -> P0001
-       001  -> P0001
-       P001 -> P0001
-       p0001 -> P0001
+       0001 → P0001
+       001  → P0001
+       p001 → P0001
     */
 
     if (/^\d+$/.test(code)) {
@@ -277,6 +287,7 @@ function normalizeCode(value) {
 
     }
 
+
     else if (/^[PBCU]\d+$/.test(code)) {
 
         code =
@@ -285,221 +296,38 @@ function normalizeCode(value) {
 
     }
 
+
     return code;
-}
-
-
-/* ==========================================
-   LOAD DATABASE
-========================================== */
-
-async function loadDatabase() {
-
-    const result =
-        document.getElementById("result");
-
-    try {
-
-        /*
-           Load Diagnostic.json directly.
-        */
-
-        const diagnosticResponse =
-            await fetch(
-                "Database/Diagnostic.json"
-            );
-
-        if (!diagnosticResponse.ok) {
-
-            throw new Error(
-                "Diagnostic.json HTTP " +
-                diagnosticResponse.status
-            );
-
-        }
-
-        diagnosticDatabase =
-            await diagnosticResponse.json();
-
-
-        /*
-           Load Codes.json directly.
-           This is only used for the
-           error name/description.
-        */
-
-        try {
-
-            const codesResponse =
-                await fetch(
-                    "Database/Codes.json"
-                );
-
-            if (codesResponse.ok) {
-
-                codesDatabase =
-                    await codesResponse.json();
-
-            }
-
-        }
-
-        catch (e) {
-
-            console.log(
-                "Codes.json could not be loaded."
-            );
-
-        }
-
-
-        result.innerHTML = `
-            <div class="loading">
-                Database loaded.
-                Enter an OBD-II code.
-            </div>
-        `;
-
-
-        /*
-           Automatic code from URL
-        */
-
-        const params =
-            new URLSearchParams(
-                window.location.search
-            );
-
-        const urlCode =
-            params.get("code");
-
-
-        if (urlCode) {
-
-            document
-                .getElementById("codeInput")
-                .value =
-                normalizeCode(urlCode);
-
-            decodeCode();
-
-        }
-
-    }
-
-    catch (error) {
-
-        console.error(error);
-
-        result.innerHTML = `
-
-            <div class="error">
-
-                <h2>
-                    Database unavailable
-                </h2>
-
-                <p>
-                    Could not load Diagnostic.json
-                </p>
-
-            </div>
-
-        `;
-
-    }
 
 }
 
 
-/* ==========================================
-   GET ERROR NAME
-========================================== */
+/* =========================================
+   DETERMINE YAML FILE
+========================================= */
 
-function getDescription(code) {
+function getDatabaseFile(code) {
 
-    if (!Array.isArray(codesDatabase)) {
+    const prefix =
+        code.charAt(0);
 
-        return "OBD-II Diagnostic Trouble Code";
-
-    }
-
-
-    const item =
-        codesDatabase.find(function(row) {
-
-            if (!row || !row.Code) {
-                return false;
-            }
-
-            return normalizeCode(row.Code) === code;
-
-        });
+    const firstDigit =
+        code.charAt(1);
 
 
-    if (item && item.Description) {
-
-        return item.Description;
-
-    }
-
-
-    return "OBD-II Diagnostic Trouble Code";
+    return (
+        "data/generic/" +
+        prefix +
+        firstDigit +
+        "xxx_enriched.yaml"
+    );
 
 }
 
 
-/* ==========================================
-   DIRECT DIAGNOSTIC LOOKUP
-========================================== */
-
-function getDiagnostic(code) {
-
-    /*
-       DIRECT lookup.
-       No generic database.
-    */
-
-    if (
-        diagnosticDatabase &&
-        diagnosticDatabase[code]
-    ) {
-
-        return diagnosticDatabase[code];
-
-    }
-
-
-    /*
-       Secondary case-insensitive lookup.
-    */
-
-    const keys =
-        Object.keys(
-            diagnosticDatabase || {}
-        );
-
-
-    for (const key of keys) {
-
-        if (
-            String(key).toUpperCase() === code
-        ) {
-
-            return diagnosticDatabase[key];
-
-        }
-
-    }
-
-
-    return null;
-}
-
-
-/* ==========================================
-   HTML ESCAPE
-========================================== */
+/* =========================================
+   ESCAPE HTML
+========================================= */
 
 function escapeHTML(value) {
 
@@ -513,24 +341,72 @@ function escapeHTML(value) {
 }
 
 
-/* ==========================================
-   CREATE LIST
-========================================== */
+/* =========================================
+   CONVERT VALUE TO LIST
+========================================= */
 
-function createList(items) {
+function toArray(value) {
 
-    if (
-        !Array.isArray(items) ||
-        items.length === 0
-    ) {
+    if (Array.isArray(value)) {
 
-        return "<li>No information available.</li>";
+        return value;
+
+    }
+
+    if (value === undefined || value === null) {
+
+        return [];
+
+    }
+
+    return [value];
+
+}
+
+
+/* =========================================
+   CREATE LIST HTML
+========================================= */
+
+function makeList(value) {
+
+    const items =
+        toArray(value);
+
+
+    if (!items.length) {
+
+        return `
+            <li>
+                No information available.
+            </li>
+        `;
 
     }
 
 
     return items
         .map(function(item) {
+
+            /*
+               YAML can contain objects.
+               Convert them safely to text.
+            */
+
+            if (
+                typeof item === "object"
+            ) {
+
+                return `
+                    <li>
+                        ${escapeHTML(
+                            JSON.stringify(item)
+                        )}
+                    </li>
+                `;
+
+            }
+
 
             return `
                 <li>
@@ -544,16 +420,145 @@ function createList(items) {
 }
 
 
-/* ==========================================
-   DECODE CODE
-========================================== */
+/* =========================================
+   FIND CODE INSIDE YAML
+========================================= */
 
-function decodeCode() {
+function findCode(data, code) {
+
+    if (!data) {
+
+        return null;
+
+    }
+
+
+    /*
+       Case 1:
+       YAML root is an object:
+
+       P0001:
+         ...
+
+    */
+
+    if (
+        typeof data === "object" &&
+        !Array.isArray(data)
+    ) {
+
+        if (data[code]) {
+
+            return data[code];
+
+        }
+
+
+        /*
+           Case-insensitive search
+        */
+
+        const keys =
+            Object.keys(data);
+
+
+        for (const key of keys) {
+
+            if (
+                String(key).toUpperCase() === code
+            ) {
+
+                return data[key];
+
+            }
+
+        }
+
+    }
+
+
+    /*
+       Case 2:
+       YAML contains an array
+       of objects.
+
+    */
+
+    if (Array.isArray(data)) {
+
+        for (const item of data) {
+
+            if (!item) continue;
+
+
+            if (
+                item.code &&
+                String(item.code)
+                    .toUpperCase() === code
+            ) {
+
+                return item;
+
+            }
+
+
+            if (
+                item.Code &&
+                String(item.Code)
+                    .toUpperCase() === code
+            ) {
+
+                return item;
+
+            }
+
+        }
+
+    }
+
+
+    return null;
+
+}
+
+
+/* =========================================
+   FIND DESCRIPTION
+========================================= */
+
+function getDescription(item) {
+
+    if (!item) {
+
+        return "OBD-II Diagnostic Trouble Code";
+
+    }
+
+
+    return (
+        item.description ||
+        item.Description ||
+        item.name ||
+        item.Name ||
+        item.title ||
+        item.Title ||
+        "OBD-II Diagnostic Trouble Code"
+    );
+
+}
+
+
+/* =========================================
+   DECODE
+========================================= */
+
+async function decodeCode() {
 
     const input =
         document
             .getElementById("codeInput")
             .value;
+
 
     const code =
         normalizeCode(input);
@@ -583,37 +588,147 @@ function decodeCode() {
     }
 
 
-    /*
-       Display normalized code.
-    */
-
     document
         .getElementById("codeInput")
         .value = code;
 
 
-    /*
-       DIRECT lookup in Diagnostic.json.
-    */
-
-    const diagnostic =
-        getDiagnostic(code);
+    const databaseFile =
+        getDatabaseFile(code);
 
 
-    /*
-       Description comes from Codes.json.
-    */
+    result.innerHTML = `
 
-    const description =
-        getDescription(code);
+        <div class="loading">
+            Loading ${escapeHTML(code)}...
+        </div>
+
+    `;
 
 
-    /*
-       If diagnostic data exists,
-       display ONLY that data.
-    */
+    try {
 
-    if (diagnostic) {
+        /*
+           Load the appropriate YAML file.
+        */
+
+        const response =
+            await fetch(databaseFile);
+
+
+        if (!response.ok) {
+
+            throw new Error(
+                "Could not load " +
+                databaseFile +
+                " (" +
+                response.status +
+                ")"
+            );
+
+        }
+
+
+        const yamlText =
+            await response.text();
+
+
+        /*
+           Parse YAML.
+        */
+
+        const data =
+            jsyaml.load(yamlText);
+
+
+        /*
+           Find exact DTC.
+        */
+
+        const item =
+            findCode(
+                data,
+                code
+            );
+
+
+        if (!item) {
+
+            result.innerHTML = `
+
+                <div class="error">
+
+                    <h2>
+                        ${escapeHTML(code)}
+                    </h2>
+
+                    <p>
+                        Code not found in
+                        ${escapeHTML(databaseFile)}
+                    </p>
+
+                </div>
+
+            `;
+
+            return;
+
+        }
+
+
+        /*
+           Extract fields.
+        */
+
+        const description =
+            getDescription(item);
+
+
+        const symptoms =
+            item.symptoms ||
+            item.Symptoms ||
+            item.common_symptoms ||
+            [];
+
+
+        const causes =
+            item.causes ||
+            item.Causes ||
+            [];
+
+
+        const diagnostic =
+            item.diagnostic ||
+            item.diagnostics ||
+            item.Diagnostic ||
+            item.Diagnosis ||
+            [];
+
+
+        const repairs =
+            item.repairs ||
+            item.repair ||
+            item.Repairs ||
+            [];
+
+
+        const severity =
+            item.severity ||
+            item.Severity ||
+            "Not specified";
+
+
+        const system =
+            item.system ||
+            item.System ||
+            item.category ||
+            item.Category ||
+            "";
+
+
+        /*
+           DISPLAY
+        */
 
         result.innerHTML = `
 
@@ -627,15 +742,25 @@ function decodeCode() {
                     ${escapeHTML(description)}
                 </div>
 
+
                 <div class="badges">
 
                     <span class="badge">
                         Severity:
-                        ${escapeHTML(
-                            diagnostic.severity ||
-                            "Not specified"
-                        )}
+                        ${escapeHTML(severity)}
                     </span>
+
+                    ${
+                        system
+                        ?
+                        `
+                        <span class="badge">
+                            ${escapeHTML(system)}
+                        </span>
+                        `
+                        :
+                        ""
+                    }
 
                 </div>
 
@@ -652,9 +777,7 @@ function decodeCode() {
                     </h3>
 
                     <ul>
-                        ${createList(
-                            diagnostic.symptoms
-                        )}
+                        ${makeList(symptoms)}
                     </ul>
 
                 </div>
@@ -667,9 +790,7 @@ function decodeCode() {
                     </h3>
 
                     <ul>
-                        ${createList(
-                            diagnostic.causes
-                        )}
+                        ${makeList(causes)}
                     </ul>
 
                 </div>
@@ -682,9 +803,7 @@ function decodeCode() {
                     </h3>
 
                     <ul>
-                        ${createList(
-                            diagnostic.diagnostic
-                        )}
+                        ${makeList(diagnostic)}
                     </ul>
 
                 </div>
@@ -697,9 +816,7 @@ function decodeCode() {
                     </h3>
 
                     <ul>
-                        ${createList(
-                            diagnostic.repairs
-                        )}
+                        ${makeList(repairs)}
                     </ul>
 
                 </div>
@@ -709,81 +826,38 @@ function decodeCode() {
 
         `;
 
-        return;
 
     }
 
+    catch(error) {
 
-    /*
-       If the code is NOT in Diagnostic.json,
-       do NOT invent generic information.
-    */
+        console.error(error);
 
-    if (description !== "OBD-II Diagnostic Trouble Code") {
 
         result.innerHTML = `
 
-            <div class="result-header">
+            <div class="error">
 
-                <div class="code">
-                    ${escapeHTML(code)}
-                </div>
+                <h2>
+                    Database error
+                </h2>
 
-                <div class="description">
-                    ${escapeHTML(description)}
-                </div>
-
-            </div>
-
-            <div class="card">
-
-                <h3>
-                    Diagnostic information
-                </h3>
-
-                <p style="
-                    color:#9da7b2;
-                    line-height:1.7;
-                ">
-                    Detailed diagnostic information
-                    is not available for this code yet.
+                <p>
+                    ${escapeHTML(error.message)}
                 </p>
 
             </div>
 
         `;
 
-        return;
-
     }
-
-
-    /*
-       Nothing found.
-    */
-
-    result.innerHTML = `
-
-        <div class="error">
-
-            <h2>
-                ${escapeHTML(code)}
-            </h2>
-
-            <p>
-                Code not found in the database.
-            </p>
-
-        </div>
-
-    `;
 
 }
 
 
-/* ==========================================
+/* =========================================
    ENTER KEY
-========================================== */
+========================================= */
 
 document
     .getElementById("codeInput")
@@ -801,11 +875,30 @@ document
     );
 
 
-/* ==========================================
-   START
-========================================== */
+/* =========================================
+   URL CODE
+========================================= */
 
-loadDatabase();
+const params =
+    new URLSearchParams(
+        window.location.search
+    );
+
+
+const urlCode =
+    params.get("code");
+
+
+if (urlCode) {
+
+    document
+        .getElementById("codeInput")
+        .value =
+        normalizeCode(urlCode);
+
+    decodeCode();
+
+}
 
 </script>
 
