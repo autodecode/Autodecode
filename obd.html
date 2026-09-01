@@ -43,17 +43,57 @@ header {
     color: #4da3ff;
 }
 
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
 header a {
     color: #9da5b0;
     text-decoration: none;
     font-size: 14px;
 }
 
+header a:hover {
+    color: white;
+}
+
+
+/* LANGUAGE */
+
+.language-select {
+    background: #14181d;
+    border: 1px solid #303842;
+    color: #dce2e8;
+    border-radius: 8px;
+    padding: 7px 10px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+}
+
+.language-select:focus {
+    border-color: #4da3ff;
+}
+
+.language-select option {
+    background: #14181d;
+    color: white;
+}
+
+
+/* CONTAINER */
+
 .container {
     max-width: 1000px;
     margin: auto;
     padding: 45px 20px 80px;
 }
+
+
+/* SEARCH */
 
 .search {
     display: flex;
@@ -90,6 +130,9 @@ button {
 button:hover {
     background: #78baff;
 }
+
+
+/* RESULT HEADER */
 
 .result-header {
     background: #12161b;
@@ -135,6 +178,9 @@ button:hover {
     font-size: 12px;
 }
 
+
+/* GRID */
+
 .grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -174,6 +220,9 @@ button:hover {
     line-height: 1.7;
 }
 
+
+/* CAUSES */
+
 .cause {
     margin-bottom: 14px;
 }
@@ -194,6 +243,9 @@ button:hover {
     font-size: 14px;
 }
 
+
+/* COMPONENTS */
+
 .component {
     display: inline-block;
     background: #1b222a;
@@ -204,6 +256,9 @@ button:hover {
     margin: 0 5px 7px 0;
     font-size: 12px;
 }
+
+
+/* REPAIR */
 
 .repair-grid {
     display: grid;
@@ -230,12 +285,18 @@ button:hover {
     font-weight: 600;
 }
 
+
+/* SOURCES */
+
 .source {
     color: #8d98a4;
     font-size: 12px;
     word-break: break-all;
     margin-bottom: 7px;
 }
+
+
+/* ERROR / LOADING */
 
 .error,
 .loading {
@@ -250,7 +311,18 @@ button:hover {
     margin-bottom: 10px;
 }
 
+
+/* MOBILE */
+
 @media(max-width:650px) {
+
+    header {
+        padding: 0 20px;
+    }
+
+    .header-right {
+        gap: 12px;
+    }
 
     .container {
         padding-top: 30px;
@@ -284,6 +356,12 @@ button:hover {
         grid-template-columns: 1fr;
     }
 
+    .language-select {
+        font-size: 11px;
+        padding: 6px 7px;
+        max-width: 82px;
+    }
+
 }
 
 </style>
@@ -300,11 +378,35 @@ button:hover {
         Auto<span>Decode</span>
     </div>
 
-    <a href="index.html">
-        ← Home
-    </a>
+
+    <div class="header-right">
+
+        <a href="index.html" data-i18n="home">
+            ← Home
+        </a>
+
+
+        <select
+            id="languageSelect"
+            class="language-select"
+            onchange="setLanguage(this.value)"
+            aria-label="Language"
+        >
+
+            <option value="en">🇬🇧 EN</option>
+            <option value="de">🇩🇪 DE</option>
+            <option value="ro">🇷🇴 RO</option>
+            <option value="fr">🇫🇷 FR</option>
+            <option value="es">🇪🇸 ES</option>
+            <option value="it">🇮🇹 IT</option>
+            <option value="nl">🇳🇱 NL</option>
+
+        </select>
+
+    </div>
 
 </header>
+
 
 
 <div class="container">
@@ -320,7 +422,11 @@ button:hover {
             spellcheck="false"
         >
 
-        <button onclick="decodeCode()">
+
+        <button
+            onclick="decodeCode()"
+            id="decodeButton"
+        >
             Decode
         </button>
 
@@ -329,7 +435,7 @@ button:hover {
 
     <div id="result">
 
-        <div class="loading">
+        <div class="loading" id="initialMessage">
             Enter an OBD-II code.
         </div>
 
@@ -339,7 +445,860 @@ button:hover {
 </div>
 
 
+
 <script>
+
+
+/* =====================================================
+   TRANSLATIONS
+===================================================== */
+
+const translations = {
+
+    en: {
+
+        home: "← Home",
+        decode: "Decode",
+
+        enterCode:
+            "Enter an OBD-II code.",
+
+        loading:
+            "Loading",
+
+        notFound:
+            "This code was not found in",
+
+        databaseError:
+            "Database error",
+
+        enterOBD:
+            "Enter an OBD-II code",
+
+        symptoms:
+            "⚠️ Common Symptoms",
+
+        causes:
+            "🔍 Common Causes",
+
+        components:
+            "🔧 Affected Components",
+
+        repair:
+            "🛠️ Repair Information",
+
+        references:
+            "📚 References",
+
+        sources:
+            "🔗 Sources",
+
+        noSymptoms:
+            "No symptom information available.",
+
+        noCauses:
+            "No cause information available.",
+
+        noComponents:
+            "No affected components listed.",
+
+        noRepair:
+            "No repair information available.",
+
+        difficulty:
+            "Difficulty",
+
+        diy:
+            "DIY Possible",
+
+        cost:
+            "Estimated Cost",
+
+        time:
+            "Estimated Time",
+
+        yes:
+            "Yes",
+
+        no:
+            "No",
+
+        notSpecified:
+            "Not specified",
+
+        hours:
+            "hours",
+
+        emissions:
+            "Emissions",
+
+        relevant:
+            "Relevant",
+
+        notRelevant:
+            "Not relevant"
+
+    },
+
+
+    de: {
+
+        home: "← Startseite",
+        decode: "Suchen",
+
+        enterCode:
+            "OBD-II-Code eingeben.",
+
+        loading:
+            "Wird geladen",
+
+        notFound:
+            "Dieser Code wurde nicht gefunden in",
+
+        databaseError:
+            "Datenbankfehler",
+
+        enterOBD:
+            "OBD-II-Code eingeben",
+
+        symptoms:
+            "⚠️ Häufige Symptome",
+
+        causes:
+            "🔍 Häufige Ursachen",
+
+        components:
+            "🔧 Betroffene Komponenten",
+
+        repair:
+            "🛠️ Reparaturinformationen",
+
+        references:
+            "📚 Referenzen",
+
+        sources:
+            "🔗 Quellen",
+
+        noSymptoms:
+            "Keine Informationen zu den Symptomen verfügbar.",
+
+        noCauses:
+            "Keine Informationen zu den Ursachen verfügbar.",
+
+        noComponents:
+            "Keine betroffenen Komponenten angegeben.",
+
+        noRepair:
+            "Keine Reparaturinformationen verfügbar.",
+
+        difficulty:
+            "Schwierigkeit",
+
+        diy:
+            "Selbstreparatur möglich",
+
+        cost:
+            "Geschätzte Kosten",
+
+        time:
+            "Geschätzte Zeit",
+
+        yes:
+            "Ja",
+
+        no:
+            "Nein",
+
+        notSpecified:
+            "Nicht angegeben",
+
+        hours:
+            "Stunden",
+
+        emissions:
+            "Emissionen",
+
+        relevant:
+            "Relevant",
+
+        notRelevant:
+            "Nicht relevant"
+
+    },
+
+
+    ro: {
+
+        home: "← Acasă",
+        decode: "Decodează",
+
+        enterCode:
+            "Introdu un cod OBD-II.",
+
+        loading:
+            "Se încarcă",
+
+        notFound:
+            "Acest cod nu a fost găsit în",
+
+        databaseError:
+            "Eroare bază de date",
+
+        enterOBD:
+            "Introdu un cod OBD-II",
+
+        symptoms:
+            "⚠️ Simptome frecvente",
+
+        causes:
+            "🔍 Cauze frecvente",
+
+        components:
+            "🔧 Componente afectate",
+
+        repair:
+            "🛠️ Informații despre reparație",
+
+        references:
+            "📚 Referințe",
+
+        sources:
+            "🔗 Surse",
+
+        noSymptoms:
+            "Nu sunt disponibile informații despre simptome.",
+
+        noCauses:
+            "Nu sunt disponibile informații despre cauze.",
+
+        noComponents:
+            "Nu sunt listate componente afectate.",
+
+        noRepair:
+            "Nu sunt disponibile informații despre reparație.",
+
+        difficulty:
+            "Dificultate",
+
+        diy:
+            "Reparație DIY posibilă",
+
+        cost:
+            "Cost estimat",
+
+        time:
+            "Timp estimat",
+
+        yes:
+            "Da",
+
+        no:
+            "Nu",
+
+        notSpecified:
+            "Nespecificat",
+
+        hours:
+            "ore",
+
+        emissions:
+            "Emisii",
+
+        relevant:
+            "Relevant",
+
+        notRelevant:
+            "Nerelevant"
+
+    },
+
+
+    fr: {
+
+        home: "← Accueil",
+        decode: "Décoder",
+
+        enterCode:
+            "Entrez un code OBD-II.",
+
+        loading:
+            "Chargement",
+
+        notFound:
+            "Ce code n'a pas été trouvé dans",
+
+        databaseError:
+            "Erreur de base de données",
+
+        enterOBD:
+            "Entrez un code OBD-II",
+
+        symptoms:
+            "⚠️ Symptômes courants",
+
+        causes:
+            "🔍 Causes courantes",
+
+        components:
+            "🔧 Composants concernés",
+
+        repair:
+            "🛠️ Informations de réparation",
+
+        references:
+            "📚 Références",
+
+        sources:
+            "🔗 Sources",
+
+        noSymptoms:
+            "Aucune information sur les symptômes disponible.",
+
+        noCauses:
+            "Aucune information sur les causes disponible.",
+
+        noComponents:
+            "Aucun composant concerné indiqué.",
+
+        noRepair:
+            "Aucune information de réparation disponible.",
+
+        difficulty:
+            "Difficulté",
+
+        diy:
+            "Réparation DIY possible",
+
+        cost:
+            "Coût estimé",
+
+        time:
+            "Temps estimé",
+
+        yes:
+            "Oui",
+
+        no:
+            "Non",
+
+        notSpecified:
+            "Non spécifié",
+
+        hours:
+            "heures",
+
+        emissions:
+            "Émissions",
+
+        relevant:
+            "Pertinent",
+
+        notRelevant:
+            "Non pertinent"
+
+    },
+
+
+    es: {
+
+        home: "← Inicio",
+        decode: "Decodificar",
+
+        enterCode:
+            "Introduce un código OBD-II.",
+
+        loading:
+            "Cargando",
+
+        notFound:
+            "Este código no se encontró en",
+
+        databaseError:
+            "Error de base de datos",
+
+        enterOBD:
+            "Introduce un código OBD-II",
+
+        symptoms:
+            "⚠️ Síntomas comunes",
+
+        causes:
+            "🔍 Causas comunes",
+
+        components:
+            "🔧 Componentes afectados",
+
+        repair:
+            "🛠️ Información de reparación",
+
+        references:
+            "📚 Referencias",
+
+        sources:
+            "🔗 Fuentes",
+
+        noSymptoms:
+            "No hay información disponible sobre los síntomas.",
+
+        noCauses:
+            "No hay información disponible sobre las causas.",
+
+        noComponents:
+            "No se indican componentes afectados.",
+
+        noRepair:
+            "No hay información disponible sobre la reparación.",
+
+        difficulty:
+            "Dificultad",
+
+        diy:
+            "Reparación DIY posible",
+
+        cost:
+            "Coste estimado",
+
+        time:
+            "Tiempo estimado",
+
+        yes:
+            "Sí",
+
+        no:
+            "No",
+
+        notSpecified:
+            "No especificado",
+
+        hours:
+            "horas",
+
+        emissions:
+            "Emisiones",
+
+        relevant:
+            "Relevante",
+
+        notRelevant:
+            "No relevante"
+
+    },
+
+
+    it: {
+
+        home: "← Home",
+        decode: "Decodifica",
+
+        enterCode:
+            "Inserisci un codice OBD-II.",
+
+        loading:
+            "Caricamento",
+
+        notFound:
+            "Questo codice non è stato trovato in",
+
+        databaseError:
+            "Errore del database",
+
+        enterOBD:
+            "Inserisci un codice OBD-II",
+
+        symptoms:
+            "⚠️ Sintomi comuni",
+
+        causes:
+            "🔍 Cause comuni",
+
+        components:
+            "🔧 Componenti interessati",
+
+        repair:
+            "🛠️ Informazioni sulla riparazione",
+
+        references:
+            "📚 Riferimenti",
+
+        sources:
+            "🔗 Fonti",
+
+        noSymptoms:
+            "Nessuna informazione sui sintomi disponibile.",
+
+        noCauses:
+            "Nessuna informazione sulle cause disponibile.",
+
+        noComponents:
+            "Nessun componente interessato indicato.",
+
+        noRepair:
+            "Nessuna informazione sulla riparazione disponibile.",
+
+        difficulty:
+            "Difficoltà",
+
+        diy:
+            "Riparazione fai da te possibile",
+
+        cost:
+            "Costo stimato",
+
+        time:
+            "Tempo stimato",
+
+        yes:
+            "Sì",
+
+        no:
+            "No",
+
+        notSpecified:
+            "Non specificato",
+
+        hours:
+            "ore",
+
+        emissions:
+            "Emissioni",
+
+        relevant:
+            "Rilevante",
+
+        notRelevant:
+            "Non rilevante"
+
+    },
+
+
+    nl: {
+
+        home: "← Home",
+        decode: "Decoderen",
+
+        enterCode:
+            "Voer een OBD-II-code in.",
+
+        loading:
+            "Laden",
+
+        notFound:
+            "Deze code is niet gevonden in",
+
+        databaseError:
+            "Databasefout",
+
+        enterOBD:
+            "Voer een OBD-II-code in",
+
+        symptoms:
+            "⚠️ Veelvoorkomende symptomen",
+
+        causes:
+            "🔍 Veelvoorkomende oorzaken",
+
+        components:
+            "🔧 Betrokken componenten",
+
+        repair:
+            "🛠️ Reparatie-informatie",
+
+        references:
+            "📚 Referenties",
+
+        sources:
+            "🔗 Bronnen",
+
+        noSymptoms:
+            "Geen informatie over symptomen beschikbaar.",
+
+        noCauses:
+            "Geen informatie over oorzaken beschikbaar.",
+
+        noComponents:
+            "Geen betrokken componenten vermeld.",
+
+        noRepair:
+            "Geen reparatie-informatie beschikbaar.",
+
+        difficulty:
+            "Moeilijkheid",
+
+        diy:
+            "Zelfreparatie mogelijk",
+
+        cost:
+            "Geschatte kosten",
+
+        time:
+            "Geschatte tijd",
+
+        yes:
+            "Ja",
+
+        no:
+            "Nee",
+
+        notSpecified:
+            "Niet gespecificeerd",
+
+        hours:
+            "uur",
+
+        emissions:
+            "Emissies",
+
+        relevant:
+            "Relevant",
+
+        notRelevant:
+            "Niet relevant"
+
+    }
+
+};
+
+
+/* =====================================================
+   CURRENT LANGUAGE
+===================================================== */
+
+let currentLanguage =
+    localStorage.getItem(
+        "autodecode_language"
+    ) || "en";
+
+
+if (!translations[currentLanguage]) {
+
+    currentLanguage = "en";
+
+}
+
+
+/* =====================================================
+   UI TRANSLATION
+===================================================== */
+
+function t(key) {
+
+    if (
+        translations[currentLanguage] &&
+        translations[currentLanguage][key]
+    ) {
+
+        return translations[currentLanguage][key];
+
+    }
+
+
+    return translations.en[key] || key;
+
+}
+
+
+/* =====================================================
+   YAML LOCALIZED TEXT
+   SELECTED LANGUAGE → EN FALLBACK
+===================================================== */
+
+function localized(value) {
+
+    if (
+        value === null ||
+        value === undefined
+    ) {
+
+        return "";
+
+    }
+
+
+    /*
+       Normal string
+    */
+
+    if (
+        typeof value !== "object" ||
+        Array.isArray(value)
+    ) {
+
+        return String(value);
+
+    }
+
+
+    /*
+       Selected language
+    */
+
+    if (
+        value[currentLanguage] !== undefined &&
+        value[currentLanguage] !== null &&
+        String(value[currentLanguage]).trim() !== ""
+    ) {
+
+        return String(
+            value[currentLanguage]
+        );
+
+    }
+
+
+    /*
+       English fallback
+    */
+
+    if (
+        value.en !== undefined &&
+        value.en !== null
+    ) {
+
+        return String(value.en);
+
+    }
+
+
+    /*
+       Last available language
+    */
+
+    for (
+        const key of Object.keys(value)
+    ) {
+
+        if (
+            value[key] !== undefined &&
+            value[key] !== null &&
+            String(value[key]).trim() !== ""
+        ) {
+
+            return String(value[key]);
+
+        }
+
+    }
+
+
+    return "";
+
+}
+
+
+/* =====================================================
+   SET LANGUAGE
+===================================================== */
+
+function setLanguage(language) {
+
+    if (!translations[language]) {
+
+        language = "en";
+
+    }
+
+
+    currentLanguage =
+        language;
+
+
+    localStorage.setItem(
+        "autodecode_language",
+        language
+    );
+
+
+    document.documentElement.lang =
+        language;
+
+
+    const selector =
+        document.getElementById(
+            "languageSelect"
+        );
+
+
+    if (selector) {
+
+        selector.value =
+            language;
+
+    }
+
+
+    /*
+       Translate static interface
+    */
+
+    document
+        .querySelectorAll("[data-i18n]")
+        .forEach(function(element) {
+
+            const key =
+                element.getAttribute(
+                    "data-i18n"
+                );
+
+
+            element.textContent =
+                t(key);
+
+        });
+
+
+    /*
+       Translate input placeholder
+    */
+
+    const input =
+        document.getElementById(
+            "codeInput"
+        );
+
+
+    if (input) {
+
+        const placeholders = {
+
+            en: "Enter OBD-II code (e.g. P0001)",
+
+            de: "OBD-II-Code eingeben (z. B. P0001)",
+
+            ro: "Introdu codul OBD-II (ex. P0001)",
+
+            fr: "Entrez le code OBD-II (ex. P0001)",
+
+            es: "Introduce el código OBD-II (ej. P0001)",
+
+            it: "Inserisci il codice OBD-II (es. P0001)",
+
+            nl: "Voer OBD-II-code in (bijv. P0001)"
+
+        };
+
+
+        input.placeholder =
+            placeholders[language] ||
+            placeholders.en;
+
+    }
+
+
+    /*
+       If a code is already displayed,
+       redraw it in the new language.
+    */
+
+    if (currentDTC) {
+
+        renderDTC(
+            currentDTC,
+            currentDTCCode
+        );
+
+    }
+
+}
 
 
 /* =====================================================
@@ -348,10 +1307,11 @@ button:hover {
 
 function normalizeCode(value) {
 
-    let code = String(value || "")
-        .trim()
-        .toUpperCase()
-        .replace(/\s+/g, "");
+    let code =
+        String(value || "")
+            .trim()
+            .toUpperCase()
+            .replace(/\s+/g, "");
 
 
     /*
@@ -433,12 +1393,13 @@ function escapeHTML(value) {
 function findDTC(data, code) {
 
     /*
-       OBDex enriched YAML is an ARRAY:
+       YAML structure:
 
        - code: B0001
          category: body
          title:
            en: ...
+           de: ...
     */
 
     if (!Array.isArray(data)) {
@@ -484,6 +1445,7 @@ function asArray(value) {
 
     }
 
+
     if (
         value === undefined ||
         value === null
@@ -493,35 +1455,8 @@ function asArray(value) {
 
     }
 
+
     return [value];
-
-}
-
-
-/* =====================================================
-   GET ENGLISH TEXT
-===================================================== */
-
-function english(value) {
-
-    if (!value) {
-
-        return "";
-
-    }
-
-
-    if (
-        typeof value === "object" &&
-        value.en
-    ) {
-
-        return value.en;
-
-    }
-
-
-    return String(value);
 
 }
 
@@ -540,7 +1475,9 @@ function renderSymptoms(symptoms) {
 
         return `
             <li>
-                No symptom information available.
+                ${escapeHTML(
+                    t("noSymptoms")
+                )}
             </li>
         `;
 
@@ -553,7 +1490,7 @@ function renderSymptoms(symptoms) {
             return `
                 <li>
                     ${escapeHTML(
-                        english(item)
+                        localized(item)
                     )}
                 </li>
             `;
@@ -578,7 +1515,9 @@ function renderCauses(causes) {
 
         return `
             <div class="description-box">
-                No cause information available.
+                ${escapeHTML(
+                    t("noCauses")
+                )}
             </div>
         `;
 
@@ -588,15 +1527,25 @@ function renderCauses(causes) {
     return list
         .map(function(cause) {
 
+
+            /*
+               Simple string cause
+            */
+
             if (
-                typeof cause !== "object"
+                typeof cause !== "object" ||
+                cause === null
             ) {
 
                 return `
                     <div class="cause">
+
                         <span class="cause-label">
-                            ${escapeHTML(cause)}
+                            ${escapeHTML(
+                                String(cause)
+                            )}
                         </span>
+
                     </div>
                 `;
 
@@ -609,8 +1558,8 @@ function renderCauses(causes) {
 
             const label =
                 cause.label
-                ? english(cause.label)
-                : "";
+                ? localized(cause.label)
+                : localized(cause);
 
 
             return `
@@ -621,7 +1570,9 @@ function renderCauses(causes) {
                         ?
                         `
                         <span class="likelihood">
-                            ${escapeHTML(likelihood)}
+                            ${escapeHTML(
+                                likelihood
+                            )}
                         </span>
                         `
                         :
@@ -655,7 +1606,9 @@ function renderComponents(components) {
 
         return `
             <div class="description-box">
-                No affected components listed.
+                ${escapeHTML(
+                    t("noComponents")
+                )}
             </div>
         `;
 
@@ -690,14 +1643,17 @@ function renderRepair(repair) {
 
         return `
             <div class="description-box">
-                No repair information available.
+                ${escapeHTML(
+                    t("noRepair")
+                )}
             </div>
         `;
 
     }
 
 
-    let cost = "Not specified";
+    let cost =
+        t("notSpecified");
 
 
     if (
@@ -715,7 +1671,8 @@ function renderRepair(repair) {
     }
 
 
-    let hours = "Not specified";
+    let hours =
+        t("notSpecified");
 
 
     if (
@@ -728,33 +1685,37 @@ function renderRepair(repair) {
             repair.estimated_hours[0] +
             " – " +
             repair.estimated_hours[1] +
-            " hours";
+            " " +
+            t("hours");
 
     }
 
 
     const diy =
         repair.diy_possible === true
-            ? "Yes"
+            ? t("yes")
             : repair.diy_possible === false
-                ? "No"
-                : "Not specified";
+                ? t("no")
+                : t("notSpecified");
 
 
     return `
 
         <div class="repair-grid">
 
+
             <div class="repair-item">
 
                 <div class="repair-label">
-                    Difficulty
+                    ${escapeHTML(
+                        t("difficulty")
+                    )}
                 </div>
 
                 <div class="repair-value">
                     ${escapeHTML(
                         repair.difficulty ||
-                        "Not specified"
+                        t("notSpecified")
                     )}
                 </div>
 
@@ -764,11 +1725,13 @@ function renderRepair(repair) {
             <div class="repair-item">
 
                 <div class="repair-label">
-                    DIY Possible
+                    ${escapeHTML(
+                        t("diy")
+                    )}
                 </div>
 
                 <div class="repair-value">
-                    ${diy}
+                    ${escapeHTML(diy)}
                 </div>
 
             </div>
@@ -777,7 +1740,9 @@ function renderRepair(repair) {
             <div class="repair-item">
 
                 <div class="repair-label">
-                    Estimated Cost
+                    ${escapeHTML(
+                        t("cost")
+                    )}
                 </div>
 
                 <div class="repair-value">
@@ -790,7 +1755,9 @@ function renderRepair(repair) {
             <div class="repair-item">
 
                 <div class="repair-label">
-                    Estimated Time
+                    ${escapeHTML(
+                        t("time")
+                    )}
                 </div>
 
                 <div class="repair-value">
@@ -798,6 +1765,7 @@ function renderRepair(repair) {
                 </div>
 
             </div>
+
 
         </div>
 
@@ -827,10 +1795,18 @@ function renderFlags(flags) {
     ) {
 
         html += `
+
             <span class="badge">
+
                 MIL:
-                ${flags.mil ? "Yes" : "No"}
+                ${
+                    flags.mil
+                    ? t("yes")
+                    : t("no")
+                }
+
             </span>
+
         `;
 
     }
@@ -841,14 +1817,21 @@ function renderFlags(flags) {
     ) {
 
         html += `
+
             <span class="badge">
-                Emissions:
+
+                ${escapeHTML(
+                    t("emissions")
+                )}:
+
                 ${
                     flags.emissions_relevant
-                    ? "Relevant"
-                    : "Not relevant"
+                    ? t("relevant")
+                    : t("notRelevant")
                 }
+
             </span>
+
         `;
 
     }
@@ -881,8 +1864,11 @@ function renderReferences(references) {
         <div class="card full">
 
             <h3>
-                📚 References
+                ${escapeHTML(
+                    t("references")
+                )}
             </h3>
+
 
             <ul>
 
@@ -931,8 +1917,11 @@ function renderSources(sources) {
         <div class="card full">
 
             <h3>
-                🔗 Sources
+                ${escapeHTML(
+                    t("sources")
+                )}
             </h3>
+
 
             ${
                 list
@@ -947,6 +1936,192 @@ function renderSources(sources) {
                     })
                     .join("")
             }
+
+        </div>
+
+    `;
+
+}
+
+
+/* =====================================================
+   CURRENT DTC
+===================================================== */
+
+let currentDTC = null;
+
+let currentDTCCode = "";
+
+
+/* =====================================================
+   RENDER DTC
+===================================================== */
+
+function renderDTC(dtc, code) {
+
+    currentDTC =
+        dtc;
+
+    currentDTCCode =
+        code;
+
+
+    const title =
+        localized(dtc.title);
+
+
+    const description =
+        localized(dtc.description);
+
+
+    const category =
+        dtc.category || "";
+
+
+    const symptoms =
+        dtc.symptoms || [];
+
+
+    const causes =
+        dtc.common_causes || [];
+
+
+    const components =
+        dtc.affected_components || [];
+
+
+    const repair =
+        dtc.repair || null;
+
+
+    const flags =
+        dtc.flags || null;
+
+
+    const result =
+        document.getElementById(
+            "result"
+        );
+
+
+    result.innerHTML = `
+
+        <div class="result-header">
+
+
+            <div class="code">
+                ${escapeHTML(code)}
+            </div>
+
+
+            <div class="title">
+                ${escapeHTML(title)}
+            </div>
+
+
+            ${
+                description
+                ?
+                `
+                <div class="description">
+                    ${escapeHTML(description)}
+                </div>
+                `
+                :
+                ""
+            }
+
+
+            <div class="badges">
+
+                ${
+                    category
+                    ?
+                    `
+                    <span class="badge">
+                        ${escapeHTML(category)}
+                    </span>
+                    `
+                    :
+                    ""
+                }
+
+                ${renderFlags(flags)}
+
+            </div>
+
+
+        </div>
+
+
+        <div class="grid">
+
+
+            <div class="card">
+
+                <h3>
+                    ${escapeHTML(
+                        t("symptoms")
+                    )}
+                </h3>
+
+                <ul>
+                    ${renderSymptoms(symptoms)}
+                </ul>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>
+                    ${escapeHTML(
+                        t("causes")
+                    )}
+                </h3>
+
+                ${renderCauses(causes)}
+
+            </div>
+
+
+            <div class="card full">
+
+                <h3>
+                    ${escapeHTML(
+                        t("components")
+                    )}
+                </h3>
+
+                <div>
+                    ${renderComponents(components)}
+                </div>
+
+            </div>
+
+
+            <div class="card full">
+
+                <h3>
+                    ${escapeHTML(
+                        t("repair")
+                    )}
+                </h3>
+
+                ${renderRepair(repair)}
+
+            </div>
+
+
+            ${renderReferences(
+                dtc.references
+            )}
+
+
+            ${renderSources(
+                dtc.sources
+            )}
+
 
         </div>
 
@@ -983,7 +2158,9 @@ async function decodeCode() {
             <div class="error">
 
                 <h2>
-                    Enter an OBD-II code
+                    ${escapeHTML(
+                        t("enterOBD")
+                    )}
                 </h2>
 
             </div>
@@ -1008,7 +2185,10 @@ async function decodeCode() {
 
         <div class="loading">
 
-            Loading
+            ${escapeHTML(
+                t("loading")
+            )}
+
             <strong>
                 ${escapeHTML(code)}
             </strong>...
@@ -1020,8 +2200,9 @@ async function decodeCode() {
 
     try {
 
+
         /*
-           Load OBDex YAML.
+           Load YAML
         */
 
         const response =
@@ -1046,15 +2227,17 @@ async function decodeCode() {
 
 
         /*
-           Parse YAML.
+           Parse YAML
         */
 
         const data =
-            jsyaml.load(yamlText);
+            jsyaml.load(
+                yamlText
+            );
 
 
         /*
-           Find exact code.
+           Find exact code
         */
 
         const dtc =
@@ -1075,8 +2258,15 @@ async function decodeCode() {
                     </h2>
 
                     <p>
-                        This code was not found
-                        in ${escapeHTML(file)}.
+
+                        ${escapeHTML(
+                            t("notFound")
+                        )}
+
+                        <br>
+
+                        ${escapeHTML(file)}
+
                     </p>
 
                 </div>
@@ -1088,156 +2278,15 @@ async function decodeCode() {
         }
 
 
-        /* =========================================
-           DATA EXTRACTION
-        ========================================= */
+        /*
+           Render
+        */
 
-        const title =
-            english(dtc.title);
+        renderDTC(
+            dtc,
+            code
+        );
 
-
-        const description =
-            english(dtc.description);
-
-
-        const category =
-            dtc.category || "";
-
-
-        const symptoms =
-            dtc.symptoms || [];
-
-
-        const causes =
-            dtc.common_causes || [];
-
-
-        const components =
-            dtc.affected_components || [];
-
-
-        const repair =
-            dtc.repair || null;
-
-
-        const flags =
-            dtc.flags || null;
-
-
-        /* =========================================
-           DISPLAY
-        ========================================= */
-
-        result.innerHTML = `
-
-            <div class="result-header">
-
-                <div class="code">
-                    ${escapeHTML(code)}
-                </div>
-
-
-                <div class="title">
-                    ${escapeHTML(title)}
-                </div>
-
-
-                ${
-                    description
-                    ?
-                    `
-                    <div class="description">
-                        ${escapeHTML(description)}
-                    </div>
-                    `
-                    :
-                    ""
-                }
-
-
-                <div class="badges">
-
-                    ${
-                        category
-                        ?
-                        `
-                        <span class="badge">
-                            ${escapeHTML(category)}
-                        </span>
-                        `
-                        :
-                        ""
-                    }
-
-                    ${renderFlags(flags)}
-
-                </div>
-
-            </div>
-
-
-            <div class="grid">
-
-
-                <div class="card">
-
-                    <h3>
-                        ⚠️ Common Symptoms
-                    </h3>
-
-                    <ul>
-                        ${renderSymptoms(symptoms)}
-                    </ul>
-
-                </div>
-
-
-                <div class="card">
-
-                    <h3>
-                        🔍 Common Causes
-                    </h3>
-
-                    ${renderCauses(causes)}
-
-                </div>
-
-
-                <div class="card full">
-
-                    <h3>
-                        🔧 Affected Components
-                    </h3>
-
-                    <div>
-                        ${renderComponents(components)}
-                    </div>
-
-                </div>
-
-
-                <div class="card full">
-
-                    <h3>
-                        🛠️ Repair Information
-                    </h3>
-
-                    ${renderRepair(repair)}
-
-                </div>
-
-
-                ${renderReferences(
-                    dtc.references
-                )}
-
-                ${renderSources(
-                    dtc.sources
-                )}
-
-            </div>
-
-        `;
 
     }
 
@@ -1252,7 +2301,9 @@ async function decodeCode() {
             <div class="error">
 
                 <h2>
-                    Database error
+                    ${escapeHTML(
+                        t("databaseError")
+                    )}
                 </h2>
 
                 <p>
@@ -1280,7 +2331,9 @@ document
         "keydown",
         function(event) {
 
-            if (event.key === "Enter") {
+            if (
+                event.key === "Enter"
+            ) {
 
                 decodeCode();
 
@@ -1291,6 +2344,15 @@ document
 
 
 /* =====================================================
+   INITIAL LANGUAGE
+===================================================== */
+
+setLanguage(
+    currentLanguage
+);
+
+
+/* =====================================================
    URL SEARCH
 ===================================================== */
 
@@ -1298,6 +2360,26 @@ const params =
     new URLSearchParams(
         window.location.search
     );
+
+
+const urlLanguage =
+    params.get("lang");
+
+
+/*
+   URL language has priority.
+*/
+
+if (
+    urlLanguage &&
+    translations[urlLanguage]
+) {
+
+    setLanguage(
+        urlLanguage
+    );
+
+}
 
 
 const urlCode =
@@ -1316,6 +2398,7 @@ if (urlCode) {
 }
 
 </script>
+
 
 </body>
 
