@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>OBD Decoder — AutoDecode</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #0b0d10;
+    color: #f2f4f7;
+    min-height: 100vh;
+}
+
+header {
+    height: 72px;
+    border-bottom: 1px solid #20242a;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 6%;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.logo span {
+    color: #4da3ff;
+}
+
+header a {
+    color: #9da5b0;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.container {
+    max-width: 950px;
+    margin: auto;
+    padding: 55px 20px 80px;
+}
+
+.search {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+input {
+    flex: 1;
+    height: 58px;
+    background: #14181d;
+    border: 1px solid #303842;
+    border-radius: 10px;
+    color: white;
+    padding: 0 18px;
+    font-size: 18px;
+    outline: none;
+}
+
+input:focus {
+    border-color: #4da3ff;
+}
+
+button {
+    height: 58px;
+    border: none;
+    background: #4da3ff;
+    padding: 0 28px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #78baff;
+}
+
+.result-header {
+    background: #12161b;
+    border: 1px solid #252c34;
+    border-radius: 14px;
+    padding: 30px;
+    margin-bottom: 15px;
+}
+
+.code {
+    color: #4da3ff;
+    font-size: 44px;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.description {
+    color: #d1d7de;
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+.badges {
+    margin-top: 18px;
+}
+
+.badge {
+    display: inline-block;
+    background: #1b222a;
+    border: 1px solid #303842;
+    color: #c5ccd4;
+    padding: 7px 13px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.card {
+    background: #12161b;
+    border: 1px solid #252c34;
+    border-radius: 14px;
+    padding: 25px;
+}
+
+.card.full {
+    grid-column: 1 / -1;
+}
+
+.card h3 {
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+
+.card ul {
+    padding-left: 20px;
+}
+
+.card li {
+    color: #9da7b2;
+    font-size: 14px;
+    line-height: 1.55;
+    margin-bottom: 9px;
+}
+
+.error,
+.loading {
+    background: #12161b;
+    border: 1px solid #252c34;
+    border-radius: 14px;
+    padding: 35px;
+    text-align: center;
+}
+
+.error h2 {
+    margin-bottom: 10px;
+}
+
+@media (max-width: 650px) {
+
+    .container {
+        padding-top: 35px;
+    }
+
+    .search {
+        flex-direction: column;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card.full {
+        grid-column: auto;
+    }
+
+    .code {
+        font-size: 36px;
+    }
+
+    .description {
+        font-size: 18px;
+    }
+}
+</style>
+
+</head>
+
+
+<body>
+
+<header>
+
+    <div class="logo">
+        Auto<span>Decode</span>
+    </div>
+
+    <a href="index.html">← Home</a>
+
+</header>
+
+
+<div class="container">
+
+    <div class="search">
+
+        <input
+            id="codeInput"
+            type="text"
+            placeholder="Enter OBD-II code (e.g. P0001)"
+            autocomplete="off"
+        >
+
+        <button onclick="decodeCode()">
+            Decode
+        </button>
+
+    </div>
+
+
+    <div id="result">
+
+        <div class="loading">
+            Loading database...
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+let diagnosticDatabase = {};
+let codesDatabase = [];
+
+
+/* ==========================================
+   NORMALIZE INPUT
+========================================== */
+
+function normalizeCode(value) {
+
+    let code = String(value || "")
+        .trim()
+        .toUpperCase()
+        .replace(/\s+/g, "");
+
+    /*
+       0001 -> P0001
+       001  -> P0001
+       P001 -> P0001
+       p0001 -> P0001
+    */
+
+    if (/^\d+$/.test(code)) {
+
+        code =
+            "P" +
+            code.padStart(4, "0");
+
+    }
+
+    else if (/^[PBCU]\d+$/.test(code)) {
+
+        code =
+            code.charAt(0) +
+            code.substring(1).padStart(4, "0");
+
+    }
+
+    return code;
+}
+
+
+/* ==========================================
+   LOAD DATABASE
+========================================== */
+
+async function loadDatabase() {
+
+    const result =
+        document.getElementById("result");
+
+    try {
+
+        /*
+           Load Diagnostic.json directly.
+        */
+
+        const diagnosticResponse =
+            await fetch(
+                "Database/Diagnostic.json"
+            );
+
+        if (!diagnosticResponse.ok) {
+
+            throw new Error(
+                "Diagnostic.json HTTP " +
+                diagnosticResponse.status
+            );
+
+        }
+
+        diagnosticDatabase =
+            await diagnosticResponse.json();
+
+
+        /*
+           Load Codes.json directly.
+           This is only used for the
+           error name/description.
+        */
+
+        try {
+
+            const codesResponse =
+                await fetch(
+                    "Database/Codes.json"
+                );
+
+            if (codesResponse.ok) {
+
+                codesDatabase =
+                    await codesResponse.json();
+
+            }
+
+        }
+
+        catch (e) {
+
+            console.log(
+                "Codes.json could not be loaded."
+            );
+
+        }
+
+
+        result.innerHTML = `
+            <div class="loading">
+                Database loaded.
+                Enter an OBD-II code.
+            </div>
+        `;
+
+
+        /*
+           Automatic code from URL
+        */
+
+        const params =
+            new URLSearchParams(
+                window.location.search
+            );
+
+        const urlCode =
+            params.get("code");
+
+
+        if (urlCode) {
+
+            document
+                .getElementById("codeInput")
+                .value =
+                normalizeCode(urlCode);
+
+            decodeCode();
+
+        }
+
+    }
+
+    catch (error) {
+
+        console.error(error);
+
+        result.innerHTML = `
+
+            <div class="error">
+
+                <h2>
+                    Database unavailable
+                </h2>
+
+                <p>
+                    Could not load Diagnostic.json
+                </p>
+
+            </div>
+
+        `;
+
+    }
+
+}
+
+
+/* ==========================================
+   GET ERROR NAME
+========================================== */
+
+function getDescription(code) {
+
+    if (!Array.isArray(codesDatabase)) {
+
+        return "OBD-II Diagnostic Trouble Code";
+
+    }
+
+
+    const item =
+        codesDatabase.find(function(row) {
+
+            if (!row || !row.Code) {
+                return false;
+            }
+
+            return normalizeCode(row.Code) === code;
+
+        });
+
+
+    if (item && item.Description) {
+
+        return item.Description;
+
+    }
+
+
+    return "OBD-II Diagnostic Trouble Code";
+
+}
+
+
+/* ==========================================
+   DIRECT DIAGNOSTIC LOOKUP
+========================================== */
+
+function getDiagnostic(code) {
+
+    /*
+       DIRECT lookup.
+       No generic database.
+    */
+
+    if (
+        diagnosticDatabase &&
+        diagnosticDatabase[code]
+    ) {
+
+        return diagnosticDatabase[code];
+
+    }
+
+
+    /*
+       Secondary case-insensitive lookup.
+    */
+
+    const keys =
+        Object.keys(
+            diagnosticDatabase || {}
+        );
+
+
+    for (const key of keys) {
+
+        if (
+            String(key).toUpperCase() === code
+        ) {
+
+            return diagnosticDatabase[key];
+
+        }
+
+    }
+
+
+    return null;
+}
+
+
+/* ==========================================
+   HTML ESCAPE
+========================================== */
+
+function escapeHTML(value) {
+
+    return String(value ?? "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+
+}
+
+
+/* ==========================================
+   CREATE LIST
+========================================== */
+
+function createList(items) {
+
+    if (
+        !Array.isArray(items) ||
+        items.length === 0
+    ) {
+
+        return "<li>No information available.</li>";
+
+    }
+
+
+    return items
+        .map(function(item) {
+
+            return `
+                <li>
+                    ${escapeHTML(item)}
+                </li>
+            `;
+
+        })
+        .join("");
+
+}
+
+
+/* ==========================================
+   DECODE CODE
+========================================== */
+
+function decodeCode() {
+
+    const input =
+        document
+            .getElementById("codeInput")
+            .value;
+
+    const code =
+        normalizeCode(input);
+
+
+    const result =
+        document
+            .getElementById("result");
+
+
+    if (!code) {
+
+        result.innerHTML = `
+
+            <div class="error">
+
+                <h2>
+                    Enter an OBD-II code
+                </h2>
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    /*
+       Display normalized code.
+    */
+
+    document
+        .getElementById("codeInput")
+        .value = code;
+
+
+    /*
+       DIRECT lookup in Diagnostic.json.
+    */
+
+    const diagnostic =
+        getDiagnostic(code);
+
+
+    /*
+       Description comes from Codes.json.
+    */
+
+    const description =
+        getDescription(code);
+
+
+    /*
+       If diagnostic data exists,
+       display ONLY that data.
+    */
+
+    if (diagnostic) {
+
+        result.innerHTML = `
+
+            <div class="result-header">
+
+                <div class="code">
+                    ${escapeHTML(code)}
+                </div>
+
+                <div class="description">
+                    ${escapeHTML(description)}
+                </div>
+
+                <div class="badges">
+
+                    <span class="badge">
+                        Severity:
+                        ${escapeHTML(
+                            diagnostic.severity ||
+                            "Not specified"
+                        )}
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="grid">
+
+
+                <div class="card">
+
+                    <h3>
+                        ⚠️ Common Symptoms
+                    </h3>
+
+                    <ul>
+                        ${createList(
+                            diagnostic.symptoms
+                        )}
+                    </ul>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3>
+                        🔍 Possible Causes
+                    </h3>
+
+                    <ul>
+                        ${createList(
+                            diagnostic.causes
+                        )}
+                    </ul>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3>
+                        🛠️ Recommended Checks
+                    </h3>
+
+                    <ul>
+                        ${createList(
+                            diagnostic.diagnostic
+                        )}
+                    </ul>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3>
+                        🔧 Recommended Repairs
+                    </h3>
+
+                    <ul>
+                        ${createList(
+                            diagnostic.repairs
+                        )}
+                    </ul>
+
+                </div>
+
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    /*
+       If the code is NOT in Diagnostic.json,
+       do NOT invent generic information.
+    */
+
+    if (description !== "OBD-II Diagnostic Trouble Code") {
+
+        result.innerHTML = `
+
+            <div class="result-header">
+
+                <div class="code">
+                    ${escapeHTML(code)}
+                </div>
+
+                <div class="description">
+                    ${escapeHTML(description)}
+                </div>
+
+            </div>
+
+            <div class="card">
+
+                <h3>
+                    Diagnostic information
+                </h3>
+
+                <p style="
+                    color:#9da7b2;
+                    line-height:1.7;
+                ">
+                    Detailed diagnostic information
+                    is not available for this code yet.
+                </p>
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    /*
+       Nothing found.
+    */
+
+    result.innerHTML = `
+
+        <div class="error">
+
+            <h2>
+                ${escapeHTML(code)}
+            </h2>
+
+            <p>
+                Code not found in the database.
+            </p>
+
+        </div>
+
+    `;
+
+}
+
+
+/* ==========================================
+   ENTER KEY
+========================================== */
+
+document
+    .getElementById("codeInput")
+    .addEventListener(
+        "keydown",
+        function(event) {
+
+            if (event.key === "Enter") {
+
+                decodeCode();
+
+            }
+
+        }
+    );
+
+
+/* ==========================================
+   START
+========================================== */
+
+loadDatabase();
+
+</script>
+
+</body>
+
+</html>
