@@ -1,0 +1,330 @@
+# AutoDecode Part Finder Database
+# Initial test dataset
+# Structure designed for OEM, aftermarket and vehicle compatibility data.
+
+- id: bosch_0445110259
+
+  part_number: "0445110259"
+
+  manufacturer: Bosch
+
+  type: aftermarket
+
+  category: engine
+
+  subcategory: fuel_injection
+
+  name:
+    en: Diesel Fuel Injector
+    de: Diesel-Einspritzdüse
+    ro: Injector diesel
+    fr: Injecteur diesel
+    es: Inyector diésel
+    it: Iniettore diesel
+    nl: Dieselinjector
+
+  description:
+    en: Common-rail diesel fuel injector.
+    de: Common-Rail-Dieseleinspritzdüse.
+    ro: Injector de combustibil diesel pentru sistem common-rail.
+    fr: Injecteur de carburant diesel à rampe commune.
+    es: Inyector de combustible diésel common-rail.
+    it: Iniettore diesel common-rail.
+    nl: Common-rail dieselinjector.
+
+  oe_numbers:
+
+    - manufacturer: Ford
+      number: "3M5Q-9F593-JA"
+
+    - manufacturer: Peugeot
+      number: "1609849580"
+
+    - manufacturer: Peugeot
+      number: "1980.J3"
+
+    - manufacturer: Volvo
+      number: "30756094"
+
+    - manufacturer: Mazda
+      number: "Y606-13-H50"
+
+    - manufacturer: BMW
+      number: "13537804978"
+
+
+  compatible_vehicles:
+
+    - make: Ford
+      model: Focus
+      generation: Mk2
+      platform: DA
+      body:
+        - hatchback
+        - sedan
+        - wagon
+
+      years:
+        from: 2004
+        to: 2011
+
+      engines:
+
+        - engine: "1.6 TDCi"
+          engine_codes:
+            - G8DA
+            - G8DB
+            - G8DD
+            - G8DE
+            - G8DF
+
+          power_hp:
+            - 90
+            - 100
+            - 109
+
+          fuel: diesel
+
+          injection: common_rail
+
+
+    - make: Ford
+      model: C-Max
+      generation: Mk1
+
+      years:
+        from: 2003
+        to: 2010
+
+      engines:
+
+        - engine: "1.6 TDCi"
+
+          engine_codes:
+            - G8DA
+            - G8DB
+            - G8DD
+
+          power_hp:
+            - 109
+
+          fuel: diesel
+
+          injection: common_rail
+
+
+  equivalents:
+
+    - manufacturer: Bosch
+      part_number: "0986435233"
+      type: remanufactured
+
+    - manufacturer: METZGER
+      part_number: "0870072"
+      type: remanufactured
+
+
+  specifications:
+
+    fuel_type: diesel
+
+    injection_system: common_rail
+
+    component_type: injector
+
+    sealing_ring: included
+
+
+  quantity_per_vehicle: 4
+
+  requires_coding: true
+
+
+  sources:
+
+    - name: Automag
+      url: "https://www.automag.ro/injector/bosch/td0445110259"
+
+    - name: ePiesa
+      url: "https://www.epiesa.ro/"
+
+
+# ==========================================================
+# SECOND TEST PART
+# ==========================================================
+
+- id: bosch_0986435233
+
+  part_number: "0986435233"
+
+  manufacturer: Bosch
+
+  type: remanufactured
+
+  category: engine
+
+  subcategory: fuel_injection
+
+  name:
+    en: Remanufactured Diesel Fuel Injector
+    de: Überholte Diesel-Einspritzdüse
+    ro: Injector diesel recondiționat
+    fr: Injecteur diesel reconditionné
+    es: Inyector diésel reacondicionado
+    it: Iniettore diesel revisionato
+    nl: Gereviseerde dieselinjector
+
+  description:
+    en: Remanufactured common-rail diesel fuel injector.
+    de: Überholte Common-Rail-Dieseleinspritzdüse.
+    ro: Injector diesel recondiționat pentru sistem common-rail.
+    fr: Injecteur diesel reconditionné à rampe commune.
+    es: Inyector diésel common-rail reacondicionado.
+    it: Iniettore diesel common-rail revisionato.
+    nl: Gereviseerde common-rail dieselinjector.
+
+  oe_numbers:
+
+    - manufacturer: Ford
+      number: "3M5Q-9F593-JA"
+
+
+  compatible_vehicles:
+
+    - make: Ford
+      model: Focus
+      generation: Mk2
+      platform: DA
+
+      years:
+        from: 2004
+        to: 2011
+
+      engines:
+
+        - engine: "1.6 TDCi"
+
+          engine_codes:
+            - G8DA
+            - G8DB
+            - G8DD
+            - G8DE
+            - G8DF
+
+          fuel: diesel
+
+          injection: common_rail
+
+
+  equivalents:
+
+    - manufacturer: Bosch
+      part_number: "0445110259"
+      type: new
+
+
+  specifications:
+
+    fuel_type: diesel
+
+    injection_system: common_rail
+
+    component_type: injector
+
+
+  quantity_per_vehicle: 4
+
+  requires_coding: true
+
+
+  sources:
+
+    - name: ePiesa
+      url: "https://www.epiesa.ro/"
+
+
+# ==========================================================
+# THIRD TEST PART
+# ==========================================================
+
+- id: metzger_0870072
+
+  part_number: "0870072"
+
+  manufacturer: METZGER
+
+  type: remanufactured
+
+  category: engine
+
+  subcategory: fuel_injection
+
+  name:
+    en: Remanufactured Diesel Fuel Injector
+    de: Überholte Diesel-Einspritzdüse
+    ro: Injector diesel recondiționat
+    fr: Injecteur diesel reconditionné
+    es: Inyector diésel reacondicionado
+    it: Iniettore diesel revisionato
+    nl: Gereviseerde dieselinjector
+
+  description:
+    en: Remanufactured common-rail diesel injector.
+    de: Überholte Common-Rail-Dieseleinspritzdüse.
+    ro: Injector diesel recondiționat pentru sistem common-rail.
+    fr: Injecteur diesel reconditionné à rampe commune.
+    es: Inyector diésel common-rail reacondicionado.
+    it: Iniettore diesel common-rail revisionato.
+    nl: Gereviseerde common-rail dieselinjector.
+
+  oe_numbers:
+
+    - manufacturer: Ford
+      number: "3M5Q-9F593-JA"
+
+
+  compatible_vehicles:
+
+    - make: Ford
+      model: Focus
+      generation: Mk2
+      platform: DA
+
+      years:
+        from: 2004
+        to: 2011
+
+      engines:
+
+        - engine: "1.6 TDCi"
+
+          engine_codes:
+            - G8DA
+            - G8DB
+            - G8DD
+            - G8DE
+            - G8DF
+
+          fuel: diesel
+
+          injection: common_rail
+
+
+  specifications:
+
+    fuel_type: diesel
+
+    injection_system: common_rail
+
+    component_type: injector
+
+
+  quantity_per_vehicle: 4
+
+  requires_coding: true
+
+
+  sources:
+
+    - name: Piese-Auto
+      url: "https://www.piese-auto.ro/"
