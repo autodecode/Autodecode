@@ -1,0 +1,1957 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Part Finder — AutoDecode</title>
+
+<meta name="description"
+content="AutoDecode automotive part finder. Search OEM and aftermarket automotive parts.">
+
+<style>
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #0b0d10;
+    color: #f2f4f7;
+    min-height: 100vh;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+header {
+    height: 72px;
+    border-bottom: 1px solid #20242a;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 6%;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.logo span {
+    color: #4da3ff;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+header a {
+    color: #9da5b0;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+header a:hover {
+    color: white;
+}
+
+
+/* =====================================================
+   LANGUAGE
+===================================================== */
+
+.language-selector {
+    position: relative;
+}
+
+.language-button {
+    background: transparent;
+    border: 1px solid #303842;
+    color: #cbd2da;
+
+    height: 36px;
+    padding: 0 11px;
+
+    border-radius: 7px;
+
+    font-size: 12px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.language-button:hover {
+    border-color: #4da3ff;
+    color: white;
+}
+
+.language-menu {
+    display: none;
+
+    position: absolute;
+    right: 0;
+    top: 44px;
+
+    background: #12161b;
+    border: 1px solid #303842;
+
+    border-radius: 8px;
+
+    min-width: 120px;
+
+    overflow: hidden;
+
+    z-index: 100;
+}
+
+.language-menu.active {
+    display: block;
+}
+
+.language-menu button {
+    display: block;
+
+    width: 100%;
+
+    background: transparent;
+    border: none;
+
+    color: #aeb7c1;
+
+    text-align: left;
+
+    padding: 10px 13px;
+
+    font-size: 13px;
+
+    cursor: pointer;
+}
+
+.language-menu button:hover {
+    background: #1b222a;
+    color: white;
+}
+
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+
+    padding: 55px 20px 90px;
+}
+
+
+/* =====================================================
+   PAGE TITLE
+===================================================== */
+
+.page-title {
+    margin-bottom: 35px;
+}
+
+.page-title h1 {
+    font-size: 42px;
+    line-height: 1.15;
+
+    margin-bottom: 12px;
+}
+
+.page-title h1 span {
+    color: #4da3ff;
+}
+
+.page-title p {
+    color: #858f9b;
+
+    font-size: 16px;
+    line-height: 1.6;
+
+    max-width: 680px;
+}
+
+
+/* =====================================================
+   SEARCH PANEL
+===================================================== */
+
+.search-panel {
+    background: #12161b;
+
+    border: 1px solid #252c34;
+
+    border-radius: 14px;
+
+    padding: 28px;
+
+    margin-bottom: 25px;
+}
+
+.search-panel h2 {
+    font-size: 18px;
+    margin-bottom: 22px;
+}
+
+
+/* =====================================================
+   FORM GRID
+===================================================== */
+
+.form-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+.form-group.full {
+    grid-column: 1 / -1;
+}
+
+.form-group label {
+    color: #8d98a4;
+
+    font-size: 12px;
+    font-weight: bold;
+
+    text-transform: uppercase;
+}
+
+.form-group input,
+.form-group select {
+    height: 50px;
+
+    background: #14181d;
+
+    border: 1px solid #303842;
+
+    border-radius: 9px;
+
+    color: #f2f4f7;
+
+    padding: 0 14px;
+
+    font-size: 15px;
+
+    outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #4da3ff;
+}
+
+.form-group select {
+    cursor: pointer;
+}
+
+
+/* =====================================================
+   SEARCH BUTTON
+===================================================== */
+
+.search-button {
+    width: 100%;
+
+    height: 54px;
+
+    margin-top: 20px;
+
+    border: none;
+
+    background: #4da3ff;
+
+    color: #081018;
+
+    border-radius: 9px;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.search-button:hover {
+    background: #78baff;
+}
+
+
+/* =====================================================
+   RESULTS
+===================================================== */
+
+#results {
+    display: none;
+}
+
+.results-header {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 15px;
+}
+
+.results-header h2 {
+    font-size: 20px;
+}
+
+.results-count {
+    color: #7f8995;
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   PART CARD
+===================================================== */
+
+.part-card {
+    background: #12161b;
+
+    border: 1px solid #252c34;
+
+    border-radius: 14px;
+
+    padding: 23px;
+
+    margin-bottom: 12px;
+}
+
+.part-card:hover {
+    border-color: #303b47;
+}
+
+.part-top {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom: 14px;
+}
+
+.part-name {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.part-number {
+    color: #4da3ff;
+
+    font-family: monospace;
+
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.part-description {
+    color: #9da5b0;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    margin-bottom: 15px;
+}
+
+.part-meta {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 7px;
+}
+
+.part-badge {
+    background: #1b222a;
+
+    border: 1px solid #303842;
+
+    color: #c5ccd4;
+
+    padding: 6px 9px;
+
+    border-radius: 6px;
+
+    font-size: 11px;
+}
+
+
+/* =====================================================
+   EMPTY STATE
+===================================================== */
+
+.empty {
+    background: #12161b;
+
+    border: 1px solid #252c34;
+
+    border-radius: 14px;
+
+    padding: 45px 25px;
+
+    text-align: center;
+}
+
+.empty-icon {
+    font-size: 34px;
+
+    margin-bottom: 15px;
+}
+
+.empty h2 {
+    font-size: 19px;
+
+    margin-bottom: 9px;
+}
+
+.empty p {
+    color: #7f8995;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+    border-top: 1px solid #20242a;
+
+    padding: 30px 6%;
+
+    color: #59616b;
+
+    font-size: 12px;
+
+    display: flex;
+
+    justify-content: space-between;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:650px) {
+
+    header {
+        padding: 0 20px;
+    }
+
+    .logo {
+        font-size: 21px;
+    }
+
+    .header-right {
+        gap: 12px;
+    }
+
+    .header-right > a {
+        display: none;
+    }
+
+    .container {
+        padding-top: 35px;
+    }
+
+    .page-title h1 {
+        font-size: 34px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-group.full {
+        grid-column: auto;
+    }
+
+    .search-panel {
+        padding: 20px;
+    }
+
+    .part-top {
+        flex-direction: column;
+        gap: 7px;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <div class="logo">
+        Auto<span>Decode</span>
+    </div>
+
+
+    <div class="header-right">
+
+        <a href="index.html" data-i18n="home">
+            ← Home
+        </a>
+
+
+        <div class="language-selector">
+
+            <button
+                class="language-button"
+                onclick="toggleLanguageMenu()"
+                id="languageButton"
+            >
+                EN ▾
+            </button>
+
+
+            <div
+                class="language-menu"
+                id="languageMenu"
+            >
+
+                <button onclick="setLanguage('en')">
+                    English
+                </button>
+
+                <button onclick="setLanguage('de')">
+                    Deutsch
+                </button>
+
+                <button onclick="setLanguage('ro')">
+                    Română
+                </button>
+
+                <button onclick="setLanguage('fr')">
+                    Français
+                </button>
+
+                <button onclick="setLanguage('es')">
+                    Español
+                </button>
+
+                <button onclick="setLanguage('it')">
+                    Italiano
+                </button>
+
+                <button onclick="setLanguage('nl')">
+                    Nederlands
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<div class="container">
+
+
+    <section class="page-title">
+
+        <h1>
+            <span data-i18n="partFinder">Part Finder.</span>
+        </h1>
+
+        <p data-i18n="intro">
+            Find automotive parts using vehicle information,
+            OEM numbers and part categories.
+        </p>
+
+    </section>
+
+
+    <section class="search-panel">
+
+        <h2 data-i18n="searchTitle">
+            Search for a part
+        </h2>
+
+
+        <div class="form-grid">
+
+
+            <div class="form-group">
+
+                <label data-i18n="make">
+                    Make
+                </label>
+
+                <input
+                    id="make"
+                    type="text"
+                    placeholder="e.g. Ford"
+                    data-placeholder="makePlaceholder"
+                    autocomplete="off"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label data-i18n="model">
+                    Model
+                </label>
+
+                <input
+                    id="model"
+                    type="text"
+                    placeholder="e.g. Focus"
+                    data-placeholder="modelPlaceholder"
+                    autocomplete="off"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label data-i18n="year">
+                    Year
+                </label>
+
+                <input
+                    id="year"
+                    type="number"
+                    placeholder="e.g. 2005"
+                    data-placeholder="yearPlaceholder"
+                    min="1900"
+                    max="2100"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label data-i18n="engine">
+                    Engine
+                </label>
+
+                <input
+                    id="engine"
+                    type="text"
+                    placeholder="e.g. 1.6 TDCi"
+                    data-placeholder="enginePlaceholder"
+                    autocomplete="off"
+                >
+
+            </div>
+
+
+            <div class="form-group full">
+
+                <label data-i18n="category">
+                    Part Category
+                </label>
+
+                <select id="category">
+
+                    <option
+                        value=""
+                        data-i18n="selectCategory"
+                    >
+                        Select a category
+                    </option>
+
+                    <option
+                        value="engine"
+                        data-i18n="catEngine"
+                    >
+                        Engine
+                    </option>
+
+                    <option
+                        value="brakes"
+                        data-i18n="catBrakes"
+                    >
+                        Brakes
+                    </option>
+
+                    <option
+                        value="suspension"
+                        data-i18n="catSuspension"
+                    >
+                        Suspension
+                    </option>
+
+                    <option
+                        value="electrical"
+                        data-i18n="catElectrical"
+                    >
+                        Electrical
+                    </option>
+
+                    <option
+                        value="body"
+                        data-i18n="catBody"
+                    >
+                        Body
+                    </option>
+
+                    <option
+                        value="filters"
+                        data-i18n="catFilters"
+                    >
+                        Filters
+                    </option>
+
+                    <option
+                        value="cooling"
+                        data-i18n="catCooling"
+                    >
+                        Cooling System
+                    </option>
+
+                    <option
+                        value="transmission"
+                        data-i18n="catTransmission"
+                    >
+                        Transmission
+                    </option>
+
+                    <option
+                        value="other"
+                        data-i18n="catOther"
+                    >
+                        Other
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group full">
+
+                <label data-i18n="partNumber">
+                    OEM / Part Number
+                </label>
+
+                <input
+                    id="partNumber"
+                    type="text"
+                    placeholder="e.g. 3M5Q-9A299-AA"
+                    data-placeholder="partNumberPlaceholder"
+                    autocomplete="off"
+                    spellcheck="false"
+                >
+
+            </div>
+
+
+        </div>
+
+
+        <button
+            class="search-button"
+            onclick="searchParts()"
+            data-i18n="search"
+        >
+            Search Parts
+        </button>
+
+    </section>
+
+
+    <section id="results">
+
+        <div class="results-header">
+
+            <h2 data-i18n="results">
+                Results
+            </h2>
+
+            <span
+                class="results-count"
+                id="resultCount"
+            >
+            </span>
+
+        </div>
+
+
+        <div id="resultList"></div>
+
+    </section>
+
+
+    <section
+        class="empty"
+        id="emptyState"
+    >
+
+        <div class="empty-icon">
+            🔩
+        </div>
+
+        <h2 data-i18n="ready">
+            Ready to find a part?
+        </h2>
+
+        <p data-i18n="readyText">
+            Enter vehicle information or an OEM part number
+            to search the AutoDecode parts database.
+        </p>
+
+    </section>
+
+
+</div>
+
+
+<footer>
+
+    <div>
+        © 2026 AutoDecode
+    </div>
+
+    <div data-i18n="footer">
+        Automotive diagnostic tools
+    </div>
+
+</footer>
+
+
+<script>
+
+
+/* =====================================================
+   TRANSLATIONS
+===================================================== */
+
+const translations = {
+
+    en: {
+
+        home: "← Home",
+
+        partFinder: "Part Finder.",
+
+        intro:
+            "Find automotive parts using vehicle information, OEM numbers and part categories.",
+
+        searchTitle:
+            "Search for a part",
+
+        make:
+            "Make",
+
+        model:
+            "Model",
+
+        year:
+            "Year",
+
+        engine:
+            "Engine",
+
+        category:
+            "Part Category",
+
+        partNumber:
+            "OEM / Part Number",
+
+        makePlaceholder:
+            "e.g. Ford",
+
+        modelPlaceholder:
+            "e.g. Focus",
+
+        yearPlaceholder:
+            "e.g. 2005",
+
+        enginePlaceholder:
+            "e.g. 1.6 TDCi",
+
+        partNumberPlaceholder:
+            "e.g. 3M5Q-9A299-AA",
+
+        selectCategory:
+            "Select a category",
+
+        catEngine:
+            "Engine",
+
+        catBrakes:
+            "Brakes",
+
+        catSuspension:
+            "Suspension",
+
+        catElectrical:
+            "Electrical",
+
+        catBody:
+            "Body",
+
+        catFilters:
+            "Filters",
+
+        catCooling:
+            "Cooling System",
+
+        catTransmission:
+            "Transmission",
+
+        catOther:
+            "Other",
+
+        search:
+            "Search Parts",
+
+        results:
+            "Results",
+
+        ready:
+            "Ready to find a part?",
+
+        readyText:
+            "Enter vehicle information or an OEM part number to search the AutoDecode parts database.",
+
+        footer:
+            "Automotive diagnostic tools",
+
+        noResults:
+            "No parts found",
+
+        noResultsText:
+            "The parts database does not contain a matching part yet.",
+
+        fieldsRequired:
+            "Enter at least one search parameter."
+
+    },
+
+
+    de: {
+
+        home: "← Startseite",
+
+        partFinder: "Teilesuche.",
+
+        intro:
+            "Finden Sie Fahrzeugteile anhand von Fahrzeugdaten, OEM-Nummern und Teilekategorien.",
+
+        searchTitle:
+            "Nach einem Teil suchen",
+
+        make:
+            "Marke",
+
+        model:
+            "Modell",
+
+        year:
+            "Baujahr",
+
+        engine:
+            "Motor",
+
+        category:
+            "Teilekategorie",
+
+        partNumber:
+            "OEM- / Teilenummer",
+
+        makePlaceholder:
+            "z. B. Ford",
+
+        modelPlaceholder:
+            "z. B. Focus",
+
+        yearPlaceholder:
+            "z. B. 2005",
+
+        enginePlaceholder:
+            "z. B. 1.6 TDCi",
+
+        partNumberPlaceholder:
+            "z. B. 3M5Q-9A299-AA",
+
+        selectCategory:
+            "Kategorie auswählen",
+
+        catEngine:
+            "Motor",
+
+        catBrakes:
+            "Bremsen",
+
+        catSuspension:
+            "Fahrwerk",
+
+        catElectrical:
+            "Elektrik",
+
+        catBody:
+            "Karosserie",
+
+        catFilters:
+            "Filter",
+
+        catCooling:
+            "Kühlsystem",
+
+        catTransmission:
+            "Getriebe",
+
+        catOther:
+            "Sonstiges",
+
+        search:
+            "Teile suchen",
+
+        results:
+            "Ergebnisse",
+
+        ready:
+            "Bereit, ein Teil zu finden?",
+
+        readyText:
+            "Geben Sie Fahrzeugdaten oder eine OEM-Teilenummer ein, um die AutoDecode-Teiledatenbank zu durchsuchen.",
+
+        footer:
+            "Automotive-Diagnosewerkzeuge",
+
+        noResults:
+            "Keine Teile gefunden",
+
+        noResultsText:
+            "Die Teiledatenbank enthält noch kein passendes Teil.",
+
+        fieldsRequired:
+            "Geben Sie mindestens einen Suchparameter ein."
+
+    },
+
+
+    ro: {
+
+        home: "← Acasă",
+
+        partFinder: "Căutare piese.",
+
+        intro:
+            "Găsește piese auto folosind informațiile vehiculului, coduri OEM și categorii de piese.",
+
+        searchTitle:
+            "Caută o piesă",
+
+        make:
+            "Marcă",
+
+        model:
+            "Model",
+
+        year:
+            "An",
+
+        engine:
+            "Motor",
+
+        category:
+            "Categorie piesă",
+
+        partNumber:
+            "Cod OEM / piesă",
+
+        makePlaceholder:
+            "ex. Ford",
+
+        modelPlaceholder:
+            "ex. Focus",
+
+        yearPlaceholder:
+            "ex. 2005",
+
+        enginePlaceholder:
+            "ex. 1.6 TDCi",
+
+        partNumberPlaceholder:
+            "ex. 3M5Q-9A299-AA",
+
+        selectCategory:
+            "Selectează categoria",
+
+        catEngine:
+            "Motor",
+
+        catBrakes:
+            "Frâne",
+
+        catSuspension:
+            "Suspensie",
+
+        catElectrical:
+            "Electrică",
+
+        catBody:
+            "Caroserie",
+
+        catFilters:
+            "Filtre",
+
+        catCooling:
+            "Sistem de răcire",
+
+        catTransmission:
+            "Transmisie",
+
+        catOther:
+            "Altele",
+
+        search:
+            "Caută piese",
+
+        results:
+            "Rezultate",
+
+        ready:
+            "Gata să găsești o piesă?",
+
+        readyText:
+            "Introdu informațiile vehiculului sau un cod OEM pentru a căuta în baza de date AutoDecode.",
+
+        footer:
+            "Instrumente de diagnosticare auto",
+
+        noResults:
+            "Nu au fost găsite piese",
+
+        noResultsText:
+            "Baza de date de piese nu conține încă o piesă compatibilă.",
+
+        fieldsRequired:
+            "Introdu cel puțin un criteriu de căutare."
+
+    },
+
+
+    fr: {
+
+        home: "← Accueil",
+
+        partFinder: "Recherche de pièces.",
+
+        intro:
+            "Trouvez des pièces automobiles à l'aide des informations du véhicule, des références OEM et des catégories.",
+
+        searchTitle:
+            "Rechercher une pièce",
+
+        make:
+            "Marque",
+
+        model:
+            "Modèle",
+
+        year:
+            "Année",
+
+        engine:
+            "Moteur",
+
+        category:
+            "Catégorie de pièce",
+
+        partNumber:
+            "Référence OEM / pièce",
+
+        makePlaceholder:
+            "ex. Ford",
+
+        modelPlaceholder:
+            "ex. Focus",
+
+        yearPlaceholder:
+            "ex. 2005",
+
+        enginePlaceholder:
+            "ex. 1.6 TDCi",
+
+        partNumberPlaceholder:
+            "ex. 3M5Q-9A299-AA",
+
+        selectCategory:
+            "Sélectionner une catégorie",
+
+        catEngine:
+            "Moteur",
+
+        catBrakes:
+            "Freins",
+
+        catSuspension:
+            "Suspension",
+
+        catElectrical:
+            "Électricité",
+
+        catBody:
+            "Carrosserie",
+
+        catFilters:
+            "Filtres",
+
+        catCooling:
+            "Système de refroidissement",
+
+        catTransmission:
+            "Transmission",
+
+        catOther:
+            "Autre",
+
+        search:
+            "Rechercher",
+
+        results:
+            "Résultats",
+
+        ready:
+            "Prêt à trouver une pièce ?",
+
+        readyText:
+            "Saisissez les informations du véhicule ou une référence OEM pour rechercher dans la base AutoDecode.",
+
+        footer:
+            "Outils de diagnostic automobile",
+
+        noResults:
+            "Aucune pièce trouvée",
+
+        noResultsText:
+            "La base de données ne contient pas encore de pièce correspondante.",
+
+        fieldsRequired:
+            "Saisissez au moins un critère de recherche."
+
+    },
+
+
+    es: {
+
+        home: "← Inicio",
+
+        partFinder: "Buscador de piezas.",
+
+        intro:
+            "Encuentra piezas de automóviles mediante los datos del vehículo, números OEM y categorías.",
+
+        searchTitle:
+            "Buscar una pieza",
+
+        make:
+            "Marca",
+
+        model:
+            "Modelo",
+
+        year:
+            "Año",
+
+        engine:
+            "Motor",
+
+        category:
+            "Categoría de pieza",
+
+        partNumber:
+            "Número OEM / pieza",
+
+        makePlaceholder:
+            "ej. Ford",
+
+        modelPlaceholder:
+            "ej. Focus",
+
+        yearPlaceholder:
+            "ej. 2005",
+
+        enginePlaceholder:
+            "ej. 1.6 TDCi",
+
+        partNumberPlaceholder:
+            "ej. 3M5Q-9A299-AA",
+
+        selectCategory:
+            "Seleccionar categoría",
+
+        catEngine:
+            "Motor",
+
+        catBrakes:
+            "Frenos",
+
+        catSuspension:
+            "Suspensión",
+
+        catElectrical:
+            "Sistema eléctrico",
+
+        catBody:
+            "Carrocería",
+
+        catFilters:
+            "Filtros",
+
+        catCooling:
+            "Sistema de refrigeración",
+
+        catTransmission:
+            "Transmisión",
+
+        catOther:
+            "Otros",
+
+        search:
+            "Buscar piezas",
+
+        results:
+            "Resultados",
+
+        ready:
+            "¿Listo para encontrar una pieza?",
+
+        readyText:
+            "Introduce los datos del vehículo o un número OEM para buscar en la base de datos de AutoDecode.",
+
+        footer:
+            "Herramientas de diagnóstico automotriz",
+
+        noResults:
+            "No se encontraron piezas",
+
+        noResultsText:
+            "La base de datos todavía no contiene una pieza compatible.",
+
+        fieldsRequired:
+            "Introduce al menos un criterio de búsqueda."
+
+    },
+
+
+    it: {
+
+        home: "← Home",
+
+        partFinder: "Ricerca ricambi.",
+
+        intro:
+            "Trova ricambi auto utilizzando i dati del veicolo, i codici OEM e le categorie.",
+
+        searchTitle:
+            "Cerca un ricambio",
+
+        make:
+            "Marca",
+
+        model:
+            "Modello",
+
+        year:
+            "Anno",
+
+        engine:
+            "Motore",
+
+        category:
+            "Categoria ricambio",
+
+        partNumber:
+            "Codice OEM / ricambio",
+
+        makePlaceholder:
+            "es. Ford",
+
+        modelPlaceholder:
+            "es. Focus",
+
+        yearPlaceholder:
+            "es. 2005",
+
+        enginePlaceholder:
+            "es. 1.6 TDCi",
+
+        partNumberPlaceholder:
+            "es. 3M5Q-9A299-AA",
+
+        selectCategory:
+            "Seleziona una categoria",
+
+        catEngine:
+            "Motore",
+
+        catBrakes:
+            "Freni",
+
+        catSuspension:
+            "Sospensioni",
+
+        catElectrical:
+            "Elettrico",
+
+        catBody:
+            "Carrozzeria",
+
+        catFilters:
+            "Filtri",
+
+        catCooling:
+            "Sistema di raffreddamento",
+
+        catTransmission:
+            "Trasmissione",
+
+        catOther:
+            "Altro",
+
+        search:
+            "Cerca ricambi",
+
+        results:
+            "Risultati",
+
+        ready:
+            "Pronto a trovare un ricambio?",
+
+        readyText:
+            "Inserisci i dati del veicolo o un codice OEM per cercare nel database AutoDecode.",
+
+        footer:
+            "Strumenti diagnostici automobilistici",
+
+        noResults:
+            "Nessun ricambio trovato",
+
+        noResultsText:
+            "Il database non contiene ancora un ricambio compatibile.",
+
+        fieldsRequired:
+            "Inserisci almeno un criterio di ricerca."
+
+    },
+
+
+    nl: {
+
+        home: "← Home",
+
+        partFinder: "Onderdelen zoeken.",
+
+        intro:
+            "Vind auto-onderdelen op basis van voertuiggegevens, OEM-nummers en onderdelencategorieën.",
+
+        searchTitle:
+            "Zoek een onderdeel",
+
+        make:
+            "Merk",
+
+        model:
+            "Model",
+
+        year:
+            "Bouwjaar",
+
+        engine:
+            "Motor",
+
+        category:
+            "Onderdeelcategorie",
+
+        partNumber:
+            "OEM- / onderdeelnummer",
+
+        makePlaceholder:
+            "bijv. Ford",
+
+        modelPlaceholder:
+            "bijv. Focus",
+
+        yearPlaceholder:
+            "bijv. 2005",
+
+        enginePlaceholder:
+            "bijv. 1.6 TDCi",
+
+        partNumberPlaceholder:
+            "bijv. 3M5Q-9A299-AA",
+
+        selectCategory:
+            "Selecteer een categorie",
+
+        catEngine:
+            "Motor",
+
+        catBrakes:
+            "Remmen",
+
+        catSuspension:
+            "Ophanging",
+
+        catElectrical:
+            "Elektrisch",
+
+        catBody:
+            "Carrosserie",
+
+        catFilters:
+            "Filters",
+
+        catCooling:
+            "Koelsysteem",
+
+        catTransmission:
+            "Transmissie",
+
+        catOther:
+            "Overig",
+
+        search:
+            "Onderdelen zoeken",
+
+        results:
+            "Resultaten",
+
+        ready:
+            "Klaar om een onderdeel te vinden?",
+
+        readyText:
+            "Voer voertuiggegevens of een OEM-nummer in om de AutoDecode-onderdelendatabase te doorzoeken.",
+
+        footer:
+            "Automotive diagnosehulpmiddelen",
+
+        noResults:
+            "Geen onderdelen gevonden",
+
+        noResultsText:
+            "De onderdelendatabase bevat nog geen overeenkomend onderdeel.",
+
+        fieldsRequired:
+            "Voer minimaal één zoekcriterium in."
+
+    }
+
+};
+
+
+/* =====================================================
+   LANGUAGE
+===================================================== */
+
+let currentLanguage =
+    localStorage.getItem("autodecode_language") || "en";
+
+
+function getTranslation(key) {
+
+    if (
+        translations[currentLanguage] &&
+        translations[currentLanguage][key]
+    ) {
+
+        return translations[currentLanguage][key];
+
+    }
+
+    return translations.en[key] || key;
+
+}
+
+
+function applyLanguage() {
+
+    document.documentElement.lang =
+        currentLanguage;
+
+
+    document
+        .querySelectorAll("[data-i18n]")
+        .forEach(function(element) {
+
+            const key =
+                element.getAttribute("data-i18n");
+
+            element.textContent =
+                getTranslation(key);
+
+        });
+
+
+    document
+        .querySelectorAll("[data-placeholder]")
+        .forEach(function(element) {
+
+            const key =
+                element.getAttribute("data-placeholder");
+
+            element.placeholder =
+                getTranslation(key);
+
+        });
+
+
+    document
+        .getElementById("languageButton")
+        .textContent =
+        currentLanguage.toUpperCase() + " ▾";
+
+
+    document.title =
+        getTranslation("partFinder") +
+        " AutoDecode";
+
+}
+
+
+function setLanguage(language) {
+
+    if (!translations[language]) {
+
+        language = "en";
+
+    }
+
+
+    currentLanguage =
+        language;
+
+
+    localStorage.setItem(
+        "autodecode_language",
+        language
+    );
+
+
+    applyLanguage();
+
+
+    document
+        .getElementById("languageMenu")
+        .classList
+        .remove("active");
+
+}
+
+
+function toggleLanguageMenu() {
+
+    document
+        .getElementById("languageMenu")
+        .classList
+        .toggle("active");
+
+}
+
+
+document.addEventListener(
+    "click",
+    function(event) {
+
+        const selector =
+            document.querySelector(
+                ".language-selector"
+            );
+
+
+        if (
+            selector &&
+            !selector.contains(event.target)
+        ) {
+
+            document
+                .getElementById("languageMenu")
+                .classList
+                .remove("active");
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   PART SEARCH
+===================================================== */
+
+function searchParts() {
+
+    const make =
+        document
+            .getElementById("make")
+            .value
+            .trim();
+
+    const model =
+        document
+            .getElementById("model")
+            .value
+            .trim();
+
+    const year =
+        document
+            .getElementById("year")
+            .value
+            .trim();
+
+    const engine =
+        document
+            .getElementById("engine")
+            .value
+            .trim();
+
+    const category =
+        document
+            .getElementById("category")
+            .value;
+
+    const partNumber =
+        document
+            .getElementById("partNumber")
+            .value
+            .trim();
+
+
+    if (
+        !make &&
+        !model &&
+        !year &&
+        !engine &&
+        !category &&
+        !partNumber
+    ) {
+
+        showMessage(
+            getTranslation("fieldsRequired")
+        );
+
+        return;
+
+    }
+
+
+    /*
+       DATABASE PLACEHOLDER
+
+       The actual Part Finder database
+       will be connected here.
+
+       For now we intentionally do not
+       generate fake part results.
+    */
+
+
+    showNoResults();
+
+}
+
+
+/* =====================================================
+   NO RESULTS
+===================================================== */
+
+function showNoResults() {
+
+    const results =
+        document.getElementById("results");
+
+    const empty =
+        document.getElementById("emptyState");
+
+    const list =
+        document.getElementById("resultList");
+
+    const count =
+        document.getElementById("resultCount");
+
+
+    empty.style.display =
+        "none";
+
+    results.style.display =
+        "block";
+
+
+    count.textContent =
+        "0";
+
+
+    list.innerHTML = `
+
+        <div class="empty">
+
+            <div class="empty-icon">
+                🔍
+            </div>
+
+            <h2>
+                ${escapeHTML(
+                    getTranslation("noResults")
+                )}
+            </h2>
+
+            <p>
+                ${escapeHTML(
+                    getTranslation("noResultsText")
+                )}
+            </p>
+
+        </div>
+
+    `;
+
+}
+
+
+/* =====================================================
+   MESSAGE
+===================================================== */
+
+function showMessage(message) {
+
+    const results =
+        document.getElementById("results");
+
+    const empty =
+        document.getElementById("emptyState");
+
+    const list =
+        document.getElementById("resultList");
+
+
+    empty.style.display =
+        "none";
+
+    results.style.display =
+        "block";
+
+
+    document
+        .getElementById("resultCount")
+        .textContent = "";
+
+
+    list.innerHTML = `
+
+        <div class="empty">
+
+            <div class="empty-icon">
+                ⚠️
+            </div>
+
+            <h2>
+                ${escapeHTML(message)}
+            </h2>
+
+        </div>
+
+    `;
+
+}
+
+
+/* =====================================================
+   ESCAPE HTML
+===================================================== */
+
+function escapeHTML(value) {
+
+    return String(value ?? "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+
+}
+
+
+/* =====================================================
+   ENTER KEY
+===================================================== */
+
+document
+    .querySelectorAll(
+        "#make, #model, #year, #engine, #partNumber"
+    )
+    .forEach(function(input) {
+
+        input.addEventListener(
+            "keydown",
+            function(event) {
+
+                if (event.key === "Enter") {
+
+                    searchParts();
+
+                }
+
+            }
+        );
+
+    });
+
+
+/* =====================================================
+   INITIAL LANGUAGE
+===================================================== */
+
+applyLanguage();
+
+</script>
+
+
+</body>
+
+</html>
