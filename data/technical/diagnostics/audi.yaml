@@ -4065,3 +4065,1094 @@ technical_data:
       - P0353
       - P0354
     difficulty: easy
+
+  # ============================================================
+  # AUDI / VAG — TURBO CONTROL
+  # ============================================================
+
+  - id: audi_turbo_actuator_diagnosis
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: turbocharger
+    title:
+      en: Turbocharger Actuator Diagnosis
+      ro: Diagnosticare actuator turbo
+      de: Diagnose Turboladersteller
+    symptoms:
+      - poor_power
+      - low_rpm_power_loss
+      - limp_mode
+      - intermittent_power_loss
+      - slow_acceleration
+    keywords:
+      - turbo actuator
+      - turbocharger actuator
+      - wastegate actuator
+      - vnt actuator
+      - turbo control
+      - boost control
+      - actuator turbo
+      - geometrie variabila
+      - geometrie turbo
+      - pierde putere
+      - intra in limp mode
+    possible_causes:
+      - seized_vnt_mechanism
+      - faulty_electronic_actuator
+      - vacuum_supply_fault
+      - boost_control_solenoid
+      - wiring_fault
+      - mechanical_turbo_fault
+      - incorrect_actuator_adjustment
+    diagnostic_steps:
+      - Read turbocharger-related DTCs.
+      - Compare requested and actual boost pressure.
+      - Check actuator position using live data where supported.
+      - Perform actuator output tests where supported.
+      - Inspect vacuum supply on vacuum-controlled systems.
+      - Check the turbocharger mechanism for mechanical restriction.
+      - Do not adjust the actuator rod without the applicable calibration procedure.
+    related_dtcs:
+      - P0299
+      - P0234
+    difficulty: advanced
+
+  - id: audi_vnt_geometry_sticking
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: turbocharger
+    title:
+      en: Variable Turbocharger Geometry Sticking Diagnosis
+      ro: Diagnosticare geometrie variabilă turbo blocată
+      de: Diagnose klemmende variable Turboladergeometrie
+    symptoms:
+      - low_rpm_power_loss
+      - poor_power
+      - limp_mode
+      - intermittent_power_loss
+    keywords:
+      - vnt
+      - variable geometry
+      - turbo geometry
+      - vanes
+      - sticking vanes
+      - turbo soot
+      - geometrie variabila
+      - palete turbo
+      - paleti blocati
+      - turbo blocat
+    possible_causes:
+      - carbon_buildup
+      - seized_vnt_vanes
+      - actuator_fault
+      - vacuum_control_fault
+      - turbocharger_damage
+    diagnostic_steps:
+      - Compare requested and actual boost during acceleration.
+      - Monitor turbo actuator position.
+      - Check actuator movement through its operating range.
+      - Check vacuum supply where applicable.
+      - Inspect the turbocharger mechanism if actuator movement is abnormal.
+    related_dtcs:
+      - P0299
+      - P0234
+    difficulty: advanced
+
+  - id: audi_boost_control_solenoid
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: turbocharger
+    title:
+      en: Turbo Boost Control Solenoid Diagnosis
+      ro: Diagnosticare electrovalvă comandă turbo
+      de: Diagnose Ladedruckregelventil
+    symptoms:
+      - poor_power
+      - limp_mode
+      - low_rpm_power_loss
+      - intermittent_power_loss
+    keywords:
+      - boost control valve
+      - n75
+      - turbo solenoid
+      - charge pressure control
+      - wastegate solenoid
+      - electrovalva turbo
+      - n75
+      - presiune turbo
+      - pierde putere
+    possible_causes:
+      - faulty_boost_control_solenoid
+      - vacuum_leak
+      - blocked_vacuum_line
+      - wiring_fault
+      - turbo_actuator
+      - turbocharger_fault
+    diagnostic_steps:
+      - Check the boost-control DTCs.
+      - Verify commanded actuator operation.
+      - Inspect vacuum hoses where fitted.
+      - Check electrical supply and control signal.
+      - Compare requested and actual boost.
+      - Check the turbo actuator after confirming the control valve is operating.
+    related_dtcs:
+      - P0243
+      - P0299
+      - P0234
+    difficulty: medium
+
+  # ============================================================
+  # AUDI / VAG — DIESEL EMISSIONS / SCR / NOx
+  # ============================================================
+
+  - id: audi_scr_adblue_system_fault
+    vehicle:
+      manufacturer: audi
+      models:
+        - a3
+        - a4
+        - a5
+        - a6
+        - a7
+        - a8
+        - q2
+        - q3
+        - q5
+        - q7
+        - q8
+    generations: all
+    engines: all
+    category: diagnostics
+    system: scr
+    title:
+      en: SCR / AdBlue System Diagnosis
+      ro: Diagnosticare sistem SCR / AdBlue
+      de: Diagnose SCR-/AdBlue-System
+    symptoms:
+      - adblue_warning
+      - emissions_warning
+      - no_restart_countdown
+      - limp_mode
+    keywords:
+      - adblue
+      - scr
+      - urea
+      - selective catalytic reduction
+      - reductant
+      - p20ee
+      - p203b
+      - p204f
+      - p207f
+      - p229f
+      - p2ba9
+      - adblue system
+      - sistem adblue
+      - eroare adblue
+      - nu mai porneste
+    possible_causes:
+      - low_adblue_level
+      - incorrect_adblue_quality
+      - adblue_pump_fault
+      - reductant_injector
+      - scr_pressure_fault
+      - nox_sensor
+      - scr_catalyst_efficiency
+      - wiring_fault
+      - frozen_adblue
+    diagnostic_steps:
+      - Read all SCR-related DTCs before clearing anything.
+      - Check AdBlue level and system plausibility.
+      - Check reductant pressure where supported.
+      - Inspect the AdBlue injector and its wiring.
+      - Check NOx sensor readings.
+      - Verify SCR catalyst efficiency.
+      - Follow the manufacturer procedure before resetting any restart countdown.
+    related_dtcs:
+      - P20EE
+      - P203B
+      - P204F
+      - P207F
+      - P229F
+    difficulty: advanced
+
+  - id: audi_nox_sensor_diagnosis
+    vehicle:
+      manufacturer: audi
+      models:
+        - a3
+        - a4
+        - a5
+        - a6
+        - a7
+        - a8
+        - q2
+        - q3
+        - q5
+        - q7
+        - q8
+    generations: all
+    engines: all
+    category: diagnostics
+    system: scr
+    title:
+      en: NOx Sensor Diagnosis
+      ro: Diagnosticare senzor NOx
+      de: Diagnose NOx-Sensor
+    symptoms:
+      - emissions_warning
+      - adblue_warning
+      - limp_mode
+      - increased_fuel_consumption
+    keywords:
+      - nox sensor
+      - nitrogen oxide sensor
+      - nox
+      - scr
+      - adblue
+      - p2200
+      - p2201
+      - p229f
+      - senzor nox
+      - oxizi azot
+      - eroare nox
+    possible_causes:
+      - faulty_nox_sensor
+      - sensor_heater_fault
+      - wiring_fault
+      - connector_fault
+      - exhaust_leak
+      - scr_system_fault
+    diagnostic_steps:
+      - Identify whether the fault is upstream or downstream of the SCR catalyst.
+      - Check NOx sensor measured values.
+      - Check sensor heater status.
+      - Inspect wiring and connectors.
+      - Check exhaust system for leaks.
+      - Diagnose related SCR faults before replacing the NOx sensor.
+    related_dtcs:
+      - P2200
+      - P2201
+      - P229F
+    difficulty: advanced
+
+  - id: audi_exhaust_temperature_sensor
+    vehicle:
+      manufacturer: audi
+      models:
+        - a3
+        - a4
+        - a5
+        - a6
+        - a7
+        - a8
+        - q2
+        - q3
+        - q5
+        - q7
+    generations: all
+    engines: all
+    category: diagnostics
+    system: exhaust
+    title:
+      en: Exhaust Gas Temperature Sensor Diagnosis
+      ro: Diagnosticare senzor temperatură gaze evacuare
+      de: Diagnose Abgastemperatursensor
+    symptoms:
+      - dpf_warning
+      - limp_mode
+      - poor_power
+      - frequent_regeneration
+    keywords:
+      - egt
+      - exhaust gas temperature
+      - exhaust temperature sensor
+      - dpf
+      - regeneration
+      - p0544
+      - p2031
+      - p2033
+      - egt sensor
+      - temperatura gaze
+      - senzor egt
+    possible_causes:
+      - faulty_egt_sensor
+      - wiring_fault
+      - connector_fault
+      - exhaust_temperature_abnormal
+      - dpf_restriction
+      - combustion_fault
+    diagnostic_steps:
+      - Compare EGT sensor values with engine temperature and other exhaust sensors.
+      - Check sensor response during engine warm-up.
+      - Check sensor wiring and connectors.
+      - Monitor EGT during DPF regeneration.
+      - Diagnose the cause of abnormal exhaust temperature before replacing the sensor.
+    related_dtcs:
+      - P0544
+      - P2031
+      - P2033
+    difficulty: medium
+
+  # ============================================================
+  # AUDI / VAG — THROTTLE / E-GAS / EPC
+  # ============================================================
+
+  - id: audi_throttle_body_epc
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: throttle
+    title:
+      en: Electronic Throttle Body / EPC Diagnosis
+      ro: Diagnosticare clapetă accelerație electronică / EPC
+      de: Diagnose elektronische Drosselklappe / EPC
+    symptoms:
+      - poor_power
+      - limp_mode
+      - rough_idle
+      - throttle_response_issue
+      - epc_warning
+    keywords:
+      - throttle body
+      - electronic throttle
+      - e-gas
+      - epc
+      - accelerator pedal
+      - throttle adaptation
+      - p0121
+      - p0221
+      - p2101
+      - clapeta acceleratie
+      - acceleratie electronica
+      - martor epc
+    possible_causes:
+      - dirty_throttle_body
+      - throttle_motor_fault
+      - throttle_position_sensor
+      - accelerator_pedal_sensor
+      - wiring_fault
+      - low_voltage
+      - lost_adaptation
+    diagnostic_steps:
+      - Read engine control module faults.
+      - Check accelerator pedal and throttle position values.
+      - Check throttle actuator command versus actual position.
+      - Inspect connector and wiring.
+      - Clean the throttle body only where appropriate.
+      - Perform the applicable throttle adaptation/basic setting.
+      - Recheck the system after adaptation.
+    related_dtcs:
+      - P0121
+      - P0221
+      - P2101
+    difficulty: medium
+
+  - id: audi_accelerator_pedal_sensor
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: throttle
+    title:
+      en: Accelerator Pedal Position Sensor Diagnosis
+      ro: Diagnosticare senzor pedală accelerație
+      de: Diagnose Gaspedalpositionssensor
+    symptoms:
+      - poor_power
+      - limp_mode
+      - throttle_response_issue
+      - epc_warning
+    keywords:
+      - accelerator pedal
+      - pedal position sensor
+      - g79
+      - g185
+      - p2122
+      - p2127
+      - p2138
+      - pedala acceleratie
+      - senzor pedala
+      - epc
+    possible_causes:
+      - accelerator_pedal_sensor
+      - wiring_fault
+      - connector_fault
+      - reference_voltage
+      - low_voltage
+    diagnostic_steps:
+      - Monitor both accelerator pedal position signals.
+      - Check whether both signals change smoothly.
+      - Inspect pedal connector and wiring.
+      - Check reference voltage and ground.
+      - Compare pedal command with throttle response.
+    related_dtcs:
+      - P2122
+      - P2127
+      - P2138
+    difficulty: medium
+
+  # ============================================================
+  # AUDI / VAG — VARIABLE VALVE TIMING
+  # ============================================================
+
+  - id: audi_camshaft_timing_correlation
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: engine_timing
+    title:
+      en: Camshaft / Crankshaft Timing Correlation Diagnosis
+      ro: Diagnosticare sincronizare arbore cotit / arbori cu came
+      de: Diagnose Nockenwellen-/Kurbelwellenkorrelation
+    symptoms:
+      - hard_start
+      - no_start
+      - rough_idle
+      - poor_power
+      - engine_noise
+    keywords:
+      - camshaft correlation
+      - crankshaft correlation
+      - timing
+      - synchronization
+      - p0016
+      - p0017
+      - p0018
+      - p0019
+      - distributie
+      - sincronizare
+      - fazare
+      - ax came
+    possible_causes:
+      - incorrect_mechanical_timing
+      - stretched_timing_chain
+      - timing_belt_issue
+      - variable_valve_timing
+      - camshaft_adjuster
+      - crankshaft_sensor
+      - camshaft_sensor
+    diagnostic_steps:
+      - Read camshaft/crankshaft correlation data.
+      - Check stored timing-related DTCs.
+      - Compare actual and specified camshaft position.
+      - Check mechanical timing if correlation is outside specification.
+      - Inspect timing chain/belt and tensioner where applicable.
+    related_dtcs:
+      - P0016
+      - P0017
+      - P0018
+      - P0019
+    difficulty: advanced
+
+  - id: audi_variable_valve_timing
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: engine_timing
+    title:
+      en: Variable Valve Timing System Diagnosis
+      ro: Diagnosticare sistem distribuție variabilă
+      de: Diagnose variable Ventilsteuerung
+    symptoms:
+      - poor_power
+      - low_rpm_power_loss
+      - rough_idle
+      - hard_start
+      - increased_fuel_consumption
+    keywords:
+      - variable valve timing
+      - camshaft adjustment
+      - cam adjuster
+      - vvt
+      - n205
+      - n318
+      - p0010
+      - p0011
+      - p0012
+      - p0014
+      - variator
+      - distributie variabila
+      - fazare variabila
+    possible_causes:
+      - camshaft_adjuster
+      - oil_pressure
+      - incorrect_oil
+      - blocked_oil_control_valve
+      - timing_chain_wear
+      - wiring_fault
+      - mechanical_timing
+    diagnostic_steps:
+      - Check engine oil level and condition.
+      - Verify the specified oil type.
+      - Read camshaft adjustment actual and specified values.
+      - Check the camshaft control valve.
+      - Check oil pressure if the system response is abnormal.
+      - Inspect mechanical timing if commanded adjustment cannot be achieved.
+    related_dtcs:
+      - P0010
+      - P0011
+      - P0012
+      - P0014
+    difficulty: advanced
+
+  - id: audi_avs_variable_lift
+    vehicle:
+      manufacturer: audi
+      models:
+        - a4
+        - a5
+        - a6
+        - a7
+        - a8
+        - q5
+        - q7
+        - q8
+    generations: all
+    engines: all
+    category: diagnostics
+    system: valve_train
+    title:
+      en: Audi AVS Variable Valve Lift Diagnosis
+      ro: Diagnosticare sistem Audi AVS
+      de: Diagnose Audi AVS Ventilhubverstellung
+    symptoms:
+      - poor_power
+      - rough_idle
+      - limp_mode
+      - engine_noise
+    keywords:
+      - avs
+      - audi valvelift
+      - variable valve lift
+      - valve lift
+      - camshaft lift
+      - n318
+      - n205
+      - sistem avs
+      - ridicare variabila supape
+    possible_causes:
+      - avs_actuator
+      - camshaft_adjuster
+      - actuator_position_sensor
+      - wiring_fault
+      - oil_pressure
+      - mechanical_valve_train_fault
+    diagnostic_steps:
+      - Scan the engine control module for AVS faults.
+      - Check commanded and actual actuator position.
+      - Perform actuator output tests where supported.
+      - Check oil pressure and engine oil condition.
+      - Inspect wiring and connectors.
+      - Investigate mechanical valve-train faults if commanded movement is not achieved.
+    related_dtcs:
+      - P1011
+      - P1012
+      - P1051
+      - P1052
+    difficulty: advanced
+
+  # ============================================================
+  # AUDI / VAG — DSG / S TRONIC
+  # ============================================================
+
+  - id: audi_s_tronic_mechatronic
+    vehicle:
+      manufacturer: audi
+      models:
+        - a1
+        - a3
+        - a4
+        - a5
+        - a6
+        - q2
+        - q3
+        - q5
+    generations: all
+    engines: all
+    category: diagnostics
+    system: transmission
+    title:
+      en: S tronic / DSG Mechatronic Diagnosis
+      ro: Diagnosticare mecatronică S tronic / DSG
+      de: Diagnose S tronic / DSG Mechatronik
+    symptoms:
+      - harsh_shift
+      - transmission_limp_mode
+      - delayed_engagement
+      - no_drive
+      - clutch_slip
+    keywords:
+      - s tronic
+      - dsg
+      - mechatronic
+      - mechatronics
+      - dq200
+      - dq250
+      - dq381
+      - gearbox
+      - mecatronica
+      - cutie dsg
+      - cutie s tronic
+      - smuceste
+      - nu schimba
+    possible_causes:
+      - mechatronic_fault
+      - hydraulic_pressure_issue
+      - solenoid_fault
+      - clutch_wear
+      - adaptation_issue
+      - low_system_voltage
+      - wiring_fault
+    diagnostic_steps:
+      - Scan the transmission control module.
+      - Record all clutch and hydraulic-pressure faults.
+      - Check transmission fluid according to gearbox type.
+      - Check clutch adaptation values.
+      - Check hydraulic pressure where supported.
+      - Check system voltage.
+      - Perform basic settings/adaptation only when the manufacturer conditions are satisfied.
+    related_dtcs:
+      - P17BF
+      - P189C
+      - P0841
+    difficulty: advanced
+
+  - id: audi_dsg_clutch_adaptation
+    vehicle:
+      manufacturer: audi
+      models:
+        - a1
+        - a3
+        - a4
+        - a5
+        - a6
+        - q2
+        - q3
+        - q5
+    generations: all
+    engines: all
+    category: diagnostics
+    system: transmission
+    title:
+      en: DSG / S tronic Clutch Adaptation Diagnosis
+      ro: Diagnosticare și adaptare ambreiaje DSG / S tronic
+      de: Diagnose und Kupplungsadaption DSG / S tronic
+    symptoms:
+      - harsh_shift
+      - clutch_slip
+      - delayed_engagement
+      - transmission_limp_mode
+    keywords:
+      - clutch adaptation
+      - dsg adaptation
+      - s tronic adaptation
+      - clutch basic setting
+      - clutch values
+      - adaptare ambreiaj
+      - basic settings
+      - smuceste
+      - patinare
+    possible_causes:
+      - clutch_wear
+      - incorrect_adaptation
+      - mechatronic_fault
+      - hydraulic_pressure
+      - low_voltage
+      - incorrect_basic_setting_conditions
+    diagnostic_steps:
+      - Read clutch adaptation values.
+      - Check for active transmission faults.
+      - Verify fluid temperature and other adaptation prerequisites.
+      - Perform the applicable basic setting procedure.
+      - Carry out the required adaptation drive.
+      - Recheck clutch values and fault memory.
+    related_dtcs: []
+    difficulty: advanced
+
+  # ============================================================
+  # AUDI / VAG — QUATTRO / AWD
+  # ============================================================
+
+  - id: audi_quattro_drivetrain_fault
+    vehicle:
+      manufacturer: audi
+      models:
+        - a4
+        - a5
+        - a6
+        - a7
+        - a8
+        - q3
+        - q5
+        - q7
+        - q8
+    generations: all
+    engines: all
+    category: diagnostics
+    system: quattro
+    title:
+      en: quattro AWD System Diagnosis
+      ro: Diagnosticare sistem quattro
+      de: Diagnose quattro Allradsystem
+    symptoms:
+      - drivetrain_warning
+      - traction_control_light
+      - abnormal_noise
+      - vibration
+    keywords:
+      - quattro
+      - awd
+      - four wheel drive
+      - all wheel drive
+      - differential
+      - transfer case
+      - haldex
+      - torsen
+      - quattro defect
+      - tractiune integrala
+      - diferential
+    possible_causes:
+      - incorrect_tire_sizes
+      - drivetrain_fluid_issue
+      - differential_fault
+      - coupling_fault
+      - wheel_speed_sensor
+      - control_module_fault
+      - mechanical_wear
+    diagnostic_steps:
+      - Identify the exact quattro drivetrain configuration.
+      - Scan all drivetrain control modules.
+      - Verify tire dimensions and rolling circumference.
+      - Check relevant fluid levels and condition.
+      - Compare wheel-speed signals.
+      - Check coupling/differential actuator operation where applicable.
+      - Inspect for mechanical noise or binding.
+    related_dtcs: []
+    difficulty: advanced
+
+  # ============================================================
+  # AUDI / VAG — ELECTRONIC PARKING BRAKE
+  # ============================================================
+
+  - id: audi_epb_electronic_parking_brake
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: parking_brake
+    title:
+      en: Electronic Parking Brake Diagnosis
+      ro: Diagnosticare frână de parcare electrică
+      de: Diagnose elektrische Parkbremse
+    symptoms:
+      - parking_brake_warning
+      - brake_warning
+      - parking_brake_not_releasing
+      - parking_brake_not_applying
+    keywords:
+      - epb
+      - electronic parking brake
+      - electric handbrake
+      - parking brake
+      - rear brake motor
+      - frana electrica
+      - frana de mana electrica
+      - etrier electric
+    possible_causes:
+      - parking_brake_motor
+      - rear_caliper
+      - wiring_fault
+      - low_voltage
+      - control_module_fault
+      - basic_setting_required
+      - brake_pad_service_mode_issue
+    diagnostic_steps:
+      - Scan the parking brake control system.
+      - Check battery/system voltage.
+      - Activate each parking-brake motor using output tests where supported.
+      - Inspect motor connectors and wiring.
+      - Check rear brake caliper mechanical condition.
+      - Perform the applicable basic setting after brake service.
+    related_dtcs:
+      - C2007
+      - C2008
+    difficulty: medium
+
+  # ============================================================
+  # AUDI / VAG — AIR SUSPENSION
+  # ============================================================
+
+  - id: audi_air_suspension_level_control
+    vehicle:
+      manufacturer: audi
+      models:
+        - a6
+        - a7
+        - a8
+        - q7
+        - q8
+    generations: all
+    engines: all
+    category: diagnostics
+    system: air_suspension
+    title:
+      en: Air Suspension Level Control Diagnosis
+      ro: Diagnosticare suspensie pneumatică
+      de: Diagnose Luftfederungs-Niveauregelung
+    symptoms:
+      - vehicle_sagging
+      - suspension_warning
+      - uneven_vehicle_height
+      - compressor_runs_too_long
+    keywords:
+      - air suspension
+      - level control
+      - air spring
+      - compressor
+      - ride height
+      - level sensor
+      - suspensie pneumatica
+      - perna aer
+      - compresor suspensie
+      - masina lasata
+      - sta jos
+    possible_causes:
+      - air_leak
+      - air_spring_leak
+      - compressor_fault
+      - valve_block
+      - level_sensor
+      - air_line_leak
+      - wiring_fault
+    diagnostic_steps:
+      - Read level-control faults.
+      - Compare measured ride heights.
+      - Check whether the vehicle loses height while parked.
+      - Check compressor operating time.
+      - Inspect air springs and air lines for leaks.
+      - Check valve-block operation.
+      - Calibrate ride height only after mechanical faults have been eliminated.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: audi_air_suspension_compressor
+    vehicle:
+      manufacturer: audi
+      models:
+        - a6
+        - a7
+        - a8
+        - q7
+        - q8
+    generations: all
+    engines: all
+    category: diagnostics
+    system: air_suspension
+    title:
+      en: Air Suspension Compressor Diagnosis
+      ro: Diagnosticare compresor suspensie pneumatică
+      de: Diagnose Luftfederungskompressor
+    symptoms:
+      - suspension_warning
+      - vehicle_sagging
+      - compressor_runs_too_long
+      - uneven_vehicle_height
+    keywords:
+      - air suspension compressor
+      - compressor
+      - pump
+      - suspension pump
+      - overheat
+      - duty cycle
+      - compresor suspensie
+      - pompa suspensie
+      - nu ridica masina
+    possible_causes:
+      - worn_compressor
+      - air_leak
+      - blocked_air_filter
+      - relay_fault
+      - valve_block
+      - compressor_overheating
+    diagnostic_steps:
+      - Check compressor activation command.
+      - Measure compressor operating time.
+      - Check whether the vehicle has an air leak.
+      - Inspect compressor intake/filter.
+      - Check compressor temperature protection.
+      - Check relay/power supply.
+      - Test pressure generation where supported.
+    related_dtcs: []
+    difficulty: advanced
+
+  # ============================================================
+  # AUDI / VAG — PARKING / CAMERA / RADAR
+  # ============================================================
+
+  - id: audi_parking_sensor_fault
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: parking_assistance
+    title:
+      en: Parking Sensor System Diagnosis
+      ro: Diagnosticare senzori de parcare
+      de: Diagnose Einparkhilfe
+    symptoms:
+      - parking_sensor_fault
+      - parking_assistance_unavailable
+      - false_parking_warning
+    keywords:
+      - parking sensor
+      - pdc
+      - park assist
+      - ultrasonic sensor
+      - parking aid
+      - senzori parcare
+      - senzori bara
+      - park assist
+    possible_causes:
+      - faulty_ultrasonic_sensor
+      - damaged_sensor
+      - wiring_fault
+      - connector_fault
+      - parking_module_fault
+      - bumper_damage
+    diagnostic_steps:
+      - Scan the parking assistance module.
+      - Identify the affected sensor.
+      - Inspect the sensor and connector.
+      - Check sensor supply and communication.
+      - Inspect the bumper for impact or paint damage.
+      - Compare sensor operation with adjacent sensors.
+    related_dtcs: []
+    difficulty: medium
+
+  # ============================================================
+  # AUDI / VAG — BATTERY MANAGEMENT
+  # ============================================================
+
+  - id: audi_battery_management
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: battery_management
+    title:
+      en: Battery Management System Diagnosis
+      ro: Diagnosticare sistem management baterie
+      de: Diagnose Batteriemanagement
+    symptoms:
+      - low_voltage
+      - battery_warning
+      - multiple_warning_lights
+      - start_stop_unavailable
+      - intermittent_electrical_fault
+    keywords:
+      - battery management
+      - bms
+      - battery monitoring
+      - j367
+      - battery adaptation
+      - battery coding
+      - start stop
+      - baterie
+      - management baterie
+      - codare baterie
+      - adaptare baterie
+    possible_causes:
+      - weak_battery
+      - incorrect_battery_type
+      - battery_not_adapted
+      - battery_monitoring_sensor
+      - alternator_fault
+      - parasitic_drain
+      - low_system_voltage
+    diagnostic_steps:
+      - Check battery state of charge.
+      - Check battery type and rated capacity.
+      - Check battery monitoring sensor data where fitted.
+      - Check charging system.
+      - Check for excessive parasitic current draw.
+      - Adapt/register the replacement battery according to the vehicle system.
+    related_dtcs:
+      - P0562
+    difficulty: medium
+
+  # ============================================================
+  # AUDI / VAG — START/STOP
+  # ============================================================
+
+  - id: audi_start_stop_unavailable
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: start_stop
+    title:
+      en: Start-Stop System Unavailable Diagnosis
+      ro: Diagnosticare sistem Start-Stop indisponibil
+      de: Diagnose Start-Stopp-System nicht verfügbar
+    symptoms:
+      - start_stop_unavailable
+      - battery_warning
+      - low_voltage
+    keywords:
+      - start stop
+      - start-stop
+      - auto start stop
+      - start stop unavailable
+      - battery
+      - bms
+      - start stop dezactivat
+      - start stop indisponibil
+    possible_causes:
+      - low_battery_state
+      - battery_age
+      - battery_management
+      - engine_temperature
+      - climate_control_demand
+      - steering_angle
+      - brake_system_condition
+      - stored_fault
+    diagnostic_steps:
+      - Check battery state of charge and health.
+      - Check battery management faults.
+      - Check engine and transmission fault memory.
+      - Check engine coolant temperature.
+      - Check HVAC demand.
+      - Check whether the system is disabled by operating conditions rather than a fault.
+    related_dtcs: []
+    difficulty: easy
