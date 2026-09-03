@@ -5156,3 +5156,2099 @@ technical_data:
       - Check whether the system is disabled by operating conditions rather than a fault.
     related_dtcs: []
     difficulty: easy
+  - id: audi_engine_p0088_high_fuel_pressure
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: fuel_system
+    title:
+      en: Fuel Rail Pressure Too High
+      ro: Presiune combustibil prea mare
+      de: Kraftstoff-Raildruck zu hoch
+    symptoms:
+      - poor_power
+      - rough_running
+      - hard_start
+      - no_start
+      - engine_stall
+      - limp_mode
+    keywords:
+      - p0088
+      - high fuel pressure
+      - rail pressure too high
+      - fuel rail pressure
+      - common rail
+    possible_causes:
+      - faulty fuel pressure regulator
+      - faulty rail pressure sensor
+      - high pressure fuel pump fault
+      - restricted fuel return
+      - wiring or connector fault
+    diagnostic_steps:
+      - read stored and pending DTCs
+      - compare specified and actual rail pressure
+      - inspect rail pressure sensor wiring
+      - test fuel pressure regulator operation
+      - verify high pressure fuel pump output
+    related_dtcs:
+      - P0088
+      - P0191
+    difficulty: advanced
+
+  - id: audi_engine_p0191_rail_pressure_range
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: fuel_system
+    title:
+      en: Fuel Rail Pressure Sensor Range or Performance
+      ro: Senzor presiune rampă - semnal în afara parametrilor
+      de: Kraftstoffdrucksensor - Signal außerhalb des Bereichs
+    symptoms:
+      - hard_start
+      - no_start
+      - poor_power
+      - engine_stall
+      - rough_running
+    keywords:
+      - p0191
+      - rail pressure sensor
+      - fuel pressure sensor
+      - fuel rail sensor
+      - pressure signal
+    possible_causes:
+      - faulty rail pressure sensor
+      - unstable fuel pressure
+      - wiring fault
+      - connector corrosion
+      - high pressure pump problem
+    diagnostic_steps:
+      - scan the engine control module
+      - compare rail pressure specified versus actual
+      - inspect sensor connector and wiring
+      - check sensor supply and ground
+      - verify fuel pressure stability
+    related_dtcs:
+      - P0191
+      - P0192
+      - P0193
+    difficulty: advanced
+
+  - id: audi_engine_fuel_pressure_regulator
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: fuel_system
+    title:
+      en: Fuel Pressure Regulator Diagnosis
+      ro: Diagnosticare regulator presiune combustibil
+      de: Diagnose Kraftstoffdruckregler
+    symptoms:
+      - poor_power
+      - hard_start
+      - no_start
+      - rough_running
+      - engine_stall
+    keywords:
+      - fuel pressure regulator
+      - pressure regulator
+      - fuel regulator
+      - rail pressure control
+      - metering valve
+    possible_causes:
+      - sticking pressure regulator
+      - electrical fault
+      - contaminated fuel
+      - high pressure pump fault
+      - wiring problem
+    diagnostic_steps:
+      - compare commanded and actual fuel pressure
+      - inspect regulator electrical circuit
+      - check connector condition
+      - evaluate regulator response under load
+      - inspect fuel system for contamination
+    related_dtcs:
+      - P0087
+      - P0088
+      - P0191
+    difficulty: advanced
+
+  - id: audi_engine_high_pressure_fuel_pump
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: fuel_system
+    title:
+      en: High Pressure Fuel Pump Diagnosis
+      ro: Diagnosticare pompă de înaltă presiune
+      de: Diagnose Hochdruck-Kraftstoffpumpe
+    symptoms:
+      - hard_start
+      - no_start
+      - poor_power
+      - engine_stall
+      - limp_mode
+    keywords:
+      - high pressure fuel pump
+      - hpfp
+      - fuel pump
+      - rail pressure
+      - low rail pressure
+    possible_causes:
+      - worn high pressure pump
+      - pump mechanical failure
+      - fuel pressure regulator fault
+      - insufficient low pressure supply
+      - contaminated fuel
+    diagnostic_steps:
+      - measure low pressure fuel supply
+      - compare requested and actual rail pressure
+      - monitor pressure during cranking
+      - inspect pump drive components
+      - verify pressure regulation
+    related_dtcs:
+      - P0087
+      - P0088
+      - P0191
+    difficulty: advanced
+
+  - id: audi_engine_low_pressure_fuel_pump
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: fuel_system
+    title:
+      en: Low Pressure Fuel Pump Diagnosis
+      ro: Diagnosticare pompă combustibil de joasă presiune
+      de: Diagnose Niederdruck-Kraftstoffpumpe
+    symptoms:
+      - hard_start
+      - no_start
+      - poor_power
+      - engine_stall
+      - intermittent_power_loss
+    keywords:
+      - fuel pump
+      - low pressure pump
+      - tank pump
+      - fuel delivery
+      - fuel supply
+    possible_causes:
+      - weak fuel pump
+      - failed fuel pump
+      - blocked fuel filter
+      - fuel pump relay fault
+      - wiring voltage drop
+    diagnostic_steps:
+      - check pump activation
+      - measure supply voltage at the pump
+      - measure low pressure fuel delivery
+      - inspect fuel filter
+      - check pump current draw
+    related_dtcs:
+      - P0087
+      - P0230
+    difficulty: intermediate
+
+  - id: audi_engine_injector_stuck_open
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: fuel_system
+    title:
+      en: Fuel Injector Stuck Open
+      ro: Injector blocat pe deschis
+      de: Einspritzventil hängt offen
+    symptoms:
+      - rough_running
+      - hard_start
+      - no_start
+      - black_smoke
+      - poor_power
+      - fuel_consumption
+    keywords:
+      - injector stuck open
+      - leaking injector
+      - injector leak
+      - fuel injector
+      - injector fault
+    possible_causes:
+      - mechanically stuck injector
+      - injector contamination
+      - injector internal leakage
+      - electrical control fault
+    diagnostic_steps:
+      - inspect injector correction values
+      - perform leak-off or return test where applicable
+      - check injector electrical resistance
+      - inspect cylinder contribution
+      - check for fuel dilution
+    related_dtcs:
+      - P0201
+      - P0202
+      - P0203
+      - P0204
+    difficulty: advanced
+
+  - id: audi_engine_injector_excessive_return
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: fuel_system
+    title:
+      en: Excessive Injector Return Flow
+      ro: Retur excesiv de combustibil la injector
+      de: Zu hoher Injektor-Rücklauf
+    symptoms:
+      - hard_start
+      - no_start
+      - poor_power
+      - engine_stall
+      - rough_running
+    keywords:
+      - injector return
+      - excessive return flow
+      - injector leak off
+      - leak off test
+      - common rail injector
+    possible_causes:
+      - worn injector
+      - internal injector leakage
+      - injector valve wear
+      - contaminated fuel
+    diagnostic_steps:
+      - perform injector leak-off test
+      - compare return quantities between cylinders
+      - check rail pressure during cranking
+      - inspect fuel quality
+      - replace or repair defective injector
+    related_dtcs:
+      - P0087
+      - P0201
+      - P0202
+      - P0203
+      - P0204
+    difficulty: advanced
+
+  - id: audi_engine_cranking_fuel_pressure
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: fuel_system
+    title:
+      en: Fuel Pressure During Engine Cranking
+      ro: Verificarea presiunii combustibilului la pornire
+      de: Kraftstoffdruck während des Anlassens
+    symptoms:
+      - crank_no_start
+      - no_start
+      - hard_start
+      - engine_stall
+    keywords:
+      - fuel pressure during cranking
+      - cranking pressure
+      - start pressure
+      - no start fuel pressure
+      - rail pressure during start
+    possible_causes:
+      - low fuel pressure
+      - excessive injector return
+      - high pressure pump fault
+      - fuel pressure regulator fault
+      - low pressure supply problem
+    diagnostic_steps:
+      - monitor fuel pressure while cranking
+      - compare actual pressure with required starting pressure
+      - check low pressure fuel supply
+      - inspect injector return flow
+      - verify engine speed signal
+    related_dtcs:
+      - P0087
+      - P0191
+    difficulty: advanced
+
+  - id: audi_engine_crankshaft_sensor_intermittent
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: engine_management
+    title:
+      en: Crankshaft Position Sensor Intermittent Signal
+      ro: Semnal intermitent senzor poziție arbore cotit
+      de: Intermittierendes Kurbelwellensensorsignal
+    symptoms:
+      - engine_stall
+      - crank_no_start
+      - no_start
+      - intermittent_no_start
+      - hard_start
+    keywords:
+      - crankshaft sensor
+      - crank sensor
+      - rpm sensor
+      - engine speed sensor
+      - intermittent crank signal
+      - g28
+    possible_causes:
+      - failing crankshaft position sensor
+      - damaged wiring
+      - connector fault
+      - excessive sensor gap
+      - damaged trigger wheel
+    diagnostic_steps:
+      - monitor engine RPM during cranking
+      - inspect crankshaft sensor wiring
+      - check sensor supply and signal
+      - inspect trigger wheel
+      - compare crankshaft and camshaft synchronization
+    related_dtcs:
+      - P0335
+      - P0336
+    difficulty: intermediate
+
+  - id: audi_engine_camshaft_sensor_intermittent
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: engine_management
+    title:
+      en: Camshaft Position Sensor Intermittent Signal
+      ro: Semnal intermitent senzor poziție arbore cu came
+      de: Intermittierendes Nockenwellensensorsignal
+    symptoms:
+      - hard_start
+      - no_start
+      - crank_no_start
+      - engine_stall
+      - rough_running
+    keywords:
+      - camshaft sensor
+      - cam sensor
+      - camshaft position
+      - g40
+      - intermittent cam signal
+    possible_causes:
+      - failing camshaft sensor
+      - damaged wiring
+      - connector fault
+      - timing problem
+      - poor sensor supply
+    diagnostic_steps:
+      - check camshaft sensor signal
+      - inspect wiring and connector
+      - compare camshaft and crankshaft signals
+      - verify mechanical timing
+      - check synchronization values
+    related_dtcs:
+      - P0340
+      - P0341
+    difficulty: intermediate
+
+  - id: audi_engine_p0016_crank_cam_correlation
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: engine_timing
+    title:
+      en: Crankshaft Camshaft Correlation Fault
+      ro: Eroare corelație arbore cotit - arbore cu came
+      de: Kurbelwellen-Nockenwellen-Korrelation fehlerhaft
+    symptoms:
+      - hard_start
+      - no_start
+      - crank_no_start
+      - rough_running
+      - engine_stall
+      - poor_power
+    keywords:
+      - p0016
+      - crank cam correlation
+      - cam crank correlation
+      - synchronization
+      - timing correlation
+    possible_causes:
+      - incorrect mechanical timing
+      - stretched timing chain
+      - timing belt displacement
+      - camshaft sensor fault
+      - crankshaft sensor fault
+    diagnostic_steps:
+      - scan for timing correlation faults
+      - compare synchronization data
+      - inspect crankshaft and camshaft signals
+      - verify mechanical timing
+      - inspect timing chain or belt
+    related_dtcs:
+      - P0016
+      - P0017
+      - P0340
+      - P0335
+    difficulty: advanced
+
+  - id: audi_engine_p0017_crank_cam_correlation
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: engine_timing
+    title:
+      en: Crankshaft Camshaft Correlation Bank 1
+      ro: Corelație arbore cotit - arbore cu came Bank 1
+      de: Kurbelwellen-Nockenwellen-Korrelation Bank 1
+    symptoms:
+      - no_start
+      - crank_no_start
+      - hard_start
+      - rough_running
+      - engine_stall
+    keywords:
+      - p0017
+      - crankshaft camshaft correlation
+      - timing correlation
+      - synchronization
+      - bank 1
+    possible_causes:
+      - incorrect timing
+      - timing chain stretch
+      - variable valve timing fault
+      - sensor signal problem
+    diagnostic_steps:
+      - check stored DTCs
+      - verify camshaft timing values
+      - inspect timing chain or belt
+      - compare sensor waveforms
+      - verify mechanical synchronization
+    related_dtcs:
+      - P0017
+      - P0016
+    difficulty: advanced
+
+  - id: audi_engine_catalyst_restriction
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: exhaust
+    title:
+      en: Restricted Catalytic Converter Diagnosis
+      ro: Diagnosticare catalizator înfundat
+      de: Diagnose eines zugesetzten Katalysators
+    symptoms:
+      - poor_power
+      - low_rpm_power_loss
+      - slow_acceleration
+      - engine_stall
+      - overheating
+    keywords:
+      - blocked catalytic converter
+      - restricted catalyst
+      - exhaust restriction
+      - clogged catalyst
+      - back pressure
+    possible_causes:
+      - collapsed catalyst substrate
+      - melted catalyst
+      - excessive soot
+      - engine misfire
+      - oil contamination
+    diagnostic_steps:
+      - measure exhaust back pressure
+      - compare manifold pressure under load
+      - inspect catalyst temperature
+      - check upstream and downstream oxygen sensor behavior
+      - inspect catalyst physically where accessible
+    related_dtcs:
+      - P0420
+    difficulty: advanced
+
+  - id: audi_engine_p0420_catalyst_efficiency
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: emissions
+    title:
+      en: Catalyst Efficiency Below Threshold
+      ro: Eficiență catalizator sub limita admisă
+      de: Katalysatorwirkungsgrad unter Schwellenwert
+    symptoms:
+      - engine_light
+      - poor_power
+      - fuel_consumption
+    keywords:
+      - p0420
+      - catalyst efficiency
+      - catalytic converter
+      - catalyst below threshold
+      - oxygen sensor
+    possible_causes:
+      - degraded catalytic converter
+      - exhaust leak
+      - faulty oxygen sensor
+      - rich mixture
+      - engine misfire
+    diagnostic_steps:
+      - inspect exhaust for leaks
+      - monitor upstream oxygen sensor
+      - monitor downstream oxygen sensor
+      - check fuel trims
+      - verify catalyst operating temperature
+    related_dtcs:
+      - P0420
+    difficulty: intermediate
+
+  - id: audi_engine_upstream_lambda_sensor
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: emissions
+    title:
+      en: Upstream Lambda Sensor Diagnosis
+      ro: Diagnosticare sondă lambda înainte de catalizator
+      de: Diagnose der Lambdasonde vor dem Katalysator
+    symptoms:
+      - poor_power
+      - rough_running
+      - fuel_consumption
+      - hesitation
+    keywords:
+      - lambda sensor
+      - oxygen sensor
+      - upstream o2
+      - front oxygen sensor
+      - lambda regulation
+    possible_causes:
+      - contaminated lambda sensor
+      - aging sensor
+      - wiring fault
+      - exhaust leak
+      - mixture problem
+    diagnostic_steps:
+      - check lambda sensor live data
+      - inspect sensor wiring
+      - verify heater operation
+      - check fuel trims
+      - inspect exhaust for leaks
+    related_dtcs:
+      - P0130
+      - P0131
+      - P0132
+      - P0133
+    difficulty: intermediate
+
+  - id: audi_engine_downstream_lambda_sensor
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: emissions
+    title:
+      en: Downstream Lambda Sensor Diagnosis
+      ro: Diagnosticare sondă lambda după catalizator
+      de: Diagnose der Lambdasonde nach dem Katalysator
+    symptoms:
+      - engine_light
+      - fuel_consumption
+    keywords:
+      - downstream lambda
+      - rear oxygen sensor
+      - post catalyst oxygen sensor
+      - o2 sensor
+      - lambda sensor
+    possible_causes:
+      - failed oxygen sensor
+      - damaged wiring
+      - exhaust leak
+      - catalyst efficiency problem
+    diagnostic_steps:
+      - inspect sensor wiring
+      - monitor downstream sensor signal
+      - compare upstream and downstream signals
+      - check heater circuit
+      - inspect exhaust system
+    related_dtcs:
+      - P0136
+      - P0137
+      - P0138
+      - P0141
+    difficulty: intermediate
+
+  - id: audi_engine_lambda_heater_fault
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: emissions
+    title:
+      en: Lambda Sensor Heater Circuit Fault
+      ro: Eroare circuit încălzire sondă lambda
+      de: Fehler im Heizkreis der Lambdasonde
+    symptoms:
+      - engine_light
+      - rough_running
+      - fuel_consumption
+    keywords:
+      - lambda heater
+      - oxygen sensor heater
+      - o2 heater
+      - heater circuit
+      - p0135
+      - p0141
+    possible_causes:
+      - failed lambda heater
+      - blown fuse
+      - wiring fault
+      - connector fault
+    diagnostic_steps:
+      - check heater resistance
+      - verify heater power supply
+      - inspect fuse and wiring
+      - verify ECU heater control
+    related_dtcs:
+      - P0135
+      - P0141
+    difficulty: intermediate
+
+  - id: audi_engine_evap_purge_valve
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: emissions
+    title:
+      en: EVAP Purge Valve Diagnosis
+      ro: Diagnosticare supapă purjare EVAP
+      de: Diagnose des Tankentlüftungsventils
+    symptoms:
+      - hard_start
+      - rough_idle
+      - hesitation
+      - engine_stall
+    keywords:
+      - evap
+      - purge valve
+      - purge solenoid
+      - fuel vapor
+      - n80
+    possible_causes:
+      - purge valve stuck open
+      - purge valve stuck closed
+      - electrical fault
+      - vacuum leak
+    diagnostic_steps:
+      - test purge valve activation
+      - inspect valve for leakage
+      - check electrical resistance
+      - inspect hoses
+      - monitor fuel trim changes
+    related_dtcs:
+      - P0441
+      - P0443
+    difficulty: intermediate
+
+  - id: audi_engine_evap_leak
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: emissions
+    title:
+      en: EVAP System Leak Diagnosis
+      ro: Diagnosticare scurgere sistem EVAP
+      de: Diagnose einer EVAP-Systemundichtigkeit
+    symptoms:
+      - engine_light
+      - rough_idle
+    keywords:
+      - evap leak
+      - fuel vapor leak
+      - evaporative emissions
+      - fuel tank ventilation
+      - vapor leak
+    possible_causes:
+      - loose fuel cap
+      - cracked EVAP hose
+      - leaking purge valve
+      - charcoal canister fault
+      - tank ventilation valve fault
+    diagnostic_steps:
+      - scan EVAP-related DTCs
+      - inspect hoses and connections
+      - test purge valve
+      - perform smoke test
+      - inspect fuel tank ventilation system
+    related_dtcs:
+      - P0442
+      - P0455
+      - P0456
+    difficulty: intermediate
+
+  - id: audi_engine_secondary_air_injection
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: emissions
+    title:
+      en: Secondary Air Injection System Diagnosis
+      ro: Diagnosticare sistem injecție aer secundar
+      de: Diagnose der Sekundärluftanlage
+    symptoms:
+      - engine_light
+      - rough_running
+      - cold_start
+    keywords:
+      - secondary air injection
+      - sai
+      - secondary air pump
+      - air injection
+      - combi valve
+    possible_causes:
+      - failed secondary air pump
+      - blocked air passages
+      - faulty combination valve
+      - vacuum control problem
+      - relay or wiring fault
+    diagnostic_steps:
+      - activate secondary air pump with diagnostic equipment
+      - check pump operation
+      - inspect hoses
+      - test combination valve
+      - verify oxygen sensor response during operation
+    related_dtcs:
+      - P0410
+      - P0411
+    difficulty: intermediate
+
+  - id: audi_engine_exhaust_temperature_sensor
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: exhaust
+    title:
+      en: Exhaust Gas Temperature Sensor Diagnosis
+      ro: Diagnosticare senzor temperatură gaze evacuare
+      de: Diagnose des Abgastemperatursensors
+    symptoms:
+      - poor_power
+      - limp_mode
+      - dpf
+      - regeneration_problem
+    keywords:
+      - exhaust temperature sensor
+      - egts
+      - egt sensor
+      - exhaust gas temperature
+      - abgastemperatursensor
+    possible_causes:
+      - failed temperature sensor
+      - damaged wiring
+      - connector fault
+      - exhaust overheating
+    diagnostic_steps:
+      - compare temperature readings between sensors
+      - inspect wiring
+      - check sensor resistance where applicable
+      - monitor temperature during regeneration
+      - verify plausibility with engine operating conditions
+    related_dtcs:
+      - P0544
+      - P0545
+      - P0546
+    difficulty: intermediate
+
+  - id: audi_engine_intake_manifold_runner
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: intake
+    title:
+      en: Intake Manifold Runner Diagnosis
+      ro: Diagnosticare clapete galerie admisie
+      de: Diagnose der Saugrohrklappen
+    symptoms:
+      - poor_power
+      - low_rpm_power_loss
+      - hesitation
+      - limp_mode
+    keywords:
+      - intake manifold runner
+      - intake flap
+      - manifold flap
+      - runner actuator
+      - intake manifold actuator
+    possible_causes:
+      - sticking intake flap
+      - actuator failure
+      - carbon buildup
+      - vacuum leak
+      - position sensor fault
+    diagnostic_steps:
+      - inspect intake flap movement
+      - activate actuator with diagnostic equipment
+      - compare commanded and actual position
+      - inspect linkage
+      - check for carbon deposits
+    related_dtcs:
+      - P2004
+      - P2006
+      - P2015
+    difficulty: advanced
+
+  - id: audi_engine_swirl_flap_actuator
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: intake
+    title:
+      en: Swirl Flap Actuator Diagnosis
+      ro: Diagnosticare actuator clapete swirl
+      de: Diagnose der Drallklappenverstellung
+    symptoms:
+      - poor_power
+      - low_rpm_power_loss
+      - limp_mode
+      - rough_running
+    keywords:
+      - swirl flap
+      - swirl flap actuator
+      - intake flap
+      - tumble flap
+      - diesel intake flap
+    possible_causes:
+      - carbon buildup
+      - worn actuator linkage
+      - failed actuator
+      - position sensor fault
+    diagnostic_steps:
+      - check actuator position feedback
+      - activate actuator
+      - inspect linkage
+      - inspect intake manifold contamination
+      - compare commanded and actual positions
+    related_dtcs:
+      - P2015
+      - P2004
+      - P2006
+    difficulty: advanced
+
+  - id: audi_engine_brake_vacuum_pump
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: vacuum_system
+    title:
+      en: Brake Vacuum Pump Diagnosis
+      ro: Diagnosticare pompă vacuum frână
+      de: Diagnose der Bremsvakuumpumpe
+    symptoms:
+      - hard_brake_pedal
+      - vacuum_low
+      - engine_light
+    keywords:
+      - vacuum pump
+      - brake vacuum
+      - vacuum pressure
+      - brake booster
+      - vacuum system
+    possible_causes:
+      - vacuum pump failure
+      - vacuum leak
+      - damaged hose
+      - check valve failure
+    diagnostic_steps:
+      - measure vacuum level
+      - inspect vacuum hoses
+      - test pump operation
+      - inspect check valves
+      - verify brake booster vacuum
+    related_dtcs:
+      - P1479
+    difficulty: intermediate
+
+  - id: audi_electrical_ecu_power_supply
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: electrical
+    title:
+      en: Engine ECU Power Supply Diagnosis
+      ro: Diagnosticare alimentare ECU motor
+      de: Diagnose der Spannungsversorgung des Motorsteuergeräts
+    symptoms:
+      - no_start
+      - crank_no_start
+      - intermittent_no_start
+      - engine_stall
+      - communication_fault
+    keywords:
+      - ecu power supply
+      - ecu voltage
+      - engine control module power
+      - terminal 30
+      - terminal 15
+    possible_causes:
+      - blown fuse
+      - relay failure
+      - voltage drop
+      - poor ground
+      - wiring fault
+    diagnostic_steps:
+      - check ECU supply voltage
+      - check terminal 30
+      - check terminal 15
+      - inspect ECU grounds
+      - perform voltage drop testing
+    related_dtcs:
+      - P0685
+      - P0688
+    difficulty: advanced
+
+  - id: audi_electrical_ecu_ground_fault
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: electrical
+    title:
+      en: Engine ECU Ground Fault
+      ro: Eroare masă ECU motor
+      de: Massefehler des Motorsteuergeräts
+    symptoms:
+      - no_start
+      - crank_no_start
+      - engine_stall
+      - communication_fault
+      - intermittent_no_start
+    keywords:
+      - ecu ground
+      - engine ecu ground
+      - ground fault
+      - control module ground
+      - voltage drop
+    possible_causes:
+      - corroded ground connection
+      - loose ground
+      - damaged ground cable
+      - high resistance connection
+    diagnostic_steps:
+      - perform ECU ground voltage drop test
+      - inspect engine ground straps
+      - inspect ECU ground connections
+      - check battery negative connection
+    related_dtcs:
+      - U0100
+      - P0600
+    difficulty: advanced
+
+  - id: audi_electrical_terminal_30_fault
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: electrical
+    title:
+      en: Terminal 30 Power Supply Fault
+      ro: Eroare alimentare Terminal 30
+      de: Fehler der Klemme-30-Versorgung
+    symptoms:
+      - no_start
+      - engine_stall
+      - communication_fault
+      - battery_low_voltage
+    keywords:
+      - terminal 30
+      - t30
+      - permanent power
+      - battery supply
+      - control module power
+    possible_causes:
+      - blown fuse
+      - battery connection fault
+      - wiring fault
+      - relay or power distribution fault
+    diagnostic_steps:
+      - measure permanent battery supply
+      - inspect fuses
+      - check power distribution
+      - inspect battery terminals
+      - perform voltage drop testing
+    related_dtcs:
+      - P0562
+      - U0100
+    difficulty: advanced
+
+  - id: audi_electrical_terminal_15_fault
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: electrical
+    title:
+      en: Terminal 15 Ignition Supply Fault
+      ro: Eroare alimentare Terminal 15
+      de: Fehler der Klemme-15-Versorgung
+    symptoms:
+      - no_start
+      - engine_stall
+      - intermittent_no_start
+      - communication_fault
+    keywords:
+      - terminal 15
+      - ignition supply
+      - ignition switched power
+      - t15
+      - ignition voltage
+    possible_causes:
+      - ignition switch fault
+      - relay fault
+      - wiring fault
+      - fuse fault
+    diagnostic_steps:
+      - verify ignition-switched voltage
+      - inspect relevant fuses and relays
+      - check terminal 15 distribution
+      - inspect wiring and connectors
+    related_dtcs:
+      - P0685
+      - P0686
+    difficulty: advanced
+
+  - id: audi_electrical_can_bus_intermittent
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: communication
+    title:
+      en: Intermittent CAN Bus Communication Fault
+      ro: Eroare intermitentă comunicație CAN
+      de: Sporadischer CAN-Kommunikationsfehler
+    symptoms:
+      - communication_fault
+      - intermittent_no_start
+      - engine_stall
+      - warning_lights
+    keywords:
+      - can bus
+      - can communication
+      - communication fault
+      - intermittent communication
+      - data bus
+    possible_causes:
+      - wiring fault
+      - poor connector
+      - low system voltage
+      - faulty control module
+      - CAN bus short circuit
+    diagnostic_steps:
+      - scan all control modules
+      - identify missing communication modules
+      - inspect CAN wiring
+      - check bus resistance
+      - verify system voltage
+    related_dtcs:
+      - U0100
+      - U0121
+      - U0140
+    difficulty: advanced
+
+  - id: audi_electrical_lin_bus_fault
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: communication
+    title:
+      en: LIN Bus Communication Fault
+      ro: Eroare comunicație LIN Bus
+      de: LIN-Bus-Kommunikationsfehler
+    symptoms:
+      - communication_fault
+      - intermittent_fault
+      - electrical_fault
+    keywords:
+      - lin bus
+      - lin communication
+      - local interconnect network
+      - lin slave
+      - communication error
+    possible_causes:
+      - LIN wire fault
+      - failed slave component
+      - master module fault
+      - connector fault
+      - power supply problem
+    diagnostic_steps:
+      - identify affected LIN network
+      - inspect wiring
+      - check slave power supply
+      - monitor LIN communication
+      - isolate defective component
+    related_dtcs:
+      - U1xxx
+    difficulty: advanced
+
+  - id: audi_abs_hydraulic_pump
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: abs_esp
+    title:
+      en: ABS Hydraulic Pump Diagnosis
+      ro: Diagnosticare pompă hidraulică ABS
+      de: Diagnose der ABS-Hydraulikpumpe
+    symptoms:
+      - abs_warning
+      - esp_warning
+      - brake_warning
+      - abs_active
+    keywords:
+      - abs pump
+      - hydraulic pump
+      - abs hydraulic unit
+      - esp pump
+      - brake pressure
+    possible_causes:
+      - hydraulic pump failure
+      - ABS module fault
+      - motor failure
+      - wiring fault
+      - low system voltage
+    diagnostic_steps:
+      - scan ABS module
+      - activate pump with diagnostic equipment
+      - check pump electrical supply
+      - inspect hydraulic unit
+      - verify pressure generation
+    related_dtcs:
+      - C0110
+      - C0121
+    difficulty: advanced
+
+  - id: audi_abs_pressure_sensor
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: abs_esp
+    title:
+      en: ABS Brake Pressure Sensor Diagnosis
+      ro: Diagnosticare senzor presiune frână ABS
+      de: Diagnose des ABS-Bremsdrucksensors
+    symptoms:
+      - abs_warning
+      - esp_warning
+      - brake_warning
+      - esp_intervention
+    keywords:
+      - brake pressure sensor
+      - abs pressure sensor
+      - hydraulic pressure sensor
+      - brake pressure
+    possible_causes:
+      - faulty pressure sensor
+      - hydraulic unit fault
+      - wiring problem
+      - sensor calibration problem
+    diagnostic_steps:
+      - read ABS live data
+      - compare pressure readings
+      - inspect sensor wiring
+      - verify hydraulic pressure
+      - perform required basic setting
+    related_dtcs:
+      - C1236
+      - C1246
+    difficulty: advanced
+
+  - id: audi_abs_control_module
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: abs_esp
+    title:
+      en: ABS Control Module Diagnosis
+      ro: Diagnosticare modul ABS
+      de: Diagnose des ABS-Steuergeräts
+    symptoms:
+      - abs_warning
+      - esp_warning
+      - communication_fault
+      - brake_warning
+    keywords:
+      - abs module
+      - abs control unit
+      - esp module
+      - abs ecu
+      - brake control module
+    possible_causes:
+      - internal module failure
+      - power supply problem
+      - CAN communication fault
+      - hydraulic unit fault
+    diagnostic_steps:
+      - scan ABS module
+      - check power and ground
+      - check CAN communication
+      - inspect connectors
+      - verify hydraulic unit operation
+    related_dtcs:
+      - U0121
+      - C10xx
+    difficulty: advanced
+
+  - id: audi_abs_brake_light_switch
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: abs_esp
+    title:
+      en: Brake Light Switch Diagnosis
+      ro: Diagnosticare contactor pedala de frână
+      de: Diagnose des Bremslichtschalters
+    symptoms:
+      - abs_warning
+      - esp_warning
+      - cruise_control_fault
+      - brake_light_fault
+    keywords:
+      - brake light switch
+      - brake pedal switch
+      - brake switch
+      - stop light switch
+    possible_causes:
+      - failed brake switch
+      - incorrect adjustment
+      - wiring fault
+      - connector problem
+    diagnostic_steps:
+      - check brake switch live data
+      - verify brake lamp operation
+      - inspect switch adjustment
+      - inspect wiring
+    related_dtcs:
+      - P0571
+    difficulty: basic
+
+  - id: audi_abs_yaw_rate_sensor
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: abs_esp
+    title:
+      en: Yaw Rate Sensor Diagnosis
+      ro: Diagnosticare senzor rată de girație
+      de: Diagnose des Gierratensensors
+    symptoms:
+      - esp_warning
+      - abs_warning
+      - esp_intervention
+    keywords:
+      - yaw rate sensor
+      - yaw sensor
+      - gyroscope
+      - esp sensor
+      - rotation sensor
+    possible_causes:
+      - sensor failure
+      - incorrect calibration
+      - wiring fault
+      - low voltage
+      - sensor mounting problem
+    diagnostic_steps:
+      - read yaw rate live data
+      - verify zero position
+      - inspect sensor mounting
+      - perform basic setting where required
+      - road test and compare measured values
+    related_dtcs:
+      - G200
+      - 00778
+    difficulty: advanced
+
+  - id: audi_abs_lateral_acceleration_sensor
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: abs_esp
+    title:
+      en: Lateral Acceleration Sensor Diagnosis
+      ro: Diagnosticare senzor accelerație laterală
+      de: Diagnose des Querbeschleunigungssensors
+    symptoms:
+      - esp_warning
+      - abs_warning
+      - esp_intervention
+    keywords:
+      - lateral acceleration sensor
+      - g200
+      - acceleration sensor
+      - esp sensor
+      - lateral g sensor
+    possible_causes:
+      - sensor failure
+      - incorrect calibration
+      - mounting problem
+      - wiring fault
+    diagnostic_steps:
+      - check sensor live data
+      - verify zero offset
+      - inspect mounting
+      - perform basic setting
+      - verify ESP operation
+    related_dtcs:
+      - G200
+      - Cxxxx
+    difficulty: advanced
+
+  - id: audi_abs_longitudinal_acceleration_sensor
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: abs_esp
+    title:
+      en: Longitudinal Acceleration Sensor Diagnosis
+      ro: Diagnosticare senzor accelerație longitudinală
+      de: Diagnose des Längsbeschleunigungssensors
+    symptoms:
+      - esp_warning
+      - abs_warning
+      - esp_intervention
+    keywords:
+      - longitudinal acceleration sensor
+      - g251
+      - acceleration sensor
+      - esp sensor
+    possible_causes:
+      - sensor failure
+      - calibration error
+      - wiring fault
+      - low system voltage
+    diagnostic_steps:
+      - inspect live acceleration values
+      - verify zero position
+      - inspect wiring
+      - perform calibration where required
+    related_dtcs:
+      - G251
+    difficulty: advanced
+
+  - id: audi_steering_angle_basic_setting
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: steering
+    title:
+      en: Steering Angle Sensor Basic Setting
+      ro: Calibrare senzor unghi volan
+      de: Grundeinstellung des Lenkwinkelsensors
+    symptoms:
+      - esp_warning
+      - abs_warning
+      - steering_warning
+    keywords:
+      - steering angle sensor
+      - steering angle calibration
+      - g85
+      - basic setting
+      - steering calibration
+    possible_causes:
+      - lost calibration
+      - steering wheel alignment issue
+      - battery voltage interruption
+      - steering sensor fault
+    diagnostic_steps:
+      - verify steering wheel is centered
+      - read steering angle live data
+      - perform basic setting
+      - clear stored faults
+      - verify calibration during road test
+    related_dtcs:
+      - 00778
+      - G85
+    difficulty: intermediate
+
+  - id: audi_abs_wheel_speed_plausibility
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: abs_esp
+    title:
+      en: Wheel Speed Sensor Plausibility Diagnosis
+      ro: Diagnosticare plauzibilitate senzori viteză roată
+      de: Plausibilitätsprüfung der Raddrehzahlsensoren
+    symptoms:
+      - abs_warning
+      - esp_warning
+      - abs_intervention
+      - speedometer_fault
+    keywords:
+      - wheel speed sensor
+      - wheel speed plausibility
+      - abs sensor
+      - wheel speed signal
+      - implausible wheel speed
+    possible_causes:
+      - damaged wheel speed sensor
+      - damaged tone ring
+      - wheel bearing play
+      - incorrect tyre size
+      - wiring fault
+    diagnostic_steps:
+      - compare all wheel speed signals
+      - inspect sensor installation
+      - inspect tone ring or magnetic encoder
+      - check wheel bearing condition
+      - verify tyre sizes
+    related_dtcs:
+      - C0035
+      - C0040
+      - C0045
+      - C0050
+    difficulty: intermediate
+
+  - id: audi_hvac_refrigerant_pressure_sensor
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: hvac
+    title:
+      en: A/C Refrigerant Pressure Sensor Diagnosis
+      ro: Diagnosticare senzor presiune agent frigorific A/C
+      de: Diagnose des Kältemitteldrucksensors
+    symptoms:
+      - ac_not_cooling
+      - ac_intermittent
+      - hvac_fault
+    keywords:
+      - refrigerant pressure sensor
+      - ac pressure sensor
+      - g65
+      - refrigerant pressure
+      - air conditioning pressure
+    possible_causes:
+      - failed pressure sensor
+      - incorrect refrigerant charge
+      - wiring fault
+      - connector fault
+      - compressor problem
+    diagnostic_steps:
+      - read refrigerant pressure live data
+      - compare pressure with ambient conditions
+      - inspect sensor wiring
+      - verify refrigerant charge
+      - check compressor activation
+    related_dtcs:
+      - G65
+      - P0530
+    difficulty: intermediate
+
+  - id: audi_hvac_compressor_control_valve
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: hvac
+    title:
+      en: A/C Compressor Control Valve Diagnosis
+      ro: Diagnosticare supapă control compresor A/C
+      de: Diagnose des Klimakompressor-Regelventils
+    symptoms:
+      - ac_not_cooling
+      - ac_intermittent
+      - hvac_fault
+    keywords:
+      - ac compressor control valve
+      - compressor regulating valve
+      - n280
+      - compressor valve
+      - variable displacement compressor
+    possible_causes:
+      - faulty control valve
+      - compressor mechanical wear
+      - wiring fault
+      - low refrigerant
+    diagnostic_steps:
+      - check compressor command
+      - monitor compressor pressure response
+      - inspect N280 circuit
+      - verify refrigerant charge
+      - compare high and low side pressures
+    related_dtcs:
+      - N280
+      - P0530
+    difficulty: advanced
+
+  - id: audi_hvac_evaporator_temperature_sensor
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: hvac
+    title:
+      en: Evaporator Temperature Sensor Diagnosis
+      ro: Diagnosticare senzor temperatură evaporator
+      de: Diagnose des Verdampfertemperatursensors
+    symptoms:
+      - ac_intermittent
+      - ac_not_cooling
+      - hvac_fault
+    keywords:
+      - evaporator temperature sensor
+      - evaporator sensor
+      - g263
+      - evaporator temperature
+      - ac temperature sensor
+    possible_causes:
+      - failed temperature sensor
+      - wiring fault
+      - connector fault
+      - incorrect sensor reading
+    diagnostic_steps:
+      - read evaporator temperature
+      - compare with actual evaporator temperature
+      - inspect sensor wiring
+      - check HVAC control unit data
+    related_dtcs:
+      - G263
+    difficulty: intermediate
+
+  - id: audi_hvac_condenser_fan_control
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: hvac
+    title:
+      en: A/C Condenser Fan Control Diagnosis
+      ro: Diagnosticare ventilator condensator A/C
+      de: Diagnose der Klimakondensatorlüftersteuerung
+    symptoms:
+      - ac_not_cooling
+      - ac_intermittent
+      - overheating
+      - hvac_fault
+    keywords:
+      - condenser fan
+      - ac fan
+      - radiator fan
+      - cooling fan
+      - condenser cooling
+    possible_causes:
+      - failed fan motor
+      - fan control module fault
+      - wiring problem
+      - fuse or relay fault
+      - excessive refrigerant pressure
+    diagnostic_steps:
+      - activate fan with diagnostic equipment
+      - check fan supply voltage
+      - inspect fan controller
+      - monitor refrigerant pressure
+      - inspect fuses and wiring
+    related_dtcs:
+      - P0480
+      - P0481
+    difficulty: intermediate
+
+  - id: audi_hvac_flap_motor_calibration
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: hvac
+    title:
+      en: HVAC Flap Motor Calibration
+      ro: Calibrare servomotoare clapete climatizare
+      de: Kalibrierung der Stellmotoren der Klimaanlage
+    symptoms:
+      - hvac_fault
+      - uneven_temperature
+      - airflow_wrong_direction
+    keywords:
+      - hvac flap motor
+      - blend flap
+      - air flap
+      - flap calibration
+      - basic setting hvac
+    possible_causes:
+      - lost calibration
+      - failed flap motor
+      - jammed flap
+      - broken linkage
+    diagnostic_steps:
+      - scan HVAC module
+      - perform actuator basic setting
+      - monitor flap positions
+      - inspect actuator movement
+      - inspect mechanical linkage
+    related_dtcs:
+      - B10xx
+      - V68
+      - V70
+    difficulty: intermediate
+
+  - id: audi_hvac_interior_temperature_sensor
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: hvac
+    title:
+      en: Interior Temperature Sensor Diagnosis
+      ro: Diagnosticare senzor temperatură habitaclu
+      de: Diagnose des Innenraumtemperatursensors
+    symptoms:
+      - uneven_temperature
+      - hvac_fault
+      - ac_intermittent
+    keywords:
+      - interior temperature sensor
+      - cabin temperature sensor
+      - g56
+      - hvac temperature sensor
+    possible_causes:
+      - failed sensor
+      - blocked sensor fan
+      - wiring fault
+      - incorrect sensor reading
+    diagnostic_steps:
+      - compare sensor reading with cabin temperature
+      - inspect sensor intake
+      - verify sensor fan operation
+      - inspect wiring
+    related_dtcs:
+      - G56
+    difficulty: basic
+
+  - id: audi_battery_energy_management
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: electrical
+    title:
+      en: Battery Energy Management Diagnosis
+      ro: Diagnosticare management energie baterie
+      de: Diagnose des Batteriemanagements
+    symptoms:
+      - battery_low_voltage
+      - start_stop_unavailable
+      - electrical_fault
+      - no_start
+    keywords:
+      - battery management
+      - energy management
+      - battery monitoring
+      - battery sensor
+      - j367
+    possible_causes:
+      - weak battery
+      - battery sensor fault
+      - incorrect battery adaptation
+      - charging system problem
+      - parasitic drain
+    diagnostic_steps:
+      - check battery state of charge
+      - check charging voltage
+      - inspect battery monitoring sensor
+      - verify battery adaptation
+      - perform parasitic draw test
+    related_dtcs:
+      - P0562
+      - U1400
+    difficulty: advanced
+
+  - id: audi_start_stop_unavailable
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: engine_management
+    title:
+      en: Start Stop System Unavailable
+      ro: Sistem Start-Stop indisponibil
+      de: Start-Stopp-System nicht verfügbar
+    symptoms:
+      - start_stop_unavailable
+      - battery_low_voltage
+      - electrical_fault
+    keywords:
+      - start stop unavailable
+      - start stop fault
+      - start-stop
+      - battery management
+      - start stop disabled
+    possible_causes:
+      - low battery state of charge
+      - battery aging
+      - engine temperature not reached
+      - HVAC demand
+      - stored engine or ABS fault
+    diagnostic_steps:
+      - check battery state of charge
+      - scan all control modules
+      - check engine temperature
+      - inspect battery management data
+      - verify conditions preventing start-stop activation
+    related_dtcs:
+      - P0562
+    difficulty: intermediate
+
+  - id: audi_steering_column_electronics
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: steering
+    title:
+      en: Steering Column Electronics Diagnosis
+      ro: Diagnosticare electronică coloană de direcție
+      de: Diagnose der Lenksäulenelektronik
+    symptoms:
+      - steering_warning
+      - communication_fault
+      - intermittent_fault
+    keywords:
+      - steering column electronics
+      - steering column module
+      - j527
+      - steering wheel electronics
+      - steering control module
+    possible_causes:
+      - control module fault
+      - wiring fault
+      - clock spring issue
+      - CAN communication fault
+      - power supply problem
+    diagnostic_steps:
+      - scan steering column module
+      - check power and ground
+      - inspect CAN communication
+      - inspect steering wheel electronics
+      - check clock spring where applicable
+    related_dtcs:
+      - U0212
+      - 01304
+    difficulty: advanced
+
+  - id: audi_gateway_communication_fault
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: communication
+    title:
+      en: CAN Gateway Communication Diagnosis
+      ro: Diagnosticare comunicație gateway CAN
+      de: Diagnose der CAN-Gateway-Kommunikation
+    symptoms:
+      - communication_fault
+      - battery_low_voltage
+      - intermittent_fault
+      - no_start
+    keywords:
+      - can gateway
+      - gateway module
+      - j533
+      - communication gateway
+      - can bus gateway
+    possible_causes:
+      - gateway power supply fault
+      - CAN wiring problem
+      - faulty control module
+      - low battery voltage
+      - network overload
+    diagnostic_steps:
+      - perform complete vehicle scan
+      - identify missing modules
+      - check gateway power and ground
+      - inspect CAN network
+      - check installation list where applicable
+    related_dtcs:
+      - U0100
+      - U0140
+      - U0155
+    difficulty: advanced
+
+  - id: audi_engine_mount_control
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: engine_mounts
+    title:
+      en: Active Engine Mount Diagnosis
+      ro: Diagnosticare suporturi motor active
+      de: Diagnose aktiver Motorlager
+    symptoms:
+      - vibration
+      - rough_idle
+      - vibration_at_idle
+    keywords:
+      - engine mount
+      - active engine mount
+      - hydraulic engine mount
+      - engine vibration
+      - mount control
+    possible_causes:
+      - failed active mount
+      - hydraulic leakage
+      - electrical actuator fault
+      - wiring problem
+    diagnostic_steps:
+      - inspect engine mounts
+      - check for hydraulic leakage
+      - scan mount control system
+      - activate mount actuator where supported
+      - evaluate vibration at idle
+    related_dtcs:
+      - P1570
+    difficulty: intermediate
+
+  - id: audi_engine_oil_pressure_low
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: lubrication
+    title:
+      en: Low Engine Oil Pressure Diagnosis
+      ro: Diagnosticare presiune ulei motor scăzută
+      de: Diagnose zu niedrigen Motoröldrucks
+    symptoms:
+      - oil_pressure_warning
+      - engine_noise
+      - engine_stall
+      - engine_light
+    keywords:
+      - low oil pressure
+      - oil pressure
+      - oil pressure warning
+      - lubrication pressure
+      - oil pump
+    possible_causes:
+      - low oil level
+      - incorrect oil viscosity
+      - worn oil pump
+      - blocked pickup
+      - excessive engine bearing clearance
+      - faulty oil pressure sensor
+    diagnostic_steps:
+      - verify engine oil level
+      - inspect oil condition
+      - measure oil pressure mechanically
+      - compare pressure at idle and higher RPM
+      - inspect oil pickup and pump if pressure is genuinely low
+    related_dtcs:
+      - P0524
+    difficulty: advanced
+
+  - id: audi_engine_oil_pressure_sensor
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: lubrication
+    title:
+      en: Engine Oil Pressure Sensor Diagnosis
+      ro: Diagnosticare senzor presiune ulei
+      de: Diagnose des Öldrucksensors
+    symptoms:
+      - oil_pressure_warning
+      - engine_light
+    keywords:
+      - oil pressure sensor
+      - oil pressure switch
+      - oil pressure switch fault
+      - oil sensor
+    possible_causes:
+      - faulty oil pressure sensor
+      - wiring fault
+      - connector problem
+      - genuinely low oil pressure
+    diagnostic_steps:
+      - inspect sensor wiring
+      - verify oil level
+      - check sensor operation
+      - measure actual oil pressure mechanically
+      - compare measured pressure with ECU interpretation
+    related_dtcs:
+      - P0520
+      - P0521
+      - P0522
+      - P0523
+      - P0524
+    difficulty: intermediate
+
+  - id: audi_engine_vacuum_leak
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: intake
+    title:
+      en: Engine Vacuum Leak Diagnosis
+      ro: Diagnosticare pierdere de vacuum motor
+      de: Diagnose eines Motor-Vakuumlecks
+    symptoms:
+      - rough_idle
+      - hesitation
+      - poor_power
+      - hard_start
+      - lean_condition
+    keywords:
+      - vacuum leak
+      - intake leak
+      - unmetered air
+      - vacuum hose
+      - air leak
+    possible_causes:
+      - cracked vacuum hose
+      - intake manifold leak
+      - PCV leak
+      - brake booster leak
+      - gasket failure
+    diagnostic_steps:
+      - inspect vacuum hoses
+      - check intake system for leaks
+      - perform smoke test
+      - monitor fuel trims
+      - inspect PCV and brake booster circuits
+    related_dtcs:
+      - P0171
+      - P2279
+    difficulty: intermediate
