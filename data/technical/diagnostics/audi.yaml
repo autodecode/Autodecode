@@ -5,6 +5,2287 @@ manufacturer:
   name: Audi
 
 technical_data:
+  - id: audi_wiper_motor_diagnosis
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: windshield_wipers
+    title:
+      en: Windscreen Wiper Motor Diagnosis
+      ro: Diagnosticare motor ștergătoare parbriz
+      de: Diagnose des Scheibenwischermotors
+    symptoms:
+      - wipers_not_working
+      - wipers_intermittent
+      - wipers_slow
+    keywords:
+      - wiper motor
+      - windscreen wiper
+      - windshield wiper motor
+      - stergatoare
+    possible_causes:
+      - wiper_motor_fault
+      - wiring_fault
+      - fuse_fault
+      - control_module_fault
+      - mechanical_seizure
+    diagnostic_steps:
+      - Check wiper commands.
+      - Check motor power and ground.
+      - Inspect linkage for mechanical seizure.
+      - Scan the relevant control module.
+      - Test motor operation.
+
+  - id: audi_wiper_linkage_diagnosis
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: windshield_wipers
+    title:
+      en: Windscreen Wiper Linkage Diagnosis
+      ro: Diagnosticare mecanism ștergătoare parbriz
+      de: Diagnose des Scheibenwischergestänges
+    symptoms:
+      - wipers_slow
+      - wipers_stuck
+      - wipers_noise
+    keywords:
+      - wiper linkage
+      - wiper mechanism
+      - wiper arms
+      - mecanism stergatoare
+    possible_causes:
+      - seized_linkage
+      - worn_linkage_joint
+      - corrosion
+      - wiper_motor_overload
+    diagnostic_steps:
+      - Inspect linkage movement.
+      - Check for seized pivot points.
+      - Disconnect the motor where appropriate.
+      - Check mechanical resistance.
+      - Verify operation after lubrication or repair.
+
+  - id: audi_wiper_park_position_sensor
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: windshield_wipers
+    title:
+      en: Wiper Park Position Diagnosis
+      ro: Diagnosticare poziție de repaus ștergătoare
+      de: Diagnose der Wischerparkposition
+    symptoms:
+      - wipers_stop_wrong_position
+      - wipers_do_not_park
+      - intermittent_wiper_operation
+    keywords:
+      - wiper park position
+      - wiper park switch
+      - wiper position
+      - pozitie repaus stergatoare
+    possible_causes:
+      - park_switch_fault
+      - motor_fault
+      - wiring_fault
+      - control_module_fault
+    diagnostic_steps:
+      - Check wiper park status.
+      - Inspect motor connector.
+      - Verify park feedback.
+      - Check wiring.
+      - Test motor control.
+
+  - id: audi_rain_light_sensor_diagnosis
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: rain_light_sensor
+    title:
+      en: Rain and Light Sensor Diagnosis
+      ro: Diagnosticare senzor ploaie și lumină
+      de: Diagnose des Regen-Licht-Sensors
+    symptoms:
+      - automatic_wipers_fault
+      - automatic_lights_fault
+      - rain_sensor_fault
+    keywords:
+      - rain light sensor
+      - rain sensor
+      - light sensor
+      - senzor ploaie
+      - senzor lumina
+    possible_causes:
+      - sensor_fault
+      - windshield_mounting_issue
+      - optical_coupling_fault
+      - calibration_fault
+      - wiring_fault
+    diagnostic_steps:
+      - Scan the rain/light sensor.
+      - Check sensor status.
+      - Inspect windshield mounting area.
+      - Verify optical coupling.
+      - Perform calibration where applicable.
+
+  - id: audi_washer_level_sensor
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: windshield_washer
+    title:
+      en: Windscreen Washer Level Sensor Diagnosis
+      ro: Diagnosticare senzor nivel lichid parbriz
+      de: Diagnose des Waschwasserstandssensors
+    symptoms:
+      - washer_level_warning
+      - false_washer_warning
+      - washer_warning_missing
+    keywords:
+      - washer level sensor
+      - screenwash level
+      - washer fluid sensor
+      - senzor nivel lichid
+    possible_causes:
+      - level_sensor_fault
+      - wiring_fault
+      - connector_fault
+      - washer_tank_fault
+    diagnostic_steps:
+      - Check washer level status.
+      - Inspect sensor connector.
+      - Check wiring.
+      - Verify sensor response.
+      - Compare measured status with actual fluid level.
+
+  - id: audi_washer_jet_blockage
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: windshield_washer
+    title:
+      en: Windscreen Washer Jet Blockage Diagnosis
+      ro: Diagnosticare duze spălare parbriz înfundate
+      de: Diagnose verstopfter Scheibenwaschdüsen
+    symptoms:
+      - weak_washer_spray
+      - uneven_washer_spray
+      - washer_fluid_missing
+    keywords:
+      - washer jet
+      - washer nozzle
+      - blocked washer jet
+      - duza parbriz
+    possible_causes:
+      - nozzle_blockage
+      - hose_restriction
+      - frozen_fluid
+      - pump_pressure_low
+    diagnostic_steps:
+      - Check washer pump operation.
+      - Inspect hose routing.
+      - Check nozzle spray pattern.
+      - Clear blockage where appropriate.
+      - Verify spray pressure.
+
+  - id: audi_steering_wheel_multifunction_buttons
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: steering_wheel_electronics
+    title:
+      en: Multifunction Steering Wheel Button Diagnosis
+      ro: Diagnosticare butoane multifuncționale volan
+      de: Diagnose der Multifunktionstasten am Lenkrad
+    symptoms:
+      - steering_wheel_buttons_inoperative
+      - intermittent_button_operation
+      - infotainment_control_fault
+    keywords:
+      - multifunction steering wheel
+      - steering wheel buttons
+      - volume buttons
+      - butoane volan
+    possible_causes:
+      - button_module_fault
+      - clock_spring_fault
+      - wiring_fault
+      - steering_wheel_control_module_fault
+    diagnostic_steps:
+      - Check button input data.
+      - Scan steering wheel electronics.
+      - Inspect clock spring communication.
+      - Check wiring.
+      - Verify individual button functions.
+
+  - id: audi_steering_wheel_scroll_button
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: steering_wheel_electronics
+    title:
+      en: Steering Wheel Scroll Control Diagnosis
+      ro: Diagnosticare control rotativ volan
+      de: Diagnose der Scroll-Bedienung am Lenkrad
+    symptoms:
+      - scroll_control_inoperative
+      - intermittent_steering_control
+      - infotainment_control_fault
+    keywords:
+      - steering scroll wheel
+      - steering wheel roller
+      - scroll control
+      - rotita volan
+    possible_causes:
+      - switch_fault
+      - steering_wheel_module_fault
+      - clock_spring_fault
+      - communication_fault
+    diagnostic_steps:
+      - Check scroll input data.
+      - Test directional inputs.
+      - Scan steering wheel module.
+      - Inspect wiring.
+      - Verify communication.
+
+  - id: audi_cruise_control_stalk_input
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: driver_controls
+    title:
+      en: Cruise Control Stalk Input Diagnosis
+      ro: Diagnosticare manetă tempomat
+      de: Diagnose des Tempomatschalters
+    symptoms:
+      - cruise_control_inoperative
+      - cruise_control_intermittent
+      - cruise_control_button_fault
+    keywords:
+      - cruise control stalk
+      - cruise switch
+      - cruise lever
+      - maneta tempomat
+    possible_causes:
+      - stalk_switch_fault
+      - wiring_fault
+      - steering_column_module_fault
+      - brake_switch_input
+    diagnostic_steps:
+      - Check cruise switch live data.
+      - Verify individual switch positions.
+      - Check brake and clutch inputs.
+      - Scan steering column electronics.
+      - Verify cruise enable conditions.
+
+  - id: audi_clutch_pedal_switch
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: driver_controls
+    title:
+      en: Clutch Pedal Switch Diagnosis
+      ro: Diagnosticare contactor pedală ambreiaj
+      de: Diagnose des Kupplungspedalschalters
+    symptoms:
+      - cruise_control_fault
+      - engine_start_interlock_fault
+      - clutch_input_fault
+    keywords:
+      - clutch pedal switch
+      - clutch switch
+      - clutch position
+      - contactor ambreiaj
+    possible_causes:
+      - switch_fault
+      - incorrect_adjustment
+      - wiring_fault
+      - connector_fault
+    diagnostic_steps:
+      - Check clutch switch live data.
+      - Compare switch states with pedal position.
+      - Inspect adjustment.
+      - Check wiring.
+      - Verify cruise and start interlock operation.
+
+  - id: audi_central_locking_interior_switch
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: central_locking
+    title:
+      en: Interior Central Locking Switch Diagnosis
+      ro: Diagnosticare buton închidere centralizată interior
+      de: Diagnose des Zentralverriegelungsschalters
+    symptoms:
+      - central_locking_inoperative
+      - interior_lock_button_fault
+      - intermittent_locking
+    keywords:
+      - central locking switch
+      - interior lock button
+      - central lock
+      - buton inchidere centralizata
+    possible_causes:
+      - switch_fault
+      - door_module_fault
+      - wiring_fault
+      - configuration_fault
+    diagnostic_steps:
+      - Check switch input data.
+      - Test locking command.
+      - Scan door electronics.
+      - Inspect switch wiring.
+      - Verify central locking response.
+
+  - id: audi_door_soft_close_actuator
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: door_electronics
+    title:
+      en: Door Soft-Close Actuator Diagnosis
+      ro: Diagnosticare actuator soft-close ușă
+      de: Diagnose des Türzuziehantriebs
+    symptoms:
+      - door_soft_close_fault
+      - door_not_pulling_closed
+      - door_latch_warning
+    keywords:
+      - soft close door
+      - door pull-in motor
+      - automatic door closing
+      - soft close
+    possible_causes:
+      - actuator_fault
+      - latch_fault
+      - wiring_fault
+      - door_module_fault
+    diagnostic_steps:
+      - Check soft-close activation.
+      - Inspect latch mechanism.
+      - Check actuator supply.
+      - Scan door electronics.
+      - Verify pull-in operation.
+
+  - id: audi_trunk_soft_close_actuator
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: body_electronics
+    title:
+      en: Trunk Soft-Close Actuator Diagnosis
+      ro: Diagnosticare soft-close portbagaj
+      de: Diagnose des Zuziehantriebs der Heckklappe
+    symptoms:
+      - trunk_soft_close_fault
+      - trunk_not_pulling_closed
+      - trunk_latch_warning
+    keywords:
+      - trunk soft close
+      - boot soft close
+      - tailgate pull down
+      - soft close portbagaj
+    possible_causes:
+      - actuator_fault
+      - latch_fault
+      - position_sensor_fault
+      - wiring_fault
+    diagnostic_steps:
+      - Check latch status.
+      - Test soft-close actuator.
+      - Inspect mechanical alignment.
+      - Check wiring.
+      - Verify closing cycle.
+
+  - id: audi_rear_sunblind_motor
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: comfort_electronics
+    title:
+      en: Rear Sunblind Motor Diagnosis
+      ro: Diagnosticare motor parasolar electric spate
+      de: Diagnose des elektrischen Sonnenrollomotors
+    symptoms:
+      - sunblind_not_working
+      - sunblind_stuck
+      - sunblind_intermittent
+    keywords:
+      - rear sunblind
+      - electric sunblind
+      - roller blind motor
+      - parasolar electric
+    possible_causes:
+      - motor_fault
+      - mechanical_binding
+      - wiring_fault
+      - control_module_fault
+    diagnostic_steps:
+      - Check sunblind command.
+      - Inspect mechanical movement.
+      - Check motor supply.
+      - Scan comfort electronics.
+      - Verify position feedback.
+
+  - id: audi_rear_sunblind_position
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: comfort_electronics
+    title:
+      en: Rear Sunblind Position Diagnosis
+      ro: Diagnosticare poziție parasolar electric
+      de: Diagnose der Sonnenrolloposition
+    symptoms:
+      - sunblind_position_fault
+      - sunblind_stops
+      - sunblind_reverses
+    keywords:
+      - sunblind position
+      - roller blind position
+      - sunblind calibration
+      - pozitie parasolar
+    possible_causes:
+      - position_sensor_fault
+      - lost_adaptation
+      - mechanical_resistance
+      - motor_fault
+    diagnostic_steps:
+      - Read position feedback.
+      - Check adaptation status.
+      - Inspect mechanical resistance.
+      - Perform initialization where applicable.
+      - Verify end positions.
+
+  - id: audi_seat_ventilation_fault
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: seat_electronics
+    title:
+      en: Seat Ventilation Diagnosis
+      ro: Diagnosticare ventilație scaun
+      de: Diagnose der Sitzbelüftung
+    symptoms:
+      - seat_ventilation_not_working
+      - seat_ventilation_weak
+      - seat_ventilation_intermittent
+    keywords:
+      - seat ventilation
+      - ventilated seat
+      - seat cooling
+      - ventilatie scaun
+    possible_causes:
+      - blower_fault
+      - seat_module_fault
+      - wiring_fault
+      - blocked_air_channels
+    diagnostic_steps:
+      - Scan seat electronics.
+      - Check ventilation command.
+      - Check blower operation.
+      - Inspect seat air channels.
+      - Verify current draw.
+
+  - id: audi_seat_lumbar_adjustment
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: seat_electronics
+    title:
+      en: Power Lumbar Adjustment Diagnosis
+      ro: Diagnosticare reglaj lombar electric
+      de: Diagnose der elektrischen Lordosenstütze
+    symptoms:
+      - lumbar_adjustment_fault
+      - seat_adjustment_fault
+      - lumbar_support_inoperative
+    keywords:
+      - lumbar support
+      - lumbar adjustment
+      - power lumbar
+      - reglaj lombar
+    possible_causes:
+      - actuator_fault
+      - switch_fault
+      - seat_module_fault
+      - wiring_fault
+    diagnostic_steps:
+      - Test lumbar control input.
+      - Identify affected direction.
+      - Check actuator operation.
+      - Inspect wiring.
+      - Verify seat module output.
+
+  - id: audi_headrest_motor_fault
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: seat_electronics
+    title:
+      en: Powered Headrest Motor Diagnosis
+      ro: Diagnosticare motor tetieră electrică
+      de: Diagnose des elektrischen Kopfstützenmotors
+    symptoms:
+      - headrest_not_moving
+      - seat_adjustment_fault
+      - headrest_intermittent
+    keywords:
+      - power headrest
+      - headrest motor
+      - electric headrest
+      - tetiera electrica
+    possible_causes:
+      - motor_fault
+      - switch_fault
+      - mechanical_obstruction
+      - wiring_fault
+    diagnostic_steps:
+      - Test headrest controls.
+      - Check motor supply.
+      - Inspect mechanical movement.
+      - Scan seat module.
+      - Verify position operation.
+
+  - id: audi_mirror_turn_signal_fault
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: mirror_electronics
+    title:
+      en: Mirror Turn Signal Diagnosis
+      ro: Diagnosticare semnalizare în oglindă
+      de: Diagnose des Spiegelblinkers
+    symptoms:
+      - mirror_indicator_inoperative
+      - turn_signal_warning
+      - mirror_indicator_intermittent
+    keywords:
+      - mirror turn signal
+      - mirror indicator
+      - wing mirror indicator
+      - semnalizare oglinda
+    possible_causes:
+      - led_module_fault
+      - wiring_fault
+      - door_module_fault
+      - connector_fault
+    diagnostic_steps:
+      - Identify affected mirror.
+      - Check lighting command.
+      - Inspect LED module.
+      - Check door module output.
+      - Inspect mirror wiring.
+
+  - id: audi_mirror_blind_spot_indicator
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: mirror_electronics
+    title:
+      en: Blind Spot Mirror Indicator Diagnosis
+      ro: Diagnosticare indicator unghi mort în oglindă
+      de: Diagnose der Totwinkelanzeige im Spiegel
+    symptoms:
+      - blind_spot_indicator_fault
+      - mirror_warning_missing
+      - blind_spot_system_fault
+    keywords:
+      - blind spot mirror indicator
+      - side assist indicator
+      - mirror warning light
+      - indicator unghi mort
+    possible_causes:
+      - led_indicator_fault
+      - side_assist_module_fault
+      - wiring_fault
+      - communication_fault
+    diagnostic_steps:
+      - Scan side-assist system.
+      - Check indicator command.
+      - Inspect mirror LED.
+      - Check communication.
+      - Verify warning indication.
+
+  - id: audi_mirror_memory_position
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: mirror_electronics
+    title:
+      en: Mirror Memory Position Diagnosis
+      ro: Diagnosticare memorie poziție oglindă
+      de: Diagnose der Spiegelpositionsspeicherung
+    symptoms:
+      - mirror_memory_fault
+      - mirror_position_not_saved
+      - mirror_position_wrong
+    keywords:
+      - mirror memory
+      - mirror position memory
+      - memory mirror
+      - memorie oglinda
+    possible_causes:
+      - position_sensor_fault
+      - door_module_fault
+      - memory_configuration_fault
+      - wiring_fault
+    diagnostic_steps:
+      - Check mirror position data.
+      - Test memory input.
+      - Verify position sensor values.
+      - Scan door electronics.
+      - Check stored position recall.
+
+  - id: audi_auxiliary_heater_diagnosis
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: auxiliary_heating
+    title:
+      en: Auxiliary Heater Diagnosis
+      ro: Diagnosticare încălzire auxiliară
+      de: Diagnose der Zusatzheizung
+    symptoms:
+      - auxiliary_heater_not_working
+      - auxiliary_heater_shutdown
+      - cabin_heating_fault
+    keywords:
+      - auxiliary heater
+      - parking heater
+      - auxiliary heating
+      - incalzire auxiliara
+    possible_causes:
+      - heater_module_fault
+      - fuel_supply_fault
+      - combustion_fault
+      - low_voltage
+      - coolant_circulation_fault
+    diagnostic_steps:
+      - Scan auxiliary heater faults.
+      - Check heater start conditions.
+      - Verify power supply.
+      - Check fuel and coolant supply.
+      - Inspect combustion operation.
+
+  - id: audi_auxiliary_heater_fuel_pump
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: auxiliary_heating
+    title:
+      en: Auxiliary Heater Fuel Pump Diagnosis
+      ro: Diagnosticare pompă combustibil încălzire auxiliară
+      de: Diagnose der Kraftstoffpumpe der Zusatzheizung
+    symptoms:
+      - auxiliary_heater_no_start
+      - heater_combustion_fault
+      - heater_shutdown
+    keywords:
+      - auxiliary heater fuel pump
+      - parking heater fuel pump
+      - heater dosing pump
+      - pompa combustibil incalzire
+    possible_causes:
+      - dosing_pump_fault
+      - wiring_fault
+      - fuel_line_blockage
+      - heater_control_fault
+    diagnostic_steps:
+      - Check pump activation.
+      - Listen for dosing pump operation.
+      - Measure supply voltage.
+      - Inspect fuel line.
+      - Verify fuel delivery.
+
+  - id: audi_coolant_circulation_pump
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: engine_cooling
+    title:
+      en: Coolant Circulation Pump Diagnosis
+      ro: Diagnosticare pompă circulație lichid răcire
+      de: Diagnose der Kühlmittelumwälzpumpe
+    symptoms:
+      - coolant_circulation_fault
+      - overheating
+      - heater_output_low
+    keywords:
+      - coolant circulation pump
+      - auxiliary coolant pump
+      - electric coolant pump
+      - pompa apa auxiliara
+    possible_causes:
+      - pump_motor_fault
+      - wiring_fault
+      - control_module_fault
+      - coolant_flow_restriction
+    diagnostic_steps:
+      - Check pump command.
+      - Test pump operation.
+      - Check supply voltage.
+      - Inspect coolant flow.
+      - Verify current draw.
+
+  - id: audi_thermostat_control_diagnosis
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: engine_cooling
+    title:
+      en: Thermostat Control Diagnosis
+      ro: Diagnosticare control termostat
+      de: Diagnose der Thermostatsteuerung
+    symptoms:
+      - engine_runs_cold
+      - engine_overheating
+      - coolant_temperature_implausible
+    keywords:
+      - thermostat
+      - thermostat control
+      - coolant thermostat
+      - termostat
+    possible_causes:
+      - thermostat_stuck_open
+      - thermostat_stuck_closed
+      - electronic_thermostat_fault
+      - coolant_temperature_sensor_fault
+    diagnostic_steps:
+      - Monitor coolant temperature.
+      - Compare warm-up behavior with expected operation.
+      - Check thermostat control where applicable.
+      - Inspect coolant circulation.
+      - Verify temperature after repair.
+
+  - id: audi_coolant_expansion_tank_sensor
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: engine_cooling
+    title:
+      en: Coolant Expansion Tank Level Sensor Diagnosis
+      ro: Diagnosticare senzor nivel vas expansiune
+      de: Diagnose des Kühlmittelstandssensors
+    symptoms:
+      - coolant_level_warning
+      - false_coolant_warning
+      - coolant_warning_intermittent
+    keywords:
+      - coolant level sensor
+      - expansion tank sensor
+      - coolant level
+      - senzor nivel antigel
+    possible_causes:
+      - level_sensor_fault
+      - low_coolant
+      - wiring_fault
+      - expansion_tank_fault
+    diagnostic_steps:
+      - Verify actual coolant level.
+      - Check level sensor status.
+      - Inspect connector.
+      - Check wiring.
+      - Verify warning status after repair.
+
+  - id: audi_engine_coolant_pressure
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: engine_cooling
+    title:
+      en: Engine Cooling System Pressure Diagnosis
+      ro: Diagnosticare presiune sistem răcire motor
+      de: Diagnose des Kühlsystemdrucks
+    symptoms:
+      - coolant_loss
+      - coolant_warning
+      - overheating
+    keywords:
+      - cooling system pressure
+      - coolant pressure
+      - expansion tank pressure
+      - presiune sistem racire
+    possible_causes:
+      - coolant_leak
+      - pressure_cap_fault
+      - combustion_gas_in_coolant
+      - hose_fault
+    diagnostic_steps:
+      - Check coolant level.
+      - Perform a cooling-system pressure test.
+      - Inspect hoses and connections.
+      - Check expansion tank and cap.
+      - Investigate combustion gas contamination when indicated.
+
+  - id: audi_oil_separator_diagnosis
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: crankcase_ventilation
+    title:
+      en: Oil Separator Diagnosis
+      ro: Diagnosticare separator vapori ulei
+      de: Diagnose des Ölabscheiders
+    symptoms:
+      - excessive_oil_consumption
+      - crankcase_pressure_fault
+      - intake_oil
+    keywords:
+      - oil separator
+      - crankcase oil separator
+      - oil mist separator
+      - separator ulei
+    possible_causes:
+      - separator_blockage
+      - diaphragm_fault
+      - excessive_crankcase_pressure
+      - ventilation_fault
+    diagnostic_steps:
+      - Check crankcase pressure.
+      - Inspect oil separator operation.
+      - Check intake for excessive oil contamination.
+      - Inspect ventilation hoses.
+      - Verify crankcase pressure after repair.
+
+  - id: audi_intake_manifold_pressure_plausibility
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: engine_management
+    title:
+      en: Intake Manifold Pressure Plausibility Diagnosis
+      ro: Diagnosticare plauzibilitate presiune galerie admisie
+      de: Diagnose der Plausibilität des Saugrohrdrucks
+    symptoms:
+      - poor_engine_performance
+      - boost_control_fault
+      - implausible_map_value
+    keywords:
+      - manifold pressure plausibility
+      - MAP plausibility
+      - intake pressure
+      - presiune galerie
+    possible_causes:
+      - map_sensor_fault
+      - intake_leak
+      - boost_control_fault
+      - wiring_fault
+    diagnostic_steps:
+      - Compare MAP value with atmospheric pressure.
+      - Monitor pressure during cranking and running.
+      - Check intake system for leaks.
+      - Inspect MAP wiring.
+      - Compare requested and actual boost.
+
+  - id: audi_engine_speed_signal_dropout
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: engine_management
+    title:
+      en: Engine Speed Signal Dropout Diagnosis
+      ro: Diagnosticare întrerupere semnal turație motor
+      de: Diagnose von Aussetzern des Motordrehzahlsignals
+    symptoms:
+      - engine_stall
+      - intermittent_no_start
+      - tachometer_drop
+    keywords:
+      - engine speed signal dropout
+      - rpm signal dropout
+      - engine rpm signal
+      - semnal turatie
+    possible_causes:
+      - crankshaft_sensor_fault
+      - wiring_fault
+      - sensor_gap_issue
+      - power_supply_fault
+    diagnostic_steps:
+      - Monitor engine speed during cranking.
+      - Check for sudden RPM signal loss.
+      - Inspect crankshaft sensor wiring.
+      - Check sensor installation.
+      - Verify synchronization data.
+
+  - id: audi_camshaft_signal_dropout
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: engine_management
+    title:
+      en: Camshaft Signal Dropout Diagnosis
+      ro: Diagnosticare întrerupere semnal ax cu came
+      de: Diagnose von Aussetzern des Nockenwellensignals
+    symptoms:
+      - intermittent_no_start
+      - engine_stall
+      - rough_running
+    keywords:
+      - camshaft signal dropout
+      - cam signal loss
+      - camshaft sensor signal
+      - semnal ax came
+    possible_causes:
+      - camshaft_sensor_fault
+      - wiring_fault
+      - timing_issue
+      - sensor_power_supply_fault
+    diagnostic_steps:
+      - Monitor camshaft signal.
+      - Compare camshaft and crankshaft synchronization.
+      - Inspect sensor wiring.
+      - Check sensor supply.
+      - Verify timing if synchronization is incorrect.
+
+  - id: audi_engine_timing_chain_noise
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: engine_mechanical
+    title:
+      en: Timing Chain Noise Diagnosis
+      ro: Diagnosticare zgomot lanț distribuție
+      de: Diagnose von Steuerketten-Geräuschen
+    symptoms:
+      - timing_chain_noise
+      - cold_start_rattle
+      - engine_timing_fault
+    keywords:
+      - timing chain noise
+      - chain rattle
+      - timing chain
+      - zgomot lant distributie
+    possible_causes:
+      - chain_wear
+      - tensioner_fault
+      - guide_rail_wear
+      - low_oil_pressure
+    diagnostic_steps:
+      - Identify noise conditions.
+      - Check timing-related fault codes.
+      - Check oil pressure where relevant.
+      - Inspect timing adaptation values.
+      - Inspect chain and tensioner if indicated.
+
+  - id: audi_engine_timing_belt_condition
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: engine_mechanical
+    title:
+      en: Timing Belt Condition Diagnosis
+      ro: Diagnosticare stare curea distribuție
+      de: Diagnose des Zahnriemens
+    symptoms:
+      - timing_noise
+      - timing_fault
+      - engine_no_start
+    keywords:
+      - timing belt
+      - cambelt
+      - timing belt condition
+      - curea distributie
+    possible_causes:
+      - belt_wear
+      - belt_damage
+      - tensioner_fault
+      - incorrect_timing
+    diagnostic_steps:
+      - Inspect accessible belt condition.
+      - Check timing synchronization.
+      - Inspect tensioner where accessible.
+      - Verify service history.
+      - Confirm timing after repair.
+
+  - id: audi_manual_clutch_slip
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: manual_transmission
+    title:
+      en: Manual Clutch Slip Diagnosis
+      ro: Diagnosticare patinare ambreiaj manual
+      de: Diagnose von Kupplungsrutschen
+    symptoms:
+      - clutch_slip
+      - engine_rpm_rises_without_acceleration
+      - poor_acceleration
+    keywords:
+      - clutch slip
+      - slipping clutch
+      - clutch worn
+      - patinare ambreiaj
+    possible_causes:
+      - clutch_disc_wear
+      - pressure_plate_fault
+      - oil_contamination
+      - dual_mass_flywheel_fault
+    diagnostic_steps:
+      - Check clutch slip under load.
+      - Compare engine speed and vehicle acceleration.
+      - Inspect clutch hydraulic operation.
+      - Check for oil contamination.
+      - Inspect clutch assembly if required.
+
+  - id: audi_manual_clutch_drag
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: manual_transmission
+    title:
+      en: Manual Clutch Drag Diagnosis
+      ro: Diagnosticare ambreiaj care nu decuplează
+      de: Diagnose einer nicht vollständig trennenden Kupplung
+    symptoms:
+      - gear_selection_difficult
+      - clutch_drag
+      - vehicle_creeps_with_clutch_pressed
+    keywords:
+      - clutch drag
+      - clutch not disengaging
+      - gear selection hard
+      - ambreiaj nu decupleaza
+    possible_causes:
+      - hydraulic_fault
+      - clutch_disc_warp
+      - release_bearing_fault
+      - clutch_adjustment_issue
+    diagnostic_steps:
+      - Check clutch pedal travel.
+      - Inspect hydraulic system.
+      - Verify clutch release.
+      - Check for clutch drag.
+      - Inspect clutch components if necessary.
+
+  - id: audi_dual_clutch_temperature_sensor
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: s_tronic
+    title:
+      en: S tronic Clutch Temperature Sensor Diagnosis
+      ro: Diagnosticare senzor temperatură ambreiaj S tronic
+      de: Diagnose des S-tronic-Kupplungstemperatursensors
+    symptoms:
+      - transmission_overheating
+      - clutch_temperature_fault
+      - transmission_warning
+    keywords:
+      - s tronic clutch temperature
+      - clutch temperature sensor
+      - dsg clutch temperature
+      - temperatura ambreiaj
+    possible_causes:
+      - temperature_sensor_fault
+      - wiring_fault
+      - mechatronic_fault
+      - clutch_overheating
+    diagnostic_steps:
+      - Read clutch temperature data.
+      - Compare sensor values between clutches where applicable.
+      - Check wiring.
+      - Review overheating history.
+      - Verify clutch adaptation.
+
+  - id: audi_s_tronic_clutch_adaptation
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: s_tronic
+    title:
+      en: S tronic Clutch Adaptation Diagnosis
+      ro: Diagnosticare adaptare ambreiaj S tronic
+      de: Diagnose der S-tronic-Kupplungsadaption
+    symptoms:
+      - harsh_shift
+      - clutch_engagement_fault
+      - transmission_adaptation_fault
+    keywords:
+      - s tronic clutch adaptation
+      - dsg clutch adaptation
+      - clutch basic setting
+      - adaptare ambreiaj
+    possible_causes:
+      - clutch_wear
+      - mechatronic_fault
+      - adaptation_loss
+      - incorrect_fluid_condition
+    diagnostic_steps:
+      - Read clutch adaptation values.
+      - Check transmission fault memory.
+      - Verify fluid and operating temperature.
+      - Perform the applicable basic setting.
+      - Recheck adaptation values.
+
+  - id: audi_s_tronic_mechatronic_pressure
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: s_tronic
+    title:
+      en: S tronic Mechatronic Pressure Diagnosis
+      ro: Diagnosticare presiune mecatronică S tronic
+      de: Diagnose des Hydraulikdrucks der S-tronic-Mechatronik
+    symptoms:
+      - transmission_hydraulic_fault
+      - harsh_shifting
+      - gear_selection_fault
+    keywords:
+      - s tronic hydraulic pressure
+      - dsg mechatronic pressure
+      - mechatronic pump pressure
+      - presiune mecatronica
+    possible_causes:
+      - hydraulic_pump_fault
+      - pressure_accumulator_fault
+      - valve_body_fault
+      - fluid_level_issue
+    diagnostic_steps:
+      - Scan transmission hydraulics.
+      - Check pressure-related live data.
+      - Verify pump operation.
+      - Inspect fluid condition.
+      - Evaluate mechatronic pressure stability.
+
+  - id: audi_tiptronic_shift_solenoid
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: automatic_transmission
+    title:
+      en: Tiptronic Shift Solenoid Diagnosis
+      ro: Diagnosticare solenoid schimbare Tiptronic
+      de: Diagnose des Schaltmagnetventils beim Tiptronic
+    symptoms:
+      - harsh_shift
+      - delayed_shift
+      - gear_selection_fault
+    keywords:
+      - tiptronic shift solenoid
+      - transmission solenoid
+      - shift valve
+      - solenoid cutie automata
+    possible_causes:
+      - solenoid_fault
+      - valve_body_fault
+      - wiring_fault
+      - fluid_contamination
+    diagnostic_steps:
+      - Read transmission fault memory.
+      - Monitor solenoid commands.
+      - Compare commanded and actual shift behavior.
+      - Inspect wiring.
+      - Evaluate valve-body operation.
+
+  - id: audi_transmission_range_sensor
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: automatic_transmission
+    title:
+      en: Transmission Range Sensor Diagnosis
+      ro: Diagnosticare senzor poziție selector transmisie
+      de: Diagnose des Getriebebereichssensors
+    symptoms:
+      - incorrect_gear_display
+      - no_start
+      - gear_selection_fault
+    keywords:
+      - transmission range sensor
+      - gear position sensor
+      - selector position
+      - senzor pozitie cutie
+    possible_causes:
+      - range_sensor_fault
+      - selector_fault
+      - wiring_fault
+      - transmission_control_module_fault
+    diagnostic_steps:
+      - Compare selected and reported gear.
+      - Check range sensor live data.
+      - Inspect selector mechanism.
+      - Check wiring.
+      - Verify start interlock operation.
+
+  - id: audi_transmission_neutral_safety_input
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: transmission_control
+    title:
+      en: Transmission Neutral Safety Input Diagnosis
+      ro: Diagnosticare semnal neutral pentru pornire
+      de: Diagnose des Neutral-Sicherheitssignals
+    symptoms:
+      - starter_inoperative
+      - no_start
+      - gear_selection_fault
+    keywords:
+      - neutral safety switch
+      - park neutral signal
+      - start interlock
+      - semnal neutral
+    possible_causes:
+      - range_sensor_fault
+      - selector_fault
+      - wiring_fault
+      - transmission_module_fault
+    diagnostic_steps:
+      - Check reported transmission position.
+      - Verify Park/Neutral authorization.
+      - Inspect selector inputs.
+      - Check transmission module communication.
+      - Verify starter authorization.
+
+  - id: audi_quattro_torque_distribution
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: quattro
+    title:
+      en: quattro Torque Distribution Diagnosis
+      ro: Diagnosticare distribuție cuplu quattro
+      de: Diagnose der quattro-Drehmomentverteilung
+    symptoms:
+      - quattro_performance_fault
+      - uneven_traction
+      - awd_fault
+    keywords:
+      - quattro torque distribution
+      - all wheel drive torque
+      - awd torque distribution
+      - distributie cuplu quattro
+    possible_causes:
+      - coupling_fault
+      - differential_fault
+      - wheel_speed_signal_fault
+      - control_module_fault
+    diagnostic_steps:
+      - Scan the quattro system.
+      - Check wheel speed inputs.
+      - Read torque distribution data where available.
+      - Inspect coupling operation.
+      - Verify AWD response under controlled conditions.
+
+  - id: audi_rear_differential_mount
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: drivetrain
+    title:
+      en: Rear Differential Mount Diagnosis
+      ro: Diagnosticare suport diferențial spate
+      de: Diagnose der Hinterachsgetriebehalterung
+    symptoms:
+      - drivetrain_clunk
+      - acceleration_thump
+      - differential_movement
+    keywords:
+      - differential mount
+      - rear differential mount
+      - drivetrain clunk
+      - suport diferential
+    possible_causes:
+      - worn_mount
+      - damaged_bushing
+      - loose_mounting
+      - drivetrain_misalignment
+    diagnostic_steps:
+      - Inspect differential movement.
+      - Check mounting bolts.
+      - Inspect bushings.
+      - Check for impact damage.
+      - Verify drivetrain movement under load.
+
+  - id: audi_propeller_shaft_center_support
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: drivetrain
+    title:
+      en: Propeller Shaft Center Support Diagnosis
+      ro: Diagnosticare rulment intermediar cardan
+      de: Diagnose des Mittellagers der Kardanwelle
+    symptoms:
+      - drivetrain_vibration
+      - humming_noise
+      - vibration_under_load
+    keywords:
+      - propeller shaft center bearing
+      - driveshaft center support
+      - center bearing
+      - rulment cardan
+    possible_causes:
+      - bearing_wear
+      - support_rubber_damage
+      - driveshaft_imbalance
+      - shaft_misalignment
+    diagnostic_steps:
+      - Inspect center support bearing.
+      - Check rubber support condition.
+      - Inspect shaft play.
+      - Check for imbalance.
+      - Verify vibration after repair.
+
+  - id: audi_driveshaft_cv_joint
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: drivetrain
+    title:
+      en: Driveshaft CV Joint Diagnosis
+      ro: Diagnosticare articulație homocinetică transmisie
+      de: Diagnose des Gleichlaufgelenks der Antriebswelle
+    symptoms:
+      - clicking_noise
+      - drivetrain_vibration
+      - acceleration_shudder
+    keywords:
+      - driveshaft cv joint
+      - cv joint
+      - inner cv joint
+      - articulatie planetara
+    possible_causes:
+      - joint_wear
+      - grease_loss
+      - damaged_boot
+      - excessive_joint_play
+    diagnostic_steps:
+      - Inspect CV boots.
+      - Check joint play.
+      - Test under acceleration and steering load.
+      - Inspect grease contamination.
+      - Replace damaged components as required.
+
+  - id: audi_wheel_alignment_camber
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: wheel_alignment
+    title:
+      en: Camber Alignment Diagnosis
+      ro: Diagnosticare unghi de cădere
+      de: Diagnose des Sturzwinkels
+    symptoms:
+      - uneven_tire_wear
+      - vehicle_pull
+      - steering_imbalance
+    keywords:
+      - camber
+      - wheel camber
+      - negative camber
+      - unghi cadere
+    possible_causes:
+      - suspension_damage
+      - worn_bushing
+      - bent_component
+      - incorrect_alignment
+    diagnostic_steps:
+      - Measure camber on both sides.
+      - Compare left and right values.
+      - Inspect suspension components.
+      - Check ride height.
+      - Correct alignment where adjustment is available.
+
+  - id: audi_wheel_alignment_caster
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: wheel_alignment
+    title:
+      en: Caster Alignment Diagnosis
+      ro: Diagnosticare unghi de fugă
+      de: Diagnose des Nachlaufwinkels
+    symptoms:
+      - vehicle_pull
+      - steering_return_fault
+      - steering_wheel_off_center
+    keywords:
+      - caster
+      - steering caster
+      - caster angle
+      - unghi fuga
+    possible_causes:
+      - suspension_damage
+      - subframe_shift
+      - bent_control_arm
+      - accident_damage
+    diagnostic_steps:
+      - Measure caster.
+      - Compare both sides.
+      - Inspect suspension geometry.
+      - Check subframe position.
+      - Investigate chassis damage if values are abnormal.
+
+  - id: audi_tire_pressure_sensor_battery
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: tpms
+    title:
+      en: TPMS Sensor Battery Diagnosis
+      ro: Diagnosticare baterie senzor TPMS
+      de: Diagnose der TPMS-Sensorbatterie
+    symptoms:
+      - tpms_sensor_missing
+      - tpms_warning
+      - intermittent_tpms
+    keywords:
+      - tpms sensor battery
+      - tyre pressure sensor battery
+      - tpms sensor
+      - baterie senzor presiune
+    possible_causes:
+      - sensor_battery_depleted
+      - sensor_fault
+      - communication_fault
+      - incorrect_sensor_configuration
+    diagnostic_steps:
+      - Scan TPMS sensor status.
+      - Check sensor communication.
+      - Verify sensor identification.
+      - Check sensor battery status where available.
+      - Relearn sensors where required.
+
+  - id: audi_tpms_sensor_id_learning
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: tpms
+    title:
+      en: TPMS Sensor ID Learning Diagnosis
+      ro: Diagnosticare învățare ID senzori TPMS
+      de: Diagnose der TPMS-Sensor-ID-Anlernung
+    symptoms:
+      - tpms_sensor_not_recognized
+      - tpms_warning
+      - incorrect_tire_position
+    keywords:
+      - tpms relearn
+      - tpms sensor id
+      - tyre pressure sensor learning
+      - invatare senzori tpms
+    possible_causes:
+      - sensor_not_learned
+      - incorrect_sensor_id
+      - sensor_fault
+      - configuration_fault
+    diagnostic_steps:
+      - Read stored TPMS sensor IDs.
+      - Compare sensor IDs with installed wheels.
+      - Perform the applicable learning procedure.
+      - Verify sensor pressure data.
+      - Clear and recheck TPMS faults.
+
+  - id: audi_parking_assist_control_unit
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: parking_assist
+    title:
+      en: Parking Assist Control Unit Diagnosis
+      ro: Diagnosticare modul control asistență parcare
+      de: Diagnose des Parkassistenz-Steuergeräts
+    symptoms:
+      - parking_assist_unavailable
+      - multiple_parking_sensor_faults
+      - parking_system_no_communication
+    keywords:
+      - parking assist control unit
+      - pdc control module
+      - park assist module
+      - modul parcare
+    possible_causes:
+      - control_module_fault
+      - power_supply_fault
+      - communication_fault
+      - wiring_fault
+    diagnostic_steps:
+      - Scan the parking control module.
+      - Check power and ground.
+      - Check communication.
+      - Inspect sensor network.
+      - Verify parking assistance operation.
+
+  - id: audi_front_grille_radar_mount
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: adas
+    title:
+      en: Front Radar Mounting Diagnosis
+      ro: Diagnosticare suport radar frontal
+      de: Diagnose der Frontradarbefestigung
+    symptoms:
+      - radar_alignment_fault
+      - adaptive_cruise_fault
+      - front_assist_fault
+    keywords:
+      - radar mounting
+      - radar bracket
+      - front radar mount
+      - suport radar
+    possible_causes:
+      - bent_bracket
+      - impact_damage
+      - incorrect_mounting
+      - loose_mount
+    diagnostic_steps:
+      - Inspect radar mounting.
+      - Check bracket position.
+      - Inspect bumper damage.
+      - Verify radar alignment.
+      - Perform calibration if required.
+
+  - id: audi_front_camera_mounting
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: adas
+    title:
+      en: Front Camera Mounting Diagnosis
+      ro: Diagnosticare suport cameră frontală
+      de: Diagnose der Frontkamerahalterung
+    symptoms:
+      - camera_alignment_fault
+      - lane_assist_fault
+      - adas_calibration_fault
+    keywords:
+      - front camera mount
+      - camera bracket
+      - windshield camera mount
+      - suport camera frontala
+    possible_causes:
+      - mounting_shift
+      - bracket_damage
+      - windshield_replacement
+      - incorrect_installation
+    diagnostic_steps:
+      - Inspect camera mounting.
+      - Check windshield installation.
+      - Verify camera position.
+      - Scan ADAS faults.
+      - Perform calibration where required.
+
+  - id: audi_adas_calibration_target_setup
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: adas
+    title:
+      en: ADAS Calibration Target Setup Diagnosis
+      ro: Diagnosticare poziționare ținte calibrare ADAS
+      de: Diagnose der ADAS-Kalibriertafelpositionierung
+    symptoms:
+      - adas_calibration_failed
+      - camera_calibration_fault
+      - radar_calibration_fault
+    keywords:
+      - adas calibration target
+      - calibration board
+      - radar target
+      - camera target
+      - calibrare ADAS
+    possible_causes:
+      - incorrect_target_position
+      - incorrect_vehicle_alignment
+      - workshop_floor_issue
+      - calibration_equipment_error
+    diagnostic_steps:
+      - Verify vehicle alignment.
+      - Check calibration target position.
+      - Confirm workshop surface requirements.
+      - Follow the applicable calibration procedure.
+      - Verify calibration result.
+
+  - id: audi_lane_assist_steering_torque
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: adas
+    title:
+      en: Lane Assist Steering Torque Diagnosis
+      ro: Diagnosticare cuplu direcție Lane Assist
+      de: Diagnose des Lenkmoments beim Spurhalteassistenten
+    symptoms:
+      - lane_assist_intervention_fault
+      - lane_assist_unavailable
+      - steering_assist_fault
+    keywords:
+      - lane assist steering torque
+      - lane keeping torque
+      - lane assist steering
+      - cuplu lane assist
+    possible_causes:
+      - steering_torque_sensor_fault
+      - camera_fault
+      - steering_calibration_error
+      - communication_fault
+    diagnostic_steps:
+      - Check steering torque data.
+      - Scan lane-assist and steering systems.
+      - Verify steering angle calibration.
+      - Check camera status.
+      - Evaluate intervention during controlled testing.
+
+  - id: audi_traffic_sign_recognition_camera_data
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: adas
+    title:
+      en: Traffic Sign Recognition Camera Data Diagnosis
+      ro: Diagnosticare date cameră recunoaștere indicatoare
+      de: Diagnose der Kameradaten der Verkehrszeichenerkennung
+    symptoms:
+      - traffic_sign_recognition_fault
+      - signs_not_detected
+      - incorrect_sign_detection
+    keywords:
+      - traffic sign recognition
+      - road sign camera
+      - sign recognition data
+      - recunoastere indicatoare
+    possible_causes:
+      - camera_fault
+      - camera_calibration_error
+      - blocked_camera
+      - software_fault
+    diagnostic_steps:
+      - Check camera status.
+      - Review detected sign data.
+      - Inspect camera field of view.
+      - Check calibration status.
+      - Verify software and configuration.
+
+  - id: audi_blind_spot_radar_signal
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: adas
+    title:
+      en: Blind Spot Radar Signal Diagnosis
+      ro: Diagnosticare semnal radar unghi mort
+      de: Diagnose des Radarsignals des Totwinkelassistenten
+    symptoms:
+      - blind_spot_unavailable
+      - side_assist_fault
+      - false_blind_spot_warning
+    keywords:
+      - blind spot radar
+      - side assist radar
+      - rear radar signal
+      - radar unghi mort
+    possible_causes:
+      - radar_sensor_fault
+      - wiring_fault
+      - bumper_damage
+      - radar_misalignment
+    diagnostic_steps:
+      - Scan side-assist radar modules.
+      - Check communication.
+      - Inspect bumper and radar mounting.
+      - Check sensor status.
+      - Verify radar operation.
+
+  - id: audi_hv_battery_contactor_welded
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: hv_battery
+    title:
+      en: HV Battery Welded Contactor Diagnosis
+      ro: Diagnosticare contactor baterie HV blocat închis
+      de: Diagnose eines verschweißten HV-Batterieschützes
+    symptoms:
+      - hv_battery_fault
+      - hv_system_fault
+      - charging_fault
+    keywords:
+      - welded contactor
+      - hv contactor stuck closed
+      - battery contactor
+      - contactor baterie HV
+    possible_causes:
+      - contactor_welded
+      - excessive_current
+      - precharge_fault
+      - contactor_driver_fault
+    diagnostic_steps:
+      - Follow HV safety procedures.
+      - Read contactor state.
+      - Compare commanded and actual HV state.
+      - Check precharge behavior.
+      - Diagnose contactor control circuitry.
+
+  - id: audi_hv_battery_precharge_fault
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: hv_battery
+    title:
+      en: HV Battery Precharge Diagnosis
+      ro: Diagnosticare preîncărcare baterie HV
+      de: Diagnose der HV-Batterievorladung
+    symptoms:
+      - hv_system_no_enable
+      - charging_fault
+      - vehicle_not_ready
+    keywords:
+      - hv precharge
+      - battery precharge
+      - precharge resistor
+      - preincarcare baterie HV
+    possible_causes:
+      - precharge_resistor_fault
+      - precharge_relay_fault
+      - contactor_fault
+      - inverter_fault
+    diagnostic_steps:
+      - Follow HV safety procedures.
+      - Monitor precharge sequence.
+      - Compare HV bus and battery voltage.
+      - Check precharge circuit.
+      - Diagnose contactor and inverter interaction.
+
+  - id: audi_hv_interlock_loop
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: hv_safety
+    title:
+      en: HV Interlock Loop Diagnosis
+      ro: Diagnosticare circuit interlock HV
+      de: Diagnose des HV-Interlock-Kreises
+    symptoms:
+      - hv_system_disabled
+      - vehicle_not_ready
+      - charging_disabled
+    keywords:
+      - hv interlock
+      - high voltage interlock
+      - hvil
+      - interlock baterie
+    possible_causes:
+      - connector_not_locked
+      - interlock_wiring_fault
+      - service_disconnect_fault
+      - hv_component_fault
+    diagnostic_steps:
+      - Follow high-voltage safety procedures.
+      - Read HV interlock status.
+      - Inspect accessible HV connectors.
+      - Check service disconnect status.
+      - Verify interlock continuity according to manufacturer procedures.
+
+  - id: audi_hv_battery_isolation_resistance
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: hv_safety
+    title:
+      en: HV Battery Isolation Resistance Diagnosis
+      ro: Diagnosticare rezistență de izolație baterie HV
+      de: Diagnose des Isolationswiderstands der HV-Batterie
+    symptoms:
+      - isolation_fault
+      - hv_system_disabled
+      - charging_disabled
+    keywords:
+      - isolation resistance
+      - hv insulation
+      - insulation monitoring
+      - rezistenta izolatie HV
+    possible_causes:
+      - coolant_intrusion
+      - damaged_hv_cable
+      - battery_insulation_fault
+      - inverter_insulation_fault
+    diagnostic_steps:
+      - Follow HV safety procedures.
+      - Read insulation monitoring data.
+      - Isolate HV circuits according to manufacturer procedure.
+      - Inspect accessible HV components.
+      - Perform approved insulation testing.
+
+  - id: audi_onboard_charger_temperature
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: charging
+    title:
+      en: Onboard Charger Temperature Diagnosis
+      ro: Diagnosticare temperatură încărcător onboard
+      de: Diagnose der Temperatur des Onboard-Ladegeräts
+    symptoms:
+      - ac_charging_reduced
+      - charging_stops
+      - charging_overtemperature
+    keywords:
+      - onboard charger temperature
+      - oBC temperature
+      - ac charger overheating
+      - temperatura incarcator
+    possible_causes:
+      - charger_overheating
+      - temperature_sensor_fault
+      - coolant_flow_fault
+      - charger_internal_fault
+    diagnostic_steps:
+      - Read charger temperature data.
+      - Check cooling system.
+      - Compare temperature with charging power.
+      - Inspect thermal faults.
+      - Verify charging after cooling.
+
+  - id: audi_ac_charging_current_limit
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: charging
+    title:
+      en: AC Charging Current Limit Diagnosis
+      ro: Diagnosticare limitare curent încărcare AC
+      de: Diagnose der AC-Ladestrombegrenzung
+    symptoms:
+      - ac_charging_slow
+      - reduced_charging_power
+      - charging_current_limited
+    keywords:
+      - ac charging current
+      - charging current limit
+      - reduced ac charging
+      - curent incarcare AC
+    possible_causes:
+      - vehicle_configuration
+      - charger_temperature
+      - supply_voltage_issue
+      - onboard_charger_limit
+    diagnostic_steps:
+      - Read requested and actual charging current.
+      - Check supply voltage.
+      - Check charger temperature.
+      - Verify charging configuration.
+      - Compare charging behavior with a known-good supply.
+
+  - id: audi_charge_port_proximity_signal
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: charging
+    title:
+      en: Charge Port Proximity Signal Diagnosis
+      ro: Diagnosticare semnal proximity port încărcare
+      de: Diagnose des Proximity-Signals am Ladeanschluss
+    symptoms:
+      - charging_cable_not_detected
+      - charging_disabled
+      - charge_port_fault
+    keywords:
+      - proximity pilot
+      - charge port proximity
+      - charging cable detection
+      - semnal proximity incarcare
+    possible_causes:
+      - proximity_signal_fault
+      - connector_fault
+      - cable_fault
+      - charging_port_fault
+    diagnostic_steps:
+      - Check cable detection status.
+      - Inspect charging connector.
+      - Test with a known-good cable.
+      - Check proximity signal according to manufacturer procedure.
+      - Scan charging control modules.
+
+  - id: audi_charge_port_lock_actuator
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: charging
+    title:
+      en: Charge Port Lock Actuator Diagnosis
+      ro: Diagnosticare actuator blocare port încărcare
+      de: Diagnose der Verriegelung des Ladeanschlusses
+    symptoms:
+      - charging_cable_locked
+      - charging_cable_will_not_lock
+      - charging_disabled
+    keywords:
+      - charge port lock
+      - charging connector lock
+      - charge socket actuator
+      - blocare port incarcare
+    possible_causes:
+      - lock_actuator_fault
+      - position_sensor_fault
+      - wiring_fault
+      - charging_control_module_fault
+    diagnostic_steps:
+      - Check lock status.
+      - Test actuator command.
+      - Inspect locking mechanism.
+      - Check position feedback.
+      - Verify cable locking operation.
+
+  - id: audi_hv_coolant_leak_detection
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: hv_thermal_management
+    title:
+      en: HV Cooling Circuit Leak Diagnosis
+      ro: Diagnosticare pierdere lichid răcire circuit HV
+      de: Diagnose einer Undichtigkeit im HV-Kühlkreislauf
+    symptoms:
+      - hv_cooling_fault
+      - coolant_loss
+      - charging_reduced
+    keywords:
+      - hv coolant leak
+      - battery cooling leak
+      - high voltage cooling
+      - pierdere antigel HV
+    possible_causes:
+      - hose_leak
+      - coolant_valve_leak
+      - battery_cooling_plate_leak
+      - pump_seal_fault
+    diagnostic_steps:
+      - Follow applicable HV safety procedures.
+      - Inspect coolant level.
+      - Pressure-test the cooling circuit where approved.
+      - Inspect hoses and connections.
+      - Verify thermal system operation after repair.
+
+  - id: audi_hv_coolant_flow_sensor
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: hv_thermal_management
+    title:
+      en: HV Coolant Flow Diagnosis
+      ro: Diagnosticare debit lichid răcire HV
+      de: Diagnose des HV-Kühlmitteldurchflusses
+    symptoms:
+      - battery_overheating
+      - charging_reduced
+      - thermal_management_fault
+    keywords:
+      - hv coolant flow
+      - battery coolant flow
+      - coolant circulation hv
+      - debit lichid racire HV
+    possible_causes:
+      - coolant_pump_fault
+      - blocked_circuit
+      - valve_fault
+      - air_in_cooling_system
+    diagnostic_steps:
+      - Read thermal management data.
+      - Check coolant pump operation.
+      - Verify valve commands.
+      - Check for restricted flow.
+      - Bleed the circuit according to manufacturer procedure.
+
+  - id: audi_ev_inverter_cooling
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: ev_powertrain
+    title:
+      en: EV Inverter Cooling Diagnosis
+      ro: Diagnosticare răcire invertor EV
+      de: Diagnose der Inverterkühlung
+    symptoms:
+      - inverter_overheating
+      - reduced_power
+      - ev_powertrain_fault
+    keywords:
+      - inverter cooling
+      - electric drive inverter
+      - inverter temperature
+      - racire invertor
+    possible_causes:
+      - coolant_pump_fault
+      - coolant_flow_restriction
+      - temperature_sensor_fault
+      - thermal_valve_fault
+    diagnostic_steps:
+      - Read inverter temperature.
+      - Check coolant pump operation.
+      - Verify coolant flow.
+      - Check thermal valve commands.
+      - Verify inverter temperature after repair.
+
+  - id: audi_ev_motor_resolver_signal
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: ev_powertrain
+    title:
+      en: EV Motor Resolver Signal Diagnosis
+      ro: Diagnosticare semnal resolver motor electric
+      de: Diagnose des Resolver-Signals des Elektromotors
+    symptoms:
+      - ev_motor_fault
+      - reduced_power
+      - vehicle_not_ready
+    keywords:
+      - resolver signal
+      - electric motor position sensor
+      - motor position feedback
+      - resolver motor electric
+    possible_causes:
+      - resolver_fault
+      - wiring_fault
+      - inverter_fault
+      - motor_position_signal_fault
+    diagnostic_steps:
+      - Follow applicable HV safety procedures.
+      - Read motor position data.
+      - Check resolver-related faults.
+      - Inspect wiring where accessible.
+      - Verify inverter and motor synchronization.
+
+  - id: audi_ev_motor_phase_current
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: ev_powertrain
+    title:
+      en: EV Motor Phase Current Diagnosis
+      ro: Diagnosticare curenți faze motor electric
+      de: Diagnose der Phasenströme des Elektromotors
+    symptoms:
+      - reduced_ev_power
+      - motor_vibration
+      - inverter_fault
+    keywords:
+      - motor phase current
+      - electric motor phases
+      - inverter phase current
+      - curenti faze motor
+    possible_causes:
+      - inverter_fault
+      - motor_winding_fault
+      - current_sensor_fault
+      - phase_connection_fault
+    diagnostic_steps:
+      - Follow HV safety procedures.
+      - Read phase current data where available.
+      - Compare phase behavior.
+      - Check inverter fault memory.
+      - Test motor and inverter according to manufacturer procedures.
   - id: audi_sunroof_motor
     vehicle:
       manufacturer: audi
