@@ -1,0 +1,3148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Repair & Technical — AutoDecode</title>
+    <meta name="description" content="AutoDecode Repair & Technical — vehicle-specific repair procedures, diagnostics, wiring, specifications and technical information.">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --bg: #0b0f14;
+            --bg-secondary: #111720;
+            --card: #151c25;
+            --card-hover: #1a2330;
+            --border: #263241;
+            --text: #f2f5f8;
+            --muted: #8f9baa;
+            --accent: #4da3ff;
+            --accent-hover: #72b7ff;
+            --danger: #ff5f56;
+            --success: #48d597;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            height: 72px;
+            width: 100%;
+            background: #0e141c;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            padding: 0 28px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            width: 100%;
+            max-width: 1250px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .logo {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 25px;
+            font-weight: 800;
+            letter-spacing: -0.7px;
+            white-space: nowrap;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .home-link {
+            color: #d9e1ea;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            padding: 9px 12px;
+            border-radius: 8px;
+            transition: 0.2s ease;
+            white-space: nowrap;
+        }
+
+        .home-link:hover {
+            color: #ffffff;
+            background: #18212c;
+        }
+
+        .language-selector {
+            position: relative;
+        }
+
+        .language-button {
+            height: 38px;
+            min-width: 72px;
+            padding: 0 10px;
+            border: 1px solid var(--border);
+            background: #121923;
+            color: var(--text);
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .language-button:hover {
+            background: #192330;
+        }
+
+        .language-menu {
+            position: absolute;
+            right: 0;
+            top: calc(100% + 8px);
+            min-width: 150px;
+            background: #131a23;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 6px;
+            box-shadow: 0 14px 40px rgba(0,0,0,0.4);
+            display: none;
+        }
+
+        .language-menu.open {
+            display: block;
+        }
+
+        .language-option {
+            width: 100%;
+            border: 0;
+            background: transparent;
+            color: #dfe6ee;
+            padding: 9px 10px;
+            border-radius: 7px;
+            cursor: pointer;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            font-size: 13px;
+        }
+
+        .language-option:hover,
+        .language-option.active {
+            background: #1d2835;
+            color: #ffffff;
+        }
+
+        /* =========================
+           MAIN
+        ========================= */
+
+        main {
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 55px 24px 80px;
+        }
+
+        .page-heading {
+            text-align: center;
+            max-width: 760px;
+            margin: 0 auto 42px;
+        }
+
+        .page-heading h1 {
+            font-size: clamp(32px, 5vw, 48px);
+            line-height: 1.08;
+            letter-spacing: -1.5px;
+            margin-bottom: 15px;
+        }
+
+        .page-heading h1 span {
+            color: var(--accent);
+        }
+
+        .page-heading p {
+            color: var(--muted);
+            font-size: 16px;
+            line-height: 1.65;
+        }
+
+        /* =========================
+           VEHICLE SELECTOR
+        ========================= */
+
+        .selector-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.18);
+        }
+
+        .section-title {
+            font-size: 19px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .section-subtitle {
+            color: var(--muted);
+            font-size: 13px;
+            margin-bottom: 25px;
+        }
+
+        .selector-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .field {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .field.full {
+            grid-column: 1 / -1;
+        }
+
+        .field label {
+            color: #d8e0e8;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        select,
+        textarea {
+            width: 100%;
+            border: 1px solid var(--border);
+            background: #0f151d;
+            color: var(--text);
+            border-radius: 9px;
+            outline: none;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+        }
+
+        select {
+            height: 48px;
+            padding: 0 13px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        textarea {
+            min-height: 125px;
+            resize: vertical;
+            padding: 13px;
+            font-family: inherit;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        select:hover,
+        textarea:hover {
+            background: #111923;
+        }
+
+        select:focus,
+        textarea:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(77,163,255,0.1);
+        }
+
+        select:disabled {
+            opacity: 0.45;
+            cursor: not-allowed;
+        }
+
+        textarea::placeholder {
+            color: #667281;
+        }
+
+        .field-hint {
+            color: #687482;
+            font-size: 11px;
+            line-height: 1.4;
+        }
+
+        .actions {
+            margin-top: 25px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .find-button {
+            border: 0;
+            background: var(--accent);
+            color: #07111c;
+            font-size: 14px;
+            font-weight: 800;
+            letter-spacing: 0.2px;
+            padding: 13px 28px;
+            border-radius: 9px;
+            cursor: pointer;
+            min-width: 190px;
+            transition: 0.2s ease;
+        }
+
+        .find-button:hover {
+            background: var(--accent-hover);
+            transform: translateY(-1px);
+        }
+
+        .find-button:disabled {
+            opacity: 0.45;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* =========================
+           STATUS
+        ========================= */
+
+        .status {
+            margin-top: 18px;
+            padding: 12px 14px;
+            border-radius: 8px;
+            font-size: 13px;
+            line-height: 1.5;
+            display: none;
+        }
+
+        .status.show {
+            display: block;
+        }
+
+        .status.error {
+            background: rgba(255,95,86,0.08);
+            border: 1px solid rgba(255,95,86,0.25);
+            color: #ffaaa5;
+        }
+
+        .status.success {
+            background: rgba(72,213,151,0.08);
+            border: 1px solid rgba(72,213,151,0.22);
+            color: #9aebc9;
+        }
+
+        .status.info {
+            background: rgba(77,163,255,0.08);
+            border: 1px solid rgba(77,163,255,0.2);
+            color: #a9d3ff;
+        }
+
+        /* =========================
+           VEHICLE SUMMARY
+        ========================= */
+
+        .vehicle-summary {
+            margin-top: 25px;
+            padding: 18px;
+            border: 1px solid var(--border);
+            background: #101720;
+            border-radius: 12px;
+            display: none;
+        }
+
+        .vehicle-summary.show {
+            display: block;
+        }
+
+        .summary-title {
+            color: var(--muted);
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-bottom: 10px;
+        }
+
+        .summary-value {
+            font-size: 17px;
+            font-weight: 700;
+            line-height: 1.45;
+        }
+
+        .summary-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .summary-tag {
+            display: inline-flex;
+            align-items: center;
+            padding: 5px 8px;
+            border-radius: 6px;
+            background: #1a2430;
+            border: 1px solid #283545;
+            color: #aeb9c5;
+            font-size: 11px;
+        }
+
+        /* =========================
+           TECHNICAL CATEGORIES
+        ========================= */
+
+        .categories {
+            margin-top: 45px;
+        }
+
+        .categories h2 {
+            text-align: center;
+            font-size: 23px;
+            margin-bottom: 8px;
+        }
+
+        .categories > p {
+            text-align: center;
+            color: var(--muted);
+            font-size: 14px;
+            margin-bottom: 22px;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 14px;
+        }
+
+        .category-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            min-height: 125px;
+            transition: 0.2s ease;
+        }
+
+        .category-card:hover {
+            background: var(--card-hover);
+            border-color: #344355;
+            transform: translateY(-2px);
+        }
+
+        .category-icon {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .category-card h3 {
+            font-size: 14px;
+            margin-bottom: 6px;
+        }
+
+        .category-card p {
+            color: var(--muted);
+            font-size: 12px;
+            line-height: 1.5;
+        }
+
+        /* =========================
+           RESULT AREA
+        ========================= */
+
+        .results {
+            margin-top: 35px;
+            display: none;
+        }
+
+        .results.show {
+            display: block;
+        }
+
+        .results-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .results-header h2 {
+            font-size: 21px;
+        }
+
+        .result-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 12px;
+        }
+
+        .result-card h3 {
+            font-size: 15px;
+            margin-bottom: 7px;
+        }
+
+        .result-card p {
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.55;
+        }
+
+        .coming-soon {
+            text-align: center;
+            padding: 28px 20px;
+            border: 1px dashed #334152;
+            border-radius: 12px;
+            background: rgba(17,23,32,0.5);
+        }
+
+        .coming-soon strong {
+            display: block;
+            font-size: 15px;
+            margin-bottom: 7px;
+        }
+
+        .coming-soon span {
+            color: var(--muted);
+            font-size: 12px;
+            line-height: 1.5;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            border-top: 1px solid var(--border);
+            color: #697583;
+            text-align: center;
+            padding: 25px 20px;
+            font-size: 12px;
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 760px) {
+
+            header {
+                height: 68px;
+                padding: 0 14px;
+            }
+
+            .header-inner {
+                gap: 8px;
+            }
+
+            .logo {
+                font-size: 21px;
+            }
+
+            .header-right {
+                gap: 4px;
+            }
+
+            .home-link {
+                font-size: 12px;
+                padding: 8px 7px;
+            }
+
+            .language-button {
+                min-width: 58px;
+                height: 36px;
+                padding: 0 7px;
+                font-size: 12px;
+            }
+
+            main {
+                padding: 38px 14px 60px;
+            }
+
+            .page-heading {
+                margin-bottom: 30px;
+            }
+
+            .page-heading h1 {
+                font-size: 34px;
+            }
+
+            .page-heading p {
+                font-size: 14px;
+            }
+
+            .selector-card {
+                padding: 20px 16px;
+                border-radius: 13px;
+            }
+
+            .selector-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .field.full {
+                grid-column: auto;
+            }
+
+            .category-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .category-card {
+                min-height: auto;
+            }
+
+            .results-header {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 420px) {
+
+            .logo {
+                font-size: 19px;
+            }
+
+            .home-link {
+                font-size: 11px;
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+
+            .language-button {
+                min-width: 52px;
+            }
+
+            .page-heading h1 {
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="header-inner">
+
+        <a href="index.html" class="logo">
+            Auto<span>Decode</span>
+        </a>
+
+        <div class="header-right">
+
+            <a href="index.html" class="home-link" data-i18n="home">
+                ← Home
+            </a>
+
+            <div class="language-selector">
+
+                <button
+                    type="button"
+                    class="language-button"
+                    id="languageButton"
+                    aria-label="Select language"
+                    aria-expanded="false"
+                >
+                    <span id="currentLanguageFlag">🇬🇧</span>
+                    <span id="currentLanguageCode">EN</span>
+                    <span>▾</span>
+                </button>
+
+                <div class="language-menu" id="languageMenu">
+
+                    <button class="language-option" data-lang="en">
+                        🇬🇧 <span>English</span>
+                    </button>
+
+                    <button class="language-option" data-lang="de">
+                        🇩🇪 <span>Deutsch</span>
+                    </button>
+
+                    <button class="language-option" data-lang="ro">
+                        🇷🇴 <span>Română</span>
+                    </button>
+
+                    <button class="language-option" data-lang="fr">
+                        🇫🇷 <span>Français</span>
+                    </button>
+
+                    <button class="language-option" data-lang="es">
+                        🇪🇸 <span>Español</span>
+                    </button>
+
+                    <button class="language-option" data-lang="it">
+                        🇮🇹 <span>Italiano</span>
+                    </button>
+
+                    <button class="language-option" data-lang="nl">
+                        🇳🇱 <span>Nederlands</span>
+                    </button>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</header>
+
+
+<main>
+
+    <section class="page-heading">
+
+        <h1>
+            <span data-i18n="repairTechnical">Repair & Technical</span>
+        </h1>
+
+        <p data-i18n="pageDescription">
+            Find vehicle-specific repair procedures, diagnostic information,
+            wiring diagrams, specifications and technical documentation.
+        </p>
+
+    </section>
+
+
+    <section class="selector-card">
+
+        <div class="section-title" data-i18n="identifyVehicle">
+            Identify Your Vehicle
+        </div>
+
+        <div class="section-subtitle" data-i18n="identifyVehicleSubtitle">
+            Select your vehicle step by step to get the most relevant technical information.
+        </div>
+
+
+        <div class="selector-grid">
+
+            <!-- MAKE -->
+
+            <div class="field">
+
+                <label for="manufacturer" data-i18n="make">
+                    Make
+                </label>
+
+                <select id="manufacturer">
+                    <option value="" data-i18n="selectMake">
+                        Select make
+                    </option>
+                </select>
+
+            </div>
+
+
+            <!-- MODEL -->
+
+            <div class="field">
+
+                <label for="model" data-i18n="model">
+                    Model
+                </label>
+
+                <select id="model" disabled>
+
+                    <option value="" data-i18n="selectModel">
+                        Select model
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- GENERATION -->
+
+            <div class="field">
+
+                <label for="generation" data-i18n="generation">
+                    Generation
+                </label>
+
+                <select id="generation" disabled>
+
+                    <option value="" data-i18n="selectGeneration">
+                        Select generation
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- YEAR -->
+
+            <div class="field">
+
+                <label for="year" data-i18n="year">
+                    Year
+                </label>
+
+                <select id="year" disabled>
+
+                    <option value="" data-i18n="selectYear">
+                        Select year
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- ENGINE -->
+
+            <div class="field full">
+
+                <label for="engine" data-i18n="engine">
+                    Engine
+                </label>
+
+                <select id="engine" disabled>
+
+                    <option value="" data-i18n="selectEngine">
+                        Select engine
+                    </option>
+
+                </select>
+
+                <div class="field-hint" data-i18n="engineHint">
+                    Engine information is loaded from the selected vehicle database.
+                </div>
+
+            </div>
+
+
+            <!-- PROBLEM -->
+
+            <div class="field full">
+
+                <label for="problem" data-i18n="problemDescription">
+                    Problem description
+                </label>
+
+                <textarea
+                    id="problem"
+                    data-i18n-placeholder="problemPlaceholder"
+                    placeholder="Describe the problem, symptoms or diagnostic fault..."
+                ></textarea>
+
+                <div class="field-hint" data-i18n="problemHint">
+                    Include symptoms, DTCs, noises, warning lights or conditions under which the problem occurs.
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="actions">
+
+            <button
+                type="button"
+                class="find-button"
+                id="findSolution"
+                disabled
+                data-i18n="findSolution"
+            >
+                FIND SOLUTION
+            </button>
+
+        </div>
+
+
+        <div class="status" id="status"></div>
+
+
+        <div class="vehicle-summary" id="vehicleSummary">
+
+            <div class="summary-title" data-i18n="selectedVehicle">
+                Selected vehicle
+            </div>
+
+            <div class="summary-value" id="summaryValue"></div>
+
+            <div class="summary-meta" id="summaryMeta"></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- TECHNICAL CATEGORIES -->
+
+    <section class="categories">
+
+        <h2 data-i18n="technicalInformation">
+            Technical Information
+        </h2>
+
+        <p data-i18n="technicalInformationSubtitle">
+            Vehicle-specific technical resources available through AutoDecode.
+        </p>
+
+
+        <div class="category-grid">
+
+            <div class="category-card">
+
+                <div class="category-icon">🔧</div>
+
+                <h3 data-i18n="repairProcedures">
+                    Repair Procedures
+                </h3>
+
+                <p data-i18n="repairProceduresDescription">
+                    Step-by-step repair and replacement procedures for vehicle components.
+                </p>
+
+            </div>
+
+
+            <div class="category-card">
+
+                <div class="category-icon">🧪</div>
+
+                <h3 data-i18n="diagnosticProcedures">
+                    Diagnostic Procedures
+                </h3>
+
+                <p data-i18n="diagnosticProceduresDescription">
+                    Structured diagnostic tests and troubleshooting procedures.
+                </p>
+
+            </div>
+
+
+            <div class="category-card">
+
+                <div class="category-icon">⚡</div>
+
+                <h3 data-i18n="wiringDiagrams">
+                    Wiring Diagrams
+                </h3>
+
+                <p data-i18n="wiringDiagramsDescription">
+                    Electrical circuits, connectors, power supplies and signal paths.
+                </p>
+
+            </div>
+
+
+            <div class="category-card">
+
+                <div class="category-icon">📍</div>
+
+                <h3 data-i18n="componentLocations">
+                    Component Locations
+                </h3>
+
+                <p data-i18n="componentLocationsDescription">
+                    Locations and identification of important vehicle components.
+                </p>
+
+            </div>
+
+
+            <div class="category-card">
+
+                <div class="category-icon">📐</div>
+
+                <h3 data-i18n="technicalSpecifications">
+                    Technical Specifications
+                </h3>
+
+                <p data-i18n="technicalSpecificationsDescription">
+                    Torque values, capacities, dimensions and other technical specifications.
+                </p>
+
+            </div>
+
+
+            <div class="category-card">
+
+                <div class="category-icon">📖</div>
+
+                <h3 data-i18n="technicalManuals">
+                    Technical Manuals
+                </h3>
+
+                <p data-i18n="technicalManualsDescription">
+                    Technical documentation organized around the selected vehicle.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- RESULTS -->
+
+    <section class="results" id="results">
+
+        <div class="results-header">
+
+            <h2 data-i18n="solutionResults">
+                Solution Results
+            </h2>
+
+        </div>
+
+        <div id="resultsContent"></div>
+
+    </section>
+
+</main>
+
+
+<footer>
+    © <span id="currentYear"></span> AutoDecode
+</footer>
+
+
+<script>
+/* =========================================================
+   AutoDecode — Repair & Technical
+   Vehicle selector
+========================================================= */
+
+
+/* =========================================================
+   TRANSLATIONS
+========================================================= */
+
+const translations = {
+
+    en: {
+        home: "← Home",
+
+        repairTechnical: "Repair & Technical",
+
+        pageDescription:
+            "Find vehicle-specific repair procedures, diagnostic information, wiring diagrams, specifications and technical documentation.",
+
+        identifyVehicle: "Identify Your Vehicle",
+
+        identifyVehicleSubtitle:
+            "Select your vehicle step by step to get the most relevant technical information.",
+
+        make: "Make",
+        model: "Model",
+        generation: "Generation",
+        year: "Year",
+        engine: "Engine",
+
+        selectMake: "Select make",
+        selectModel: "Select model",
+        selectGeneration: "Select generation",
+        selectYear: "Select year",
+        selectEngine: "Select engine",
+
+        engineHint:
+            "Engine information is loaded from the selected vehicle database.",
+
+        problemDescription: "Problem description",
+
+        problemPlaceholder:
+            "Describe the problem, symptoms or diagnostic fault...",
+
+        problemHint:
+            "Include symptoms, DTCs, noises, warning lights or conditions under which the problem occurs.",
+
+        findSolution: "FIND SOLUTION",
+
+        selectedVehicle: "Selected vehicle",
+
+        technicalInformation: "Technical Information",
+
+        technicalInformationSubtitle:
+            "Vehicle-specific technical resources available through AutoDecode.",
+
+        repairProcedures: "Repair Procedures",
+
+        repairProceduresDescription:
+            "Step-by-step repair and replacement procedures for vehicle components.",
+
+        diagnosticProcedures: "Diagnostic Procedures",
+
+        diagnosticProceduresDescription:
+            "Structured diagnostic tests and troubleshooting procedures.",
+
+        wiringDiagrams: "Wiring Diagrams",
+
+        wiringDiagramsDescription:
+            "Electrical circuits, connectors, power supplies and signal paths.",
+
+        componentLocations: "Component Locations",
+
+        componentLocationsDescription:
+            "Locations and identification of important vehicle components.",
+
+        technicalSpecifications: "Technical Specifications",
+
+        technicalSpecificationsDescription:
+            "Torque values, capacities, dimensions and other technical specifications.",
+
+        technicalManuals: "Technical Manuals",
+
+        technicalManualsDescription:
+            "Technical documentation organized around the selected vehicle.",
+
+        solutionResults: "Solution Results",
+
+        loadingManufacturers: "Loading vehicle manufacturers...",
+
+        loadingVehicleData: "Loading vehicle data...",
+
+        manufacturersError:
+            "Unable to load the vehicle manufacturer database.",
+
+        vehicleDataError:
+            "Unable to load the selected vehicle database.",
+
+        selectCompleteVehicle:
+            "Please select make, model, generation, year and engine.",
+
+        noTechnicalData:
+            "The vehicle has been identified successfully. Technical documents for this vehicle will be connected here.",
+
+        problemRequired:
+            "Please describe the problem or symptom before searching.",
+
+        yearLabel: "Year",
+
+        power: "Power",
+
+        engineCode: "Engine code",
+
+        fuel: "Fuel",
+
+        displacement: "Displacement",
+
+        hybrid: "Hybrid",
+
+        electric: "Electric"
+    },
+
+
+    de: {
+        home: "← Startseite",
+        repairTechnical: "Reparatur & Technik",
+        pageDescription:
+            "Fahrzeugspezifische Reparaturverfahren, Diagnoseinformationen, Schaltpläne, technische Daten und Dokumentation.",
+        identifyVehicle: "Fahrzeug identifizieren",
+        identifyVehicleSubtitle:
+            "Wählen Sie Ihr Fahrzeug Schritt für Schritt aus.",
+        make: "Marke",
+        model: "Modell",
+        generation: "Generation",
+        year: "Baujahr",
+        engine: "Motor",
+        selectMake: "Marke auswählen",
+        selectModel: "Modell auswählen",
+        selectGeneration: "Generation auswählen",
+        selectYear: "Baujahr auswählen",
+        selectEngine: "Motor auswählen",
+        engineHint: "Motordaten werden aus der Fahrzeugdatenbank geladen.",
+        problemDescription: "Problembeschreibung",
+        problemPlaceholder: "Problem, Symptome oder Fehler beschreiben...",
+        problemHint:
+            "Symptome, DTCs, Geräusche, Warnleuchten oder Bedingungen angeben.",
+        findSolution: "LÖSUNG FINDEN",
+        selectedVehicle: "Ausgewähltes Fahrzeug",
+        technicalInformation: "Technische Informationen",
+        technicalInformationSubtitle:
+            "Fahrzeugspezifische technische Informationen von AutoDecode.",
+        repairProcedures: "Reparaturverfahren",
+        repairProceduresDescription:
+            "Schritt-für-Schritt-Anleitungen für Reparaturen und den Austausch von Komponenten.",
+        diagnosticProcedures: "Diagnoseverfahren",
+        diagnosticProceduresDescription:
+            "Strukturierte Diagnosetests und Fehlersuche.",
+        wiringDiagrams: "Schaltpläne",
+        wiringDiagramsDescription:
+            "Elektrische Schaltungen, Steckverbinder und Signalwege.",
+        componentLocations: "Bauteilpositionen",
+        componentLocationsDescription:
+            "Position und Identifikation wichtiger Fahrzeugkomponenten.",
+        technicalSpecifications: "Technische Daten",
+        technicalSpecificationsDescription:
+            "Drehmomente, Füllmengen, Abmessungen und weitere technische Daten.",
+        technicalManuals: "Technische Handbücher",
+        technicalManualsDescription:
+            "Technische Dokumentation für das ausgewählte Fahrzeug.",
+        solutionResults: "Lösungsergebnisse",
+        loadingManufacturers: "Fahrzeughersteller werden geladen...",
+        loadingVehicleData: "Fahrzeugdaten werden geladen...",
+        manufacturersError:
+            "Die Herstellerdatenbank konnte nicht geladen werden.",
+        vehicleDataError:
+            "Die Fahrzeugdatenbank konnte nicht geladen werden.",
+        selectCompleteVehicle:
+            "Bitte Marke, Modell, Generation, Baujahr und Motor auswählen.",
+        noTechnicalData:
+            "Das Fahrzeug wurde erfolgreich identifiziert. Technische Dokumente werden hier verbunden.",
+        problemRequired:
+            "Bitte beschreiben Sie das Problem oder Symptom.",
+        yearLabel: "Baujahr",
+        power: "Leistung",
+        engineCode: "Motorkennbuchstabe",
+        fuel: "Kraftstoff",
+        displacement: "Hubraum",
+        hybrid: "Hybrid",
+        electric: "Elektrisch"
+    },
+
+
+    ro: {
+        home: "← Acasă",
+        repairTechnical: "Reparații & Tehnic",
+        pageDescription:
+            "Găsește proceduri de reparații specifice mașinii, informații de diagnosticare, scheme electrice, specificații și documentație tehnică.",
+        identifyVehicle: "Identifică vehiculul",
+        identifyVehicleSubtitle:
+            "Selectează vehiculul pas cu pas pentru a obține cele mai relevante informații tehnice.",
+        make: "Marcă",
+        model: "Model",
+        generation: "Generație",
+        year: "An",
+        engine: "Motor",
+        selectMake: "Selectează marca",
+        selectModel: "Selectează modelul",
+        selectGeneration: "Selectează generația",
+        selectYear: "Selectează anul",
+        selectEngine: "Selectează motorul",
+        engineHint:
+            "Informațiile despre motor sunt încărcate din baza de date a vehiculului selectat.",
+        problemDescription: "Descrierea problemei",
+        problemPlaceholder:
+            "Descrie problema, simptomele sau eroarea de diagnosticare...",
+        problemHint:
+            "Include simptome, coduri DTC, zgomote, martori sau condițiile în care apare problema.",
+        findSolution: "GĂSEȘTE SOLUȚIA",
+        selectedVehicle: "Vehicul selectat",
+        technicalInformation: "Informații tehnice",
+        technicalInformationSubtitle:
+            "Resurse tehnice specifice vehiculului disponibile prin AutoDecode.",
+        repairProcedures: "Proceduri de reparație",
+        repairProceduresDescription:
+            "Proceduri pas cu pas pentru reparații și înlocuirea componentelor.",
+        diagnosticProcedures: "Proceduri de diagnosticare",
+        diagnosticProceduresDescription:
+            "Teste de diagnosticare și proceduri structurate de depanare.",
+        wiringDiagrams: "Scheme electrice",
+        wiringDiagramsDescription:
+            "Circuite electrice, conectori, alimentări și trasee de semnal.",
+        componentLocations: "Localizarea componentelor",
+        componentLocationsDescription:
+            "Localizarea și identificarea componentelor importante ale vehiculului.",
+        technicalSpecifications: "Specificații tehnice",
+        technicalSpecificationsDescription:
+            "Cupluri de strângere, capacități, dimensiuni și alte specificații tehnice.",
+        technicalManuals: "Manuale tehnice",
+        technicalManualsDescription:
+            "Documentație tehnică organizată pentru vehiculul selectat.",
+        solutionResults: "Rezultatele soluției",
+        loadingManufacturers: "Se încarcă producătorii auto...",
+        loadingVehicleData: "Se încarcă datele vehiculului...",
+        manufacturersError:
+            "Baza de date cu producători nu poate fi încărcată.",
+        vehicleDataError:
+            "Baza de date pentru marca selectată nu poate fi încărcată.",
+        selectCompleteVehicle:
+            "Selectează marca, modelul, generația, anul și motorul.",
+        noTechnicalData:
+            "Vehiculul a fost identificat cu succes. Documentele tehnice pentru acest vehicul vor fi conectate aici.",
+        problemRequired:
+            "Descrie problema sau simptomul înainte de căutare.",
+        yearLabel: "An",
+        power: "Putere",
+        engineCode: "Cod motor",
+        fuel: "Combustibil",
+        displacement: "Cilindree",
+        hybrid: "Hibrid",
+        electric: "Electric"
+    },
+
+
+    fr: {
+        home: "← Accueil",
+        repairTechnical: "Réparation & Technique",
+        pageDescription:
+            "Trouvez des procédures de réparation, informations de diagnostic, schémas électriques, spécifications et documentation technique.",
+        identifyVehicle: "Identifier le véhicule",
+        identifyVehicleSubtitle:
+            "Sélectionnez votre véhicule étape par étape.",
+        make: "Marque",
+        model: "Modèle",
+        generation: "Génération",
+        year: "Année",
+        engine: "Moteur",
+        selectMake: "Sélectionner la marque",
+        selectModel: "Sélectionner le modèle",
+        selectGeneration: "Sélectionner la génération",
+        selectYear: "Sélectionner l'année",
+        selectEngine: "Sélectionner le moteur",
+        engineHint:
+            "Les informations moteur sont chargées depuis la base du véhicule.",
+        problemDescription: "Description du problème",
+        problemPlaceholder:
+            "Décrivez le problème, les symptômes ou le défaut...",
+        problemHint:
+            "Ajoutez les symptômes, codes DTC, bruits, voyants ou conditions d'apparition.",
+        findSolution: "TROUVER LA SOLUTION",
+        selectedVehicle: "Véhicule sélectionné",
+        technicalInformation: "Informations techniques",
+        technicalInformationSubtitle:
+            "Ressources techniques spécifiques au véhicule.",
+        repairProcedures: "Procédures de réparation",
+        repairProceduresDescription:
+            "Procédures étape par étape pour les réparations et remplacements.",
+        diagnosticProcedures: "Procédures de diagnostic",
+        diagnosticProceduresDescription:
+            "Tests de diagnostic et procédures de dépannage structurées.",
+        wiringDiagrams: "Schémas électriques",
+        wiringDiagramsDescription:
+            "Circuits électriques, connecteurs, alimentations et signaux.",
+        componentLocations: "Emplacement des composants",
+        componentLocationsDescription:
+            "Emplacement et identification des composants importants.",
+        technicalSpecifications: "Spécifications techniques",
+        technicalSpecificationsDescription:
+            "Couples, capacités, dimensions et autres données techniques.",
+        technicalManuals: "Manuels techniques",
+        technicalManualsDescription:
+            "Documentation technique organisée pour le véhicule sélectionné.",
+        solutionResults: "Résultats",
+        loadingManufacturers: "Chargement des constructeurs...",
+        loadingVehicleData: "Chargement des données du véhicule...",
+        manufacturersError:
+            "Impossible de charger la base des constructeurs.",
+        vehicleDataError:
+            "Impossible de charger la base du véhicule.",
+        selectCompleteVehicle:
+            "Sélectionnez la marque, le modèle, la génération, l'année et le moteur.",
+        noTechnicalData:
+            "Le véhicule a été identifié. Les documents techniques seront connectés ici.",
+        problemRequired:
+            "Décrivez le problème ou le symptôme avant la recherche.",
+        yearLabel: "Année",
+        power: "Puissance",
+        engineCode: "Code moteur",
+        fuel: "Carburant",
+        displacement: "Cylindrée",
+        hybrid: "Hybride",
+        electric: "Électrique"
+    },
+
+
+    es: {
+        home: "← Inicio",
+        repairTechnical: "Reparación y Técnica",
+        pageDescription:
+            "Encuentra procedimientos de reparación, diagnóstico, diagramas eléctricos, especificaciones y documentación técnica.",
+        identifyVehicle: "Identifica tu vehículo",
+        identifyVehicleSubtitle:
+            "Selecciona tu vehículo paso a paso.",
+        make: "Marca",
+        model: "Modelo",
+        generation: "Generación",
+        year: "Año",
+        engine: "Motor",
+        selectMake: "Seleccionar marca",
+        selectModel: "Seleccionar modelo",
+        selectGeneration: "Seleccionar generación",
+        selectYear: "Seleccionar año",
+        selectEngine: "Seleccionar motor",
+        engineHint:
+            "Los datos del motor se cargan desde la base del vehículo.",
+        problemDescription: "Descripción del problema",
+        problemPlaceholder:
+            "Describe el problema, los síntomas o el fallo...",
+        problemHint:
+            "Incluye síntomas, códigos DTC, ruidos, testigos o condiciones.",
+        findSolution: "ENCONTRAR SOLUCIÓN",
+        selectedVehicle: "Vehículo seleccionado",
+        technicalInformation: "Información técnica",
+        technicalInformationSubtitle:
+            "Recursos técnicos específicos del vehículo.",
+        repairProcedures: "Procedimientos de reparación",
+        repairProceduresDescription:
+            "Procedimientos paso a paso para reparaciones y sustituciones.",
+        diagnosticProcedures: "Procedimientos de diagnóstico",
+        diagnosticProceduresDescription:
+            "Pruebas de diagnóstico y resolución de problemas.",
+        wiringDiagrams: "Diagramas eléctricos",
+        wiringDiagramsDescription:
+            "Circuitos, conectores, alimentación y señales.",
+        componentLocations: "Ubicación de componentes",
+        componentLocationsDescription:
+            "Ubicación e identificación de componentes importantes.",
+        technicalSpecifications: "Especificaciones técnicas",
+        technicalSpecificationsDescription:
+            "Pares de apriete, capacidades, dimensiones y otros datos técnicos.",
+        technicalManuals: "Manuales técnicos",
+        technicalManualsDescription:
+            "Documentación técnica organizada para el vehículo seleccionado.",
+        solutionResults: "Resultados",
+        loadingManufacturers: "Cargando fabricantes...",
+        loadingVehicleData: "Cargando datos del vehículo...",
+        manufacturersError:
+            "No se pudo cargar la base de fabricantes.",
+        vehicleDataError:
+            "No se pudo cargar la base del vehículo.",
+        selectCompleteVehicle:
+            "Selecciona marca, modelo, generación, año y motor.",
+        noTechnicalData:
+            "El vehículo ha sido identificado correctamente. La documentación técnica se conectará aquí.",
+        problemRequired:
+            "Describe el problema o síntoma antes de buscar.",
+        yearLabel: "Año",
+        power: "Potencia",
+        engineCode: "Código de motor",
+        fuel: "Combustible",
+        displacement: "Cilindrada",
+        hybrid: "Híbrido",
+        electric: "Eléctrico"
+    },
+
+
+    it: {
+        home: "← Home",
+        repairTechnical: "Riparazione e Tecnica",
+        pageDescription:
+            "Trova procedure di riparazione, informazioni diagnostiche, schemi elettrici, specifiche e documentazione tecnica.",
+        identifyVehicle: "Identifica il veicolo",
+        identifyVehicleSubtitle:
+            "Seleziona il veicolo passo dopo passo.",
+        make: "Marca",
+        model: "Modello",
+        generation: "Generazione",
+        year: "Anno",
+        engine: "Motore",
+        selectMake: "Seleziona marca",
+        selectModel: "Seleziona modello",
+        selectGeneration: "Seleziona generazione",
+        selectYear: "Seleziona anno",
+        selectEngine: "Seleziona motore",
+        engineHint:
+            "I dati del motore vengono caricati dal database del veicolo.",
+        problemDescription: "Descrizione del problema",
+        problemPlaceholder:
+            "Descrivi il problema, i sintomi o il guasto...",
+        problemHint:
+            "Includi sintomi, codici DTC, rumori, spie o condizioni.",
+        findSolution: "TROVA SOLUZIONE",
+        selectedVehicle: "Veicolo selezionato",
+        technicalInformation: "Informazioni tecniche",
+        technicalInformationSubtitle:
+            "Risorse tecniche specifiche per il veicolo.",
+        repairProcedures: "Procedure di riparazione",
+        repairProceduresDescription:
+            "Procedure passo dopo passo per riparazioni e sostituzioni.",
+        diagnosticProcedures: "Procedure diagnostiche",
+        diagnosticProceduresDescription:
+            "Test diagnostici e procedure strutturate di ricerca guasti.",
+        wiringDiagrams: "Schemi elettrici",
+        wiringDiagramsDescription:
+            "Circuiti elettrici, connettori, alimentazioni e segnali.",
+        componentLocations: "Posizione componenti",
+        componentLocationsDescription:
+            "Posizione e identificazione dei componenti importanti.",
+        technicalSpecifications: "Specifiche tecniche",
+        technicalSpecificationsDescription:
+            "Coppie di serraggio, capacità, dimensioni e altri dati tecnici.",
+        technicalManuals: "Manuali tecnici",
+        technicalManualsDescription:
+            "Documentazione tecnica organizzata per il veicolo selezionato.",
+        solutionResults: "Risultati",
+        loadingManufacturers: "Caricamento produttori...",
+        loadingVehicleData: "Caricamento dati veicolo...",
+        manufacturersError:
+            "Impossibile caricare il database dei produttori.",
+        vehicleDataError:
+            "Impossibile caricare il database del veicolo.",
+        selectCompleteVehicle:
+            "Seleziona marca, modello, generazione, anno e motore.",
+        noTechnicalData:
+            "Il veicolo è stato identificato. La documentazione tecnica verrà collegata qui.",
+        problemRequired:
+            "Descrivi il problema o il sintomo prima della ricerca.",
+        yearLabel: "Anno",
+        power: "Potenza",
+        engineCode: "Codice motore",
+        fuel: "Carburante",
+        displacement: "Cilindrata",
+        hybrid: "Ibrido",
+        electric: "Elettrico"
+    },
+
+
+    nl: {
+        home: "← Home",
+        repairTechnical: "Reparatie & Techniek",
+        pageDescription:
+            "Vind voertuigspecifieke reparatieprocedures, diagnose-informatie, bedradingsschema's, specificaties en technische documentatie.",
+        identifyVehicle: "Voertuig identificeren",
+        identifyVehicleSubtitle:
+            "Selecteer je voertuig stap voor stap.",
+        make: "Merk",
+        model: "Model",
+        generation: "Generatie",
+        year: "Jaar",
+        engine: "Motor",
+        selectMake: "Selecteer merk",
+        selectModel: "Selecteer model",
+        selectGeneration: "Selecteer generatie",
+        selectYear: "Selecteer jaar",
+        selectEngine: "Selecteer motor",
+        engineHint:
+            "Motorinformatie wordt geladen uit de voertuigdatabase.",
+        problemDescription: "Probleembeschrijving",
+        problemPlaceholder:
+            "Beschrijf het probleem, de symptomen of de storing...",
+        problemHint:
+            "Vermeld symptomen, DTC's, geluiden, waarschuwingslampjes of omstandigheden.",
+        findSolution: "OPLOSSING VINDEN",
+        selectedVehicle: "Geselecteerd voertuig",
+        technicalInformation: "Technische informatie",
+        technicalInformationSubtitle:
+            "Voertuigspecifieke technische informatie van AutoDecode.",
+        repairProcedures: "Reparatieprocedures",
+        repairProceduresDescription:
+            "Stapsgewijze procedures voor reparaties en het vervangen van componenten.",
+        diagnosticProcedures: "Diagnoseprocedures",
+        diagnosticProceduresDescription:
+            "Gestructureerde diagnosetests en probleemoplossing.",
+        wiringDiagrams: "Bedradingsschema's",
+        wiringDiagramsDescription:
+            "Elektrische circuits, connectoren, voedingen en signaalpaden.",
+        componentLocations: "Componentlocaties",
+        componentLocationsDescription:
+            "Locatie en identificatie van belangrijke voertuigcomponenten.",
+        technicalSpecifications: "Technische specificaties",
+        technicalSpecificationsDescription:
+            "Aanhaalmomenten, capaciteiten, afmetingen en andere technische gegevens.",
+        technicalManuals: "Technische handleidingen",
+        technicalManualsDescription:
+            "Technische documentatie voor het geselecteerde voertuig.",
+        solutionResults: "Resultaten",
+        loadingManufacturers: "Fabrikanten laden...",
+        loadingVehicleData: "Voertuiggegevens laden...",
+        manufacturersError:
+            "De fabrikantendatabase kon niet worden geladen.",
+        vehicleDataError:
+            "De voertuigdatabase kon niet worden geladen.",
+        selectCompleteVehicle:
+            "Selecteer merk, model, generatie, jaar en motor.",
+        noTechnicalData:
+            "Het voertuig is succesvol geïdentificeerd. Technische documenten worden hier gekoppeld.",
+        problemRequired:
+            "Beschrijf het probleem of symptoom voordat je zoekt.",
+        yearLabel: "Jaar",
+        power: "Vermogen",
+        engineCode: "Motorkode",
+        fuel: "Brandstof",
+        displacement: "Cilinderinhoud",
+        hybrid: "Hybride",
+        electric: "Elektrisch"
+    }
+
+};
+
+
+/* =========================================================
+   LANGUAGE SYSTEM
+========================================================= */
+
+const languageFlags = {
+    en: "🇬🇧",
+    de: "🇩🇪",
+    ro: "🇷🇴",
+    fr: "🇫🇷",
+    es: "🇪🇸",
+    it: "🇮🇹",
+    nl: "🇳🇱"
+};
+
+const languageNames = {
+    en: "EN",
+    de: "DE",
+    ro: "RO",
+    fr: "FR",
+    es: "ES",
+    it: "IT",
+    nl: "NL"
+};
+
+
+let currentLanguage =
+    localStorage.getItem("autodecode_language") || "en";
+
+
+if (!translations[currentLanguage]) {
+    currentLanguage = "en";
+}
+
+
+/* =========================================================
+   DOM
+========================================================= */
+
+const manufacturerSelect = document.getElementById("manufacturer");
+const modelSelect = document.getElementById("model");
+const generationSelect = document.getElementById("generation");
+const yearSelect = document.getElementById("year");
+const engineSelect = document.getElementById("engine");
+const problemInput = document.getElementById("problem");
+
+const findButton = document.getElementById("findSolution");
+
+const statusBox = document.getElementById("status");
+
+const vehicleSummary = document.getElementById("vehicleSummary");
+const summaryValue = document.getElementById("summaryValue");
+const summaryMeta = document.getElementById("summaryMeta");
+
+const results = document.getElementById("results");
+const resultsContent = document.getElementById("resultsContent");
+
+const languageButton = document.getElementById("languageButton");
+const languageMenu = document.getElementById("languageMenu");
+
+const currentLanguageFlag =
+    document.getElementById("currentLanguageFlag");
+
+const currentLanguageCode =
+    document.getElementById("currentLanguageCode");
+
+const currentYear =
+    document.getElementById("currentYear");
+
+
+/* =========================================================
+   STATE
+========================================================= */
+
+let manufacturers = [];
+
+let currentManufacturerData = null;
+
+let selectedManufacturer = null;
+let selectedModel = null;
+let selectedGeneration = null;
+let selectedYear = null;
+let selectedEngine = null;
+
+
+/* =========================================================
+   LOCALIZATION
+========================================================= */
+
+function t(key) {
+
+    if (
+        translations[currentLanguage] &&
+        translations[currentLanguage][key]
+    ) {
+        return translations[currentLanguage][key];
+    }
+
+    return translations.en[key] || key;
+}
+
+
+function applyTranslations() {
+
+    document.querySelectorAll("[data-i18n]").forEach(element => {
+
+        const key = element.getAttribute("data-i18n");
+
+        element.textContent = t(key);
+
+    });
+
+
+    document.querySelectorAll("[data-i18n-placeholder]").forEach(element => {
+
+        const key = element.getAttribute("data-i18n-placeholder");
+
+        element.placeholder = t(key);
+
+    });
+
+
+    currentLanguageFlag.textContent =
+        languageFlags[currentLanguage];
+
+    currentLanguageCode.textContent =
+        languageNames[currentLanguage];
+
+
+    document.documentElement.lang = currentLanguage;
+
+
+    document.querySelectorAll(".language-option").forEach(option => {
+
+        option.classList.toggle(
+            "active",
+            option.dataset.lang === currentLanguage
+        );
+
+    });
+
+
+    currentYear.textContent = new Date().getFullYear();
+
+    refreshDynamicOptionText();
+
+}
+
+
+function setLanguage(language) {
+
+    if (!translations[language]) {
+        language = "en";
+    }
+
+    currentLanguage = language;
+
+    localStorage.setItem(
+        "autodecode_language",
+        currentLanguage
+    );
+
+    applyTranslations();
+
+    closeLanguageMenu();
+
+}
+
+
+/* =========================================================
+   LANGUAGE MENU
+========================================================= */
+
+function closeLanguageMenu() {
+
+    languageMenu.classList.remove("open");
+
+    languageButton.setAttribute(
+        "aria-expanded",
+        "false"
+    );
+
+}
+
+
+languageButton.addEventListener("click", event => {
+
+    event.stopPropagation();
+
+    const isOpen =
+        languageMenu.classList.toggle("open");
+
+    languageButton.setAttribute(
+        "aria-expanded",
+        String(isOpen)
+    );
+
+});
+
+
+document.querySelectorAll(".language-option").forEach(option => {
+
+    option.addEventListener("click", () => {
+
+        setLanguage(option.dataset.lang);
+
+    });
+
+});
+
+
+document.addEventListener("click", event => {
+
+    if (!event.target.closest(".language-selector")) {
+        closeLanguageMenu();
+    }
+
+});
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+function showStatus(message, type = "info") {
+
+    statusBox.textContent = message;
+
+    statusBox.className =
+        "status show " + type;
+
+}
+
+
+function hideStatus() {
+
+    statusBox.className = "status";
+
+}
+
+
+/* =========================================================
+   SELECT HELPERS
+========================================================= */
+
+function resetSelect(select, placeholderKey) {
+
+    select.innerHTML = "";
+
+    const option =
+        document.createElement("option");
+
+    option.value = "";
+
+    option.textContent = t(placeholderKey);
+
+    select.appendChild(option);
+
+    select.disabled = true;
+
+}
+
+
+function enableSelect(select) {
+
+    select.disabled = false;
+
+}
+
+
+function createOption(value, text) {
+
+    const option =
+        document.createElement("option");
+
+    option.value = value;
+
+    option.textContent = text;
+
+    return option;
+
+}
+
+
+/* =========================================================
+   LOAD MANUFACTURERS
+========================================================= */
+
+async function loadManufacturers() {
+
+    try {
+
+        showStatus(
+            t("loadingManufacturers"),
+            "info"
+        );
+
+        const response =
+            await fetch(
+                "data/vehicles/manufacturers.yaml",
+                {
+                    cache: "no-cache"
+                }
+            );
+
+        if (!response.ok) {
+            throw new Error(
+                "HTTP " + response.status
+            );
+        }
+
+        const yamlText =
+            await response.text();
+
+        const data =
+            jsyaml.load(yamlText);
+
+        if (!Array.isArray(data)) {
+
+            throw new Error(
+                "Manufacturers YAML must contain an array."
+            );
+
+        }
+
+        manufacturers = data;
+
+        populateManufacturers();
+
+        hideStatus();
+
+    } catch (error) {
+
+        console.error(
+            "AutoDecode manufacturer loading error:",
+            error
+        );
+
+        showStatus(
+            t("manufacturersError"),
+            "error"
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   POPULATE MANUFACTURERS
+========================================================= */
+
+function populateManufacturers() {
+
+    manufacturerSelect.innerHTML = "";
+
+    manufacturerSelect.appendChild(
+        createOption(
+            "",
+            t("selectMake")
+        )
+    );
+
+
+    const sortedManufacturers =
+        [...manufacturers].sort((a, b) => {
+
+            const nameA =
+                String(a.name || a.id || "");
+
+            const nameB =
+                String(b.name || b.id || "");
+
+            return nameA.localeCompare(
+                nameB,
+                undefined,
+                {
+                    sensitivity: "base"
+                }
+            );
+
+        });
+
+
+    sortedManufacturers.forEach(manufacturer => {
+
+        const option =
+            createOption(
+                manufacturer.id,
+                manufacturer.name || manufacturer.id
+            );
+
+        manufacturerSelect.appendChild(option);
+
+    });
+
+
+    manufacturerSelect.disabled = false;
+
+}
+
+
+/* =========================================================
+   LOAD BRAND YAML
+========================================================= */
+
+async function loadManufacturerData(manufacturerId) {
+
+    currentManufacturerData = null;
+
+    try {
+
+        showStatus(
+            t("loadingVehicleData"),
+            "info"
+        );
+
+
+        const fileName =
+            manufacturerId + ".yaml";
+
+
+        const response =
+            await fetch(
+                "data/vehicles/" + fileName,
+                {
+                    cache: "no-cache"
+                }
+            );
+
+
+        if (!response.ok) {
+
+            throw new Error(
+                "HTTP " + response.status
+            );
+
+        }
+
+
+        const yamlText =
+            await response.text();
+
+
+        const data =
+            jsyaml.load(yamlText);
+
+
+        if (
+            !data ||
+            !Array.isArray(data.models)
+        ) {
+
+            throw new Error(
+                "Invalid vehicle database structure."
+            );
+
+        }
+
+
+        currentManufacturerData = data;
+
+        hideStatus();
+
+        populateModels();
+
+    } catch (error) {
+
+        console.error(
+            "AutoDecode vehicle data loading error:",
+            error
+        );
+
+        showStatus(
+            t("vehicleDataError"),
+            "error"
+        );
+
+        resetSelect(
+            modelSelect,
+            "selectModel"
+        );
+
+        resetSelect(
+            generationSelect,
+            "selectGeneration"
+        );
+
+        resetSelect(
+            yearSelect,
+            "selectYear"
+        );
+
+        resetSelect(
+            engineSelect,
+            "selectEngine"
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   POPULATE MODELS
+========================================================= */
+
+function populateModels() {
+
+    resetSelect(
+        modelSelect,
+        "selectModel"
+    );
+
+    resetSelect(
+        generationSelect,
+        "selectGeneration"
+    );
+
+    resetSelect(
+        yearSelect,
+        "selectYear"
+    );
+
+    resetSelect(
+        engineSelect,
+        "selectEngine"
+    );
+
+
+    if (
+        !currentManufacturerData ||
+        !Array.isArray(
+            currentManufacturerData.models
+        )
+    ) {
+        return;
+    }
+
+
+    const models =
+        currentManufacturerData.models;
+
+
+    models.forEach(model => {
+
+        modelSelect.appendChild(
+            createOption(
+                model.id,
+                model.name || model.id
+            )
+        );
+
+    });
+
+
+    enableSelect(modelSelect);
+
+}
+
+
+/* =========================================================
+   POPULATE GENERATIONS
+========================================================= */
+
+function populateGenerations() {
+
+    resetSelect(
+        generationSelect,
+        "selectGeneration"
+    );
+
+    resetSelect(
+        yearSelect,
+        "selectYear"
+    );
+
+    resetSelect(
+        engineSelect,
+        "selectEngine"
+    );
+
+
+    const model =
+        getSelectedModelObject();
+
+
+    if (
+        !model ||
+        !Array.isArray(model.generations)
+    ) {
+        return;
+    }
+
+
+    model.generations.forEach(generation => {
+
+        generationSelect.appendChild(
+            createOption(
+                generation.id,
+                generation.name || generation.id
+            )
+        );
+
+    });
+
+
+    enableSelect(generationSelect);
+
+}
+
+
+/* =========================================================
+   POPULATE YEARS
+========================================================= */
+
+function populateYears() {
+
+    resetSelect(
+        yearSelect,
+        "selectYear"
+    );
+
+    resetSelect(
+        engineSelect,
+        "selectEngine"
+    );
+
+
+    const generation =
+        getSelectedGenerationObject();
+
+
+    if (!generation) {
+        return;
+    }
+
+
+    let from = null;
+    let to = null;
+
+
+    if (generation.production) {
+
+        from =
+            Number(generation.production.from);
+
+        to =
+            Number(generation.production.to);
+
+    }
+
+
+    if (
+        !Number.isFinite(from) ||
+        from < 1900
+    ) {
+
+        from = new Date().getFullYear();
+
+    }
+
+
+    if (
+        !Number.isFinite(to) ||
+        to < from
+    ) {
+
+        to = from;
+
+    }
+
+
+    for (
+        let year = to;
+        year >= from;
+        year--
+    ) {
+
+        yearSelect.appendChild(
+            createOption(
+                String(year),
+                String(year)
+            )
+        );
+
+    }
+
+
+    enableSelect(yearSelect);
+
+}
+
+
+/* =========================================================
+   POPULATE ENGINES
+========================================================= */
+
+function populateEngines() {
+
+    resetSelect(
+        engineSelect,
+        "selectEngine"
+    );
+
+
+    const generation =
+        getSelectedGenerationObject();
+
+
+    if (
+        !generation ||
+        !Array.isArray(generation.engines)
+    ) {
+        return;
+    }
+
+
+    generation.engines.forEach(engine => {
+
+        const option =
+            createOption(
+                engine.id,
+                formatEngineName(engine)
+            );
+
+
+        engineSelect.appendChild(option);
+
+    });
+
+
+    enableSelect(engineSelect);
+
+}
+
+
+/* =========================================================
+   ENGINE NAME
+========================================================= */
+
+function formatEngineName(engine) {
+
+    let name =
+        engine.name || engine.id || "";
+
+
+    const power =
+        engine.power_kw;
+
+
+    const hp =
+        engine.power_hp;
+
+
+    if (
+        power !== undefined &&
+        power !== null
+    ) {
+
+        name +=
+            " — " +
+            power +
+            " kW";
+
+        if (
+            hp !== undefined &&
+            hp !== null
+        ) {
+
+            name +=
+                " / " +
+                hp +
+                " hp";
+
+        }
+
+    }
+
+
+    return name;
+
+}
+
+
+/* =========================================================
+   OBJECT FINDERS
+========================================================= */
+
+function getSelectedModelObject() {
+
+    if (
+        !currentManufacturerData ||
+        !Array.isArray(
+            currentManufacturerData.models
+        )
+    ) {
+        return null;
+    }
+
+
+    return currentManufacturerData.models.find(
+        model =>
+            model.id === modelSelect.value
+    ) || null;
+
+}
+
+
+function getSelectedGenerationObject() {
+
+    const model =
+        getSelectedModelObject();
+
+
+    if (
+        !model ||
+        !Array.isArray(model.generations)
+    ) {
+        return null;
+    }
+
+
+    return model.generations.find(
+        generation =>
+            generation.id === generationSelect.value
+    ) || null;
+
+}
+
+
+function getSelectedEngineObject() {
+
+    const generation =
+        getSelectedGenerationObject();
+
+
+    if (
+        !generation ||
+        !Array.isArray(generation.engines)
+    ) {
+        return null;
+    }
+
+
+    return generation.engines.find(
+        engine =>
+            engine.id === engineSelect.value
+    ) || null;
+
+}
+
+
+/* =========================================================
+   SELECT EVENTS
+========================================================= */
+
+manufacturerSelect.addEventListener(
+    "change",
+    async () => {
+
+        selectedManufacturer =
+            manufacturerSelect.value;
+
+        selectedModel = null;
+        selectedGeneration = null;
+        selectedYear = null;
+        selectedEngine = null;
+
+        vehicleSummary.classList.remove("show");
+
+        results.classList.remove("show");
+
+        resultsContent.innerHTML = "";
+
+        updateFindButton();
+
+
+        if (!selectedManufacturer) {
+
+            resetSelect(
+                modelSelect,
+                "selectModel"
+            );
+
+            resetSelect(
+                generationSelect,
+                "selectGeneration"
+            );
+
+            resetSelect(
+                yearSelect,
+                "selectYear"
+            );
+
+            resetSelect(
+                engineSelect,
+                "selectEngine"
+            );
+
+            return;
+
+        }
+
+
+        await loadManufacturerData(
+            selectedManufacturer
+        );
+
+    }
+);
+
+
+modelSelect.addEventListener(
+    "change",
+    () => {
+
+        selectedModel =
+            modelSelect.value;
+
+        selectedGeneration = null;
+        selectedYear = null;
+        selectedEngine = null;
+
+        populateGenerations();
+
+        vehicleSummary.classList.remove("show");
+
+        results.classList.remove("show");
+
+        updateFindButton();
+
+    }
+);
+
+
+generationSelect.addEventListener(
+    "change",
+    () => {
+
+        selectedGeneration =
+            generationSelect.value;
+
+        selectedYear = null;
+        selectedEngine = null;
+
+        populateYears();
+
+        vehicleSummary.classList.remove("show");
+
+        results.classList.remove("show");
+
+        updateFindButton();
+
+    }
+);
+
+
+yearSelect.addEventListener(
+    "change",
+    () => {
+
+        selectedYear =
+            yearSelect.value;
+
+        selectedEngine = null;
+
+        populateEngines();
+
+        vehicleSummary.classList.remove("show");
+
+        results.classList.remove("show");
+
+        updateFindButton();
+
+    }
+);
+
+
+engineSelect.addEventListener(
+    "change",
+    () => {
+
+        selectedEngine =
+            engineSelect.value;
+
+        updateFindButton();
+
+        updateVehicleSummary();
+
+    }
+);
+
+
+problemInput.addEventListener(
+    "input",
+    () => {
+
+        updateFindButton();
+
+    }
+);
+
+
+/* =========================================================
+   FIND BUTTON
+========================================================= */
+
+function updateFindButton() {
+
+    const complete =
+        Boolean(
+            manufacturerSelect.value &&
+            modelSelect.value &&
+            generationSelect.value &&
+            yearSelect.value &&
+            engineSelect.value &&
+            problemInput.value.trim()
+        );
+
+
+    findButton.disabled = !complete;
+
+}
+
+
+/* =========================================================
+   VEHICLE SUMMARY
+========================================================= */
+
+function updateVehicleSummary() {
+
+    const manufacturer =
+        getSelectedManufacturerObject();
+
+    const model =
+        getSelectedModelObject();
+
+    const generation =
+        getSelectedGenerationObject();
+
+    const engine =
+        getSelectedEngineObject();
+
+
+    if (
+        !manufacturer ||
+        !model ||
+        !generation ||
+        !engine ||
+        !yearSelect.value
+    ) {
+
+        vehicleSummary.classList.remove("show");
+
+        return;
+
+    }
+
+
+    summaryValue.textContent =
+        [
+            manufacturer.name,
+            model.name,
+            generation.name,
+            yearSelect.value,
+            engine.name
+        ].join(" • ");
+
+
+    summaryMeta.innerHTML = "";
+
+
+    addSummaryTag(
+        t("yearLabel") +
+        ": " +
+        yearSelect.value
+    );
+
+
+    if (
+        engine.fuel
+    ) {
+
+        addSummaryTag(
+            t("fuel") +
+            ": " +
+            capitalize(engine.fuel)
+        );
+
+    }
+
+
+    if (
+        engine.displacement_cc
+    ) {
+
+        addSummaryTag(
+            t("displacement") +
+            ": " +
+            formatDisplacement(
+                engine.displacement_cc
+            )
+        );
+
+    }
+
+
+    if (
+        engine.power_kw !== undefined
+    ) {
+
+        let powerText =
+            engine.power_kw +
+            " kW";
+
+        if (
+            engine.power_hp !== undefined
+        ) {
+
+            powerText +=
+                " / " +
+                engine.power_hp +
+                " hp";
+
+        }
+
+
+        addSummaryTag(
+            t("power") +
+            ": " +
+            powerText
+        );
+
+    }
+
+
+    if (
+        Array.isArray(
+            engine.engine_codes
+        ) &&
+        engine.engine_codes.length
+    ) {
+
+        addSummaryTag(
+            t("engineCode") +
+            ": " +
+            engine.engine_codes.join(", ")
+        );
+
+    }
+
+
+    if (engine.hybrid) {
+
+        addSummaryTag(
+            t("hybrid")
+        );
+
+    }
+
+
+    if (
+        engine.electric ||
+        engine.fuel === "electric"
+    ) {
+
+        addSummaryTag(
+            t("electric")
+        );
+
+    }
+
+
+    vehicleSummary.classList.add("show");
+
+}
+
+
+function addSummaryTag(text) {
+
+    const tag =
+        document.createElement("span");
+
+    tag.className = "summary-tag";
+
+    tag.textContent = text;
+
+    summaryMeta.appendChild(tag);
+
+}
+
+
+function getSelectedManufacturerObject() {
+
+    return manufacturers.find(
+        manufacturer =>
+            manufacturer.id === manufacturerSelect.value
+    ) || null;
+
+}
+
+
+/* =========================================================
+   HELPERS
+========================================================= */
+
+function capitalize(value) {
+
+    if (!value) {
+        return "";
+    }
+
+    return String(value)
+        .charAt(0)
+        .toUpperCase() +
+        String(value).slice(1);
+
+}
+
+
+function formatDisplacement(cc) {
+
+    const number =
+        Number(cc);
+
+    if (!Number.isFinite(number)) {
+        return cc + " cc";
+    }
+
+    if (number >= 1000) {
+
+        return (
+            (number / 1000)
+                .toFixed(1)
+                .replace(".0", "")
+            +
+            " L"
+        );
+
+    }
+
+    return number + " cc";
+
+}
+
+
+/* =========================================================
+   REFRESH DYNAMIC TEXT
+========================================================= */
+
+function refreshDynamicOptionText() {
+
+    if (!manufacturerSelect.value) {
+
+        manufacturerSelect.options[0].textContent =
+            t("selectMake");
+
+    }
+
+
+    if (!modelSelect.value) {
+
+        modelSelect.options[0].textContent =
+            t("selectModel");
+
+    }
+
+
+    if (!generationSelect.value) {
+
+        generationSelect.options[0].textContent =
+            t("selectGeneration");
+
+    }
+
+
+    if (!yearSelect.value) {
+
+        yearSelect.options[0].textContent =
+            t("selectYear");
+
+    }
+
+
+    if (!engineSelect.value) {
+
+        engineSelect.options[0].textContent =
+            t("selectEngine");
+
+    }
+
+
+    if (manufacturerSelect.value) {
+
+        const selected =
+            manufacturers.find(
+                m =>
+                    m.id ===
+                    manufacturerSelect.value
+            );
+
+        if (selected) {
+
+            manufacturerSelect.options[
+                manufacturerSelect.selectedIndex
+            ].textContent =
+                selected.name ||
+                selected.id;
+
+        }
+
+    }
+
+
+    const model =
+        getSelectedModelObject();
+
+    if (model && modelSelect.value) {
+
+        modelSelect.options[
+            modelSelect.selectedIndex
+        ].textContent =
+            model.name ||
+            model.id;
+
+    }
+
+
+    const generation =
+        getSelectedGenerationObject();
+
+    if (
+        generation &&
+        generationSelect.value
+    ) {
+
+        generationSelect.options[
+            generationSelect.selectedIndex
+        ].textContent =
+            generation.name ||
+            generation.id;
+
+    }
+
+
+    const engine =
+        getSelectedEngineObject();
+
+    if (engine && engineSelect.value) {
+
+        engineSelect.options[
+            engineSelect.selectedIndex
+        ].textContent =
+            formatEngineName(engine);
+
+    }
+
+}
+
+
+/* =========================================================
+   FIND SOLUTION
+========================================================= */
+
+findButton.addEventListener(
+    "click",
+    () => {
+
+        const manufacturer =
+            getSelectedManufacturerObject();
+
+        const model =
+            getSelectedModelObject();
+
+        const generation =
+            getSelectedGenerationObject();
+
+        const engine =
+            getSelectedEngineObject();
+
+        const year =
+            yearSelect.value;
+
+        const problem =
+            problemInput.value.trim();
+
+
+        if (
+            !manufacturer ||
+            !model ||
+            !generation ||
+            !engine ||
+            !year
+        ) {
+
+            showStatus(
+                t("selectCompleteVehicle"),
+                "error"
+            );
+
+            return;
+
+        }
+
+
+        if (!problem) {
+
+            showStatus(
+                t("problemRequired"),
+                "error"
+            );
+
+            return;
+
+        }
+
+
+        const vehicleSelection = {
+
+            manufacturer:
+                manufacturer.id,
+
+            manufacturer_name:
+                manufacturer.name,
+
+            model:
+                model.id,
+
+            model_name:
+                model.name,
+
+            generation:
+                generation.id,
+
+            generation_name:
+                generation.name,
+
+            year:
+                Number(year),
+
+            engine:
+                engine.id,
+
+            engine_name:
+                engine.name,
+
+            engine_code:
+                Array.isArray(
+                    engine.engine_codes
+                )
+                    ? engine.engine_codes
+                    : [],
+
+            fuel:
+                engine.fuel || null,
+
+            power_kw:
+                engine.power_kw ?? null,
+
+            power_hp:
+                engine.power_hp ?? null,
+
+            displacement_cc:
+                engine.displacement_cc ?? null,
+
+            problem:
+                problem
+
+        };
+
+
+        /*
+         * This object is intentionally kept in a clean,
+         * structured format.
+         *
+         * Later, the technical search engine can use it to
+         * search:
+         *
+         * data/technical/repairs/
+         * data/technical/diagnostics/
+         * data/technical/wiring/
+         * data/technical/components/
+         * data/technical/specifications/
+         * data/technical/manuals/
+         *
+         * without changing the vehicle selector itself.
+         */
+
+
+        console.log(
+            "AutoDecode vehicle selection:",
+            vehicleSelection
+        );
+
+
+        showResults(
+            vehicleSelection
+        );
+
+    }
+);
+
+
+/* =========================================================
+   RESULTS
+========================================================= */
+
+function showResults(vehicleSelection) {
+
+    results.classList.add("show");
+
+    resultsContent.innerHTML = "";
+
+
+    const card =
+        document.createElement("div");
+
+    card.className = "coming-soon";
+
+
+    const title =
+        document.createElement("strong");
+
+    title.textContent =
+        vehicleSelection.manufacturer_name +
+        " " +
+        vehicleSelection.model_name +
+        " " +
+        vehicleSelection.generation_name +
+        " — " +
+        vehicleSelection.year;
+
+
+    const description =
+        document.createElement("span");
+
+    description.textContent =
+        t("noTechnicalData");
+
+
+    card.appendChild(title);
+
+    card.appendChild(description);
+
+    resultsContent.appendChild(card);
+
+
+    results.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+
+}
+
+
+/* =========================================================
+   INITIALIZATION
+========================================================= */
+
+applyTranslations();
+
+loadManufacturers();
+
+</script>
+
+</body>
+</html>
