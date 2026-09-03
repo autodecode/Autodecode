@@ -7252,3 +7252,1916 @@ technical_data:
       - P0171
       - P2279
     difficulty: intermediate
+  - id: audi_airbag_srs_system_diagnosis
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: airbag_srs
+    title:
+      en: Airbag / SRS System Diagnosis
+      ro: Diagnosticare sistem airbag / SRS
+      de: Diagnose des Airbag-/SRS-Systems
+    symptoms:
+      - airbag_warning
+      - srs_warning
+      - multiple_warning_lights
+    keywords:
+      - airbag
+      - srs
+      - airbag light
+      - srs light
+      - restraint system
+      - airbag warning
+      - airbag eroare
+      - martor airbag
+    possible_causes:
+      - airbag_module_fault
+      - wiring_fault
+      - connector_fault
+      - crash_sensor_fault
+      - low_voltage
+      - clock_spring_fault
+    diagnostic_steps:
+      - Scan the airbag control module for stored and intermittent faults.
+      - Record the exact fault code and affected circuit.
+      - Inspect connectors and wiring before replacing components.
+      - Check system voltage and relevant power supplies.
+      - Follow the manufacturer's procedure for component replacement and fault clearing.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: audi_airbag_crash_sensor_diagnosis
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: airbag_srs
+    title:
+      en: Airbag Crash Sensor Diagnosis
+      ro: Diagnosticare senzori de impact airbag
+      de: Diagnose der Airbag-Crashsensoren
+    symptoms:
+      - airbag_warning
+      - srs_warning
+      - crash_sensor_fault
+    keywords:
+      - crash sensor
+      - impact sensor
+      - airbag sensor
+      - crash sensor fault
+      - sensor impact
+      - senzor airbag
+    possible_causes:
+      - crash_sensor_fault
+      - damaged_wiring
+      - connector_corrosion
+      - previous_collision
+      - airbag_control_module_fault
+    diagnostic_steps:
+      - Read airbag module fault memory.
+      - Identify the affected crash sensor circuit.
+      - Inspect sensor mounting and wiring.
+      - Check connector condition.
+      - Replace or reset components only according to the applicable repair procedure.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: audi_occupant_detection_system
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: airbag_srs
+    title:
+      en: Occupant Detection System Diagnosis
+      ro: Diagnosticare sistem detectare ocupant
+      de: Diagnose der Sitzbelegungserkennung
+    symptoms:
+      - airbag_warning
+      - passenger_airbag_warning
+      - seat_occupancy_fault
+    keywords:
+      - occupant detection
+      - seat occupancy
+      - passenger detection
+      - passenger airbag
+      - seat sensor
+      - senzor ocupare scaun
+    possible_causes:
+      - occupancy_sensor_fault
+      - seat_wiring_fault
+      - connector_fault
+      - control_module_fault
+      - calibration_required
+    diagnostic_steps:
+      - Scan the restraint control module.
+      - Check occupant-detection related faults.
+      - Inspect wiring beneath the passenger seat.
+      - Check connector locking and condition.
+      - Perform the required calibration or basic setting after repair.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: audi_steering_wheel_clock_spring
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: steering_wheel_electronics
+    title:
+      en: Steering Wheel Clock Spring Diagnosis
+      ro: Diagnosticare panglică spiralată volan
+      de: Diagnose der Lenkrad-Wickelfeder
+    symptoms:
+      - airbag_warning
+      - steering_wheel_button_fault
+      - horn_fault
+      - steering_angle_fault
+    keywords:
+      - clock spring
+      - spiral cable
+      - slip ring
+      - steering wheel electronics
+      - airbag cable
+      - panglica volan
+    possible_causes:
+      - clock_spring_damage
+      - incorrect_installation
+      - steering_wheel_rotation_damage
+      - connector_fault
+    diagnostic_steps:
+      - Scan restraint and steering wheel electronics modules.
+      - Check steering wheel controls for simultaneous faults.
+      - Inspect the clock spring wiring and connectors.
+      - Verify steering angle information where applicable.
+      - Follow the specified centering procedure before installation.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: audi_adaptive_cruise_control_radar
+    vehicle:
+      manufacturer: audi
+      models:
+        - a4
+        - a5
+        - a6
+        - a7
+        - a8
+        - q5
+        - q7
+        - q8
+      generations: all
+      engines: all
+    category: diagnostics
+    system: adas
+    title:
+      en: Adaptive Cruise Control Radar Diagnosis
+      ro: Diagnosticare radar Adaptive Cruise Control
+      de: Diagnose des ACC-Radars
+    symptoms:
+      - adaptive_cruise_unavailable
+      - adas_warning
+      - radar_fault
+      - cruise_control_fault
+    keywords:
+      - adaptive cruise
+      - acc
+      - radar
+      - front radar
+      - cruise unavailable
+      - radar sensor
+      - tempomat adaptiv
+    possible_causes:
+      - radar_sensor_fault
+      - radar_misalignment
+      - blocked_radar
+      - wiring_fault
+      - calibration_required
+      - communication_fault
+    diagnostic_steps:
+      - Scan the driver assistance system.
+      - Check radar sensor faults and measured data.
+      - Inspect the radar mounting area.
+      - Check for contamination or physical damage.
+      - Verify calibration requirements after collision or bumper work.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: audi_lane_assist_camera
+    vehicle:
+      manufacturer: audi
+      models:
+        - a3
+        - a4
+        - a5
+        - a6
+        - a7
+        - a8
+        - q3
+        - q5
+        - q7
+        - q8
+      generations: all
+      engines: all
+    category: diagnostics
+    system: adas
+    title:
+      en: Lane Assist Camera Diagnosis
+      ro: Diagnosticare cameră Lane Assist
+      de: Diagnose der Lane-Assist-Kamera
+    symptoms:
+      - lane_assist_unavailable
+      - adas_warning
+      - camera_fault
+    keywords:
+      - lane assist
+      - lane departure
+      - front camera
+      - windshield camera
+      - camera calibration
+      - lane keeping
+      - camera parbriz
+    possible_causes:
+      - camera_fault
+      - blocked_camera_view
+      - windshield_replacement
+      - camera_misalignment
+      - calibration_required
+      - communication_fault
+    diagnostic_steps:
+      - Scan the driver assistance control module.
+      - Inspect the camera field of view.
+      - Check windshield condition around the camera.
+      - Verify camera mounting.
+      - Perform calibration when required after windshield or alignment work.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: audi_front_camera_calibration
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: adas
+    title:
+      en: Front Camera Calibration Diagnosis
+      ro: Diagnosticare și calibrare cameră frontală
+      de: Diagnose und Kalibrierung der Frontkamera
+    symptoms:
+      - camera_fault
+      - adas_warning
+      - lane_assist_unavailable
+      - traffic_sign_recognition_unavailable
+    keywords:
+      - front camera
+      - camera calibration
+      - adas calibration
+      - calibration
+      - camera basic setting
+      - calibrare camera
+    possible_causes:
+      - camera_misalignment
+      - windshield_replacement
+      - suspension_height_change
+      - wheel_alignment_change
+      - camera_mount_fault
+    diagnostic_steps:
+      - Read camera-related fault memory.
+      - Check vehicle ride height and wheel alignment.
+      - Inspect camera mounting.
+      - Verify calibration conditions.
+      - Perform the manufacturer-specified calibration procedure.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: audi_traffic_sign_recognition
+    vehicle:
+      manufacturer: audi
+      models:
+        - a3
+        - a4
+        - a5
+        - a6
+        - a7
+        - a8
+        - q3
+        - q5
+        - q7
+        - q8
+      generations: all
+      engines: all
+    category: diagnostics
+    system: adas
+    title:
+      en: Traffic Sign Recognition Diagnosis
+      ro: Diagnosticare recunoaștere indicatoare rutiere
+      de: Diagnose der Verkehrszeichenerkennung
+    symptoms:
+      - traffic_sign_recognition_fault
+      - camera_fault
+      - adas_warning
+    keywords:
+      - traffic sign recognition
+      - road sign recognition
+      - TSR
+      - traffic signs
+      - camera
+      - indicatoare
+    possible_causes:
+      - front_camera_fault
+      - calibration_error
+      - software_configuration
+      - communication_fault
+      - blocked_camera
+    diagnostic_steps:
+      - Scan the relevant driver assistance module.
+      - Check front camera status.
+      - Inspect camera visibility.
+      - Check calibration status.
+      - Verify coding or configuration where applicable.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: audi_blind_spot_monitoring
+    vehicle:
+      manufacturer: audi
+      models:
+        - a4
+        - a5
+        - a6
+        - a7
+        - a8
+        - q5
+        - q7
+        - q8
+      generations: all
+      engines: all
+    category: diagnostics
+    system: adas
+    title:
+      en: Blind Spot Monitoring Diagnosis
+      ro: Diagnosticare monitorizare unghi mort
+      de: Diagnose des Totwinkelassistenten
+    symptoms:
+      - blind_spot_unavailable
+      - adas_warning
+      - side_assistance_fault
+    keywords:
+      - blind spot
+      - side assist
+      - side assistance
+      - lane change assist
+      - unghi mort
+      - side assist fault
+    possible_causes:
+      - radar_sensor_fault
+      - blocked_sensor
+      - bumper_damage
+      - wiring_fault
+      - calibration_required
+      - communication_fault
+    diagnostic_steps:
+      - Scan the side-assistance system.
+      - Identify which radar or sensor reports the fault.
+      - Inspect rear bumper sensor areas.
+      - Check wiring and connectors.
+      - Verify calibration after bumper replacement or collision repair.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: audi_parking_camera_diagnosis
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: parking_assistance
+    title:
+      en: Rear View Camera Diagnosis
+      ro: Diagnosticare cameră marșarier
+      de: Diagnose der Rückfahrkamera
+    symptoms:
+      - rear_camera_unavailable
+      - camera_image_missing
+      - parking_assistance_unavailable
+    keywords:
+      - rear camera
+      - reversing camera
+      - backup camera
+      - camera image
+      - camera no signal
+      - camera marsarier
+    possible_causes:
+      - camera_fault
+      - wiring_fault
+      - connector_fault
+      - camera_power_supply
+      - control_module_fault
+      - communication_fault
+    diagnostic_steps:
+      - Scan the parking camera system.
+      - Check camera power and ground.
+      - Inspect camera connector and wiring.
+      - Check video or communication status.
+      - Verify operation after repair.
+    related_dtcs: []
+    difficulty: medium
+
+  - id: audi_rain_light_sensor
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: body_electronics
+    title:
+      en: Rain / Light Sensor Diagnosis
+      ro: Diagnosticare senzor ploaie / lumină
+      de: Diagnose des Regen-/Lichtsensors
+    symptoms:
+      - automatic_wiper_fault
+      - automatic_light_fault
+      - rain_sensor_fault
+      - light_sensor_fault
+    keywords:
+      - rain sensor
+      - light sensor
+      - rain light sensor
+      - automatic wipers
+      - automatic lights
+      - senzor ploaie
+      - senzor lumina
+    possible_causes:
+      - sensor_fault
+      - windshield_mounting_issue
+      - optical_gel_fault
+      - wiring_fault
+      - calibration_required
+    diagnostic_steps:
+      - Scan the body electronics system.
+      - Check sensor communication.
+      - Inspect the sensor mounting area.
+      - Inspect the optical coupling area of the windshield.
+      - Perform calibration where applicable.
+    related_dtcs: []
+    difficulty: medium
+
+  - id: audi_automatic_wiper_system
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: windshield_wipers
+    title:
+      en: Automatic Wiper System Diagnosis
+      ro: Diagnosticare sistem automat ștergătoare
+      de: Diagnose der automatischen Scheibenwischer
+    symptoms:
+      - wiper_fault
+      - automatic_wiper_fault
+      - wipers_intermittent
+    keywords:
+      - automatic wipers
+      - auto wipers
+      - wiper intermittent
+      - rain sensor
+      - windshield wiper
+      - stergatoare automate
+    possible_causes:
+      - rain_sensor_fault
+      - wiper_motor_fault
+      - wiper_control_module_fault
+      - wiring_fault
+      - stalk_switch_fault
+    diagnostic_steps:
+      - Scan the wiper-related control modules.
+      - Check rain sensor status where equipped.
+      - Test wiper motor activation.
+      - Inspect wiring and connectors.
+      - Check the steering column switch input.
+    related_dtcs: []
+    difficulty: medium
+
+  - id: audi_wiper_motor_diagnosis
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: windshield_wipers
+    title:
+      en: Windshield Wiper Motor Diagnosis
+      ro: Diagnosticare motor ștergătoare parbriz
+      de: Diagnose des Scheibenwischermotors
+    symptoms:
+      - wipers_not_working
+      - wipers_slow
+      - wipers_stuck
+      - wipers_intermittent
+    keywords:
+      - wiper motor
+      - windshield wiper motor
+      - wipers stopped
+      - slow wipers
+      - stergatoare nu merg
+      - motor stergatoare
+    possible_causes:
+      - wiper_motor_fault
+      - seized_linkage
+      - fuse_fault
+      - relay_fault
+      - wiring_fault
+      - control_module_fault
+    diagnostic_steps:
+      - Check relevant fuses and power supply.
+      - Scan the body electronics system.
+      - Command the wiper motor where supported.
+      - Check motor current or operation.
+      - Inspect the mechanical linkage for seizure.
+    related_dtcs: []
+    difficulty: medium
+
+  - id: audi_headlamp_control_module
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: exterior_lighting
+    title:
+      en: Headlamp Control Module Diagnosis
+      ro: Diagnosticare modul control faruri
+      de: Diagnose des Scheinwerfer-Steuergeräts
+    symptoms:
+      - headlight_fault
+      - lighting_warning
+      - one_headlamp_inoperative
+      - adaptive_lighting_fault
+    keywords:
+      - headlight module
+      - headlamp control
+      - light control module
+      - headlight fault
+      - far control module
+    possible_causes:
+      - control_module_fault
+      - power_supply_fault
+      - communication_fault
+      - wiring_fault
+      - moisture_damage
+    diagnostic_steps:
+      - Scan the lighting control system.
+      - Identify the affected headlamp or module.
+      - Check power, ground and communication.
+      - Inspect for water ingress.
+      - Verify coding or adaptation after module replacement.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: audi_led_headlamp_fault
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: exterior_lighting
+    title:
+      en: LED Headlamp Fault Diagnosis
+      ro: Diagnosticare faruri LED
+      de: Diagnose von LED-Scheinwerferfehlern
+    symptoms:
+      - headlight_fault
+      - led_segment_fault
+      - lighting_warning
+      - one_headlamp_inoperative
+    keywords:
+      - led headlight
+      - led headlamp
+      - led module
+      - led segment
+      - headlight warning
+      - far led
+    possible_causes:
+      - led_module_fault
+      - headlamp_control_module_fault
+      - power_supply_fault
+      - wiring_fault
+      - moisture_ingress
+    diagnostic_steps:
+      - Scan the lighting control modules.
+      - Identify the affected LED function.
+      - Check power supply and communication.
+      - Inspect the headlamp for moisture.
+      - Check module coding after replacement.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: audi_adaptive_headlight_system
+    vehicle:
+      manufacturer: audi
+      models:
+        - a4
+        - a5
+        - a6
+        - a7
+        - a8
+        - q5
+        - q7
+        - q8
+      generations: all
+      engines: all
+    category: diagnostics
+    system: exterior_lighting
+    title:
+      en: Adaptive Headlight System Diagnosis
+      ro: Diagnosticare sistem faruri adaptive
+      de: Diagnose der adaptiven Scheinwerfer
+    symptoms:
+      - adaptive_headlight_fault
+      - headlight_warning
+      - incorrect_beam_direction
+    keywords:
+      - adaptive headlights
+      - adaptive lighting
+      - cornering lights
+      - dynamic headlight
+      - afs
+      - faruri adaptive
+    possible_causes:
+      - headlight_level_sensor_fault
+      - headlamp_actuator_fault
+      - control_module_fault
+      - calibration_required
+      - wiring_fault
+    diagnostic_steps:
+      - Scan the lighting control system.
+      - Check headlamp leveling data.
+      - Inspect level sensors and linkages.
+      - Test actuator operation where supported.
+      - Perform headlamp basic setting or calibration.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: audi_headlamp_level_sensor
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: exterior_lighting
+    title:
+      en: Headlamp Level Sensor Diagnosis
+      ro: Diagnosticare senzor nivel faruri
+      de: Diagnose des Scheinwerfer-Niveausensors
+    symptoms:
+      - headlight_level_fault
+      - headlight_warning
+      - incorrect_beam_direction
+    keywords:
+      - headlight level sensor
+      - ride height sensor
+      - headlamp leveling
+      - headlight calibration
+      - senzor nivel far
+    possible_causes:
+      - level_sensor_fault
+      - damaged_linkage
+      - wiring_fault
+      - connector_fault
+      - calibration_required
+    diagnostic_steps:
+      - Scan the lighting control module.
+      - Check live level sensor values.
+      - Inspect sensor linkage.
+      - Check wiring and connector condition.
+      - Perform calibration after correcting mechanical faults.
+    related_dtcs: []
+    difficulty: medium
+
+  - id: audi_door_lock_actuator
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: central_locking
+    title:
+      en: Door Lock Actuator Diagnosis
+      ro: Diagnosticare actuator închidere ușă
+      de: Diagnose des Türschloss-Stellantriebs
+    symptoms:
+      - door_lock_fault
+      - central_lock_fault
+      - door_will_not_lock
+      - door_will_not_unlock
+    keywords:
+      - door lock actuator
+      - door lock
+      - central locking
+      - lock actuator
+      - usa nu se inchide
+      - usa nu se deschide
+    possible_causes:
+      - lock_actuator_fault
+      - latch_mechanical_fault
+      - wiring_fault
+      - connector_fault
+      - body_control_module_fault
+    diagnostic_steps:
+      - Scan the central locking system.
+      - Identify the affected door.
+      - Check lock command and feedback.
+      - Inspect door wiring and connectors.
+      - Test the actuator mechanically and electrically.
+    related_dtcs: []
+    difficulty: medium
+
+  - id: audi_central_locking_system
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: central_locking
+    title:
+      en: Central Locking System Diagnosis
+      ro: Diagnosticare sistem închidere centralizată
+      de: Diagnose der Zentralverriegelung
+    symptoms:
+      - central_lock_fault
+      - multiple_door_lock_fault
+      - remote_locking_fault
+    keywords:
+      - central locking
+      - central lock
+      - remote locking
+      - doors won't lock
+      - doors won't unlock
+      - inchidere centralizata
+    possible_causes:
+      - body_control_module_fault
+      - door_lock_actuator_fault
+      - low_battery_voltage
+      - key_fob_fault
+      - wiring_fault
+      - communication_fault
+    diagnostic_steps:
+      - Scan the body control system.
+      - Check whether all or only one door is affected.
+      - Check key input and central locking commands.
+      - Inspect power supplies and door wiring.
+      - Check relevant actuator feedback.
+    related_dtcs: []
+    difficulty: medium
+
+  - id: audi_keyless_entry_system
+    vehicle:
+      manufacturer: audi
+      models:
+        - a4
+        - a5
+        - a6
+        - a7
+        - a8
+        - q5
+        - q7
+        - q8
+      generations: all
+      engines: all
+    category: diagnostics
+    system: access_start_authorization
+    title:
+      en: Keyless Entry System Diagnosis
+      ro: Diagnosticare sistem Keyless Entry
+      de: Diagnose des schlüssellosen Zugangssystems
+    symptoms:
+      - keyless_entry_fault
+      - remote_locking_fault
+      - key_not_detected
+    keywords:
+      - keyless entry
+      - keyless access
+      - comfort key
+      - key not detected
+      - advanced key
+      - cheie keyless
+    possible_causes:
+      - key_fob_battery_low
+      - antenna_fault
+      - access_control_module_fault
+      - wiring_fault
+      - communication_fault
+    diagnostic_steps:
+      - Scan the access and authorization system.
+      - Check key recognition status.
+      - Check key battery condition.
+      - Inspect relevant antennas and wiring.
+      - Check communication between access modules.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: audi_steering_column_lock
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: access_start_authorization
+    title:
+      en: Electronic Steering Column Lock Diagnosis
+      ro: Diagnosticare blocator electronic coloană direcție
+      de: Diagnose der elektronischen Lenksäulenverriegelung
+    symptoms:
+      - no_start
+      - steering_lock_fault
+      - key_not_detected
+      - ignition_fault
+    keywords:
+      - steering column lock
+      - electronic steering lock
+      - ESL
+      - steering lock fault
+      - blocator volan
+      - coloana directie
+    possible_causes:
+      - steering_lock_actuator_fault
+      - low_voltage
+      - wiring_fault
+      - authorization_fault
+      - control_module_fault
+    diagnostic_steps:
+      - Scan access and start authorization modules.
+      - Check steering lock status.
+      - Check battery voltage and power supply.
+      - Inspect relevant communication lines.
+      - Verify authorization status before replacing the lock.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: audi_power_window_motor
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: door_electronics
+    title:
+      en: Power Window Motor Diagnosis
+      ro: Diagnosticare motor geam electric
+      de: Diagnose des Fensterhebermotors
+    symptoms:
+      - window_not_working
+      - window_slow
+      - window_intermittent
+      - window_reverses
+    keywords:
+      - power window
+      - window motor
+      - electric window
+      - window regulator
+      - geam electric
+      - geamul nu merge
+    possible_causes:
+      - window_motor_fault
+      - regulator_mechanical_fault
+      - wiring_fault
+      - door_module_fault
+      - anti_pinch_activation
+    diagnostic_steps:
+      - Identify the affected door.
+      - Scan the corresponding door control module.
+      - Check motor command and feedback.
+      - Inspect regulator movement.
+      - Perform window initialization after repair where required.
+    related_dtcs: []
+    difficulty: medium
+
+  - id: audi_window_anti_pinch
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: door_electronics
+    title:
+      en: Power Window Anti-Pinch Diagnosis
+      ro: Diagnosticare protecție anti-prindere geam
+      de: Diagnose des Einklemmschutzes
+    symptoms:
+      - window_reverses
+      - window_stops
+      - window_initialization_fault
+    keywords:
+      - anti pinch
+      - pinch protection
+      - window reverses
+      - window initialization
+      - one touch window
+      - protectie antiprindere
+    possible_causes:
+      - incorrect_initialization
+      - excessive_window_resistance
+      - regulator_fault
+      - motor_position_learning_fault
+      - door_module_fault
+    diagnostic_steps:
+      - Check for mechanical resistance in the window mechanism.
+      - Scan the door control module.
+      - Perform the applicable window initialization procedure.
+      - Check motor position learning.
+      - Recheck anti-pinch operation.
+    related_dtcs: []
+    difficulty: medium
+
+  - id: audi_electric_mirror_adjustment
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: door_electronics
+    title:
+      en: Electric Door Mirror Adjustment Diagnosis
+      ro: Diagnosticare reglaj oglinzi electrice
+      de: Diagnose der elektrischen Außenspiegelverstellung
+    symptoms:
+      - mirror_not_adjusting
+      - mirror_intermittent
+      - mirror_control_fault
+    keywords:
+      - electric mirror
+      - mirror adjustment
+      - door mirror
+      - wing mirror
+      - mirror motor
+      - oglinda electrica
+    possible_causes:
+      - mirror_motor_fault
+      - door_module_fault
+      - switch_fault
+      - wiring_fault
+      - connector_fault
+    diagnostic_steps:
+      - Identify which mirror functions are affected.
+      - Scan the corresponding door module.
+      - Check mirror switch input.
+      - Inspect wiring in the door harness.
+      - Test mirror actuator operation.
+    related_dtcs: []
+    difficulty: medium
+
+  - id: audi_mirror_folding_system
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: door_electronics
+    title:
+      en: Power Folding Mirror Diagnosis
+      ro: Diagnosticare pliere electrică oglinzi
+      de: Diagnose der elektrischen Spiegelanklappung
+    symptoms:
+      - mirror_not_folding
+      - mirror_stuck
+      - mirror_intermittent
+    keywords:
+      - folding mirror
+      - power folding mirror
+      - mirror folding
+      - electric folding
+      - pliere oglinda
+    possible_causes:
+      - folding_motor_fault
+      - mechanical_seizure
+      - door_module_fault
+      - wiring_fault
+      - connector_fault
+    diagnostic_steps:
+      - Command mirror folding where supported.
+      - Listen for motor operation.
+      - Inspect the folding mechanism for mechanical seizure.
+      - Check wiring and door module output.
+      - Verify operation after repair.
+    related_dtcs: []
+    difficulty: medium
+
+  - id: audi_interior_lighting_control
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: body_electronics
+    title:
+      en: Interior Lighting System Diagnosis
+      ro: Diagnosticare iluminare interioară
+      de: Diagnose der Innenbeleuchtung
+    symptoms:
+      - interior_light_fault
+      - interior_lights_not_working
+      - lights_stay_on
+    keywords:
+      - interior lights
+      - cabin lights
+      - dome light
+      - courtesy light
+      - ambient lighting
+      - lumini interior
+    possible_causes:
+      - body_control_module_fault
+      - door_switch_fault
+      - wiring_fault
+      - lighting_module_fault
+      - low_voltage
+    diagnostic_steps:
+      - Check body control module fault memory.
+      - Determine whether one or multiple lights are affected.
+      - Check door status signals.
+      - Inspect power supply and grounds.
+      - Check lighting outputs where supported.
+    related_dtcs: []
+    difficulty: medium
+
+  - id: audi_ambient_lighting
+    vehicle:
+      manufacturer: audi
+      models:
+        - a3
+        - a4
+        - a5
+        - a6
+        - a7
+        - a8
+        - q3
+        - q5
+        - q7
+        - q8
+      generations: all
+      engines: all
+    category: diagnostics
+    system: body_electronics
+    title:
+      en: Ambient Lighting Diagnosis
+      ro: Diagnosticare iluminare ambientală
+      de: Diagnose der Ambientebeleuchtung
+    symptoms:
+      - ambient_light_fault
+      - interior_light_fault
+      - lighting_warning
+    keywords:
+      - ambient lighting
+      - interior ambient
+      - led interior
+      - ambient light
+      - iluminare ambientala
+    possible_causes:
+      - lighting_module_fault
+      - led_module_fault
+      - communication_fault
+      - wiring_fault
+      - coding_configuration_fault
+    diagnostic_steps:
+      - Scan the relevant body electronics modules.
+      - Identify the affected lighting zone.
+      - Check communication and power supply.
+      - Inspect connectors and wiring.
+      - Verify configuration after module replacement.
+    related_dtcs: []
+    difficulty: medium
+
+  - id: audi_fuel_filler_door_lock
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: body_electronics
+    title:
+      en: Fuel Filler Door Lock Diagnosis
+      ro: Diagnosticare închidere clapetă rezervor
+      de: Diagnose der Tankklappenverriegelung
+    symptoms:
+      - fuel_door_will_not_open
+      - fuel_door_will_not_lock
+      - central_lock_fault
+    keywords:
+      - fuel flap
+      - fuel filler door
+      - fuel door lock
+      - tank flap
+      - clapeta rezervor
+    possible_causes:
+      - locking_actuator_fault
+      - mechanical_seizure
+      - wiring_fault
+      - central_locking_fault
+    diagnostic_steps:
+      - Check central locking operation.
+      - Inspect the filler-door actuator.
+      - Check power and control signals.
+      - Inspect the mechanism for mechanical seizure.
+      - Verify operation after repair.
+    related_dtcs: []
+    difficulty: medium
+
+  - id: audi_trunk_lid_lock_actuator
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: body_electronics
+    title:
+      en: Trunk Lid Lock Actuator Diagnosis
+      ro: Diagnosticare actuator închidere portbagaj
+      de: Diagnose des Heckklappenschlosses
+    symptoms:
+      - trunk_will_not_lock
+      - trunk_will_not_open
+      - trunk_warning
+    keywords:
+      - trunk lock
+      - boot lock
+      - trunk actuator
+      - tailgate lock
+      - portbagaj nu se deschide
+    possible_causes:
+      - lock_actuator_fault
+      - latch_fault
+      - wiring_fault
+      - body_control_module_fault
+    diagnostic_steps:
+      - Scan body electronics for trunk-related faults.
+      - Check latch status feedback.
+      - Inspect actuator wiring.
+      - Test the actuator command.
+      - Inspect the mechanical latch.
+    related_dtcs: []
+    difficulty: medium
+
+  - id: audi_power_tailgate
+    vehicle:
+      manufacturer: audi
+      models:
+        - q3
+        - q5
+        - q7
+        - q8
+        - a6
+        - a7
+      generations: all
+      engines: all
+    category: diagnostics
+    system: body_electronics
+    title:
+      en: Power Tailgate Diagnosis
+      ro: Diagnosticare hayon electric
+      de: Diagnose der elektrischen Heckklappe
+    symptoms:
+      - tailgate_not_opening
+      - tailgate_not_closing
+      - tailgate_stops
+      - tailgate_warning
+    keywords:
+      - power tailgate
+      - electric tailgate
+      - automatic trunk
+      - tailgate motor
+      - hayon electric
+    possible_causes:
+      - tailgate_motor_fault
+      - position_sensor_fault
+      - pinch_protection
+      - wiring_fault
+      - control_module_fault
+      - mechanical_resistance
+    diagnostic_steps:
+      - Scan the tailgate control module.
+      - Check position and motor status.
+      - Inspect the mechanism for mechanical resistance.
+      - Check wiring and connectors.
+      - Perform initialization if required.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: audi_instrument_cluster_fault
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: instrument_cluster
+    title:
+      en: Instrument Cluster Diagnosis
+      ro: Diagnosticare instrument cluster / ceasuri de bord
+      de: Diagnose des Kombiinstruments
+    symptoms:
+      - instrument_cluster_fault
+      - gauges_inoperative
+      - warning_lights_fault
+      - display_fault
+    keywords:
+      - instrument cluster
+      - dashboard
+      - cluster
+      - gauges
+      - speedometer
+      - odometer
+      - ceasuri bord
+    possible_causes:
+      - cluster_module_fault
+      - power_supply_fault
+      - communication_fault
+      - low_voltage
+      - internal_electronic_fault
+    diagnostic_steps:
+      - Scan the instrument cluster.
+      - Check power and ground supplies.
+      - Check communication with the gateway.
+      - Compare displayed values with diagnostic data.
+      - Investigate internal cluster faults before replacement.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: audi_dashboard_display_failure
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: instrument_cluster
+    title:
+      en: Dashboard Display Failure Diagnosis
+      ro: Diagnosticare afișaj bord defect
+      de: Diagnose eines ausgefallenen Kombiinstrument-Displays
+    symptoms:
+      - display_blank
+      - display_flickering
+      - instrument_cluster_fault
+      - intermittent_display
+    keywords:
+      - dashboard display
+      - cluster display
+      - display blank
+      - display flicker
+      - instrument display
+      - ecran bord
+    possible_causes:
+      - low_voltage
+      - cluster_internal_fault
+      - power_supply_fault
+      - communication_fault
+      - connector_fault
+    diagnostic_steps:
+      - Check vehicle voltage and cluster power supply.
+      - Scan the instrument cluster.
+      - Check communication faults.
+      - Inspect connectors where accessible.
+      - Determine whether the failure is internal or supply-related.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: audi_horn_system_diagnosis
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: body_electronics
+    title:
+      en: Horn System Diagnosis
+      ro: Diagnosticare sistem claxon
+      de: Diagnose der Hupe
+    symptoms:
+      - horn_not_working
+      - horn_intermittent
+    keywords:
+      - horn
+      - horn not working
+      - klaxon
+      - claxon
+      - horn relay
+    possible_causes:
+      - horn_fault
+      - fuse_fault
+      - relay_fault
+      - wiring_fault
+      - steering_wheel_switch_fault
+      - clock_spring_fault
+    diagnostic_steps:
+      - Check horn fuse and power supply.
+      - Test the horn directly where appropriate.
+      - Check relay or control output.
+      - Inspect steering wheel input.
+      - Check clock spring circuits when applicable.
+    related_dtcs: []
+    difficulty: easy
+
+  - id: audi_trailer_module_diagnosis
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: trailer_electrics
+    title:
+      en: Trailer Control Module Diagnosis
+      ro: Diagnosticare modul remorcă
+      de: Diagnose des Anhängersteuergeräts
+    symptoms:
+      - trailer_electrical_fault
+      - trailer_lights_fault
+      - trailer_module_no_communication
+    keywords:
+      - trailer module
+      - trailer control
+      - towing module
+      - trailer lights
+      - remorca
+      - modul remorca
+    possible_causes:
+      - trailer_module_fault
+      - wiring_fault
+      - connector_corrosion
+      - communication_fault
+      - trailer_socket_fault
+    diagnostic_steps:
+      - Scan the trailer control module where fitted.
+      - Check module power and ground.
+      - Inspect the trailer socket and wiring.
+      - Check CAN communication.
+      - Test trailer lighting outputs.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: audi_can_gateway_sleep_current
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: electrical
+    title:
+      en: Vehicle Network Sleep / Parasitic Drain Diagnosis
+      ro: Diagnosticare consum parazit prin rețeaua CAN
+      de: Diagnose von Ruhestromproblemen im CAN-Netzwerk
+    symptoms:
+      - battery_drain
+      - low_battery
+      - intermittent_module_activity
+      - multiple_dtc
+    keywords:
+      - parasitic drain
+      - sleep mode
+      - can bus awake
+      - battery drain
+      - network sleep
+      - consum parazit
+    possible_causes:
+      - module_not_sleeping
+      - CAN_network_activity
+      - gateway_fault
+      - aftermarket_device
+      - door_latch_signal
+    diagnostic_steps:
+      - Confirm the battery is healthy before testing parasitic current.
+      - Allow the vehicle to enter its normal sleep state.
+      - Measure quiescent current using an appropriate method.
+      - Identify modules or network activity preventing sleep.
+      - Isolate the responsible circuit or module.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: audi_lin_bus_fault
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: communication
+    title:
+      en: LIN Bus Communication Fault Diagnosis
+      ro: Diagnosticare comunicație magistrală LIN
+      de: Diagnose einer LIN-Bus-Kommunikationsstörung
+    symptoms:
+      - communication_fault
+      - intermittent_module_fault
+      - component_inoperative
+      - multiple_dtc
+    keywords:
+      - lin bus
+      - lin communication
+      - lin fault
+      - slave device
+      - master module
+      - magistrala LIN
+    possible_causes:
+      - LIN_wire_fault
+      - short_to_ground
+      - short_to_voltage
+      - slave_module_fault
+      - master_module_fault
+    diagnostic_steps:
+      - Identify the affected LIN network.
+      - Check the master module communication status.
+      - Inspect the LIN wire and connectors.
+      - Check for short circuits.
+      - Disconnect suspected slave devices individually where appropriate.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: audi_ecu_power_supply_diagnosis
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: engine_electronics
+    title:
+      en: Engine ECU Power Supply Diagnosis
+      ro: Diagnosticare alimentare ECU motor
+      de: Diagnose der Motorsteuergeräteversorgung
+    symptoms:
+      - no_start
+      - ecu_no_communication
+      - intermittent_engine_fault
+      - multiple_dtc
+    keywords:
+      - ecu power supply
+      - ecu no communication
+      - engine ecu
+      - terminal 30
+      - terminal 15
+      - alimentare ecu
+    possible_causes:
+      - fuse_fault
+      - relay_fault
+      - power_supply_fault
+      - ground_fault
+      - wiring_fault
+      - battery_voltage_low
+    diagnostic_steps:
+      - Check ECU communication with the diagnostic tool.
+      - Check ECU power supply under load.
+      - Check relevant fuses and relays.
+      - Check ECU grounds.
+      - Inspect terminal 30 and terminal 15 circuits where applicable.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: audi_ecu_ground_fault
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: engine_electronics
+    title:
+      en: Engine ECU Ground Fault Diagnosis
+      ro: Diagnosticare masă ECU motor
+      de: Diagnose der Motorsteuergeräte-Masseversorgung
+    symptoms:
+      - no_start
+      - intermittent_engine_fault
+      - multiple_dtc
+      - ecu_communication_fault
+    keywords:
+      - ecu ground
+      - ecu earth
+      - engine control ground
+      - poor ground
+      - ground fault
+      - masa ecu
+    possible_causes:
+      - loose_ground
+      - corroded_ground
+      - damaged_ground_wire
+      - high_resistance_connection
+    diagnostic_steps:
+      - Inspect ECU and engine ground connections.
+      - Perform voltage-drop testing under load.
+      - Inspect ground straps and terminals.
+      - Check for corrosion or heat damage.
+      - Verify ECU operation after correcting the ground fault.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: audi_terminal_15_ignition_supply
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: electrical
+    title:
+      en: Terminal 15 Ignition Supply Diagnosis
+      ro: Diagnosticare alimentare Terminal 15
+      de: Diagnose der Klemme-15-Versorgung
+    symptoms:
+      - multiple_module_fault
+      - ignition_fault
+      - no_start
+      - intermittent_electrical_faults
+    keywords:
+      - terminal 15
+      - ignition supply
+      - switched power
+      - ignition voltage
+      - klemme 15
+      - contact ignition
+    possible_causes:
+      - ignition_switch_fault
+      - relay_fault
+      - wiring_fault
+      - fuse_fault
+      - body_control_module_fault
+    diagnostic_steps:
+      - Identify circuits affected by Terminal 15 loss.
+      - Check Terminal 15 voltage with ignition on.
+      - Check relevant fuses and relays.
+      - Inspect switching and power distribution.
+      - Verify voltage stability during starting.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: audi_terminal_30_power_supply
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: electrical
+    title:
+      en: Terminal 30 Permanent Power Diagnosis
+      ro: Diagnosticare alimentare permanentă Terminal 30
+      de: Diagnose der Klemme-30-Dauerversorgung
+    symptoms:
+      - multiple_module_fault
+      - low_voltage
+      - intermittent_electrical_faults
+      - module_reset
+    keywords:
+      - terminal 30
+      - permanent power
+      - battery supply
+      - klemme 30
+      - permanent voltage
+      - alimentare permanenta
+    possible_causes:
+      - battery_connection_fault
+      - fuse_fault
+      - power_distribution_fault
+      - wiring_fault
+      - high_resistance_connection
+    diagnostic_steps:
+      - Check battery voltage.
+      - Check Terminal 30 voltage at the affected module.
+      - Perform voltage-drop testing under load.
+      - Inspect fuse and power distribution connections.
+      - Repair high-resistance connections before replacing modules.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: audi_battery_current_sensor
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: battery_management
+    title:
+      en: Battery Current Sensor Diagnosis
+      ro: Diagnosticare senzor curent baterie
+      de: Diagnose des Batteriestromsensors
+    symptoms:
+      - battery_management_fault
+      - charging_fault
+      - start_stop_disabled
+      - battery_warning
+    keywords:
+      - battery current sensor
+      - battery monitoring sensor
+      - current sensor
+      - battery management
+      - senzor curent baterie
+    possible_causes:
+      - current_sensor_fault
+      - wiring_fault
+      - connector_fault
+      - battery_management_fault
+      - incorrect_battery_configuration
+    diagnostic_steps:
+      - Scan the battery management system.
+      - Check measured battery current and voltage.
+      - Inspect the battery sensor connection.
+      - Verify battery configuration.
+      - Check charging behavior after repair.
+    related_dtcs: []
+    difficulty: medium
+
+  - id: audi_battery_replacement_registration
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: battery_management
+    title:
+      en: Battery Replacement Registration Diagnosis
+      ro: Diagnosticare înregistrare baterie nouă
+      de: Diagnose der Batterieregistrierung
+    symptoms:
+      - battery_management_fault
+      - start_stop_disabled
+      - charging_fault
+      - battery_warning
+    keywords:
+      - battery registration
+      - battery adaptation
+      - battery coding
+      - battery replacement
+      - new battery
+      - codare baterie
+    possible_causes:
+      - incorrect_battery_configuration
+      - battery_not_registered
+      - wrong_battery_capacity
+      - battery_management_fault
+    diagnostic_steps:
+      - Confirm the replacement battery specification.
+      - Read the battery management configuration.
+      - Register or adapt the new battery where required.
+      - Verify charging strategy.
+      - Clear relevant faults and recheck battery management data.
+    related_dtcs: []
+    difficulty: medium
+
+  - id: audi_start_authorization_diagnosis
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: immobilizer
+    title:
+      en: Engine Start Authorization Diagnosis
+      ro: Diagnosticare autorizare pornire motor
+      de: Diagnose der Startberechtigung
+    symptoms:
+      - no_start
+      - key_not_detected
+      - immobilizer_warning
+      - starter_inoperative
+    keywords:
+      - start authorization
+      - immobilizer
+      - engine authorization
+      - key authorization
+      - no start
+      - immo
+      - autorizare pornire
+    possible_causes:
+      - key_recognition_fault
+      - immobilizer_fault
+      - steering_lock_fault
+      - gateway_communication_fault
+      - low_voltage
+      - control_module_fault
+    diagnostic_steps:
+      - Scan all relevant authorization modules.
+      - Check key recognition status.
+      - Check immobilizer authorization status.
+      - Check communication between authorization modules.
+      - Verify battery voltage and steering lock status.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: audi_key_fob_signal_diagnosis
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: access_start_authorization
+    title:
+      en: Remote Key Fob Signal Diagnosis
+      ro: Diagnosticare telecomandă cheie
+      de: Diagnose der Funkschlüsselfernbedienung
+    symptoms:
+      - remote_locking_fault
+      - key_not_detected
+      - remote_range_reduced
+    keywords:
+      - key fob
+      - remote key
+      - remote control
+      - key battery
+      - remote locking
+      - telecomanda cheie
+    possible_causes:
+      - key_battery_low
+      - key_fob_fault
+      - receiver_fault
+      - antenna_fault
+      - synchronization_issue
+    diagnostic_steps:
+      - Check the key battery.
+      - Test another authorized key where available.
+      - Check remote receiver status.
+      - Scan access and authorization modules.
+      - Perform synchronization only according to the applicable procedure.
+    related_dtcs: []
+    difficulty: easy
+
+  - id: audi_parking_brake_switch
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: parking_brake
+    title:
+      en: Electronic Parking Brake Switch Diagnosis
+      ro: Diagnosticare buton frână de parcare electrică
+      de: Diagnose des Schalters der elektrischen Parkbremse
+    symptoms:
+      - epb_fault
+      - parking_brake_warning
+      - parking_brake_inoperative
+    keywords:
+      - epb switch
+      - parking brake switch
+      - electronic parking brake button
+      - handbrake switch
+      - buton frana de parcare
+    possible_causes:
+      - switch_fault
+      - wiring_fault
+      - control_module_fault
+      - connector_fault
+    diagnostic_steps:
+      - Scan the electronic parking brake system.
+      - Check switch input status.
+      - Inspect connector and wiring.
+      - Check control module communication.
+      - Verify parking brake operation after repair.
+    related_dtcs: []
+    difficulty: medium
+
+  - id: audi_park_brake_actuator
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: parking_brake
+    title:
+      en: Electronic Parking Brake Actuator Diagnosis
+      ro: Diagnosticare actuator frână de parcare electrică
+      de: Diagnose der EPB-Stellmotoren
+    symptoms:
+      - epb_fault
+      - parking_brake_inoperative
+      - parking_brake_warning
+      - brake_system_warning
+    keywords:
+      - epb actuator
+      - parking brake motor
+      - electronic parking brake
+      - parking brake actuator
+      - motor frana electrica
+    possible_causes:
+      - actuator_fault
+      - seized_caliper
+      - wiring_fault
+      - control_module_fault
+      - low_voltage
+    diagnostic_steps:
+      - Scan the EPB control system.
+      - Identify the affected actuator.
+      - Check actuator command and feedback.
+      - Inspect rear brake mechanism for mechanical seizure.
+      - Follow the required service mode procedure before mechanical work.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: audi_hill_hold_assist
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: brake_control
+    title:
+      en: Hill Hold Assist Diagnosis
+      ro: Diagnosticare asistență pornire în rampă
+      de: Diagnose der Berganfahrhilfe
+    symptoms:
+      - hill_hold_unavailable
+      - brake_warning
+      - abs_warning
+    keywords:
+      - hill hold
+      - hill start assist
+      - hold assist
+      - brake hold
+      - pornire in rampa
+    possible_causes:
+      - abs_module_fault
+      - brake_pressure_sensor_fault
+      - brake_switch_fault
+      - steering_angle_fault
+      - communication_fault
+    diagnostic_steps:
+      - Scan ABS and related control modules.
+      - Check brake pedal and pressure signals.
+      - Verify steering angle plausibility.
+      - Check wheel speed signals.
+      - Verify communication between brake and drivetrain systems.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: audi_brake_pedal_switch
+    vehicle:
+      manufacturer: audi
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: brake_control
+    title:
+      en: Brake Pedal Switch Diagnosis
+      ro: Diagnosticare contactor pedală frână
+      de: Diagnose des Bremslichtschalters
+    symptoms:
+      - brake_light_fault
+      - cruise_control_fault
+      - start_stop_disabled
+      - abs_warning
+    keywords:
+      - brake light switch
+      - brake pedal switch
+      - stop light switch
+      - brake switch
+      - contactor frana
+    possible_causes:
+      - switch_fault
+      - incorrect_adjustment
+      - wiring_fault
+      - connector_fault
+    diagnostic_steps:
+      - Check brake switch live data.
+      - Compare switch states with brake pedal position.
+      - Inspect switch mounting and adjustment.
+      - Check brake light operation.
+      - Clear faults and verify cruise or assistance functions.
+    related_dtcs:
+      - P0571
+    difficulty: easy
