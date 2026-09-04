@@ -6,6 +6,884 @@ manufacturer:
 
 technical_data:
 # ============================================================
+# BATCH 15 — FORD POWER STEERING / EPS / EHPS / STEERING ANGLE
+# ============================================================
+
+  - id: ford_focus_mk2_ehps_motor_fault
+    manufacturer: ford
+    models:
+      - focus
+    generations:
+      - focus_mk2
+    engines:
+      - all
+    title:
+      en: "Focus Mk2 electro-hydraulic power steering motor fault"
+      de: "Focus Mk2 Fehler des elektrohydraulischen Servolenkungsmotors"
+      ro: "Focus Mk2 defecțiune motor servodirecție electrohidraulică"
+      fr: "Focus Mk2 défaut du moteur de direction assistée électrohydraulique"
+      es: "Focus Mk2 fallo del motor de dirección asistida electrohidráulica"
+      it: "Focus Mk2 guasto del motore del servosterzo elettroidraulico"
+      nl: "Focus Mk2 storing elektrohydraulische stuurbekrachtigingsmotor"
+    symptoms:
+      en:
+        - "steering suddenly becomes heavy"
+        - "power steering assistance is lost"
+        - "power steering warning"
+        - "steering assistance works intermittently"
+      de:
+        - "Lenkung wird plötzlich schwergängig"
+        - "Servounterstützung fällt aus"
+        - "Servolenkungswarnung"
+        - "Lenkunterstützung funktioniert sporadisch"
+      ro:
+        - "volanul devine brusc greu"
+        - "se pierde asistarea direcției"
+        - "avertizare servodirecție"
+        - "asistarea funcționează intermitent"
+      fr:
+        - "direction soudainement dure"
+        - "perte de l'assistance de direction"
+        - "alerte de direction assistée"
+        - "assistance intermittente"
+      es:
+        - "dirección repentinamente dura"
+        - "pérdida de asistencia"
+        - "aviso de dirección asistida"
+        - "asistencia intermitente"
+      it:
+        - "sterzo improvvisamente pesante"
+        - "perdita del servosterzo"
+        - "avviso servosterzo"
+        - "assistenza intermittente"
+      nl:
+        - "stuur wordt plots zwaar"
+        - "stuurbekrachtiging valt uit"
+        - "waarschuwing stuurbekrachtiging"
+        - "intermitterende ondersteuning"
+    dtcs:
+      - C1099
+      - B1342
+      - B1318
+      - B2477
+    possible_causes:
+      en:
+        - "EHPS motor fault"
+        - "EHPS control module fault"
+        - "low battery or charging voltage"
+        - "power supply fault"
+        - "internal hydraulic steering pump fault"
+      de:
+        - "EHPS-Motorfehler"
+        - "Fehler des EHPS-Steuermoduls"
+        - "niedrige Batterie- oder Ladespannung"
+        - "Versorgungsfehler"
+        - "interner Fehler der Hydraulikpumpe"
+      ro:
+        - "defecțiune motor EHPS"
+        - "defecțiune modul control EHPS"
+        - "tensiune scăzută baterie sau încărcare"
+        - "defecțiune alimentare"
+        - "defecțiune internă pompă hidraulică"
+      fr:
+        - "défaut du moteur EHPS"
+        - "défaut du module EHPS"
+        - "tension batterie ou charge insuffisante"
+        - "défaut d'alimentation"
+        - "défaut interne de la pompe hydraulique"
+      es:
+        - "fallo del motor EHPS"
+        - "fallo del módulo EHPS"
+        - "tensión de batería o carga baja"
+        - "fallo de alimentación"
+        - "fallo interno de la bomba hidráulica"
+      it:
+        - "guasto motore EHPS"
+        - "guasto modulo EHPS"
+        - "bassa tensione batteria o carica"
+        - "guasto alimentazione"
+        - "guasto interno pompa idraulica"
+      nl:
+        - "storing EHPS-motor"
+        - "storing EHPS-regelmodule"
+        - "lage accu- of laadspanning"
+        - "voedingsprobleem"
+        - "interne fout hydraulische pomp"
+    diagnostic_steps:
+      en:
+        - "Read the power steering control module DTCs"
+        - "Check battery and charging voltage"
+        - "Check EHPS power and ground circuits"
+        - "Check steering assistance after clearing DTCs"
+        - "Follow the Ford EHPS pinpoint test before replacing the pump"
+      de:
+        - "Fehlerspeicher des Servolenkungsmoduls auslesen"
+        - "Batterie- und Ladespannung prüfen"
+        - "Versorgung und Masse der EHPS prüfen"
+        - "Lenkunterstützung nach Löschen der Fehler prüfen"
+        - "Vor Pumpentausch Ford-Pinpoint-Test durchführen"
+      ro:
+        - "Citește DTC-urile modulului servodirecției"
+        - "Verifică bateria și tensiunea de încărcare"
+        - "Verifică alimentarea și masa EHPS"
+        - "Verifică asistarea după ștergerea codurilor"
+        - "Urmează testul Ford înainte de înlocuirea pompei"
+      fr:
+        - "Lire les DTC du module de direction assistée"
+        - "Contrôler la batterie et la tension de charge"
+        - "Contrôler l'alimentation et la masse EHPS"
+        - "Contrôler l'assistance après effacement des défauts"
+        - "Effectuer le test Ford avant de remplacer la pompe"
+      es:
+        - "Leer los DTC del módulo de dirección"
+        - "Comprobar batería y tensión de carga"
+        - "Comprobar alimentación y masa EHPS"
+        - "Comprobar la asistencia después de borrar los DTC"
+        - "Seguir la prueba Ford antes de sustituir la bomba"
+      it:
+        - "Leggere i DTC del modulo servosterzo"
+        - "Controllare batteria e tensione di carica"
+        - "Controllare alimentazione e massa EHPS"
+        - "Verificare l'assistenza dopo la cancellazione dei DTC"
+        - "Seguire il test Ford prima di sostituire la pompa"
+      nl:
+        - "Lees DTC's van de stuurbekrachtigingsmodule uit"
+        - "Controleer accu- en laadspanning"
+        - "Controleer EHPS-voeding en massa"
+        - "Controleer de ondersteuning na wissen van DTC's"
+        - "Volg de Ford-test voordat de pomp wordt vervangen"
+    systems:
+      - ehps
+      - power_steering
+
+  - id: ford_focus_mk2_steering_angle_sensor_circuit_fault
+    manufacturer: ford
+    models:
+      - focus
+    generations:
+      - focus_mk2
+    engines:
+      - all
+    title:
+      en: "Focus Mk2 steering angle sensor circuit fault"
+      de: "Focus Mk2 Fehler im Lenkwinkelsensorkreis"
+      ro: "Focus Mk2 defecțiune circuit senzor unghi volan"
+      fr: "Focus Mk2 défaut du circuit du capteur d'angle de volant"
+      es: "Focus Mk2 fallo del circuito del sensor de ángulo"
+      it: "Focus Mk2 guasto circuito sensore angolo sterzo"
+      nl: "Focus Mk2 storing stuurhoeksensorcircuit"
+    symptoms:
+      en:
+        - "steering angle sensor fault"
+        - "ESP warning"
+        - "steering angle signal missing"
+        - "stability control fault"
+      de:
+        - "Lenkwinkelsensorfehler"
+        - "ESP-Warnung"
+        - "Lenkwinkelsignal fehlt"
+        - "Fehler der Stabilitätskontrolle"
+      ro:
+        - "defecțiune senzor unghi volan"
+        - "martor ESP"
+        - "semnal unghi volan lipsă"
+        - "eroare control stabilitate"
+      fr:
+        - "défaut du capteur d'angle"
+        - "voyant ESP"
+        - "signal d'angle absent"
+        - "défaut du contrôle de stabilité"
+      es:
+        - "fallo del sensor de ángulo"
+        - "testigo ESP"
+        - "señal de ángulo ausente"
+        - "fallo del control de estabilidad"
+      it:
+        - "guasto sensore angolo sterzo"
+        - "spia ESP"
+        - "segnale angolo assente"
+        - "guasto controllo stabilità"
+      nl:
+        - "storing stuurhoeksensor"
+        - "ESP-waarschuwing"
+        - "stuurhoeksignaal ontbreekt"
+        - "storing stabiliteitscontrole"
+    dtcs:
+      - C1955
+      - C1956
+    possible_causes:
+      en:
+        - "open steering angle sensor circuit"
+        - "shorted sensor circuit"
+        - "damaged sensor wiring"
+        - "faulty steering angle sensor"
+        - "EHPS control module circuit fault"
+      de:
+        - "Unterbrechung im Lenkwinkelsensorkreis"
+        - "Kurzschluss im Sensorkreis"
+        - "beschädigte Sensorleitung"
+        - "defekter Lenkwinkelsensor"
+        - "Fehler im EHPS-Steuerkreis"
+      ro:
+        - "circuit deschis senzor unghi volan"
+        - "scurtcircuit în circuitul senzorului"
+        - "cablaj senzor deteriorat"
+        - "senzor unghi volan defect"
+        - "problemă circuit modul EHPS"
+      fr:
+        - "circuit ouvert du capteur"
+        - "court-circuit du circuit"
+        - "câblage endommagé"
+        - "capteur d'angle défectueux"
+        - "défaut du circuit EHPS"
+      es:
+        - "circuito abierto del sensor"
+        - "cortocircuito del circuito"
+        - "cableado dañado"
+        - "sensor de ángulo defectuoso"
+        - "fallo del circuito EHPS"
+      it:
+        - "circuito aperto del sensore"
+        - "cortocircuito del circuito"
+        - "cablaggio danneggiato"
+        - "sensore angolo guasto"
+        - "guasto del circuito EHPS"
+      nl:
+        - "open circuit in stuurhoeksensor"
+        - "kortsluiting in sensorkring"
+        - "beschadigde sensorbedrading"
+        - "defecte stuurhoeksensor"
+        - "storing EHPS-circuit"
+    diagnostic_steps:
+      en:
+        - "Read the steering and ABS-related DTCs"
+        - "Inspect the steering angle sensor connector"
+        - "Check sensor circuit continuity"
+        - "Check for short circuits according to the wiring diagram"
+        - "Replace the sensor only after circuit integrity is confirmed"
+      de:
+        - "Lenkungs- und ABS-Fehlercodes auslesen"
+        - "Stecker des Lenkwinkelsensors prüfen"
+        - "Durchgang des Sensorkreises prüfen"
+        - "Kurzschlüsse gemäß Schaltplan prüfen"
+        - "Sensor erst nach Prüfung des Stromkreises ersetzen"
+      ro:
+        - "Citește DTC-urile direcției și ABS"
+        - "Inspectează conectorul senzorului"
+        - "Verifică continuitatea circuitului"
+        - "Verifică scurtcircuitele conform schemei"
+        - "Înlocuiește senzorul numai după confirmarea circuitului"
+      fr:
+        - "Lire les DTC direction et ABS"
+        - "Inspecter le connecteur du capteur"
+        - "Contrôler la continuité du circuit"
+        - "Contrôler les courts-circuits selon le schéma"
+        - "Remplacer le capteur après validation du circuit"
+      es:
+        - "Leer DTC de dirección y ABS"
+        - "Inspeccionar el conector del sensor"
+        - "Comprobar continuidad"
+        - "Comprobar cortocircuitos según esquema"
+        - "Sustituir el sensor solo después de verificar el circuito"
+      it:
+        - "Leggere i DTC sterzo e ABS"
+        - "Ispezionare il connettore del sensore"
+        - "Controllare la continuità"
+        - "Controllare i cortocircuiti secondo lo schema"
+        - "Sostituire il sensore solo dopo la verifica del circuito"
+      nl:
+        - "Lees stuur- en ABS-foutcodes uit"
+        - "Controleer de sensorconnector"
+        - "Controleer circuitcontinuïteit"
+        - "Controleer kortsluiting volgens schema"
+        - "Vervang de sensor pas na bevestiging van het circuit"
+    systems:
+      - steering_angle
+      - ehps
+      - abs
+      - esp
+
+  - id: ford_focus_mk2_ehps_can_bus_fault
+    manufacturer: ford
+    models:
+      - focus
+    generations:
+      - focus_mk2
+    engines:
+      - all
+    title:
+      en: "Focus Mk2 EHPS CAN communication fault"
+      de: "Focus Mk2 EHPS CAN-Kommunikationsfehler"
+      ro: "Focus Mk2 eroare comunicație CAN EHPS"
+      fr: "Focus Mk2 défaut de communication CAN EHPS"
+      es: "Focus Mk2 fallo de comunicación CAN EHPS"
+      it: "Focus Mk2 guasto comunicazione CAN EHPS"
+      nl: "Focus Mk2 EHPS CAN-communicatiestoring"
+    symptoms:
+      en:
+        - "power steering fault"
+        - "steering assistance unavailable"
+        - "multiple communication faults"
+        - "CAN bus fault"
+      de:
+        - "Servolenkungsfehler"
+        - "Lenkunterstützung nicht verfügbar"
+        - "mehrere Kommunikationsfehler"
+        - "CAN-Bus-Fehler"
+      ro:
+        - "eroare servodirecție"
+        - "asistare direcție indisponibilă"
+        - "mai multe erori de comunicație"
+        - "eroare magistrală CAN"
+      fr:
+        - "défaut de direction assistée"
+        - "assistance indisponible"
+        - "plusieurs défauts de communication"
+        - "défaut CAN"
+      es:
+        - "fallo de dirección asistida"
+        - "asistencia no disponible"
+        - "múltiples fallos de comunicación"
+        - "fallo CAN"
+      it:
+        - "guasto servosterzo"
+        - "assistenza non disponibile"
+        - "più guasti di comunicazione"
+        - "guasto CAN"
+      nl:
+        - "storing stuurbekrachtiging"
+        - "stuurbekrachtiging niet beschikbaar"
+        - "meerdere communicatiestoringen"
+        - "CAN-busstoring"
+    dtcs:
+      - P1796
+      - U1900
+    possible_causes:
+      en:
+        - "CAN wiring fault"
+        - "power steering module power supply fault"
+        - "poor ground connection"
+        - "module communication failure"
+        - "low battery voltage"
+      de:
+        - "CAN-Verkabelungsfehler"
+        - "Versorgungsfehler des Servolenkungsmoduls"
+        - "schlechte Masseverbindung"
+        - "Kommunikationsausfall des Moduls"
+        - "niedrige Batteriespannung"
+      ro:
+        - "defecțiune cablaj CAN"
+        - "problemă alimentare modul servodirecție"
+        - "masă defectuoasă"
+        - "pierdere comunicație modul"
+        - "tensiune baterie scăzută"
+      fr:
+        - "défaut du câblage CAN"
+        - "défaut d'alimentation du module"
+        - "mauvaise masse"
+        - "perte de communication"
+        - "batterie faible"
+      es:
+        - "fallo del cableado CAN"
+        - "fallo de alimentación del módulo"
+        - "mala masa"
+        - "pérdida de comunicación"
+        - "batería baja"
+      it:
+        - "guasto cablaggio CAN"
+        - "guasto alimentazione modulo"
+        - "massa insufficiente"
+        - "perdita comunicazione"
+        - "batteria scarica"
+      nl:
+        - "CAN-bedradingsfout"
+        - "voedingsprobleem stuurmodule"
+        - "slechte massa"
+        - "communicatieverlies"
+        - "lage accuspanning"
+    diagnostic_steps:
+      en:
+        - "Scan all modules for communication DTCs"
+        - "Check EHPS module power and ground"
+        - "Inspect CAN wiring and connectors"
+        - "Check battery voltage before diagnosing a network fault"
+      de:
+        - "Alle Module auf Kommunikationsfehler prüfen"
+        - "Versorgung und Masse der EHPS prüfen"
+        - "CAN-Leitungen und Stecker prüfen"
+        - "Vor Netzwerkdiagnose Batteriespannung prüfen"
+      ro:
+        - "Scanează toate modulele pentru DTC-uri de comunicație"
+        - "Verifică alimentarea și masa EHPS"
+        - "Inspectează cablajele și conectorii CAN"
+        - "Verifică bateria înainte de diagnosticarea rețelei"
+      fr:
+        - "Scanner tous les modules"
+        - "Contrôler alimentation et masse EHPS"
+        - "Inspecter câblage et connecteurs CAN"
+        - "Contrôler la batterie avant le diagnostic réseau"
+      es:
+        - "Escanear todos los módulos"
+        - "Comprobar alimentación y masa EHPS"
+        - "Inspeccionar cableado y conectores CAN"
+        - "Comprobar batería antes del diagnóstico de red"
+      it:
+        - "Scansionare tutti i moduli"
+        - "Controllare alimentazione e massa EHPS"
+        - "Ispezionare cablaggio e connettori CAN"
+        - "Controllare batteria prima della diagnosi rete"
+      nl:
+        - "Scan alle modules op communicatiefouten"
+        - "Controleer EHPS-voeding en massa"
+        - "Controleer CAN-bedrading en connectoren"
+        - "Controleer de accu voordat netwerkdiagnose wordt uitgevoerd"
+    systems:
+      - ehps
+      - power_steering
+      - can_bus
+
+  - id: ford_focus_mk3_epas_reduced_assistance
+    manufacturer: ford
+    models:
+      - focus
+    generations:
+      - focus_mk3
+    engines:
+      - all
+    title:
+      en: "Focus Mk3 EPAS reduced or lost steering assistance"
+      de: "Focus Mk3 reduzierte oder ausgefallene EPAS-Lenkunterstützung"
+      ro: "Focus Mk3 asistare EPAS redusă sau pierdută"
+      fr: "Focus Mk3 assistance EPAS réduite ou absente"
+      es: "Focus Mk3 asistencia EPAS reducida o perdida"
+      it: "Focus Mk3 assistenza EPAS ridotta o assente"
+      nl: "Focus Mk3 verminderde of weggevallen EPAS-ondersteuning"
+    symptoms:
+      en:
+        - "steering becomes very heavy"
+        - "power steering warning"
+        - "reduced steering assistance"
+        - "steering assistance disappears"
+      de:
+        - "Lenkung wird sehr schwergängig"
+        - "Servolenkungswarnung"
+        - "Lenkunterstützung reduziert"
+        - "Lenkunterstützung fällt aus"
+      ro:
+        - "volanul devine foarte greu"
+        - "martor servodirecție"
+        - "asistare direcție redusă"
+        - "asistarea direcției dispare"
+      fr:
+        - "direction très dure"
+        - "voyant direction assistée"
+        - "assistance réduite"
+        - "perte de l'assistance"
+      es:
+        - "dirección muy dura"
+        - "aviso de dirección asistida"
+        - "asistencia reducida"
+        - "pérdida de asistencia"
+      it:
+        - "sterzo molto pesante"
+        - "spia servosterzo"
+        - "assistenza ridotta"
+        - "perdita assistenza"
+      nl:
+        - "stuur wordt zeer zwaar"
+        - "waarschuwing stuurbekrachtiging"
+        - "verminderde ondersteuning"
+        - "stuurbekrachtiging valt uit"
+    dtcs:
+      - C1B00
+      - C200B
+      - C200C
+      - C200D
+      - U3000
+      - U3004
+    possible_causes:
+      en:
+        - "EPAS steering angle sensor fault"
+        - "steering torque sensor fault"
+        - "EPAS motor fault"
+        - "PSCM internal fault"
+        - "low or high system voltage"
+        - "wiring or CAN communication fault"
+      de:
+        - "EPAS-Lenkwinkelsensorfehler"
+        - "Fehler des Lenkmomentsensors"
+        - "EPAS-Motorfehler"
+        - "interner PSCM-Fehler"
+        - "zu niedrige oder zu hohe Systemspannung"
+        - "Verkabelungs- oder CAN-Fehler"
+      ro:
+        - "defecțiune senzor unghi EPAS"
+        - "defecțiune senzor cuplu direcție"
+        - "defecțiune motor EPAS"
+        - "defecțiune internă PSCM"
+        - "tensiune sistem prea mică sau prea mare"
+        - "problemă cablaj sau comunicație CAN"
+      fr:
+        - "défaut du capteur d'angle EPAS"
+        - "défaut du capteur de couple de direction"
+        - "défaut du moteur EPAS"
+        - "défaut interne PSCM"
+        - "tension système trop basse ou trop élevée"
+        - "défaut câblage ou CAN"
+      es:
+        - "fallo del sensor de ángulo EPAS"
+        - "fallo del sensor de par de dirección"
+        - "fallo del motor EPAS"
+        - "fallo interno PSCM"
+        - "tensión demasiado baja o alta"
+        - "fallo de cableado o CAN"
+      it:
+        - "guasto sensore angolo EPAS"
+        - "guasto sensore coppia sterzo"
+        - "guasto motore EPAS"
+        - "guasto interno PSCM"
+        - "tensione sistema bassa o alta"
+        - "guasto cablaggio o CAN"
+      nl:
+        - "storing EPAS-stuurhoeksensor"
+        - "storing stuurtorsiesensor"
+        - "storing EPAS-motor"
+        - "interne PSCM-storing"
+        - "te lage of te hoge systeemspanning"
+        - "bedradings- of CAN-storing"
+    diagnostic_steps:
+      en:
+        - "Read PSCM DTCs"
+        - "Check battery and charging voltage"
+        - "Check steering angle and torque sensor data"
+        - "Check EPAS motor and module communication"
+        - "Follow the Ford EPAS pinpoint test before replacing the steering assembly"
+      de:
+        - "PSCM-Fehlercodes auslesen"
+        - "Batterie- und Ladespannung prüfen"
+        - "Lenkwinkel- und Drehmomentsensordaten prüfen"
+        - "EPAS-Motor und Modulkommunikation prüfen"
+        - "Vor Austausch der Lenkeinheit Ford-Pinpoint-Test durchführen"
+      ro:
+        - "Citește DTC-urile PSCM"
+        - "Verifică bateria și încărcarea"
+        - "Verifică datele senzorilor de unghi și cuplu"
+        - "Verifică motorul EPAS și comunicația modulului"
+        - "Urmează testul Ford înainte de înlocuirea ansamblului"
+      fr:
+        - "Lire les DTC PSCM"
+        - "Contrôler batterie et charge"
+        - "Contrôler angle et couple de direction"
+        - "Contrôler moteur EPAS et communication"
+        - "Suivre le test Ford avant remplacement de l'ensemble"
+      es:
+        - "Leer DTC PSCM"
+        - "Comprobar batería y carga"
+        - "Comprobar ángulo y par de dirección"
+        - "Comprobar motor EPAS y comunicación"
+        - "Seguir la prueba Ford antes de sustituir el conjunto"
+      it:
+        - "Leggere i DTC PSCM"
+        - "Controllare batteria e carica"
+        - "Controllare angolo e coppia sterzo"
+        - "Controllare motore EPAS e comunicazione"
+        - "Seguire il test Ford prima di sostituire il gruppo"
+      nl:
+        - "Lees PSCM-foutcodes uit"
+        - "Controleer accu en laadspanning"
+        - "Controleer stuurhoek- en torsiesensorgegevens"
+        - "Controleer EPAS-motor en modulecommunicatie"
+        - "Volg de Ford-test voordat de stuurinrichting wordt vervangen"
+    systems:
+      - epas
+      - power_steering
+      - steering_angle
+      - can_bus
+
+  - id: ford_focus_mk3_steering_angle_calibration_fault
+    manufacturer: ford
+    models:
+      - focus
+    generations:
+      - focus_mk3
+    engines:
+      - all
+    title:
+      en: "Focus Mk3 steering angle sensor calibration fault"
+      de: "Focus Mk3 Kalibrierungsfehler des Lenkwinkelsensors"
+      ro: "Focus Mk3 eroare calibrare senzor unghi volan"
+      fr: "Focus Mk3 défaut de calibrage du capteur d'angle"
+      es: "Focus Mk3 fallo de calibración del sensor de ángulo"
+      it: "Focus Mk3 errore calibrazione sensore angolo sterzo"
+      nl: "Focus Mk3 kalibratiefout stuurhoeksensor"
+    symptoms:
+      en:
+        - "ESP warning after steering or suspension work"
+        - "steering angle is not zero with wheels straight"
+        - "stability control warning"
+        - "steering angle calibration required"
+      de:
+        - "ESP-Warnung nach Arbeiten an Lenkung oder Fahrwerk"
+        - "Lenkwinkel ist bei geraden Rädern nicht null"
+        - "Stabilitätskontrollwarnung"
+        - "Lenkwinkelkalibrierung erforderlich"
+      ro:
+        - "martor ESP după lucrări la direcție sau suspensie"
+        - "unghiul volanului nu este zero cu roțile drepte"
+        - "avertizare control stabilitate"
+        - "este necesară calibrarea"
+      fr:
+        - "voyant ESP après intervention sur direction ou suspension"
+        - "angle non nul roues droites"
+        - "alerte de stabilité"
+        - "calibrage nécessaire"
+      es:
+        - "testigo ESP después de trabajos de dirección o suspensión"
+        - "ángulo distinto de cero con ruedas rectas"
+        - "aviso de estabilidad"
+        - "calibración necesaria"
+      it:
+        - "spia ESP dopo interventi su sterzo o sospensioni"
+        - "angolo diverso da zero con ruote dritte"
+        - "avviso stabilità"
+        - "calibrazione necessaria"
+      nl:
+        - "ESP-waarschuwing na werk aan stuurinrichting of ophanging"
+        - "stuurhoek niet nul met rechte wielen"
+        - "stabiliteitswaarschuwing"
+        - "kalibratie vereist"
+    dtcs:
+      - C0051
+      - U0428
+      - C1B00
+    possible_causes:
+      en:
+        - "steering angle sensor not calibrated"
+        - "incorrect steering wheel centering"
+        - "incorrect wheel alignment"
+        - "sensor or clockspring installation error"
+        - "internal sensor fault"
+      de:
+        - "Lenkwinkelsensor nicht kalibriert"
+        - "Lenkrad nicht korrekt zentriert"
+        - "falsche Achsgeometrie"
+        - "Fehler bei Sensor- oder Wickelfedermontage"
+        - "interner Sensorfehler"
+      ro:
+        - "senzor unghi necalibrat"
+        - "volan necentrat corect"
+        - "geometrie direcție incorectă"
+        - "montare incorectă senzor sau spirală"
+        - "defecțiune internă senzor"
+      fr:
+        - "capteur non calibré"
+        - "volant mal centré"
+        - "géométrie incorrecte"
+        - "erreur de montage du capteur ou contacteur tournant"
+        - "défaut interne"
+      es:
+        - "sensor no calibrado"
+        - "volante mal centrado"
+        - "alineación incorrecta"
+        - "error de montaje del sensor o espiral"
+        - "fallo interno"
+      it:
+        - "sensore non calibrato"
+        - "volante non centrato"
+        - "geometria errata"
+        - "errore montaggio sensore o contatto spiralato"
+        - "guasto interno"
+      nl:
+        - "stuurhoeksensor niet gekalibreerd"
+        - "stuur niet correct gecentreerd"
+        - "onjuiste uitlijning"
+        - "montagefout sensor of klokveer"
+        - "interne sensorfout"
+    diagnostic_steps:
+      en:
+        - "Set the front wheels straight ahead"
+        - "Read the steering angle PID"
+        - "Check steering and suspension alignment"
+        - "Perform the specified steering angle initialization/calibration"
+        - "Recheck ABS/ESC DTCs after calibration"
+      de:
+        - "Vorderräder gerade stellen"
+        - "Lenkwinkel-PID auslesen"
+        - "Lenkung und Achsgeometrie prüfen"
+        - "Vorgeschriebene Kalibrierung durchführen"
+        - "ABS/ESC-Fehler danach erneut prüfen"
+      ro:
+        - "Așază roțile perfect drept"
+        - "Citește PID-ul unghiului volanului"
+        - "Verifică direcția și geometria"
+        - "Efectuează inițializarea/calibrarea specificată"
+        - "Recitește DTC-urile ABS/ESC"
+      fr:
+        - "Mettre les roues avant droites"
+        - "Lire le PID d'angle"
+        - "Contrôler direction et géométrie"
+        - "Effectuer l'initialisation/calibrage prévu"
+        - "Relire les DTC ABS/ESC"
+      es:
+        - "Colocar las ruedas rectas"
+        - "Leer el PID del ángulo"
+        - "Comprobar dirección y alineación"
+        - "Realizar la inicialización/calibración"
+        - "Volver a comprobar los DTC ABS/ESC"
+      it:
+        - "Posizionare le ruote dritte"
+        - "Leggere il PID angolo sterzo"
+        - "Controllare sterzo e geometria"
+        - "Eseguire inizializzazione/calibrazione"
+        - "Ricontrollare i DTC ABS/ESC"
+      nl:
+        - "Zet de voorwielen recht"
+        - "Lees de stuurhoek-PID uit"
+        - "Controleer stuurinrichting en uitlijning"
+        - "Voer de voorgeschreven kalibratie uit"
+        - "Controleer ABS/ESC-foutcodes opnieuw"
+    systems:
+      - epas
+      - steering_angle
+      - esp
+      - abs
+
+  - id: ford_fiesta_mk6_ehps_assistance_fault
+    manufacturer: ford
+    models:
+      - fiesta
+    generations:
+      - fiesta_mk6
+    engines:
+      - all
+    title:
+      en: "Fiesta Mk6 electro-hydraulic power steering fault"
+      de: "Fiesta Mk6 Fehler der elektrohydraulischen Servolenkung"
+      ro: "Fiesta Mk6 defecțiune servodirecție electrohidraulică"
+      fr: "Fiesta Mk6 défaut de direction assistée électrohydraulique"
+      es: "Fiesta Mk6 fallo de dirección asistida electrohidráulica"
+      it: "Fiesta Mk6 guasto del servosterzo elettroidraulico"
+      nl: "Fiesta Mk6 storing elektrohydraulische stuurbekrachtiging"
+    symptoms:
+      en:
+        - "steering becomes heavy"
+        - "power steering warning"
+        - "steering assistance intermittent"
+        - "power steering stops working"
+      de:
+        - "Lenkung wird schwer"
+        - "Servolenkungswarnung"
+        - "Lenkunterstützung sporadisch"
+        - "Servolenkung fällt aus"
+      ro:
+        - "volanul devine greu"
+        - "martor servodirecție"
+        - "asistare intermitentă"
+        - "servodirecția se oprește"
+      fr:
+        - "direction dure"
+        - "voyant direction assistée"
+        - "assistance intermittente"
+        - "perte de direction assistée"
+      es:
+        - "dirección dura"
+        - "aviso de dirección asistida"
+        - "asistencia intermitente"
+        - "pérdida de asistencia"
+      it:
+        - "sterzo pesante"
+        - "spia servosterzo"
+        - "assistenza intermittente"
+        - "perdita servosterzo"
+      nl:
+        - "zwaar sturen"
+        - "waarschuwing stuurbekrachtiging"
+        - "onderbroken ondersteuning"
+        - "stuurbekrachtiging valt uit"
+    possible_causes:
+      en:
+        - "power steering control module fault"
+        - "steering motor fault"
+        - "low battery voltage"
+        - "power or ground fault"
+        - "CAN communication fault"
+      de:
+        - "Fehler des Servolenkungsmoduls"
+        - "Lenkmotorfehler"
+        - "niedrige Batteriespannung"
+        - "Versorgungs- oder Massefehler"
+        - "CAN-Kommunikationsfehler"
+      ro:
+        - "defecțiune modul servodirecție"
+        - "defecțiune motor direcție"
+        - "tensiune baterie scăzută"
+        - "problemă alimentare sau masă"
+        - "eroare comunicație CAN"
+      fr:
+        - "défaut du module de direction"
+        - "défaut du moteur"
+        - "tension batterie faible"
+        - "défaut d'alimentation ou de masse"
+        - "défaut CAN"
+      es:
+        - "fallo del módulo de dirección"
+        - "fallo del motor"
+        - "baja tensión de batería"
+        - "fallo de alimentación o masa"
+        - "fallo CAN"
+      it:
+        - "guasto modulo sterzo"
+        - "guasto motore sterzo"
+        - "bassa tensione batteria"
+        - "guasto alimentazione o massa"
+        - "guasto CAN"
+      nl:
+        - "storing stuurmodule"
+        - "storing stuurmotor"
+        - "lage accuspanning"
+        - "voedings- of massaprobleem"
+        - "CAN-storing"
+    diagnostic_steps:
+      en:
+        - "Read power steering module DTCs"
+        - "Check battery and charging system"
+        - "Check power steering module supply and grounds"
+        - "Check CAN communication if module communication is missing"
+      de:
+        - "Fehlerspeicher des Servolenkungsmoduls auslesen"
+        - "Batterie und Ladesystem prüfen"
+        - "Versorgung und Masse prüfen"
+        - "CAN-Kommunikation prüfen, wenn das Modul nicht antwortet"
+      ro:
+        - "Citește DTC-urile modulului de servodirecție"
+        - "Verifică bateria și încărcarea"
+        - "Verifică alimentarea și masele"
+        - "Verifică CAN dacă modulul nu comunică"
+      fr:
+        - "Lire les DTC du module de direction"
+        - "Contrôler batterie et charge"
+        - "Contrôler alimentation et masses"
+        - "Contrôler le CAN si le module ne communique pas"
+      es:
+        - "Leer DTC del módulo de dirección"
+        - "Comprobar batería y carga"
+        - "Comprobar alimentación y masas"
+        - "Comprobar CAN si el módulo no comunica"
+      it:
+        - "Leggere i DTC del modulo sterzo"
+        - "Controllare batteria e carica"
+        - "Controllare alimentazione e masse"
+        - "Controllare CAN se il modulo non comunica"
+      nl:
+        - "Lees DTC's van de stuurmodule uit"
+        - "Controleer accu en laadsysteem"
+        - "Controleer voeding en massa"
+        - "Controleer CAN als de module niet communiceert"
+    systems:
+      - ehps
+      - power_steering
+      - can_bus
+# ============================================================
 # BATCH 16 — FORD BRAKING / BRAKE PEDAL / PARKING BRAKE
 # ============================================================
 
