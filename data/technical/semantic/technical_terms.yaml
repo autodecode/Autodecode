@@ -19,6 +19,2610 @@ languages:
 concepts:
 
   # ============================================================
+  # ENGINE SENSORS / AIR MANAGEMENT
+  # ============================================================
+
+  maf:
+    category: engine
+    aliases:
+      en:
+        - MAF sensor
+        - mass air flow sensor
+        - air mass sensor
+        - airflow sensor
+      de:
+        - Luftmassenmesser
+        - Luftmassenmesser Sensor
+        - Luftmassensensor
+      ro:
+        - senzor MAF
+        - debitmetru
+        - senzor debit aer
+        - senzor masă aer
+        - senzor masa aer
+      fr:
+        - débitmètre
+        - capteur MAF
+        - capteur de débit d'air
+      es:
+        - caudalímetro
+        - sensor MAF
+        - sensor de flujo de aire
+      it:
+        - debimetro
+        - sensore MAF
+        - sensore massa aria
+      nl:
+        - luchtmassameter
+        - MAF-sensor
+        - luchtmassasensor
+
+  map:
+    category: engine
+    aliases:
+      en:
+        - MAP sensor
+        - manifold pressure sensor
+        - intake manifold pressure sensor
+      de:
+        - Saugrohrdrucksensor
+        - MAP Sensor
+        - Ansaugdrucksensor
+      ro:
+        - senzor MAP
+        - senzor presiune admisie
+        - senzor presiune galerie admisie
+      fr:
+        - capteur MAP
+        - capteur de pression d'admission
+        - capteur pression collecteur
+      es:
+        - sensor MAP
+        - sensor de presión de admisión
+        - sensor presión colector
+      it:
+        - sensore MAP
+        - sensore pressione collettore
+        - sensore pressione aspirazione
+      nl:
+        - MAP-sensor
+        - inlaatspruksensor
+        - inlaatsprukdruksensor
+
+  throttle:
+    category: engine
+    aliases:
+      en:
+        - throttle body
+        - throttle valve
+        - electronic throttle
+        - throttle actuator
+        - accelerator response
+      de:
+        - Drosselklappe
+        - Drosselklappensteller
+        - elektronische Drosselklappe
+        - Drosselklappenfehler
+      ro:
+        - clapetă accelerație
+        - clapeta acceleratie
+        - corp clapetă
+        - corp clapeta
+        - clapetă de accelerație
+        - actuator clapetă
+      fr:
+        - boîtier papillon
+        - boitier papillon
+        - papillon des gaz
+        - actionneur papillon
+      es:
+        - cuerpo de mariposa
+        - mariposa de admisión
+        - actuador de mariposa
+      it:
+        - corpo farfallato
+        - farfalla elettronica
+        - attuatore farfalla
+      nl:
+        - gasklephuis
+        - gasklep
+        - elektronische gasklep
+        - gasklepactuator
+
+  intake_air:
+    category: engine
+    aliases:
+      en:
+        - intake air
+        - intake system
+        - air intake
+        - intake leak
+        - air leak
+      de:
+        - Ansaugluft
+        - Ansaugsystem
+        - Luftansaugung
+        - Falschluft
+      ro:
+        - admisie aer
+        - sistem admisie
+        - priză aer
+        - priza aer
+        - fals aer
+        - pierdere aer admisie
+      fr:
+        - admission d'air
+        - système d'admission
+        - prise d'air
+        - fuite d'air
+      es:
+        - admisión de aire
+        - sistema de admisión
+        - entrada de aire
+        - fuga de aire
+      it:
+        - aspirazione aria
+        - sistema aspirazione
+        - perdita aria
+      nl:
+        - luchtinlaat
+        - inlaatsysteem
+        - luchtlek
+
+  oxygen_sensor:
+    category: emissions
+    aliases:
+      en:
+        - oxygen sensor
+        - O2 sensor
+        - oxygen sensor fault
+        - upstream oxygen sensor
+        - downstream oxygen sensor
+      de:
+        - Lambdasonde
+        - Sauerstoffsensor
+        - O2 Sensor
+        - Lambdasondenfehler
+      ro:
+        - sondă lambda
+        - sonda lambda
+        - senzor oxigen
+        - senzor O2
+        - eroare sondă lambda
+      fr:
+        - sonde lambda
+        - capteur oxygène
+        - capteur O2
+        - défaut sonde lambda
+      es:
+        - sonda lambda
+        - sensor de oxígeno
+        - sensor O2
+      it:
+        - sonda lambda
+        - sensore ossigeno
+        - sensore O2
+      nl:
+        - lambdasonde
+        - zuurstofsensor
+        - O2-sensor
+
+  exhaust_leak:
+    category: exhaust
+    aliases:
+      en:
+        - exhaust leak
+        - exhaust gas leak
+        - leaking exhaust
+        - exhaust pipe leak
+      de:
+        - Abgasleck
+        - Auspuffleck
+        - Abgasanlage undicht
+      ro:
+        - scurgere gaze evacuare
+        - pierdere gaze evacuare
+        - evacuare fisurată
+        - evacuare fisurata
+        - eșapament spart
+        - esapament spart
+      fr:
+        - fuite d'échappement
+        - fuite de gaz d'échappement
+        - échappement percé
+      es:
+        - fuga de escape
+        - fuga de gases de escape
+        - escape roto
+      it:
+        - perdita scarico
+        - perdita gas di scarico
+        - scarico rotto
+      nl:
+        - uitlaatlek
+        - lekkende uitlaat
+        - uitlaatgaslek
+
+  glow_plug:
+    category: engine
+    aliases:
+      en:
+        - glow plug
+        - glow plugs
+        - glow plug fault
+        - diesel glow plug
+      de:
+        - Glühkerze
+        - Glühkerzen
+        - Glühkerzenfehler
+      ro:
+        - bujie incandescentă
+        - bujie incandescenta
+        - bujii incandescente
+        - bujie diesel
+      fr:
+        - bougie de préchauffage
+        - bougie prechauffage
+        - bougies de préchauffage
+      es:
+        - bujía de precalentamiento
+        - bujias de precalentamiento
+      it:
+        - candela a incandescenza
+        - candeletta
+        - candelette
+      nl:
+        - gloeibougie
+        - gloeibougies
+
+  ignition_coil:
+    category: ignition
+    aliases:
+      en:
+        - ignition coil
+        - coil pack
+        - ignition coil fault
+        - spark coil
+      de:
+        - Zündspule
+        - Zündspulen
+        - Zündspulenfehler
+      ro:
+        - bobină de inducție
+        - bobina de inductie
+        - bobină aprindere
+        - bobina aprindere
+        - bobină de inducție defectă
+      fr:
+        - bobine d'allumage
+        - bobine allumage
+        - bobine d'allumage défectueuse
+      es:
+        - bobina de encendido
+        - bobina de ignición
+        - fallo bobina
+      it:
+        - bobina di accensione
+        - bobina accensione
+        - guasto bobina
+      nl:
+        - bobine
+        - ontstekingsbobine
+        - bobinestoring
+
+  spark_plug:
+    category: ignition
+    aliases:
+      en:
+        - spark plug
+        - spark plugs
+        - spark plug fault
+        - worn spark plugs
+      de:
+        - Zündkerze
+        - Zündkerzen
+        - Zündkerzenfehler
+      ro:
+        - bujie
+        - bujii
+        - bujie de aprindere
+        - bujie uzată
+        - bujie uzata
+      fr:
+        - bougie d'allumage
+        - bougies d'allumage
+        - bougie usée
+      es:
+        - bujía
+        - bujías
+        - bujía de encendido
+      it:
+        - candela
+        - candele
+        - candela di accensione
+      nl:
+        - bougie
+        - bougies
+        - ontstekingsbougie
+
+  # ============================================================
+  # ENGINE MECHANICAL
+  # ============================================================
+
+  compression:
+    category: engine
+    aliases:
+      en:
+        - engine compression
+        - low compression
+        - compression loss
+        - cylinder compression
+        - compression test
+      de:
+        - Motorkompression
+        - Kompressionsverlust
+        - niedrige Kompression
+        - Zylinderkompression
+      ro:
+        - compresie motor
+        - compresie scăzută
+        - compresie scazuta
+        - pierdere compresie
+        - test compresie
+      fr:
+        - compression moteur
+        - faible compression
+        - perte de compression
+        - compression cylindre
+      es:
+        - compresión del motor
+        - baja compresión
+        - pérdida de compresión
+      it:
+        - compressione motore
+        - bassa compressione
+        - perdita di compressione
+      nl:
+        - motorcompressie
+        - lage compressie
+        - compressieverlies
+
+  timing_chain:
+    category: engine
+    aliases:
+      en:
+        - timing chain
+        - timing chain noise
+        - timing chain problem
+        - chain rattle
+      de:
+        - Steuerkette
+        - Steuerkettenproblem
+        - Steuerkettenrasseln
+      ro:
+        - lanț distribuție
+        - lant distributie
+        - lanț de distribuție
+        - zgomot lanț distribuție
+        - zgomot lant distributie
+      fr:
+        - chaîne de distribution
+        - chaine de distribution
+        - bruit chaîne distribution
+      es:
+        - cadena de distribución
+        - cadena distribucion
+        - ruido cadena distribución
+      it:
+        - catena distribuzione
+        - rumore catena distribuzione
+      nl:
+        - distributieketting
+        - distributieketting geluid
+
+  timing_belt:
+    category: engine
+    aliases:
+      en:
+        - timing belt
+        - cambelt
+        - timing belt problem
+        - broken timing belt
+      de:
+        - Zahnriemen
+        - Zahnriemenproblem
+        - Zahnriemen gerissen
+      ro:
+        - curea distribuție
+        - curea distributie
+        - distribuție ruptă
+        - distributie rupta
+        - curea de distribuție ruptă
+      fr:
+        - courroie de distribution
+        - courroie cassée
+        - courroie distribution
+      es:
+        - correa de distribución
+        - correa rota
+        - correa distribucion
+      it:
+        - cinghia distribuzione
+        - cinghia rotta
+      nl:
+        - distributieriem
+        - distributieriem gebroken
+
+  oil_level:
+    category: lubrication
+    aliases:
+      en:
+        - engine oil level
+        - low oil level
+        - oil level too low
+        - oil level warning
+      de:
+        - Ölstand
+        - Ölstand zu niedrig
+        - niedriger Ölstand
+        - Ölstand Warnung
+      ro:
+        - nivel ulei
+        - nivel ulei scăzut
+        - nivel ulei scazut
+        - nivel ulei prea mic
+        - martor nivel ulei
+      fr:
+        - niveau d'huile
+        - niveau d'huile bas
+        - niveau huile trop bas
+      es:
+        - nivel de aceite
+        - nivel de aceite bajo
+      it:
+        - livello olio
+        - livello olio basso
+      nl:
+        - olieniveau
+        - laag olieniveau
+
+  thermostat:
+    category: cooling
+    aliases:
+      en:
+        - thermostat
+        - thermostat stuck
+        - thermostat fault
+        - engine thermostat
+      de:
+        - Thermostat
+        - Thermostat defekt
+        - Thermostat hängt
+      ro:
+        - termostat
+        - termostat defect
+        - termostat blocat
+        - termostat blocat deschis
+        - termostat blocat inchis
+      fr:
+        - thermostat
+        - thermostat défectueux
+        - thermostat bloqué
+      es:
+        - termostato
+        - termostato defectuoso
+        - termostato atascado
+      it:
+        - termostato
+        - termostato guasto
+        - termostato bloccato
+      nl:
+        - thermostaat
+        - defecte thermostaat
+        - thermostaat vast
+
+  cooling_fan:
+    category: cooling
+    aliases:
+      en:
+        - cooling fan
+        - radiator fan
+        - engine fan
+        - cooling fan not working
+      de:
+        - Kühlerlüfter
+        - Lüfter
+        - Motorkühlerlüfter
+        - Kühlerlüfter funktioniert nicht
+      ro:
+        - ventilator răcire
+        - ventilator racire
+        - electroventilator
+        - ventilator radiator
+        - GMV
+        - ventilatorul nu pornește
+        - ventilatorul nu porneste
+      fr:
+        - ventilateur de refroidissement
+        - ventilateur radiateur
+        - ventilateur ne fonctionne pas
+      es:
+        - ventilador del radiador
+        - ventilador de refrigeración
+        - ventilador no funciona
+      it:
+        - ventola radiatore
+        - ventola raffreddamento
+        - ventola non funziona
+      nl:
+        - koelventilator
+        - radiateurventilator
+        - koelventilator werkt niet
+
+  # ============================================================
+  # TRANSMISSION / DRIVELINE
+  # ============================================================
+
+  automatic_shift:
+    category: transmission
+    aliases:
+      en:
+        - automatic transmission shifting
+        - automatic gearbox shifting
+        - harsh shifting
+        - delayed shifting
+        - transmission shifts badly
+      de:
+        - Automatik schaltet schlecht
+        - harte Schaltvorgänge
+        - verzögertes Schalten
+        - Getriebe schaltet schlecht
+      ro:
+        - schimbă greu
+        - schimba greu
+        - schimbă brusc
+        - schimba brusc
+        - schimbare viteze bruscă
+        - schimbare viteze brusca
+        - cutia schimbă greu
+        - cutia schimba greu
+      fr:
+        - boîte automatique change mal
+        - passages de vitesses brutaux
+        - changement de vitesse retardé
+      es:
+        - caja automática cambia mal
+        - cambios bruscos
+        - cambio retardado
+      it:
+        - cambio automatico cambia male
+        - cambi marcia bruschi
+        - cambio ritardato
+      nl:
+        - automaat schakelt slecht
+        - harde schakelingen
+        - vertraagd schakelen
+
+  transmission_pressure:
+    category: transmission
+    aliases:
+      en:
+        - transmission pressure
+        - gearbox hydraulic pressure
+        - transmission line pressure
+        - low transmission pressure
+      de:
+        - Getriebedruck
+        - Hydraulikdruck Getriebe
+        - Getriebeöldruck
+      ro:
+        - presiune transmisie
+        - presiune hidraulică cutie
+        - presiune hidraulica cutie
+        - presiune ulei cutie
+      fr:
+        - pression de boîte
+        - pression hydraulique transmission
+        - pression d'huile boîte
+      es:
+        - presión de transmisión
+        - presión hidráulica de caja
+      it:
+        - pressione cambio
+        - pressione idraulica cambio
+      nl:
+        - transmissiedruk
+        - hydraulische versnellingsbakdruk
+
+  mechatronic:
+    category: transmission
+    aliases:
+      en:
+        - transmission mechatronic
+        - gearbox mechatronic
+        - mechatronic unit
+        - mechatronics fault
+      de:
+        - Mechatronik
+        - Getriebemechatronik
+        - Mechatronikfehler
+      ro:
+        - mecatronică
+        - mecatronica
+        - mecatronică transmisie
+        - mecatronica cutiei
+        - unitate mecatronică
+      fr:
+        - mécatronique
+        - mecatronique
+        - mécatronique boîte
+      es:
+        - mecatrónica
+        - mecatronica caja
+      it:
+        - meccatronica
+        - meccatronica cambio
+      nl:
+        - mechatronica
+        - versnellingsbak mechatronica
+
+  torque_converter:
+    category: transmission
+    aliases:
+      en:
+        - torque converter
+        - torque converter lockup
+        - torque converter slip
+      de:
+        - Drehmomentwandler
+        - Wandlerüberbrückung
+        - Wandler rutscht
+      ro:
+        - convertizor de cuplu
+        - convertor de cuplu
+        - patinare convertizor
+      fr:
+        - convertisseur de couple
+        - convertisseur glisse
+      es:
+        - convertidor de par
+        - convertidor de par patina
+      it:
+        - convertitore di coppia
+        - slittamento convertitore
+      nl:
+        - koppelomvormer
+        - koppelomvormer slip
+
+  gearbox_oil:
+    category: transmission
+    aliases:
+      en:
+        - transmission oil
+        - gearbox oil
+        - transmission fluid
+        - gearbox fluid
+      de:
+        - Getriebeöl
+        - Getriebeölstand
+        - Automatiköl
+      ro:
+        - ulei cutie
+        - ulei transmisie
+        - lichid transmisie
+        - nivel ulei cutie
+      fr:
+        - huile de boîte
+        - huile transmission
+        - liquide de transmission
+      es:
+        - aceite de caja
+        - aceite de transmisión
+        - líquido de transmisión
+      it:
+        - olio cambio
+        - olio trasmissione
+        - liquido cambio
+      nl:
+        - versnellingsbakolie
+        - transmissieolie
+        - transmissievloeistof
+
+  differential:
+    category: driveline
+    aliases:
+      en:
+        - differential
+        - differential noise
+        - differential fault
+        - rear differential
+      de:
+        - Differential
+        - Differentialgeräusch
+        - Differentialfehler
+      ro:
+        - diferențial
+        - diferential
+        - zgomot diferențial
+        - zgomot diferential
+        - diferențial spate
+      fr:
+        - différentiel
+        - differentiel
+        - bruit différentiel
+      es:
+        - diferencial
+        - ruido del diferencial
+      it:
+        - differenziale
+        - rumore differenziale
+      nl:
+        - differentieel
+        - differentieel geluid
+
+  driveshaft:
+    category: driveline
+    aliases:
+      en:
+        - driveshaft
+        - propeller shaft
+        - drive shaft
+        - driveshaft vibration
+      de:
+        - Kardanwelle
+        - Gelenkwelle
+        - Kardanwellenvibration
+      ro:
+        - cardan
+        - arbore cardanic
+        - arbore transmisie
+        - vibrații cardan
+        - vibratii cardan
+      fr:
+        - arbre de transmission
+        - arbre de transmission longitudinal
+        - vibration arbre transmission
+      es:
+        - árbol de transmisión
+        - arbol de transmision
+        - vibración árbol transmisión
+      it:
+        - albero di trasmissione
+        - albero cardanico
+        - vibrazione albero
+      nl:
+        - aandrijfas
+        - cardanas
+        - aandrijfas trilling
+
+  cv_joint:
+    category: driveline
+    aliases:
+      en:
+        - CV joint
+        - constant velocity joint
+        - driveshaft joint
+        - CV joint clicking
+      de:
+        - Gleichlaufgelenk
+        - Antriebswellengelenk
+        - Gelenk knackt
+      ro:
+        - planetară
+        - planetara
+        - articulație planetară
+        - articulatie planetara
+        - cap planetară
+        - cap planetara
+        - planetara pocnește
+      fr:
+        - joint homocinétique
+        - cardan
+        - joint de transmission
+      es:
+        - junta homocinética
+        - junta CV
+        - homocinética
+      it:
+        - giunto omocinetico
+        - giunto CV
+        - semiasse
+      nl:
+        - homokineet
+        - homokineetische koppeling
+
+  awd_4wd:
+    category: driveline
+    aliases:
+      en:
+        - AWD
+        - 4WD
+        - four wheel drive
+        - all wheel drive
+        - quattro system
+      de:
+        - Allrad
+        - Allradantrieb
+        - 4x4
+        - Vierradantrieb
+      ro:
+        - tracțiune integrală
+        - tractiune integrala
+        - 4x4
+        - AWD
+        - tracțiune 4x4
+      fr:
+        - transmission intégrale
+        - 4x4
+        - quatre roues motrices
+      es:
+        - tracción integral
+        - 4x4
+        - tracción total
+      it:
+        - trazione integrale
+        - 4x4
+        - quattro ruote motrici
+      nl:
+        - vierwielaandrijving
+        - 4x4
+        - vierwielaandrijving systeem
+
+  # ============================================================
+  # BRAKE / CHASSIS SENSORS
+  # ============================================================
+
+  brake_pressure:
+    category: brakes
+    aliases:
+      en:
+        - brake pressure
+        - brake pressure sensor
+        - hydraulic brake pressure
+        - low brake pressure
+      de:
+        - Bremsdruck
+        - Bremsdrucksensor
+        - Bremsdruck zu niedrig
+      ro:
+        - presiune frână
+        - presiune frana
+        - senzor presiune frână
+        - senzor presiune frana
+        - presiune hidraulică frâne
+      fr:
+        - pression de freinage
+        - capteur pression frein
+        - pression hydraulique frein
+      es:
+        - presión de freno
+        - sensor presión de freno
+      it:
+        - pressione freno
+        - sensore pressione freno
+      nl:
+        - remdruk
+        - remdruksensor
+
+  brake_pad:
+    category: brakes
+    aliases:
+      en:
+        - brake pads
+        - brake pad wear
+        - worn brake pads
+        - brake pad sensor
+      de:
+        - Bremsbeläge
+        - Bremsbelagverschleiß
+        - Bremsbelag Sensor
+      ro:
+        - plăcuțe frână
+        - placute frana
+        - plăcuțe de frână uzate
+        - placute de frana uzate
+        - senzor plăcuțe frână
+      fr:
+        - plaquettes de frein
+        - usure plaquettes
+        - capteur plaquettes
+      es:
+        - pastillas de freno
+        - desgaste pastillas
+        - sensor pastillas
+      it:
+        - pastiglie freno
+        - usura pastiglie
+        - sensore pastiglie
+      nl:
+        - remblokken
+        - remblokslijtage
+        - rembloksensor
+
+  brake_disc:
+    category: brakes
+    aliases:
+      en:
+        - brake disc
+        - brake rotor
+        - warped brake disc
+        - brake disc vibration
+      de:
+        - Bremsscheibe
+        - Bremsscheiben
+        - Bremsscheibe verzogen
+      ro:
+        - disc frână
+        - disc frana
+        - discuri frână
+        - discuri frana
+        - disc strâmb
+        - disc stramb
+      fr:
+        - disque de frein
+        - disque voilé
+        - vibration disque frein
+      es:
+        - disco de freno
+        - disco deformado
+      it:
+        - disco freno
+        - disco deformato
+      nl:
+        - remschijf
+        - kromme remschijf
+
+  steering_angle:
+    category: chassis
+    aliases:
+      en:
+        - steering angle sensor
+        - steering angle
+        - SAS sensor
+        - steering position sensor
+      de:
+        - Lenkwinkelsensor
+        - Lenkwinkel
+        - Lenkwinkelsensor Kalibrierung
+      ro:
+        - senzor unghi volan
+        - senzor unghi de direcție
+        - senzor unghi de directie
+        - calibrare senzor volan
+      fr:
+        - capteur d'angle de volant
+        - capteur angle direction
+        - calibration angle volant
+      es:
+        - sensor de ángulo de dirección
+        - sensor angulo direccion
+        - calibración sensor volante
+      it:
+        - sensore angolo sterzo
+        - sensore angolo volante
+        - calibrazione sterzo
+      nl:
+        - stuurhoeksensor
+        - stuurhoek
+        - stuurhoeksensor kalibratie
+
+  wheel_alignment:
+    category: chassis
+    aliases:
+      en:
+        - wheel alignment
+        - wheel geometry
+        - alignment problem
+        - car pulls to one side
+        - uneven tire wear
+      de:
+        - Achsvermessung
+        - Radstellung
+        - Spur einstellen
+        - Fahrzeug zieht zur Seite
+        - ungleichmäßiger Reifenverschleiß
+      ro:
+        - geometrie roți
+        - geometrie roti
+        - direcție trage într-o parte
+        - directie trage intr o parte
+        - mașina trage dreapta
+        - masina trage dreapta
+        - uzură neuniformă anvelope
+        - uzura neuniforma anvelope
+      fr:
+        - géométrie des roues
+        - géométrie
+        - voiture tire d'un côté
+        - usure pneus irrégulière
+      es:
+        - alineación de ruedas
+        - geometría de ruedas
+        - coche tira hacia un lado
+        - desgaste irregular de neumáticos
+      it:
+        - geometria ruote
+        - convergenza
+        - auto tira da un lato
+        - usura irregolare pneumatici
+      nl:
+        - wieluitlijning
+        - uitlijning
+        - auto trekt naar één kant
+        - ongelijkmatige bandenslijtage
+
+  ride_height:
+    category: suspension
+    aliases:
+      en:
+        - ride height
+        - vehicle height
+        - suspension height
+        - level control
+      de:
+        - Fahrhöhe
+        - Fahrzeughöhe
+        - Niveauregulierung
+      ro:
+        - înălțime suspensie
+        - inaltime suspensie
+        - nivelare suspensie
+        - înălțime mașină
+        - inaltime masina
+      fr:
+        - hauteur de caisse
+        - niveau de suspension
+        - réglage de niveau
+      es:
+        - altura de suspensión
+        - altura del vehículo
+        - control de nivel
+      it:
+        - altezza da terra
+        - altezza sospensione
+        - regolazione livello
+      nl:
+        - rijhoogte
+        - voertuighoogte
+        - niveauregeling
+
+  # ============================================================
+  # HVAC
+  # ============================================================
+
+  ac_compressor:
+    category: climate
+    aliases:
+      en:
+        - AC compressor
+        - air conditioning compressor
+        - compressor clutch
+        - compressor not engaging
+      de:
+        - Klimakompressor
+        - Klimaanlagenkompressor
+        - Kompressorkupplung
+      ro:
+        - compresor AC
+        - compresor aer condiționat
+        - compresor aer conditionat
+        - ambreiaj compresor AC
+        - compresorul nu cuplează
+        - compresorul nu cupleaza
+      fr:
+        - compresseur de climatisation
+        - compresseur AC
+        - embrayage compresseur
+      es:
+        - compresor de aire acondicionado
+        - compresor AC
+        - embrague compresor
+      it:
+        - compressore climatizzatore
+        - compressore AC
+        - frizione compressore
+      nl:
+        - aircocompressor
+        - AC-compressor
+        - compressor koppeling
+
+  ac_pressure:
+    category: climate
+    aliases:
+      en:
+        - AC pressure
+        - refrigerant pressure
+        - air conditioning pressure
+        - high AC pressure
+        - low AC pressure
+      de:
+        - Klimaanlagendruck
+        - Kältemitteldruck
+        - AC Druck
+      ro:
+        - presiune AC
+        - presiune agent frigorific
+        - presiune freon
+        - presiune aer condiționat
+        - presiune aer conditionat
+      fr:
+        - pression climatisation
+        - pression réfrigérant
+        - pression AC
+      es:
+        - presión de aire acondicionado
+        - presión refrigerante
+      it:
+        - pressione climatizzatore
+        - pressione refrigerante
+      nl:
+        - aircodruk
+        - koudemiddeldruk
+        - AC-druk
+
+  cabin_blower:
+    category: climate
+    aliases:
+      en:
+        - blower motor
+        - cabin blower
+        - heater blower
+        - blower fan
+        - interior fan
+      de:
+        - Gebläsemotor
+        - Innenraumgebläse
+        - Heizungsgebläse
+      ro:
+        - ventilator habitaclu
+        - aerotermă
+        - aeroterma
+        - motor ventilator habitaclu
+        - ventilator interior
+      fr:
+        - pulseur habitacle
+        - moteur de soufflerie
+        - ventilateur habitacle
+      es:
+        - motor del ventilador
+        - ventilador del habitáculo
+      it:
+        - ventola abitacolo
+        - motore ventola
+        - ventilatore abitacolo
+      nl:
+        - interieurventilator
+        - aanjagermotor
+        - kachelventilator
+
+  blower_resistor:
+    category: climate
+    aliases:
+      en:
+        - blower resistor
+        - blower motor resistor
+        - fan speed resistor
+        - blower control module
+      de:
+        - Gebläsewiderstand
+        - Vorwiderstand Gebläse
+        - Gebläse Steuergerät
+      ro:
+        - rezistență ventilator
+        - rezistenta ventilator
+        - rezistență aerotermă
+        - rezistenta aeroterma
+        - modul ventilator
+      fr:
+        - résistance de pulseur
+        - résistance soufflerie
+        - module de soufflerie
+      es:
+        - resistencia del ventilador
+        - resistencia del soplador
+      it:
+        - resistenza ventola
+        - resistenza ventilatore
+      nl:
+        - ventilatorweerstand
+        - kachelweerstand
+
+  cabin_temperature_sensor:
+    category: climate
+    aliases:
+      en:
+        - cabin temperature sensor
+        - interior temperature sensor
+        - ambient cabin sensor
+      de:
+        - Innenraumtemperatursensor
+        - Innenraumfühler
+      ro:
+        - senzor temperatură habitaclu
+        - senzor temperatura habitaclu
+        - senzor temperatură interioară
+        - senzor temperatura interioara
+      fr:
+        - capteur température habitacle
+        - capteur temperature interieur
+      es:
+        - sensor temperatura habitáculo
+        - sensor temperatura interior
+      it:
+        - sensore temperatura abitacolo
+        - sensore temperatura interna
+      nl:
+        - interieurtemperatuursensor
+        - temperatuursensor cabine
+
+  # ============================================================
+  # BODY / COMFORT
+  # ============================================================
+
+  trunk_tailgate:
+    category: body
+    aliases:
+      en:
+        - trunk
+        - boot
+        - tailgate
+        - trunk lid
+        - tailgate not opening
+      de:
+        - Kofferraum
+        - Heckklappe
+        - Kofferraumklappe
+        - Heckklappe öffnet nicht
+      ro:
+        - portbagaj
+        - hayon
+        - ușă portbagaj
+        - usa portbagaj
+        - portbagaj nu se deschide
+      fr:
+        - coffre
+        - hayon
+        - porte de coffre
+        - coffre ne s'ouvre pas
+      es:
+        - maletero
+        - portón trasero
+        - puerta del maletero
+      it:
+        - bagagliaio
+        - portellone
+        - portellone posteriore
+      nl:
+        - kofferbak
+        - achterklep
+        - kofferklep
+
+  trunk_lock:
+    category: body
+    aliases:
+      en:
+        - trunk lock
+        - boot lock
+        - tailgate lock
+        - trunk latch
+      de:
+        - Kofferraumschloss
+        - Heckklappenschloss
+        - Heckklappenverriegelung
+      ro:
+        - încuietoare portbagaj
+        - incuietoare portbagaj
+        - broască portbagaj
+        - broasca portbagaj
+      fr:
+        - serrure de coffre
+        - verrou de hayon
+      es:
+        - cerradura del maletero
+        - cerradura del portón
+      it:
+        - serratura bagagliaio
+        - serratura portellone
+      nl:
+        - kofferklepslot
+        - achterklepslot
+
+  soft_close:
+    category: body
+    aliases:
+      en:
+        - soft close
+        - soft close door
+        - soft closing door
+        - automatic door closing
+      de:
+        - Softclose
+        - Tür Softclose
+        - Servoschließung
+      ro:
+        - soft close
+        - închidere asistată
+        - inchidere asistata
+        - închidere automată ușă
+        - inchidere automata usa
+      fr:
+        - fermeture assistée
+        - soft close
+        - fermeture automatique
+      es:
+        - cierre suave
+        - cierre asistido
+        - soft close
+      it:
+        - chiusura assistita
+        - soft close
+        - chiusura automatica porta
+      nl:
+        - softclose
+        - automatische deurvergrendeling
+        - deur sluiting
+
+  sunroof:
+    category: body
+    aliases:
+      en:
+        - sunroof
+        - electric sunroof
+        - panoramic roof
+        - sunroof not working
+      de:
+        - Schiebedach
+        - elektrisches Schiebedach
+        - Panoramadach
+      ro:
+        - trapă
+        - trapa
+        - trapă electrică
+        - trapa electrica
+        - plafon panoramic
+      fr:
+        - toit ouvrant
+        - toit panoramique
+        - toit ouvrant électrique
+      es:
+        - techo solar
+        - techo panorámico
+        - techo eléctrico
+      it:
+        - tetto apribile
+        - tetto panoramico
+        - tetto elettrico
+      nl:
+        - schuifdak
+        - panoramadak
+        - elektrisch schuifdak
+
+  seat_heating:
+    category: body
+    aliases:
+      en:
+        - heated seat
+        - seat heating
+        - heated seats not working
+      de:
+        - Sitzheizung
+        - Sitzheizung funktioniert nicht
+      ro:
+        - încălzire scaun
+        - incalzire scaun
+        - încălzire scaun nu funcționează
+        - incalzire scaun nu functioneaza
+      fr:
+        - chauffage siège
+        - siège chauffant
+        - chauffage siège ne fonctionne pas
+      es:
+        - asiento calefactable
+        - calefacción del asiento
+      it:
+        - sedile riscaldato
+        - riscaldamento sedile
+      nl:
+        - stoelverwarming
+        - verwarmde stoel
+
+  seat_memory:
+    category: body
+    aliases:
+      en:
+        - seat memory
+        - memory seat
+        - seat memory position
+        - seat memory not working
+      de:
+        - Sitzmemory
+        - Sitzspeicher
+        - Sitzpositionsspeicher
+      ro:
+        - memorie scaun
+        - memorie scaune
+        - poziție memorie scaun
+        - pozitie memorie scaun
+      fr:
+        - mémoire siège
+        - mémoire de position siège
+      es:
+        - memoria del asiento
+        - memoria de posición asiento
+      it:
+        - memoria sedile
+        - memoria posizione sedile
+      nl:
+        - stoelgeheugen
+        - geheugen stoelpositie
+
+  mirror_folding:
+    category: body
+    aliases:
+      en:
+        - power folding mirror
+        - folding mirror
+        - mirror folding
+        - electric folding mirror
+      de:
+        - Außenspiegel anklappen
+        - Spiegelanklappung
+        - elektrisch anklappbarer Spiegel
+      ro:
+        - rabatare oglinzi
+        - pliere oglinzi
+        - oglinzi rabatabile
+        - oglinda nu se rabatează
+        - oglinda nu se rabateaza
+      fr:
+        - rabattement rétroviseur
+        - rétroviseur rabattable
+      es:
+        - plegado de espejos
+        - retrovisor plegable
+      it:
+        - ripiegamento specchietti
+        - specchietti richiudibili
+      nl:
+        - inklapbare buitenspiegel
+        - spiegel inklappen
+
+  mirror_heating:
+    category: body
+    aliases:
+      en:
+        - heated mirror
+        - mirror heating
+        - heated side mirror
+      de:
+        - Spiegelheizung
+        - beheizbarer Außenspiegel
+      ro:
+        - încălzire oglindă
+        - incalzire oglinda
+        - oglindă încălzită
+        - oglinda incalzita
+      fr:
+        - rétroviseur chauffant
+        - chauffage rétroviseur
+      es:
+        - espejo calefactable
+        - calefacción del espejo
+      it:
+        - specchietto riscaldato
+        - riscaldamento specchietto
+      nl:
+        - verwarmde buitenspiegel
+        - spiegelverwarming
+
+  # ============================================================
+  # LIGHTING
+  # ============================================================
+
+  headlamp:
+    category: lighting
+    aliases:
+      en:
+        - headlight
+        - headlamp
+        - low beam
+        - high beam
+        - headlight fault
+      de:
+        - Scheinwerfer
+        - Abblendlicht
+        - Fernlicht
+        - Scheinwerferfehler
+      ro:
+        - far
+        - faruri
+        - fază scurtă
+        - faza scurta
+        - fază lungă
+        - faza lunga
+        - eroare far
+      fr:
+        - phare
+        - feux de croisement
+        - feux de route
+        - défaut phare
+      es:
+        - faro
+        - luz de cruce
+        - luz larga
+        - fallo de faro
+      it:
+        - faro
+        - anabbagliante
+        - abbagliante
+        - guasto faro
+      nl:
+        - koplamp
+        - dimlicht
+        - grootlicht
+        - koplampstoring
+
+  adaptive_headlight:
+    category: lighting
+    aliases:
+      en:
+        - adaptive headlights
+        - adaptive headlight
+        - AFS
+        - dynamic headlights
+      de:
+        - adaptives Kurvenlicht
+        - adaptive Scheinwerfer
+        - AFS
+      ro:
+        - faruri adaptive
+        - faruri adaptive
+        - iluminare adaptivă
+        - iluminare adaptiva
+      fr:
+        - phares adaptatifs
+        - éclairage adaptatif
+        - AFS
+      es:
+        - faros adaptativos
+        - iluminación adaptativa
+      it:
+        - fari adattivi
+        - illuminazione adattiva
+      nl:
+        - adaptieve koplampen
+        - adaptieve verlichting
+
+  turn_signal:
+    category: lighting
+    aliases:
+      en:
+        - turn signal
+        - indicator
+        - blinker
+        - indicator not working
+      de:
+        - Blinker
+        - Fahrtrichtungsanzeiger
+        - Blinker funktioniert nicht
+      ro:
+        - semnalizare
+        - semnalizator
+        - semnalizare nu funcționează
+        - semnalizare nu functioneaza
+      fr:
+        - clignotant
+        - indicateur de direction
+        - clignotant ne fonctionne pas
+      es:
+        - intermitente
+        - direccional
+        - intermitente no funciona
+      it:
+        - indicatore di direzione
+        - freccia
+        - freccia non funziona
+      nl:
+        - richtingaanwijzer
+        - knipperlicht
+        - richtingaanwijzer werkt niet
+
+  brake_light:
+    category: lighting
+    aliases:
+      en:
+        - brake light
+        - stop light
+        - brake lamp
+      de:
+        - Bremslicht
+        - Bremsleuchte
+      ro:
+        - stop
+        - lumină frână
+        - lumina frana
+        - bec stop
+      fr:
+        - feu stop
+        - feu de freinage
+      es:
+        - luz de freno
+        - luz de stop
+      it:
+        - luce freno
+        - luce stop
+      nl:
+        - remlicht
+        - remlichten
+
+  reverse_light:
+    category: lighting
+    aliases:
+      en:
+        - reverse light
+        - reversing light
+        - backup light
+      de:
+        - Rückfahrlicht
+        - Rückfahrleuchte
+      ro:
+        - marșarier
+        - marsarier
+        - lumină marșarier
+        - lumina marsarier
+      fr:
+        - feu de recul
+        - feux de recul
+      es:
+        - luz de marcha atrás
+        - luz de reversa
+      it:
+        - luce retromarcia
+      nl:
+        - achteruitrijlicht
+
+  fog_light:
+    category: lighting
+    aliases:
+      en:
+        - fog light
+        - fog lamp
+        - front fog light
+        - rear fog light
+      de:
+        - Nebelscheinwerfer
+        - Nebelschlussleuchte
+      ro:
+        - proiectoare ceață
+        - proiectoare ceata
+        - lumini ceață
+        - lumini ceata
+        - lampă ceață
+        - lampa ceata
+      fr:
+        - antibrouillard
+        - feu antibrouillard
+      es:
+        - faro antiniebla
+        - luz antiniebla
+      it:
+        - fendinebbia
+        - luce antinebbia
+      nl:
+        - mistlamp
+        - mistlichten
+
+  # ============================================================
+  # ELECTRICAL / MODULES
+  # ============================================================
+
+  communication_fault:
+    category: network
+    aliases:
+      en:
+        - communication fault
+        - communication error
+        - module communication error
+        - communication failure
+      de:
+        - Kommunikationsfehler
+        - Kommunikationsstörung
+        - Kommunikationsausfall
+      ro:
+        - eroare comunicare
+        - eroare de comunicare
+        - pierdere comunicare modul
+        - modul nu comunică
+        - modul nu comunica
+      fr:
+        - défaut de communication
+        - erreur de communication
+        - perte de communication
+      es:
+        - fallo de comunicación
+        - error de comunicación
+        - pérdida de comunicación
+      it:
+        - errore di comunicazione
+        - perdita comunicazione
+        - guasto comunicazione
+      nl:
+        - communicatiefout
+        - communicatieprobleem
+        - communicatieverlies
+
+  module_no_communication:
+    category: network
+    aliases:
+      en:
+        - no communication with module
+        - module not responding
+        - control module not responding
+        - ECU no communication
+      de:
+        - keine Kommunikation mit Steuergerät
+        - Steuergerät antwortet nicht
+        - Steuergerät keine Kommunikation
+      ro:
+        - lipsă comunicare cu modulul
+        - lipsa comunicare cu modulul
+        - modul nu răspunde
+        - modul nu raspunde
+        - ECU nu comunică
+        - ECU nu comunica
+      fr:
+        - aucune communication avec le calculateur
+        - calculateur ne répond pas
+        - module ne répond pas
+      es:
+        - sin comunicación con el módulo
+        - módulo no responde
+        - ECU sin comunicación
+      it:
+        - nessuna comunicazione con la centralina
+        - centralina non risponde
+      nl:
+        - geen communicatie met module
+        - regelmodule reageert niet
+        - ECU geen communicatie
+
+  gateway:
+    category: network
+    aliases:
+      en:
+        - gateway module
+        - CAN gateway
+        - network gateway
+        - central gateway
+      de:
+        - Gateway Steuergerät
+        - CAN Gateway
+        - Gateway Modul
+      ro:
+        - gateway
+        - modul gateway
+        - gateway CAN
+        - modul central gateway
+      fr:
+        - passerelle CAN
+        - module gateway
+        - passerelle réseau
+      es:
+        - puerta de enlace CAN
+        - módulo gateway
+      it:
+        - gateway CAN
+        - modulo gateway
+      nl:
+        - gatewaymodule
+        - CAN-gateway
+
+  bcm:
+    category: body_electronics
+    aliases:
+      en:
+        - body control module
+        - BCM
+        - body module
+        - body computer
+      de:
+        - Karosseriesteuergerät
+        - BCM
+        - Bordnetzsteuergerät
+      ro:
+        - modul BCM
+        - modul caroserie
+        - body control module
+        - calculator caroserie
+      fr:
+        - module de carrosserie
+        - BCM
+        - boîtier de carrosserie
+      es:
+        - módulo de carrocería
+        - BCM
+        - módulo de control de carrocería
+      it:
+        - centralina carrozzeria
+        - BCM
+        - body computer
+      nl:
+        - body control module
+        - BCM
+        - carrosseriemodule
+
+  fuse:
+    category: electrical
+    aliases:
+      en:
+        - fuse
+        - blown fuse
+        - fuse box
+        - fuse fault
+      de:
+        - Sicherung
+        - Sicherung defekt
+        - Sicherungskasten
+      ro:
+        - siguranță
+        - siguranta
+        - siguranță arsă
+        - siguranta arsa
+        - panou siguranțe
+        - panou sigurante
+      fr:
+        - fusible
+        - fusible grillé
+        - boîte à fusibles
+      es:
+        - fusible
+        - fusible fundido
+        - caja de fusibles
+      it:
+        - fusibile
+        - fusibile bruciato
+        - scatola fusibili
+      nl:
+        - zekering
+        - doorgebrande zekering
+        - zekeringkast
+
+  relay:
+    category: electrical
+    aliases:
+      en:
+        - relay
+        - electrical relay
+        - relay fault
+        - relay not switching
+      de:
+        - Relais
+        - Relaisfehler
+        - Relais schaltet nicht
+      ro:
+        - releu
+        - releu electric
+        - releu defect
+        - releul nu cuplează
+        - releul nu cupleaza
+      fr:
+        - relais
+        - relais électrique
+        - relais défectueux
+      es:
+        - relé
+        - relé eléctrico
+        - relé defectuoso
+      it:
+        - relè
+        - relè elettrico
+        - relè guasto
+      nl:
+        - relais
+        - elektrisch relais
+        - relaisstoring
+
+  wiring:
+    category: electrical
+    aliases:
+      en:
+        - wiring
+        - wiring harness
+        - damaged wiring
+        - broken wire
+        - wiring fault
+      de:
+        - Verkabelung
+        - Kabelbaum
+        - Kabelbruch
+        - Leitungsfehler
+      ro:
+        - cablaj
+        - instalație electrică
+        - instalatie electrica
+        - fir rupt
+        - cablu întrerupt
+        - cablu intrerupt
+      fr:
+        - câblage
+        - faisceau électrique
+        - fil coupé
+        - défaut de câblage
+      es:
+        - cableado
+        - mazo de cables
+        - cable roto
+        - fallo de cableado
+      it:
+        - cablaggio
+        - fascio cavi
+        - filo interrotto
+        - guasto cablaggio
+      nl:
+        - bedrading
+        - kabelboom
+        - draadbreuk
+        - bedradingsfout
+
+  ground:
+    category: electrical
+    aliases:
+      en:
+        - ground connection
+        - earth connection
+        - bad ground
+        - poor ground
+        - ground fault
+      de:
+        - Masseverbindung
+        - Massefehler
+        - schlechte Masse
+      ro:
+        - masă electrică
+        - masa electrică
+        - masa electrica
+        - împământare auto
+        - impamantare auto
+        - masă slabă
+        - masa slaba
+      fr:
+        - masse électrique
+        - mauvaise masse
+        - défaut de masse
+      es:
+        - masa eléctrica
+        - mala masa
+        - fallo de masa
+      it:
+        - massa elettrica
+        - massa difettosa
+        - problema di massa
+      nl:
+        - massaverbinding
+        - slechte massa
+        - massafout
+
+  voltage:
+    category: electrical
+    aliases:
+      en:
+        - voltage
+        - low voltage
+        - high voltage
+        - voltage too low
+        - voltage too high
+        - supply voltage
+      de:
+        - Spannung
+        - Unterspannung
+        - Überspannung
+        - Versorgungsspannung
+      ro:
+        - tensiune
+        - tensiune scăzută
+        - tensiune scazuta
+        - tensiune prea mică
+        - tensiune prea mica
+        - tensiune prea mare
+        - tensiune alimentare
+      fr:
+        - tension
+        - sous-tension
+        - surtension
+        - tension d'alimentation
+      es:
+        - tensión
+        - baja tensión
+        - alta tensión
+        - tensión de alimentación
+      it:
+        - tensione
+        - bassa tensione
+        - alta tensione
+        - tensione di alimentazione
+      nl:
+        - spanning
+        - onderspanning
+        - overspanning
+        - voedingsspanning
+
+  open_circuit:
+    category: electrical
+    aliases:
+      en:
+        - open circuit
+        - circuit open
+        - open electrical circuit
+        - circuit interruption
+      de:
+        - Unterbrechung
+        - Stromkreis Unterbrechung
+        - offener Stromkreis
+      ro:
+        - circuit întrerupt
+        - circuit intrerupt
+        - circuit deschis
+        - întrerupere circuit
+        - intrerupere circuit
+      fr:
+        - circuit ouvert
+        - coupure de circuit
+        - circuit interrompu
+      es:
+        - circuito abierto
+        - circuito interrumpido
+      it:
+        - circuito aperto
+        - interruzione circuito
+      nl:
+        - open circuit
+        - stroomkring onderbroken
+
+  short_circuit:
+    category: electrical
+    aliases:
+      en:
+        - short circuit
+        - electrical short
+        - short to ground
+        - short to positive
+      de:
+        - Kurzschluss
+        - Kurzschluss gegen Masse
+        - Kurzschluss gegen Plus
+      ro:
+        - scurtcircuit
+        - scurt la masă
+        - scurt la masa
+        - scurt la plus
+      fr:
+        - court-circuit
+        - court-circuit à la masse
+        - court-circuit au positif
+      es:
+        - cortocircuito
+        - corto a masa
+        - corto a positivo
+      it:
+        - cortocircuito
+        - corto a massa
+        - corto al positivo
+      nl:
+        - kortsluiting
+        - kortsluiting naar massa
+        - kortsluiting naar plus
+
+
+# ================================================================
+# ADDITIONAL SEMANTIC RELATIONSHIPS
+# ================================================================
+
+relationships:
+
+  maf:
+    - map
+    - intake_air
+    - low_power
+    - rough_idle
+    - hesitation
+    - egr
+
+  map:
+    - maf
+    - intake_air
+    - turbo
+    - boost
+    - low_power
+
+  throttle:
+    - low_power
+    - rough_idle
+    - hesitation
+    - no_start
+    - limp_mode
+
+  oxygen_sensor:
+    - catalyst
+    - exhaust_leak
+    - fuel_pressure
+    - injector
+
+  exhaust_leak:
+    - oxygen_sensor
+    - catalyst
+    - dpf
+    - egr
+
+  glow_plug:
+    - hard_start
+    - no_start
+    - battery
+
+  ignition_coil:
+    - spark_plug
+    - misfire
+    - rough_idle
+    - no_start
+
+  spark_plug:
+    - ignition_coil
+    - misfire
+    - rough_idle
+    - hard_start
+
+  compression:
+    - no_start
+    - crank_no_start
+    - misfire
+    - rough_idle
+    - timing_chain
+    - timing_belt
+
+  timing_chain:
+    - synchronization
+    - camshaft
+    - crankshaft
+    - no_start
+    - misfire
+
+  timing_belt:
+    - synchronization
+    - camshaft
+    - crankshaft
+    - no_start
+    - compression
+
+  coolant:
+    - overheating
+    - thermostat
+    - cooling_fan
+
+  thermostat:
+    - coolant
+    - overheating
+    - cooling_fan
+
+  cooling_fan:
+    - overheating
+    - coolant
+    - thermostat
+    - voltage
+    - relay
+
+  automatic_shift:
+    - transmission
+    - transmission_pressure
+    - mechatronic
+    - gearbox_oil
+    - torque_converter
+
+  transmission_pressure:
+    - transmission
+    - automatic_shift
+    - mechatronic
+    - gearbox_oil
+
+  mechatronic:
+    - transmission
+    - automatic_shift
+    - transmission_pressure
+    - gearbox_oil
+
+  torque_converter:
+    - transmission
+    - automatic_shift
+    - gearbox_oil
+
+  gearbox_oil:
+    - transmission
+    - transmission_pressure
+    - automatic_shift
+
+  differential:
+    - driveshaft
+    - cv_joint
+    - awd_4wd
+
+  driveshaft:
+    - differential
+    - cv_joint
+    - awd_4wd
+
+  cv_joint:
+    - driveshaft
+    - differential
+
+  awd_4wd:
+    - differential
+    - driveshaft
+
+  brake_pressure:
+    - abs
+    - esp
+    - brakes
+
+  brake_pad:
+    - brakes
+    - brake_disc
+
+  brake_disc:
+    - brakes
+    - brake_pad
+    - wheel_alignment
+
+  steering_angle:
+    - esp
+    - abs
+    - steering
+    - wheel_alignment
+
+  wheel_alignment:
+    - steering
+    - steering_angle
+    - suspension
+    - ride_height
+
+  ride_height:
+    - suspension
+    - wheel_alignment
+
+  ac_compressor:
+    - air_conditioning
+    - ac_pressure
+    - hvac
+    - voltage
+
+  ac_pressure:
+    - air_conditioning
+    - ac_compressor
+    - hvac
+
+  cabin_blower:
+    - hvac
+    - blower_resistor
+    - voltage
+
+  blower_resistor:
+    - cabin_blower
+    - hvac
+    - voltage
+
+  cabin_temperature_sensor:
+    - hvac
+    - air_conditioning
+
+  trunk_tailgate:
+    - trunk_lock
+    - door_lock
+    - soft_close
+
+  trunk_lock:
+    - trunk_tailgate
+    - door_lock
+    - door_lock_actuator
+
+  soft_close:
+    - door_lock
+    - door_latch
+    - door_handle
+    - trunk_tailgate
+
+  sunroof:
+    - voltage
+    - wiring
+    - ground
+
+  seat_heating:
+    - seat
+    - voltage
+    - wiring
+    - ground
+
+  seat_memory:
+    - seat
+    - voltage
+    - wiring
+
+  mirror_folding:
+    - mirror
+    - voltage
+    - wiring
+    - ground
+
+  mirror_heating:
+    - mirror
+    - voltage
+    - wiring
+
+  headlamp:
+    - adaptive_headlight
+    - voltage
+    - wiring
+    - ground
+    - fuse
+
+  adaptive_headlight:
+    - headlamp
+    - steering_angle
+    - level_sensor
+    - voltage
+
+  turn_signal:
+    - fuse
+    - wiring
+    - bcm
+    - voltage
+
+  brake_light:
+    - brakes
+    - fuse
+    - bcm
+    - wiring
+
+  reverse_light:
+    - transmission
+    - fuse
+    - bcm
+    - wiring
+
+  fog_light:
+    - headlamp
+    - fuse
+    - bcm
+    - wiring
+
+  communication_fault:
+    - can_bus
+    - lin_bus
+    - gateway
+    - module_no_communication
+    - wiring
+    - voltage
+    - ground
+
+  module_no_communication:
+    - communication_fault
+    - can_bus
+    - lin_bus
+    - gateway
+    - voltage
+    - ground
+
+  gateway:
+    - can_bus
+    - lin_bus
+    - communication_fault
+    - module_no_communication
+
+  bcm:
+    - can_bus
+    - communication_fault
+    - fuse
+    - relay
+    - wiring
+    - voltage
+    - ground
+
+  fuse:
+    - relay
+    - wiring
+    - voltage
+    - short_circuit
+
+  relay:
+    - fuse
+    - wiring
+    - voltage
+
+  wiring:
+    - open_circuit
+    - short_circuit
+    - ground
+    - voltage
+    - communication_fault
+
+  ground:
+    - voltage
+    - wiring
+    - communication_fault
+    - module_no_communication
+
+  voltage:
+    - battery
+    - alternator
+    - wiring
+    - ground
+    - fuse
+    - relay
+
+  open_circuit:
+    - wiring
+    - voltage
+    - fuse
+    - relay
+
+  short_circuit:
+    - wiring
+    - fuse
+    - voltage
+    - ground
+
+
+# ================================================================
+# CANONICALIZATION
+# ================================================================
+
+canonical_alias:
+
+  air_mass_sensor: maf
+  mass_air_flow: maf
+  airflow_sensor: maf
+
+  manifold_pressure: map
+  intake_pressure: map
+
+  throttle_body: throttle
+  throttle_valve: throttle
+
+  lambda_sensor: oxygen_sensor
+  o2_sensor: oxygen_sensor
+
+  cooling_fan_motor: cooling_fan
+  radiator_fan: cooling_fan
+
+  timing_chain_noise: timing_chain
+  timing_chain_fault: timing_chain
+
+  cambelt: timing_belt
+  timing_belt_fault: timing_belt
+
+  automatic_gearbox: transmission
+  gearbox: transmission
+
+  dct: s_tronic_dsg
+  dual_clutch: s_tronic_dsg
+
+  all_wheel_drive: awd_4wd
+  four_wheel_drive: awd_4wd
+
+  steering_angle_sensor: steering_angle
+  sas: steering_angle
+
+  wheel_alignment_fault: wheel_alignment
+  alignment: wheel_alignment
+
+  aircon: air_conditioning
+  ac: air_conditioning
+
+  ac_compressor_fault: ac_compressor
+  refrigerant_pressure: ac_pressure
+
+  blower_motor: cabin_blower
+  blower_resistor: blower_resistor
+
+  tailgate: trunk_tailgate
+  boot: trunk_tailgate
+
+  rear_camera: parking_camera
+  reversing_camera: parking_camera
+
+  headlights: headlamp
+  headlight_fault: headlamp
+
+  indicator: turn_signal
+  blinker: turn_signal
+
+  brake_lamp: brake_light
+  stop_light: brake_light
+
+  reverse_lamp: reverse_light
+
+  fog_lamp: fog_light
+
+  body_control_module: bcm
+  body_computer: bcm
+
+  control_module_no_communication: module_no_communication
+  ecu_no_communication: module_no_communication
+
+  open_circuit_fault: open_circuit
+  electrical_open_circuit: open_circuit
+
+  short_to_ground: short_circuit
+  short_to_positive: short_circuit
+
+
+# ================================================================
+# PRIORITY
+# ================================================================
+
+priority:
+
+  maf: 72
+  map: 72
+  throttle: 74
+  oxygen_sensor: 65
+  exhaust_leak: 60
+  glow_plug: 70
+  ignition_coil: 75
+  spark_plug: 72
+
+  compression: 82
+  timing_chain: 88
+  timing_belt: 92
+
+  automatic_shift: 75
+  transmission_pressure: 82
+  mechatronic: 85
+  torque_converter: 75
+  gearbox_oil: 60
+  differential: 65
+  driveshaft: 65
+  cv_joint: 65
+  awd_4wd: 60
+
+  brake_pressure: 80
+  brake_pad: 55
+  brake_disc: 60
+  steering_angle: 78
+  wheel_alignment: 62
+  ride_height: 65
+
+  ac_compressor: 70
+  ac_pressure: 72
+  cabin_blower: 68
+  blower_resistor: 65
+  cabin_temperature_sensor: 60
+
+  trunk_tailgate: 55
+  trunk_lock: 65
+  soft_close: 60
+  sunroof: 55
+  seat_heating: 55
+  seat_memory: 55
+  mirror_folding: 58
+  mirror_heating: 50
+
+  headlamp: 65
+  adaptive_headlight: 72
+  turn_signal: 55
+  brake_light: 65
+  reverse_light: 55
+  fog_light: 50
+
+  communication_fault: 82
+  module_no_communication: 88
+  gateway: 82
+  bcm: 75
+  fuse: 70
+  relay: 65
+  wiring: 85
+  ground: 80
+  voltage: 82
+  open_circuit: 85
+  short_circuit: 90
+
+  # ============================================================
   # ENGINE / STARTING
   # ============================================================
 
