@@ -5,6 +5,2853 @@ manufacturer:
   name: Ford
 
 technical_data:
+  - id: ford_focus_mk2_abs_front_left_wheel_speed_sensor_fault
+    manufacturer: ford
+    models:
+      - focus
+    generations:
+      - focus_mk2
+    systems:
+      - abs
+      - esc
+      - wheel_speed
+    symptoms:
+      en:
+        - ABS warning light on
+        - ESP warning light on
+        - left front wheel speed missing
+        - intermittent ABS operation
+      de:
+        - ABS Warnleuchte leuchtet
+        - ESP Warnleuchte leuchtet
+        - Raddrehzahlsignal vorne links fehlt
+        - ABS funktioniert intermittierend
+      ro:
+        - martor ABS aprins
+        - martor ESP aprins
+        - lipsește viteza roții față stânga
+        - ABS funcționează intermitent
+      fr:
+        - voyant ABS allumé
+        - voyant ESP allumé
+        - signal de vitesse roue avant gauche absent
+        - ABS fonctionne par intermittence
+      es:
+        - testigo ABS encendido
+        - testigo ESP encendido
+        - falta la velocidad de la rueda delantera izquierda
+        - ABS funciona de forma intermitente
+      it:
+        - spia ABS accesa
+        - spia ESP accesa
+        - segnale velocità ruota anteriore sinistra assente
+        - ABS funziona in modo intermittente
+      nl:
+        - ABS-waarschuwingslamp brandt
+        - ESP-waarschuwingslamp brandt
+        - wielsnelheid linksvoor ontbreekt
+        - ABS werkt intermitterend
+    possible_causes:
+      en:
+        - faulty left front wheel speed sensor
+        - damaged sensor wiring
+        - corroded connector
+        - damaged magnetic encoder or wheel bearing
+        - ABS module fault
+      de:
+        - defekter Raddrehzahlsensor vorne links
+        - beschädigte Sensorleitung
+        - korrodierter Stecker
+        - beschädigter Magnetencoder oder Radlager
+        - ABS-Modulfehler
+      ro:
+        - senzor ABS față stânga defect
+        - cablaj senzor deteriorat
+        - conector corodat
+        - encoder magnetic sau rulment deteriorat
+        - defect modul ABS
+      fr:
+        - capteur de vitesse de roue avant gauche défectueux
+        - câblage du capteur endommagé
+        - connecteur corrodé
+        - encodeur magnétique ou roulement endommagé
+        - défaut du module ABS
+      es:
+        - sensor de velocidad de rueda delantera izquierda defectuoso
+        - cableado del sensor dañado
+        - conector corroído
+        - codificador magnético o rodamiento dañado
+        - fallo del módulo ABS
+      it:
+        - sensore velocità ruota anteriore sinistra guasto
+        - cablaggio sensore danneggiato
+        - connettore corroso
+        - encoder magnetico o cuscinetto danneggiato
+        - guasto modulo ABS
+      nl:
+        - defecte wielsnelheidssensor linksvoor
+        - beschadigde sensorkabel
+        - gecorrodeerde connector
+        - beschadigde magnetische encoder of wiellager
+        - ABS-module defect
+    diagnostic_steps:
+      en:
+        - Read ABS module DTCs
+        - Compare live wheel speed values
+        - Inspect sensor wiring and connector
+        - Inspect wheel bearing and magnetic encoder
+        - Replace the defective component and clear DTCs
+      de:
+        - ABS-Fehlerspeicher auslesen
+        - Live-Raddrehzahlen vergleichen
+        - Sensorleitung und Stecker prüfen
+        - Radlager und Magnetencoder prüfen
+        - Defektes Bauteil ersetzen und Fehler löschen
+      ro:
+        - citește codurile din modulul ABS
+        - compară valorile live ale vitezelor roților
+        - verifică cablajul și conectorul senzorului
+        - verifică rulmentul și encoderul magnetic
+        - înlocuiește componenta defectă și șterge codurile
+      fr:
+        - lire les codes du module ABS
+        - comparer les vitesses de roue en temps réel
+        - contrôler le câblage et le connecteur
+        - contrôler le roulement et l'encodeur magnétique
+        - remplacer le composant défectueux et effacer les défauts
+      es:
+        - leer los códigos del módulo ABS
+        - comparar las velocidades de rueda en tiempo real
+        - revisar el cableado y el conector
+        - revisar el rodamiento y el codificador magnético
+        - sustituir el componente defectuoso y borrar los códigos
+      it:
+        - leggere i codici del modulo ABS
+        - confrontare le velocità ruota in tempo reale
+        - controllare cablaggio e connettore
+        - controllare cuscinetto ed encoder magnetico
+        - sostituire il componente guasto e cancellare i codici
+      nl:
+        - ABS-foutcodes uitlezen
+        - live-wielsnelheden vergelijken
+        - bedrading en connector controleren
+        - wiellager en magnetische encoder controleren
+        - defect onderdeel vervangen en codes wissen
+    dtcs:
+      - C1155
+      - C1141
+
+  - id: ford_focus_mk2_abs_front_right_wheel_speed_sensor_fault
+    manufacturer: ford
+    models:
+      - focus
+    generations:
+      - focus_mk2
+    systems:
+      - abs
+      - esc
+      - wheel_speed
+    symptoms:
+      en:
+        - ABS warning light on
+        - ESP warning light on
+        - right front wheel speed missing
+        - ABS intervention incorrect
+      de:
+        - ABS Warnleuchte leuchtet
+        - ESP Warnleuchte leuchtet
+        - Raddrehzahlsignal vorne rechts fehlt
+        - ABS greift falsch ein
+      ro:
+        - martor ABS aprins
+        - martor ESP aprins
+        - lipsește viteza roții față dreapta
+        - ABS intervine incorect
+      fr:
+        - voyant ABS allumé
+        - voyant ESP allumé
+        - signal de vitesse roue avant droite absent
+        - intervention ABS incorrecte
+      es:
+        - testigo ABS encendido
+        - testigo ESP encendido
+        - falta la velocidad de la rueda delantera derecha
+        - intervención ABS incorrecta
+      it:
+        - spia ABS accesa
+        - spia ESP accesa
+        - segnale velocità ruota anteriore destra assente
+        - intervento ABS errato
+      nl:
+        - ABS-waarschuwingslamp brandt
+        - ESP-waarschuwingslamp brandt
+        - wielsnelheid rechtsvoor ontbreekt
+        - ABS grijpt onjuist in
+    possible_causes:
+      en:
+        - faulty right front wheel speed sensor
+        - damaged sensor wiring
+        - damaged wheel bearing encoder
+        - connector corrosion
+        - ABS module fault
+      de:
+        - defekter Raddrehzahlsensor vorne rechts
+        - beschädigte Sensorleitung
+        - beschädigter Radlagerencoder
+        - korrodierter Stecker
+        - ABS-Modulfehler
+      ro:
+        - senzor ABS față dreapta defect
+        - cablaj deteriorat
+        - encoder rulment deteriorat
+        - conector corodat
+        - defect modul ABS
+      fr:
+        - capteur de roue avant droite défectueux
+        - câblage endommagé
+        - encodeur de roulement endommagé
+        - connecteur corrodé
+        - défaut du module ABS
+      es:
+        - sensor de rueda delantera derecha defectuoso
+        - cableado dañado
+        - codificador del rodamiento dañado
+        - conector corroído
+        - fallo del módulo ABS
+      it:
+        - sensore ruota anteriore destra guasto
+        - cablaggio danneggiato
+        - encoder del cuscinetto danneggiato
+        - connettore corroso
+        - guasto modulo ABS
+      nl:
+        - defecte wielsnelheidssensor rechtsvoor
+        - beschadigde bedrading
+        - beschadigde lagerencoder
+        - gecorrodeerde connector
+        - ABS-module defect
+    diagnostic_steps:
+      en:
+        - Read ABS DTCs
+        - Compare wheel speed signals
+        - Inspect sensor and wiring
+        - Inspect bearing encoder
+        - Repair the confirmed fault and retest
+      de:
+        - ABS-DTCs auslesen
+        - Raddrehzahlsignale vergleichen
+        - Sensor und Leitung prüfen
+        - Lagerencoder prüfen
+        - bestätigten Fehler reparieren und erneut prüfen
+      ro:
+        - citește DTC-urile ABS
+        - compară semnalele de viteză ale roților
+        - verifică senzorul și cablajul
+        - verifică encoderul rulmentului
+        - repară defectul confirmat și retestează
+      fr:
+        - lire les DTC ABS
+        - comparer les signaux de vitesse des roues
+        - contrôler le capteur et le câblage
+        - contrôler l'encodeur du roulement
+        - réparer le défaut confirmé et effectuer un nouveau test
+      es:
+        - leer los DTC del ABS
+        - comparar las señales de velocidad
+        - revisar sensor y cableado
+        - revisar el codificador del rodamiento
+        - reparar el fallo confirmado y volver a probar
+      it:
+        - leggere i DTC ABS
+        - confrontare i segnali di velocità ruota
+        - controllare sensore e cablaggio
+        - controllare l'encoder del cuscinetto
+        - riparare il guasto confermato e ripetere il test
+      nl:
+        - ABS-DTC's uitlezen
+        - wielsnelheidssignalen vergelijken
+        - sensor en bedrading controleren
+        - lagerencoder controleren
+        - bevestigde fout herstellen en opnieuw testen
+    dtcs:
+      - C1145
+      - C1142
+
+  - id: ford_focus_mk2_abs_rear_left_wheel_speed_sensor_fault
+    manufacturer: ford
+    models:
+      - focus
+    generations:
+      - focus_mk2
+    systems:
+      - abs
+      - esc
+      - wheel_speed
+    symptoms:
+      en:
+        - ABS warning light on
+        - rear left wheel speed signal missing
+        - ESP unavailable
+      de:
+        - ABS Warnleuchte leuchtet
+        - Raddrehzahlsignal hinten links fehlt
+        - ESP nicht verfügbar
+      ro:
+        - martor ABS aprins
+        - lipsește semnalul vitezei roții spate stânga
+        - ESP indisponibil
+      fr:
+        - voyant ABS allumé
+        - signal de vitesse roue arrière gauche absent
+        - ESP indisponible
+      es:
+        - testigo ABS encendido
+        - falta la señal de velocidad de la rueda trasera izquierda
+        - ESP no disponible
+      it:
+        - spia ABS accesa
+        - segnale velocità ruota posteriore sinistra assente
+        - ESP non disponibile
+      nl:
+        - ABS-waarschuwingslamp brandt
+        - wielsnelheidssignaal linksachter ontbreekt
+        - ESP niet beschikbaar
+    possible_causes:
+      en:
+        - faulty rear left wheel speed sensor
+        - damaged wiring
+        - damaged hub encoder
+        - connector corrosion
+        - ABS module fault
+      de:
+        - defekter Raddrehzahlsensor hinten links
+        - beschädigte Verkabelung
+        - beschädigter Nabenencoder
+        - korrodierter Stecker
+        - ABS-Modulfehler
+      ro:
+        - senzor ABS spate stânga defect
+        - cablaj deteriorat
+        - encoder butuc deteriorat
+        - conector corodat
+        - defect modul ABS
+      fr:
+        - capteur de vitesse de roue arrière gauche défectueux
+        - câblage endommagé
+        - encodeur de moyeu endommagé
+        - connecteur corrodé
+        - défaut du module ABS
+      es:
+        - sensor de velocidad trasero izquierdo defectuoso
+        - cableado dañado
+        - codificador del buje dañado
+        - conector corroído
+        - fallo del módulo ABS
+      it:
+        - sensore velocità ruota posteriore sinistra guasto
+        - cablaggio danneggiato
+        - encoder del mozzo danneggiato
+        - connettore corroso
+        - guasto modulo ABS
+      nl:
+        - defecte wielsnelheidssensor linksachter
+        - beschadigde bedrading
+        - beschadigde naafencoder
+        - gecorrodeerde connector
+        - ABS-module defect
+    diagnostic_steps:
+      en:
+        - Read ABS DTCs
+        - Compare all four wheel speed signals
+        - Inspect the sensor and wiring
+        - Inspect the rear hub encoder
+        - Repair the confirmed fault and retest
+      de:
+        - ABS-DTCs auslesen
+        - alle vier Raddrehzahlsignale vergleichen
+        - Sensor und Verkabelung prüfen
+        - hinteren Nabenencoder prüfen
+        - bestätigten Fehler reparieren und erneut prüfen
+      ro:
+        - citește DTC-urile ABS
+        - compară toate cele patru semnale de viteză
+        - verifică senzorul și cablajul
+        - verifică encoderul butucului spate
+        - repară defectul confirmat și retestează
+      fr:
+        - lire les DTC ABS
+        - comparer les quatre signaux de vitesse
+        - contrôler le capteur et le câblage
+        - contrôler l'encodeur du moyeu arrière
+        - réparer le défaut confirmé et effectuer un nouveau test
+      es:
+        - leer los DTC ABS
+        - comparar las cuatro señales de velocidad
+        - revisar sensor y cableado
+        - revisar el codificador del buje trasero
+        - reparar el fallo confirmado y volver a probar
+      it:
+        - leggere i DTC ABS
+        - confrontare i quattro segnali di velocità
+        - controllare sensore e cablaggio
+        - controllare l'encoder del mozzo posteriore
+        - riparare il guasto confermato e ripetere il test
+      nl:
+        - ABS-DTC's uitlezen
+        - alle vier wielsnelheidssignalen vergelijken
+        - sensor en bedrading controleren
+        - achterste naafencoder controleren
+        - bevestigde fout herstellen en opnieuw testen
+    dtcs:
+      - C1175
+      - C1143
+
+  - id: ford_focus_mk2_abs_rear_right_wheel_speed_sensor_fault
+    manufacturer: ford
+    models:
+      - focus
+    generations:
+      - focus_mk2
+    systems:
+      - abs
+      - esc
+      - wheel_speed
+    symptoms:
+      en:
+        - ABS warning light on
+        - rear right wheel speed signal missing
+        - ESP unavailable
+      de:
+        - ABS Warnleuchte leuchtet
+        - Raddrehzahlsignal hinten rechts fehlt
+        - ESP nicht verfügbar
+      ro:
+        - martor ABS aprins
+        - lipsește semnalul vitezei roții spate dreapta
+        - ESP indisponibil
+      fr:
+        - voyant ABS allumé
+        - signal de vitesse roue arrière droite absent
+        - ESP indisponible
+      es:
+        - testigo ABS encendido
+        - falta la señal de velocidad de la rueda trasera derecha
+        - ESP no disponible
+      it:
+        - spia ABS accesa
+        - segnale velocità ruota posteriore destra assente
+        - ESP non disponibile
+      nl:
+        - ABS-waarschuwingslamp brandt
+        - wielsnelheidssignaal rechtsachter ontbreekt
+        - ESP niet beschikbaar
+    possible_causes:
+      en:
+        - faulty rear right wheel speed sensor
+        - damaged wiring
+        - damaged hub encoder
+        - connector corrosion
+        - ABS module fault
+      de:
+        - defekter Raddrehzahlsensor hinten rechts
+        - beschädigte Verkabelung
+        - beschädigter Nabenencoder
+        - korrodierter Stecker
+        - ABS-Modulfehler
+      ro:
+        - senzor ABS spate dreapta defect
+        - cablaj deteriorat
+        - encoder butuc deteriorat
+        - conector corodat
+        - defect modul ABS
+      fr:
+        - capteur de vitesse de roue arrière droite défectueux
+        - câblage endommagé
+        - encodeur de moyeu endommagé
+        - connecteur corrodé
+        - défaut du module ABS
+      es:
+        - sensor de velocidad trasero derecho defectuoso
+        - cableado dañado
+        - codificador del buje dañado
+        - conector corroído
+        - fallo del módulo ABS
+      it:
+        - sensore velocità ruota posteriore destra guasto
+        - cablaggio danneggiato
+        - encoder del mozzo danneggiato
+        - connettore corroso
+        - guasto modulo ABS
+      nl:
+        - defecte wielsnelheidssensor rechtsachter
+        - beschadigde bedrading
+        - beschadigde naafencoder
+        - gecorrodeerde connector
+        - ABS-module defect
+    diagnostic_steps:
+      en:
+        - Read ABS DTCs
+        - Compare all wheel speed signals
+        - Inspect the sensor and wiring
+        - Inspect the rear hub encoder
+        - Repair the confirmed fault and retest
+      de:
+        - ABS-DTCs auslesen
+        - alle Raddrehzahlsignale vergleichen
+        - Sensor und Verkabelung prüfen
+        - hinteren Nabenencoder prüfen
+        - bestätigten Fehler reparieren und erneut prüfen
+      ro:
+        - citește DTC-urile ABS
+        - compară toate semnalele de viteză
+        - verifică senzorul și cablajul
+        - verifică encoderul butucului spate
+        - repară defectul confirmat și retestează
+      fr:
+        - lire les DTC ABS
+        - comparer tous les signaux de vitesse
+        - contrôler le capteur et le câblage
+        - contrôler l'encodeur du moyeu arrière
+        - réparer le défaut confirmé et effectuer un nouveau test
+      es:
+        - leer los DTC ABS
+        - comparar todas las señales de velocidad
+        - revisar sensor y cableado
+        - revisar el codificador del buje trasero
+        - reparar el fallo confirmado y volver a probar
+      it:
+        - leggere i DTC ABS
+        - confrontare tutti i segnali di velocità
+        - controllare sensore e cablaggio
+        - controllare l'encoder del mozzo posteriore
+        - riparare il guasto confermato e ripetere il test
+      nl:
+        - ABS-DTC's uitlezen
+        - alle wielsnelheidssignalen vergelijken
+        - sensor en bedrading controleren
+        - achterste naafencoder controleren
+        - bevestigde fout herstellen en opnieuw testen
+    dtcs:
+      - C1165
+      - C1144
+
+  - id: ford_focus_mk2_abs_tone_ring_fault
+    manufacturer: ford
+    models:
+      - focus
+    generations:
+      - focus_mk2
+    systems:
+      - abs
+      - wheel_speed
+    symptoms:
+      en:
+        - ABS activates unexpectedly
+        - ABS warning light on
+        - intermittent wheel speed signal
+        - wheel speed becomes implausible at low speed
+      de:
+        - ABS greift unerwartet ein
+        - ABS Warnleuchte leuchtet
+        - Raddrehzahlsignal ist intermittierend
+        - Raddrehzahl wird bei niedriger Geschwindigkeit unplausibel
+      ro:
+        - ABS intervinează fără motiv
+        - martor ABS aprins
+        - semnalul vitezei roții este intermitent
+        - viteza roții devine neverosimilă la viteză mică
+      fr:
+        - intervention ABS intempestive
+        - voyant ABS allumé
+        - signal de vitesse de roue intermittent
+        - vitesse de roue incohérente à basse vitesse
+      es:
+        - ABS interviene inesperadamente
+        - testigo ABS encendido
+        - señal de velocidad intermitente
+        - velocidad de rueda incoherente a baja velocidad
+      it:
+        - intervento ABS indesiderato
+        - spia ABS accesa
+        - segnale velocità ruota intermittente
+        - velocità ruota incoerente a bassa velocità
+      nl:
+        - ABS grijpt onverwacht in
+        - ABS-waarschuwingslamp brandt
+        - intermitterend wielsnelheidssignaal
+        - onlogische wielsnelheid bij lage snelheid
+    possible_causes:
+      en:
+        - damaged tone ring or magnetic encoder
+        - incorrect wheel bearing installation
+        - damaged wheel bearing
+        - excessive sensor-to-encoder gap
+        - contaminated sensor area
+      de:
+        - beschädigter Sensorring oder Magnetencoder
+        - falscher Einbau des Radlagers
+        - beschädigtes Radlager
+        - falscher Sensorabstand
+        - verschmutzter Sensorbereich
+      ro:
+        - inel senzor sau encoder magnetic deteriorat
+        - montaj incorect al rulmentului
+        - rulment deteriorat
+        - distanță incorectă senzor-encoder
+        - contaminare în zona senzorului
+      fr:
+        - bague magnétique ou encodeur endommagé
+        - montage incorrect du roulement
+        - roulement endommagé
+        - entrefer incorrect
+        - zone du capteur contaminée
+      es:
+        - aro magnético o codificador dañado
+        - montaje incorrecto del rodamiento
+        - rodamiento dañado
+        - distancia incorrecta sensor-codificador
+        - zona del sensor contaminada
+      it:
+        - anello magnetico o encoder danneggiato
+        - montaggio errato del cuscinetto
+        - cuscinetto danneggiato
+        - distanza sensore-encoder errata
+        - contaminazione nell'area del sensore
+      nl:
+        - beschadigde magneetring of encoder
+        - verkeerd gemonteerd wiellager
+        - beschadigd wiellager
+        - onjuiste sensorafstand
+        - vervuiling rond de sensor
+    diagnostic_steps:
+      en:
+        - Read ABS DTCs
+        - Monitor wheel speed at low speed
+        - Inspect the encoder and bearing
+        - Verify correct bearing orientation
+        - Replace the damaged bearing or sensor as required
+      de:
+        - ABS-DTCs auslesen
+        - Raddrehzahl bei niedriger Geschwindigkeit überwachen
+        - Encoder und Radlager prüfen
+        - korrekte Einbaurichtung des Lagers prüfen
+        - beschädigtes Lager oder Sensor ersetzen
+      ro:
+        - citește DTC-urile ABS
+        - monitorizează viteza roții la viteze mici
+        - verifică encoderul și rulmentul
+        - verifică orientarea corectă a rulmentului
+        - înlocuiește rulmentul sau senzorul deteriorat
+      fr:
+        - lire les DTC ABS
+        - surveiller la vitesse de roue à basse vitesse
+        - contrôler l'encodeur et le roulement
+        - vérifier le sens de montage du roulement
+        - remplacer le roulement ou le capteur endommagé
+      es:
+        - leer los DTC ABS
+        - controlar la velocidad de rueda a baja velocidad
+        - revisar codificador y rodamiento
+        - verificar la orientación correcta del rodamiento
+        - sustituir el rodamiento o sensor dañado
+      it:
+        - leggere i DTC ABS
+        - monitorare la velocità ruota a bassa velocità
+        - controllare encoder e cuscinetto
+        - verificare il corretto orientamento del cuscinetto
+        - sostituire cuscinetto o sensore danneggiato
+      nl:
+        - ABS-DTC's uitlezen
+        - wielsnelheid bij lage snelheid controleren
+        - encoder en wiellager inspecteren
+        - juiste lageroriëntatie controleren
+        - beschadigd lager of sensor vervangen
+    dtcs:
+      - C1141
+      - C1142
+      - C1143
+      - C1144
+
+  - id: ford_focus_mk2_abs_hydraulic_pump_motor_fault
+    manufacturer: ford
+    models:
+      - focus
+    generations:
+      - focus_mk2
+    systems:
+      - abs
+      - esc
+      - hcu
+    symptoms:
+      en:
+        - ABS warning light on
+        - ABS unavailable
+        - ESP unavailable
+        - ABS pump does not operate correctly
+      de:
+        - ABS Warnleuchte leuchtet
+        - ABS nicht verfügbar
+        - ESP nicht verfügbar
+        - ABS-Pumpe arbeitet nicht korrekt
+      ro:
+        - martor ABS aprins
+        - ABS indisponibil
+        - ESP indisponibil
+        - pompa ABS nu funcționează corect
+      fr:
+        - voyant ABS allumé
+        - ABS indisponible
+        - ESP indisponible
+        - pompe ABS ne fonctionnant pas correctement
+      es:
+        - testigo ABS encendido
+        - ABS no disponible
+        - ESP no disponible
+        - bomba ABS no funciona correctamente
+      it:
+        - spia ABS accesa
+        - ABS non disponibile
+        - ESP non disponibile
+        - pompa ABS non funziona correttamente
+      nl:
+        - ABS-waarschuwingslamp brandt
+        - ABS niet beschikbaar
+        - ESP niet beschikbaar
+        - ABS-pomp werkt niet correct
+    possible_causes:
+      en:
+        - hydraulic pump motor fault
+        - ABS power supply fault
+        - damaged wiring
+        - internal ABS module failure
+        - HCU fault
+      de:
+        - Fehler des Hydraulikpumpenmotors
+        - ABS-Stromversorgungsfehler
+        - beschädigte Verkabelung
+        - interner ABS-Modulfehler
+        - HCU-Fehler
+      ro:
+        - defect motor pompă hidraulică
+        - problemă alimentare ABS
+        - cablaj deteriorat
+        - defect intern modul ABS
+        - defect HCU
+      fr:
+        - défaut du moteur de pompe hydraulique
+        - défaut d'alimentation ABS
+        - câblage endommagé
+        - défaut interne du module ABS
+        - défaut HCU
+      es:
+        - fallo del motor de la bomba hidráulica
+        - fallo de alimentación ABS
+        - cableado dañado
+        - fallo interno del módulo ABS
+        - fallo HCU
+      it:
+        - guasto motore pompa idraulica
+        - guasto alimentazione ABS
+        - cablaggio danneggiato
+        - guasto interno modulo ABS
+        - guasto HCU
+      nl:
+        - defecte hydraulische pomp-motor
+        - ABS-voedingsfout
+        - beschadigde bedrading
+        - interne ABS-modulefout
+        - HCU-defect
+    diagnostic_steps:
+      en:
+        - Read ABS module DTCs
+        - Check ABS fuses and power supply
+        - Inspect the ABS connector
+        - Test the hydraulic pump circuit according to Ford service procedures
+        - Replace the confirmed faulty assembly
+      de:
+        - ABS-DTCs auslesen
+        - ABS-Sicherungen und Versorgung prüfen
+        - ABS-Stecker prüfen
+        - Pumpenschaltung gemäß Ford-Verfahren prüfen
+        - bestätigte defekte Einheit ersetzen
+      ro:
+        - citește DTC-urile modulului ABS
+        - verifică siguranțele și alimentarea ABS
+        - verifică mufa modulului ABS
+        - testează circuitul pompei conform procedurii Ford
+        - înlocuiește ansamblul confirmat defect
+      fr:
+        - lire les DTC du module ABS
+        - contrôler les fusibles et l'alimentation ABS
+        - contrôler le connecteur ABS
+        - tester le circuit de pompe selon la procédure Ford
+        - remplacer l'ensemble confirmé défectueux
+      es:
+        - leer los DTC del módulo ABS
+        - comprobar fusibles y alimentación ABS
+        - revisar el conector ABS
+        - probar el circuito de la bomba según el procedimiento Ford
+        - sustituir el conjunto confirmado defectuoso
+      it:
+        - leggere i DTC del modulo ABS
+        - controllare fusibili e alimentazione ABS
+        - controllare il connettore ABS
+        - testare il circuito pompa secondo la procedura Ford
+        - sostituire il gruppo confermato guasto
+      nl:
+        - ABS-modulecodes uitlezen
+        - ABS-zekeringen en voeding controleren
+        - ABS-connector inspecteren
+        - pompkring volgens Ford-procedure testen
+        - bevestigde defecte eenheid vervangen
+    dtcs:
+      - C1095
+      - C1096
+      - C1185
+
+  - id: ford_focus_mk2_abs_system_not_functional
+    manufacturer: ford
+    models:
+      - focus
+    generations:
+      - focus_mk2
+    systems:
+      - abs
+      - esc
+    symptoms:
+      en:
+        - ABS system not functional
+        - ABS warning light on
+        - ESP warning light on
+        - normal braking remains but ABS assistance is unavailable
+      de:
+        - ABS-System nicht funktionsfähig
+        - ABS Warnleuchte leuchtet
+        - ESP Warnleuchte leuchtet
+        - normale Bremsung vorhanden aber ABS nicht verfügbar
+      ro:
+        - sistem ABS nefuncțional
+        - martor ABS aprins
+        - martor ESP aprins
+        - frânarea normală există dar ABS este indisponibil
+      fr:
+        - système ABS non fonctionnel
+        - voyant ABS allumé
+        - voyant ESP allumé
+        - freinage normal présent mais ABS indisponible
+      es:
+        - sistema ABS no funcional
+        - testigo ABS encendido
+        - testigo ESP encendido
+        - frenado normal presente pero ABS no disponible
+      it:
+        - sistema ABS non funzionante
+        - spia ABS accesa
+        - spia ESP accesa
+        - frenata normale presente ma ABS non disponibile
+      nl:
+        - ABS-systeem niet functioneel
+        - ABS-waarschuwingslamp brandt
+        - ESP-waarschuwingslamp brandt
+        - normale remwerking aanwezig maar ABS niet beschikbaar
+    possible_causes:
+      en:
+        - ABS module fault
+        - hydraulic control unit fault
+        - ABS power supply fault
+        - wheel speed sensor fault
+        - communication fault
+      de:
+        - ABS-Modulfehler
+        - Fehler der Hydraulikeinheit
+        - ABS-Stromversorgungsfehler
+        - Raddrehzahlsensorfehler
+        - Kommunikationsfehler
+      ro:
+        - defect modul ABS
+        - defect unitate hidraulică
+        - problemă alimentare ABS
+        - defect senzor viteză roată
+        - problemă de comunicație
+      fr:
+        - défaut du module ABS
+        - défaut du bloc hydraulique
+        - défaut d'alimentation ABS
+        - défaut de capteur de vitesse de roue
+        - défaut de communication
+      es:
+        - fallo del módulo ABS
+        - fallo de la unidad hidráulica
+        - fallo de alimentación ABS
+        - fallo del sensor de velocidad de rueda
+        - fallo de comunicación
+      it:
+        - guasto modulo ABS
+        - guasto unità idraulica
+        - guasto alimentazione ABS
+        - guasto sensore velocità ruota
+        - guasto comunicazione
+      nl:
+        - ABS-modulefout
+        - hydraulische unit defect
+        - ABS-voedingsfout
+        - wielsnelheidssensor defect
+        - communicatiefout
+    diagnostic_steps:
+      en:
+        - Read all ABS module DTCs
+        - Check battery and ABS supply voltage
+        - Check wheel speed signals
+        - Check ABS communication with other modules
+        - Diagnose the specific stored DTC before replacing parts
+      de:
+        - alle ABS-DTCs auslesen
+        - Batterie- und ABS-Versorgungsspannung prüfen
+        - Raddrehzahlsignale prüfen
+        - ABS-Kommunikation mit anderen Modulen prüfen
+        - gespeicherten DTC vor Teiletausch gezielt diagnostizieren
+      ro:
+        - citește toate DTC-urile modulului ABS
+        - verifică bateria și tensiunea de alimentare ABS
+        - verifică semnalele senzorilor de roată
+        - verifică comunicația ABS cu celelalte module
+        - diagnostichează codul memorat înainte de înlocuirea pieselor
+      fr:
+        - lire tous les DTC du module ABS
+        - contrôler la batterie et l'alimentation ABS
+        - contrôler les signaux des capteurs de roue
+        - contrôler la communication ABS avec les autres modules
+        - diagnostiquer le DTC enregistré avant de remplacer des pièces
+      es:
+        - leer todos los DTC del módulo ABS
+        - comprobar batería y alimentación ABS
+        - comprobar señales de los sensores de rueda
+        - comprobar comunicación ABS con otros módulos
+        - diagnosticar el DTC almacenado antes de sustituir piezas
+      it:
+        - leggere tutti i DTC del modulo ABS
+        - controllare batteria e alimentazione ABS
+        - controllare i segnali dei sensori ruota
+        - controllare la comunicazione ABS con gli altri moduli
+        - diagnosticare il DTC memorizzato prima di sostituire componenti
+      nl:
+        - alle ABS-DTC's uitlezen
+        - accuspanning en ABS-voedingsspanning controleren
+        - wielsnelheidssignalen controleren
+        - ABS-communicatie met andere modules controleren
+        - opgeslagen DTC diagnosticeren voordat onderdelen worden vervangen
+    dtcs:
+      - C1184
+
+  - id: ford_focus_mk2_abs_power_supply_fault
+    manufacturer: ford
+    models:
+      - focus
+    generations:
+      - focus_mk2
+    systems:
+      - abs
+      - esc
+      - electrical
+    symptoms:
+      en:
+        - ABS warning light on
+        - ESP unavailable
+        - ABS module intermittent
+        - multiple ABS DTCs
+      de:
+        - ABS Warnleuchte leuchtet
+        - ESP nicht verfügbar
+        - ABS-Modul arbeitet intermittierend
+        - mehrere ABS-Fehlercodes
+      ro:
+        - martor ABS aprins
+        - ESP indisponibil
+        - modulul ABS funcționează intermitent
+        - mai multe coduri ABS
+      fr:
+        - voyant ABS allumé
+        - ESP indisponible
+        - module ABS intermittent
+        - plusieurs défauts ABS
+      es:
+        - testigo ABS encendido
+        - ESP no disponible
+        - módulo ABS intermitente
+        - múltiples códigos ABS
+      it:
+        - spia ABS accesa
+        - ESP non disponibile
+        - modulo ABS intermittente
+        - diversi codici ABS
+      nl:
+        - ABS-waarschuwingslamp brandt
+        - ESP niet beschikbaar
+        - ABS-module werkt intermitterend
+        - meerdere ABS-foutcodes
+    possible_causes:
+      en:
+        - blown ABS fuse
+        - poor power or ground connection
+        - wiring resistance
+        - low battery voltage
+        - ABS module fault
+      de:
+        - durchgebrannte ABS-Sicherung
+        - schlechte Versorgung oder Masse
+        - Leitungswiderstand
+        - niedrige Batteriespannung
+        - ABS-Modulfehler
+      ro:
+        - siguranță ABS arsă
+        - alimentare sau masă defectuoasă
+        - rezistență pe cablaj
+        - tensiune scăzută a bateriei
+        - defect modul ABS
+      fr:
+        - fusible ABS grillé
+        - mauvaise alimentation ou masse
+        - résistance dans le câblage
+        - tension batterie faible
+        - défaut du module ABS
+      es:
+        - fusible ABS fundido
+        - mala alimentación o masa
+        - resistencia en el cableado
+        - baja tensión de batería
+        - fallo del módulo ABS
+      it:
+        - fusibile ABS bruciato
+        - alimentazione o massa insufficiente
+        - resistenza nel cablaggio
+        - bassa tensione batteria
+        - guasto modulo ABS
+      nl:
+        - doorgebrande ABS-zekering
+        - slechte voeding of massa
+        - weerstand in bedrading
+        - lage accuspanning
+        - ABS-module defect
+    diagnostic_steps:
+      en:
+        - Check ABS fuses
+        - Measure voltage at the ABS module
+        - Perform voltage-drop checks under load
+        - Inspect grounds and connectors
+        - Repair the confirmed supply fault before condemning the ABS module
+      de:
+        - ABS-Sicherungen prüfen
+        - Spannung am ABS-Modul messen
+        - Spannungsabfall unter Last prüfen
+        - Massepunkte und Stecker prüfen
+        - Versorgungsfehler vor einem Modultausch beheben
+      ro:
+        - verifică siguranțele ABS
+        - măsoară tensiunea la modulul ABS
+        - efectuează teste de cădere de tensiune sub sarcină
+        - verifică masele și conectorii
+        - repară alimentarea înainte de a condamna modulul ABS
+      fr:
+        - contrôler les fusibles ABS
+        - mesurer la tension au module ABS
+        - effectuer un test de chute de tension en charge
+        - contrôler les masses et connecteurs
+        - réparer l'alimentation avant de remplacer le module ABS
+      es:
+        - comprobar fusibles ABS
+        - medir tensión en el módulo ABS
+        - realizar prueba de caída de tensión bajo carga
+        - revisar masas y conectores
+        - reparar la alimentación antes de sustituir el módulo ABS
+      it:
+        - controllare i fusibili ABS
+        - misurare la tensione al modulo ABS
+        - eseguire test di caduta tensione sotto carico
+        - controllare masse e connettori
+        - riparare l'alimentazione prima di sostituire il modulo ABS
+      nl:
+        - ABS-zekeringen controleren
+        - spanning bij de ABS-module meten
+        - spanningsval onder belasting meten
+        - massa's en connectoren controleren
+        - voedingsprobleem herstellen voordat de ABS-module wordt vervangen
+    dtcs:
+      - C1185
+
+  - id: ford_focus_mk2_abs_steering_angle_signal_fault
+    manufacturer: ford
+    models:
+      - focus
+    generations:
+      - focus_mk2
+    systems:
+      - abs
+      - esc
+      - steering_angle
+    symptoms:
+      en:
+        - ESP warning light on
+        - steering angle implausible
+        - ESP activates incorrectly
+        - ESP unavailable after steering or alignment work
+      de:
+        - ESP Warnleuchte leuchtet
+        - Lenkwinkel unplausibel
+        - ESP greift falsch ein
+        - ESP nach Arbeiten an Lenkung oder Achsvermessung nicht verfügbar
+      ro:
+        - martor ESP aprins
+        - unghiul volanului este neverosimil
+        - ESP intervine incorect
+        - ESP indisponibil după intervenții la direcție sau geometrie
+      fr:
+        - voyant ESP allumé
+        - angle de volant incohérent
+        - intervention ESP incorrecte
+        - ESP indisponible après intervention sur la direction ou la géométrie
+      es:
+        - testigo ESP encendido
+        - ángulo de dirección incoherente
+        - intervención ESP incorrecta
+        - ESP no disponible después de trabajos de dirección o alineación
+      it:
+        - spia ESP accesa
+        - angolo sterzo incoerente
+        - intervento ESP errato
+        - ESP non disponibile dopo lavori su sterzo o convergenza
+      nl:
+        - ESP-waarschuwingslamp brandt
+        - stuurhoek onlogisch
+        - ESP grijpt onjuist in
+        - ESP niet beschikbaar na stuur- of uitlijnwerkzaamheden
+    possible_causes:
+      en:
+        - steering angle sensor fault
+        - incorrect calibration
+        - steering wheel installed off-center
+        - front alignment problem
+        - communication fault
+      de:
+        - Lenkwinkelsensorfehler
+        - falsche Kalibrierung
+        - Lenkrad nicht mittig montiert
+        - Problem der Vorderachsgeometrie
+        - Kommunikationsfehler
+      ro:
+        - defect senzor unghi volan
+        - calibrare incorectă
+        - volan montat decalat
+        - problemă geometrie direcție
+        - problemă de comunicație
+      fr:
+        - défaut du capteur d'angle de volant
+        - calibrage incorrect
+        - volant monté hors centre
+        - problème de géométrie avant
+        - défaut de communication
+      es:
+        - fallo del sensor de ángulo de dirección
+        - calibración incorrecta
+        - volante montado descentrado
+        - problema de alineación delantera
+        - fallo de comunicación
+      it:
+        - guasto sensore angolo sterzo
+        - calibrazione errata
+        - volante montato fuori centro
+        - problema di convergenza
+        - guasto comunicazione
+      nl:
+        - fout in stuurhoeksensor
+        - onjuiste kalibratie
+        - stuur niet gecentreerd gemonteerd
+        - probleem met uitlijning
+        - communicatiefout
+    diagnostic_steps:
+      en:
+        - Read ABS/ESP DTCs
+        - Check steering angle live data with wheels straight
+        - Verify steering wheel centering
+        - Check front axle alignment
+        - Perform steering angle calibration if required
+      de:
+        - ABS/ESP-DTCs auslesen
+        - Lenkwinkel bei gerade stehenden Rädern prüfen
+        - Lenkradzentrierung prüfen
+        - Vorderachsgeometrie prüfen
+        - Lenkwinkel kalibrieren falls erforderlich
+      ro:
+        - citește DTC-urile ABS/ESP
+        - verifică valoarea live a unghiului cu roțile drepte
+        - verifică centrarea volanului
+        - verifică geometria punții față
+        - efectuează calibrarea unghiului dacă este necesar
+      fr:
+        - lire les DTC ABS/ESP
+        - contrôler l'angle en temps réel roues droites
+        - vérifier le centrage du volant
+        - contrôler la géométrie avant
+        - effectuer le calibrage si nécessaire
+      es:
+        - leer DTC ABS/ESP
+        - comprobar el ángulo en tiempo real con ruedas rectas
+        - verificar el centrado del volante
+        - comprobar la alineación delantera
+        - realizar la calibración si es necesario
+      it:
+        - leggere i DTC ABS/ESP
+        - controllare l'angolo in tempo reale con ruote dritte
+        - verificare il centraggio del volante
+        - controllare la convergenza
+        - eseguire la calibrazione se necessario
+      nl:
+        - ABS/ESP-DTC's uitlezen
+        - stuurhoek live controleren met rechte wielen
+        - stuurcentrering controleren
+        - voorasuitlijning controleren
+        - stuurhoek kalibreren indien nodig
+    dtcs:
+      - C1955
+      - C1956
+
+  - id: ford_focus_mk2_abs_can_communication_fault
+    manufacturer: ford
+    models:
+      - focus
+    generations:
+      - focus_mk2
+    systems:
+      - abs
+      - esc
+      - can
+    symptoms:
+      en:
+        - ABS and ESP warnings
+        - ABS module communication unavailable
+        - multiple modules report vehicle speed errors
+        - intermittent ABS operation
+      de:
+        - ABS- und ESP-Warnungen
+        - Kommunikation mit ABS-Modul nicht möglich
+        - mehrere Module melden Geschwindigkeitsfehler
+        - ABS funktioniert intermittierend
+      ro:
+        - martori ABS și ESP
+        - modulul ABS nu comunică
+        - mai multe module raportează erori de viteză
+        - ABS funcționează intermitent
+      fr:
+        - voyants ABS et ESP
+        - communication avec le module ABS impossible
+        - plusieurs modules signalent des défauts de vitesse
+        - ABS intermittent
+      es:
+        - testigos ABS y ESP
+        - comunicación con el módulo ABS no disponible
+        - varios módulos indican errores de velocidad
+        - ABS intermitente
+      it:
+        - spie ABS ed ESP
+        - comunicazione con modulo ABS assente
+        - diversi moduli segnalano errori velocità
+        - ABS intermittente
+      nl:
+        - ABS- en ESP-waarschuwingen
+        - communicatie met ABS-module niet beschikbaar
+        - meerdere modules melden snelheidsfouten
+        - ABS werkt intermitterend
+    possible_causes:
+      en:
+        - CAN wiring fault
+        - poor connector contact
+        - ABS power supply fault
+        - ABS module fault
+        - another module loading the network
+      de:
+        - CAN-Leitungsfehler
+        - schlechter Steckerkontakt
+        - ABS-Versorgungsfehler
+        - ABS-Modulfehler
+        - anderes Steuergerät belastet das Netzwerk
+      ro:
+        - defect cablaj CAN
+        - contact slab în conector
+        - problemă alimentare ABS
+        - defect modul ABS
+        - alt modul afectează rețeaua
+      fr:
+        - défaut du câblage CAN
+        - mauvais contact de connecteur
+        - défaut d'alimentation ABS
+        - défaut du module ABS
+        - autre calculateur perturbant le réseau
+      es:
+        - fallo del cableado CAN
+        - mal contacto del conector
+        - fallo de alimentación ABS
+        - fallo del módulo ABS
+        - otro módulo afectando la red
+      it:
+        - guasto cablaggio CAN
+        - cattivo contatto del connettore
+        - guasto alimentazione ABS
+        - guasto modulo ABS
+        - altro modulo che disturba la rete
+      nl:
+        - CAN-bedradingsfout
+        - slecht connectorcontact
+        - ABS-voedingsfout
+        - ABS-module defect
+        - andere module belast de bus
+    diagnostic_steps:
+      en:
+        - Scan all modules for communication DTCs
+        - Check ABS power and ground
+        - Inspect CAN wiring and connectors
+        - Check whether other modules are causing the network fault
+        - Repair the confirmed network fault
+      de:
+        - alle Module auf Kommunikationsfehler prüfen
+        - ABS-Versorgung und Masse prüfen
+        - CAN-Leitungen und Stecker prüfen
+        - prüfen ob ein anderes Steuergerät den Bus stört
+        - bestätigten Netzwerkfehler reparieren
+      ro:
+        - scanează toate modulele pentru erori de comunicație
+        - verifică alimentarea și masa ABS
+        - verifică firele și conectorii CAN
+        - verifică dacă alt modul provoacă problema de rețea
+        - repară defectul de comunicație confirmat
+      fr:
+        - analyser tous les modules pour les défauts de communication
+        - contrôler l'alimentation et la masse ABS
+        - contrôler le câblage et les connecteurs CAN
+        - vérifier si un autre calculateur perturbe le réseau
+        - réparer le défaut réseau confirmé
+      es:
+        - escanear todos los módulos por fallos de comunicación
+        - comprobar alimentación y masa ABS
+        - revisar cableado y conectores CAN
+        - comprobar si otro módulo está afectando la red
+        - reparar el fallo de red confirmado
+      it:
+        - scansionare tutti i moduli per guasti di comunicazione
+        - controllare alimentazione e massa ABS
+        - controllare cablaggio e connettori CAN
+        - verificare se un altro modulo disturba la rete
+        - riparare il guasto di rete confermato
+      nl:
+        - alle modules scannen op communicatiecodes
+        - ABS-voeding en massa controleren
+        - CAN-bedrading en connectoren controleren
+        - controleren of een andere module de bus verstoort
+        - bevestigde netwerkfout herstellen
+    dtcs:
+      - U1900
+      - P1796
+
+  - id: ford_focus_mk3_abs_front_left_wheel_speed_sensor_fault
+    manufacturer: ford
+    models:
+      - focus
+    generations:
+      - focus_mk3
+    systems:
+      - abs
+      - esc
+      - wheel_speed
+    symptoms:
+      en:
+        - ABS warning light on
+        - ESC warning light on
+        - left front wheel speed signal fault
+        - traction control unavailable
+      de:
+        - ABS Warnleuchte leuchtet
+        - ESC Warnleuchte leuchtet
+        - Fehler Raddrehzahlsignal vorne links
+        - Traktionskontrolle nicht verfügbar
+      ro:
+        - martor ABS aprins
+        - martor ESC aprins
+        - eroare semnal viteză roată față stânga
+        - controlul tracțiunii indisponibil
+      fr:
+        - voyant ABS allumé
+        - voyant ESC allumé
+        - défaut du signal de vitesse roue avant gauche
+        - antipatinage indisponible
+      es:
+        - testigo ABS encendido
+        - testigo ESC encendido
+        - fallo de velocidad de rueda delantera izquierda
+        - control de tracción no disponible
+      it:
+        - spia ABS accesa
+        - spia ESC accesa
+        - guasto segnale velocità ruota anteriore sinistra
+        - controllo trazione non disponibile
+      nl:
+        - ABS-waarschuwingslamp brandt
+        - ESC-waarschuwingslamp brandt
+        - fout in wielsnelheid linksvoor
+        - tractiecontrole niet beschikbaar
+    possible_causes:
+      en:
+        - faulty wheel speed sensor
+        - damaged wiring
+        - connector fault
+        - damaged encoder or wheel bearing
+        - incorrect sensor component
+      de:
+        - defekter Raddrehzahlsensor
+        - beschädigte Verkabelung
+        - Steckerfehler
+        - beschädigter Encoder oder Radlager
+        - falscher Sensortyp
+      ro:
+        - senzor viteză roată defect
+        - cablaj deteriorat
+        - defect conector
+        - encoder sau rulment deteriorat
+        - senzor de tip incorect
+      fr:
+        - capteur de vitesse de roue défectueux
+        - câblage endommagé
+        - défaut de connecteur
+        - encodeur ou roulement endommagé
+        - mauvais type de capteur
+      es:
+        - sensor de velocidad defectuoso
+        - cableado dañado
+        - fallo de conector
+        - codificador o rodamiento dañado
+        - tipo de sensor incorrecto
+      it:
+        - sensore velocità ruota guasto
+        - cablaggio danneggiato
+        - guasto connettore
+        - encoder o cuscinetto danneggiato
+        - tipo sensore errato
+      nl:
+        - defecte wielsnelheidssensor
+        - beschadigde bedrading
+        - connectorfout
+        - beschadigde encoder of wiellager
+        - verkeerd sensortype
+    diagnostic_steps:
+      en:
+        - Read ABS DTCs
+        - Compare live wheel speeds
+        - Inspect sensor wiring and connector
+        - Verify the correct sensor type is installed
+        - Inspect the encoder and bearing
+      de:
+        - ABS-DTCs auslesen
+        - Live-Raddrehzahlen vergleichen
+        - Sensorleitung und Stecker prüfen
+        - richtigen Sensortyp prüfen
+        - Encoder und Lager prüfen
+      ro:
+        - citește DTC-urile ABS
+        - compară vitezele live ale roților
+        - verifică cablajul și conectorul
+        - verifică tipul corect de senzor
+        - verifică encoderul și rulmentul
+      fr:
+        - lire les DTC ABS
+        - comparer les vitesses de roue en direct
+        - contrôler câblage et connecteur
+        - vérifier le type correct de capteur
+        - contrôler encodeur et roulement
+      es:
+        - leer los DTC ABS
+        - comparar velocidades de rueda en vivo
+        - revisar cableado y conector
+        - verificar el tipo correcto de sensor
+        - revisar codificador y rodamiento
+      it:
+        - leggere i DTC ABS
+        - confrontare le velocità ruota in tempo reale
+        - controllare cablaggio e connettore
+        - verificare il tipo corretto di sensore
+        - controllare encoder e cuscinetto
+      nl:
+        - ABS-DTC's uitlezen
+        - live-wielsnelheden vergelijken
+        - bedrading en connector controleren
+        - juiste sensortype controleren
+        - encoder en lager controleren
+    dtcs:
+      - C0031:07
+      - C0031:11
+      - C0031:15
+      - C0031:4A
+
+  - id: ford_focus_mk3_abs_front_right_wheel_speed_sensor_fault
+    manufacturer: ford
+    models:
+      - focus
+    generations:
+      - focus_mk3
+    systems:
+      - abs
+      - esc
+      - wheel_speed
+    symptoms:
+      en:
+        - ABS warning light on
+        - ESC warning light on
+        - right front wheel speed signal fault
+        - traction control unavailable
+      de:
+        - ABS Warnleuchte leuchtet
+        - ESC Warnleuchte leuchtet
+        - Fehler Raddrehzahlsignal vorne rechts
+        - Traktionskontrolle nicht verfügbar
+      ro:
+        - martor ABS aprins
+        - martor ESC aprins
+        - eroare semnal viteză roată față dreapta
+        - controlul tracțiunii indisponibil
+      fr:
+        - voyant ABS allumé
+        - voyant ESC allumé
+        - défaut du signal de vitesse roue avant droite
+        - antipatinage indisponible
+      es:
+        - testigo ABS encendido
+        - testigo ESC encendido
+        - fallo de velocidad de rueda delantera derecha
+        - control de tracción no disponible
+      it:
+        - spia ABS accesa
+        - spia ESC accesa
+        - guasto segnale velocità ruota anteriore destra
+        - controllo trazione non disponibile
+      nl:
+        - ABS-waarschuwingslamp brandt
+        - ESC-waarschuwingslamp brandt
+        - fout in wielsnelheid rechtsvoor
+        - tractiecontrole niet beschikbaar
+    possible_causes:
+      en:
+        - faulty wheel speed sensor
+        - damaged wiring
+        - connector fault
+        - damaged encoder or bearing
+        - incorrect sensor component
+      de:
+        - defekter Raddrehzahlsensor
+        - beschädigte Verkabelung
+        - Steckerfehler
+        - beschädigter Encoder oder Lager
+        - falscher Sensortyp
+      ro:
+        - senzor viteză roată defect
+        - cablaj deteriorat
+        - defect conector
+        - encoder sau rulment deteriorat
+        - senzor de tip incorect
+      fr:
+        - capteur de vitesse défectueux
+        - câblage endommagé
+        - défaut connecteur
+        - encodeur ou roulement endommagé
+        - mauvais type de capteur
+      es:
+        - sensor de velocidad defectuoso
+        - cableado dañado
+        - fallo de conector
+        - codificador o rodamiento dañado
+        - tipo de sensor incorrecto
+      it:
+        - sensore velocità ruota guasto
+        - cablaggio danneggiato
+        - guasto connettore
+        - encoder o cuscinetto danneggiato
+        - tipo sensore errato
+      nl:
+        - defecte wielsnelheidssensor
+        - beschadigde bedrading
+        - connectorfout
+        - beschadigde encoder of lager
+        - verkeerd sensortype
+    diagnostic_steps:
+      en:
+        - Read ABS DTCs
+        - Compare live wheel speeds
+        - Inspect sensor wiring and connector
+        - Verify correct sensor type
+        - Inspect encoder and bearing
+      de:
+        - ABS-DTCs auslesen
+        - Live-Raddrehzahlen vergleichen
+        - Sensorleitung und Stecker prüfen
+        - richtigen Sensortyp prüfen
+        - Encoder und Lager prüfen
+      ro:
+        - citește DTC-urile ABS
+        - compară vitezele live ale roților
+        - verifică senzorul și cablajul
+        - verifică tipul corect de senzor
+        - verifică encoderul și rulmentul
+      fr:
+        - lire les DTC ABS
+        - comparer les vitesses de roue en direct
+        - contrôler le câblage et le connecteur
+        - vérifier le type de capteur
+        - contrôler encodeur et roulement
+      es:
+        - leer los DTC ABS
+        - comparar velocidades en vivo
+        - revisar cableado y conector
+        - verificar tipo de sensor
+        - revisar codificador y rodamiento
+      it:
+        - leggere i DTC ABS
+        - confrontare velocità in tempo reale
+        - controllare cablaggio e connettore
+        - verificare tipo sensore
+        - controllare encoder e cuscinetto
+      nl:
+        - ABS-DTC's uitlezen
+        - live-wielsnelheden vergelijken
+        - bedrading en connector controleren
+        - juiste sensortype controleren
+        - encoder en lager controleren
+    dtcs:
+      - C0034:07
+      - C0034:11
+      - C0034:15
+      - C0034:4A
+
+  - id: ford_focus_mk3_abs_rear_left_wheel_speed_sensor_fault
+    manufacturer: ford
+    models:
+      - focus
+    generations:
+      - focus_mk3
+    systems:
+      - abs
+      - esc
+      - wheel_speed
+    symptoms:
+      en:
+        - ABS warning light on
+        - ESC warning light on
+        - left rear wheel speed signal fault
+        - traction control unavailable
+      de:
+        - ABS Warnleuchte leuchtet
+        - ESC Warnleuchte leuchtet
+        - Fehler Raddrehzahlsignal hinten links
+        - Traktionskontrolle nicht verfügbar
+      ro:
+        - martor ABS aprins
+        - martor ESC aprins
+        - eroare semnal viteză roată spate stânga
+        - controlul tracțiunii indisponibil
+      fr:
+        - voyant ABS allumé
+        - voyant ESC allumé
+        - défaut du signal de vitesse roue arrière gauche
+        - antipatinage indisponible
+      es:
+        - testigo ABS encendido
+        - testigo ESC encendido
+        - fallo de velocidad rueda trasera izquierda
+        - control de tracción no disponible
+      it:
+        - spia ABS accesa
+        - spia ESC accesa
+        - guasto segnale velocità ruota posteriore sinistra
+        - controllo trazione non disponibile
+      nl:
+        - ABS-waarschuwingslamp brandt
+        - ESC-waarschuwingslamp brandt
+        - fout in wielsnelheid linksachter
+        - tractiecontrole niet beschikbaar
+    possible_causes:
+      en:
+        - faulty rear wheel speed sensor
+        - damaged wiring
+        - damaged encoder
+        - connector fault
+        - ABS module fault
+      de:
+        - defekter hinterer Raddrehzahlsensor
+        - beschädigte Verkabelung
+        - beschädigter Encoder
+        - Steckerfehler
+        - ABS-Modulfehler
+      ro:
+        - senzor ABS spate defect
+        - cablaj deteriorat
+        - encoder deteriorat
+        - defect conector
+        - defect modul ABS
+      fr:
+        - capteur arrière défectueux
+        - câblage endommagé
+        - encodeur endommagé
+        - défaut de connecteur
+        - défaut du module ABS
+      es:
+        - sensor trasero defectuoso
+        - cableado dañado
+        - codificador dañado
+        - fallo de conector
+        - fallo del módulo ABS
+      it:
+        - sensore posteriore guasto
+        - cablaggio danneggiato
+        - encoder danneggiato
+        - guasto connettore
+        - guasto modulo ABS
+      nl:
+        - defecte achterste wielsnelheidssensor
+        - beschadigde bedrading
+        - beschadigde encoder
+        - connectorfout
+        - ABS-module defect
+    diagnostic_steps:
+      en:
+        - Read ABS DTCs
+        - Compare rear wheel speeds
+        - Inspect sensor wiring and connector
+        - Inspect encoder and bearing
+        - Repair confirmed fault and retest
+      de:
+        - ABS-DTCs auslesen
+        - hintere Raddrehzahlen vergleichen
+        - Sensorleitung und Stecker prüfen
+        - Encoder und Lager prüfen
+        - bestätigten Fehler reparieren und erneut prüfen
+      ro:
+        - citește DTC-urile ABS
+        - compară vitezele roților spate
+        - verifică senzorul și cablajul
+        - verifică encoderul și rulmentul
+        - repară defectul confirmat și retestează
+      fr:
+        - lire les DTC ABS
+        - comparer les vitesses arrière
+        - contrôler capteur et câblage
+        - contrôler encodeur et roulement
+        - réparer le défaut confirmé et retester
+      es:
+        - leer los DTC ABS
+        - comparar velocidades traseras
+        - revisar sensor y cableado
+        - revisar codificador y rodamiento
+        - reparar el fallo confirmado y volver a probar
+      it:
+        - leggere i DTC ABS
+        - confrontare le velocità posteriori
+        - controllare sensore e cablaggio
+        - controllare encoder e cuscinetto
+        - riparare il guasto confermato e ripetere il test
+      nl:
+        - ABS-DTC's uitlezen
+        - achterste wielsnelheden vergelijken
+        - sensor en bedrading controleren
+        - encoder en lager controleren
+        - bevestigde fout herstellen en opnieuw testen
+    dtcs:
+      - C0037:07
+      - C0037:11
+      - C0037:15
+
+  - id: ford_focus_mk3_abs_rear_right_wheel_speed_sensor_fault
+    manufacturer: ford
+    models:
+      - focus
+    generations:
+      - focus_mk3
+    systems:
+      - abs
+      - esc
+      - wheel_speed
+    symptoms:
+      en:
+        - ABS warning light on
+        - ESC warning light on
+        - right rear wheel speed signal fault
+        - traction control unavailable
+      de:
+        - ABS Warnleuchte leuchtet
+        - ESC Warnleuchte leuchtet
+        - Fehler Raddrehzahlsignal hinten rechts
+        - Traktionskontrolle nicht verfügbar
+      ro:
+        - martor ABS aprins
+        - martor ESC aprins
+        - eroare semnal viteză roată spate dreapta
+        - controlul tracțiunii indisponibil
+      fr:
+        - voyant ABS allumé
+        - voyant ESC allumé
+        - défaut du signal de vitesse roue arrière droite
+        - antipatinage indisponible
+      es:
+        - testigo ABS encendido
+        - testigo ESC encendido
+        - fallo de velocidad rueda trasera derecha
+        - control de tracción no disponible
+      it:
+        - spia ABS accesa
+        - spia ESC accesa
+        - guasto segnale velocità ruota posteriore destra
+        - controllo trazione non disponibile
+      nl:
+        - ABS-waarschuwingslamp brandt
+        - ESC-waarschuwingslamp brandt
+        - fout in wielsnelheid rechtsachter
+        - tractiecontrole niet beschikbaar
+    possible_causes:
+      en:
+        - faulty rear wheel speed sensor
+        - damaged wiring
+        - damaged encoder
+        - connector fault
+        - ABS module fault
+      de:
+        - defekter hinterer Raddrehzahlsensor
+        - beschädigte Verkabelung
+        - beschädigter Encoder
+        - Steckerfehler
+        - ABS-Modulfehler
+      ro:
+        - senzor ABS spate dreapta defect
+        - cablaj deteriorat
+        - encoder deteriorat
+        - defect conector
+        - defect modul ABS
+      fr:
+        - capteur arrière droit défectueux
+        - câblage endommagé
+        - encodeur endommagé
+        - défaut connecteur
+        - défaut module ABS
+      es:
+        - sensor trasero derecho defectuoso
+        - cableado dañado
+        - codificador dañado
+        - fallo conector
+        - fallo módulo ABS
+      it:
+        - sensore posteriore destro guasto
+        - cablaggio danneggiato
+        - encoder danneggiato
+        - guasto connettore
+        - guasto modulo ABS
+      nl:
+        - defecte wielsnelheidssensor rechtsachter
+        - beschadigde bedrading
+        - beschadigde encoder
+        - connectorfout
+        - ABS-module defect
+    diagnostic_steps:
+      en:
+        - Read ABS DTCs
+        - Compare rear wheel speeds
+        - Inspect sensor wiring and connector
+        - Inspect encoder and bearing
+        - Repair confirmed fault and retest
+      de:
+        - ABS-DTCs auslesen
+        - hintere Raddrehzahlen vergleichen
+        - Sensorleitung und Stecker prüfen
+        - Encoder und Lager prüfen
+        - bestätigten Fehler reparieren und erneut prüfen
+      ro:
+        - citește DTC-urile ABS
+        - compară vitezele roților spate
+        - verifică senzorul și cablajul
+        - verifică encoderul și rulmentul
+        - repară defectul confirmat și retestează
+      fr:
+        - lire les DTC ABS
+        - comparer les vitesses arrière
+        - contrôler capteur et câblage
+        - contrôler encodeur et roulement
+        - réparer le défaut confirmé et retester
+      es:
+        - leer los DTC ABS
+        - comparar velocidades traseras
+        - revisar sensor y cableado
+        - revisar codificador y rodamiento
+        - reparar el fallo confirmado y volver a probar
+      it:
+        - leggere i DTC ABS
+        - confrontare le velocità posteriori
+        - controllare sensore e cablaggio
+        - controllare encoder e cuscinetto
+        - riparare il guasto confermato e ripetere il test
+      nl:
+        - ABS-DTC's uitlezen
+        - achterste wielsnelheden vergelijken
+        - sensor en bedrading controleren
+        - encoder en lager controleren
+        - bevestigde fout herstellen en opnieuw testen
+    dtcs:
+      - C003A:07
+      - C003A:11
+      - C003A:15
+
+  - id: ford_focus_mk3_abs_pump_motor_fault
+    manufacturer: ford
+    models:
+      - focus
+    generations:
+      - focus_mk3
+    systems:
+      - abs
+      - esc
+      - hcu
+    symptoms:
+      en:
+        - ABS fault
+        - ESC fault
+        - ABS pump motor fault
+        - ABS system unavailable
+      de:
+        - ABS-Fehler
+        - ESC-Fehler
+        - ABS-Pumpenmotorfehler
+        - ABS-System nicht verfügbar
+      ro:
+        - eroare ABS
+        - eroare ESC
+        - defect motor pompă ABS
+        - sistem ABS indisponibil
+      fr:
+        - défaut ABS
+        - défaut ESC
+        - défaut moteur pompe ABS
+        - système ABS indisponible
+      es:
+        - fallo ABS
+        - fallo ESC
+        - fallo del motor de la bomba ABS
+        - sistema ABS no disponible
+      it:
+        - guasto ABS
+        - guasto ESC
+        - guasto motore pompa ABS
+        - sistema ABS non disponibile
+      nl:
+        - ABS-fout
+        - ESC-fout
+        - ABS-pomp-motorfout
+        - ABS-systeem niet beschikbaar
+    possible_causes:
+      en:
+        - ABS pump motor electrical fault
+        - ABS power supply fault
+        - wiring fault
+        - HCU fault
+        - internal ABS module fault
+      de:
+        - elektrischer Fehler des ABS-Pumpenmotors
+        - ABS-Versorgungsfehler
+        - Leitungsfehler
+        - HCU-Fehler
+        - interner ABS-Modulfehler
+      ro:
+        - defect electric motor pompă ABS
+        - problemă alimentare ABS
+        - defect cablaj
+        - defect HCU
+        - defect intern modul ABS
+      fr:
+        - défaut électrique du moteur de pompe ABS
+        - défaut d'alimentation ABS
+        - défaut de câblage
+        - défaut HCU
+        - défaut interne du module ABS
+      es:
+        - fallo eléctrico del motor de la bomba ABS
+        - fallo de alimentación ABS
+        - fallo de cableado
+        - fallo HCU
+        - fallo interno del módulo ABS
+      it:
+        - guasto elettrico motore pompa ABS
+        - guasto alimentazione ABS
+        - guasto cablaggio
+        - guasto HCU
+        - guasto interno modulo ABS
+      nl:
+        - elektrische fout ABS-pomp-motor
+        - ABS-voedingsfout
+        - bedradingsfout
+        - HCU-defect
+        - interne ABS-modulefout
+    diagnostic_steps:
+      en:
+        - Read ABS DTCs
+        - Check ABS supply voltage
+        - Inspect the pump motor circuit
+        - Check HCU and ABS module connectors
+        - Follow Ford pinpoint testing before replacing the assembly
+      de:
+        - ABS-DTCs auslesen
+        - ABS-Versorgungsspannung prüfen
+        - Pumpenmotorschaltung prüfen
+        - HCU- und ABS-Stecker prüfen
+        - Ford-Pinpoint-Test vor Teiletausch durchführen
+      ro:
+        - citește DTC-urile ABS
+        - verifică tensiunea de alimentare
+        - verifică circuitul motorului pompei
+        - verifică mufele HCU și ABS
+        - urmează testarea Ford înainte de înlocuirea ansamblului
+      fr:
+        - lire les DTC ABS
+        - contrôler la tension d'alimentation
+        - contrôler le circuit du moteur de pompe
+        - contrôler les connecteurs HCU et ABS
+        - suivre le diagnostic Ford avant remplacement
+      es:
+        - leer DTC ABS
+        - comprobar tensión de alimentación
+        - comprobar circuito del motor de bomba
+        - revisar conectores HCU y ABS
+        - seguir el diagnóstico Ford antes de sustituir el conjunto
+      it:
+        - leggere i DTC ABS
+        - controllare tensione di alimentazione
+        - controllare circuito motore pompa
+        - controllare connettori HCU e ABS
+        - seguire la diagnosi Ford prima della sostituzione
+      nl:
+        - ABS-DTC's uitlezen
+        - voedingsspanning controleren
+        - pomp-motorkring controleren
+        - HCU- en ABS-connectoren controleren
+        - Ford-diagnose uitvoeren voordat de unit wordt vervangen
+    dtcs:
+      - C0020:01
+      - C0020:1C
+      - C0020:71
+
+  - id: ford_focus_mk3_abs_yaw_rate_sensor_fault
+    manufacturer: ford
+    models:
+      - focus
+    generations:
+      - focus_mk3
+    systems:
+      - abs
+      - esc
+      - yaw_rate
+    symptoms:
+      en:
+        - ESC warning light
+        - stability control unavailable
+        - yaw rate implausible
+        - ESC activates unexpectedly
+      de:
+        - ESC Warnleuchte
+        - Stabilitätskontrolle nicht verfügbar
+        - Gierratensignal unplausibel
+        - ESC greift unerwartet ein
+      ro:
+        - martor ESC aprins
+        - controlul stabilității indisponibil
+        - semnal yaw rate neverosimil
+        - ESC intervine fără motiv
+      fr:
+        - voyant ESC allumé
+        - contrôle de stabilité indisponible
+        - signal de lacet incohérent
+        - intervention ESC intempestive
+      es:
+        - testigo ESC encendido
+        - control de estabilidad no disponible
+        - señal de guiñada incoherente
+        - intervención ESC inesperada
+      it:
+        - spia ESC accesa
+        - controllo stabilità non disponibile
+        - segnale imbardata incoerente
+        - intervento ESC inatteso
+      nl:
+        - ESC-waarschuwingslamp
+        - stabiliteitsregeling niet beschikbaar
+        - onlogisch giersnelheidssignaal
+        - ESC grijpt onverwacht in
+    possible_causes:
+      en:
+        - yaw rate sensor fault
+        - RCM internal sensor fault
+        - sensor mounting/orientation issue
+        - calibration fault
+        - communication fault
+      de:
+        - Gierratensensorfehler
+        - interner RCM-Sensorfehler
+        - falsche Sensorposition
+        - Kalibrierungsfehler
+        - Kommunikationsfehler
+      ro:
+        - defect senzor yaw rate
+        - defect senzor intern RCM
+        - montaj/orientare incorectă
+        - problemă de calibrare
+        - problemă de comunicație
+      fr:
+        - défaut du capteur de lacet
+        - défaut du capteur interne RCM
+        - problème de montage/orientation
+        - défaut de calibrage
+        - défaut de communication
+      es:
+        - fallo del sensor de guiñada
+        - fallo del sensor interno RCM
+        - problema de montaje/orientación
+        - fallo de calibración
+        - fallo de comunicación
+      it:
+        - guasto sensore imbardata
+        - guasto sensore interno RCM
+        - problema montaggio/orientamento
+        - problema calibrazione
+        - guasto comunicazione
+      nl:
+        - yaw-sensor defect
+        - interne RCM-sensorfout
+        - montage-/oriëntatieprobleem
+        - kalibratiefout
+        - communicatiefout
+    diagnostic_steps:
+      en:
+        - Read ABS and RCM DTCs
+        - Check yaw rate live data with the vehicle stationary
+        - Verify RCM installation orientation
+        - Check communication between RCM and ABS
+        - Perform the required calibration or replace the faulty module
+      de:
+        - ABS- und RCM-DTCs auslesen
+        - Gierraten-Livedaten bei stehendem Fahrzeug prüfen
+        - Einbaulage des RCM prüfen
+        - Kommunikation zwischen RCM und ABS prüfen
+        - erforderliche Kalibrierung durchführen oder defektes Modul ersetzen
+      ro:
+        - citește DTC-urile ABS și RCM
+        - verifică yaw rate live cu mașina staționară
+        - verifică orientarea RCM
+        - verifică comunicația RCM-ABS
+        - efectuează calibrarea necesară sau înlocuiește modulul defect
+      fr:
+        - lire les DTC ABS et RCM
+        - contrôler les données de lacet à l'arrêt
+        - vérifier l'orientation du RCM
+        - contrôler la communication RCM-ABS
+        - effectuer le calibrage requis ou remplacer le module défectueux
+      es:
+        - leer DTC ABS y RCM
+        - comprobar guiñada en vivo con el vehículo parado
+        - verificar orientación del RCM
+        - comprobar comunicación RCM-ABS
+        - realizar calibración o sustituir el módulo defectuoso
+      it:
+        - leggere DTC ABS e RCM
+        - controllare il valore imbardata a veicolo fermo
+        - verificare orientamento RCM
+        - controllare comunicazione RCM-ABS
+        - eseguire calibrazione o sostituire il modulo guasto
+      nl:
+        - ABS- en RCM-DTC's uitlezen
+        - yaw-waarde stilstaand controleren
+        - RCM-montagerichting controleren
+        - RCM-ABS-communicatie controleren
+        - vereiste kalibratie uitvoeren of defecte module vervangen
+    dtcs:
+      - C0063:01
+      - C0063:28
+      - C0063:2F
+      - C0063:64
+
+  - id: ford_focus_mk3_abs_lateral_acceleration_sensor_fault
+    manufacturer: ford
+    models:
+      - focus
+    generations:
+      - focus_mk3
+    systems:
+      - abs
+      - esc
+      - stability_sensor
+    symptoms:
+      en:
+        - ESC warning light
+        - stability control unavailable
+        - lateral acceleration signal implausible
+        - ESC activates incorrectly
+      de:
+        - ESC Warnleuchte
+        - Stabilitätskontrolle nicht verfügbar
+        - Querbeschleunigungssignal unplausibel
+        - ESC greift falsch ein
+      ro:
+        - martor ESC aprins
+        - control stabilitate indisponibil
+        - semnal accelerație laterală neverosimil
+        - ESC intervine incorect
+      fr:
+        - voyant ESC allumé
+        - contrôle de stabilité indisponible
+        - signal d'accélération latérale incohérent
+        - intervention ESC incorrecte
+      es:
+        - testigo ESC encendido
+        - control de estabilidad no disponible
+        - señal de aceleración lateral incoherente
+        - intervención ESC incorrecta
+      it:
+        - spia ESC accesa
+        - controllo stabilità non disponibile
+        - segnale accelerazione laterale incoerente
+        - intervento ESC errato
+      nl:
+        - ESC-waarschuwingslamp
+        - stabiliteitsregeling niet beschikbaar
+        - onlogisch lateraal acceleratiesignaal
+        - ESC grijpt onjuist in
+    possible_causes:
+      en:
+        - lateral acceleration sensor fault
+        - RCM sensor fault
+        - incorrect RCM installation
+        - calibration fault
+        - communication fault
+      de:
+        - Querbeschleunigungssensorfehler
+        - RCM-Sensorfehler
+        - falscher RCM-Einbau
+        - Kalibrierungsfehler
+        - Kommunikationsfehler
+      ro:
+        - defect senzor accelerație laterală
+        - defect senzor RCM
+        - montaj incorect RCM
+        - problemă calibrare
+        - problemă comunicație
+      fr:
+        - défaut du capteur d'accélération latérale
+        - défaut du capteur RCM
+        - mauvais montage du RCM
+        - défaut de calibrage
+        - défaut de communication
+      es:
+        - fallo del sensor de aceleración lateral
+        - fallo del sensor RCM
+        - montaje incorrecto del RCM
+        - fallo de calibración
+        - fallo de comunicación
+      it:
+        - guasto sensore accelerazione laterale
+        - guasto sensore RCM
+        - montaggio errato RCM
+        - guasto calibrazione
+        - guasto comunicazione
+      nl:
+        - laterale acceleratiesensor defect
+        - RCM-sensorfout
+        - verkeerde RCM-montage
+        - kalibratiefout
+        - communicatiefout
+    diagnostic_steps:
+      en:
+        - Read ABS and RCM DTCs
+        - Check lateral acceleration live data
+        - Verify RCM mounting and orientation
+        - Check related communication faults
+        - Perform calibration or replace the confirmed faulty module
+      de:
+        - ABS- und RCM-DTCs auslesen
+        - Querbeschleunigungs-Livedaten prüfen
+        - RCM-Einbau und Ausrichtung prüfen
+        - Kommunikationsfehler prüfen
+        - Kalibrierung durchführen oder defektes Modul ersetzen
+      ro:
+        - citește DTC-urile ABS și RCM
+        - verifică accelerația laterală live
+        - verifică montajul și orientarea RCM
+        - verifică erorile de comunicație
+        - efectuează calibrarea sau înlocuiește modulul confirmat defect
+      fr:
+        - lire les DTC ABS et RCM
+        - contrôler l'accélération latérale en direct
+        - vérifier le montage et l'orientation du RCM
+        - contrôler les défauts de communication
+        - effectuer le calibrage ou remplacer le module confirmé défectueux
+      es:
+        - leer DTC ABS y RCM
+        - comprobar aceleración lateral en vivo
+        - verificar montaje y orientación del RCM
+        - comprobar fallos de comunicación
+        - realizar calibración o sustituir el módulo confirmado defectuoso
+      it:
+        - leggere DTC ABS e RCM
+        - controllare accelerazione laterale in tempo reale
+        - verificare montaggio e orientamento RCM
+        - controllare guasti di comunicazione
+        - eseguire calibrazione o sostituire il modulo guasto
+      nl:
+        - ABS- en RCM-DTC's uitlezen
+        - laterale acceleratie live controleren
+        - RCM-montage en oriëntatie controleren
+        - communicatieproblemen controleren
+        - kalibreren of bevestigde defecte module vervangen
+    dtcs:
+      - C0061:28
+      - C0061:2F
+      - C0061:64
+
+  - id: ford_focus_mk3_abs_longitudinal_acceleration_sensor_fault
+    manufacturer: ford
+    models:
+      - focus
+    generations:
+      - focus_mk3
+    systems:
+      - abs
+      - esc
+      - stability_sensor
+    symptoms:
+      en:
+        - ESC warning light
+        - stability control unavailable
+        - longitudinal acceleration signal implausible
+        - ESC fault after module replacement
+      de:
+        - ESC Warnleuchte
+        - Stabilitätskontrolle nicht verfügbar
+        - Längsbeschleunigungssignal unplausibel
+        - ESC-Fehler nach Modulwechsel
+      ro:
+        - martor ESC aprins
+        - controlul stabilității indisponibil
+        - semnal accelerație longitudinală neverosimil
+        - eroare ESC după înlocuirea unui modul
+      fr:
+        - voyant ESC allumé
+        - contrôle de stabilité indisponible
+        - signal d'accélération longitudinale incohérent
+        - défaut ESC après remplacement d'un module
+      es:
+        - testigo ESC encendido
+        - control de estabilidad no disponible
+        - señal de aceleración longitudinal incoherente
+        - fallo ESC después de sustituir un módulo
+      it:
+        - spia ESC accesa
+        - controllo stabilità non disponibile
+        - segnale accelerazione longitudinale incoerente
+        - guasto ESC dopo sostituzione modulo
+      nl:
+        - ESC-waarschuwingslamp
+        - stabiliteitsregeling niet beschikbaar
+        - onlogisch longitudinaal acceleratiesignaal
+        - ESC-fout na modulevervanging
+    possible_causes:
+      en:
+        - longitudinal acceleration sensor fault
+        - RCM installation issue
+        - sensor calibration problem
+        - communication fault
+        - RCM internal fault
+      de:
+        - Längsbeschleunigungssensorfehler
+        - RCM-Einbaufehler
+        - Sensor-Kalibrierungsproblem
+        - Kommunikationsfehler
+        - interner RCM-Fehler
+      ro:
+        - defect senzor accelerație longitudinală
+        - problemă montaj RCM
+        - problemă calibrare senzor
+        - problemă comunicație
+        - defect intern RCM
+      fr:
+        - défaut du capteur d'accélération longitudinale
+        - problème de montage du RCM
+        - problème de calibrage
+        - défaut de communication
+        - défaut interne du RCM
+      es:
+        - fallo del sensor de aceleración longitudinal
+        - problema de montaje RCM
+        - problema de calibración
+        - fallo de comunicación
+        - fallo interno RCM
+      it:
+        - guasto sensore accelerazione longitudinale
+        - problema montaggio RCM
+        - problema calibrazione
+        - guasto comunicazione
+        - guasto interno RCM
+      nl:
+        - longitudinale acceleratiesensor defect
+        - RCM-montageprobleem
+        - kalibratieprobleem
+        - communicatiefout
+        - interne RCM-fout
+    diagnostic_steps:
+      en:
+        - Read ABS and RCM DTCs
+        - Check longitudinal acceleration data
+        - Verify RCM installation position
+        - Check communication
+        - Perform required calibration
+      de:
+        - ABS- und RCM-DTCs auslesen
+        - Längsbeschleunigungsdaten prüfen
+        - RCM-Einbaulage prüfen
+        - Kommunikation prüfen
+        - erforderliche Kalibrierung durchführen
+      ro:
+        - citește DTC-urile ABS și RCM
+        - verifică datele accelerației longitudinale
+        - verifică poziția de montaj RCM
+        - verifică comunicația
+        - efectuează calibrarea necesară
+      fr:
+        - lire les DTC ABS et RCM
+        - contrôler les données d'accélération longitudinale
+        - vérifier le montage du RCM
+        - contrôler la communication
+        - effectuer le calibrage requis
+      es:
+        - leer DTC ABS y RCM
+        - comprobar aceleración longitudinal
+        - verificar montaje del RCM
+        - comprobar comunicación
+        - realizar calibración
+      it:
+        - leggere DTC ABS e RCM
+        - controllare accelerazione longitudinale
+        - verificare montaggio RCM
+        - controllare comunicazione
+        - eseguire calibrazione
+      nl:
+        - ABS- en RCM-DTC's uitlezen
+        - longitudinale acceleratie controleren
+        - RCM-montage controleren
+        - communicatie controleren
+        - vereiste kalibratie uitvoeren
+    dtcs:
+      - C0062:28
+      - C0062:64
+
+  - id: ford_focus_mk3_abs_rcm_communication_fault
+    manufacturer: ford
+    models:
+      - focus
+    generations:
+      - focus_mk3
+    systems:
+      - abs
+      - esc
+      - can
+    symptoms:
+      en:
+        - ABS warning light
+        - ESC warning light
+        - stability control unavailable
+        - multiple communication faults
+      de:
+        - ABS Warnleuchte
+        - ESC Warnleuchte
+        - Stabilitätskontrolle nicht verfügbar
+        - mehrere Kommunikationsfehler
+      ro:
+        - martor ABS
+        - martor ESC
+        - control stabilitate indisponibil
+        - mai multe erori de comunicație
+      fr:
+        - voyant ABS
+        - voyant ESC
+        - contrôle de stabilité indisponible
+        - plusieurs défauts de communication
+      es:
+        - testigo ABS
+        - testigo ESC
+        - control de estabilidad no disponible
+        - múltiples fallos de comunicación
+      it:
+        - spia ABS
+        - spia ESC
+        - controllo stabilità non disponibile
+        - diversi guasti di comunicazione
+      nl:
+        - ABS-waarschuwingslamp
+        - ESC-waarschuwingslamp
+        - stabiliteitsregeling niet beschikbaar
+        - meerdere communicatiefouten
+    possible_causes:
+      en:
+        - HS-CAN wiring fault
+        - RCM power or ground fault
+        - ABS module power fault
+        - RCM internal fault
+        - connector damage
+      de:
+        - HS-CAN-Leitungsfehler
+        - RCM-Versorgungs- oder Massefehler
+        - ABS-Versorgungsfehler
+        - interner RCM-Fehler
+        - Steckerschaden
+      ro:
+        - defect cablaj HS-CAN
+        - problemă alimentare sau masă RCM
+        - problemă alimentare ABS
+        - defect intern RCM
+        - conector deteriorat
+      fr:
+        - défaut du câblage HS-CAN
+        - défaut d'alimentation ou de masse RCM
+        - défaut d'alimentation ABS
+        - défaut interne RCM
+        - connecteur endommagé
+      es:
+        - fallo del cableado HS-CAN
+        - fallo de alimentación o masa RCM
+        - fallo de alimentación ABS
+        - fallo interno RCM
+        - conector dañado
+      it:
+        - guasto cablaggio HS-CAN
+        - guasto alimentazione o massa RCM
+        - guasto alimentazione ABS
+        - guasto interno RCM
+        - connettore danneggiato
+      nl:
+        - HS-CAN-bedradingsfout
+        - RCM-voedings- of massafout
+        - ABS-voedingsfout
+        - interne RCM-fout
+        - beschadigde connector
+    diagnostic_steps:
+      en:
+        - Scan ABS and RCM for U-codes
+        - Check RCM and ABS power supplies
+        - Inspect HS-CAN wiring and connectors
+        - Check whether the network is being pulled down by another module
+        - Repair the confirmed communication fault
+      de:
+        - ABS und RCM auf U-Codes prüfen
+        - RCM- und ABS-Versorgung prüfen
+        - HS-CAN-Leitungen und Stecker prüfen
+        - prüfen ob ein anderes Steuergerät den Bus belastet
+        - bestätigten Kommunikationsfehler reparieren
+      ro:
+        - scanează ABS și RCM pentru coduri U
+        - verifică alimentările RCM și ABS
+        - verifică firele și conectorii HS-CAN
+        - verifică dacă alt modul blochează rețeaua
+        - repară defectul de comunicație confirmat
+      fr:
+        - analyser ABS et RCM pour les codes U
+        - contrôler les alimentations RCM et ABS
+        - contrôler le câblage et les connecteurs HS-CAN
+        - vérifier si un autre module perturbe le réseau
+        - réparer le défaut de communication confirmé
+      es:
+        - escanear ABS y RCM para códigos U
+        - comprobar alimentación de RCM y ABS
+        - revisar cableado y conectores HS-CAN
+        - comprobar si otro módulo bloquea la red
+        - reparar el fallo de comunicación confirmado
+      it:
+        - scansionare ABS e RCM per codici U
+        - controllare alimentazioni RCM e ABS
+        - controllare cablaggio e connettori HS-CAN
+        - verificare se un altro modulo blocca la rete
+        - riparare il guasto di comunicazione confermato
+      nl:
+        - ABS en RCM scannen op U-codes
+        - RCM- en ABS-voeding controleren
+        - HS-CAN-bedrading en connectoren controleren
+        - controleren of een andere module de bus belast
+        - bevestigde communicatiefout herstellen
+    dtcs:
+      - U0028:88
+      - U0151:00
+      - U0452:86
+
+  - id: ford_focus_mk3_abs_steering_angle_plausibility_fault
+    manufacturer: ford
+    models:
+      - focus
+    generations:
+      - focus_mk3
+    systems:
+      - abs
+      - esc
+      - steering_angle
+    symptoms:
+      en:
+        - ESC warning light
+        - steering angle signal implausible
+        - ESP unavailable
+        - stability control activates incorrectly
+      de:
+        - ESC Warnleuchte
+        - Lenkwinkelsignal unplausibel
+        - ESP nicht verfügbar
+        - Stabilitätskontrolle greift falsch ein
+      ro:
+        - martor ESC aprins
+        - semnal unghi volan neverosimil
+        - ESP indisponibil
+        - controlul stabilității intervine incorect
+      fr:
+        - voyant ESC allumé
+        - signal d'angle de volant incohérent
+        - ESP indisponible
+        - contrôle de stabilité incorrect
+      es:
+        - testigo ESC encendido
+        - señal de ángulo de dirección incoherente
+        - ESP no disponible
+        - control de estabilidad incorrecto
+      it:
+        - spia ESC accesa
+        - segnale angolo sterzo incoerente
+        - ESP non disponibile
+        - controllo stabilità errato
+      nl:
+        - ESC-waarschuwingslamp brandt
+        - onlogisch stuurhoeksignaal
+        - ESP niet beschikbaar
+        - stabiliteitsregeling grijpt onjuist in
+    possible_causes:
+      en:
+        - steering angle sensor calibration fault
+        - SASM fault
+        - steering wheel not centered
+        - wheel alignment issue
+        - communication fault
+      de:
+        - Kalibrierungsfehler des Lenkwinkelsensors
+        - SASM-Fehler
+        - Lenkrad nicht mittig
+        - Achsvermessungsproblem
+        - Kommunikationsfehler
+      ro:
+        - calibrare incorectă senzor unghi volan
+        - defect SASM
+        - volan necentrat
+        - problemă geometrie
+        - problemă comunicație
+      fr:
+        - défaut de calibrage du capteur d'angle
+        - défaut SASM
+        - volant non centré
+        - problème de géométrie
+        - défaut de communication
+      es:
+        - fallo de calibración del sensor de ángulo
+        - fallo SASM
+        - volante descentrado
+        - problema de alineación
+        - fallo de comunicación
+      it:
+        - errore calibrazione sensore angolo sterzo
+        - guasto SASM
+        - volante non centrato
+        - problema convergenza
+        - guasto comunicazione
+      nl:
+        - kalibratiefout stuurhoeksensor
+        - SASM-fout
+        - stuur niet gecentreerd
+        - uitlijningsprobleem
+        - communicatiefout
+    diagnostic_steps:
+      en:
+        - Read ABS DTCs
+        - Check steering angle with wheels straight
+        - Verify steering wheel centering
+        - Check alignment and suspension
+        - Perform IVD or steering angle initialization when required
+      de:
+        - ABS-DTCs auslesen
+        - Lenkwinkel bei geraden Rädern prüfen
+        - Lenkradzentrierung prüfen
+        - Achsgeometrie und Fahrwerk prüfen
+        - IVD- oder Lenkwinkelinitialisierung durchführen
+      ro:
+        - citește DTC-urile ABS
+        - verifică unghiul cu roțile drepte
+        - verifică centrarea volanului
+        - verifică geometria și suspensia
+        - efectuează inițializarea IVD/unghiului când este necesar
+      fr:
+        - lire les DTC ABS
+        - contrôler l'angle roues droites
+        - vérifier le centrage du volant
+        - contrôler géométrie et suspension
+        - effectuer l'initialisation IVD/angle si nécessaire
+      es:
+        - leer DTC ABS
+        - comprobar ángulo con ruedas rectas
+        - verificar centrado del volante
+        - comprobar alineación y suspensión
+        - realizar inicialización IVD/ángulo cuando sea necesario
+      it:
+        - leggere i DTC ABS
+        - controllare angolo con ruote dritte
+        - verificare centraggio volante
+        - controllare convergenza e sospensioni
+        - eseguire inizializzazione IVD/angolo se richiesta
+      nl:
+        - ABS-DTC's uitlezen
+        - stuurhoek met rechte wielen controleren
+        - stuurcentrering controleren
+        - uitlijning en ophanging controleren
+        - IVD-/stuurhoekinitialisatie uitvoeren indien nodig
+    dtcs:
+      - C0051:28
+      - C0051:54
+      - U0428:62
+      - U0428:64
+      - U0428:68
+
+  - id: ford_focus_mk3_abs_brake_temperature_event
+    manufacturer: ford
+    models:
+      - focus
+    generations:
+      - focus_mk3
+    systems:
+      - abs
+      - esc
+      - brakes
+    symptoms:
+      en:
+        - ESC intervention for extended period
+        - ABS or ESC warning
+        - calculated brake temperature too high
+        - traction or stability control disabled
+      de:
+        - lange ESC-Aktivierung
+        - ABS- oder ESC-Warnung
+        - berechnete Bremstemperatur zu hoch
+        - Traktions- oder Stabilitätskontrolle deaktiviert
+      ro:
+        - intervenție ESC prelungită
+        - martor ABS sau ESC
+        - temperatura calculată a frânelor prea mare
+        - control tracțiune/stabilitate dezactivat
+      fr:
+        - activation prolongée de l'ESC
+        - voyant ABS ou ESC
+        - température calculée des freins trop élevée
+        - contrôle de traction/stabilité désactivé
+      es:
+        - activación prolongada del ESC
+        - testigo ABS o ESC
+        - temperatura calculada de frenos demasiado alta
+        - control de tracción/estabilidad desactivado
+      it:
+        - intervento ESC prolungato
+        - spia ABS o ESC
+        - temperatura freni calcolata troppo alta
+        - controllo trazione/stabilità disattivato
+      nl:
+        - langdurige ESC-ingreep
+        - ABS- of ESC-waarschuwing
+        - berekende remtemperatuur te hoog
+        - tractie-/stabiliteitsregeling uitgeschakeld
+    possible_causes:
+      en:
+        - excessive brake temperature
+        - prolonged ABS intervention
+        - prolonged traction control intervention
+        - wheel speed signal fault causing incorrect intervention
+      de:
+        - überhöhte Bremstemperatur
+        - lange ABS-Aktivierung
+        - lange Traktionsregelung
+        - fehlerhaftes Raddrehzahlsignal
+      ro:
+        - temperatură excesivă a frânelor
+        - intervenție ABS prelungită
+        - intervenție prelungită a controlului tracțiunii
+        - semnal viteză roată eronat
+      fr:
+        - température excessive des freins
+        - activation ABS prolongée
+        - intervention antipatinage prolongée
+        - signal de vitesse de roue erroné
+      es:
+        - temperatura excesiva de frenos
+        - intervención ABS prolongada
+        - intervención prolongada del control de tracción
+        - señal de velocidad de rueda incorrecta
+      it:
+        - temperatura eccessiva dei freni
+        - intervento ABS prolungato
+        - intervento prolungato controllo trazione
+        - segnale velocità ruota errato
+      nl:
+        - te hoge remtemperatuur
+        - langdurige ABS-ingreep
+        - langdurige tractiecontrole-ingreep
+        - foutief wielsnelheidssignaal
+    diagnostic_steps:
+      en:
+        - Read all ABS DTCs
+        - Inspect the braking system for overheating
+        - Check wheel speed signals
+        - Diagnose any related ABS or ESC faults
+        - Allow the braking system to cool before further testing if overheated
+      de:
+        - alle ABS-DTCs auslesen
+        - Bremsanlage auf Überhitzung prüfen
+        - Raddrehzahlsignale prüfen
+        - zugehörige ABS/ESC-Fehler diagnostizieren
+        - bei Überhitzung Bremse vor weiteren Tests abkühlen lassen
+      ro:
+        - citește toate DTC-urile ABS
+        - verifică sistemul de frânare pentru supraîncălzire
+        - verifică semnalele vitezelor roților
+        - diagnostichează erorile ABS/ESC asociate
+        - lasă sistemul să se răcească înainte de testare dacă este supraîncălzit
+      fr:
+        - lire tous les DTC ABS
+        - contrôler le système de freinage pour surchauffe
+        - contrôler les signaux de vitesse de roue
+        - diagnostiquer les défauts ABS/ESC associés
+        - laisser refroidir le système avant les essais en cas de surchauffe
+      es:
+        - leer todos los DTC ABS
+        - revisar el sistema de frenos por sobrecalentamiento
+        - comprobar señales de velocidad
+        - diagnosticar fallos ABS/ESC relacionados
+        - dejar enfriar el sistema si está sobrecalentado
+      it:
+        - leggere tutti i DTC ABS
+        - controllare l'impianto frenante per surriscaldamento
+        - controllare segnali velocità ruota
+        - diagnosticare i guasti ABS/ESC correlati
+        - lasciare raffreddare l'impianto prima dei test se surriscaldato
+      nl:
+        - alle ABS-DTC's uitlezen
+        - remsysteem op oververhitting controleren
+        - wielsnelheidssignalen controleren
+        - gerelateerde ABS/ESC-fouten diagnosticeren
+        - systeem laten afkoelen vóór verder testen bij oververhitting
+    dtcs:
+      - C006B:00
+      - C0072:68
 # ============================================================
 # BATCH 15 — FORD POWER STEERING / EPS / EHPS / STEERING ANGLE
 # ============================================================
