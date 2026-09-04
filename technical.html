@@ -3,355 +3,454 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>AutoDecode – Repair & Technical</title>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
 
 <style>
-*{box-sizing:border-box}
-html,body{margin:0;padding:0;min-height:100%;font-family:Arial,Helvetica,sans-serif;background:#0b0f14;color:#e8edf3}
-body{min-height:100vh}
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+:root{
+    --bg:#080b10;
+    --panel:#10151d;
+    --panel2:#151b24;
+    --border:#252e3a;
+    --text:#f1f5f9;
+    --muted:#8d99a8;
+    --accent:#00d4ff;
+    --accent2:#008cff;
+    --danger:#ff5c5c;
+    --success:#35d07f;
+    --warning:#ffbd4a;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    min-height:100vh;
+}
 
 header{
-min-height:72px;
-background:#111720;
-border-bottom:1px solid #26303b;
-display:flex;
-align-items:center;
-padding:12px 24px;
-gap:20px
+    width:100%;
+    border-bottom:1px solid var(--border);
+    background:#090d13;
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+.header-inner{
+    max-width:1400px;
+    margin:auto;
+    min-height:70px;
+    padding:0 22px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
 }
 
 .logo{
-font-size:24px;
-font-weight:700;
-letter-spacing:-.5px;
-white-space:nowrap
+    color:#fff;
+    text-decoration:none;
+    font-size:23px;
+    font-weight:800;
+    letter-spacing:.3px;
+    white-space:nowrap;
 }
 
-.logo span,.hero h1 span{color:#4da3ff}
-
-.home-link{
-color:#cbd5e1;
-text-decoration:none;
-font-size:14px;
-padding:9px 13px;
-border:1px solid #34404d;
-border-radius:7px
+.logo span{
+    color:var(--accent);
 }
 
-.home-link:hover{
-color:#fff;
-border-color:#4da3ff
+.header-right{
+    display:flex;
+    align-items:center;
+    gap:12px;
 }
 
-.language-selector{
-margin-left:auto;
-position:relative
+.home-btn{
+    color:#dce7f2;
+    text-decoration:none;
+    border:1px solid var(--border);
+    background:#111720;
+    padding:9px 14px;
+    border-radius:8px;
+    font-size:14px;
+    transition:.2s;
 }
 
-.language-button{
-background:#18202a;
-color:#e8edf3;
-border:1px solid #34404d;
-border-radius:7px;
-padding:8px 10px;
-cursor:pointer;
-font-size:14px
+.home-btn:hover{
+    border-color:var(--accent);
+    color:var(--accent);
 }
 
-.language-menu{
-display:none;
-position:absolute;
-right:0;
-top:calc(100% + 7px);
-background:#151c25;
-border:1px solid #34404d;
-border-radius:8px;
-min-width:145px;
-overflow:hidden;
-z-index:1000
+.language-select{
+    border:1px solid var(--border);
+    background:#111720;
+    color:#fff;
+    padding:9px 10px;
+    border-radius:8px;
+    cursor:pointer;
+    outline:none;
 }
 
-.language-menu.active{display:block}
-
-.language-option{
-padding:10px 12px;
-cursor:pointer;
-color:#dbe4ee;
-font-size:14px
+.page{
+    max-width:1400px;
+    margin:auto;
+    padding:36px 22px 60px;
 }
 
-.language-option:hover{background:#202b37}
-
-main{
-width:min(1050px,calc(100% - 32px));
-margin:0 auto;
-padding:48px 0 70px
+.hero{
+    margin-bottom:30px;
 }
-
-.hero{margin-bottom:34px}
 
 .hero h1{
-margin:0 0 10px;
-font-size:clamp(30px,5vw,46px);
-line-height:1.1
+    font-size:36px;
+    margin-bottom:10px;
+    letter-spacing:-.7px;
+}
+
+.hero h1 span{
+    color:var(--accent);
 }
 
 .hero p{
-margin:0;
-color:#8f9baa;
-font-size:16px;
-line-height:1.6;
-max-width:800px
+    color:var(--muted);
+    max-width:850px;
+    line-height:1.6;
+    font-size:15px;
 }
 
-.panel{
-background:#111720;
-border:1px solid #26303b;
-border-radius:12px;
-padding:24px
+.selector-panel{
+    background:var(--panel);
+    border:1px solid var(--border);
+    border-radius:14px;
+    padding:22px;
+    margin-bottom:20px;
 }
 
-.form-grid{
-display:grid;
-grid-template-columns:repeat(2,minmax(0,1fr));
-gap:18px
+.panel-title{
+    font-size:17px;
+    font-weight:700;
+    margin-bottom:18px;
+}
+
+.selector-grid{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:14px;
 }
 
 .field{
-display:flex;
-flex-direction:column;
-gap:7px
+    display:flex;
+    flex-direction:column;
+    gap:7px;
 }
 
-.field.full{grid-column:1/-1}
-
-label{
-font-size:13px;
-color:#aeb9c6;
-font-weight:600
+.field label{
+    font-size:12px;
+    color:var(--muted);
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.5px;
 }
 
-select,textarea{
-width:100%;
-background:#0c1219;
-color:#e8edf3;
-border:1px solid #303b48;
-border-radius:8px;
-padding:12px 13px;
-font-size:15px;
-outline:none
+select,
+textarea{
+    width:100%;
+    border:1px solid var(--border);
+    background:#0b1017;
+    color:var(--text);
+    border-radius:9px;
+    outline:none;
+    transition:.2s;
 }
 
-select{min-height:46px}
+select{
+    height:44px;
+    padding:0 12px;
+}
 
-select:focus,textarea:focus{border-color:#4da3ff}
+select:focus,
+textarea:focus{
+    border-color:var(--accent);
+    box-shadow:0 0 0 2px rgba(0,212,255,.08);
+}
 
-select:disabled{opacity:.45}
+select:disabled{
+    opacity:.45;
+    cursor:not-allowed;
+}
+
+.problem-panel{
+    background:var(--panel);
+    border:1px solid var(--border);
+    border-radius:14px;
+    padding:22px;
+    margin-bottom:20px;
+}
 
 textarea{
-min-height:125px;
-resize:vertical;
-line-height:1.5
+    min-height:145px;
+    resize:vertical;
+    padding:14px;
+    font-family:inherit;
+    line-height:1.5;
+    font-size:14px;
 }
 
-.actions{
-margin-top:22px;
-display:flex;
-align-items:center;
-gap:14px;
-flex-wrap:wrap
+.problem-bottom{
+    margin-top:14px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
 }
 
-.find-button{
-background:#4da3ff;
-color:#06101b;
-border:0;
-border-radius:8px;
-padding:13px 22px;
-font-size:15px;
-font-weight:700;
-cursor:pointer
+.problem-hint{
+    color:var(--muted);
+    font-size:12px;
+    line-height:1.5;
 }
 
-.find-button:hover{filter:brightness(1.08)}
+.find-btn{
+    border:0;
+    background:linear-gradient(135deg,var(--accent),var(--accent2));
+    color:#001018;
+    font-weight:800;
+    padding:13px 24px;
+    border-radius:9px;
+    cursor:pointer;
+    min-width:190px;
+    transition:.2s;
+}
 
-.find-button:disabled{
-opacity:.5;
-cursor:not-allowed
+.find-btn:hover{
+    transform:translateY(-1px);
+    filter:brightness(1.08);
+}
+
+.find-btn:disabled{
+    opacity:.45;
+    cursor:not-allowed;
+    transform:none;
 }
 
 .status{
-font-size:13px;
-color:#8f9baa
+    display:none;
+    border-radius:10px;
+    padding:13px 15px;
+    margin-bottom:20px;
+    font-size:14px;
+    line-height:1.5;
 }
 
-.status.error{color:#ff7777}
-.status.success{color:#72d79a}
-
-.results{margin-top:30px}
-
-.results-header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-gap:15px;
-margin-bottom:15px
+.status.show{
+    display:block;
 }
 
-.results-header h2{
-margin:0;
-font-size:21px
+.status.error{
+    background:rgba(255,92,92,.08);
+    border:1px solid rgba(255,92,92,.3);
+    color:#ff9d9d;
 }
 
-.result-count{
-color:#8995a3;
-font-size:13px
+.status.success{
+    background:rgba(53,208,127,.08);
+    border:1px solid rgba(53,208,127,.25);
+    color:#7ee6aa;
+}
+
+.status.loading{
+    background:rgba(0,212,255,.06);
+    border:1px solid rgba(0,212,255,.18);
+    color:#7fe7fa;
+}
+
+.results{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
 }
 
 .result-card{
-background:#0c1219;
-border:1px solid #293542;
-border-radius:10px;
-margin-bottom:14px;
-overflow:hidden
+    background:var(--panel);
+    border:1px solid var(--border);
+    border-radius:13px;
+    padding:20px;
+    transition:.2s;
 }
 
-.result-main{padding:19px}
+.result-card:hover{
+    border-color:#344252;
+}
 
 .result-top{
-display:flex;
-justify-content:space-between;
-align-items:flex-start;
-gap:15px
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:20px;
 }
 
 .result-title{
-margin:0 0 7px;
-font-size:18px;
-line-height:1.35
+    font-size:18px;
+    font-weight:750;
+    line-height:1.35;
 }
 
-.result-system{
-color:#8995a3;
-font-size:12px;
-text-transform:uppercase;
-letter-spacing:.5px
+.result-score{
+    flex-shrink:0;
+    color:var(--accent);
+    font-size:14px;
+    font-weight:800;
 }
 
-.score{
-flex:0 0 auto;
-font-size:15px;
-font-weight:700;
-color:#4da3ff;
-background:rgba(77,163,255,.08);
-border:1px solid rgba(77,163,255,.2);
-border-radius:7px;
-padding:7px 9px
+.result-meta{
+    display:flex;
+    flex-wrap:wrap;
+    gap:7px;
+    margin-top:10px;
 }
 
-.result-description{
-color:#aeb9c6;
-font-size:14px;
-line-height:1.6;
-margin:14px 0 0
-}
-
-.match-tags{
-display:flex;
-flex-wrap:wrap;
-gap:7px;
-margin-top:14px
-}
-
-.match-tag{
-font-size:11px;
-color:#b9c7d6;
-border:1px solid #303c49;
-background:#141c25;
-padding:5px 8px;
-border-radius:5px
+.tag{
+    display:inline-flex;
+    align-items:center;
+    border:1px solid var(--border);
+    background:#0b1017;
+    color:#aeb9c6;
+    border-radius:999px;
+    padding:5px 9px;
+    font-size:11px;
 }
 
 .result-section{
-border-top:1px solid #202b36;
-padding:16px 19px
+    margin-top:16px;
 }
 
 .result-section h4{
-margin:0 0 10px;
-font-size:13px;
-color:#dbe4ee
+    font-size:12px;
+    color:var(--accent);
+    text-transform:uppercase;
+    letter-spacing:.5px;
+    margin-bottom:7px;
+}
+
+.result-section p,
+.result-section li{
+    color:#c0cad5;
+    font-size:13px;
+    line-height:1.55;
 }
 
 .result-section ul{
-margin:0;
-padding-left:20px;
-color:#aeb9c6;
-font-size:13px;
-line-height:1.65
+    padding-left:19px;
 }
 
-.result-section li{margin-bottom:4px}
-
-.no-results{
-padding:25px;
-text-align:center;
-color:#8f9baa;
-border:1px dashed #303b48;
-border-radius:9px
+.match-info{
+    margin-top:15px;
+    padding-top:13px;
+    border-top:1px solid var(--border);
+    color:var(--muted);
+    font-size:11px;
 }
 
-.selected-vehicle{
-margin-top:18px;
-padding:12px 14px;
-background:#0c1219;
-border:1px solid #26303b;
-border-radius:8px;
-color:#9ca8b6;
-font-size:13px
+.empty{
+    text-align:center;
+    padding:45px 20px;
+    border:1px dashed var(--border);
+    border-radius:13px;
+    color:var(--muted);
 }
 
-.selected-vehicle strong{color:#dce5ee}
+.loading-spinner{
+    display:inline-block;
+    width:13px;
+    height:13px;
+    border:2px solid rgba(255,255,255,.2);
+    border-top-color:var(--accent);
+    border-radius:50%;
+    animation:spin .7s linear infinite;
+    vertical-align:-2px;
+    margin-right:7px;
+}
 
-footer{
-border-top:1px solid #202a34;
-padding:22px 16px;
-text-align:center;
-color:#657180;
-font-size:12px
+@keyframes spin{
+    to{transform:rotate(360deg)}
+}
+
+@media(max-width:1050px){
+    .selector-grid{
+        grid-template-columns:repeat(3,1fr);
+    }
 }
 
 @media(max-width:700px){
-header{
-padding:12px 14px;
-gap:10px;
-flex-wrap:wrap
-}
+    .header-inner{
+        padding:10px 14px;
+        min-height:62px;
+        gap:8px;
+    }
 
-.logo{font-size:21px}
+    .logo{
+        font-size:18px;
+    }
 
-.home-link{
-font-size:13px;
-padding:8px 10px
-}
+    .header-right{
+        gap:7px;
+    }
 
-.language-selector{margin-left:auto}
+    .home-btn{
+        padding:8px 9px;
+        font-size:12px;
+    }
 
-main{
-width:calc(100% - 22px);
-padding-top:30px
-}
+    .language-select{
+        padding:8px 5px;
+        font-size:12px;
+        max-width:75px;
+    }
 
-.panel{padding:17px}
+    .page{
+        padding:25px 13px 45px;
+    }
 
-.form-grid{grid-template-columns:1fr}
+    .hero h1{
+        font-size:28px;
+    }
 
-.field.full{grid-column:auto}
+    .selector-grid{
+        grid-template-columns:1fr;
+    }
 
-.result-top{flex-direction:column}
+    .selector-panel,
+    .problem-panel{
+        padding:16px;
+    }
 
-.score{align-self:flex-start}
+    .problem-bottom{
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    .find-btn{
+        width:100%;
+    }
+
+    .result-top{
+        flex-direction:column;
+        gap:8px;
+    }
+
+    .result-score{
+        align-self:flex-start;
+    }
 }
 </style>
 </head>
@@ -359,1717 +458,811 @@ padding-top:30px
 <body>
 
 <header>
-<div class="logo">Auto<span>Decode</span></div>
+    <div class="header-inner">
 
-<a href="index.html" class="home-link" data-i18n="home">← Home</a>
+        <a href="index.html" class="logo">
+            Auto<span>Decode</span>
+        </a>
 
-<div class="language-selector">
-<button class="language-button" id="languageButton">🇬🇧 EN ▾</button>
+        <div class="header-right">
+            <a href="index.html" class="home-btn" id="homeBtn">Home</a>
 
-<div class="language-menu" id="languageMenu">
+            <select id="languageSelect" class="language-select" aria-label="Language">
+                <option value="en">🇬🇧 EN</option>
+                <option value="de">🇩🇪 DE</option>
+                <option value="ro">🇷🇴 RO</option>
+                <option value="fr">🇫🇷 FR</option>
+                <option value="es">🇪🇸 ES</option>
+                <option value="it">🇮🇹 IT</option>
+                <option value="nl">🇳🇱 NL</option>
+            </select>
+        </div>
 
-<div class="language-option" data-lang="en">🇬🇧 English</div>
-<div class="language-option" data-lang="de">🇩🇪 Deutsch</div>
-<div class="language-option" data-lang="ro">🇷🇴 Română</div>
-<div class="language-option" data-lang="fr">🇫🇷 Français</div>
-<div class="language-option" data-lang="es">🇪🇸 Español</div>
-<div class="language-option" data-lang="it">🇮🇹 Italiano</div>
-<div class="language-option" data-lang="nl">🇳🇱 Nederlands</div>
-
-</div>
-</div>
+    </div>
 </header>
 
-<main>
+<main class="page">
 
-<section class="hero">
+    <section class="hero">
+        <h1>
+            <span id="pageTitleAccent">Repair</span> & Technical
+        </h1>
 
-<h1><span>Repair</span> & Technical</h1>
+        <p id="pageDescription">
+            Describe your vehicle problem in natural language and AutoDecode
+            will identify the most relevant technical procedures, diagnostic
+            information and possible causes.
+        </p>
+    </section>
 
-<p data-i18n="intro">
-Select your vehicle and describe the problem. AutoDecode will search the technical database and rank the most relevant diagnostic information.
-</p>
+    <section class="selector-panel">
 
-</section>
+        <div class="panel-title" id="vehicleTitle">
+            Vehicle
+        </div>
 
-<section class="panel">
+        <div class="selector-grid">
 
-<div class="form-grid">
+            <div class="field">
+                <label id="makeLabel">Make</label>
+                <select id="manufacturerSelect">
+                    <option value="">Select make</option>
+                </select>
+            </div>
 
-<div class="field">
-<label for="manufacturer" data-i18n="make">Make</label>
-<select id="manufacturer">
-<option value="" data-i18n="select_make">Select make</option>
-</select>
-</div>
+            <div class="field">
+                <label id="modelLabel">Model</label>
+                <select id="modelSelect" disabled>
+                    <option value="">Select model</option>
+                </select>
+            </div>
 
-<div class="field">
-<label for="model" data-i18n="model">Model</label>
-<select id="model" disabled>
-<option value="" data-i18n="select_model">Select model</option>
-</select>
-</div>
+            <div class="field">
+                <label id="generationLabel">Generation</label>
+                <select id="generationSelect" disabled>
+                    <option value="">Select generation</option>
+                </select>
+            </div>
 
-<div class="field">
-<label for="generation" data-i18n="generation">Generation / Platform</label>
-<select id="generation" disabled>
-<option value="" data-i18n="select_generation">Select generation</option>
-</select>
-</div>
+            <div class="field">
+                <label id="yearLabel">Year</label>
+                <select id="yearSelect" disabled>
+                    <option value="">Select year</option>
+                </select>
+            </div>
 
-<div class="field">
-<label for="year" data-i18n="year">Year</label>
-<select id="year" disabled>
-<option value="" data-i18n="select_year">Select year</option>
-</select>
-</div>
+            <div class="field">
+                <label id="engineLabel">Engine</label>
+                <select id="engineSelect" disabled>
+                    <option value="">Select engine</option>
+                </select>
+            </div>
 
-<div class="field">
-<label for="engine" data-i18n="engine">Engine</label>
-<select id="engine" disabled>
-<option value="" data-i18n="select_engine">Select engine</option>
-</select>
-</div>
+        </div>
+    </section>
 
-<div class="field full">
+    <section class="problem-panel">
 
-<label for="problem" data-i18n="problem">
-Describe the problem
-</label>
+        <div class="panel-title" id="problemTitle">
+            Problem description
+        </div>
 
-<textarea
-id="problem"
-data-i18n-placeholder="problem_placeholder"
-placeholder="Example: The engine has very little power at low RPM and sometimes enters limp mode."
-></textarea>
+        <textarea
+            id="problemInput"
+            placeholder="Example: The engine stopped while driving and now it cranks but will not start."
+        ></textarea>
 
-</div>
+        <div class="problem-bottom">
 
-</div>
+            <div class="problem-hint" id="problemHint">
+                You can describe symptoms, noises, warning messages or diagnostic
+                trouble codes in your own words.
+            </div>
 
-<div class="selected-vehicle" id="selectedVehicle" hidden></div>
+            <button class="find-btn" id="findButton">
+                FIND SOLUTION
+            </button>
 
-<div class="actions">
+        </div>
 
-<button
-class="find-button"
-id="findButton"
-disabled
-data-i18n="find_solution"
->
-FIND SOLUTION
-</button>
+    </section>
 
-<div class="status" id="status"></div>
+    <div id="status" class="status"></div>
 
-</div>
+    <section id="results" class="results">
+        <div class="empty" id="initialMessage">
+            Select the vehicle and describe the problem to start the diagnostic search.
+        </div>
+    </section>
 
-<section class="results" id="results" hidden>
-
-<div class="results-header">
-
-<h2 data-i18n="diagnostic_results">
-Diagnostic Results
-</h2>
-
-<div class="result-count" id="resultCount"></div>
-
-</div>
-
-<div id="resultList"></div>
-
-</section>
-
-</section>
 </main>
 
-<footer>
-© <span id="yearFooter"></span> AutoDecode
-</footer>
-
 <script>
+"use strict";
 
 /* ============================================================
-   UI / TRANSLATIONS
+   CONFIGURATION
 ============================================================ */
 
-const translations={
+const SEMANTIC_DICTIONARY_URL =
+    new URL(
+        "data/technical/semantic/technical_terms.yaml",
+        document.baseURI
+    ).href;
 
-en:{
-home:"← Home",
-intro:"Select your vehicle and describe the problem. AutoDecode will search the technical database and rank the most relevant diagnostic information.",
-make:"Make",
-model:"Model",
-generation:"Generation / Platform",
-year:"Year",
-engine:"Engine",
-problem:"Describe the problem",
-select_make:"Select make",
-select_model:"Select model",
-select_generation:"Select generation",
-select_year:"Select year",
-select_engine:"Select engine",
-problem_placeholder:"Example: The engine has very little power at low RPM and sometimes enters limp mode.",
-find_solution:"FIND SOLUTION",
-diagnostic_results:"Diagnostic Results",
-database_loading:"Loading vehicle database...",
-database_ready:"Vehicle database ready.",
-database_error:"Vehicle database could not be loaded.",
-technical_loading:"Loading technical database...",
-technical_ready:"Technical database ready.",
-technical_error:"No technical database is currently available for this manufacturer.",
-complete_vehicle:"Please complete the vehicle selection.",
-describe_problem:"Please describe the problem.",
-searching:"Analyzing vehicle and symptoms...",
-no_results:"No sufficiently relevant diagnostic information was found.",
-result_count_one:"1 relevant result",
-result_count_many:"{n} relevant results",
-vehicle:"Vehicle",
-possible_causes:"Possible causes",
-diagnostic_steps:"Diagnostic procedure",
-related_dtcs:"Related DTCs",
-difficulty:"Difficulty",
-relevance:"Relevance"
-},
+const VEHICLE_INDEX_URL =
+    new URL(
+        "data/vehicles/manufacturers.yaml",
+        document.baseURI
+    ).href;
 
-de:{
-home:"← Startseite",
-intro:"Wählen Sie Ihr Fahrzeug und beschreiben Sie das Problem. AutoDecode durchsucht die technische Datenbank.",
-make:"Marke",
-model:"Modell",
-generation:"Generation / Plattform",
-year:"Jahr",
-engine:"Motor",
-problem:"Problem beschreiben",
-select_make:"Marke auswählen",
-select_model:"Modell auswählen",
-select_generation:"Generation auswählen",
-select_year:"Jahr auswählen",
-select_engine:"Motor auswählen",
-problem_placeholder:"Beispiel: Der Motor hat bei niedrigen Drehzahlen kaum Leistung und geht manchmal in den Notlauf.",
-find_solution:"LÖSUNG FINDEN",
-diagnostic_results:"Diagnoseergebnisse",
-database_loading:"Fahrzeugdatenbank wird geladen...",
-database_ready:"Fahrzeugdatenbank bereit.",
-database_error:"Fahrzeugdatenbank konnte nicht geladen werden.",
-technical_loading:"Technische Datenbank wird geladen...",
-technical_ready:"Technische Datenbank bereit.",
-technical_error:"Für diesen Hersteller ist derzeit keine technische Datenbank verfügbar.",
-complete_vehicle:"Bitte wählen Sie das Fahrzeug vollständig aus.",
-describe_problem:"Bitte beschreiben Sie das Problem.",
-searching:"Fahrzeug und Symptome werden analysiert...",
-no_results:"Keine ausreichend relevanten Diagnoseinformationen gefunden.",
-result_count_one:"1 relevantes Ergebnis",
-result_count_many:"{n} relevante Ergebnisse",
-vehicle:"Fahrzeug",
-possible_causes:"Mögliche Ursachen",
-diagnostic_steps:"Diagnoseverfahren",
-related_dtcs:"Verwandte DTCs",
-difficulty:"Schwierigkeit",
-relevance:"Relevanz"
-},
+const TECHNICAL_BASE_PATH =
+    "data/technical/diagnostics/";
 
-ro:{
-home:"← Acasă",
-intro:"Selectează vehiculul și descrie problema. AutoDecode va căuta în baza tehnică și va ordona informațiile de diagnostic în funcție de relevanță.",
-make:"Marcă",
-model:"Model",
-generation:"Generație / Platformă",
-year:"An",
-engine:"Motor",
-problem:"Descrie problema",
-select_make:"Selectează marca",
-select_model:"Selectează modelul",
-select_generation:"Selectează generația",
-select_year:"Selectează anul",
-select_engine:"Selectează motorul",
-problem_placeholder:"Exemplu: Motorul nu mai trage la turații mici și uneori intră în limp mode.",
-find_solution:"GĂSEȘTE SOLUȚIA",
-diagnostic_results:"Rezultate diagnostic",
-database_loading:"Se încarcă baza de date cu vehicule...",
-database_ready:"Baza de date cu vehicule este pregătită.",
-database_error:"Baza de date cu vehicule nu poate fi încărcată.",
-technical_loading:"Se încarcă baza tehnică...",
-technical_ready:"Baza tehnică este pregătită.",
-technical_error:"Nu există încă o bază tehnică disponibilă pentru acest producător.",
-complete_vehicle:"Completează selecția vehiculului.",
-describe_problem:"Descrie problema.",
-searching:"Se analizează vehiculul și simptomele...",
-no_results:"Nu au fost găsite informații de diagnostic suficient de relevante.",
-result_count_one:"1 rezultat relevant",
-result_count_many:"{n} rezultate relevante",
-vehicle:"Vehicul",
-possible_causes:"Cauze posibile",
-diagnostic_steps:"Procedură de diagnostic",
-related_dtcs:"DTC-uri asociate",
-difficulty:"Dificultate",
-relevance:"Relevanță"
-},
 
-fr:{
-home:"← Accueil",
-intro:"Sélectionnez votre véhicule et décrivez le problème. AutoDecode recherchera les informations techniques pertinentes.",
-make:"Marque",
-model:"Modèle",
-generation:"Génération / Plateforme",
-year:"Année",
-engine:"Moteur",
-problem:"Décrivez le problème",
-select_make:"Sélectionner la marque",
-select_model:"Sélectionner le modèle",
-select_generation:"Sélectionner la génération",
-select_year:"Sélectionner l'année",
-select_engine:"Sélectionner le moteur",
-problem_placeholder:"Exemple : Le moteur manque de puissance à bas régime et passe parfois en mode dégradé.",
-find_solution:"TROUVER LA SOLUTION",
-diagnostic_results:"Résultats du diagnostic",
-database_loading:"Chargement de la base de véhicules...",
-database_ready:"Base de véhicules prête.",
-database_error:"Impossible de charger la base de véhicules.",
-technical_loading:"Chargement de la base technique...",
-technical_ready:"Base technique prête.",
-technical_error:"Aucune base technique n'est actuellement disponible pour ce constructeur.",
-complete_vehicle:"Veuillez compléter la sélection du véhicule.",
-describe_problem:"Veuillez décrire le problème.",
-searching:"Analyse du véhicule et des symptômes...",
-no_results:"Aucune information de diagnostic suffisamment pertinente trouvée.",
-result_count_one:"1 résultat pertinent",
-result_count_many:"{n} résultats pertinents",
-vehicle:"Véhicule",
-possible_causes:"Causes possibles",
-diagnostic_steps:"Procédure de diagnostic",
-related_dtcs:"DTC associés",
-difficulty:"Difficulté",
-relevance:"Pertinence"
-},
+/* ============================================================
+   STATE
+============================================================ */
 
-es:{
-home:"← Inicio",
-intro:"Selecciona tu vehículo y describe el problema. AutoDecode buscará la información técnica más relevante.",
-make:"Marca",
-model:"Modelo",
-generation:"Generación / Plataforma",
-year:"Año",
-engine:"Motor",
-problem:"Describe el problema",
-select_make:"Seleccionar marca",
-select_model:"Seleccionar modelo",
-select_generation:"Seleccionar generación",
-select_year:"Seleccionar año",
-select_engine:"Seleccionar motor",
-problem_placeholder:"Ejemplo: El motor tiene poca potencia a bajas RPM y a veces entra en modo de emergencia.",
-find_solution:"ENCONTRAR SOLUCIÓN",
-diagnostic_results:"Resultados del diagnóstico",
-database_loading:"Cargando base de vehículos...",
-database_ready:"Base de vehículos lista.",
-database_error:"No se pudo cargar la base de vehículos.",
-technical_loading:"Cargando base técnica...",
-technical_ready:"Base técnica lista.",
-technical_error:"No hay una base técnica disponible actualmente para este fabricante.",
-complete_vehicle:"Completa la selección del vehículo.",
-describe_problem:"Describe el problema.",
-searching:"Analizando vehículo y síntomas...",
-no_results:"No se encontró información de diagnóstico suficientemente relevante.",
-result_count_one:"1 resultado relevante",
-result_count_many:"{n} resultados relevantes",
-vehicle:"Vehículo",
-possible_causes:"Causas posibles",
-diagnostic_steps:"Procedimiento de diagnóstico",
-related_dtcs:"DTC relacionados",
-difficulty:"Dificultad",
-relevance:"Relevancia"
-},
+let manufacturersData = [];
+let selectedManufacturerData = null;
 
-it:{
-home:"← Home",
-intro:"Seleziona il veicolo e descrivi il problema. AutoDecode cercherà le informazioni tecniche più rilevanti.",
-make:"Marca",
-model:"Modello",
-generation:"Generazione / Piattaforma",
-year:"Anno",
-engine:"Motore",
-problem:"Descrivi il problema",
-select_make:"Seleziona marca",
-select_model:"Seleziona modello",
-select_generation:"Seleziona generazione",
-select_year:"Seleziona anno",
-select_engine:"Seleziona motore",
-problem_placeholder:"Esempio: Il motore ha poca potenza ai bassi regimi e a volte entra in modalità recovery.",
-find_solution:"TROVA SOLUZIONE",
-diagnostic_results:"Risultati diagnostici",
-database_loading:"Caricamento database veicoli...",
-database_ready:"Database veicoli pronto.",
-database_error:"Impossibile caricare il database veicoli.",
-technical_loading:"Caricamento database tecnico...",
-technical_ready:"Database tecnico pronto.",
-technical_error:"Nessun database tecnico disponibile per questo costruttore.",
-complete_vehicle:"Completa la selezione del veicolo.",
-describe_problem:"Descrivi il problema.",
-searching:"Analisi del veicolo e dei sintomi...",
-no_results:"Nessuna informazione diagnostica sufficientemente pertinente trovata.",
-result_count_one:"1 risultato pertinente",
-result_count_many:"{n} risultati pertinenti",
-vehicle:"Veicolo",
-possible_causes:"Possibili cause",
-diagnostic_steps:"Procedura diagnostica",
-related_dtcs:"DTC correlati",
-difficulty:"Difficoltà",
-relevance:"Pertinenza"
-},
+let technicalDatabase = [];
+let manufacturerDataCache = {};
 
-nl:{
-home:"← Home",
-intro:"Selecteer uw voertuig en beschrijf het probleem. AutoDecode zoekt de meest relevante technische diagnose-informatie.",
-make:"Merk",
-model:"Model",
-generation:"Generatie / Platform",
-year:"Jaar",
-engine:"Motor",
-problem:"Beschrijf het probleem",
-select_make:"Merk selecteren",
-select_model:"Model selecteren",
-select_generation:"Generatie selecteren",
-select_year:"Jaar selecteren",
-select_engine:"Motor selecteren",
-problem_placeholder:"Voorbeeld: De motor heeft weinig vermogen bij lage toerentallen en gaat soms in noodloop.",
-find_solution:"OPLOSSING VINDEN",
-diagnostic_results:"Diagnoseresultaten",
-database_loading:"Voertuigendatabase laden...",
-database_ready:"Voertuigendatabase gereed.",
-database_error:"Voertuigendatabase kon niet worden geladen.",
-technical_loading:"Technische database laden...",
-technical_ready:"Technische database gereed.",
-technical_error:"Er is momenteel geen technische database beschikbaar voor deze fabrikant.",
-complete_vehicle:"Voltooi de voertuigselectie.",
-describe_problem:"Beschrijf het probleem.",
-searching:"Voertuig en symptomen analyseren...",
-no_results:"Geen voldoende relevante diagnose-informatie gevonden.",
-result_count_one:"1 relevant resultaat",
-result_count_many:"{n} relevante resultaten",
-vehicle:"Voertuig",
-possible_causes:"Mogelijke oorzaken",
-diagnostic_steps:"Diagnoseprocedure",
-related_dtcs:"Gerelateerde DTC's",
-difficulty:"Moeilijkheid",
-relevance:"Relevantie"
-}
+let semanticDictionary = null;
+let semanticDictionaryReady = false;
+let semanticDictionaryLoading = false;
+let semanticDictionaryError = null;
+let semanticDictionaryPromise = null;
 
+let symptomAliases = {};
+let canonicalAlias = {};
+let semanticRelationships = [];
+let semanticPriority = {};
+let semanticConcepts = {};
+
+let currentLanguage =
+    localStorage.getItem("autodecode_language") || "en";
+
+
+/* ============================================================
+   TRANSLATIONS
+============================================================ */
+
+const translations = {
+
+    en:{
+        home:"Home",
+        vehicle:"Vehicle",
+        make:"Make",
+        model:"Model",
+        generation:"Generation",
+        year:"Year",
+        engine:"Engine",
+        problem:"Problem description",
+        find:"FIND SOLUTION",
+        selectMake:"Select make",
+        selectModel:"Select model",
+        selectGeneration:"Select generation",
+        selectYear:"Select year",
+        selectEngine:"Select engine",
+        description:
+            "Describe your vehicle problem in natural language and AutoDecode will identify the most relevant technical procedures, diagnostic information and possible causes.",
+        hint:
+            "You can describe symptoms, noises, warning messages or diagnostic trouble codes in your own words.",
+        placeholder:
+            "Example: The engine stopped while driving and now it cranks but will not start.",
+        initial:
+            "Select the vehicle and describe the problem to start the diagnostic search.",
+        loading:
+            "Loading technical diagnostic data...",
+        semanticLoading:
+            "Loading the multilingual technical dictionary...",
+        semanticError:
+            "The multilingual technical dictionary could not be loaded. Check that data/technical/semantic/technical_terms.yaml exists and contains valid YAML.",
+        vehicleError:
+            "Vehicle database could not be loaded.",
+        noResults:
+            "No sufficiently relevant technical solution was found for this problem.",
+        results:
+            "Relevant technical solutions",
+        possibleCauses:
+            "Possible causes",
+        diagnosticSteps:
+            "Diagnostic steps",
+        relatedDtcs:
+            "Related DTCs",
+        symptoms:
+            "Symptoms",
+        category:
+            "Category",
+        system:
+            "System",
+        difficulty:
+            "Difficulty",
+        relevance:
+            "Relevance",
+        searchReady:
+            "Diagnostic search ready.",
+        enterProblem:
+            "Please describe the problem first.",
+        selectVehicle:
+            "Please select at least the vehicle make.",
+        dictionaryReady:
+            "Multilingual semantic dictionary loaded."
+    },
+
+    de:{
+        home:"Startseite",
+        vehicle:"Fahrzeug",
+        make:"Marke",
+        model:"Modell",
+        generation:"Generation",
+        year:"Jahr",
+        engine:"Motor",
+        problem:"Problembeschreibung",
+        find:"LÖSUNG FINDEN",
+        selectMake:"Marke auswählen",
+        selectModel:"Modell auswählen",
+        selectGeneration:"Generation auswählen",
+        selectYear:"Jahr auswählen",
+        selectEngine:"Motor auswählen",
+        description:
+            "Beschreiben Sie das Fahrzeugproblem in natürlicher Sprache. AutoDecode identifiziert die relevantesten technischen Verfahren, Diagnoseinformationen und möglichen Ursachen.",
+        hint:
+            "Sie können Symptome, Geräusche, Warnmeldungen oder Fehlercodes in eigenen Worten beschreiben.",
+        placeholder:
+            "Beispiel: Der Motor ist während der Fahrt ausgegangen und startet jetzt nicht mehr.",
+        initial:
+            "Wählen Sie das Fahrzeug und beschreiben Sie das Problem, um die Diagnose zu starten.",
+        loading:"Technische Diagnosedaten werden geladen...",
+        semanticLoading:"Mehrsprachiges technisches Wörterbuch wird geladen...",
+        semanticError:"Das mehrsprachige technische Wörterbuch konnte nicht geladen werden. Prüfen Sie die Datei technical_terms.yaml.",
+        vehicleError:"Die Fahrzeugdatenbank konnte nicht geladen werden.",
+        noResults:"Keine ausreichend relevante technische Lösung gefunden.",
+        results:"Relevante technische Lösungen",
+        possibleCauses:"Mögliche Ursachen",
+        diagnosticSteps:"Diagnoseschritte",
+        relatedDtcs:"Verwandte DTCs",
+        symptoms:"Symptome",
+        category:"Kategorie",
+        system:"System",
+        difficulty:"Schwierigkeit",
+        relevance:"Relevanz",
+        searchReady:"Diagnosesuche bereit.",
+        enterProblem:"Bitte beschreiben Sie zuerst das Problem.",
+        selectVehicle:"Bitte wählen Sie mindestens die Fahrzeugmarke.",
+        dictionaryReady:"Mehrsprachiges semantisches Wörterbuch geladen."
+    },
+
+    ro:{
+        home:"Acasă",
+        vehicle:"Vehicul",
+        make:"Marcă",
+        model:"Model",
+        generation:"Generație",
+        year:"An",
+        engine:"Motor",
+        problem:"Descrierea problemei",
+        find:"GĂSEȘTE SOLUȚIA",
+        selectMake:"Selectează marca",
+        selectModel:"Selectează modelul",
+        selectGeneration:"Selectează generația",
+        selectYear:"Selectează anul",
+        selectEngine:"Selectează motorul",
+        description:
+            "Descrie problema vehiculului în limbaj natural, iar AutoDecode va identifica cele mai relevante proceduri tehnice, informații de diagnostic și cauze posibile.",
+        hint:
+            "Poți descrie simptome, zgomote, martori, mesaje de avertizare sau coduri de eroare în propriile cuvinte.",
+        placeholder:
+            "Exemplu: Mașina s-a oprit în mers și acum învârte la automat, dar nu mai pornește.",
+        initial:
+            "Selectează vehiculul și descrie problema pentru a începe căutarea diagnostică.",
+        loading:"Se încarcă datele tehnice de diagnostic...",
+        semanticLoading:"Se încarcă dicționarul tehnic multilingv...",
+        semanticError:"Dicționarul tehnic multilingv nu a putut fi încărcat. Verifică existența și validitatea fișierului technical_terms.yaml.",
+        vehicleError:"Baza de date a vehiculelor nu a putut fi încărcată.",
+        noResults:"Nu a fost găsită o soluție tehnică suficient de relevantă pentru această problemă.",
+        results:"Soluții tehnice relevante",
+        possibleCauses:"Cauze posibile",
+        diagnosticSteps:"Pași de diagnosticare",
+        relatedDtcs:"DTC-uri asociate",
+        symptoms:"Simptome",
+        category:"Categorie",
+        system:"Sistem",
+        difficulty:"Dificultate",
+        relevance:"Relevanță",
+        searchReady:"Căutarea diagnostică este pregătită.",
+        enterProblem:"Descrie mai întâi problema.",
+        selectVehicle:"Selectează cel puțin marca vehiculului.",
+        dictionaryReady:"Dicționarul semantic multilingv a fost încărcat."
+    },
+
+    fr:{
+        home:"Accueil",
+        vehicle:"Véhicule",
+        make:"Marque",
+        model:"Modèle",
+        generation:"Génération",
+        year:"Année",
+        engine:"Moteur",
+        problem:"Description du problème",
+        find:"TROUVER LA SOLUTION",
+        selectMake:"Sélectionner la marque",
+        selectModel:"Sélectionner le modèle",
+        selectGeneration:"Sélectionner la génération",
+        selectYear:"Sélectionner l'année",
+        selectEngine:"Sélectionner le moteur",
+        description:
+            "Décrivez le problème du véhicule en langage naturel. AutoDecode identifiera les procédures techniques, informations de diagnostic et causes possibles les plus pertinentes.",
+        hint:
+            "Vous pouvez décrire les symptômes, bruits, messages d'avertissement ou codes défaut avec vos propres mots.",
+        placeholder:
+            "Exemple : La voiture s'est arrêtée en roulant et maintenant le moteur tourne au démarreur mais ne démarre plus.",
+        initial:
+            "Sélectionnez le véhicule et décrivez le problème pour commencer la recherche.",
+        loading:"Chargement des données techniques...",
+        semanticLoading:"Chargement du dictionnaire technique multilingue...",
+        semanticError:"Le dictionnaire technique multilingue n'a pas pu être chargé. Vérifiez le fichier technical_terms.yaml.",
+        vehicleError:"La base de données des véhicules n'a pas pu être chargée.",
+        noResults:"Aucune solution technique suffisamment pertinente n'a été trouvée.",
+        results:"Solutions techniques pertinentes",
+        possibleCauses:"Causes possibles",
+        diagnosticSteps:"Étapes de diagnostic",
+        relatedDtcs:"DTC associés",
+        symptoms:"Symptômes",
+        category:"Catégorie",
+        system:"Système",
+        difficulty:"Difficulté",
+        relevance:"Pertinence",
+        searchReady:"Recherche de diagnostic prête.",
+        enterProblem:"Décrivez d'abord le problème.",
+        selectVehicle:"Sélectionnez au moins la marque du véhicule.",
+        dictionaryReady:"Dictionnaire sémantique multilingue chargé."
+    },
+
+    es:{
+        home:"Inicio",
+        vehicle:"Vehículo",
+        make:"Marca",
+        model:"Modelo",
+        generation:"Generación",
+        year:"Año",
+        engine:"Motor",
+        problem:"Descripción del problema",
+        find:"ENCONTRAR SOLUCIÓN",
+        selectMake:"Seleccionar marca",
+        selectModel:"Seleccionar modelo",
+        selectGeneration:"Seleccionar generación",
+        selectYear:"Seleccionar año",
+        selectEngine:"Seleccionar motor",
+        description:
+            "Describe el problema del vehículo en lenguaje natural y AutoDecode identificará los procedimientos técnicos, información de diagnóstico y posibles causas más relevantes.",
+        hint:
+            "Puedes describir síntomas, ruidos, mensajes de advertencia o códigos de avería con tus propias palabras.",
+        placeholder:
+            "Ejemplo: El coche se apagó mientras circulaba y ahora gira con el motor de arranque pero no arranca.",
+        initial:
+            "Selecciona el vehículo y describe el problema para comenzar la búsqueda.",
+        loading:"Cargando datos técnicos...",
+        semanticLoading:"Cargando el diccionario técnico multilingüe...",
+        semanticError:"No se pudo cargar el diccionario técnico multilingüe. Comprueba el archivo technical_terms.yaml.",
+        vehicleError:"No se pudo cargar la base de datos de vehículos.",
+        noResults:"No se encontró una solución técnica suficientemente relevante.",
+        results:"Soluciones técnicas relevantes",
+        possibleCauses:"Causas posibles",
+        diagnosticSteps:"Pasos de diagnóstico",
+        relatedDtcs:"DTC relacionados",
+        symptoms:"Síntomas",
+        category:"Categoría",
+        system:"Sistema",
+        difficulty:"Dificultad",
+        relevance:"Relevancia",
+        searchReady:"Búsqueda de diagnóstico lista.",
+        enterProblem:"Describe primero el problema.",
+        selectVehicle:"Selecciona al menos la marca del vehículo.",
+        dictionaryReady:"Diccionario semántico multilingüe cargado."
+    },
+
+    it:{
+        home:"Home",
+        vehicle:"Veicolo",
+        make:"Marca",
+        model:"Modello",
+        generation:"Generazione",
+        year:"Anno",
+        engine:"Motore",
+        problem:"Descrizione del problema",
+        find:"TROVA SOLUZIONE",
+        selectMake:"Seleziona marca",
+        selectModel:"Seleziona modello",
+        selectGeneration:"Seleziona generazione",
+        selectYear:"Seleziona anno",
+        selectEngine:"Seleziona motore",
+        description:
+            "Descrivi il problema del veicolo in linguaggio naturale. AutoDecode individuerà le procedure tecniche, le informazioni diagnostiche e le possibili cause più rilevanti.",
+        hint:
+            "Puoi descrivere sintomi, rumori, messaggi di avviso o codici di errore con parole tue.",
+        placeholder:
+            "Esempio: L'auto si è spenta durante la marcia e ora il motorino gira ma il motore non parte.",
+        initial:
+            "Seleziona il veicolo e descrivi il problema per iniziare la ricerca.",
+        loading:"Caricamento dei dati tecnici...",
+        semanticLoading:"Caricamento del dizionario tecnico multilingue...",
+        semanticError:"Impossibile caricare il dizionario tecnico multilingue. Controlla il file technical_terms.yaml.",
+        vehicleError:"Impossibile caricare il database dei veicoli.",
+        noResults:"Nessuna soluzione tecnica sufficientemente rilevante trovata.",
+        results:"Soluzioni tecniche rilevanti",
+        possibleCauses:"Possibili cause",
+        diagnosticSteps:"Passaggi diagnostici",
+        relatedDtcs:"DTC correlati",
+        symptoms:"Sintomi",
+        category:"Categoria",
+        system:"Sistema",
+        difficulty:"Difficoltà",
+        relevance:"Rilevanza",
+        searchReady:"Ricerca diagnostica pronta.",
+        enterProblem:"Descrivi prima il problema.",
+        selectVehicle:"Seleziona almeno la marca del veicolo.",
+        dictionaryReady:"Dizionario semantico multilingue caricato."
+    },
+
+    nl:{
+        home:"Home",
+        vehicle:"Voertuig",
+        make:"Merk",
+        model:"Model",
+        generation:"Generatie",
+        year:"Jaar",
+        engine:"Motor",
+        problem:"Probleembeschrijving",
+        find:"OPLOSSING VINDEN",
+        selectMake:"Selecteer merk",
+        selectModel:"Selecteer model",
+        selectGeneration:"Selecteer generatie",
+        selectYear:"Selecteer jaar",
+        selectEngine:"Selecteer motor",
+        description:
+            "Beschrijf het voertuigprobleem in natuurlijke taal. AutoDecode identificeert de meest relevante technische procedures, diagnose-informatie en mogelijke oorzaken.",
+        hint:
+            "Je kunt symptomen, geluiden, waarschuwingen of foutcodes in je eigen woorden beschrijven.",
+        placeholder:
+            "Voorbeeld: De auto viel tijdens het rijden uit en start nu niet meer, hoewel de startmotor ronddraait.",
+        initial:
+            "Selecteer het voertuig en beschrijf het probleem om de diagnosezoekopdracht te starten.",
+        loading:"Technische diagnosegegevens worden geladen...",
+        semanticLoading:"Meertalig technisch woordenboek wordt geladen...",
+        semanticError:"Het meertalige technische woordenboek kon niet worden geladen. Controleer technical_terms.yaml.",
+        vehicleError:"De voertuigendatabase kon niet worden geladen.",
+        noResults:"Geen voldoende relevante technische oplossing gevonden.",
+        results:"Relevante technische oplossingen",
+        possibleCauses:"Mogelijke oorzaken",
+        diagnosticSteps:"Diagnosestappen",
+        relatedDtcs:"Gerelateerde DTC's",
+        symptoms:"Symptomen",
+        category:"Categorie",
+        system:"Systeem",
+        difficulty:"Moeilijkheid",
+        relevance:"Relevantie",
+        searchReady:"Diagnosezoekopdracht gereed.",
+        enterProblem:"Beschrijf eerst het probleem.",
+        selectVehicle:"Selecteer minstens het voertuigmerk.",
+        dictionaryReady:"Meertalig semantisch woordenboek geladen."
+    }
 };
 
-const flags={
-en:"🇬🇧",
-de:"🇩🇪",
-ro:"🇷🇴",
-fr:"🇫🇷",
-es:"🇪🇸",
-it:"🇮🇹",
-nl:"🇳🇱"
-};
-
-let currentLanguage=
-localStorage.getItem("autodecode_language")||"en";
-
-if(!translations[currentLanguage])
-currentLanguage="en";
-
 
 /* ============================================================
-   GLOBAL DATABASE STATE
+   HELPERS
 ============================================================ */
 
-let manufacturersData=[];
-let selectedManufacturerData=null;
-
-let technicalDatabase=[];
-let manufacturerDataCache={};
-
-let semanticDictionary=null;
-let semanticDictionaryReady=false;
-
-let symptomAliases={};
-let canonicalAlias={};
-let semanticRelationships=[];
-let semanticPriority={};
-let semanticConcepts={};
-
-
-/* ============================================================
-   DOM
-============================================================ */
-
-const manufacturerSelect=
-document.getElementById("manufacturer");
-
-const modelSelect=
-document.getElementById("model");
-
-const generationSelect=
-document.getElementById("generation");
-
-const yearSelect=
-document.getElementById("year");
-
-const engineSelect=
-document.getElementById("engine");
-
-const problemInput=
-document.getElementById("problem");
-
-const findButton=
-document.getElementById("findButton");
-
-const statusElement=
-document.getElementById("status");
-
-const selectedVehicleElement=
-document.getElementById("selectedVehicle");
-
-const resultsElement=
-document.getElementById("results");
-
-const resultList=
-document.getElementById("resultList");
-
-const resultCount=
-document.getElementById("resultCount");
-
-
-/* ============================================================
-   UI HELPERS
-============================================================ */
-
-function t(k){
-return translations[currentLanguage]?.[k]||
-translations.en[k]||
-k;
+function t(key){
+    return (
+        translations[currentLanguage] &&
+        translations[currentLanguage][key]
+    ) || translations.en[key] || key;
 }
 
-function localizePage(){
 
-document.documentElement.lang=currentLanguage;
-
-document
-.querySelectorAll("[data-i18n]")
-.forEach(e=>{
-e.textContent=t(e.getAttribute("data-i18n"));
-});
-
-document
-.querySelectorAll("[data-i18n-placeholder]")
-.forEach(e=>{
-e.placeholder=
-t(e.getAttribute("data-i18n-placeholder"));
-});
-
-document.getElementById("languageButton").textContent=
-`${flags[currentLanguage]} ${currentLanguage.toUpperCase()} ▾`;
-
+function escapeHtml(value){
+    return String(value ?? "")
+        .replace(/&/g,"&amp;")
+        .replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;")
+        .replace(/"/g,"&quot;")
+        .replace(/'/g,"&#039;");
 }
 
-function setStatus(message,type=""){
-
-statusElement.textContent=message;
-
-statusElement.className="status";
-
-if(type)
-statusElement.classList.add(type);
-
-}
-
-function resetSelect(select,key){
-
-select.innerHTML="";
-
-const option=
-document.createElement("option");
-
-option.value="";
-option.textContent=t(key);
-
-select.appendChild(option);
-
-}
-
-function populateSelect(select,items){
-
-for(const item of items||[]){
-
-if(!item?.id)
-continue;
-
-const option=
-document.createElement("option");
-
-option.value=item.id;
-option.textContent=item.name||item.id;
-
-select.appendChild(option);
-
-}
-
-}
-
-function escapeRegex(v){
-
-return String(v)
-.replace(/[.*+?^${}()|[\]\\]/g,"\\$&");
-
-}
 
 function normalizeText(value){
-
-return String(value??"")
-.toLowerCase()
-.replace(/[’‘`´]/g,"'")
-.normalize("NFD")
-.replace(/[\u0300-\u036f]/g,"")
-.replace(/[^a-z0-9]+/g," ")
-.replace(/\s+/g," ")
-.trim();
-
+    return String(value || "")
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g,"")
+        .toLowerCase()
+        .replace(/ß/g,"ss")
+        .replace(/œ/g,"oe")
+        .replace(/æ/g,"ae")
+        .replace(/[^a-z0-9]+/g," ")
+        .replace(/\s+/g," ")
+        .trim();
 }
+
 
 function tokenize(value){
-
-return new Set(
-normalizeText(value)
-.split(" ")
-.filter(Boolean)
-);
-
+    return normalizeText(value)
+        .split(" ")
+        .filter(Boolean);
 }
 
-function phraseMatches(text,phrase){
 
-const a=normalizeText(text);
-const p=normalizeText(phrase);
+function phraseMatches(text, phrase){
+    const a = normalizeText(text);
+    const b = normalizeText(phrase);
 
-if(!a||!p)
-return false;
+    if(!a || !b) return false;
 
-return (` ${a} `).includes(` ${p} `);
-
+    return a.includes(b);
 }
 
-function tokenWindowMatches(text,phrase){
 
-const a=
-normalizeText(text)
-.split(" ")
-.filter(Boolean);
+function tokenWindowMatches(text, phrase){
+    const source = tokenize(text);
+    const target = tokenize(phrase);
 
-const p=
-normalizeText(phrase)
-.split(" ")
-.filter(Boolean);
+    if(!source.length || !target.length) return false;
+    if(target.length > source.length) return false;
 
-if(p.length<2||p.length>6)
-return false;
+    for(let i=0;i<=source.length-target.length;i++){
 
-for(let i=0;i<a.length;i++){
+        let ok=true;
 
-let pos=i;
-let ok=true;
+        for(let j=0;j<target.length;j++){
+            if(source[i+j] !== target[j]){
+                ok=false;
+                break;
+            }
+        }
 
-for(const word of p){
+        if(ok) return true;
+    }
 
-let found=-1;
-
-for(
-let j=pos;
-j<Math.min(a.length,pos+6);
-j++
-){
-
-if(a[j]===word){
-
-found=j;
-break;
-
+    return false;
 }
 
-}
 
-if(found<0){
+function fuzzyTokenMatch(text, token){
+    const sourceTokens = tokenize(text);
+    const target = normalizeText(token);
 
-ok=false;
-break;
+    if(!target || target.length < 4) return false;
 
-}
+    for(const source of sourceTokens){
 
-pos=found+1;
+        if(source === target) return true;
 
-}
+        if(
+            source.length >= 5 &&
+            target.length >= 5 &&
+            (
+                source.startsWith(target) ||
+                target.startsWith(source)
+            )
+        ){
+            return true;
+        }
 
-if(ok)
-return true;
+        let differences=0;
+        const len=Math.max(source.length,target.length);
 
-}
+        for(let i=0;i<Math.min(source.length,target.length);i++){
+            if(source[i]!==target[i]) differences++;
+        }
 
-return false;
+        differences += Math.abs(source.length-target.length);
 
-}
+        if(
+            len >= 6 &&
+            differences <= 1
+        ){
+            return true;
+        }
+    }
 
-function fuzzyTokenMatch(text,alias){
-
-const a=
-normalizeText(text)
-.split(" ")
-.filter(Boolean);
-
-const p=
-normalizeText(alias)
-.split(" ")
-.filter(Boolean);
-
-if(p.length!==1||p[0].length<6)
-return false;
-
-const target=p[0];
-
-return a.some(w=>
-w===target||
-w.startsWith(target)||
-(target.startsWith(w)&&w.length>=5)
-);
-
-}
-
-function matchesAlias(text,alias){
-
-return phraseMatches(text,alias)||
-tokenWindowMatches(text,alias)||
-fuzzyTokenMatch(text,alias);
-
+    return false;
 }
 
 
 /* ============================================================
-   EXTERNAL SEMANTIC DICTIONARY
+   STATUS
 ============================================================ */
 
-/*
-   The old giant inline symptomAliases object has been removed.
-
-   The source of truth is now:
-
-   data/technical/semantic/technical_terms.yaml
-
-   The loader intentionally supports several YAML shapes so the
-   semantic database can evolve without requiring changes here.
-*/
-
-function canonical(id){
-
-if(id==null)
-return "";
-
-const n=
-normalizeText(id)
-.replace(/ /g,"_");
-
-return canonicalAlias[n]||n;
-
-}
-
-
-function normalizeAliasList(value){
-
-const result=[];
-
-if(value==null)
-return result;
-
-
-/* aliases: ["a","b"] */
-
-if(Array.isArray(value)){
-
-for(const v of value){
-
-if(typeof v==="string")
-result.push(v);
-
-else if(v&&typeof v==="object"){
-
-for(const nested of Object.values(v)){
-
-if(Array.isArray(nested))
-result.push(...nested.filter(x=>typeof x==="string"));
-
-else if(typeof nested==="string")
-result.push(nested);
-
-}
-
-}
-
-}
-
-return result;
-
-}
-
-
-/* aliases: "single phrase" */
-
-if(typeof value==="string")
-return [value];
-
-
-/*
-   aliases:
-     en: [...]
-     ro: [...]
-*/
-
-if(typeof value==="object"){
-
-for(const nested of Object.values(value)){
-
-if(Array.isArray(nested))
-result.push(...nested.filter(x=>typeof x==="string"));
-
-else if(typeof nested==="string")
-result.push(nested);
-
-}
-
-}
-
-return result;
-
-}
-
-
-function registerAlias(conceptId,alias){
-
-const concept=
-canonical(conceptId);
-
-if(!concept||!alias)
-return;
-
-const clean=
-String(alias).trim();
-
-if(!clean)
-return;
-
-if(!symptomAliases[concept])
-symptomAliases[concept]=[];
-
-if(!symptomAliases[concept].includes(clean))
-symptomAliases[concept].push(clean);
-
-}
-
-
-function buildSemanticIndex(data){
-
-symptomAliases={};
-canonicalAlias={};
-semanticRelationships=[];
-semanticPriority={};
-semanticConcepts={};
-
-if(!data||typeof data!=="object")
-throw Error("Invalid semantic dictionary structure");
-
-
-/* ------------------------------------------------------------
-   canonical_alias
------------------------------------------------------------- */
-
-if(data.canonical_alias&&typeof data.canonical_alias==="object"){
-
-for(const [from,to] of Object.entries(data.canonical_alias)){
-
-if(typeof to==="string")
-canonicalAlias[
-normalizeText(from).replace(/ /g,"_")
-]=
-normalizeText(to).replace(/ /g,"_");
-
-}
-
-}
-
-
-/* ------------------------------------------------------------
-   concepts
------------------------------------------------------------- */
-
-const concepts=
-data.concepts&&typeof data.concepts==="object"
-?data.concepts
-:{};
-
-for(const [conceptId,conceptData] of Object.entries(concepts)){
-
-const canonicalId=
-canonical(conceptId);
-
-semanticConcepts[canonicalId]=conceptData;
-
-
-/*
-   aliases can be:
-
-   aliases:
-     en: [...]
-     ro: [...]
-
-   OR
-
-   aliases:
-     - ...
-*/
-
-let aliases=[];
-
-if(conceptData&&typeof conceptData==="object"){
-
-aliases=
-normalizeAliasList(
-conceptData.aliases
-);
-
-}
-
-
-/*
-   Some versions may use terms / phrases instead of aliases.
-*/
-
-if(conceptData&&typeof conceptData==="object"){
-
-aliases.push(
-...normalizeAliasList(conceptData.terms)
-);
-
-aliases.push(
-...normalizeAliasList(conceptData.phrases)
-);
-
-}
-
-
-/*
-   Register the canonical concept ID itself as an alias.
-   This allows technical records containing e.g.
-   "fuel_pressure" to participate in semantic matching.
-*/
-
-aliases.push(canonicalId);
-
-
-for(const alias of aliases)
-registerAlias(canonicalId,alias);
-
-}
-
-
-/* ------------------------------------------------------------
-   relationships
------------------------------------------------------------- */
-
-if(Array.isArray(data.relationships)){
-
-for(const relationship of data.relationships){
-
-if(!relationship||typeof relationship!=="object")
-continue;
-
-const required=
-Array.isArray(relationship.required)
-?relationship.required
-:Array.isArray(relationship.concepts)
-?relationship.concepts
-:[];
-
-if(!required.length)
-continue;
-
-semanticRelationships.push({
-
-required:
-required
-.map(canonical)
-.filter(Boolean),
-
-bonus:
-Number(relationship.bonus||relationship.weight||0)
-
-});
-
-}
-
-}
-else if(data.relationships&&typeof data.relationships==="object"){
-
-/*
-   Also support:
-
-   relationships:
-     engine_stall:
-       - crank_no_start
-       - fuel_pressure
-*/
-
-for(const [source,targets] of Object.entries(data.relationships)){
-
-const src=canonical(source);
-
-if(Array.isArray(targets)){
-
-for(const target of targets){
-
-if(typeof target==="string"){
-
-semanticRelationships.push({
-
-required:[src,canonical(target)],
-
-bonus:10
-
-});
-
-}
-
-}
-
-}
-
-}
-
-}
-
-
-/* ------------------------------------------------------------
-   priority
------------------------------------------------------------- */
-
-if(data.priority&&typeof data.priority==="object"){
-
-for(const [id,value] of Object.entries(data.priority)){
-
-const n=canonical(id);
-
-if(n)
-semanticPriority[n]=Number(value)||0;
-
-}
-
-}
-
-
-/* ------------------------------------------------------------
-   Make aliases case-insensitive / normalized while retaining
-   original phrases for matching.
------------------------------------------------------------- */
-
-for(const concept of Object.keys(symptomAliases)){
-
-symptomAliases[concept]=[
-...new Set(
-symptomAliases[concept]
-.filter(Boolean)
-)
-
-];
-
-}
-
-semanticDictionary=data;
-semanticDictionaryReady=true;
-
-console.log(
-"AutoDecode semantic dictionary loaded:",
-Object.keys(semanticConcepts).length,
-"concepts /",
-Object.values(symptomAliases)
-.reduce((n,a)=>n+a.length,0),
-"aliases"
-);
-
-}
-
-
-async function loadSemanticDictionary(){
-
-try{
-
-const response=
-await fetch(
-"data/technical/semantic/technical_terms.yaml",
-{cache:"no-cache"}
-);
-
-if(!response.ok)
-throw Error(
-`Semantic dictionary HTTP ${response.status}`
-);
-
-const text=
-await response.text();
-
-const data=
-jsyaml.load(text);
-
-buildSemanticIndex(data);
-
-return true;
-
-}
-catch(error){
-
-semanticDictionaryReady=false;
-
-console.error(
-"Semantic dictionary error:",
-error
-);
-
-return false;
-
-}
-
+function setStatus(message,type=""){
+    const el=document.getElementById("status");
+
+    if(!message){
+        el.className="status";
+        el.textContent="";
+        return;
+    }
+
+    el.className=`status show ${type}`;
+
+    if(type==="loading"){
+        el.innerHTML=
+            `<span class="loading-spinner"></span>${escapeHtml(message)}`;
+    }else{
+        el.textContent=message;
+    }
 }
 
 
 /* ============================================================
-   USER SYMPTOM DETECTION
+   LANGUAGE
 ============================================================ */
 
-function detectUserSymptoms(problem){
+function applyTranslations(){
 
-const text=
-normalizeText(problem);
+    document.documentElement.lang=currentLanguage;
 
-const found=
-new Set();
+    document.getElementById("homeBtn").textContent=t("home");
 
+    document.getElementById("vehicleTitle").textContent=t("vehicle");
 
-for(
-const [conceptId,aliases]
-of Object.entries(symptomAliases)
-){
+    document.getElementById("makeLabel").textContent=t("make");
+    document.getElementById("modelLabel").textContent=t("model");
+    document.getElementById("generationLabel").textContent=t("generation");
+    document.getElementById("yearLabel").textContent=t("year");
+    document.getElementById("engineLabel").textContent=t("engine");
 
-if(
-aliases.some(alias=>
-matchesAlias(text,alias)
-)
-){
+    document.getElementById("problemTitle").textContent=t("problem");
 
-found.add(
-canonical(conceptId)
-);
+    document.getElementById("findButton").textContent=t("find");
 
-}
+    document.getElementById("pageDescription").textContent=t("description");
+    document.getElementById("problemHint").textContent=t("hint");
+    document.getElementById("problemInput").placeholder=t("placeholder");
 
+    resetPlaceholderOptions();
 }
 
 
-/*
-   Important diagnostic relationship:
+function resetPlaceholderOptions(){
 
-   "engine stalled" +
-   "cranks but does not start"
+    const values=[
+        ["manufacturerSelect","selectMake"],
+        ["modelSelect","selectModel"],
+        ["generationSelect","selectGeneration"],
+        ["yearSelect","selectYear"],
+        ["engineSelect","selectEngine"]
+    ];
 
-   implies no_start.
-*/
+    values.forEach(([id,key])=>{
 
-if(found.has("crank_no_start"))
-found.add("no_start");
+        const select=document.getElementById(id);
 
-if(
-found.has("engine_stall")&&
-found.has("crank_no_start")
-)
-found.add("no_start");
-
-
-/*
-   Canonical aliases may themselves resolve to concepts.
-*/
-
-return[
-...new Set(
-[...found].map(canonical)
-)
-];
-
+        if(select.options.length){
+            select.options[0].textContent=t(key);
+        }
+    });
 }
+
+
+document
+    .getElementById("languageSelect")
+    .addEventListener("change",event=>{
+
+        currentLanguage=event.target.value;
+
+        localStorage.setItem(
+            "autodecode_language",
+            currentLanguage
+        );
+
+        applyTranslations();
+
+        if(
+            technicalDatabase.length &&
+            document.getElementById("problemInput").value.trim()
+        ){
+            performSearch();
+        }
+    });
+
+
+document.getElementById("languageSelect").value=currentLanguage;
 
 
 /* ============================================================
-   TECHNICAL RECORD NORMALIZATION
-============================================================ */
-
-function normalizeSymptomId(value){
-
-if(value==null)
-return "";
-
-if(typeof value==="object"){
-
-value=
-value.id||
-value.name||
-value.concept||
-"";
-
-}
-
-const n=
-normalizeText(value)
-.replace(/ /g,"_");
-
-if(!n)
-return "";
-
-return canonical(n);
-
-}
-
-
-const itemSemanticCache=
-new WeakMap();
-
-const itemTextCache=
-new WeakMap();
-
-
-/*
-   These expansions remain deliberately small.
-
-   The global dictionary supplies language normalization.
-   These expansions supply diagnostic relationships that are
-   useful even when a technical record only identifies a
-   neighbouring technical system.
-*/
-
-const conceptExpansion={
-
-no_start:[
-"starter",
-"fuel_pressure",
-"crankshaft",
-"camshaft",
-"synchronization",
-"immobilizer",
-"pats",
-"battery"
-],
-
-crank_no_start:[
-"no_start",
-"starter",
-"fuel_pressure",
-"crankshaft",
-"camshaft",
-"synchronization",
-"immobilizer",
-"pats"
-],
-
-engine_stall:[
-"fuel_pressure",
-"crankshaft",
-"camshaft",
-"synchronization",
-"egr",
-"maf",
-"map",
-"injector",
-"battery",
-"alternator"
-],
-
-poor_power:[
-"turbo",
-"egr",
-"dpf",
-"maf",
-"map",
-"injector"
-],
-
-low_rpm_power_loss:[
-"turbo",
-"egr",
-"dpf",
-"maf",
-"map",
-"injector"
-],
-
-limp_mode:[
-"turbo",
-"egr",
-"dpf",
-"maf",
-"map",
-"fuel_pressure"
-],
-
-bluetooth:[
-"phone_connection"
-],
-
-carplay:[
-"phone_connection"
-],
-
-android_auto:[
-"phone_connection"
-],
-
-navigation:[
-"gps"
-],
-
-gps:[
-"navigation"
-],
-
-display:[
-"infotainment_reboot"
-],
-
-infotainment_reboot:[
-"display"
-],
-
-radar:[
-"cruise",
-"lane_assist"
-],
-
-lane_assist:[
-"camera",
-"radar"
-],
-
-cruise:[
-"radar"
-]
-
-};
-
-
-function getRelevantConcepts(userSymptoms){
-
-const set=
-new Set(
-userSymptoms.map(canonical)
-);
-
-for(
-const symptom of userSymptoms
-){
-
-for(
-const expansion of
-conceptExpansion[symptom]||[]
-){
-
-set.add(
-canonical(expansion)
-);
-
-}
-
-}
-
-
-/*
-   Add concepts that participate in dictionary relationships
-   with detected user concepts.
-*/
-
-for(
-const relationship of semanticRelationships
-){
-
-const required=
-relationship.required||[];
-
-if(required.length!==2)
-continue;
-
-if(required.some(c=>set.has(c))){
-
-for(const c of required)
-set.add(canonical(c));
-
-}
-
-}
-
-return[
-...set
-];
-
-}
-
-
-/* ============================================================
-   ITEM TEXT / SEMANTIC EXTRACTION
-============================================================ */
-
-function getItemText(item){
-
-if(itemTextCache.has(item))
-return itemTextCache.get(item);
-
-const parts=[];
-
-for(
-const key of [
-"id",
-"system",
-"category",
-"title",
-"description",
-"symptoms",
-"keywords",
-"possible_causes",
-"diagnostic_steps",
-"related_dtcs"
-]
-){
-
-const value=item?.[key];
-
-if(value==null)
-continue;
-
-if(typeof value==="object")
-parts.push(JSON.stringify(value));
-
-else
-parts.push(String(value));
-
-}
-
-const text=
-parts.join(" ");
-
-itemTextCache.set(item,text);
-
-return text;
-
-}
-
-
-function getItemSymptoms(item,relevantConcepts=null){
-
-if(!item||typeof item!=="object")
-return[];
-
-
-/*
-   Cache only full extraction.
-   Contextual extraction depends on user concepts.
-*/
-
-if(
-!relevantConcepts&&
-itemSemanticCache.has(item)
-){
-
-return itemSemanticCache.get(item);
-
-}
-
-const out=
-new Set();
-
-
-/* Explicit symptoms from YAML */
-
-const raw=
-item?.symptoms||[];
-
-for(
-const symptom of
-Array.isArray(raw)
-?raw
-:[raw]
-){
-
-const id=
-normalizeSymptomId(
-symptom
-);
-
-if(id)
-out.add(id);
-
-}
-
-
-/* System */
-
-const system=
-normalizeSymptomId(
-item?.system||""
-);
-
-if(system)
-out.add(system);
-
-
-/* Search aliases in record text */
-
-const text=
-getItemText(item);
-
-
-const conceptsToSearch=
-relevantConcepts&&relevantConcepts.length
-?relevantConcepts
-:Object.keys(symptomAliases);
-
-
-for(
-const conceptId of conceptsToSearch
-){
-
-const canonicalId=
-canonical(conceptId);
-
-const aliases=
-symptomAliases[canonicalId]||[];
-
-
-if(
-aliases.some(alias=>
-matchesAlias(text,alias)
-)
-){
-
-out.add(canonicalId);
-
-}
-
-}
-
-
-const result=[
-...out
-].map(canonical);
-
-
-if(!relevantConcepts){
-
-itemSemanticCache.set(
-item,
-[...new Set(result)]
-);
-
-}
-
-return[
-...new Set(result)
-];
-
-}
-
-
-function getLocalizedValue(value){
-
-if(!value)
-return"";
-
-if(typeof value==="string")
-return value;
-
-return(
-value[currentLanguage]||
-value.en||
-value.ro||
-value.de||
-Object.values(value)[0]||
-""
-);
-
-}
-
-
-/* ============================================================
-   VEHICLE / DATABASE
+   VEHICLE DATABASE
 ============================================================ */
 
 async function loadManufacturers(){
 
-setStatus(
-t("database_loading")
-);
+    try{
 
-try{
+        const response=await fetch(
+            VEHICLE_INDEX_URL,
+            {
+                cache:"no-cache",
+                headers:{
+                    "Accept":"text/yaml,text/plain,*/*"
+                }
+            }
+        );
 
-const response=
-await fetch(
-"data/vehicles/manufacturers.yaml",
-{cache:"no-cache"}
-);
+        if(!response.ok){
+            throw new Error(
+                `Vehicle database HTTP ${response.status}`
+            );
+        }
 
-if(!response.ok)
-throw Error(
-`HTTP ${response.status}`
-);
+        const text=await response.text();
 
-const data=
-jsyaml.load(
-await response.text()
-);
+        if(!text.trim()){
+            throw new Error("Vehicle database is empty.");
+        }
 
-manufacturersData=
-Array.isArray(data?.manufacturers)
-?data.manufacturers
-:Array.isArray(data)
-?data
-:[];
+        const data=jsyaml.load(text);
 
-if(!manufacturersData.length)
-throw Error(
-"Invalid manufacturers structure"
-);
+        manufacturersData=
+            Array.isArray(data)
+                ? data
+                : (data?.manufacturers || []);
 
-resetSelect(
-manufacturerSelect,
-"select_make"
-);
+        if(!Array.isArray(manufacturersData)){
+            throw new Error(
+                "Invalid manufacturers.yaml structure."
+            );
+        }
 
-populateSelect(
-manufacturerSelect,
-manufacturersData
-);
+        populateManufacturers();
 
-setStatus(
-t("database_ready"),
-"success"
-);
+    }catch(error){
 
-}
-catch(error){
+        console.error(
+            "AutoDecode vehicle database error:",
+            error
+        );
 
-console.error(error);
-
-setStatus(
-t("database_error"),
-"error"
-);
-
-}
-
+        setStatus(
+            `${t("vehicleError")} ${error.message}`,
+            "error"
+        );
+    }
 }
 
 
-async function loadManufacturerData(id){
+function populateManufacturers(){
 
-if(manufacturerDataCache[id])
-return manufacturerDataCache[id];
+    const select=
+        document.getElementById("manufacturerSelect");
 
-const response=
-await fetch(
-`data/vehicles/${id}.yaml`,
-{cache:"no-cache"}
-);
+    select.innerHTML=
+        `<option value="">${escapeHtml(t("selectMake"))}</option>`;
 
-if(!response.ok)
-throw Error(
-`Vehicle database HTTP ${response.status}`
-);
+    manufacturersData
+        .slice()
+        .sort((a,b)=>
+            String(a.name || a.id)
+                .localeCompare(
+                    String(b.name || b.id)
+                )
+        )
+        .forEach(manufacturer=>{
 
-const data=
-jsyaml.load(
-await response.text()
-);
+            const option=document.createElement("option");
 
-manufacturerDataCache[id]=data;
+            option.value=manufacturer.id;
 
-return data;
+            option.textContent=
+                manufacturer.name ||
+                manufacturer.id;
 
-}
+            select.appendChild(option);
+        });
 
-
-async function loadTechnicalDatabase(id){
-
-setStatus(
-t("technical_loading")
-);
-
-try{
-
-const response=
-await fetch(
-`data/technical/diagnostics/${id}.yaml`,
-{cache:"no-cache"}
-);
-
-if(!response.ok){
-
-technicalDatabase=[];
-
-setStatus(
-t("technical_error"),
-"error"
-);
-
-return false;
-
-}
-
-const data=
-jsyaml.load(
-await response.text()
-);
-
-technicalDatabase=
-Array.isArray(data?.technical_data)
-?data.technical_data
-:Array.isArray(data)
-?data
-:[];
-
-if(!technicalDatabase.length)
-throw Error(
-"Invalid technical database structure"
-);
-
-console.log(
-"Loaded technical records:",
-technicalDatabase.length
-);
-
-setStatus(
-t("technical_ready"),
-"success"
-);
-
-return true;
-
-}
-catch(error){
-
-console.error(error);
-
-technicalDatabase=[];
-
-setStatus(
-t("technical_error"),
-"error"
-);
-
-return false;
-
-}
-
+    select.disabled=false;
 }
 
 
@@ -2077,1418 +1270,1965 @@ return false;
    VEHICLE SELECTORS
 ============================================================ */
 
-function resetSelectsAfterMake(){
+const manufacturerSelect=
+    document.getElementById("manufacturerSelect");
 
-resetSelect(modelSelect,"select_model");
-resetSelect(generationSelect,"select_generation");
-resetSelect(yearSelect,"select_year");
-resetSelect(engineSelect,"select_engine");
+const modelSelect=
+    document.getElementById("modelSelect");
 
-modelSelect.disabled=true;
-generationSelect.disabled=true;
-yearSelect.disabled=true;
-engineSelect.disabled=true;
+const generationSelect=
+    document.getElementById("generationSelect");
 
-selectedVehicleElement.hidden=true;
+const yearSelect=
+    document.getElementById("yearSelect");
 
+const engineSelect=
+    document.getElementById("engineSelect");
+
+
+function resetSelect(select,labelKey,disabled=true){
+
+    select.innerHTML=
+        `<option value="">${escapeHtml(t(labelKey))}</option>`;
+
+    select.disabled=disabled;
 }
 
 
-function resetAfterModel(){
+function populateSelect(select,items,labelKey){
 
-resetSelect(
-generationSelect,
-"select_generation"
-);
+    resetSelect(select,labelKey,false);
 
-resetSelect(
-yearSelect,
-"select_year"
-);
+    items.forEach(item=>{
 
-resetSelect(
-engineSelect,
-"select_engine"
-);
+        const option=document.createElement("option");
 
-generationSelect.disabled=true;
-yearSelect.disabled=true;
-engineSelect.disabled=true;
+        if(typeof item==="object"){
 
-}
+            option.value=
+                item.id ??
+                item.value ??
+                item.name;
 
+            option.textContent=
+                item.name ??
+                item.label ??
+                item.value ??
+                item.id;
 
-function resetAfterGeneration(){
+        }else{
 
-resetSelect(
-yearSelect,
-"select_year"
-);
+            option.value=String(item);
+            option.textContent=String(item);
+        }
 
-resetSelect(
-engineSelect,
-"select_engine"
-);
-
-yearSelect.disabled=true;
-engineSelect.disabled=true;
-
-}
-
-
-function resetAfterYear(){
-
-resetSelect(
-engineSelect,
-"select_engine"
-);
-
-engineSelect.disabled=true;
-
+        select.appendChild(option);
+    });
 }
 
 
 manufacturerSelect.addEventListener(
-"change",
-async()=>{
+    "change",
+    async function(){
 
-resetSelectsAfterMake();
+        const id=this.value;
 
-const id=
-manufacturerSelect.value;
+        resetSelect(modelSelect,"selectModel");
+        resetSelect(generationSelect,"selectGeneration");
+        resetSelect(yearSelect,"selectYear");
+        resetSelect(engineSelect,"selectEngine");
 
-if(!id)
-return;
+        selectedManufacturerData=null;
 
-try{
+        if(!id) return;
 
-selectedManufacturerData=
-await loadManufacturerData(id);
+        selectedManufacturerData=
+            manufacturersData.find(
+                m=>String(m.id)===String(id)
+            );
 
-populateSelect(
-modelSelect,
-selectedManufacturerData.models||[]
+        if(!selectedManufacturerData) return;
+
+        const models=
+            selectedManufacturerData.models || [];
+
+        populateSelect(
+            modelSelect,
+            models,
+            "selectModel"
+        );
+    }
 );
-
-modelSelect.disabled=false;
-
-await loadTechnicalDatabase(id);
-
-}
-catch(error){
-
-console.error(error);
-
-setStatus(
-t("database_error"),
-"error"
-);
-
-}
-
-});
 
 
 modelSelect.addEventListener(
-"change",
-()=>{
+    "change",
+    function(){
 
-resetAfterModel();
+        resetSelect(generationSelect,"selectGeneration");
+        resetSelect(yearSelect,"selectYear");
+        resetSelect(engineSelect,"selectEngine");
 
-const model=
-(selectedManufacturerData?.models||[])
-.find(
-item=>item.id===modelSelect.value
+        const model=
+            (selectedManufacturerData?.models || [])
+                .find(
+                    m=>String(m.id)===String(this.value)
+                );
+
+        if(!model) return;
+
+        populateSelect(
+            generationSelect,
+            model.generations || [],
+            "selectGeneration"
+        );
+    }
 );
-
-if(!model)
-return;
-
-populateSelect(
-generationSelect,
-model.generations||[]
-);
-
-generationSelect.disabled=false;
-
-});
 
 
 generationSelect.addEventListener(
-"change",
-()=>{
+    "change",
+    function(){
 
-resetAfterGeneration();
+        resetSelect(yearSelect,"selectYear");
+        resetSelect(engineSelect,"selectEngine");
 
-const model=
-(selectedManufacturerData?.models||[])
-.find(
-item=>item.id===modelSelect.value
+        const model=
+            (selectedManufacturerData?.models || [])
+                .find(
+                    m=>String(m.id)===
+                       String(modelSelect.value)
+                );
+
+        const generation=
+            (model?.generations || [])
+                .find(
+                    g=>String(g.id)===
+                       String(this.value)
+                );
+
+        if(!generation) return;
+
+        const years=[];
+
+        const from=
+            generation.production?.from;
+
+        const to=
+            generation.production?.to;
+
+        if(
+            Number.isFinite(Number(from)) &&
+            Number.isFinite(Number(to))
+        ){
+
+            for(
+                let year=Number(from);
+                year<=Number(to);
+                year++
+            ){
+                years.push(year);
+            }
+
+        }else{
+
+            const engines=
+                generation.engines || [];
+
+            engines.forEach(engine=>{
+                if(engine.year){
+                    years.push(engine.year);
+                }
+            });
+        }
+
+        const uniqueYears=
+            [...new Set(years)]
+                .sort((a,b)=>a-b);
+
+        populateSelect(
+            yearSelect,
+            uniqueYears,
+            "selectYear"
+        );
+
+        if(!uniqueYears.length){
+            yearSelect.disabled=true;
+
+            populateEngines(generation);
+        }
+    }
 );
-
-const generation=
-(model?.generations||[])
-.find(
-item=>item.id===generationSelect.value
-);
-
-if(!generation)
-return;
-
-const from=
-Number(
-generation.production?.from||0
-);
-
-const to=
-Number(
-generation.production?.to||
-new Date().getFullYear()
-);
-
-const years=[];
-
-for(
-let year=from;
-year<=to;
-year++
-){
-
-years.push({
-id:String(year),
-name:String(year)
-});
-
-}
-
-populateSelect(
-yearSelect,
-years
-);
-
-yearSelect.disabled=false;
-
-});
 
 
 yearSelect.addEventListener(
-"change",
-()=>{
+    "change",
+    function(){
 
-resetAfterYear();
+        const model=
+            (selectedManufacturerData?.models || [])
+                .find(
+                    m=>String(m.id)===
+                       String(modelSelect.value)
+                );
 
-const model=
-(selectedManufacturerData?.models||[])
-.find(
-item=>item.id===modelSelect.value
+        const generation=
+            (model?.generations || [])
+                .find(
+                    g=>String(g.id)===
+                       String(generationSelect.value)
+                );
+
+        if(!generation) return;
+
+        populateEngines(
+            generation,
+            this.value
+        );
+    }
 );
 
-const generation=
-(model?.generations||[])
-.find(
-item=>item.id===generationSelect.value
-);
 
-if(!generation)
-return;
+function populateEngines(generation,year=""){
 
-populateSelect(
-engineSelect,
-generation.engines||[]
-);
+    resetSelect(
+        engineSelect,
+        "selectEngine"
+    );
 
-engineSelect.disabled=false;
+    let engines=
+        generation.engines || [];
 
-});
+    if(year){
 
+        engines=
+            engines.filter(engine=>{
 
-function vehicleIsReady(){
+                if(engine.year){
+                    return String(engine.year)===String(year);
+                }
 
-return Boolean(
-manufacturerSelect.value&&
-modelSelect.value&&
-generationSelect.value&&
-yearSelect.value&&
-engineSelect.value
-);
+                const from=
+                    engine.production?.from ??
+                    generation.production?.from;
 
+                const to=
+                    engine.production?.to ??
+                    generation.production?.to;
+
+                if(from && to){
+                    return (
+                        Number(year)>=Number(from) &&
+                        Number(year)<=Number(to)
+                    );
+                }
+
+                return true;
+            });
+    }
+
+    populateSelect(
+        engineSelect,
+        engines,
+        "selectEngine"
+    );
 }
-
-
-function getSelectedVehicle(){
-
-const manufacturer=
-manufacturersData.find(
-item=>item.id===manufacturerSelect.value
-);
-
-const model=
-(selectedManufacturerData?.models||[])
-.find(
-item=>item.id===modelSelect.value
-);
-
-const generation=
-(model?.generations||[])
-.find(
-item=>item.id===generationSelect.value
-);
-
-const engine=
-(generation?.engines||[])
-.find(
-item=>item.id===engineSelect.value
-);
-
-return{
-
-manufacturer:
-manufacturer?.id||
-manufacturerSelect.value,
-
-manufacturerName:
-manufacturer?.name||
-manufacturerSelect.value,
-
-model:
-model?.id||
-modelSelect.value,
-
-modelName:
-model?.name||
-modelSelect.value,
-
-generation:
-generation?.id||
-generationSelect.value,
-
-generationName:
-generation?.name||
-generationSelect.value,
-
-year:
-Number(yearSelect.value),
-
-engine:
-engine?.id||
-engineSelect.value,
-
-engineName:
-engine?.name||
-engineSelect.value,
-
-engineCodes:
-engine?.engine_codes||[],
-
-fuel:
-engine?.fuel||null
-
-};
-
-}
-
-
-function updateSelectedVehicle(){
-
-if(!vehicleIsReady()){
-
-selectedVehicleElement.hidden=true;
-
-return;
-
-}
-
-const vehicle=
-getSelectedVehicle();
-
-selectedVehicleElement.innerHTML=
-`<strong>${escapeHtml(vehicle.manufacturerName)} ${escapeHtml(vehicle.modelName)}</strong> · ${escapeHtml(vehicle.generationName)} · ${escapeHtml(String(vehicle.year))} · ${escapeHtml(vehicle.engineName)}`;
-
-selectedVehicleElement.hidden=false;
-
-}
-
-
-function updateFindButton(){
-
-findButton.disabled=
-!vehicleIsReady()||
-!problemInput.value.trim();
-
-}
-
-
-engineSelect.addEventListener(
-"change",
-()=>{
-
-updateFindButton();
-updateSelectedVehicle();
-
-}
-);
-
-problemInput.addEventListener(
-"input",
-updateFindButton
-);
 
 
 /* ============================================================
-   LANGUAGE
+   SEMANTIC DICTIONARY
 ============================================================ */
 
-document
-.getElementById("languageButton")
-.addEventListener(
-"click",
-()=>{
+function buildSemanticIndex(data){
 
-document
-.getElementById("languageMenu")
-.classList.toggle("active");
+    semanticDictionary=data;
 
+    symptomAliases={};
+    canonicalAlias={};
+    semanticRelationships=[];
+    semanticPriority={};
+    semanticConcepts={};
+
+    const concepts=data?.concepts || {};
+
+    Object.entries(concepts).forEach(
+        ([conceptId,conceptData])=>{
+
+            semanticConcepts[conceptId]=conceptData;
+
+            const aliases=
+                conceptData?.aliases ||
+                conceptData?.terms ||
+                conceptData?.phrases ||
+                {};
+
+            if(Array.isArray(aliases)){
+
+                symptomAliases[conceptId]=aliases;
+
+            }else if(
+                aliases &&
+                typeof aliases==="object"
+            ){
+
+                symptomAliases[conceptId]=[];
+
+                Object.values(aliases)
+                    .flat(Infinity)
+                    .forEach(alias=>{
+
+                        if(
+                            typeof alias==="string" &&
+                            alias.trim()
+                        ){
+                            symptomAliases[conceptId]
+                                .push(alias);
+                        }
+                    });
+            }
+        }
+    );
+
+
+    /*
+        canonical_alias can have formats such as:
+
+        canonical_alias:
+          "ne démarre pas": no_start
+
+        or:
+
+        canonical_alias:
+          no_start:
+            - "..."
+            - "..."
+    */
+
+    if(
+        data?.canonical_alias &&
+        typeof data.canonical_alias==="object"
+    ){
+
+        Object.entries(data.canonical_alias)
+            .forEach(([key,value])=>{
+
+                if(Array.isArray(value)){
+
+                    value.forEach(alias=>{
+
+                        if(
+                            typeof alias==="string"
+                        ){
+                            canonicalAlias[
+                                normalizeText(alias)
+                            ]=key;
+                        }
+                    });
+
+                }else if(
+                    typeof value==="string"
+                ){
+
+                    canonicalAlias[
+                        normalizeText(key)
+                    ]=value;
+                }
+            });
+    }
+
+
+    /*
+        Relationships can be either:
+
+        relationships:
+          - concepts:
+              - no_start
+              - fuel_pressure
+            bonus: 15
+
+        or:
+
+        relationships:
+          no_start:
+            - fuel_pressure
+            - crankshaft
+    */
+
+    if(Array.isArray(data?.relationships)){
+
+        data.relationships.forEach(rel=>{
+
+            if(!rel || typeof rel!=="object") return;
+
+            const required=
+                rel.required ||
+                rel.concepts ||
+                rel.when ||
+                [];
+
+            const targets=
+                rel.targets ||
+                rel.related ||
+                rel.add ||
+                [];
+
+            const bonus=
+                Number(rel.bonus ?? rel.weight ?? 10);
+
+            if(Array.isArray(required)){
+
+                semanticRelationships.push({
+                    required,
+                    targets:Array.isArray(targets)
+                        ? targets
+                        : [],
+                    bonus
+                });
+            }
+        });
+
+    }else if(
+        data?.relationships &&
+        typeof data.relationships==="object"
+    ){
+
+        Object.entries(data.relationships)
+            .forEach(([source,targets])=>{
+
+                const targetArray=
+                    Array.isArray(targets)
+                        ? targets
+                        : [targets];
+
+                targetArray.forEach(target=>{
+
+                    const targetId=
+                        typeof target==="string"
+                            ? target
+                            : target?.concept ||
+                              target?.id;
+
+                    if(!targetId) return;
+
+                    semanticRelationships.push({
+                        required:[source],
+                        targets:[targetId],
+                        bonus:
+                            typeof target==="object"
+                                ? Number(
+                                    target.bonus ??
+                                    target.weight ??
+                                    10
+                                )
+                                : 10
+                    });
+                });
+            });
+    }
+
+
+    if(
+        data?.priority &&
+        typeof data.priority==="object"
+    ){
+
+        Object.entries(data.priority)
+            .forEach(([concept,value])=>{
+
+                semanticPriority[concept]=
+                    Number(
+                        value?.score ??
+                        value?.weight ??
+                        value ??
+                        0
+                    );
+            });
+    }
+
+
+    /*
+        Add aliases from the concept itself.
+    */
+
+    Object.entries(semanticConcepts)
+        .forEach(([conceptId,concept])=>{
+
+            if(!symptomAliases[conceptId]){
+                symptomAliases[conceptId]=[];
+            }
+
+            const addAlias=value=>{
+
+                if(
+                    typeof value==="string" &&
+                    value.trim()
+                ){
+
+                    if(
+                        !symptomAliases[conceptId]
+                            .some(
+                                x=>normalizeText(x)===
+                                   normalizeText(value)
+                            )
+                    ){
+
+                        symptomAliases[conceptId]
+                            .push(value);
+                    }
+                }
+            };
+
+            addAlias(conceptId);
+
+            if(concept?.name){
+                if(typeof concept.name==="string"){
+                    addAlias(concept.name);
+                }else if(
+                    typeof concept.name==="object"
+                ){
+                    Object.values(concept.name)
+                        .forEach(addAlias);
+                }
+            }
+        });
+
+
+    /*
+        Remove invalid relationship targets.
+
+        This is important because the global YAML can contain
+        relationships referencing a concept that will be added
+        later. The search engine must not break because of it.
+    */
+
+    semanticRelationships=
+        semanticRelationships.filter(rel=>{
+
+            rel.required=
+                rel.required.filter(
+                    concept=>
+                        !!semanticConcepts[concept]
+                );
+
+            rel.targets=
+                rel.targets.filter(
+                    concept=>
+                        !!semanticConcepts[concept]
+                );
+
+            return (
+                rel.required.length &&
+                rel.targets.length
+            );
+        });
 }
-);
 
 
-document
-.querySelectorAll(".language-option")
-.forEach(option=>
+/* ============================================================
+   ROBUST SEMANTIC LOADER
+============================================================ */
 
-option.addEventListener(
-"click",
-()=>{
+async function loadSemanticDictionary(){
 
-const lang=
-option.dataset.lang;
+    if(semanticDictionaryReady){
+        return true;
+    }
 
-if(!translations[lang])
-return;
+    if(semanticDictionaryPromise){
+        return semanticDictionaryPromise;
+    }
 
-currentLanguage=lang;
+    semanticDictionaryLoading=true;
+    semanticDictionaryError=null;
 
-localStorage.setItem(
-"autodecode_language",
-lang
-);
+    semanticDictionaryPromise=(async()=>{
 
-localizePage();
+        try{
 
-document
-.getElementById("languageMenu")
-.classList.remove("active");
+            console.log(
+                "AutoDecode semantic dictionary URL:",
+                SEMANTIC_DICTIONARY_URL
+            );
 
-updateSelectedVehicle();
+            const response=await fetch(
+                SEMANTIC_DICTIONARY_URL,
+                {
+                    cache:"no-cache",
+                    headers:{
+                        "Accept":
+                            "text/yaml,text/plain,application/x-yaml,*/*"
+                    }
+                }
+            );
 
+            if(!response.ok){
+
+                throw new Error(
+                    `Semantic dictionary HTTP ${response.status} ${response.statusText}`
+                );
+            }
+
+            const text=await response.text();
+
+            console.log(
+                "AutoDecode semantic dictionary bytes:",
+                text.length
+            );
+
+            if(!text.trim()){
+
+                throw new Error(
+                    "Semantic dictionary file is empty."
+                );
+            }
+
+            let data;
+
+            try{
+
+                data=jsyaml.load(text);
+
+            }catch(yamlError){
+
+                throw new Error(
+                    `YAML parse error: ${yamlError.message}`
+                );
+            }
+
+            if(
+                !data ||
+                typeof data!=="object"
+            ){
+
+                throw new Error(
+                    "Semantic dictionary contains no valid YAML object."
+                );
+            }
+
+            if(
+                !data.concepts ||
+                typeof data.concepts!=="object"
+            ){
+
+                throw new Error(
+                    "Semantic dictionary has no valid 'concepts' section."
+                );
+            }
+
+            buildSemanticIndex(data);
+
+            if(
+                Object.keys(semanticConcepts).length===0
+            ){
+
+                throw new Error(
+                    "Semantic dictionary contains zero concepts."
+                );
+            }
+
+            semanticDictionaryReady=true;
+            semanticDictionaryLoading=false;
+            semanticDictionaryError=null;
+
+            console.log(
+                "AutoDecode semantic dictionary ready:",
+                Object.keys(semanticConcepts).length,
+                "concepts"
+            );
+
+            return true;
+
+        }catch(error){
+
+            semanticDictionaryReady=false;
+            semanticDictionaryLoading=false;
+            semanticDictionaryError=error;
+
+            console.error(
+                "AutoDecode semantic dictionary error:",
+                error
+            );
+
+            return false;
+        }
+
+    })();
+
+    return semanticDictionaryPromise;
 }
-)
-
-);
 
 
-document.addEventListener(
-"click",
-event=>{
+/* ============================================================
+   TECHNICAL DATABASE LOADER
+============================================================ */
 
-const selector=
-document.querySelector(".language-selector");
+async function loadTechnicalDatabase(){
 
-if(
-selector&&
-!selector.contains(event.target)
+    const manufacturer=
+        document.getElementById(
+            "manufacturerSelect"
+        ).value;
+
+    if(!manufacturer) return [];
+
+    if(manufacturerDataCache[manufacturer]){
+        return manufacturerDataCache[manufacturer];
+    }
+
+    try{
+
+        const url=
+            new URL(
+                `${TECHNICAL_BASE_PATH}${manufacturer}.yaml`,
+                document.baseURI
+            ).href;
+
+        console.log(
+            "Loading technical database:",
+            url
+        );
+
+        const response=await fetch(
+            url,
+            {
+                cache:"no-cache",
+                headers:{
+                    "Accept":"text/yaml,text/plain,*/*"
+                }
+            }
+        );
+
+        if(!response.ok){
+
+            throw new Error(
+                `Technical database HTTP ${response.status}`
+            );
+        }
+
+        const text=await response.text();
+
+        if(!text.trim()){
+            throw new Error(
+                "Technical database is empty."
+            );
+        }
+
+        const data=jsyaml.load(text);
+
+        let records=[];
+
+        if(Array.isArray(data)){
+            records=data;
+        }else if(
+            Array.isArray(data?.records)
+        ){
+            records=data.records;
+        }else if(
+            Array.isArray(data?.diagnostics)
+        ){
+            records=data.diagnostics;
+        }else{
+            /*
+                Also support a YAML document where records are
+                stored as object properties.
+            */
+            records=
+                Object.values(data || {})
+                    .filter(
+                        value=>
+                            value &&
+                            typeof value==="object" &&
+                            (
+                                value.title ||
+                                value.symptoms ||
+                                value.keywords ||
+                                value.diagnostic_steps
+                            )
+                    );
+        }
+
+        manufacturerDataCache[manufacturer]=records;
+
+        return records;
+
+    }catch(error){
+
+        console.error(
+            "Technical database loading error:",
+            error
+        );
+
+        return [];
+    }
+}
+
+
+/* ============================================================
+   SEMANTIC QUERY DETECTION
+============================================================ */
+
+function detectSemanticConcepts(query){
+
+    const normalized=
+        normalizeText(query);
+
+    const detected=new Set();
+
+    /*
+        First use canonical aliases.
+    */
+
+    Object.entries(canonicalAlias)
+        .forEach(([alias,concept])=>{
+
+            if(
+                phraseMatches(normalized,alias) &&
+                semanticConcepts[concept]
+            ){
+                detected.add(concept);
+            }
+        });
+
+
+    /*
+        Then use aliases from the global dictionary.
+    */
+
+    Object.entries(symptomAliases)
+        .forEach(([concept,aliases])=>{
+
+            if(!semanticConcepts[concept]) return;
+
+            for(const alias of aliases){
+
+                if(
+                    phraseMatches(normalized,alias) ||
+                    tokenWindowMatches(normalized,alias)
+                ){
+
+                    detected.add(concept);
+                    break;
+                }
+            }
+        });
+
+
+    /*
+        Strong generic phrase detection.
+
+        These are deliberately multilingual because they
+        protect the most important diagnostic cases even if
+        a dictionary alias was accidentally omitted.
+    */
+
+    const multilingualPatterns={
+
+        engine_stall:[
+            "s a oprit in mers",
+            "s a oprit",
+            "motorul s a oprit",
+            "se opreste in mers",
+            "se opreste",
+            "nu mai merge",
+            "engine stopped",
+            "engine stalled",
+            "stopped while driving",
+            "stalls while driving",
+            "geht wahrend der fahrt aus",
+            "motor geht aus",
+            "moteur cale en roulant",
+            "moteur s est arrete",
+            "se apaga en marcha",
+            "motore si e spento",
+            "motor slaat af tijdens het rijden"
+        ],
+
+        crank_no_start:[
+            "invart la automat",
+            "invarte la automat",
+            "invarteste la automat",
+            "da la automat",
+            "invarte dar nu porneste",
+            "cranks but will not start",
+            "cranks but doesnt start",
+            "cranks no start",
+            "dreht aber springt nicht an",
+            "tourne mais ne demarre pas",
+            "gira pero no arranca",
+            "gira ma non parte",
+            "startmotor draait maar start niet"
+        ],
+
+        no_start:[
+            "nu mai porneste",
+            "nu porneste",
+            "nu porneste deloc",
+            "won t start",
+            "will not start",
+            "does not start",
+            "startet nicht",
+            "springt nicht an",
+            "ne demarre pas",
+            "ne redemarre plus",
+            "no arranca",
+            "non parte",
+            "start niet"
+        ],
+
+        fuel_pressure:[
+            "presiune combustibil",
+            "presiune de combustibil",
+            "presiune carburant",
+            "fuel pressure",
+            "low fuel pressure",
+            "fuel pressure too low",
+            "kraftstoffdruck",
+            "kraftstoffdruck zu niedrig",
+            "pression carburant",
+            "pression carburant insuffisante",
+            "presion de combustible",
+            "pressione carburante",
+            "brandstofdruk"
+        ],
+
+        crankshaft:[
+            "senzor pozitie arbore cotit",
+            "senzor arbore cotit",
+            "arbore cotit",
+            "crankshaft sensor",
+            "crank sensor",
+            "kurbelwellensensor",
+            "capteur vilebrequin",
+            "sensor ciguenal",
+            "sensore albero motore",
+            "krukassensor"
+        ],
+
+        camshaft:[
+            "senzor pozitie arbore cu came",
+            "senzor arbore cu came",
+            "arbore cu came",
+            "camshaft sensor",
+            "cam sensor",
+            "nockenwellensensor",
+            "capteur arbre a cames",
+            "sensor arbol de levas",
+            "sensore albero a camme",
+            "nokkenassensor"
+        ],
+
+        limp_mode:[
+            "limp mode",
+            "mod avarie",
+            "mod protectie",
+            "putere redusa",
+            "notlauf",
+            "mode degrade",
+            "modo emergencia",
+            "modalita recovery",
+            "noodloop"
+        ],
+
+        low_rpm_power_loss:[
+            "nu mai trage jos",
+            "nu mai trage la turatii mici",
+            "lipsa putere la turatii mici",
+            "poor low rpm power",
+            "low rpm power loss",
+            "wenig leistung bei niedrigen drehzahlen",
+            "manque de puissance a bas regime",
+            "falta de potencia a bajas rpm",
+            "perdita di potenza ai bassi giri",
+            "weinig vermogen bij lage toeren"
+        ]
+    };
+
+
+    Object.entries(multilingualPatterns)
+        .forEach(([concept,patterns])=>{
+
+            if(!semanticConcepts[concept]) return;
+
+            patterns.forEach(pattern=>{
+
+                if(
+                    phraseMatches(normalized,pattern) ||
+                    tokenWindowMatches(normalized,pattern)
+                ){
+                    detected.add(concept);
+                }
+            });
+        });
+
+
+    /*
+        Important relationship:
+
+        crank_no_start is a special form of no_start.
+    */
+
+    if(detected.has("crank_no_start")){
+        detected.add("no_start");
+    }
+
+
+    /*
+        If engine stalled + crank/no-start:
+        this is a strong combined diagnostic scenario.
+    */
+
+    return [...detected];
+}
+
+
+/* ============================================================
+   TECHNICAL ITEM TEXT
+============================================================ */
+
+function multilingualValue(value){
+
+    if(value==null) return "";
+
+    if(typeof value==="string"){
+        return value;
+    }
+
+    if(Array.isArray(value)){
+        return value
+            .map(multilingualValue)
+            .join(" ");
+    }
+
+    if(typeof value==="object"){
+
+        return Object.values(value)
+            .map(multilingualValue)
+            .join(" ");
+    }
+
+    return String(value);
+}
+
+
+function getLocalizedValue(value){
+
+    if(value==null) return "";
+
+    if(typeof value==="string"){
+        return value;
+    }
+
+    if(Array.isArray(value)){
+        return value
+            .map(getLocalizedValue)
+            .filter(Boolean)
+            .join(", ");
+    }
+
+    if(typeof value==="object"){
+
+        return (
+            value[currentLanguage] ??
+            value.en ??
+            Object.values(value)[0] ??
+            ""
+        );
+    }
+
+    return String(value);
+}
+
+
+function getRecordText(record){
+
+    const parts=[];
+
+    parts.push(
+        multilingualValue(record.title)
+    );
+
+    parts.push(
+        multilingualValue(record.symptoms)
+    );
+
+    parts.push(
+        multilingualValue(record.keywords)
+    );
+
+    parts.push(
+        multilingualValue(record.possible_causes)
+    );
+
+    parts.push(
+        multilingualValue(record.system)
+    );
+
+    parts.push(
+        multilingualValue(record.category)
+    );
+
+    parts.push(
+        multilingualValue(record.diagnostic_steps)
+    );
+
+    parts.push(
+        multilingualValue(record.related_dtcs)
+    );
+
+    parts.push(
+        multilingualValue(record.id)
+    );
+
+    return parts.join(" ");
+}
+
+
+/* ============================================================
+   EXPLICIT RECORD SEMANTICS
+============================================================ */
+
+function detectRecordConcepts(record){
+
+    const concepts=new Set();
+
+    const text=getRecordText(record);
+
+    /*
+        Run global semantic aliases against the technical record.
+    */
+
+    Object.entries(symptomAliases)
+        .forEach(([concept,aliases])=>{
+
+            if(!semanticConcepts[concept]) return;
+
+            for(const alias of aliases){
+
+                if(
+                    phraseMatches(text,alias) ||
+                    tokenWindowMatches(text,alias)
+                ){
+
+                    concepts.add(concept);
+                    break;
+                }
+            }
+        });
+
+
+    /*
+        System mapping.
+    */
+
+    const system=
+        normalizeText(
+            multilingualValue(record.system)
+        );
+
+    const systemMap={
+
+        engine:[
+            "engine",
+            "motor",
+            "moteur",
+            "motor"
+        ],
+
+        fuel:[
+            "fuel",
+            "combustibil",
+            "carburant",
+            "kraftstoff",
+            "combustible",
+            "carburante",
+            "brandstof"
+        ],
+
+        turbo:[
+            "turbo",
+            "turbocharger",
+            "turbocompresor",
+            "turbolader",
+            "turbocompresseur",
+            "turbocompressore"
+        ],
+
+        egr:[
+            "egr"
+        ],
+
+        dpf:[
+            "dpf",
+            "particulate",
+            "partikel",
+            "particules",
+            "particulas",
+            "particolato",
+            "roetfilter"
+        ],
+
+        transmission:[
+            "transmission",
+            "gearbox",
+            "cambio",
+            "getriebe",
+            "boite",
+            "caja",
+            "cambio automatico",
+            "versnellingsbak"
+        ],
+
+        hvac:[
+            "hvac",
+            "climate",
+            "air conditioning",
+            "klima",
+            "climatisation",
+            "climatizacion",
+            "aria condizionata",
+            "airco"
+        ],
+
+        abs:[
+            "abs",
+            "anti lock",
+            "antibloccaggio"
+        ],
+
+        adas:[
+            "adas",
+            "lane assist",
+            "radar",
+            "camera",
+            "adaptive cruise"
+        ],
+
+        infotainment:[
+            "infotainment",
+            "mmi",
+            "navigation",
+            "bluetooth",
+            "carplay",
+            "android auto"
+        ]
+    };
+
+
+    Object.entries(systemMap)
+        .forEach(([concept,terms])=>{
+
+            if(!semanticConcepts[concept]) return;
+
+            terms.forEach(term=>{
+
+                if(
+                    system.includes(
+                        normalizeText(term)
+                    )
+                ){
+                    concepts.add(concept);
+                }
+            });
+        });
+
+
+    return [...concepts];
+}
+
+
+/* ============================================================
+   VEHICLE MATCHING
+============================================================ */
+
+function getSelectedVehicleContext(){
+
+    return {
+
+        manufacturer:
+            manufacturerSelect.value,
+
+        model:
+            modelSelect.value,
+
+        generation:
+            generationSelect.value,
+
+        year:
+            yearSelect.value,
+
+        engine:
+            engineSelect.value
+    };
+}
+
+
+function fieldMatches(recordValue,selected){
+
+    if(
+        recordValue==null ||
+        recordValue==="all" ||
+        recordValue==="*" ||
+        recordValue==="any"
+    ){
+        return true;
+    }
+
+    if(Array.isArray(recordValue)){
+
+        if(
+            recordValue.includes("all") ||
+            recordValue.includes("*")
+        ){
+            return true;
+        }
+
+        return recordValue.some(
+            value=>
+                normalizeText(value)===
+                normalizeText(selected)
+        );
+    }
+
+    if(typeof recordValue==="object"){
+
+        return Object.values(recordValue)
+            .flat(Infinity)
+            .some(
+                value=>
+                    normalizeText(value)===
+                    normalizeText(selected)
+            );
+    }
+
+    return (
+        normalizeText(recordValue)===
+        normalizeText(selected)
+    );
+}
+
+
+function recordVehicleMatch(record,vehicle){
+
+    const v=record.vehicle || {};
+
+    const manufacturerMatch=
+        fieldMatches(
+            v.manufacturer ??
+            v.make ??
+            record.manufacturer,
+            vehicle.manufacturer
+        );
+
+    if(!manufacturerMatch){
+        return false;
+    }
+
+
+    if(
+        vehicle.model &&
+        (
+            v.models ??
+            v.model
+        )
+    ){
+
+        if(
+            !fieldMatches(
+                v.models ?? v.model,
+                vehicle.model
+            )
+        ){
+            return false;
+        }
+    }
+
+
+    if(
+        vehicle.generation &&
+        (
+            v.generations ??
+            v.generation
+        )
+    ){
+
+        if(
+            !fieldMatches(
+                v.generations ?? v.generation,
+                vehicle.generation
+            )
+        ){
+            return false;
+        }
+    }
+
+
+    if(
+        vehicle.year &&
+        (
+            v.years ??
+            v.year ??
+            v.production
+        )
+    ){
+
+        const years=
+            v.years ??
+            v.year;
+
+        if(years){
+
+            if(
+                !fieldMatches(
+                    years,
+                    vehicle.year
+                )
+            ){
+
+                if(
+                    !(
+                        v.production &&
+                        Number(vehicle.year)>=
+                            Number(v.production.from) &&
+                        Number(vehicle.year)<=
+                            Number(v.production.to)
+                    )
+                ){
+                    return false;
+                }
+            }
+        }
+
+        if(
+            v.production &&
+            v.production.from &&
+            v.production.to
+        ){
+
+            const y=Number(vehicle.year);
+
+            if(
+                y < Number(v.production.from) ||
+                y > Number(v.production.to)
+            ){
+                return false;
+            }
+        }
+    }
+
+
+    if(
+        vehicle.engine &&
+        (
+            v.engines ??
+            v.engine
+        )
+    ){
+
+        if(
+            !fieldMatches(
+                v.engines ?? v.engine,
+                vehicle.engine
+            )
+        ){
+            return false;
+        }
+    }
+
+    return true;
+}
+
+
+/* ============================================================
+   DTC DETECTION
+============================================================ */
+
+function extractDTCs(query){
+
+    const matches=
+        query.toUpperCase()
+            .match(
+                /\b(?:P|B|C|U)[0-9]{4}\b/g
+            ) || [];
+
+    return [...new Set(matches)];
+}
+
+
+function getRecordDTCs(record){
+
+    const raw=
+        record.related_dtcs ??
+        record.dtcs ??
+        record.dtc ??
+        [];
+
+    return String(
+        multilingualValue(raw)
+    )
+        .toUpperCase()
+        .match(
+            /\b(?:P|B|C|U)[0-9]{4}\b/g
+        ) || [];
+}
+
+
+/* ============================================================
+   SEMANTIC RELATIONSHIPS
+============================================================ */
+
+function calculateRelationshipBonus(
+    queryConcepts,
+    recordConcepts
 ){
 
-document
-.getElementById("languageMenu")
-.classList.remove("active");
+    const q=new Set(queryConcepts);
+    const r=new Set(recordConcepts);
 
-}
+    let bonus=0;
 
-}
-);
+    semanticRelationships.forEach(rel=>{
 
+        const requiredOk=
+            rel.required.every(
+                concept=>q.has(concept)
+            );
 
-/* ============================================================
-   VEHICLE MATCH
-============================================================ */
+        if(!requiredOk) return;
 
-function valueMatches(values,target){
+        const matchingTargets=
+            rel.targets.filter(
+                target=>r.has(target)
+            );
 
-if(values==null)
-return true;
-
-const array=
-Array.isArray(values)
-?values
-:[values];
-
-if(!array.length)
-return true;
-
-const normalizedTarget=
-normalizeText(target);
-
-return array.some(value=>{
-
-if(value==null)
-return false;
-
-if(typeof value==="object")
-return valueMatches(
-value.id||value.name,
-target
-);
-
-const normalized=
-normalizeText(value);
-
-return(
-normalized==="all"||
-normalized==="*"||
-normalized===normalizedTarget||
-normalizedTarget===normalized
-);
-
-});
-
-}
+        if(matchingTargets.length){
+            bonus +=
+                Number(rel.bonus || 0) *
+                Math.min(
+                    matchingTargets.length,
+                    3
+                );
+        }
+    });
 
 
-function calculateVehicleMatch(item,vehicle){
+    /*
+        Important local diagnostic relationships.
+        These guarantee sensible ranking even if the
+        external dictionary is incomplete.
+    */
 
-const iv=
-item.vehicle||item;
-
-const score=100;
-
-if(
-iv.manufacturer&&
-!valueMatches(
-iv.manufacturer,
-vehicle.manufacturer
-)&&
-!valueMatches(
-iv.manufacturer_id,
-vehicle.manufacturer
-)
-)
-return 0;
+    const has=(set,...values)=>
+        values.every(v=>set.has(v));
 
 
-if(
-iv.make&&
-!valueMatches(
-iv.make,
-vehicle.manufacturer
-)
-)
-return 0;
+    if(
+        has(q,"engine_stall","crank_no_start") &&
+        (
+            r.has("no_start") ||
+            r.has("crank_no_start")
+        )
+    ){
+        bonus+=28;
+    }
 
 
-if(
-iv.models&&
-!valueMatches(iv.models,vehicle.model)&&
-!valueMatches(iv.model,vehicle.model)
-)
-return 0;
+    if(
+        has(q,"engine_stall","no_start") &&
+        (
+            r.has("engine_stall") ||
+            r.has("no_start") ||
+            r.has("crank_no_start")
+        )
+    ){
+        bonus+=24;
+    }
 
 
-if(
-iv.model&&
-!valueMatches(iv.model,vehicle.model)
-)
-return 0;
+    if(
+        has(q,"crank_no_start","no_start") &&
+        (
+            r.has("fuel_pressure") ||
+            r.has("crankshaft") ||
+            r.has("camshaft") ||
+            r.has("synchronization")
+        )
+    ){
+        bonus+=20;
+    }
 
 
-if(
-iv.generations&&
-!valueMatches(
-iv.generations,
-vehicle.generation
-)
-)
-return 0;
+    if(
+        has(q,"engine_stall","fuel_pressure") &&
+        r.has("fuel_pressure")
+    ){
+        bonus+=22;
+    }
 
 
-if(
-iv.generation&&
-!valueMatches(
-iv.generation,
-vehicle.generation
-)
-)
-return 0;
+    if(
+        has(q,"no_start","fuel_pressure") &&
+        r.has("fuel_pressure")
+    ){
+        bonus+=22;
+    }
 
 
-if(
-iv.engines&&
-!valueMatches(
-iv.engines,
-vehicle.engine
-)&&
-!valueMatches(
-iv.engines,
-vehicle.engineCodes
-)
-)
-return 0;
+    if(
+        has(q,"no_start","crankshaft") &&
+        r.has("crankshaft")
+    ){
+        bonus+=25;
+    }
 
 
-if(
-iv.engine&&
-!valueMatches(
-iv.engine,
-vehicle.engine
-)
-)
-return 0;
+    if(
+        has(q,"no_start","camshaft") &&
+        r.has("camshaft")
+    ){
+        bonus+=22;
+    }
 
 
-return score;
+    if(
+        has(q,"low_power","low_rpm_power_loss") &&
+        (
+            r.has("low_power") ||
+            r.has("turbo") ||
+            r.has("maf") ||
+            r.has("map") ||
+            r.has("egr")
+        )
+    ){
+        bonus+=20;
+    }
 
-}
+
+    if(
+        has(q,"low_rpm_power_loss","limp_mode") &&
+        (
+            r.has("turbo") ||
+            r.has("egr") ||
+            r.has("dpf") ||
+            r.has("maf") ||
+            r.has("map")
+        )
+    ){
+        bonus+=18;
+    }
 
 
-function calculateYearMatch(item,year){
-
-const production=
-item.vehicle?.production||
-item.production;
-
-if(!production)
-return 100;
-
-const from=
-Number(production.from||0);
-
-const to=
-Number(production.to||9999);
-
-return(
-year>=from&&
-year<=to
-)
-?100
-:0;
-
+    return bonus;
 }
 
 
 /* ============================================================
-   DTC
+   SEMANTIC SCORING
 ============================================================ */
-
-function extractDTCs(problem){
-
-return[
-...new Set(
-String(problem||"")
-.toUpperCase()
-.match(/\b[PCBU]\d{4}\b/g)||[]
-)
-];
-
-}
-
-
-function calculateDTCMatch(item,dtcs){
-
-if(!dtcs.length)
-return 0;
-
-const related=
-Array.isArray(item.related_dtcs)
-?item.related_dtcs
-:[];
-
-const keywords=
-Array.isArray(item.keywords)
-?item.keywords
-:[];
-
-let matches=0;
-
-for(const dtc of dtcs){
-
-if(
-related.some(
-value=>
-String(value)
-.toUpperCase()
-.trim()===dtc
-)
-)
-matches++;
-
-if(
-keywords.some(
-value=>
-String(value)
-.toUpperCase()
-.trim()===dtc
-)
-)
-matches++;
-
-}
-
-return matches
-?Math.min(
-100,
-75+matches*15
-)
-:0;
-
-}
-
-
-/* ============================================================
-   SYSTEM SEMANTICS
-============================================================ */
-
-const systemMap={
-
-turbocharger:["turbo"],
-charge_air:["turbo"],
-boost_pressure:["turbo","map"],
-
-egr:["egr"],
-dpf:["dpf"],
-scr:["scr"],
-adblue:["scr"],
-
-air_metering:["maf","map"],
-
-fuel_injection:[
-"injector",
-"fuel_pressure"
-],
-
-fuel_system:[
-"fuel_pressure",
-"injector"
-],
-
-fuel_pressure:["fuel_pressure"],
-
-crankshaft:["crankshaft"],
-camshaft:["camshaft"],
-synchronization:["synchronization"],
-
-starting:[
-"no_start",
-"crank_no_start",
-"hard_start",
-"starter"
-],
-
-engine:[
-"engine_stall",
-"no_start",
-"crank_no_start",
-"poor_power",
-"misfire"
-],
-
-cooling:[
-"coolant",
-"overheating"
-],
-
-air_conditioning:[
-"ac",
-"hvac"
-],
-
-climate:[
-"ac",
-"hvac"
-],
-
-transmission:["transmission"],
-
-abs_esp:["abs"],
-esp:["abs"],
-
-battery:[
-"battery",
-"alternator"
-],
-
-charging:[
-"battery",
-"alternator"
-],
-
-alternator:["alternator"],
-starter:["starter"],
-
-immobilizer:[
-"immobilizer",
-"pats"
-],
-
-pats:[
-"pats",
-"immobilizer"
-],
-
-can_bus:["can_bus"],
-can:["can_bus"],
-
-lin_bus:["lin_bus"],
-lin:["lin_bus"],
-
-airbag:["airbag"],
-srs:["airbag"],
-
-body:[
-"central_locking",
-"window",
-"wiper",
-"lighting"
-],
-
-central_locking:[
-"central_locking"
-],
-
-door:[
-"central_locking",
-"window"
-],
-
-window:["window"],
-wiper:["wiper"],
-lighting:["lighting"],
-
-parking:[
-"parking_sensor"
-],
-
-parking_assist:[
-"parking_sensor",
-"camera"
-],
-
-camera:["camera"],
-rear_camera:["camera"],
-
-radar:["radar"],
-
-adas:[
-"radar",
-"camera",
-"lane_assist",
-"cruise"
-],
-
-lane_assist:[
-"lane_assist",
-"camera"
-],
-
-cruise_control:[
-"cruise",
-"radar"
-],
-
-adaptive_cruise:[
-"cruise",
-"radar"
-],
-
-infotainment:[
-"bluetooth",
-"phone_connection",
-"carplay",
-"android_auto",
-"usb",
-"no_audio",
-"amplifier",
-"microphone",
-"voice_control",
-"navigation",
-"gps",
-"display",
-"infotainment_reboot",
-"steering_controls"
-],
-
-audio:[
-"no_audio",
-"amplifier",
-"microphone"
-],
-
-bluetooth:["bluetooth"],
-phone:["phone_connection"],
-carplay:["carplay"],
-android_auto:["android_auto"],
-usb:["usb"],
-
-navigation:[
-"navigation",
-"gps"
-],
-
-gps:["gps"],
-display:["display"],
-screen:["display"],
-
-microphone:["microphone"],
-voice_control:["voice_control"],
-
-steering_wheel:[
-"steering_controls"
-],
-
-seat:["seat"],
-sunroof:["sunroof"]
-
-};
-
-
-function getSystemGroups(item){
-
-const system=
-normalizeSymptomId(
-item?.system||""
-);
-
-return systemMap[system]||[];
-
-}
-
-
-function calculateSystemRelevance(item,userSymptoms){
-
-const groups=
-getSystemGroups(item);
-
-if(!groups.length)
-return 0;
-
-let score=0;
-
-for(const group of groups){
-
-if(userSymptoms.includes(group))
-score+=35;
-
-}
-
-return Math.min(
-100,
-score
-);
-
-}
-
-
-/* ============================================================
-   SEMANTIC RANKING
-============================================================ */
-
-const symptomWeights={
-
-crank_no_start:42,
-engine_stall:40,
-no_start:32,
-
-fuel_pressure:34,
-crankshaft:32,
-camshaft:30,
-synchronization:30,
-starter:28,
-
-immobilizer:28,
-pats:28,
-
-limp_mode:26,
-
-poor_power:25,
-low_rpm_power_loss:25,
-
-turbo:25,
-dpf:25,
-scr:24,
-
-misfire:24,
-rough_idle:23,
-hard_start:23,
-
-coolant:22,
-overheating:22,
-oil_pressure:22,
-
-battery:21,
-alternator:21,
-
-can_bus:21,
-lin_bus:20,
-
-abs:20,
-
-transmission:22,
-
-ac:18,
-hvac:18,
-
-central_locking:18,
-window:17,
-wiper:17,
-lighting:17,
-
-parking_sensor:18,
-camera:20,
-radar:22,
-
-lane_assist:21,
-cruise:20,
-
-bluetooth:24,
-phone_connection:24,
-carplay:25,
-android_auto:25,
-usb:18,
-
-no_audio:25,
-amplifier:20,
-microphone:22,
-voice_control:21,
-
-navigation:23,
-gps:24,
-display:25,
-infotainment_reboot:25,
-
-steering_controls:20,
-seat:17,
-sunroof:17,
-
-default:15
-
-};
-
-
-/*
-   Hard diagnostic relationships.
-
-   External YAML relationships are also used below.
-*/
-
-const localRelationships=[
-
-{
-required:[
-"engine_stall",
-"crank_no_start"
-],
-bonus:36
-},
-
-{
-required:[
-"engine_stall",
-"no_start"
-],
-bonus:25
-},
-
-{
-required:[
-"crank_no_start",
-"no_start"
-],
-bonus:30
-},
-
-{
-required:[
-"engine_stall",
-"fuel_pressure"
-],
-bonus:22
-},
-
-{
-required:[
-"no_start",
-"fuel_pressure"
-],
-bonus:22
-},
-
-{
-required:[
-"no_start",
-"crankshaft"
-],
-bonus:27
-},
-
-{
-required:[
-"no_start",
-"camshaft"
-],
-bonus:22
-},
-
-{
-required:[
-"poor_power",
-"low_rpm_power_loss",
-"limp_mode"
-],
-bonus:30
-},
-
-{
-required:[
-"dpf",
-"poor_power"
-],
-bonus:16
-},
-
-{
-required:[
-"turbo",
-"poor_power"
-],
-bonus:21
-},
-
-{
-required:[
-"bluetooth",
-"phone_connection"
-],
-bonus:20
-},
-
-{
-required:[
-"carplay",
-"phone_connection"
-],
-bonus:18
-},
-
-{
-required:[
-"android_auto",
-"phone_connection"
-],
-bonus:18
-},
-
-{
-required:[
-"display",
-"infotainment_reboot"
-],
-bonus:16
-},
-
-{
-required:[
-"camera",
-"parking_sensor"
-],
-bonus:12
-},
-
-{
-required:[
-"radar",
-"cruise"
-],
-bonus:18
-},
-
-{
-required:[
-"radar",
-"lane_assist"
-],
-bonus:15
-}
-
-];
-
-
-function getAllRelationships(){
-
-return[
-...localRelationships,
-...semanticRelationships
-];
-
-}
-
 
 function calculateSemanticSymptomScore(
-item,
-problem,
-userSymptoms,
-itemSymptoms
+    queryConcepts,
+    recordConcepts
 ){
 
-itemSymptoms=
-itemSymptoms||
-getItemSymptoms(
-item,
-getRelevantConcepts(userSymptoms)
-);
+    if(!queryConcepts.length){
+        return 0;
+    }
 
-const text=
-normalizeText(problem);
+    const q=new Set(queryConcepts);
+    const r=new Set(recordConcepts);
 
-let score=0;
+    let score=0;
 
+    q.forEach(concept=>{
 
-/* Direct semantic concept matches */
+        if(r.has(concept)){
 
-for(const symptom of userSymptoms){
+            score +=
+                30 +
+                Math.min(
+                    semanticPriority[concept] || 0,
+                    15
+                );
+        }
+    });
 
-if(itemSymptoms.includes(symptom)){
-
-score+=
-symptomWeights[symptom]||
-symptomWeights.default;
-
-}
-
-}
-
-
-/* Relationship bonuses */
-
-for(
-const relationship
-of getAllRelationships()
-){
-
-const required=
-relationship.required||[];
-
-if(!required.length)
-continue;
-
-if(
-required.every(
-concept=>
-userSymptoms.includes(
-canonical(concept)
-)
-)&&
-required.every(
-concept=>
-itemSymptoms.includes(
-canonical(concept)
-)
-)
-){
-
-score+=
-Number(
-relationship.bonus||0
-);
-
-}
-
-}
-
-
-/* Keyword matches */
-
-const keywords=
-Array.isArray(item.keywords)
-?item.keywords
-:[];
-
-let keywordMatches=0;
-
-for(const keyword of keywords){
-
-const normalized=
-normalizeText(keyword);
-
-if(
-normalized.length>=3&&
-matchesAlias(
-text,
-normalized
-)
-)
-keywordMatches++;
-
-}
-
-score+=
-Math.min(
-18,
-keywordMatches*5
-);
-
-
-/*
-   Priority from the semantic YAML.
-
-   Priority is deliberately a secondary signal.
-*/
-
-for(const concept of userSymptoms){
-
-const priority=
-Number(
-semanticPriority[
-canonical(concept)
-]||0
-);
-
-if(priority>0){
-
-score+=
-Math.min(
-12,
-priority
-);
-
-}
-
-}
-
-
-return Math.min(
-100,
-score
-);
-
+    return score;
 }
 
 
 function calculateSymptomCoverage(
-item,
-userSymptoms,
-itemSymptoms
+    queryConcepts,
+    recordConcepts
 ){
 
-if(!userSymptoms.length)
-return 0;
+    if(!queryConcepts.length){
+        return 0;
+    }
 
-const symptoms=
-itemSymptoms||
-getItemSymptoms(
-item,
-getRelevantConcepts(userSymptoms)
-);
+    const r=new Set(recordConcepts);
 
-let matches=0;
+    const matches=
+        queryConcepts.filter(
+            concept=>r.has(concept)
+        ).length;
 
-for(const symptom of userSymptoms){
-
-if(symptoms.includes(symptom))
-matches++;
-
+    return (
+        matches /
+        queryConcepts.length
+    );
 }
 
-return Math.round(
-matches/
-userSymptoms.length*
-100
-);
 
-}
-
+/* ============================================================
+   TEXT FALLBACK
+============================================================ */
 
 function calculateTextFallback(
-item,
-problem
+    query,
+    record
 ){
 
-const text=
-normalizeText(problem);
+    const normalizedQuery=
+        normalizeText(query);
 
-const itemText=
-normalizeText(
-getItemText(item)
-);
+    const recordText=
+        normalizeText(
+            getRecordText(record)
+        );
 
-if(!text||!itemText)
-return 0;
+    if(!normalizedQuery || !recordText){
+        return 0;
+    }
 
-const stopWords=new Set([
+    const queryTokens=
+        tokenize(normalizedQuery);
 
-"this",
-"that",
-"with",
-"from",
-"does",
-"have",
-"very",
-"mais",
-"plus",
-"avec",
-"para",
-"pero",
-"della",
-"delle",
-"naar",
-"de",
-"het",
-"der",
-"die",
-"das",
-"si",
-"nu",
-"mai",
-"este",
-"un",
-"une",
-"the",
-"and",
-"not"
+    let score=0;
 
-]);
+    queryTokens.forEach(token=>{
 
-const tokens=
-[...tokenize(text)]
-.filter(
-token=>
-token.length>=4&&
-!stopWords.has(token)
-);
+        if(token.length<3) return;
 
-let hits=0;
+        if(recordText.includes(token)){
+            score+=3;
+        }else if(
+            fuzzyTokenMatch(
+                recordText,
+                token
+            )
+        ){
+            score+=1.5;
+        }
+    });
 
-for(const token of tokens){
-
-if(
-(` ${itemText} `)
-.includes(
-` ${token} `
-)
-)
-hits++;
-
+    return Math.min(score,25);
 }
 
-return tokens.length
-?Math.min(
-25,
-Math.round(
-hits/
-tokens.length*
-25
-)
-)
-:0;
 
+/* ============================================================
+   SPECIAL PHRASE SCORING
+============================================================ */
+
+function calculateCriticalPhraseScore(
+    query,
+    record
+){
+
+    const q=normalizeText(query);
+    const text=normalizeText(
+        getRecordText(record)
+    );
+
+    let score=0;
+
+    const phraseGroups=[
+
+        {
+            phrases:[
+                "s a oprit in mers",
+                "engine stopped while driving",
+                "engine stalled while driving",
+                "geht wahrend der fahrt aus",
+                "cale en roulant",
+                "se apaga en marcha"
+            ],
+            concepts:[
+                "engine_stall"
+            ],
+            bonus:32
+        },
+
+        {
+            phrases:[
+                "nu mai porneste",
+                "nu porneste",
+                "will not start",
+                "will not restart",
+                "cranks but will not start",
+                "startet nicht",
+                "ne demarre pas",
+                "ne redemarre plus",
+                "no arranca",
+                "non parte",
+                "start niet"
+            ],
+            concepts:[
+                "no_start",
+                "crank_no_start"
+            ],
+            bonus:32
+        },
+
+        {
+            phrases:[
+                "invart la automat",
+                "invarte la automat",
+                "cranks but will not start",
+                "dreht aber springt nicht an",
+                "tourne mais ne demarre pas"
+            ],
+            concepts:[
+                "crank_no_start"
+            ],
+            bonus:40
+        },
+
+        {
+            phrases:[
+                "presiune combustibil insuficienta",
+                "low fuel pressure",
+                "fuel pressure too low",
+                "kraftstoffdruck zu niedrig",
+                "pression carburant insuffisante",
+                "presion de combustible baja"
+            ],
+            concepts:[
+                "fuel_pressure"
+            ],
+            bonus:38
+        },
+
+        {
+            phrases:[
+                "senzor pozitie arbore cotit",
+                "crankshaft position sensor",
+                "crankshaft sensor",
+                "kurbelwellensensor",
+                "capteur vilebrequin"
+            ],
+            concepts:[
+                "crankshaft"
+            ],
+            bonus:36
+        }
+    ];
+
+
+    phraseGroups.forEach(group=>{
+
+        const queryHas=
+            group.phrases.some(
+                phrase=>
+                    q.includes(
+                        normalizeText(phrase)
+                    )
+            );
+
+        if(!queryHas) return;
+
+        const recordHas=
+            group.concepts.some(
+                concept=>
+                    detectRecordConcepts(record)
+                        .includes(concept)
+            );
+
+        if(recordHas){
+            score+=group.bonus;
+        }
+    });
+
+    return score;
+}
+
+
+/* ============================================================
+   SYSTEM-SPECIFIC PENALTY
+============================================================ */
+
+function calculateIrrelevantPenalty(
+    queryConcepts,
+    recordConcepts,
+    record
+){
+
+    const q=new Set(queryConcepts);
+    const r=new Set(recordConcepts);
+
+    let penalty=0;
+
+    /*
+        A result about AdBlue/SCR/turbo should not dominate
+        a clear engine no-start scenario unless it also has
+        relevant no-start/stall concepts.
+    */
+
+    const criticalNoStart=
+        q.has("no_start") ||
+        q.has("crank_no_start") ||
+        q.has("engine_stall");
+
+
+    if(criticalNoStart){
+
+        const relevantNoStart=
+            r.has("no_start") ||
+            r.has("crank_no_start") ||
+            r.has("engine_stall") ||
+            r.has("fuel_pressure") ||
+            r.has("crankshaft") ||
+            r.has("camshaft") ||
+            r.has("synchronization") ||
+            r.has("starter") ||
+            r.has("immobilizer") ||
+            r.has("battery");
+
+
+        if(!relevantNoStart){
+
+            penalty+=38;
+        }
+    }
+
+
+    /*
+        If the query is about low-rpm power loss, purely
+        infotainment/body records are strongly penalized.
+    */
+
+    if(
+        q.has("low_rpm_power_loss") ||
+        q.has("low_power")
+    ){
+
+        const relevantPower=
+            r.has("low_power") ||
+            r.has("turbo") ||
+            r.has("maf") ||
+            r.has("map") ||
+            r.has("egr") ||
+            r.has("dpf") ||
+            r.has("fuel_pressure") ||
+            r.has("injector") ||
+            r.has("intake_air");
+
+        if(!relevantPower){
+            penalty+=30;
+        }
+    }
+
+
+    return penalty;
 }
 
 
@@ -3496,130 +3236,310 @@ tokens.length*
    FINAL SCORE
 ============================================================ */
 
-function calculateFinalScore({
-
-vehicleMatch,
-yearMatch,
-semanticScore,
-coverage,
-dtcMatch,
-systemMatch,
-userSymptoms,
-item,
-itemSymptoms
-
-}){
-
-/*
-   Exact DTC is always extremely strong.
-*/
-
-if(dtcMatch>0){
-
-return Math.min(
-100,
-Math.round(
-vehicleMatch*.20+
-yearMatch*.05+
-semanticScore*.25+
-coverage*.10+
-dtcMatch*.35+
-systemMatch*.05
-)
-);
-
-}
-
-
-let score=
-vehicleMatch*.20+
-yearMatch*.05+
-semanticScore*.45+
-coverage*.20+
-systemMatch*.10;
-
-
-/*
-   Critical no-start protection.
-
-   A generic SCR/AdBlue or unrelated system record must not
-   outrank a genuine starting/fuel/crankshaft diagnosis when
-   the user explicitly says the vehicle stalled and will not
-   restart.
-*/
-
-const symptoms=
-itemSymptoms||
-getItemSymptoms(
-item,
-getRelevantConcepts(userSymptoms)
-);
-
-const noStart=
-userSymptoms.includes("no_start")||
-userSymptoms.includes("crank_no_start")||
-userSymptoms.includes("engine_stall");
-
-
-if(
-userSymptoms.includes("engine_stall")&&
-userSymptoms.includes("crank_no_start")&&
-symptoms.includes("engine_stall")&&
-symptoms.includes("crank_no_start")
+function calculateFinalScore(
+    query,
+    queryConcepts,
+    record
 ){
 
-score+=20;
+    const recordConcepts=
+        detectRecordConcepts(record);
 
+    const semanticScore=
+        calculateSemanticSymptomScore(
+            queryConcepts,
+            recordConcepts
+        );
+
+    const coverage=
+        calculateSymptomCoverage(
+            queryConcepts,
+            recordConcepts
+        );
+
+    const coverageScore=
+        coverage*30;
+
+    const relationshipBonus=
+        calculateRelationshipBonus(
+            queryConcepts,
+            recordConcepts
+        );
+
+    const textScore=
+        calculateTextFallback(
+            query,
+            record
+        );
+
+    const phraseScore=
+        calculateCriticalPhraseScore(
+            query,
+            record
+        );
+
+    const penalty=
+        calculateIrrelevantPenalty(
+            queryConcepts,
+            recordConcepts,
+            record
+        );
+
+
+    /*
+        Exact DTC match is extremely strong.
+    */
+
+    const queryDTCs=
+        extractDTCs(query);
+
+    const recordDTCs=
+        getRecordDTCs(record);
+
+    let dtcBonus=0;
+
+    queryDTCs.forEach(dtc=>{
+
+        if(recordDTCs.includes(dtc)){
+            dtcBonus+=80;
+        }
+    });
+
+
+    let score=
+        semanticScore +
+        coverageScore +
+        relationshipBonus +
+        textScore +
+        phraseScore +
+        dtcBonus -
+        penalty;
+
+
+    /*
+        Avoid tiny random scores.
+    */
+
+    if(score<0){
+        score=0;
+    }
+
+    return {
+        score,
+        recordConcepts,
+        coverage,
+        dtcBonus
+    };
 }
 
 
-if(
-noStart&&
-!symptoms.includes("no_start")&&
-!symptoms.includes("crank_no_start")&&
-!symptoms.includes("engine_stall")
-){
+/* ============================================================
+   RESULT TITLE
+============================================================ */
 
-const systems=
-getSystemGroups(item);
+function getRecordTitle(record){
 
-const relevantStartingSystem=
-systems.some(
-system=>
-[
-"no_start",
-"crank_no_start",
-"engine_stall",
-"starter",
-"fuel_pressure",
-"crankshaft",
-"camshaft",
-"immobilizer",
-"pats"
-].includes(system)
-);
+    const title=
+        getLocalizedValue(record.title);
 
-if(!relevantStartingSystem)
-score-=35;
+    if(title){
+        return title;
+    }
 
+    if(record.id){
+        return String(record.id);
+    }
+
+    return "Technical diagnostic procedure";
 }
 
 
-if(
-systemMatch===0&&
-item.system
-)
-score-=3;
+/* ============================================================
+   RESULT RENDERING
+============================================================ */
+
+function renderList(value){
+
+    if(value==null) return "";
+
+    const items=
+        Array.isArray(value)
+            ? value
+            : [value];
+
+    const filtered=
+        items
+            .map(item=>
+                getLocalizedValue(item)
+            )
+            .filter(Boolean);
+
+    if(!filtered.length) return "";
+
+    return `
+        <ul>
+            ${filtered.map(
+                item=>
+                    `<li>${escapeHtml(item)}</li>`
+            ).join("")}
+        </ul>
+    `;
+}
 
 
-return Math.max(
-0,
-Math.min(
-100,
-Math.round(score)
-)
-);
+function renderResult(item,index){
 
+    const record=item.record;
+
+    const title=
+        getRecordTitle(record);
+
+    const category=
+        getLocalizedValue(record.category);
+
+    const system=
+        getLocalizedValue(record.system);
+
+    const difficulty=
+        getLocalizedValue(record.difficulty);
+
+    const symptoms=
+        renderList(record.symptoms);
+
+    const causes=
+        renderList(record.possible_causes);
+
+    const steps=
+        renderList(record.diagnostic_steps);
+
+    const dtcs=
+        renderList(
+            record.related_dtcs ??
+            record.dtcs ??
+            record.dtc
+        );
+
+    const concepts=
+        item.recordConcepts
+            .slice(0,8);
+
+    return `
+        <article class="result-card">
+
+            <div class="result-top">
+
+                <div>
+                    <div class="result-title">
+                        ${index+1}. ${escapeHtml(title)}
+                    </div>
+
+                    <div class="result-meta">
+
+                        ${
+                            category
+                                ? `<span class="tag">
+                                    ${escapeHtml(t("category"))}: 
+                                    ${escapeHtml(category)}
+                                   </span>`
+                                : ""
+                        }
+
+                        ${
+                            system
+                                ? `<span class="tag">
+                                    ${escapeHtml(t("system"))}: 
+                                    ${escapeHtml(system)}
+                                   </span>`
+                                : ""
+                        }
+
+                        ${
+                            difficulty
+                                ? `<span class="tag">
+                                    ${escapeHtml(t("difficulty"))}: 
+                                    ${escapeHtml(difficulty)}
+                                   </span>`
+                                : ""
+                        }
+
+                    </div>
+                </div>
+
+                <div class="result-score">
+                    ${Math.round(item.score)}%
+                </div>
+
+            </div>
+
+
+            ${
+                symptoms
+                ? `
+                <div class="result-section">
+                    <h4>${escapeHtml(t("symptoms"))}</h4>
+                    ${symptoms}
+                </div>
+                `
+                : ""
+            }
+
+
+            ${
+                causes
+                ? `
+                <div class="result-section">
+                    <h4>${escapeHtml(t("possibleCauses"))}</h4>
+                    ${causes}
+                </div>
+                `
+                : ""
+            }
+
+
+            ${
+                steps
+                ? `
+                <div class="result-section">
+                    <h4>${escapeHtml(t("diagnosticSteps"))}</h4>
+                    ${steps}
+                </div>
+                `
+                : ""
+            }
+
+
+            ${
+                dtcs
+                ? `
+                <div class="result-section">
+                    <h4>${escapeHtml(t("relatedDtcs"))}</h4>
+                    ${dtcs}
+                </div>
+                `
+                : ""
+            }
+
+
+            ${
+                concepts.length
+                ? `
+                <div class="match-info">
+                    Semantic matches:
+                    ${concepts
+                        .map(
+                            c=>
+                                `<span class="tag">
+                                    ${escapeHtml(c)}
+                                </span>`
+                        )
+                        .join(" ")}
+                </div>
+                `
+                : ""
+            }
+
+        </article>
+    `;
 }
 
 
@@ -3627,753 +3547,360 @@ Math.round(score)
    SEARCH
 ============================================================ */
 
-function performSearch(){
+async function performSearch(){
 
-resultsElement.hidden=false;
+    const query=
+        document
+            .getElementById("problemInput")
+            .value
+            .trim();
 
+    const vehicle=
+        getSelectedVehicleContext();
 
-if(!vehicleIsReady()){
 
-setStatus(
-t("complete_vehicle"),
-"error"
-);
+    if(!vehicle.manufacturer){
 
-return;
+        setStatus(
+            t("selectVehicle"),
+            "error"
+        );
 
-}
+        return;
+    }
 
 
-const problem=
-problemInput.value.trim();
+    if(!query){
 
+        setStatus(
+            t("enterProblem"),
+            "error"
+        );
 
-if(!problem){
+        return;
+    }
 
-setStatus(
-t("describe_problem"),
-"error"
-);
 
-return;
+    /*
+        This is the critical fix.
 
-}
+        Instead of immediately displaying
+        "Semantic dictionary is still loading",
+        the search waits for the dictionary.
+    */
 
+    if(!semanticDictionaryReady){
 
-/*
-   The semantic dictionary is now mandatory for semantic search.
-*/
+        setStatus(
+            t("semanticLoading"),
+            "loading"
+        );
 
-if(!semanticDictionaryReady){
+        const semanticReady=
+            await loadSemanticDictionary();
 
-setStatus(
-"Semantic dictionary is still loading. Please try again in a moment.",
-"error"
-);
+        if(!semanticReady){
 
-return;
+            const detail=
+                semanticDictionaryError?.message ||
+                t("semanticError");
 
-}
+            setStatus(
+                `${t("semanticError")} ${detail}`,
+                "error"
+            );
 
+            return;
+        }
+    }
 
-if(!technicalDatabase.length){
 
-setStatus(
-t("technical_error"),
-"error"
-);
+    setStatus(
+        t("loading"),
+        "loading"
+    );
 
-renderResults([]);
 
-return;
+    technicalDatabase=
+        await loadTechnicalDatabase();
 
-}
 
+    if(!technicalDatabase.length){
 
-setStatus(
-t("searching")
-);
+        setStatus(
+            t("noResults"),
+            "error"
+        );
 
+        document.getElementById("results").innerHTML=
+            `<div class="empty">
+                ${escapeHtml(t("noResults"))}
+             </div>`;
 
-const vehicle=
-getSelectedVehicle();
+        return;
+    }
 
-const userSymptoms=
-detectUserSymptoms(problem);
 
-const dtcs=
-extractDTCs(problem);
+    const queryConcepts=
+        detectSemanticConcepts(query);
 
-const relevantConcepts=
-getRelevantConcepts(userSymptoms);
+    console.log(
+        "AutoDecode query concepts:",
+        queryConcepts
+    );
 
 
-console.log(
-"Detected semantic concepts:",
-userSymptoms
-);
+    /*
+        Vehicle filtering.
+    */
 
-console.log(
-"Expanded semantic concepts:",
-relevantConcepts
-);
+    let candidates=
+        technicalDatabase.filter(
+            record=>
+                recordVehicleMatch(
+                    record,
+                    vehicle
+                )
+        );
 
-console.log(
-"Detected DTCs:",
-dtcs
-);
 
+    /*
+        If strict vehicle metadata removes everything,
+        fall back to all manufacturer records.
+    */
+
+    if(!candidates.length){
+
+        candidates=
+            technicalDatabase.filter(record=>{
 
-const results=[];
+                const v=
+                    record.vehicle || {};
+
+                const manufacturer=
+                    v.manufacturer ??
+                    v.make ??
+                    record.manufacturer;
 
+                return fieldMatches(
+                    manufacturer,
+                    vehicle.manufacturer
+                );
+            });
+    }
 
-for(
-const item
-of technicalDatabase
-){
-
-const vehicleMatch=
-calculateVehicleMatch(
-item,
-vehicle
-);
-
-if(!vehicleMatch)
-continue;
-
-
-const yearMatch=
-calculateYearMatch(
-item,
-vehicle.year
-);
 
-if(!yearMatch)
-continue;
-
+    const scored=
+        candidates
+            .map(record=>{
 
-const itemSymptoms=
-getItemSymptoms(
-item,
-relevantConcepts
-);
+                const result=
+                    calculateFinalScore(
+                        query,
+                        queryConcepts,
+                        record
+                    );
 
+                return {
+                    record,
+                    score:result.score,
+                    recordConcepts:
+                        result.recordConcepts,
+                    coverage:
+                        result.coverage,
+                    dtcBonus:
+                        result.dtcBonus
+                };
+            })
+            .filter(
+                item=>item.score>0
+            )
+            .sort(
+                (a,b)=>b.score-a.score
+            );
 
-let semanticScore=
-calculateSemanticSymptomScore(
-item,
-problem,
-userSymptoms,
-itemSymptoms
-);
 
+    const top=
+        scored.slice(0,10);
 
-const coverage=
-calculateSymptomCoverage(
-item,
-userSymptoms,
-itemSymptoms
-);
 
+    const resultsElement=
+        document.getElementById("results");
 
-const dtcMatch=
-calculateDTCMatch(
-item,
-dtcs
-);
 
+    if(!top.length){
 
-const systemMatch=
-calculateSystemRelevance(
-item,
-userSymptoms
-);
+        resultsElement.innerHTML=
+            `<div class="empty">
+                ${escapeHtml(t("noResults"))}
+             </div>`;
 
+        setStatus(
+            t("noResults"),
+            "error"
+        );
 
-/*
-   If no semantic concept was detected, fall back to
-   conventional text matching.
-*/
+        return;
+    }
 
-if(!userSymptoms.length){
 
-semanticScore=
-Math.max(
-semanticScore,
-calculateTextFallback(
-item,
-problem
-)
-);
+    /*
+        Normalize score visually.
 
-}
-else if(
-semanticScore===0&&
-coverage===0&&
-dtcMatch===0
-){
+        Raw semantic score can exceed 100.
+    */
 
-semanticScore=
-calculateTextFallback(
-item,
-problem
-)*.6;
+    const maxRaw=
+        Math.max(
+            ...top.map(item=>item.score)
+        );
 
-}
 
+    top.forEach(item=>{
 
-const score=
-calculateFinalScore({
+        item.score=
+            Math.min(
+                99,
+                Math.max(
+                    1,
+                    (
+                        item.score /
+                        Math.max(maxRaw,1)
+                    )*100
+                )
+            );
+    });
 
-vehicleMatch,
-yearMatch,
-semanticScore,
-coverage,
-dtcMatch,
-systemMatch,
-userSymptoms,
-item,
-itemSymptoms
 
-});
+    resultsElement.innerHTML=
+        top
+            .map(renderResult)
+            .join("");
 
 
-const evidence=
-semanticScore>0||
-coverage>0||
-dtcMatch>0||
-systemMatch>0;
+    setStatus(
+        `${t("results")}: ${top.length}`,
+        "success"
+    );
 
 
-if(
-!evidence||
-score<10
-)
-continue;
-
-
-results.push({
-
-item,
-score,
-vehicleMatch,
-yearMatch,
-semanticScore,
-coverage,
-dtcMatch,
-systemMatch
-
-});
-
-}
-
-
-/* ============================================================
-   SORTING
-============================================================ */
-
-results.sort(
-(a,b)=>{
-
-/*
-   1. Exact DTC match
-*/
-
-if(
-a.dtcMatch>0&&
-b.dtcMatch===0
-)
-return-1;
-
-if(
-a.dtcMatch===0&&
-b.dtcMatch>0
-)
-return 1;
-
-
-/*
-   2. Symptom coverage
-*/
-
-if(
-b.coverage!==a.coverage
-)
-return b.coverage-a.coverage;
-
-
-/*
-   3. Semantic score
-*/
-
-if(
-b.semanticScore!==a.semanticScore
-)
-return b.semanticScore-a.semanticScore;
-
-
-/*
-   4. System relevance
-*/
-
-if(
-b.systemMatch!==a.systemMatch
-)
-return b.systemMatch-a.systemMatch;
-
-
-/*
-   5. Final score
-*/
-
-return b.score-a.score;
-
-}
-);
-
-
-console.log(
-"Top diagnostic results:",
-results
-.slice(0,10)
-.map(result=>({
-
-id:result.item?.id,
-title:getLocalizedValue(
-result.item?.title
-),
-score:result.score,
-coverage:result.coverage,
-semantic:result.semanticScore,
-system:result.systemMatch,
-dtc:result.dtcMatch
-
-}))
-);
-
-
-renderResults(
-results.slice(0,10)
-);
-
-setStatus(
-"",
-""
-);
-
-}
-
-
-findButton.addEventListener(
-"click",
-performSearch
-);
-
-
-problemInput.addEventListener(
-"keydown",
-event=>{
-
-if(
-(event.ctrlKey||event.metaKey)&&
-event.key==="Enter"
-){
-
-performSearch();
-
-}
-
-}
-);
-
-
-/* ============================================================
-   RENDERING
-============================================================ */
-
-function addTag(container,text){
-
-const span=
-document.createElement("span");
-
-span.className="match-tag";
-
-span.textContent=text;
-
-container.appendChild(span);
-
-}
-
-
-function createListSection(
-heading,
-items
-){
-
-const section=
-document.createElement("div");
-
-section.className="result-section";
-
-
-const h=
-document.createElement("h4");
-
-h.textContent=heading;
-
-
-const ul=
-document.createElement("ul");
-
-
-for(const value of items){
-
-const li=
-document.createElement("li");
-
-li.textContent=
-getLocalizedValue(value);
-
-ul.appendChild(li);
-
-}
-
-
-section.append(
-h,
-ul
-);
-
-return section;
-
-}
-
-
-function renderResults(results){
-
-resultList.innerHTML="";
-
-
-if(!results.length){
-
-resultCount.textContent="";
-
-
-const noResults=
-document.createElement("div");
-
-noResults.className="no-results";
-
-noResults.textContent=
-t("no_results");
-
-resultList.appendChild(
-noResults
-);
-
-return;
-
-}
-
-
-resultCount.textContent=
-results.length===1
-?t("result_count_one")
-:t("result_count_many")
-.replace(
-"{n}",
-results.length
-);
-
-
-for(
-const result
-of results
-){
-
-const item=
-result.item;
-
-
-const card=
-document.createElement("article");
-
-card.className="result-card";
-
-
-const main=
-document.createElement("div");
-
-main.className="result-main";
-
-
-const top=
-document.createElement("div");
-
-top.className="result-top";
-
-
-const titleContainer=
-document.createElement("div");
-
-
-const title=
-document.createElement("h3");
-
-title.className="result-title";
-
-title.textContent=
-getLocalizedValue(
-item.title
-)||
-item.id||
-"Diagnostic result";
-
-
-const system=
-document.createElement("div");
-
-system.className="result-system";
-
-system.textContent=
-item.system||
-item.category||
-"";
-
-
-titleContainer.append(
-title,
-system
-);
-
-
-const score=
-document.createElement("div");
-
-score.className="score";
-
-score.textContent=
-`${result.score}%`;
-
-
-top.append(
-titleContainer,
-score
-);
-
-main.appendChild(top);
-
-
-/* Match tags */
-
-const tags=
-document.createElement("div");
-
-tags.className="match-tags";
-
-
-if(result.coverage>0){
-
-addTag(
-tags,
-`${t("relevance")}: ${result.coverage}%`
-);
-
-}
-
-
-if(result.dtcMatch>0)
-addTag(tags,"DTC match");
-
-
-if(result.semanticScore>0)
-addTag(tags,"Semantic match");
-
-
-if(result.systemMatch>0)
-addTag(tags,"System match");
-
-
-if(tags.children.length)
-main.appendChild(tags);
-
-
-/* Description */
-
-if(item.description){
-
-const description=
-document.createElement("p");
-
-description.className=
-"result-description";
-
-description.textContent=
-getLocalizedValue(
-item.description
-);
-
-main.appendChild(
-description
-);
-
-}
-
-
-card.appendChild(main);
-
-
-/* Possible causes */
-
-if(
-Array.isArray(
-item.possible_causes
-)&&
-item.possible_causes.length
-){
-
-card.appendChild(
-createListSection(
-t("possible_causes"),
-item.possible_causes
-)
-);
-
-}
-
-
-/* Diagnostic steps */
-
-if(
-Array.isArray(
-item.diagnostic_steps
-)&&
-item.diagnostic_steps.length
-){
-
-card.appendChild(
-createListSection(
-t("diagnostic_steps"),
-item.diagnostic_steps
-)
-);
-
-}
-
-
-/* Related DTCs */
-
-if(
-Array.isArray(
-item.related_dtcs
-)&&
-item.related_dtcs.length
-){
-
-card.appendChild(
-createListSection(
-t("related_dtcs"),
-item.related_dtcs
-)
-);
-
-}
-
-
-/* Difficulty */
-
-if(item.difficulty){
-
-const section=
-document.createElement("div");
-
-section.className=
-"result-section";
-
-
-const heading=
-document.createElement("h4");
-
-heading.textContent=
-t("difficulty");
-
-
-const value=
-document.createElement("div");
-
-value.style.color="#aeb9c6";
-value.style.fontSize="13px";
-
-value.textContent=
-getLocalizedValue(
-item.difficulty
-);
-
-section.append(
-heading,
-value
-);
-
-card.appendChild(
-section
-);
-
-}
-
-
-resultList.appendChild(
-card
-);
-
-}
-
+    console.log(
+        "AutoDecode search results:",
+        top
+    );
 }
 
 
 /* ============================================================
-   INIT
+   BUTTON / KEYBOARD
 ============================================================ */
 
-document.getElementById(
-"yearFooter"
-).textContent=
-new Date().getFullYear();
+document
+    .getElementById("findButton")
+    .addEventListener(
+        "click",
+        performSearch
+    );
 
-localizePage();
+
+document
+    .getElementById("problemInput")
+    .addEventListener(
+        "keydown",
+        event=>{
+
+            if(
+                (event.ctrlKey || event.metaKey) &&
+                event.key==="Enter"
+            ){
+
+                event.preventDefault();
+
+                performSearch();
+            }
+        }
+    );
 
 
-/*
-   Load both global databases at startup.
+/* ============================================================
+   INITIALIZATION
+============================================================ */
 
-   The semantic dictionary is completely independent from the
-   vehicle manufacturer and diagnostic manufacturer files.
-*/
+async function initialize(){
 
-Promise.allSettled([
+    applyTranslations();
 
-loadSemanticDictionary(),
-loadManufacturers()
+    document
+        .getElementById("languageSelect")
+        .value=currentLanguage;
 
-]).then(results=>{
 
-const semanticResult=
-results[0];
+    /*
+        Start both operations immediately.
 
-if(
-semanticResult.status==="rejected"||
-!semanticDictionaryReady
-){
+        The semantic dictionary has its own shared Promise,
+        so a search clicked during initialization will safely
+        await the same request.
+    */
 
-console.error(
-"AutoDecode semantic dictionary failed to initialize."
-);
+    const semanticPromise=
+        loadSemanticDictionary();
 
+    const vehiclePromise=
+        loadManufacturers();
+
+
+    const results=
+        await Promise.allSettled([
+            semanticPromise,
+            vehiclePromise
+        ]);
+
+
+    const semanticResult=results[0];
+
+    if(
+        semanticResult.status==="fulfilled" &&
+        semanticResult.value===true
+    ){
+
+        console.log(
+            "AutoDecode semantic system initialized."
+        );
+
+    }else{
+
+        console.error(
+            "AutoDecode semantic dictionary failed to initialize:",
+            semanticDictionaryError
+        );
+    }
+
+
+    /*
+        Do not block the FIND button merely because the
+        dictionary failed. performSearch() will display the
+        exact error and can be retried.
+    */
+
+    if(
+        manufacturersData.length &&
+        semanticDictionaryReady
+    ){
+
+        setStatus(
+            t("searchReady"),
+            "success"
+        );
+
+        setTimeout(()=>{
+            setStatus("");
+        },1800);
+    }
 }
 
-updateFindButton();
 
-});
-
+initialize();
 
 </script>
 
