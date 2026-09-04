@@ -6,1047 +6,1260 @@ manufacturer:
 
 technical_data:
 
-  - id: ford_engine_crank_no_start
+  - id: ford_engine_crank_no_start_v2
     vehicle:
       manufacturer: ford
       models: all
       generations: all
       engines: all
     category: diagnostics
-    system: engine_management
+    system: engine
     title:
-      en: Engine Cranks But Does Not Start
+      en: Engine cranks but does not start
       ro: Motorul învârte dar nu pornește
       de: Motor dreht, startet aber nicht
     symptoms:
-      - crank_no_start
-      - engine_no_start
+      - engine cranks normally
+      - engine does not start
+      - no combustion
+      - intermittent no start
     keywords:
       - crank no start
+      - no start
+      - does not start
+      - won't start
       - engine cranks
-      - will not start
       - nu porneste
       - invarte la automat
     possible_causes:
-      - low_fuel_pressure
-      - crankshaft_sensor_fault
-      - camshaft_sensor_fault
-      - immobilizer_fault
-      - injector_control_fault
-      - ecu_power_supply_fault
+      - crankshaft position sensor
+      - camshaft position sensor
+      - fuel pressure
+      - fuel pump
+      - immobilizer authorization
+      - PCM power supply
+      - engine synchronization
     diagnostic_steps:
-      - Check battery voltage during cranking.
-      - Check engine RPM signal during cranking.
-      - Check fuel pressure.
-      - Check immobilizer status.
-      - Scan PCM for diagnostic trouble codes.
+      - Check battery voltage and cranking speed.
+      - Check PCM communication with the diagnostic tool.
+      - Check engine RPM while cranking.
+      - Check crankshaft and camshaft synchronization.
+      - Check actual fuel pressure during cranking.
+      - Check injector command.
+      - Check PATS/start authorization.
+    related_dtcs:
+      - P0335
+      - P0340
+      - P0344
+      - P0230
+      - P0191
+    difficulty: medium
 
-  - id: ford_engine_stalls_while_driving
+  - id: ford_engine_stall_while_driving_v2
     vehicle:
       manufacturer: ford
       models: all
       generations: all
       engines: all
     category: diagnostics
-    system: engine_management
+    system: engine
     title:
-      en: Engine Stalls While Driving
+      en: Engine stalls while driving
       ro: Motorul se oprește în mers
       de: Motor geht während der Fahrt aus
     symptoms:
-      - engine_stall
-      - sudden_engine_shutdown
-      - intermittent_no_start
+      - engine suddenly stops
+      - engine stalls while driving
+      - intermittent engine shutdown
+      - restart may be difficult
     keywords:
       - stalls while driving
-      - engine cuts out
-      - engine stops
+      - engine stopped
+      - stopped in motion
+      - s-a oprit in mers
       - se opreste in mers
-      - moare motorul
+      - motor stopped
     possible_causes:
-      - crankshaft_sensor_fault
-      - fuel_pressure_loss
-      - pcm_power_loss
-      - ignition_supply_fault
-      - immobilizer_fault
-      - wiring_fault
+      - crankshaft position signal loss
+      - fuel pressure loss
+      - PCM power interruption
+      - ignition power loss
+      - fuel pump failure
+      - camshaft signal loss
+      - CAN communication fault
     diagnostic_steps:
-      - Check PCM fault memory.
+      - Check stored and pending DTCs.
       - Monitor engine RPM during the failure.
+      - Check crankshaft sensor signal.
       - Check fuel pressure.
       - Check PCM power and grounds.
-      - Check ignition and relay supply.
+      - Check ignition supply.
+      - Check CAN communication with PCM.
+    related_dtcs:
+      - P0335
+      - P0339
+      - P0340
+      - P0087
+      - U0100
+    difficulty: medium
 
-  - id: ford_engine_low_power
+  - id: ford_engine_low_power_v2
     vehicle:
       manufacturer: ford
       models: all
       generations: all
       engines: all
     category: diagnostics
-    system: engine_management
+    system: engine
     title:
-      en: Engine Low Power Diagnosis
-      ro: Diagnosticare lipsă putere motor
-      de: Diagnose von Leistungsverlust
+      en: Engine low power diagnosis
+      ro: Diagnosticarea pierderii de putere a motorului
+      de: Diagnose Leistungsverlust Motor
     symptoms:
-      - poor_engine_performance
-      - low_engine_power
-      - poor_acceleration
+      - poor acceleration
+      - reduced engine power
+      - poor performance
+      - vehicle feels weak
     keywords:
       - low power
       - loss of power
       - poor acceleration
       - nu mai trage
       - lipsa putere
+      - putere redusa
     possible_causes:
-      - boost_control_fault
-      - maf_sensor_fault
-      - fuel_pressure_fault
-      - egr_fault
-      - dpf_restriction
-      - limp_mode
+      - boost leak
+      - turbocharger control
+      - EGR malfunction
+      - MAF sensor error
+      - fuel pressure
+      - DPF restriction
+      - throttle limitation
     diagnostic_steps:
-      - Scan PCM fault memory.
-      - Check requested and actual boost.
+      - Scan all powertrain modules.
+      - Compare requested and actual boost.
       - Check MAF readings.
       - Check fuel pressure.
-      - Check EGR and DPF operation.
+      - Check EGR command and feedback.
+      - Check DPF differential pressure where fitted.
+    related_dtcs:
+      - P0299
+      - P0101
+      - P0401
+      - P0087
+      - P2463
+    difficulty: medium
 
-  - id: ford_engine_intermittent_power_loss
+  - id: ford_engine_limp_mode_v2
     vehicle:
       manufacturer: ford
       models: all
       generations: all
       engines: all
     category: diagnostics
-    system: engine_management
+    system: engine
     title:
-      en: Intermittent Engine Power Loss
-      ro: Pierdere intermitentă de putere
-      de: Intermittierender Leistungsverlust
+      en: Engine limp mode diagnosis
+      ro: Diagnosticarea modului limp mode
+      de: Diagnose Notlauf
     symptoms:
-      - intermittent_power_loss
-      - poor_acceleration
-      - limp_mode
+      - reduced power
+      - engine warning light
+      - turbo disabled
+      - poor acceleration
     keywords:
-      - intermittent power loss
-      - power comes and goes
-      - intermittent limp mode
-      - pierdere intermitenta putere
+      - limp mode
+      - reduced power
+      - limited power
+      - safe mode
+      - mod avarie
+      - intra in limp mode
     possible_causes:
-      - boost_control_fault
-      - wiring_fault
-      - sensor_signal_dropout
-      - fuel_pressure_variation
-      - pcm_fault
+      - turbocharger control fault
+      - boost pressure deviation
+      - EGR fault
+      - DPF restriction
+      - fuel pressure fault
+      - throttle fault
+      - sensor plausibility fault
     diagnostic_steps:
-      - Monitor live data during the fault.
-      - Check sensor signals for dropouts.
+      - Read all PCM DTCs.
+      - Identify whether the limitation is torque, boost or fuel related.
       - Compare requested and actual boost.
-      - Check fuel pressure stability.
-      - Inspect engine wiring.
+      - Check MAF and MAP plausibility.
+      - Check fuel rail pressure.
+      - Check DPF differential pressure on diesel engines.
+    related_dtcs:
+      - P0299
+      - P0234
+      - P0401
+      - P0087
+      - P2463
+    difficulty: medium
 
-  - id: ford_pcm_power_supply
+  - id: ford_crankshaft_position_sensor_v2
     vehicle:
       manufacturer: ford
       models: all
       generations: all
       engines: all
     category: diagnostics
-    system: pcm
+    system: engine
     title:
-      en: PCM Power Supply Diagnosis
-      ro: Diagnosticare alimentare PCM
-      de: Diagnose der PCM-Stromversorgung
+      en: Crankshaft position sensor diagnosis
+      ro: Diagnosticarea senzorului de poziție al arborelui cotit
+      de: Diagnose Kurbelwellensensor
     symptoms:
-      - no_pcm_communication
-      - engine_stall
-      - intermittent_no_start
-    keywords:
-      - PCM power
-      - PCM supply
-      - ECU power
-      - alimentare PCM
-    possible_causes:
-      - pcm_relay_fault
-      - fuse_fault
-      - wiring_fault
-      - ground_fault
-      - ignition_supply_fault
-    diagnostic_steps:
-      - Check PCM power supply.
-      - Check PCM grounds.
-      - Check related fuses and relays.
-      - Check ignition-switched supply.
-      - Verify PCM communication.
-
-  - id: ford_pcm_ground_fault
-    vehicle:
-      manufacturer: ford
-      models: all
-      generations: all
-      engines: all
-    category: diagnostics
-    system: pcm
-    title:
-      en: PCM Ground Fault Diagnosis
-      ro: Diagnosticare masă PCM
-      de: Diagnose der PCM-Masseverbindung
-    symptoms:
-      - no_pcm_communication
-      - intermittent_engine_fault
-      - engine_stall
-    keywords:
-      - PCM ground
-      - ECU ground
-      - engine ECU ground
-      - masa PCM
-    possible_causes:
-      - corroded_ground
-      - loose_ground
-      - damaged_ground_cable
-      - voltage_drop
-    diagnostic_steps:
-      - Inspect PCM ground points.
-      - Perform voltage-drop testing.
-      - Check engine-to-body ground connections.
-      - Inspect ground cables.
-      - Verify PCM operation.
-
-  - id: ford_crankshaft_position_sensor
-    vehicle:
-      manufacturer: ford
-      models: all
-      generations: all
-      engines: all
-    category: diagnostics
-    system: engine_management
-    title:
-      en: Crankshaft Position Sensor Diagnosis
-      ro: Diagnosticare senzor poziție arbore cotit
-      de: Diagnose des Kurbelwellensensors
-    symptoms:
-      - crank_no_start
-      - engine_stall
-      - intermittent_no_start
+      - no start
+      - engine stalls
+      - intermittent starting
+      - tachometer drops during failure
     keywords:
       - crankshaft sensor
-      - CKP sensor
-      - crank position sensor
-      - senzor arbore cotit
+      - CKP
+      - crank sensor
+      - arbore cotit
+      - senzor pozitie arbore cotit
+      - P0335
     possible_causes:
-      - sensor_fault
-      - wiring_fault
-      - sensor_gap_fault
-      - tone_ring_fault
+      - sensor failure
+      - damaged wiring
+      - poor connector contact
+      - damaged reluctor
+      - incorrect sensor gap
+      - PCM input fault
     diagnostic_steps:
-      - Check engine RPM during cranking.
-      - Inspect CKP wiring.
-      - Check sensor supply where applicable.
-      - Inspect tone wheel.
-      - Compare crankshaft signal with camshaft signal.
+      - Check DTCs.
+      - Monitor engine RPM while cranking.
+      - Inspect sensor connector and wiring.
+      - Check sensor power or reference supply where applicable.
+      - Check signal with an oscilloscope if required.
+      - Inspect crankshaft reluctor.
+    related_dtcs:
+      - P0335
+      - P0336
+      - P0337
+      - P0338
+      - P0339
+    difficulty: medium
 
-  - id: ford_camshaft_position_sensor
+  - id: ford_camshaft_position_sensor_v2
     vehicle:
       manufacturer: ford
       models: all
       generations: all
       engines: all
     category: diagnostics
-    system: engine_management
+    system: engine
     title:
-      en: Camshaft Position Sensor Diagnosis
-      ro: Diagnosticare senzor poziție ax cu came
-      de: Diagnose des Nockenwellensensors
+      en: Camshaft position sensor diagnosis
+      ro: Diagnosticarea senzorului de poziție al arborelui cu came
+      de: Diagnose Nockenwellensensor
     symptoms:
-      - crank_no_start
-      - hard_start
-      - engine_stall
+      - hard starting
+      - no start
+      - rough running
+      - engine stalls
     keywords:
       - camshaft sensor
-      - CMP sensor
-      - cam position sensor
+      - CMP
+      - cam sensor
       - senzor ax came
+      - senzor pozitie arbore cu came
+      - P0340
     possible_causes:
-      - sensor_fault
-      - wiring_fault
-      - timing_fault
-      - sensor_signal_fault
+      - sensor failure
+      - wiring fault
+      - connector corrosion
+      - timing problem
+      - damaged trigger target
+      - PCM fault
     diagnostic_steps:
-      - Check camshaft signal.
-      - Inspect sensor wiring.
+      - Check camshaft DTCs.
+      - Check sensor supply and ground.
+      - Check signal during cranking.
       - Compare camshaft and crankshaft synchronization.
-      - Check timing if synchronization is incorrect.
-      - Scan PCM for related DTCs.
+      - Inspect timing system if synchronization is incorrect.
+    related_dtcs:
+      - P0340
+      - P0341
+      - P0342
+      - P0343
+      - P0344
+    difficulty: medium
 
-  - id: ford_crank_cam_synchronization
+  - id: ford_crank_cam_synchronization_v2
     vehicle:
       manufacturer: ford
       models: all
       generations: all
       engines: all
     category: diagnostics
-    system: engine_management
+    system: engine
     title:
-      en: Crankshaft and Camshaft Synchronization Diagnosis
-      ro: Diagnosticare sincronizare arbore cotit și ax cu came
-      de: Diagnose der Kurbelwellen-Nockenwellen-Synchronisation
+      en: Crankshaft and camshaft synchronization diagnosis
+      ro: Diagnosticarea sincronizării arbore cotit–arbore cu came
+      de: Diagnose Kurbelwelle-Nockenwelle-Synchronisation
     symptoms:
-      - crank_no_start
-      - rough_running
-      - timing_fault
+      - crank no start
+      - hard starting
+      - rough idle
+      - engine stalls
     keywords:
-      - crank cam synchronization
-      - cam crank correlation
-      - engine timing synchronization
-      - sincronizare distributie
+      - synchronization
+      - crank cam correlation
+      - timing correlation
+      - sincronizare
+      - distributie
+      - arbore cotit came
     possible_causes:
-      - timing_chain_stretched
-      - timing_belt_misalignment
-      - sensor_fault
-      - mechanical_timing_fault
+      - incorrect mechanical timing
+      - stretched timing chain
+      - timing belt displacement
+      - crankshaft sensor fault
+      - camshaft sensor fault
+      - variable valve timing fault
     diagnostic_steps:
-      - Check synchronization PID values.
-      - Compare CKP and CMP signals.
-      - Check timing-related DTCs.
-      - Inspect mechanical timing if required.
-      - Verify synchronization after repair.
+      - Read correlation DTCs.
+      - Verify crankshaft and camshaft signals.
+      - Check synchronization PID.
+      - Inspect mechanical timing if correlation is incorrect.
+      - Check timing chain or belt condition.
+    related_dtcs:
+      - P0016
+      - P0017
+      - P0335
+      - P0340
+    difficulty: high
 
-  - id: ford_fuel_pressure_low
+  - id: ford_fuel_pressure_low_v2
     vehicle:
       manufacturer: ford
       models: all
       generations: all
       engines: all
     category: diagnostics
-    system: fuel_system
+    system: fuel
     title:
-      en: Low Fuel Pressure Diagnosis
-      ro: Diagnosticare presiune combustibil insuficientă
-      de: Diagnose von zu niedrigem Kraftstoffdruck
+      en: Low fuel pressure diagnosis
+      ro: Diagnosticarea presiunii scăzute a combustibilului
+      de: Diagnose niedriger Kraftstoffdruck
     symptoms:
-      - crank_no_start
-      - engine_stall
-      - low_engine_power
+      - no start
+      - engine stalls
+      - low power
+      - hesitation
     keywords:
       - low fuel pressure
-      - fuel pressure low
+      - fuel pressure insufficient
       - insufficient fuel pressure
       - presiune combustibil insuficienta
+      - presiune combustibil
     possible_causes:
-      - weak_fuel_pump
-      - blocked_filter
-      - fuel_supply_restriction
-      - pressure_regulator_fault
-      - fuel_leak
+      - weak fuel pump
+      - restricted fuel filter
+      - fuel pressure regulator
+      - wiring fault
+      - fuel supply restriction
+      - low tank fuel level
     diagnostic_steps:
       - Measure fuel pressure.
-      - Compare pressure with specification.
-      - Check fuel pump operation.
-      - Inspect fuel filter and lines.
-      - Check pressure regulator.
+      - Compare actual pressure with specified pressure.
+      - Check pump voltage and current.
+      - Inspect fuel filter.
+      - Check fuel lines for restriction.
+      - Check pressure regulator operation.
+    related_dtcs:
+      - P0087
+      - P0191
+      - P0230
+      - P0231
+      - P0232
+    difficulty: medium
 
-  - id: ford_fuel_pump_diagnosis
+  - id: ford_fuel_pump_control_v2
     vehicle:
       manufacturer: ford
       models: all
       generations: all
       engines: all
     category: diagnostics
-    system: fuel_system
+    system: fuel
     title:
-      en: Fuel Pump Diagnosis
-      ro: Diagnosticare pompă combustibil
-      de: Diagnose der Kraftstoffpumpe
+      en: Fuel pump control diagnosis
+      ro: Diagnosticarea comenzii pompei de combustibil
+      de: Diagnose Kraftstoffpumpenansteuerung
     symptoms:
-      - crank_no_start
-      - engine_stall
-      - low_fuel_pressure
+      - no fuel pressure
+      - no start
+      - intermittent stall
+      - fuel pump does not run
     keywords:
       - fuel pump
-      - fuel pump failure
-      - fuel delivery
+      - fuel pump relay
+      - pump control
       - pompa combustibil
+      - releu pompa
     possible_causes:
-      - pump_motor_fault
-      - relay_fault
-      - wiring_fault
-      - blocked_pickup
-      - low_voltage
+      - failed fuel pump
+      - fuel pump relay
+      - fuse
+      - wiring fault
+      - PCM control fault
+      - fuel pump driver module
     diagnostic_steps:
-      - Check pump activation.
-      - Check pump voltage.
-      - Check pump current draw.
-      - Measure fuel pressure.
-      - Inspect fuel delivery.
+      - Check fuel pump activation with diagnostic equipment.
+      - Check fuse and relay.
+      - Measure voltage at the pump.
+      - Check pump ground.
+      - Measure pump current draw.
+      - Check PCM or fuel pump driver commands.
+    related_dtcs:
+      - P0230
+      - P0231
+      - P0232
+      - P0233
+    difficulty: medium
 
-  - id: ford_fuel_filter_restriction
+  - id: ford_fuel_filter_restriction_v2
     vehicle:
       manufacturer: ford
       models: all
       generations: all
       engines: all
     category: diagnostics
-    system: fuel_system
+    system: fuel
     title:
-      en: Fuel Filter Restriction Diagnosis
-      ro: Diagnosticare filtru combustibil înfundat
-      de: Diagnose eines verstopften Kraftstofffilters
+      en: Fuel filter restriction diagnosis
+      ro: Diagnosticarea filtrului de combustibil înfundat
+      de: Diagnose verstopfter Kraftstofffilter
     symptoms:
-      - low_engine_power
-      - hard_start
-      - low_fuel_pressure
+      - low power
+      - hard starting
+      - engine stalls
+      - low rail pressure
     keywords:
-      - fuel filter restriction
+      - fuel filter
       - blocked fuel filter
-      - diesel fuel filter
+      - restricted filter
       - filtru combustibil
+      - filtru infundat
     possible_causes:
-      - filter_blockage
-      - contaminated_fuel
-      - water_in_fuel
-      - incorrect_filter
+      - clogged filter
+      - contaminated fuel
+      - water contamination
+      - incorrect filter
+      - fuel line restriction
     diagnostic_steps:
       - Check filter service history.
-      - Measure fuel pressure before and after the filter where applicable.
-      - Inspect fuel contamination.
-      - Replace restricted filter.
-      - Recheck fuel pressure.
+      - Inspect filter condition.
+      - Measure pressure before and after the filter where possible.
+      - Check fuel contamination.
+      - Replace filter if restriction is confirmed.
+    related_dtcs:
+      - P0087
+      - P008A
+    difficulty: low
 
-  - id: ford_maf_sensor_diagnosis
+  - id: ford_rail_pressure_low_v2
     vehicle:
       manufacturer: ford
       models: all
       generations: all
       engines: all
     category: diagnostics
-    system: engine_management
+    system: diesel_fuel
     title:
-      en: MAF Sensor Diagnosis
-      ro: Diagnosticare senzor MAF
-      de: Diagnose des Luftmassenmessers
-    symptoms:
-      - low_engine_power
-      - poor_acceleration
-      - rough_running
-    keywords:
-      - MAF sensor
-      - mass air flow
-      - airflow sensor
-      - debitmetru
-    possible_causes:
-      - maf_sensor_contamination
-      - sensor_fault
-      - intake_leak
-      - wiring_fault
-      - air_filter_restriction
-    diagnostic_steps:
-      - Read MAF live data.
-      - Compare measured and expected airflow.
-      - Inspect air intake.
-      - Check sensor wiring.
-      - Verify MAF response under acceleration.
-
-  - id: ford_map_sensor_diagnosis
-    vehicle:
-      manufacturer: ford
-      models: all
-      generations: all
-      engines: all
-    category: diagnostics
-    system: engine_management
-    title:
-      en: MAP Sensor Diagnosis
-      ro: Diagnosticare senzor MAP
-      de: Diagnose des MAP-Sensors
-    symptoms:
-      - low_engine_power
-      - boost_fault
-      - poor_acceleration
-    keywords:
-      - MAP sensor
-      - manifold pressure sensor
-      - boost pressure sensor
-      - senzor MAP
-    possible_causes:
-      - sensor_fault
-      - intake_leak
-      - wiring_fault
-      - contamination
-    diagnostic_steps:
-      - Compare MAP with atmospheric pressure.
-      - Check sensor supply.
-      - Inspect sensor connector.
-      - Monitor pressure during acceleration.
-      - Compare requested and actual boost.
-
-  - id: ford_boost_leak
-    vehicle:
-      manufacturer: ford
-      models: all
-      generations: all
-      engines: all
-    category: diagnostics
-    system: turbocharging
-    title:
-      en: Turbocharger Boost Leak Diagnosis
-      ro: Diagnosticare pierdere presiune turbo
-      de: Diagnose eines Ladeluftlecks
-    symptoms:
-      - low_engine_power
-      - low_boost
-      - hissing_noise
-      - limp_mode
-    keywords:
-      - boost leak
-      - intercooler leak
-      - charge air leak
-      - pierdere presiune turbo
-    possible_causes:
-      - intercooler_leak
-      - hose_split
-      - loose_clamp
-      - intake_pipe_damage
-    diagnostic_steps:
-      - Inspect charge-air hoses.
-      - Inspect intercooler.
-      - Perform pressure or smoke testing where appropriate.
-      - Check clamps and connections.
-      - Compare requested and actual boost.
-
-  - id: ford_turbo_actuator
-    vehicle:
-      manufacturer: ford
-      models: all
-      generations: all
-      engines: all
-    category: diagnostics
-    system: turbocharging
-    title:
-      en: Turbocharger Actuator Diagnosis
-      ro: Diagnosticare actuator turbină
-      de: Diagnose des Turbolader-Stellglieds
-    symptoms:
-      - low_boost
-      - overboost
-      - limp_mode
-    keywords:
-      - turbo actuator
-      - VNT actuator
-      - wastegate actuator
-      - actuator turbina
-    possible_causes:
-      - actuator_fault
-      - vacuum_fault
-      - electronic_actuator_fault
-      - sticking_vanes
-    diagnostic_steps:
-      - Check actuator command.
-      - Check actuator movement.
-      - Inspect vacuum supply where applicable.
-      - Compare requested and actual boost.
-      - Check turbocharger mechanism.
-
-  - id: ford_egr_valve_diagnosis
-    vehicle:
-      manufacturer: ford
-      models: all
-      generations: all
-      engines: all
-    category: diagnostics
-    system: egr
-    title:
-      en: EGR Valve Diagnosis
-      ro: Diagnosticare valvă EGR
-      de: Diagnose des AGR-Ventils
-    symptoms:
-      - rough_running
-      - low_engine_power
-      - excessive_smoke
-      - limp_mode
-    keywords:
-      - EGR valve
-      - EGR fault
-      - exhaust gas recirculation
-      - valva EGR
-    possible_causes:
-      - carbon_buildup
-      - valve_stuck
-      - actuator_fault
-      - position_sensor_fault
-    diagnostic_steps:
-      - Read EGR position data.
-      - Command EGR operation where supported.
-      - Inspect EGR valve.
-      - Check actuator response.
-      - Inspect intake contamination.
-
-  - id: ford_egr_cooler_leak
-    vehicle:
-      manufacturer: ford
-      models: all
-      generations: all
-      engines: all
-    category: diagnostics
-    system: egr
-    title:
-      en: EGR Cooler Leak Diagnosis
-      ro: Diagnosticare pierdere lichid prin răcitor EGR
-      de: Diagnose eines AGR-Kühlerlecks
-    symptoms:
-      - coolant_loss
-      - white_smoke
-      - coolant_level_drop
-    keywords:
-      - EGR cooler leak
-      - EGR cooler coolant
-      - coolant loss EGR
-      - racitor EGR
-    possible_causes:
-      - cooler_internal_leak
-      - coolant_circuit_fault
-      - gasket_fault
-    diagnostic_steps:
-      - Check coolant level.
-      - Inspect exhaust smoke.
-      - Pressure-test cooling system where appropriate.
-      - Inspect EGR cooler.
-      - Check for coolant contamination.
-
-  - id: ford_dpf_soot_load
-    vehicle:
-      manufacturer: ford
-      models: all
-      generations: all
-      engines: all
-    category: diagnostics
-    system: dpf
-    title:
-      en: DPF Soot Loading Diagnosis
-      ro: Diagnosticare încărcare cu funingine DPF
-      de: Diagnose der DPF-Rußbeladung
-    symptoms:
-      - dpf_warning
-      - reduced_power
-      - limp_mode
-    keywords:
-      - DPF soot load
-      - DPF blockage
-      - diesel particulate filter
-      - incarcare DPF
-    possible_causes:
-      - short_trip_operation
-      - regeneration_failure
-      - excessive_soot_production
-      - differential_pressure_sensor_fault
-    diagnostic_steps:
-      - Read calculated soot load.
-      - Check differential pressure.
-      - Check regeneration history.
-      - Check engine operating conditions.
-      - Perform regeneration only when permitted.
-
-  - id: ford_dpf_regeneration_failure
-    vehicle:
-      manufacturer: ford
-      models: all
-      generations: all
-      engines: all
-    category: diagnostics
-    system: dpf
-    title:
-      en: DPF Regeneration Failure Diagnosis
-      ro: Diagnosticare regenerare DPF eșuată
-      de: Diagnose einer fehlgeschlagenen DPF-Regeneration
-    symptoms:
-      - dpf_warning
-      - repeated_regeneration
-      - limp_mode
-    keywords:
-      - DPF regeneration failure
-      - DPF regen
-      - failed regeneration
-      - regenerare DPF
-    possible_causes:
-      - exhaust_temperature_fault
-      - thermostat_fault
-      - differential_pressure_sensor_fault
-      - excessive_soot
-      - engine_fault
-    diagnostic_steps:
-      - Check regeneration conditions.
-      - Check coolant temperature.
-      - Check exhaust temperature sensors.
-      - Check DPF differential pressure.
-      - Check for engine faults preventing regeneration.
-
-  - id: ford_dpf_differential_pressure_sensor
-    vehicle:
-      manufacturer: ford
-      models: all
-      generations: all
-      engines: all
-    category: diagnostics
-    system: dpf
-    title:
-      en: DPF Differential Pressure Sensor Diagnosis
-      ro: Diagnosticare senzor presiune diferențială DPF
-      de: Diagnose des DPF-Differenzdrucksensors
-    symptoms:
-      - dpf_warning
-      - incorrect_soot_load
-      - regeneration_fault
-    keywords:
-      - DPF differential pressure
-      - DPF pressure sensor
-      - differential pressure sensor
-      - senzor presiune DPF
-    possible_causes:
-      - sensor_fault
-      - blocked_pressure_hose
-      - exhaust_leak
-      - wiring_fault
-    diagnostic_steps:
-      - Check pressure sensor readings.
-      - Inspect both pressure hoses.
-      - Compare pressure at idle and under load.
-      - Check wiring.
-      - Verify readings after repair.
-
-  - id: ford_dpf_pressure_hose
-    vehicle:
-      manufacturer: ford
-      models: all
-      generations: all
-      engines: all
-    category: diagnostics
-    system: dpf
-    title:
-      en: DPF Pressure Hose Diagnosis
-      ro: Diagnosticare furtunuri senzor presiune DPF
-      de: Diagnose der DPF-Druckschläuche
-    symptoms:
-      - dpf_pressure_fault
-      - false_dpf_load
-      - regeneration_fault
-    keywords:
-      - DPF pressure hose
-      - DPF sensor hose
-      - differential pressure hose
-      - furtun senzor DPF
-    possible_causes:
-      - blocked_hose
-      - cracked_hose
-      - melted_hose
-      - condensation
-    diagnostic_steps:
-      - Inspect both hoses.
-      - Check for blockage.
-      - Check for cracks or heat damage.
-      - Verify pressure signal.
-      - Replace damaged hoses and retest.
-
-  - id: ford_diesel_injector_balance
-    vehicle:
-      manufacturer: ford
-      models: all
-      generations: all
-      engines: all
-    category: diagnostics
-    system: diesel_injection
-    title:
-      en: Diesel Injector Balance Diagnosis
-      ro: Diagnosticare corecții injectoare diesel
-      de: Diagnose der Diesel-Injektorkorrekturwerte
-    symptoms:
-      - rough_idle
-      - poor_acceleration
-      - excessive_smoke
-    keywords:
-      - injector correction
-      - injector balance
-      - diesel injector
-      - corectie injectoare
-    possible_causes:
-      - injector_wear
-      - compression_difference
-      - fuel_pressure_fault
-      - injector_seat_leak
-    diagnostic_steps:
-      - Read injector correction values.
-      - Compare cylinders.
-      - Check fuel pressure.
-      - Perform injector return-flow testing where applicable.
-      - Check compression if required.
-
-  - id: ford_diesel_injector_return_flow
-    vehicle:
-      manufacturer: ford
-      models: all
-      generations: all
-      engines: all
-    category: diagnostics
-    system: diesel_injection
-    title:
-      en: Diesel Injector Return Flow Test
-      ro: Test debit retur injectoare diesel
-      de: Rücklaufmengentest der Diesel-Injektoren
-    symptoms:
-      - hard_start
-      - low_rail_pressure
-      - rough_running
-    keywords:
-      - injector leak off
-      - injector return flow
-      - diesel injector test
-      - retur injectoare
-    possible_causes:
-      - injector_internal_leak
-      - injector_wear
-      - excessive_return_flow
-    diagnostic_steps:
-      - Perform an injector return-flow test.
-      - Compare all cylinders.
-      - Check rail pressure during cranking.
-      - Identify excessive return flow.
-      - Replace or repair affected injectors.
-
-  - id: ford_rail_pressure_low
-    vehicle:
-      manufacturer: ford
-      models: all
-      generations: all
-      engines: all
-    category: diagnostics
-    system: common_rail
-    title:
-      en: Common Rail Pressure Too Low
-      ro: Presiune common rail prea mică
+      en: Diesel common rail pressure too low
+      ro: Presiune prea mică în rampa common rail
       de: Common-Rail-Druck zu niedrig
     symptoms:
-      - crank_no_start
-      - hard_start
-      - engine_stall
-      - low_engine_power
+      - crank no start
+      - engine stalls
+      - poor acceleration
+      - limp mode
     keywords:
       - rail pressure low
       - common rail pressure
-      - diesel rail pressure
-      - presiune rail
+      - fuel rail pressure
+      - presiune rampa
+      - common rail
+      - P0087
     possible_causes:
-      - high_pressure_pump_fault
-      - injector_return_flow
-      - fuel_supply_restriction
-      - pressure_regulator_fault
-      - rail_pressure_sensor_fault
+      - low pressure fuel supply
+      - fuel metering valve
+      - high pressure pump
+      - injector excessive return flow
+      - rail pressure sensor
+      - fuel filter restriction
     diagnostic_steps:
-      - Monitor rail pressure during cranking.
-      - Compare actual and desired pressure.
+      - Monitor commanded and actual rail pressure.
+      - Check rail pressure during cranking.
       - Check low-pressure fuel supply.
+      - Check fuel metering valve.
       - Perform injector return-flow testing.
-      - Check pressure control components.
+      - Verify rail pressure sensor plausibility.
+    related_dtcs:
+      - P0087
+      - P0088
+      - P0191
+    difficulty: high
 
-  - id: ford_rail_pressure_sensor
+  - id: ford_rail_pressure_sensor_v2
     vehicle:
       manufacturer: ford
       models: all
       generations: all
       engines: all
     category: diagnostics
-    system: common_rail
+    system: diesel_fuel
     title:
-      en: Rail Pressure Sensor Diagnosis
-      ro: Diagnosticare senzor presiune rampă
-      de: Diagnose des Raildrucksensors
+      en: Fuel rail pressure sensor diagnosis
+      ro: Diagnosticarea senzorului de presiune din rampă
+      de: Diagnose Kraftstoffdrucksensor
     symptoms:
-      - crank_no_start
-      - incorrect_rail_pressure
-      - engine_stall
+      - hard starting
+      - no start
+      - unstable idle
+      - reduced power
     keywords:
       - rail pressure sensor
-      - fuel rail sensor
-      - common rail sensor
+      - fuel pressure sensor
+      - FRP sensor
       - senzor presiune rampa
+      - P0191
     possible_causes:
-      - sensor_fault
-      - wiring_fault
-      - connector_fault
-      - actual_fuel_pressure_fault
+      - sensor fault
+      - wiring fault
+      - reference voltage problem
+      - connector fault
+      - actual fuel pressure problem
     diagnostic_steps:
-      - Check rail pressure live data.
-      - Compare pressure signal with mechanical pressure.
-      - Inspect sensor wiring.
-      - Check connector.
-      - Verify pressure response during cranking.
+      - Check sensor supply voltage.
+      - Check sensor ground.
+      - Compare sensor reading with actual pressure.
+      - Monitor pressure while cranking.
+      - Inspect wiring for intermittent faults.
+    related_dtcs:
+      - P0190
+      - P0191
+      - P0192
+      - P0193
+    difficulty: medium
 
-  - id: ford_glow_plug_system
+  - id: ford_diesel_injector_balance_v2
+    vehicle:
+      manufacturer: ford
+      models:
+        - focus
+        - fiesta
+        - mondeo
+        - c-max
+        - kuga
+        - transit
+        - transit_connect
+        - transit_custom
+        - ranger
+      generations: all
+      engines:
+        - diesel
+    category: diagnostics
+    system: diesel_fuel
+    title:
+      en: Diesel injector correction and balance diagnosis
+      ro: Diagnosticarea corecțiilor injectoarelor diesel
+      de: Diagnose Einspritzmengenkorrektur
+    symptoms:
+      - rough idle
+      - misfire
+      - poor starting
+      - smoke
+      - low power
+    keywords:
+      - injector correction
+      - injector balance
+      - injector deviation
+      - corectie injector
+      - injectoare
+    possible_causes:
+      - worn injector
+      - injector contamination
+      - compression problem
+      - fuel pressure problem
+      - wiring fault
+    diagnostic_steps:
+      - Read injector correction values.
+      - Compare cylinder deviations.
+      - Check rail pressure.
+      - Perform injector return-flow test.
+      - Verify compression if one cylinder remains abnormal.
+    related_dtcs:
+      - P0201
+      - P0202
+      - P0203
+      - P0204
+    difficulty: high
+
+  - id: ford_diesel_injector_return_flow_v2
+    vehicle:
+      manufacturer: ford
+      models: all
+      generations: all
+      engines:
+        - diesel
+    category: diagnostics
+    system: diesel_fuel
+    title:
+      en: Diesel injector return flow test
+      ro: Testarea debitului de retur al injectoarelor diesel
+      de: Rücklaufmengentest Diesel-Injektoren
+    symptoms:
+      - low rail pressure
+      - crank no start
+      - hard starting
+      - engine stalls
+    keywords:
+      - injector return flow
+      - leak off test
+      - injector leak back
+      - retur injectoare
+      - debit retur
+    possible_causes:
+      - excessive injector leakage
+      - worn injector
+      - damaged injector valve
+      - contaminated fuel
+    diagnostic_steps:
+      - Warm the engine where possible.
+      - Connect calibrated return-flow containers.
+      - Run the engine or perform the appropriate cranking test.
+      - Compare return volumes between injectors.
+      - Replace or repair injector if excessive leakage is confirmed.
+    related_dtcs:
+      - P0087
+      - P0201
+      - P0202
+      - P0203
+      - P0204
+    difficulty: high
+
+  - id: ford_fuel_metering_valve_v2
+    vehicle:
+      manufacturer: ford
+      models: all
+      generations: all
+      engines:
+        - diesel
+    category: diagnostics
+    system: high_pressure_fuel
+    title:
+      en: High pressure pump fuel metering valve diagnosis
+      ro: Diagnosticarea valvei de dozare a pompei de înaltă presiune
+      de: Diagnose Kraftstoffmengenregelventil
+    symptoms:
+      - low rail pressure
+      - no start
+      - engine stalls
+      - unstable rail pressure
+    keywords:
+      - metering valve
+      - IMV
+      - SCV
+      - fuel metering
+      - valva dozare
+      - pompa inalta presiune
+    possible_causes:
+      - valve sticking
+      - electrical fault
+      - contaminated fuel
+      - high pressure pump wear
+      - wiring fault
+    diagnostic_steps:
+      - Monitor commanded metering valve duty cycle.
+      - Compare commanded and actual rail pressure.
+      - Inspect valve connector.
+      - Check electrical resistance according to engine specification.
+      - Check fuel contamination.
+    related_dtcs:
+      - P0087
+      - P0088
+      - P0001
+      - P0002
+    difficulty: high
+
+  - id: ford_maf_sensor_diagnosis_v2
     vehicle:
       manufacturer: ford
       models: all
       generations: all
       engines: all
     category: diagnostics
-    system: diesel_engine
+    system: air_intake
     title:
-      en: Glow Plug System Diagnosis
-      ro: Diagnosticare sistem bujii incandescente
-      de: Diagnose des Glühkerzensystems
+      en: MAF sensor diagnosis
+      ro: Diagnosticarea senzorului MAF
+      de: Diagnose Luftmassenmesser
     symptoms:
-      - cold_start_hard
-      - cold_start_misfire
-      - glow_plug_warning
+      - low power
+      - poor acceleration
+      - rough running
+      - increased fuel consumption
+    keywords:
+      - MAF
+      - mass air flow
+      - airflow sensor
+      - debitmetru
+      - senzor MAF
+      - P0101
+    possible_causes:
+      - contaminated MAF
+      - intake leak
+      - wiring fault
+      - incorrect air filter
+      - EGR malfunction
+      - turbo problem
+    diagnostic_steps:
+      - Compare measured and expected airflow.
+      - Inspect air filter.
+      - Check intake for leaks.
+      - Check MAF wiring.
+      - Compare MAF readings under load.
+    related_dtcs:
+      - P0100
+      - P0101
+      - P0102
+      - P0103
+    difficulty: medium
+
+  - id: ford_map_sensor_diagnosis_v2
+    vehicle:
+      manufacturer: ford
+      models: all
+      generations: all
+      engines: all
+    category: diagnostics
+    system: air_intake
+    title:
+      en: MAP sensor diagnosis
+      ro: Diagnosticarea senzorului MAP
+      de: Diagnose MAP-Sensor
+    symptoms:
+      - low power
+      - boost deviation
+      - poor acceleration
+      - limp mode
+    keywords:
+      - MAP sensor
+      - boost pressure sensor
+      - manifold pressure
+      - senzor MAP
+      - presiune admisie
+    possible_causes:
+      - sensor contamination
+      - boost leak
+      - wiring fault
+      - turbocharger fault
+      - intake restriction
+    diagnostic_steps:
+      - Compare MAP reading with atmospheric pressure with engine off.
+      - Monitor MAP during acceleration.
+      - Compare requested and actual boost.
+      - Inspect sensor and connector.
+      - Check intake and charge-air system.
+    related_dtcs:
+      - P0105
+      - P0106
+      - P0107
+      - P0108
+    difficulty: medium
+
+  - id: ford_boost_leak_v2
+    vehicle:
+      manufacturer: ford
+      models: all
+      generations: all
+      engines:
+        - diesel
+        - petrol
+    category: diagnostics
+    system: turbocharger
+    title:
+      en: Turbo boost leak diagnosis
+      ro: Diagnosticarea pierderilor pe circuitul de supraalimentare
+      de: Diagnose Ladedruckleck
+    symptoms:
+      - low power
+      - turbo underboost
+      - hissing noise
+      - smoke
+      - limp mode
+    keywords:
+      - boost leak
+      - intercooler leak
+      - turbo hose
+      - pierde presiune
+      - furtun intercooler
+      - nu mai trage
+    possible_causes:
+      - split hose
+      - loose clamp
+      - intercooler crack
+      - charge pipe leak
+      - intake manifold leak
+    diagnostic_steps:
+      - Inspect all charge-air hoses.
+      - Check intercooler connections.
+      - Perform pressure or smoke testing.
+      - Compare requested and actual boost.
+      - Check for oil residue around leaking joints.
+    related_dtcs:
+      - P0299
+      - P0234
+      - P2263
+    difficulty: medium
+
+  - id: ford_turbo_actuator_v2
+    vehicle:
+      manufacturer: ford
+      models: all
+      generations: all
+      engines:
+        - diesel
+        - petrol
+    category: diagnostics
+    system: turbocharger
+    title:
+      en: Turbocharger actuator diagnosis
+      ro: Diagnosticarea actuatorului turbinei
+      de: Diagnose Turboladersteller
+    symptoms:
+      - low boost
+      - overboost
+      - limp mode
+      - intermittent power loss
+    keywords:
+      - turbo actuator
+      - VGT actuator
+      - wastegate actuator
+      - actuator turbina
+      - geometrie variabila
+    possible_causes:
+      - actuator failure
+      - vacuum leak
+      - seized VGT mechanism
+      - wastegate fault
+      - electrical wiring fault
+    diagnostic_steps:
+      - Check actuator command.
+      - Compare requested and actual position.
+      - Inspect vacuum supply where applicable.
+      - Check actuator movement.
+      - Inspect turbocharger mechanism for binding.
+    related_dtcs:
+      - P0299
+      - P0234
+      - P2563
+      - P2598
+    difficulty: high
+
+  - id: ford_egr_valve_diagnosis_v2
+    vehicle:
+      manufacturer: ford
+      models: all
+      generations: all
+      engines:
+        - diesel
+        - petrol
+    category: diagnostics
+    system: egr
+    title:
+      en: EGR valve diagnosis
+      ro: Diagnosticarea supapei EGR
+      de: Diagnose AGR-Ventil
+    symptoms:
+      - rough idle
+      - low power
+      - hesitation
+      - smoke
+      - limp mode
+    keywords:
+      - EGR
+      - EGR valve
+      - exhaust gas recirculation
+      - supapa EGR
+      - P0401
+      - P0402
+    possible_causes:
+      - carbon buildup
+      - valve sticking
+      - actuator failure
+      - wiring fault
+      - blocked EGR passage
+    diagnostic_steps:
+      - Read EGR-related DTCs.
+      - Check commanded and actual EGR position.
+      - Inspect EGR valve.
+      - Check intake deposits.
+      - Verify EGR flow.
+    related_dtcs:
+      - P0400
+      - P0401
+      - P0402
+      - P0403
+      - P0404
+    difficulty: medium
+
+  - id: ford_intake_flap_diagnosis_v2
+    vehicle:
+      manufacturer: ford
+      models: all
+      generations: all
+      engines:
+        - diesel
+    category: diagnostics
+    system: air_intake
+    title:
+      en: Diesel intake throttle and anti-shudder flap diagnosis
+      ro: Diagnosticarea clapetei de admisie diesel
+      de: Diagnose Diesel-Abstellklappe
+    symptoms:
+      - engine shutdown vibration
+      - poor power
+      - EGR fault
+      - limp mode
+    keywords:
+      - intake flap
+      - anti shudder valve
+      - throttle flap diesel
+      - clapeta admisie
+      - clapeta anti shudder
+    possible_causes:
+      - carbon buildup
+      - actuator failure
+      - position sensor fault
+      - wiring fault
+      - mechanical obstruction
+    diagnostic_steps:
+      - Check commanded flap position.
+      - Check actual position.
+      - Inspect flap for carbon deposits.
+      - Check actuator operation.
+      - Inspect wiring and connector.
+    related_dtcs:
+      - P2111
+      - P2112
+      - P0638
+    difficulty: medium
+
+  - id: ford_dpf_differential_pressure_v2
+    vehicle:
+      manufacturer: ford
+      models: all
+      generations: all
+      engines:
+        - diesel
+    category: diagnostics
+    system: dpf
+    title:
+      en: DPF differential pressure sensor diagnosis
+      ro: Diagnosticarea senzorului de presiune diferențială DPF
+      de: Diagnose DPF-Differenzdrucksensor
+    symptoms:
+      - DPF warning
+      - regeneration problems
+      - reduced power
+      - limp mode
+    keywords:
+      - DPF pressure sensor
+      - differential pressure
+      - DPF sensor
+      - senzor presiune DPF
+      - presiune diferentiala
+    possible_causes:
+      - blocked sensor hoses
+      - faulty pressure sensor
+      - DPF restriction
+      - exhaust leak
+      - wiring fault
+    diagnostic_steps:
+      - Check differential pressure with engine off.
+      - Check pressure at idle.
+      - Check pressure under load.
+      - Inspect sensor hoses.
+      - Compare calculated soot load with measured pressure.
+    related_dtcs:
+      - P2452
+      - P2453
+      - P2454
+      - P2455
+      - P2463
+    difficulty: medium
+
+  - id: ford_dpf_soot_load_v2
+    vehicle:
+      manufacturer: ford
+      models: all
+      generations: all
+      engines:
+        - diesel
+    category: diagnostics
+    system: dpf
+    title:
+      en: DPF soot load diagnosis
+      ro: Diagnosticarea încărcării cu funingine a filtrului DPF
+      de: Diagnose DPF-Rußbeladung
+    symptoms:
+      - DPF warning
+      - reduced power
+      - frequent regeneration
+      - limp mode
+    keywords:
+      - DPF soot
+      - DPF blocked
+      - DPF loading
+      - filtru particule
+      - DPF infundat
+      - funingine
+    possible_causes:
+      - short journeys
+      - failed regeneration
+      - excessive soot production
+      - EGR fault
+      - injector problem
+      - differential pressure sensor fault
+    diagnostic_steps:
+      - Read calculated soot load.
+      - Check differential pressure.
+      - Check exhaust temperature sensors.
+      - Check regeneration history.
+      - Identify the cause of excessive soot production before regeneration.
+    related_dtcs:
+      - P2002
+      - P242F
+      - P2458
+      - P2463
+    difficulty: high
+
+  - id: ford_dpf_regeneration_failure_v2
+    vehicle:
+      manufacturer: ford
+      models: all
+      generations: all
+      engines:
+        - diesel
+    category: diagnostics
+    system: dpf
+    title:
+      en: DPF regeneration failure diagnosis
+      ro: Diagnosticarea regenerării DPF eșuate
+      de: Diagnose fehlgeschlagene DPF-Regeneration
+    symptoms:
+      - repeated regeneration attempts
+      - DPF warning
+      - rising oil level
+      - reduced power
+    keywords:
+      - DPF regeneration
+      - failed regeneration
+      - forced regeneration
+      - regenerare DPF
+      - regenerare esuata
+    possible_causes:
+      - incorrect coolant temperature
+      - exhaust temperature sensor fault
+      - differential pressure sensor fault
+      - excessive soot load
+      - EGR fault
+      - fuel injection problem
+    diagnostic_steps:
+      - Check regeneration enable conditions.
+      - Verify engine coolant temperature.
+      - Check exhaust temperature sensors.
+      - Check differential pressure.
+      - Check soot load.
+      - Check for fuel dilution of engine oil.
+    related_dtcs:
+      - P2458
+      - P2463
+      - P242F
+      - P244A
+    difficulty: high
+
+  - id: ford_glow_plug_system_v2
+    vehicle:
+      manufacturer: ford
+      models: all
+      generations: all
+      engines:
+        - diesel
+    category: diagnostics
+    system: glow_plug
+    title:
+      en: Glow plug system diagnosis
+      ro: Diagnosticarea sistemului de bujii incandescente
+      de: Diagnose Glühkerzensystem
+    symptoms:
+      - hard cold starting
+      - white smoke
+      - rough cold idle
+      - glow plug warning
     keywords:
       - glow plugs
-      - glow plug system
-      - diesel cold start
+      - glow plug module
+      - cold start
       - bujii incandescente
+      - modul bujii
     possible_causes:
-      - glow_plug_fault
-      - glow_plug_module_fault
-      - wiring_fault
-      - low_battery_voltage
+      - failed glow plug
+      - glow plug module
+      - power supply fault
+      - wiring fault
+      - PCM control fault
     diagnostic_steps:
-      - Check glow plug command.
-      - Measure glow plug resistance where appropriate.
-      - Check module power supply.
-      - Check individual circuits.
-      - Verify cold-start behavior.
+      - Read glow plug DTCs.
+      - Check module power and ground.
+      - Test individual glow plugs.
+      - Check current draw.
+      - Verify preheating command.
+    related_dtcs:
+      - P0380
+      - P0670
+      - P0671
+      - P0672
+      - P0673
+      - P0674
+    difficulty: medium
 
-  - id: ford_thermostat_diagnosis
+  - id: ford_engine_coolant_temperature_sensor_v2
     vehicle:
       manufacturer: ford
       models: all
       generations: all
       engines: all
     category: diagnostics
-    system: cooling_system
+    system: cooling
     title:
-      en: Thermostat Diagnosis
-      ro: Diagnosticare termostat
-      de: Diagnose des Thermostats
+      en: Engine coolant temperature sensor diagnosis
+      ro: Diagnosticarea senzorului de temperatură lichid de răcire
+      de: Diagnose Kühlmitteltemperatursensor
     symptoms:
-      - engine_runs_cold
-      - overheating
-      - poor_heater_output
-    keywords:
-      - thermostat
-      - engine thermostat
-      - coolant temperature
-      - termostat
-    possible_causes:
-      - thermostat_stuck_open
-      - thermostat_stuck_closed
-      - coolant_temperature_sensor_fault
-    diagnostic_steps:
-      - Monitor coolant temperature.
-      - Check engine warm-up time.
-      - Compare coolant temperature with expected operating range.
-      - Inspect thermostat operation.
-      - Verify temperature after repair.
-
-  - id: ford_coolant_temperature_sensor
-    vehicle:
-      manufacturer: ford
-      models: all
-      generations: all
-      engines: all
-    category: diagnostics
-    system: cooling_system
-    title:
-      en: Engine Coolant Temperature Sensor Diagnosis
-      ro: Diagnosticare senzor temperatură lichid răcire
-      de: Diagnose des Kühlmitteltemperatursensors
-    symptoms:
-      - hard_start
-      - overheating_warning
-      - incorrect_temperature
+      - hard starting
+      - incorrect idle
+      - cooling fan runs continuously
+      - overheating warning
     keywords:
       - coolant temperature sensor
-      - ECT sensor
-      - engine temperature sensor
-      - senzor temperatura antigel
+      - ECT
+      - temperature sensor
+      - senzor temperatura
+      - antigel
     possible_causes:
-      - sensor_fault
-      - wiring_fault
-      - connector_fault
-      - thermostat_fault
+      - sensor failure
+      - wiring fault
+      - connector corrosion
+      - coolant circulation problem
+      - thermostat problem
     diagnostic_steps:
-      - Read ECT live data.
-      - Compare cold-engine reading with ambient temperature.
+      - Compare coolant temperature with ambient temperature when cold.
+      - Monitor temperature rise.
       - Check sensor wiring.
-      - Check connector.
-      - Verify temperature response during warm-up.
+      - Check thermostat operation.
+      - Verify cooling fan activation strategy.
+    related_dtcs:
+      - P0115
+      - P0116
+      - P0117
+      - P0118
+    difficulty: medium
 
-  - id: ford_engine_overheating
+  - id: ford_engine_overheating_v2
     vehicle:
       manufacturer: ford
       models: all
       generations: all
       engines: all
     category: diagnostics
-    system: cooling_system
+    system: cooling
     title:
-      en: Engine Overheating Diagnosis
-      ro: Diagnosticare supraîncălzire motor
-      de: Diagnose von Motorüberhitzung
+      en: Engine overheating diagnosis
+      ro: Diagnosticarea supraîncălzirii motorului
+      de: Diagnose Motorüberhitzung
     symptoms:
-      - overheating
-      - coolant_warning
-      - coolant_loss
+      - high coolant temperature
+      - coolant loss
+      - cooling fan running
+      - warning message
     keywords:
-      - engine overheating
       - overheating
-      - coolant temperature high
+      - high coolant temperature
+      - coolant loss
       - motor supraincalzit
+      - temperatura mare
     possible_causes:
-      - thermostat_fault
-      - cooling_fan_fault
-      - coolant_pump_fault
-      - radiator_restriction
-      - coolant_leak
+      - thermostat failure
+      - cooling fan failure
+      - low coolant level
+      - water pump failure
+      - radiator restriction
+      - head gasket problem
     diagnostic_steps:
       - Check coolant level.
-      - Monitor coolant temperature.
-      - Check cooling fan operation.
-      - Inspect thermostat and coolant circulation.
-      - Pressure-test the cooling system where appropriate.
+      - Check coolant temperature with diagnostic equipment.
+      - Verify fan operation.
+      - Check thermostat opening.
+      - Check coolant circulation.
+      - Pressure-test the cooling system.
+    related_dtcs:
+      - P0217
+      - P0117
+      - P0480
+      - P0481
+    difficulty: high
 
-  - id: ford_cooling_fan_control
+  - id: ford_cooling_fan_control_v2
     vehicle:
       manufacturer: ford
       models: all
       generations: all
       engines: all
     category: diagnostics
-    system: cooling_fan
+    system: cooling
     title:
-      en: Cooling Fan Control Diagnosis
-      ro: Diagnosticare comandă electroventilator
-      de: Diagnose der Kühlerlüftersteuerung
+      en: Cooling fan control diagnosis
+      ro: Diagnosticarea comenzii ventilatorului de răcire
+      de: Diagnose Kühlerlüftersteuerung
     symptoms:
-      - overheating
-      - fan_not_running
-      - fan_runs_continuously
+      - engine overheating
+      - fan does not run
+      - fan runs continuously
+      - air conditioning performance reduced
     keywords:
       - cooling fan
       - radiator fan
-      - fan control
+      - GMV
+      - ventilator racire
       - electroventilator
     possible_causes:
-      - fan_motor_fault
-      - fan_control_module_fault
-      - relay_fault
-      - wiring_fault
-      - temperature_signal_fault
+      - fan motor
+      - fan resistor
+      - fan control module
+      - relay
+      - fuse
+      - temperature sensor
     diagnostic_steps:
-      - Check fan command.
-      - Test fan operation.
-      - Check power and ground.
-      - Check fan control circuit.
-      - Verify operation at required temperatures.
+      - Activate the fan using diagnostic equipment where supported.
+      - Check fan power supply.
+      - Check ground.
+      - Check control signal.
+      - Inspect relay, fuse and control module.
+    related_dtcs:
+      - P0480
+      - P0481
+      - P0691
+      - P0692
+    difficulty: medium
 
-  - id: ford_oil_pressure_low
+  - id: ford_oil_pressure_low_v2
     vehicle:
       manufacturer: ford
       models: all
@@ -1055,363 +1268,352 @@ technical_data:
     category: diagnostics
     system: lubrication
     title:
-      en: Low Engine Oil Pressure Diagnosis
-      ro: Diagnosticare presiune ulei motor scăzută
-      de: Diagnose von niedrigem Motoröldruck
+      en: Low engine oil pressure diagnosis
+      ro: Diagnosticarea presiunii scăzute a uleiului
+      de: Diagnose niedriger Öldruck
     symptoms:
-      - oil_pressure_warning
-      - engine_noise
-      - engine_damage_risk
+      - oil pressure warning
+      - engine noise
+      - ticking
+      - engine shutdown
     keywords:
       - low oil pressure
-      - engine oil pressure
+      - oil pressure
       - oil warning
       - presiune ulei
+      - presiune ulei scazuta
     possible_causes:
-      - low_oil_level
-      - oil_pump_wear
-      - bearing_wear
-      - blocked_pickup
-      - incorrect_oil
+      - low oil level
+      - incorrect oil
+      - oil pump wear
+      - blocked pickup
+      - bearing wear
+      - faulty oil pressure sensor
     diagnostic_steps:
-      - Check oil level.
-      - Verify oil specification.
-      - Measure oil pressure mechanically.
-      - Inspect oil filter and pickup.
-      - Investigate engine wear if pressure remains low.
+      - Check oil level and specification.
+      - Verify pressure with a mechanical gauge.
+      - Compare mechanical pressure with PCM data where available.
+      - Inspect oil filter and pickup if pressure is genuinely low.
+    related_dtcs:
+      - P0520
+      - P0521
+      - P0522
+      - P0523
+    difficulty: high
 
-  - id: ford_oil_pressure_sensor
+  - id: ford_throttle_body_diagnosis_v2
     vehicle:
       manufacturer: ford
       models: all
       generations: all
-      engines: all
+      engines:
+        - petrol
+        - diesel
     category: diagnostics
-    system: lubrication
+    system: throttle
     title:
-      en: Oil Pressure Sensor Diagnosis
-      ro: Diagnosticare senzor presiune ulei
-      de: Diagnose des Öldrucksensors
+      en: Electronic throttle body diagnosis
+      ro: Diagnosticarea clapetei electronice de accelerație
+      de: Diagnose elektronische Drosselklappe
     symptoms:
-      - oil_pressure_warning
-      - incorrect_oil_pressure_reading
-    keywords:
-      - oil pressure sensor
-      - oil pressure switch
-      - oil warning sensor
-      - senzor presiune ulei
-    possible_causes:
-      - sensor_fault
-      - switch_fault
-      - wiring_fault
-      - actual_low_oil_pressure
-    diagnostic_steps:
-      - Check sensor signal.
-      - Inspect connector.
-      - Check wiring.
-      - Verify oil pressure mechanically.
-      - Compare measured pressure with PCM data where available.
-
-  - id: ford_throttle_body_diagnosis
-    vehicle:
-      manufacturer: ford
-      models: all
-      generations: all
-      engines: all
-    category: diagnostics
-    system: throttle_control
-    title:
-      en: Electronic Throttle Body Diagnosis
-      ro: Diagnosticare clapetă accelerație electronică
-      de: Diagnose der elektronischen Drosselklappe
-    symptoms:
-      - poor_acceleration
-      - limp_mode
-      - unstable_idle
+      - reduced power
+      - throttle response problem
+      - limp mode
+      - unstable idle
     keywords:
       - throttle body
       - electronic throttle
-      - throttle actuator
+      - accelerator
       - clapeta acceleratie
+      - P2111
+      - P2112
     possible_causes:
-      - throttle_body_fault
-      - position_sensor_fault
-      - carbon_buildup
-      - wiring_fault
+      - carbon buildup
+      - throttle actuator failure
+      - position sensor fault
+      - wiring fault
+      - PCM fault
     diagnostic_steps:
-      - Read throttle position data.
-      - Command throttle operation where supported.
+      - Read throttle-related DTCs.
+      - Monitor commanded and actual throttle position.
       - Inspect throttle plate.
-      - Check wiring.
-      - Perform relearn where required.
+      - Check connector and wiring.
+      - Perform throttle relearn where required.
+    related_dtcs:
+      - P2100
+      - P2101
+      - P2111
+      - P2112
+      - P2135
+    difficulty: medium
 
-  - id: ford_accelerator_pedal_sensor
+  - id: ford_accelerator_pedal_sensor_v2
     vehicle:
       manufacturer: ford
       models: all
       generations: all
       engines: all
     category: diagnostics
-    system: throttle_control
+    system: throttle
     title:
-      en: Accelerator Pedal Position Sensor Diagnosis
-      ro: Diagnosticare senzor pedală accelerație
-      de: Diagnose des Fahrpedalpositionssensors
+      en: Accelerator pedal position sensor diagnosis
+      ro: Diagnosticarea senzorului pedalei de accelerație
+      de: Diagnose Fahrpedalpositionssensor
     symptoms:
-      - accelerator_unresponsive
-      - limp_mode
-      - poor_acceleration
+      - no throttle response
+      - reduced power
+      - limp mode
+      - intermittent acceleration
     keywords:
-      - accelerator pedal sensor
+      - accelerator pedal
       - APP sensor
-      - throttle pedal
+      - gas pedal sensor
       - pedala acceleratie
+      - senzor pedala
     possible_causes:
-      - sensor_fault
-      - wiring_fault
-      - connector_fault
-      - pedal_module_fault
+      - APP sensor failure
+      - wiring fault
+      - connector fault
+      - reference voltage problem
+      - PCM fault
     diagnostic_steps:
-      - Monitor both pedal position signals.
+      - Monitor both accelerator pedal sensor channels.
       - Check signal correlation.
-      - Inspect wiring.
-      - Check connector.
-      - Verify throttle response.
+      - Inspect connector.
+      - Check reference voltage and ground.
+      - Check wiring for intermittent open circuits.
+    related_dtcs:
+      - P2122
+      - P2123
+      - P2127
+      - P2128
+      - P2138
+    difficulty: medium
 
-  - id: ford_pcv_system
+  - id: ford_engine_misfire_v2
     vehicle:
       manufacturer: ford
       models: all
       generations: all
-      engines: all
+      engines:
+        - petrol
+        - diesel
     category: diagnostics
-    system: crankcase_ventilation
+    system: engine
     title:
-      en: PCV System Diagnosis
-      ro: Diagnosticare sistem PCV
-      de: Diagnose des Kurbelgehäuseentlüftungssystems
+      en: Engine misfire diagnosis
+      ro: Diagnosticarea rateurilor de aprindere/arderii
+      de: Diagnose Fehlzündungen
     symptoms:
-      - rough_idle
-      - oil_consumption
-      - vacuum_leak
+      - rough running
+      - shaking engine
+      - flashing engine warning
+      - loss of power
     keywords:
-      - PCV valve
-      - crankcase ventilation
-      - positive crankcase ventilation
-      - ventilatie carter
+      - misfire
+      - engine shaking
+      - rough running
+      - rateu
+      - motor tremura
+      - P0300
     possible_causes:
-      - pcv_valve_fault
-      - blocked_ventilation
-      - diaphragm_fault
-      - hose_leak
-    diagnostic_steps:
-      - Inspect PCV hoses.
-      - Check crankcase pressure.
-      - Check for vacuum leaks.
-      - Inspect valve operation.
-      - Verify idle operation.
-
-  - id: ford_vacuum_leak
-    vehicle:
-      manufacturer: ford
-      models: all
-      generations: all
-      engines: all
-    category: diagnostics
-    system: intake_system
-    title:
-      en: Engine Vacuum Leak Diagnosis
-      ro: Diagnosticare pierdere vacuum motor
-      de: Diagnose eines Unterdrucklecks
-    symptoms:
-      - rough_idle
-      - lean_mixture
-      - poor_acceleration
-    keywords:
+      - ignition fault
+      - injector fault
       - vacuum leak
-      - intake leak
-      - air leak
-      - pierdere vacuum
-    possible_causes:
-      - cracked_hose
-      - intake_gasket_leak
-      - pcv_leak
-      - vacuum_line_damage
+      - compression loss
+      - fuel pressure problem
+      - timing problem
     diagnostic_steps:
-      - Inspect vacuum hoses.
-      - Perform smoke testing where appropriate.
-      - Check fuel trims.
-      - Inspect intake manifold sealing.
-      - Repair leak and verify fuel trims.
+      - Identify affected cylinder.
+      - Check misfire counters.
+      - Check ignition system on petrol engines.
+      - Check injector operation.
+      - Check compression if necessary.
+      - Inspect fuel pressure and air metering.
+    related_dtcs:
+      - P0300
+      - P0301
+      - P0302
+      - P0303
+      - P0304
+    difficulty: medium
 
-  - id: ford_ignition_coil_diagnosis
+  - id: ford_ignition_coil_diagnosis_v2
     vehicle:
       manufacturer: ford
       models: all
       generations: all
-      engines: all
+      engines:
+        - petrol
     category: diagnostics
     system: ignition
     title:
-      en: Ignition Coil Diagnosis
-      ro: Diagnosticare bobină de inducție
-      de: Diagnose der Zündspule
+      en: Ignition coil diagnosis
+      ro: Diagnosticarea bobinei de inducție
+      de: Diagnose Zündspule
     symptoms:
-      - engine_misfire
-      - rough_running
-      - poor_acceleration
+      - misfire
+      - rough idle
+      - poor acceleration
+      - engine warning light
     keywords:
       - ignition coil
       - coil pack
-      - ignition fault
+      - bobina
       - bobina inductie
+      - P0351
+      - P0352
     possible_causes:
-      - coil_failure
-      - wiring_fault
-      - power_supply_fault
-      - spark_plug_fault
+      - failed coil
+      - poor electrical connection
+      - wiring fault
+      - spark plug problem
+      - PCM driver fault
     diagnostic_steps:
-      - Identify affected cylinder.
-      - Check ignition coil supply.
+      - Identify the affected cylinder.
       - Inspect coil connector.
-      - Swap coil where appropriate.
-      - Verify misfire after repair.
+      - Swap coil with another cylinder where appropriate.
+      - Check spark plug.
+      - Verify PCM control signal.
+    related_dtcs:
+      - P0351
+      - P0352
+      - P0353
+      - P0354
+    difficulty: low
 
-  - id: ford_spark_plug_diagnosis
+  - id: ford_spark_plug_diagnosis_v2
     vehicle:
       manufacturer: ford
       models: all
       generations: all
-      engines: all
+      engines:
+        - petrol
     category: diagnostics
     system: ignition
     title:
-      en: Spark Plug Diagnosis
-      ro: Diagnosticare bujii aprindere
-      de: Diagnose der Zündkerzen
+      en: Spark plug diagnosis
+      ro: Diagnosticarea bujiilor
+      de: Diagnose Zündkerzen
     symptoms:
       - misfire
-      - hard_start
-      - poor_acceleration
+      - difficult starting
+      - poor acceleration
+      - increased fuel consumption
     keywords:
       - spark plug
-      - ignition plug
-      - petrol misfire
+      - plugs
       - bujii
+      - bujie defecta
+      - misfire
     possible_causes:
-      - worn_spark_plug
-      - incorrect_gap
-      - fouling
-      - oil_contamination
+      - worn spark plug
+      - incorrect gap
+      - oil fouling
+      - fuel fouling
+      - overheating
     diagnostic_steps:
-      - Inspect spark plugs.
+      - Remove and inspect spark plugs.
       - Check electrode condition.
-      - Verify gap specification.
-      - Check cylinder-specific misfire data.
-      - Replace faulty plugs and retest.
+      - Check gap against engine specification.
+      - Inspect for oil or fuel fouling.
+      - Replace plugs if condition is outside specification.
+    related_dtcs:
+      - P0300
+      - P0301
+      - P0302
+      - P0303
+      - P0304
+    difficulty: low
 
-  - id: ford_engine_misfire
+  - id: ford_lambda_sensor_diagnosis_v2
     vehicle:
       manufacturer: ford
       models: all
       generations: all
-      engines: all
+      engines:
+        - petrol
+        - diesel
     category: diagnostics
-    system: engine_management
+    system: emissions
     title:
-      en: Engine Misfire Diagnosis
-      ro: Diagnosticare rateu motor
-      de: Diagnose von Zündaussetzern
+      en: Oxygen and lambda sensor diagnosis
+      ro: Diagnosticarea sondei lambda
+      de: Diagnose Lambdasonde
     symptoms:
-      - engine_misfire
-      - rough_idle
-      - flashing_engine_light
+      - increased fuel consumption
+      - rough running
+      - emissions fault
+      - engine warning
     keywords:
-      - misfire
-      - engine misfire
-      - cylinder misfire
-      - rateu motor
+      - lambda
+      - oxygen sensor
+      - O2 sensor
+      - sonda lambda
+      - senzor oxigen
     possible_causes:
-      - ignition_fault
-      - injector_fault
-      - compression_fault
-      - vacuum_leak
-      - fuel_pressure_fault
+      - sensor aging
+      - exhaust leak
+      - wiring fault
+      - mixture problem
+      - catalytic converter issue
     diagnostic_steps:
-      - Identify affected cylinder.
-      - Check ignition system.
-      - Check injector operation.
-      - Check compression if required.
-      - Inspect fuel and air supply.
+      - Monitor lambda/O2 signal.
+      - Check heater circuit.
+      - Inspect wiring.
+      - Check for exhaust leaks before the sensor.
+      - Verify fuel mixture before replacing the sensor.
+    related_dtcs:
+      - P0130
+      - P0131
+      - P0132
+      - P0133
+      - P0134
+    difficulty: medium
 
-  - id: ford_fuel_injector_diagnosis
+  - id: ford_alternator_diagnosis_v2
     vehicle:
       manufacturer: ford
       models: all
       generations: all
       engines: all
     category: diagnostics
-    system: fuel_injection
+    system: charging
     title:
-      en: Fuel Injector Diagnosis
-      ro: Diagnosticare injector combustibil
-      de: Diagnose des Kraftstoffinjektors
+      en: Alternator and charging system diagnosis
+      ro: Diagnosticarea alternatorului și a sistemului de încărcare
+      de: Diagnose Lichtmaschine und Ladesystem
     symptoms:
-      - misfire
-      - rough_idle
-      - poor_acceleration
-    keywords:
-      - fuel injector
-      - injector fault
-      - petrol injector
-      - injector benzina
-    possible_causes:
-      - injector_blockage
-      - injector_leak
-      - electrical_fault
-      - fuel_pressure_fault
-    diagnostic_steps:
-      - Check injector commands.
-      - Check injector resistance where applicable.
-      - Perform cylinder contribution testing.
-      - Inspect fuel pressure.
-      - Check injector leakage where applicable.
-
-  - id: ford_alternator_diagnosis
-    vehicle:
-      manufacturer: ford
-      models: all
-      generations: all
-      engines: all
-    category: diagnostics
-    system: charging_system
-    title:
-      en: Alternator Charging Diagnosis
-      ro: Diagnosticare alternator și încărcare
-      de: Diagnose der Lichtmaschine
-    symptoms:
-      - battery_warning
-      - low_system_voltage
-      - charging_fault
+      - battery warning
+      - low battery
+      - intermittent electrical faults
+      - engine stalls
     keywords:
       - alternator
       - charging system
-      - alternator voltage
+      - battery light
       - alternator incarcare
+      - nu incarca
     possible_causes:
-      - alternator_fault
-      - regulator_fault
-      - belt_slip
-      - wiring_fault
-      - battery_fault
+      - alternator failure
+      - voltage regulator
+      - belt problem
+      - wiring fault
+      - battery monitoring fault
     diagnostic_steps:
       - Measure battery voltage with engine off.
-      - Measure charging voltage.
+      - Measure charging voltage under different loads.
       - Check alternator command where applicable.
-      - Inspect belt condition.
-      - Check charging-system wiring.
+      - Inspect belt and tensioner.
+      - Check BMS/monitoring system.
+    related_dtcs:
+      - P0620
+      - P0621
+      - P0622
+      - P0562
+    difficulty: medium
 
-  - id: ford_battery_monitor_sensor
+  - id: ford_battery_monitor_sensor_v2
     vehicle:
       manufacturer: ford
       models: all
@@ -1420,262 +1622,121 @@ technical_data:
     category: diagnostics
     system: battery_management
     title:
-      en: Battery Monitoring Sensor Diagnosis
-      ro: Diagnosticare senzor monitorizare baterie
-      de: Diagnose des Batteriesensors
+      en: Battery monitoring sensor diagnosis
+      ro: Diagnosticarea senzorului de monitorizare a bateriei
+      de: Diagnose Batteriesensor
     symptoms:
-      - battery_warning
-      - start_stop_disabled
-      - charging_fault
+      - battery warning
+      - start stop unavailable
+      - battery saver messages
+      - charging problems
     keywords:
-      - battery monitoring sensor
-      - BMS sensor
-      - battery current sensor
+      - BMS
+      - battery monitor
+      - battery sensor
       - senzor baterie
+      - start stop
     possible_causes:
-      - sensor_fault
-      - connector_fault
-      - wiring_fault
-      - battery_condition
+      - sensor failure
+      - poor battery terminal connection
+      - wiring fault
+      - incorrect battery type
+      - battery degradation
     diagnostic_steps:
-      - Read battery monitoring data.
-      - Check sensor communication.
+      - Check battery state of charge.
       - Inspect sensor connection.
-      - Check battery state.
-      - Verify charging strategy.
-
-  - id: ford_battery_replacement_reset
-    vehicle:
-      manufacturer: ford
-      models: all
-      generations: all
-      engines: all
-    category: diagnostics
-    system: battery_management
-    title:
-      en: Battery Replacement Reset
-      ro: Resetare după înlocuirea bateriei
-      de: Rücksetzen nach Batteriewechsel
-    symptoms:
-      - start_stop_disabled
-      - battery_management_fault
-      - charging_behavior_abnormal
-    keywords:
-      - battery replacement reset
-      - battery reset
-      - BMS reset
-      - reset baterie
-    possible_causes:
-      - battery_replacement_not_registered
-      - incorrect_battery_type
-      - battery_monitoring_state
-    diagnostic_steps:
-      - Verify replacement battery specification.
-      - Reset or register the battery using the applicable Ford procedure.
       - Check battery monitoring data.
-      - Verify charging behavior.
-      - Check start-stop operation.
+      - Verify battery specification.
+      - Reset battery management after battery replacement when required.
+    related_dtcs:
+      - B10B2
+      - P0562
+      - U3003
+    difficulty: medium
 
-  - id: ford_starter_motor
+  - id: ford_pcm_power_supply_v2
     vehicle:
       manufacturer: ford
       models: all
       generations: all
       engines: all
     category: diagnostics
-    system: starting_system
+    system: pcm
     title:
-      en: Starter Motor Diagnosis
-      ro: Diagnosticare electromotor
-      de: Diagnose des Anlassers
+      en: PCM power supply diagnosis
+      ro: Diagnosticarea alimentării PCM
+      de: Diagnose PCM-Versorgung
     symptoms:
-      - starter_inoperative
-      - slow_cranking
-      - click_no_crank
+      - no start
+      - engine stalls
+      - multiple communication faults
+      - intermittent electrical failure
     keywords:
-      - starter motor
-      - starter
-      - no crank
-      - electromotor
+      - PCM power
+      - ECU power
+      - PCM supply
+      - alimentare PCM
+      - ECU nu comunica
     possible_causes:
-      - starter_motor_fault
-      - solenoid_fault
-      - battery_low
-      - ground_fault
-      - starter_relay_fault
+      - fuse
+      - relay
+      - ignition switch
+      - wiring fault
+      - poor ground
+      - water ingress
     diagnostic_steps:
-      - Check battery voltage.
-      - Check voltage during cranking.
-      - Check starter control signal.
-      - Check starter power and ground.
-      - Measure voltage drop.
+      - Check PCM communication.
+      - Check PCM fuses.
+      - Check ignition-switched supply.
+      - Check permanent battery supply.
+      - Perform voltage-drop tests on PCM grounds.
+    related_dtcs:
+      - P0600
+      - P0606
+      - U0100
+      - U3000
+    difficulty: high
 
-  - id: ford_starter_relay
+  - id: ford_pcm_ground_fault_v2
     vehicle:
       manufacturer: ford
       models: all
       generations: all
       engines: all
     category: diagnostics
-    system: starting_system
+    system: pcm
     title:
-      en: Starter Relay Diagnosis
-      ro: Diagnosticare releu electromotor
-      de: Diagnose des Anlasserrelais
+      en: PCM ground fault diagnosis
+      ro: Diagnosticarea maselor PCM
+      de: Diagnose PCM-Masseverbindungen
     symptoms:
-      - starter_inoperative
-      - intermittent_no_crank
+      - no start
+      - intermittent stalling
+      - multiple DTCs
+      - unstable sensor readings
     keywords:
-      - starter relay
-      - starter solenoid relay
-      - starter control
-      - releu electromotor
+      - PCM ground
+      - ECU ground
+      - ground fault
+      - masa ECU
+      - masa PCM
     possible_causes:
-      - relay_fault
-      - relay_control_fault
-      - fuse_fault
-      - PATS_start_authorization
+      - corroded ground point
+      - loose ground connection
+      - damaged ground cable
+      - engine-to-body ground fault
     diagnostic_steps:
-      - Check relay control.
-      - Check relay output.
-      - Inspect fuse.
-      - Check starter authorization.
-      - Verify starter operation.
+      - Inspect PCM ground points.
+      - Perform voltage-drop testing during cranking.
+      - Inspect engine-to-body ground straps.
+      - Clean and secure ground connections.
+    related_dtcs:
+      - P0562
+      - U0100
+      - U3000
+    difficulty: medium
 
-  - id: ford_pats_start_authorization
-    vehicle:
-      manufacturer: ford
-      models: all
-      generations: all
-      engines: all
-    category: diagnostics
-    system: pats
-    title:
-      en: PATS Start Authorization Diagnosis
-      ro: Diagnosticare autorizare pornire PATS
-      de: Diagnose der PATS-Startfreigabe
-    symptoms:
-      - crank_no_start
-      - security_light
-      - no_start_authorization
-    keywords:
-      - PATS
-      - passive anti theft
-      - immobilizer
-      - antidemaraj
-    possible_causes:
-      - key_not_recognized
-      - transceiver_fault
-      - BCM_fault
-      - PCM_communication_fault
-      - key_programming_fault
-    diagnostic_steps:
-      - Check PATS status.
-      - Check key recognition.
-      - Scan BCM and PCM.
-      - Check communication between modules.
-      - Perform key programming procedure where required.
-
-  - id: ford_key_transceiver
-    vehicle:
-      manufacturer: ford
-      models: all
-      generations: all
-      engines: all
-    category: diagnostics
-    system: pats
-    title:
-      en: PATS Key Transceiver Diagnosis
-      ro: Diagnosticare antenă/transceiver cheie PATS
-      de: Diagnose des PATS-Schlüsseltransceivers
-    symptoms:
-      - key_not_recognized
-      - no_start
-      - security_warning
-    keywords:
-      - PATS transceiver
-      - key transceiver
-      - immobilizer antenna
-      - antena cheie
-    possible_causes:
-      - transceiver_fault
-      - wiring_fault
-      - key_fault
-      - module_communication_fault
-    diagnostic_steps:
-      - Check key recognition.
-      - Scan PATS-related modules.
-      - Inspect transceiver wiring.
-      - Test with a known-good programmed key.
-      - Verify start authorization.
-
-  - id: ford_bcm_power_supply
-    vehicle:
-      manufacturer: ford
-      models: all
-      generations: all
-      engines: all
-    category: diagnostics
-    system: bcm
-    title:
-      en: BCM Power Supply Diagnosis
-      ro: Diagnosticare alimentare BCM
-      de: Diagnose der BCM-Stromversorgung
-    symptoms:
-      - body_electronics_fault
-      - multiple_electrical_faults
-      - no_communication
-    keywords:
-      - BCM power
-      - body control module power
-      - BCM supply
-      - alimentare BCM
-    possible_causes:
-      - fuse_fault
-      - power_supply_fault
-      - ground_fault
-      - wiring_fault
-    diagnostic_steps:
-      - Check BCM power supplies.
-      - Check BCM grounds.
-      - Inspect fuses.
-      - Check communication.
-      - Verify affected body functions.
-
-  - id: ford_bcm_communication
-    vehicle:
-      manufacturer: ford
-      models: all
-      generations: all
-      engines: all
-    category: diagnostics
-    system: bcm
-    title:
-      en: BCM Communication Diagnosis
-      ro: Diagnosticare comunicație BCM
-      de: Diagnose der BCM-Kommunikation
-    symptoms:
-      - no_bcm_communication
-      - multiple_body_faults
-      - intermittent_electrical_faults
-    keywords:
-      - BCM communication
-      - body module communication
-      - BCM CAN
-      - comunicare BCM
-    possible_causes:
-      - CAN_fault
-      - BCM_power_loss
-      - BCM_ground_fault
-      - wiring_fault
-    diagnostic_steps:
-      - Scan BCM communication.
-      - Check BCM power and ground.
-      - Check CAN bus status.
-      - Inspect connectors.
-      - Check network-related DTCs.
-
-  - id: ford_can_bus_fault
+  - id: ford_can_bus_fault_v2
     vehicle:
       manufacturer: ford
       models: all
@@ -1684,32 +1745,42 @@ technical_data:
     category: diagnostics
     system: can_bus
     title:
-      en: CAN Bus Fault Diagnosis
-      ro: Diagnosticare magistrală CAN
-      de: Diagnose des CAN-Busses
+      en: CAN bus communication fault diagnosis
+      ro: Diagnosticarea comunicației CAN
+      de: Diagnose CAN-Bus-Kommunikationsfehler
     symptoms:
-      - multiple_module_faults
-      - no_communication
-      - intermittent_electrical_faults
+      - multiple modules offline
+      - no communication
+      - intermittent electrical faults
+      - warning lights
     keywords:
       - CAN bus
       - CAN communication
+      - module offline
       - CAN fault
       - magistrala CAN
+      - comunicare module
     possible_causes:
-      - short_to_ground
-      - short_to_power
-      - open_circuit
-      - terminated_bus_fault
-      - module_failure
+      - short to ground
+      - short to battery
+      - open circuit
+      - termination fault
+      - water ingress
+      - failed control module
     diagnostic_steps:
-      - Identify modules with communication faults.
-      - Check CAN bus resistance according to system procedure.
-      - Check CAN-H and CAN-L wiring.
-      - Isolate the affected network segment.
-      - Verify communication after repair.
+      - Identify modules that cannot communicate.
+      - Check CAN resistance with the network powered down where appropriate.
+      - Check CAN-H and CAN-L voltages.
+      - Isolate the affected network branch.
+      - Inspect connectors and wiring.
+    related_dtcs:
+      - U0001
+      - U0073
+      - U0100
+      - U0121
+    difficulty: high
 
-  - id: ford_lin_bus_fault
+  - id: ford_lin_bus_fault_v2
     vehicle:
       manufacturer: ford
       models: all
@@ -1718,993 +1789,267 @@ technical_data:
     category: diagnostics
     system: lin_bus
     title:
-      en: LIN Bus Fault Diagnosis
-      ro: Diagnosticare magistrală LIN
-      de: Diagnose des LIN-Busses
+      en: LIN bus communication fault diagnosis
+      ro: Diagnosticarea magistralei LIN
+      de: Diagnose LIN-Bus
     symptoms:
-      - component_inoperative
-      - intermittent_body_fault
-      - communication_fault
+      - mirror failure
+      - wiper failure
+      - climate actuator failure
+      - intermittent body functions
     keywords:
       - LIN bus
       - LIN communication
       - LIN fault
       - magistrala LIN
+      - comunicatie LIN
     possible_causes:
-      - LIN_wire_fault
-      - slave_module_fault
-      - master_module_fault
-      - short_circuit
+      - LIN wire open circuit
+      - short circuit
+      - failed slave module
+      - master module fault
+      - connector corrosion
     diagnostic_steps:
-      - Identify the affected LIN component.
-      - Check LIN communication.
-      - Inspect wiring.
-      - Check master module power.
-      - Isolate faulty slave devices.
+      - Identify the affected LIN device.
+      - Check master-to-slave wiring.
+      - Check LIN voltage activity.
+      - Disconnect suspected slave devices individually.
+      - Inspect connectors for corrosion.
+    related_dtcs:
+      - U1000
+      - U0100
+      - B10xx
+    difficulty: high
 
-  - id: ford_gem_module_diagnosis
+  - id: ford_gem_bcm_water_ingress_v2
     vehicle:
       manufacturer: ford
-      models: all
+      models:
+        - focus
+        - fiesta
+        - mondeo
+        - fusion
+        - transit
+        - galaxy
+        - s_max
       generations: all
       engines: all
     category: diagnostics
-    system: gem
+    system: body_control
     title:
-      en: GEM Module Diagnosis
-      ro: Diagnosticare modul GEM
-      de: Diagnose des GEM-Moduls
+      en: GEM/BCM water ingress and electrical fault diagnosis
+      ro: Diagnosticarea infiltrațiilor de apă în GEM/BCM
+      de: Diagnose Wassereintritt GEM/BCM
     symptoms:
-      - multiple_body_faults
-      - wiper_fault
-      - lighting_fault
-      - central_locking_fault
+      - multiple electrical faults
+      - wipers operate unexpectedly
+      - central locking problems
+      - lights operate incorrectly
+      - battery drain
     keywords:
-      - GEM module
-      - generic electronic module
-      - Ford GEM
+      - GEM
+      - BCM
+      - water ingress
+      - fuse box
       - modul GEM
+      - modul BCM
+      - apa in modul
     possible_causes:
-      - module_fault
-      - water_ingress
-      - power_supply_fault
-      - communication_fault
-      - configuration_fault
+      - water ingress
+      - windscreen leak
+      - blocked drains
+      - corroded connectors
+      - PCB corrosion
     diagnostic_steps:
-      - Scan GEM for DTCs.
-      - Check power and ground.
-      - Inspect for water ingress.
-      - Check network communication.
-      - Verify affected body functions.
+      - Inspect GEM/BCM and fuse box for moisture.
+      - Check surrounding carpets and trim.
+      - Inspect connectors for corrosion.
+      - Check relevant fuse circuits.
+      - Repair water ingress before replacing the module.
+    related_dtcs:
+      - B10xx
+      - U0100
+      - U0140
+    difficulty: high
 
-  - id: ford_body_control_water_ingress
+  - id: ford_gem_wiper_control_v2
     vehicle:
       manufacturer: ford
-      models: all
+      models:
+        - focus
+        - fiesta
+        - mondeo
+        - fusion
       generations: all
       engines: all
     category: diagnostics
-    system: bcm
+    system: body_control
     title:
-      en: BCM Water Ingress Diagnosis
-      ro: Diagnosticare infiltrație apă BCM
-      de: Diagnose von Wassereintritt am BCM
+      en: GEM-controlled wiper system diagnosis
+      ro: Diagnosticarea ștergătoarelor comandate de GEM
+      de: Diagnose GEM-gesteuerte Scheibenwischer
     symptoms:
-      - multiple_electrical_faults
-      - intermittent_body_fault
-      - corrosion
+      - wipers not working
+      - wipers run continuously
+      - intermittent wiping failure
+      - rear wiper failure
     keywords:
-      - BCM water ingress
-      - module water damage
-      - body module corrosion
-      - apa BCM
+      - GEM wiper
+      - wiper control
+      - rear wiper
+      - stergatoare
+      - stergator luneta
+      - GEM
     possible_causes:
-      - water_leak
-      - blocked_drain
-      - seal_failure
-      - connector_corrosion
-    diagnostic_steps:
-      - Inspect module area for moisture.
-      - Check connectors for corrosion.
-      - Identify water entry path.
-      - Check module power and communication.
-      - Repair water ingress before module replacement.
-
-  - id: ford_central_locking
-    vehicle:
-      manufacturer: ford
-      models: all
-      generations: all
-      engines: all
-    category: diagnostics
-    system: central_locking
-    title:
-      en: Central Locking Diagnosis
-      ro: Diagnosticare închidere centralizată
-      de: Diagnose der Zentralverriegelung
-    symptoms:
-      - central_locking_inoperative
-      - one_door_not_locking
-      - intermittent_locking
-    keywords:
-      - central locking
-      - door lock
-      - locking system
-      - inchidere centralizata
-    possible_causes:
-      - door_lock_actuator
-      - BCM_fault
-      - wiring_fault
-      - fuse_fault
-    diagnostic_steps:
-      - Identify affected doors.
-      - Check lock commands.
-      - Scan BCM and door modules.
-      - Check actuator power.
-      - Inspect door wiring.
-
-  - id: ford_door_lock_actuator
-    vehicle:
-      manufacturer: ford
-      models: all
-      generations: all
-      engines: all
-    category: diagnostics
-    system: door_locking
-    title:
-      en: Door Lock Actuator Diagnosis
-      ro: Diagnosticare actuator închidere ușă
-      de: Diagnose des Türschlossstellglieds
-    symptoms:
-      - one_door_not_locking
-      - one_door_not_unlocking
-      - intermittent_locking
-    keywords:
-      - door lock actuator
-      - door latch actuator
-      - door lock motor
-      - actuator usa
-    possible_causes:
-      - actuator_fault
-      - wiring_fault
-      - connector_fault
-      - latch_mechanical_fault
-    diagnostic_steps:
-      - Test lock and unlock command.
-      - Check actuator power.
-      - Inspect door harness.
-      - Inspect latch mechanism.
-      - Verify operation after repair.
-
-  - id: ford_door_harness_fault
-    vehicle:
-      manufacturer: ford
-      models: all
-      generations: all
-      engines: all
-    category: diagnostics
-    system: door_electrics
-    title:
-      en: Door Wiring Harness Fault Diagnosis
-      ro: Diagnosticare cablaj ușă
-      de: Diagnose des Türkabelbaums
-    symptoms:
-      - window_inoperative
-      - door_lock_fault
-      - mirror_fault
-      - speaker_fault
-    keywords:
-      - door wiring harness
-      - door loom
-      - broken door wires
-      - cablaj usa
-    possible_causes:
-      - broken_wire
-      - connector_corrosion
-      - insulation_damage
-      - repeated_flexing
-    diagnostic_steps:
-      - Inspect harness at door hinge area.
-      - Perform continuity testing.
-      - Check for intermittent opens.
-      - Inspect connectors.
-      - Repair wiring and retest all affected functions.
-
-  - id: ford_power_window_motor
-    vehicle:
-      manufacturer: ford
-      models: all
-      generations: all
-      engines: all
-    category: diagnostics
-    system: power_windows
-    title:
-      en: Power Window Motor Diagnosis
-      ro: Diagnosticare motor geam electric
-      de: Diagnose des Fensterhebermotors
-    symptoms:
-      - window_not_moving
-      - window_slow
-      - window_intermittent
-    keywords:
-      - power window motor
-      - window regulator motor
-      - electric window
-      - geam electric
-    possible_causes:
-      - motor_fault
-      - regulator_fault
-      - wiring_fault
-      - switch_fault
-    diagnostic_steps:
-      - Check window switch input.
-      - Check motor supply.
-      - Inspect regulator mechanism.
-      - Check door wiring.
-      - Verify anti-pinch operation where equipped.
-
-  - id: ford_window_anti_pinch
-    vehicle:
-      manufacturer: ford
-      models: all
-      generations: all
-      engines: all
-    category: diagnostics
-    system: power_windows
-    title:
-      en: Power Window Anti-Pinch Diagnosis
-      ro: Diagnosticare funcție anti-prindere geam
-      de: Diagnose des Einklemmschutzes
-    symptoms:
-      - window_reverses
-      - window_stops
-      - window_calibration_lost
-    keywords:
-      - anti pinch
-      - window reverses
-      - window initialization
-      - anti prindere geam
-    possible_causes:
-      - lost_initialization
-      - excessive_resistance
-      - regulator_fault
-      - motor_position_loss
-    diagnostic_steps:
-      - Check window initialization.
-      - Inspect mechanical resistance.
-      - Check motor position data.
-      - Perform initialization procedure.
-      - Verify anti-pinch operation.
-
-  - id: ford_wiper_motor
-    vehicle:
-      manufacturer: ford
-      models: all
-      generations: all
-      engines: all
-    category: diagnostics
-    system: wipers
-    title:
-      en: Windscreen Wiper Motor Diagnosis
-      ro: Diagnosticare motor ștergătoare
-      de: Diagnose des Scheibenwischermotors
-    symptoms:
-      - wipers_not_working
-      - wipers_slow
-      - wipers_intermittent
-    keywords:
+      - GEM fault
       - wiper motor
-      - windshield wiper
-      - wiper fault
-      - motor stergatoare
-    possible_causes:
-      - motor_fault
-      - wiring_fault
-      - fuse_fault
-      - GEM_BCM_fault
+      - stalk switch
+      - wiring fault
+      - water ingress
     diagnostic_steps:
-      - Check wiper command.
+      - Check wiper switch inputs.
+      - Check GEM outputs.
       - Check motor power and ground.
-      - Inspect linkage.
-      - Scan GEM or BCM.
-      - Verify motor operation.
+      - Inspect wiper motor park circuit.
+      - Inspect GEM for water damage.
+    related_dtcs:
+      - B1Bxx
+      - B2xxx
+      - U0140
+    difficulty: high
 
-  - id: ford_wiper_park_fault
+  - id: ford_pats_no_start_v2
     vehicle:
       manufacturer: ford
       models: all
       generations: all
       engines: all
     category: diagnostics
-    system: wipers
+    system: pats
     title:
-      en: Wiper Park Position Diagnosis
-      ro: Diagnosticare poziție repaus ștergătoare
-      de: Diagnose der Wischerparkposition
+      en: PATS immobilizer no-start diagnosis
+      ro: Diagnosticarea imobilizatorului PATS la lipsa pornirii
+      de: Diagnose PATS-Wegfahrsperre bei Startproblemen
     symptoms:
-      - wipers_do_not_park
-      - wipers_stop_wrong_position
-      - intermittent_wiper_fault
+      - crank no start
+      - theft indicator flashing
+      - key not recognized
+      - start authorization denied
     keywords:
-      - wiper park
-      - wiper park position
-      - wiper stops
-      - pozitie repaus stergatoare
+      - PATS
+      - immobilizer
+      - anti theft
+      - key not recognized
+      - imobilizator
+      - nu porneste
+      - cheie nerecunoscuta
     possible_causes:
-      - park_switch_fault
-      - motor_fault
-      - wiring_fault
-      - control_module_fault
+      - unprogrammed key
+      - transceiver fault
+      - BCM/PATS communication fault
+      - PCM authorization mismatch
+      - low battery voltage
     diagnostic_steps:
-      - Check park signal.
-      - Inspect motor connector.
-      - Check control module input.
-      - Inspect linkage.
-      - Verify park position.
+      - Check theft indicator behavior.
+      - Read PATS-related DTCs.
+      - Verify key recognition.
+      - Check PCM and BCM communication.
+      - Check programmed key count.
+      - Verify start authorization status.
+    related_dtcs:
+      - P1260
+      - B1600
+      - B1601
+      - B1602
+      - B1681
+    difficulty: high
 
-  - id: ford_headlamp_control
+  - id: ford_starter_motor_diagnosis_v2
     vehicle:
       manufacturer: ford
       models: all
       generations: all
       engines: all
     category: diagnostics
-    system: lighting
+    system: starting
     title:
-      en: Headlamp Control Diagnosis
-      ro: Diagnosticare comandă faruri
-      de: Diagnose der Scheinwerfersteuerung
+      en: Starter motor diagnosis
+      ro: Diagnosticarea electromotorului
+      de: Diagnose Anlasser
     symptoms:
-      - headlamp_inoperative
-      - intermittent_lighting
-      - lighting_warning
+      - no crank
+      - slow cranking
+      - intermittent starting
+      - clicking noise
     keywords:
-      - headlamp control
-      - headlight fault
-      - lighting control
-      - faruri
+      - starter motor
+      - starter
+      - no crank
+      - electromotor
+      - demaror
+      - nu invarte
     possible_causes:
-      - bulb_or_led_fault
-      - BCM_fault
-      - wiring_fault
-      - fuse_fault
-      - control_module_fault
+      - weak battery
+      - starter motor failure
+      - starter relay
+      - ignition switch
+      - poor ground
+      - corroded battery cable
     diagnostic_steps:
-      - Check lighting command.
-      - Scan BCM.
-      - Check power and ground.
-      - Inspect wiring.
-      - Verify headlamp operation.
+      - Measure battery voltage.
+      - Perform voltage-drop tests.
+      - Check starter relay.
+      - Check starter solenoid command.
+      - Measure starter current draw.
+    related_dtcs:
+      - P0615
+      - P0616
+      - P0617
+    difficulty: medium
 
-  - id: ford_turn_signal_fault
+  - id: ford_start_stop_unavailable_v2
     vehicle:
       manufacturer: ford
-      models: all
+      models:
+        - fiesta
+        - focus
+        - mondeo
+        - kuga
+        - puma
+        - transit
       generations: all
       engines: all
     category: diagnostics
-    system: lighting
+    system: battery_management
     title:
-      en: Turn Signal Diagnosis
-      ro: Diagnosticare semnalizări
-      de: Diagnose der Blinker
+      en: Auto Start-Stop unavailable diagnosis
+      ro: Diagnosticarea sistemului Auto Start-Stop indisponibil
+      de: Diagnose Start-Stopp nicht verfügbar
     symptoms:
-      - turn_signal_inoperative
-      - rapid_indicator
-      - intermittent_indicator
-    keywords:
-      - turn signal
-      - indicator
-      - blinker
-      - semnalizare
-    possible_causes:
-      - bulb_fault
-      - led_fault
-      - wiring_fault
-      - BCM_fault
-      - switch_fault
-    diagnostic_steps:
-      - Identify affected side.
-      - Check bulb or LED.
-      - Check BCM output.
-      - Inspect wiring.
-      - Verify indicator operation.
-
-  - id: ford_brake_light_switch
-    vehicle:
-      manufacturer: ford
-      models: all
-      generations: all
-      engines: all
-    category: diagnostics
-    system: braking
-    title:
-      en: Brake Light Switch Diagnosis
-      ro: Diagnosticare contactor pedală frână
-      de: Diagnose des Bremslichtschalters
-    symptoms:
-      - brake_lights_fault
-      - cruise_control_fault
-      - abs_warning
-    keywords:
-      - brake switch
-      - brake pedal switch
-      - stop light switch
-      - contactor frana
-    possible_causes:
-      - switch_fault
-      - adjustment_fault
-      - wiring_fault
-      - connector_fault
-    diagnostic_steps:
-      - Check brake switch live data.
-      - Check brake light operation.
-      - Compare redundant switch signals where applicable.
-      - Inspect wiring.
-      - Verify cruise-control input.
-
-  - id: ford_abs_wheel_speed_sensor
-    vehicle:
-      manufacturer: ford
-      models: all
-      generations: all
-      engines: all
-    category: diagnostics
-    system: abs
-    title:
-      en: ABS Wheel Speed Sensor Diagnosis
-      ro: Diagnosticare senzor viteză roată ABS
-      de: Diagnose des ABS-Raddrehzahlsensors
-    symptoms:
-      - abs_warning
-      - traction_control_warning
-      - wheel_speed_fault
-    keywords:
-      - ABS wheel speed sensor
-      - wheel speed sensor
-      - ABS sensor
-      - senzor ABS
-    possible_causes:
-      - sensor_fault
-      - damaged_tone_ring
-      - wiring_fault
-      - wheel_bearing_play
-      - connector_fault
-    diagnostic_steps:
-      - Read all wheel speeds.
-      - Compare sensor signals.
-      - Inspect sensor and wiring.
-      - Inspect tone ring or encoder.
-      - Verify wheel-speed plausibility.
-
-  - id: ford_abs_hydraulic_unit
-    vehicle:
-      manufacturer: ford
-      models: all
-      generations: all
-      engines: all
-    category: diagnostics
-    system: abs
-    title:
-      en: ABS Hydraulic Unit Diagnosis
-      ro: Diagnosticare unitate hidraulică ABS
-      de: Diagnose der ABS-Hydraulikeinheit
-    symptoms:
-      - abs_warning
-      - brake_control_fault
-      - traction_control_disabled
-    keywords:
-      - ABS hydraulic unit
-      - ABS pump
-      - hydraulic modulator
-      - pompa ABS
-    possible_causes:
-      - pump_motor_fault
-      - valve_fault
-      - hydraulic_fault
-      - module_fault
-    diagnostic_steps:
-      - Scan ABS module.
-      - Check pump activation.
-      - Check hydraulic pressure where applicable.
-      - Inspect electrical supply.
-      - Perform required ABS initialization.
-
-  - id: ford_steering_angle_sensor
-    vehicle:
-      manufacturer: ford
-      models: all
-      generations: all
-      engines: all
-    category: diagnostics
-    system: steering
-    title:
-      en: Steering Angle Sensor Diagnosis
-      ro: Diagnosticare senzor unghi volan
-      de: Diagnose des Lenkwinkelsensors
-    symptoms:
-      - abs_warning
-      - traction_control_warning
-      - steering_warning
-    keywords:
-      - steering angle sensor
-      - SAS
-      - steering angle
-      - senzor unghi volan
-    possible_causes:
-      - sensor_calibration_loss
-      - sensor_fault
-      - clock_spring_fault
-      - steering_alignment_issue
-    diagnostic_steps:
-      - Read steering angle live data.
-      - Check zero position.
-      - Compare steering angle with wheel position.
-      - Perform calibration where required.
-      - Clear and verify related faults.
-
-  - id: ford_electric_power_steering
-    vehicle:
-      manufacturer: ford
-      models: all
-      generations: all
-      engines: all
-    category: diagnostics
-    system: steering
-    title:
-      en: Electric Power Steering Diagnosis
-      ro: Diagnosticare servodirecție electrică
-      de: Diagnose der elektrischen Servolenkung
-    symptoms:
-      - steering_assist_lost
-      - steering_warning
-      - heavy_steering
-    keywords:
-      - electric power steering
-      - EPS
-      - power steering fault
-      - servodirectie electrica
-    possible_causes:
-      - EPS_module_fault
-      - low_voltage
-      - motor_fault
-      - torque_sensor_fault
-      - wiring_fault
-    diagnostic_steps:
-      - Scan steering module.
-      - Check battery and charging voltage.
-      - Read steering torque data.
-      - Check EPS power supply.
-      - Verify steering assistance.
-
-  - id: ford_hvac_blower_motor
-    vehicle:
-      manufacturer: ford
-      models: all
-      generations: all
-      engines: all
-    category: diagnostics
-    system: hvac
-    title:
-      en: HVAC Blower Motor Diagnosis
-      ro: Diagnosticare ventilator habitaclu
-      de: Diagnose des Innenraumgebläsemotors
-    symptoms:
-      - blower_not_working
-      - blower_intermittent
-      - blower_only_one_speed
-    keywords:
-      - blower motor
-      - cabin fan
-      - heater blower
-      - ventilator habitaclu
-    possible_causes:
-      - blower_motor_fault
-      - resistor_fault
-      - blower_control_module
-      - wiring_fault
-    diagnostic_steps:
-      - Check blower command.
-      - Check motor power.
-      - Inspect resistor or electronic controller.
-      - Check wiring.
-      - Verify all blower speeds.
-
-  - id: ford_hvac_blower_resistor
-    vehicle:
-      manufacturer: ford
-      models: all
-      generations: all
-      engines: all
-    category: diagnostics
-    system: hvac
-    title:
-      en: HVAC Blower Resistor Diagnosis
-      ro: Diagnosticare rezistență ventilator habitaclu
-      de: Diagnose des Gebläsewiderstands
-    symptoms:
-      - blower_only_high_speed
-      - some_blower_speeds_missing
-      - blower_fault
-    keywords:
-      - blower resistor
-      - heater resistor
-      - blower speeds
-      - rezistenta ventilator
-    possible_causes:
-      - resistor_failure
-      - blower_motor_overcurrent
-      - wiring_fault
-      - connector_overheating
-    diagnostic_steps:
-      - Test each blower speed.
-      - Check resistor circuit.
-      - Inspect connector for heat damage.
-      - Check blower motor current draw.
-      - Replace failed components and retest.
-
-  - id: ford_ac_pressure_sensor
-    vehicle:
-      manufacturer: ford
-      models: all
-      generations: all
-      engines: all
-    category: diagnostics
-    system: air_conditioning
-    title:
-      en: A/C Refrigerant Pressure Sensor Diagnosis
-      ro: Diagnosticare senzor presiune freon
-      de: Diagnose des Kältemitteldrucksensors
-    symptoms:
-      - air_conditioning_not_cooling
-      - compressor_not_engaging
-      - ac_intermittent
-    keywords:
-      - AC pressure sensor
-      - refrigerant pressure sensor
-      - A/C pressure
-      - senzor presiune freon
-    possible_causes:
-      - pressure_sensor_fault
-      - low_refrigerant
-      - excessive_pressure
-      - wiring_fault
-    diagnostic_steps:
-      - Read refrigerant pressure.
-      - Compare pressure with ambient conditions.
-      - Inspect sensor wiring.
-      - Check compressor enable conditions.
-      - Verify A/C operation.
-
-  - id: ford_ac_compressor_clutch
-    vehicle:
-      manufacturer: ford
-      models: all
-      generations: all
-      engines: all
-    category: diagnostics
-    system: air_conditioning
-    title:
-      en: A/C Compressor Clutch Diagnosis
-      ro: Diagnosticare ambreiaj compresor AC
-      de: Diagnose der Klimakompressorkupplung
-    symptoms:
-      - compressor_not_engaging
-      - air_conditioning_not_cooling
-      - ac_intermittent
-    keywords:
-      - AC compressor clutch
-      - compressor clutch
-      - A/C clutch
-      - ambreiaj compresor AC
-    possible_causes:
-      - clutch_coil_fault
-      - air_gap_fault
-      - pressure_switch_fault
-      - relay_fault
-      - wiring_fault
-    diagnostic_steps:
-      - Check compressor command.
-      - Check clutch coil voltage.
-      - Measure coil resistance.
-      - Inspect clutch air gap.
-      - Verify compressor engagement.
-
-  - id: ford_parking_sensors
-    vehicle:
-      manufacturer: ford
-      models: all
-      generations: all
-      engines: all
-    category: diagnostics
-    system: parking_assist
-    title:
-      en: Parking Sensor System Diagnosis
-      ro: Diagnosticare senzori parcare
-      de: Diagnose der Parksensoren
-    symptoms:
-      - parking_assist_fault
-      - parking_sensor_warning
-      - false_obstacle_detection
-    keywords:
-      - parking sensors
-      - PDC
-      - parking assist
-      - senzori parcare
-    possible_causes:
-      - sensor_fault
-      - wiring_fault
-      - control_module_fault
-      - sensor_contamination
-    diagnostic_steps:
-      - Scan parking module.
-      - Identify affected sensor.
-      - Inspect sensor surface.
-      - Check wiring and connectors.
-      - Verify sensor operation.
-
-  - id: ford_rear_camera
-    vehicle:
-      manufacturer: ford
-      models: all
-      generations: all
-      engines: all
-    category: diagnostics
-    system: camera
-    title:
-      en: Rear View Camera Diagnosis
-      ro: Diagnosticare cameră marșarier
-      de: Diagnose der Rückfahrkamera
-    symptoms:
-      - rear_camera_no_image
-      - distorted_camera_image
-      - camera_intermittent
-    keywords:
-      - rear camera
-      - reversing camera
-      - backup camera
-      - camera marsarier
-    possible_causes:
-      - camera_fault
-      - wiring_fault
-      - connector_fault
-      - display_module_fault
-    diagnostic_steps:
-      - Check camera activation.
-      - Inspect camera power supply.
-      - Check video connection.
-      - Scan relevant modules.
-      - Verify image quality.
-
-  - id: ford_sync_no_audio
-    vehicle:
-      manufacturer: ford
-      models: all
-      generations: all
-      engines: all
-    category: diagnostics
-    system: infotainment
-    title:
-      en: SYNC No Audio Diagnosis
-      ro: Diagnosticare lipsă sunet SYNC
-      de: Diagnose fehlender SYNC-Ton
-    symptoms:
-      - no_audio
-      - infotainment_fault
-      - intermittent_audio
-    keywords:
-      - Ford SYNC audio
-      - no sound
-      - SYNC no audio
-      - fara sunet SYNC
-    possible_causes:
-      - audio_module_fault
-      - amplifier_fault
-      - software_fault
-      - wiring_fault
-      - mute_command
-    diagnostic_steps:
-      - Check audio source.
-      - Check mute status.
-      - Scan infotainment modules.
-      - Check amplifier communication.
-      - Verify audio output.
-
-  - id: ford_sync_bluetooth
-    vehicle:
-      manufacturer: ford
-      models: all
-      generations: all
-      engines: all
-    category: diagnostics
-    system: infotainment
-    title:
-      en: SYNC Bluetooth Connection Diagnosis
-      ro: Diagnosticare conexiune Bluetooth SYNC
-      de: Diagnose der SYNC-Bluetooth-Verbindung
-    symptoms:
-      - bluetooth_not_connecting
-      - phone_not_detected
-      - bluetooth_intermittent
-    keywords:
-      - Ford SYNC Bluetooth
-      - Bluetooth pairing
-      - phone connection
-      - bluetooth masina
-    possible_causes:
-      - software_fault
-      - pairing_data_corruption
-      - module_fault
-      - phone_compatibility
-    diagnostic_steps:
-      - Delete and recreate pairing.
-      - Check SYNC software status.
-      - Scan infotainment module.
-      - Test with another device.
-      - Verify Bluetooth operation.
-
-  - id: ford_adaptive_cruise_radar
-    vehicle:
-      manufacturer: ford
-      models: all
-      generations: all
-      engines: all
-    category: diagnostics
-    system: adas
-    title:
-      en: Adaptive Cruise Radar Diagnosis
-      ro: Diagnosticare radar cruise control adaptiv
-      de: Diagnose des ACC-Radars
-    symptoms:
-      - adaptive_cruise_unavailable
-      - front_collision_warning
-      - radar_fault
-    keywords:
-      - adaptive cruise radar
-      - ACC radar
-      - front radar
-      - radar ACC
-    possible_causes:
-      - radar_misalignment
-      - sensor_fault
-      - wiring_fault
-      - bumper_damage
-    diagnostic_steps:
-      - Scan radar module.
-      - Inspect radar mounting.
-      - Check communication.
-      - Verify alignment.
-      - Perform calibration where required.
-
-  - id: ford_lane_keeping_camera
-    vehicle:
-      manufacturer: ford
-      models: all
-      generations: all
-      engines: all
-    category: diagnostics
-    system: adas
-    title:
-      en: Lane Keeping Camera Diagnosis
-      ro: Diagnosticare cameră Lane Keeping
-      de: Diagnose der Spurhalteassistent-Kamera
-    symptoms:
-      - lane_keeping_unavailable
-      - camera_fault
-      - driver_assist_fault
-    keywords:
-      - lane keeping camera
-      - lane assist camera
-      - front camera
-      - camera banda
-    possible_causes:
-      - camera_fault
-      - windshield_obstruction
-      - calibration_loss
-      - wiring_fault
-    diagnostic_steps:
-      - Check camera status.
-      - Inspect windshield area.
-      - Check camera alignment.
-      - Scan ADAS module.
-      - Perform calibration where required.
-
-  - id: ford_front_camera_calibration
-    vehicle:
-      manufacturer: ford
-      models: all
-      generations: all
-      engines: all
-    category: diagnostics
-    system: adas
-    title:
-      en: Front Camera Calibration Diagnosis
-      ro: Diagnosticare calibrare cameră frontală
-      de: Diagnose der Frontkamerakalibrierung
-    symptoms:
-      - adas_calibration_fault
-      - lane_assist_fault
-      - traffic_sign_recognition_fault
-    keywords:
-      - Ford camera calibration
-      - front camera calibration
-      - ADAS calibration
-      - calibrare camera frontala
-    possible_causes:
-      - windshield_replacement
-      - camera_mount_shift
-      - incorrect_target_position
-      - alignment_error
-    diagnostic_steps:
-      - Verify vehicle alignment.
-      - Check camera mounting.
-      - Set up the applicable calibration target.
-      - Perform calibration procedure.
-      - Confirm calibration result.
-
-  - id: ford_traffic_sign_recognition
-    vehicle:
-      manufacturer: ford
-      models: all
-      generations: all
-      engines: all
-    category: diagnostics
-    system: adas
-    title:
-      en: Traffic Sign Recognition Diagnosis
-      ro: Diagnosticare recunoaștere indicatoare
-      de: Diagnose der Verkehrszeichenerkennung
-    symptoms:
-      - traffic_sign_recognition_fault
-      - signs_not_detected
-      - incorrect_sign_detection
-    keywords:
-      - traffic sign recognition
-      - road sign recognition
-      - sign detection
-      - recunoastere indicatoare
-    possible_causes:
-      - camera_fault
-      - calibration_fault
-      - blocked_camera
-      - software_fault
-    diagnostic_steps:
-      - Check camera status.
-      - Inspect camera field of view.
-      - Check calibration.
-      - Scan driver-assistance module.
-      - Verify sign recognition operation.
-
-  - id: ford_start_stop_unavailable
-    vehicle:
-      manufacturer: ford
-      models: all
-      generations: all
-      engines: all
-    category: diagnostics
-    system: start_stop
-    title:
-      en: Auto Start-Stop Unavailable Diagnosis
-      ro: Diagnosticare sistem Auto Start-Stop indisponibil
-      de: Diagnose des nicht verfügbaren Auto-Start-Stopp-Systems
-    symptoms:
-      - start_stop_disabled
-      - start_stop_warning
-      - battery_warning
-    keywords:
-      - auto start stop
       - start stop unavailable
-      - start stop disabled
-      - start stop indisponibil
+      - battery warning
+      - engine remains running at stops
+    keywords:
+      - start stop unavailable
+      - auto start stop
+      - start stop
+      - start-stop indisponibil
     possible_causes:
-      - low_battery_state
-      - battery_sensor_fault
-      - engine_temperature
-      - climate_demand
-      - system_fault
+      - low battery state of charge
+      - battery degradation
+      - battery monitor fault
+      - engine temperature
+      - HVAC demand
+      - DPF regeneration
     diagnostic_steps:
-      - Check battery state.
-      - Check battery monitoring data.
+      - Check battery state of charge.
+      - Check battery type and capacity.
+      - Read BMS data.
       - Check engine temperature.
-      - Scan PCM and BCM.
-      - Identify the condition preventing activation.
+      - Check active regeneration.
+      - Check related DTCs.
+    related_dtcs:
+      - P0562
+      - B10B2
+      - U3003
+    difficulty: medium
