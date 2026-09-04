@@ -5,6 +5,677 @@ manufacturer:
   name: Ford
 
 technical_data:
+# ============================================================
+# BATCH 16 — FORD BRAKING / BRAKE PEDAL / PARKING BRAKE
+# ============================================================
+
+  - id: ford_focus_mk2_brake_light_switch_fault
+    manufacturer: ford
+    models:
+      - focus
+    generations:
+      - focus_mk2
+    engines:
+      - all
+    title:
+      en: "Focus Mk2 brake light switch fault"
+      de: "Focus Mk2 Fehler des Bremslichtschalters"
+      ro: "Focus Mk2 defecțiune contactor stop"
+      fr: "Focus Mk2 défaut du contacteur de feu stop"
+      es: "Focus Mk2 fallo del interruptor de luz de freno"
+      it: "Focus Mk2 guasto interruttore luci freno"
+      nl: "Focus Mk2 storing remlichtschakelaar"
+    symptoms:
+      en:
+        - "brake lights do not work"
+        - "brake lights stay on"
+        - "cruise control does not operate"
+        - "ABS or ESP warning"
+      de:
+        - "Bremsleuchten funktionieren nicht"
+        - "Bremsleuchten bleiben an"
+        - "Geschwindigkeitsregelung funktioniert nicht"
+        - "ABS- oder ESP-Warnung"
+      ro:
+        - "stopurile nu funcționează"
+        - "stopurile rămân aprinse"
+        - "pilotul automat nu funcționează"
+        - "martor ABS sau ESP"
+      fr:
+        - "feux stop ne fonctionnent pas"
+        - "feux stop restent allumés"
+        - "régulateur de vitesse ne fonctionne pas"
+        - "voyant ABS ou ESP"
+      es:
+        - "las luces de freno no funcionan"
+        - "las luces de freno permanecen encendidas"
+        - "el control de crucero no funciona"
+        - "testigo ABS o ESP"
+      it:
+        - "luci stop non funzionano"
+        - "luci stop rimangono accese"
+        - "cruise control non funziona"
+        - "spia ABS o ESP"
+      nl:
+        - "remlichten werken niet"
+        - "remlichten blijven branden"
+        - "cruisecontrol werkt niet"
+        - "ABS- of ESP-waarschuwing"
+    possible_causes:
+      en:
+        - "brake light switch fault"
+        - "incorrect switch adjustment"
+        - "wiring or connector fault"
+        - "fuse or power supply fault"
+      de:
+        - "Bremslichtschalter defekt"
+        - "Schalter falsch eingestellt"
+        - "Fehler an Verkabelung oder Stecker"
+        - "Sicherung oder Spannungsversorgung fehlerhaft"
+      ro:
+        - "contactor stop defect"
+        - "reglaj incorect al contactorului"
+        - "problemă cablaj sau conector"
+        - "siguranță sau alimentare defectă"
+      fr:
+        - "contacteur de frein défectueux"
+        - "mauvais réglage du contacteur"
+        - "défaut de câblage ou connecteur"
+        - "défaut de fusible ou alimentation"
+      es:
+        - "interruptor de freno defectuoso"
+        - "ajuste incorrecto"
+        - "fallo de cableado o conector"
+        - "fusible o alimentación defectuosos"
+      it:
+        - "interruttore freno guasto"
+        - "regolazione errata"
+        - "guasto cablaggio o connettore"
+        - "fusibile o alimentazione guasti"
+      nl:
+        - "defecte remlichtschakelaar"
+        - "onjuiste afstelling"
+        - "bedradings- of connectorprobleem"
+        - "zekering of voedingsprobleem"
+    diagnostic_steps:
+      en:
+        - "Check brake light operation"
+        - "Check brake switch live data where available"
+        - "Inspect switch connector and wiring"
+        - "Check related fuses"
+      de:
+        - "Bremsleuchten prüfen"
+        - "Bremslichtschalter-Livedaten prüfen, sofern verfügbar"
+        - "Stecker und Verkabelung prüfen"
+        - "Zugehörige Sicherungen prüfen"
+      ro:
+        - "Verifică funcționarea stopurilor"
+        - "Verifică datele live ale contactorului, dacă sunt disponibile"
+        - "Inspectează conectorul și cablajul"
+        - "Verifică siguranțele aferente"
+      fr:
+        - "Contrôler les feux stop"
+        - "Contrôler les données du contacteur si disponibles"
+        - "Inspecter connecteur et câblage"
+        - "Contrôler les fusibles"
+      es:
+        - "Comprobar luces de freno"
+        - "Comprobar datos del interruptor cuando estén disponibles"
+        - "Inspeccionar conector y cableado"
+        - "Comprobar fusibles"
+      it:
+        - "Controllare le luci stop"
+        - "Controllare i dati interruttore se disponibili"
+        - "Ispezionare connettore e cablaggio"
+        - "Controllare i fusibili"
+      nl:
+        - "Controleer remlichten"
+        - "Controleer livegegevens van de schakelaar indien beschikbaar"
+        - "Controleer connector en bedrading"
+        - "Controleer zekeringen"
+    systems:
+      - brake_lights
+      - brake_pedal
+      - abs
+      - esp
+
+  - id: ford_focus_mk2_brake_pedal_switch_signal_fault
+    manufacturer: ford
+    models:
+      - focus
+    generations:
+      - focus_mk2
+    engines:
+      - all
+    title:
+      en: "Focus Mk2 brake pedal switch signal fault"
+      de: "Focus Mk2 Fehler des Bremspedalschaltersignals"
+      ro: "Focus Mk2 eroare semnal contactor pedală frână"
+      fr: "Focus Mk2 défaut du signal du contacteur de pédale de frein"
+      es: "Focus Mk2 fallo de señal del interruptor del pedal de freno"
+      it: "Focus Mk2 guasto segnale interruttore pedale freno"
+      nl: "Focus Mk2 storing rempedaalschakelaarsignaal"
+    symptoms:
+      en:
+        - "brake pedal signal implausible"
+        - "cruise control disabled"
+        - "ABS or ESP fault"
+        - "brake lights operate incorrectly"
+      de:
+        - "Bremspedalsignal unplausibel"
+        - "Geschwindigkeitsregelung deaktiviert"
+        - "ABS- oder ESP-Fehler"
+        - "Bremsleuchten funktionieren fehlerhaft"
+      ro:
+        - "semnal pedală frână neverosimil"
+        - "pilot automat dezactivat"
+        - "eroare ABS sau ESP"
+        - "stopurile funcționează incorect"
+      fr:
+        - "signal de pédale incohérent"
+        - "régulateur désactivé"
+        - "défaut ABS ou ESP"
+        - "feux stop fonctionnent incorrectement"
+      es:
+        - "señal del pedal incoherente"
+        - "control de crucero desactivado"
+        - "fallo ABS o ESP"
+        - "luces de freno funcionan incorrectamente"
+      it:
+        - "segnale pedale non plausibile"
+        - "cruise control disattivato"
+        - "guasto ABS o ESP"
+        - "luci stop funzionano male"
+      nl:
+        - "ongeldig rempedaalsignaal"
+        - "cruisecontrol uitgeschakeld"
+        - "ABS- of ESP-storing"
+        - "remlichten werken verkeerd"
+    possible_causes:
+      en:
+        - "brake pedal switch fault"
+        - "switch adjustment fault"
+        - "wiring fault"
+        - "connector corrosion"
+        - "input circuit fault"
+      de:
+        - "Bremspedalschalter defekt"
+        - "Fehler der Schalterstellung"
+        - "Verkabelungsfehler"
+        - "korrodierter Stecker"
+        - "Fehler im Eingangskreis"
+      ro:
+        - "contactor pedală defect"
+        - "reglaj incorect"
+        - "defecțiune cablaj"
+        - "conector corodat"
+        - "problemă circuit de intrare"
+      fr:
+        - "contacteur de pédale défectueux"
+        - "mauvais réglage"
+        - "défaut de câblage"
+        - "connecteur corrodé"
+        - "défaut du circuit d'entrée"
+      es:
+        - "interruptor de pedal defectuoso"
+        - "ajuste incorrecto"
+        - "fallo de cableado"
+        - "conector corroído"
+        - "fallo del circuito de entrada"
+      it:
+        - "interruttore pedale guasto"
+        - "regolazione errata"
+        - "guasto cablaggio"
+        - "connettore corroso"
+        - "guasto circuito ingresso"
+      nl:
+        - "defecte rempedaalschakelaar"
+        - "onjuiste afstelling"
+        - "bedradingsfout"
+        - "gecorrodeerde connector"
+        - "fout in ingangscircuit"
+    diagnostic_steps:
+      en:
+        - "Check brake pedal switch status in live data"
+        - "Confirm the switch changes state correctly"
+        - "Inspect wiring and connector"
+        - "Check brake light operation"
+      de:
+        - "Status des Bremspedalschalters in Live-Daten prüfen"
+        - "Korrekte Zustandsänderung prüfen"
+        - "Verkabelung und Stecker prüfen"
+        - "Bremsleuchten prüfen"
+      ro:
+        - "Verifică starea contactorului în datele live"
+        - "Confirmă schimbarea corectă a stării"
+        - "Inspectează cablajul și conectorul"
+        - "Verifică stopurile"
+      fr:
+        - "Contrôler l'état du contacteur en données réelles"
+        - "Vérifier son changement d'état"
+        - "Inspecter câblage et connecteur"
+        - "Contrôler les feux stop"
+      es:
+        - "Comprobar el estado del interruptor en datos en vivo"
+        - "Confirmar el cambio de estado"
+        - "Inspeccionar cableado y conector"
+        - "Comprobar luces de freno"
+      it:
+        - "Controllare lo stato dell'interruttore nei dati live"
+        - "Verificare il cambio di stato"
+        - "Ispezionare cablaggio e connettore"
+        - "Controllare le luci stop"
+      nl:
+        - "Controleer de schakelaarstatus in livegegevens"
+        - "Controleer of de status correct verandert"
+        - "Controleer bedrading en connector"
+        - "Controleer remlichten"
+    systems:
+      - brake_pedal
+      - abs
+      - esp
+      - cruise_control
+
+  - id: ford_focus_mk2_parking_brake_switch_fault
+    manufacturer: ford
+    models:
+      - focus
+    generations:
+      - focus_mk2
+    engines:
+      - all
+    title:
+      en: "Focus Mk2 parking brake warning switch fault"
+      de: "Focus Mk2 Fehler des Handbremswarnschalters"
+      ro: "Focus Mk2 defecțiune contactor frână de mână"
+      fr: "Focus Mk2 défaut du contacteur de frein de stationnement"
+      es: "Focus Mk2 fallo del interruptor del freno de estacionamiento"
+      it: "Focus Mk2 guasto interruttore freno di stazionamento"
+      nl: "Focus Mk2 storing handremwaarschuwingsschakelaar"
+    symptoms:
+      en:
+        - "parking brake warning remains on"
+        - "parking brake warning does not illuminate"
+        - "brake warning message"
+      de:
+        - "Handbremswarnung bleibt an"
+        - "Handbremswarnung leuchtet nicht"
+        - "Bremswarnmeldung"
+      ro:
+        - "martor frână de mână rămâne aprins"
+        - "martorul nu se aprinde"
+        - "mesaj avertizare frână"
+      fr:
+        - "voyant frein de stationnement reste allumé"
+        - "voyant ne s'allume pas"
+        - "message de frein"
+      es:
+        - "testigo del freno de estacionamiento permanece encendido"
+        - "testigo no se enciende"
+        - "mensaje de freno"
+      it:
+        - "spia freno di stazionamento rimane accesa"
+        - "spia non si accende"
+        - "messaggio freno"
+      nl:
+        - "handremwaarschuwingslampje blijft branden"
+        - "waarschuwingslampje werkt niet"
+        - "remwaarschuwing"
+    possible_causes:
+      en:
+        - "parking brake switch fault"
+        - "switch wiring fault"
+        - "instrument cluster input fault"
+        - "brake fluid level warning circuit fault"
+      de:
+        - "Handbremsschalter defekt"
+        - "Fehler der Schalterverkabelung"
+        - "Eingangsfehler im Kombiinstrument"
+        - "Fehler im Bremsflüssigkeitswarnkreis"
+      ro:
+        - "contactor frână de mână defect"
+        - "problemă cablaj"
+        - "problemă intrare instrument cluster"
+        - "defecțiune circuit avertizare nivel lichid frână"
+      fr:
+        - "contacteur de frein de stationnement défectueux"
+        - "défaut de câblage"
+        - "défaut d'entrée du combiné"
+        - "défaut du circuit de niveau de liquide"
+      es:
+        - "interruptor del freno de estacionamiento defectuoso"
+        - "fallo de cableado"
+        - "fallo de entrada del cuadro"
+        - "fallo del circuito de nivel de líquido"
+      it:
+        - "interruttore freno di stazionamento guasto"
+        - "guasto cablaggio"
+        - "guasto ingresso quadro strumenti"
+        - "guasto circuito livello liquido"
+      nl:
+        - "defecte handremschakelaar"
+        - "bedradingsfout"
+        - "ingangsfout instrumentenpaneel"
+        - "storing remvloeistofniveau"
+    diagnostic_steps:
+      en:
+        - "Check the parking brake switch"
+        - "Inspect the switch wiring"
+        - "Check brake fluid level before diagnosing an electrical warning"
+        - "Check instrument cluster input if required"
+      de:
+        - "Handbremsschalter prüfen"
+        - "Schalterverkabelung prüfen"
+        - "Bremsflüssigkeitsstand vor elektrischer Diagnose prüfen"
+        - "Kombiinstrument-Eingang prüfen"
+      ro:
+        - "Verifică contactorul frânei de mână"
+        - "Inspectează cablajul"
+        - "Verifică nivelul lichidului de frână înaintea diagnosticului electric"
+        - "Verifică intrarea instrument cluster dacă este necesar"
+      fr:
+        - "Contrôler le contacteur de frein de stationnement"
+        - "Inspecter le câblage"
+        - "Contrôler le niveau de liquide avant le diagnostic électrique"
+        - "Contrôler l'entrée du combiné si nécessaire"
+      es:
+        - "Comprobar el interruptor del freno de estacionamiento"
+        - "Inspeccionar cableado"
+        - "Comprobar el nivel del líquido antes del diagnóstico eléctrico"
+        - "Comprobar la entrada del cuadro si es necesario"
+      it:
+        - "Controllare l'interruttore freno di stazionamento"
+        - "Ispezionare il cablaggio"
+        - "Controllare il livello liquido prima della diagnosi elettrica"
+        - "Controllare l'ingresso quadro se necessario"
+      nl:
+        - "Controleer de handremschakelaar"
+        - "Controleer de bedrading"
+        - "Controleer remvloeistofniveau vóór elektrische diagnose"
+        - "Controleer instrumentenpaneelingang indien nodig"
+    systems:
+      - parking_brake
+      - instrument_cluster
+      - braking
+
+  - id: ford_focus_mk2_low_brake_fluid_warning
+    manufacturer: ford
+    models:
+      - focus
+    generations:
+      - focus_mk2
+    engines:
+      - all
+    title:
+      en: "Focus Mk2 low brake fluid warning"
+      de: "Focus Mk2 Warnung Bremsflüssigkeitsstand niedrig"
+      ro: "Focus Mk2 avertizare nivel scăzut lichid de frână"
+      fr: "Focus Mk2 alerte niveau de liquide de frein bas"
+      es: "Focus Mk2 aviso de nivel bajo de líquido de frenos"
+      it: "Focus Mk2 avviso livello liquido freni basso"
+      nl: "Focus Mk2 waarschuwing laag remvloeistofniveau"
+    symptoms:
+      en:
+        - "brake warning light"
+        - "low brake fluid warning"
+        - "soft brake pedal"
+        - "brake fluid reservoir level low"
+      de:
+        - "Bremswarnleuchte"
+        - "Warnung Bremsflüssigkeitsstand niedrig"
+        - "weiches Bremspedal"
+        - "Bremsflüssigkeitsstand niedrig"
+      ro:
+        - "martor avertizare frână"
+        - "nivel lichid de frână scăzut"
+        - "pedală de frână moale"
+        - "nivel scăzut în rezervor"
+      fr:
+        - "voyant de frein"
+        - "niveau de liquide bas"
+        - "pédale de frein molle"
+        - "niveau bas dans le réservoir"
+      es:
+        - "testigo de freno"
+        - "nivel bajo de líquido"
+        - "pedal de freno blando"
+        - "nivel bajo en el depósito"
+      it:
+        - "spia freno"
+        - "livello liquido basso"
+        - "pedale del freno morbido"
+        - "livello basso nel serbatoio"
+      nl:
+        - "remwaarschuwingslampje"
+        - "laag remvloeistofniveau"
+        - "zacht rempedaal"
+        - "laag niveau in reservoir"
+    possible_causes:
+      en:
+        - "brake fluid leak"
+        - "worn brake pads causing piston extension"
+        - "fluid level sensor or switch fault"
+        - "hydraulic brake system fault"
+      de:
+        - "Bremsflüssigkeitsleck"
+        - "verschlissene Bremsbeläge"
+        - "Fehler des Flüssigkeitsstandssensors"
+        - "Fehler der Bremsanlage"
+      ro:
+        - "pierdere lichid de frână"
+        - "plăcuțe de frână uzate"
+        - "defecțiune senzor nivel lichid"
+        - "defecțiune sistem hidraulic de frânare"
+      fr:
+        - "fuite de liquide de frein"
+        - "plaquettes usées"
+        - "défaut du capteur de niveau"
+        - "défaut du circuit hydraulique"
+      es:
+        - "fuga de líquido de frenos"
+        - "pastillas desgastadas"
+        - "fallo del sensor de nivel"
+        - "fallo del sistema hidráulico"
+      it:
+        - "perdita di liquido freni"
+        - "pastiglie usurate"
+        - "guasto sensore livello"
+        - "guasto circuito idraulico"
+      nl:
+        - "remvloeistoflekkage"
+        - "versleten remblokken"
+        - "defecte niveausensor"
+        - "storing hydraulisch remsysteem"
+    diagnostic_steps:
+      en:
+        - "Check the brake fluid level"
+        - "Inspect the system for leaks"
+        - "Inspect brake hoses and calipers"
+        - "Do not simply top up fluid without finding the reason for the low level"
+      de:
+        - "Bremsflüssigkeitsstand prüfen"
+        - "Anlage auf Lecks prüfen"
+        - "Bremsschläuche und Bremssättel prüfen"
+        - "Nicht nur Flüssigkeit nachfüllen, ohne die Ursache zu klären"
+      ro:
+        - "Verifică nivelul lichidului"
+        - "Inspectează sistemul pentru scurgeri"
+        - "Verifică furtunurile și etrierele"
+        - "Nu completa pur și simplu lichid fără identificarea cauzei"
+      fr:
+        - "Contrôler le niveau"
+        - "Rechercher les fuites"
+        - "Contrôler flexibles et étriers"
+        - "Ne pas simplement compléter sans rechercher la cause"
+      es:
+        - "Comprobar el nivel"
+        - "Buscar fugas"
+        - "Comprobar latiguillos y pinzas"
+        - "No rellenar sin identificar la causa"
+      it:
+        - "Controllare il livello"
+        - "Cercare perdite"
+        - "Controllare tubi e pinze"
+        - "Non rabboccare senza individuare la causa"
+      nl:
+        - "Controleer het niveau"
+        - "Controleer op lekkage"
+        - "Controleer remslangen en remklauwen"
+        - "Vul niet alleen bij zonder de oorzaak te vinden"
+    systems:
+      - braking
+      - brake_fluid
+      - brake_hydraulics
+
+  - id: ford_focus_mk2_brake_pad_wear
+    manufacturer: ford
+    models:
+      - focus
+    generations:
+      - focus_mk2
+    engines:
+      - all
+    title:
+      en: "Focus Mk2 brake pad wear"
+      de: "Focus Mk2 Bremsbelagverschleiß"
+      ro: "Focus Mk2 uzură plăcuțe de frână"
+      fr: "Focus Mk2 usure des plaquettes de frein"
+      es: "Focus Mk2 desgaste de pastillas de freno"
+      it: "Focus Mk2 usura pastiglie freno"
+      nl: "Focus Mk2 slijtage remblokken"
+    symptoms:
+      en:
+        - "brake pad warning"
+        - "squealing brakes"
+        - "grinding noise when braking"
+        - "reduced braking performance"
+        - "brake pad visibly thin"
+      de:
+        - "Bremsbelagwarnung"
+        - "quietschende Bremsen"
+        - "Schleifgeräusch beim Bremsen"
+        - "reduzierte Bremswirkung"
+        - "Bremsbelag sichtbar dünn"
+      ro:
+        - "avertizare uzură plăcuțe"
+        - "frâne care scârțâie"
+        - "zgomot de frecare la frânare"
+        - "frânare redusă"
+        - "plăcuță vizibil uzată"
+      fr:
+        - "alerte usure des plaquettes"
+        - "freins qui couinent"
+        - "bruit de frottement"
+        - "freinage réduit"
+        - "plaquette visiblement usée"
+      es:
+        - "aviso de desgaste"
+        - "frenos chirrían"
+        - "ruido de roce"
+        - "frenado reducido"
+        - "pastilla visiblemente desgastada"
+      it:
+        - "avviso usura pastiglie"
+        - "freni che fischiano"
+        - "rumore di sfregamento"
+        - "frenata ridotta"
+        - "pastiglia visibilmente usurata"
+      nl:
+        - "waarschuwing remblokslijtage"
+        - "piepende remmen"
+        - "schurend geluid"
+        - "verminderde remwerking"
+        - "zichtbaar dun remblok"
+    possible_causes:
+      en:
+        - "normal brake pad wear"
+        - "sticking brake caliper"
+        - "seized guide pins"
+        - "brake disc wear"
+        - "uneven pad wear"
+      de:
+        - "normaler Bremsbelagverschleiß"
+        - "festsitzender Bremssattel"
+        - "festsitzende Führungsbolzen"
+        - "Bremsscheibenverschleiß"
+        - "ungleichmäßiger Belagverschleiß"
+      ro:
+        - "uzură normală"
+        - "etrier blocat"
+        - "culise gripate"
+        - "uzură disc"
+        - "uzură neuniformă"
+      fr:
+        - "usure normale"
+        - "étrier grippé"
+        - "colonnettes grippées"
+        - "usure du disque"
+        - "usure irrégulière"
+      es:
+        - "desgaste normal"
+        - "pinza agarrotada"
+        - "guías agarrotadas"
+        - "desgaste del disco"
+        - "desgaste irregular"
+      it:
+        - "usura normale"
+        - "pinza bloccata"
+        - "guide grippate"
+        - "usura disco"
+        - "usura irregolare"
+      nl:
+        - "normale slijtage"
+        - "vastzittende remklauw"
+        - "vastzittende geleidepennen"
+        - "remschijfslijtage"
+        - "ongelijkmatige slijtage"
+    diagnostic_steps:
+      en:
+        - "Measure remaining pad thickness"
+        - "Inspect both pads on each axle"
+        - "Inspect brake discs"
+        - "Check caliper movement and guide pins"
+        - "Check for uneven wear"
+      de:
+        - "Restbelagstärke messen"
+        - "Beide Beläge je Achse prüfen"
+        - "Bremsscheiben prüfen"
+        - "Bremssattel und Führungen prüfen"
+        - "Auf ungleichmäßigen Verschleiß achten"
+      ro:
+        - "Măsoară grosimea plăcuțelor"
+        - "Verifică ambele plăcuțe de pe fiecare punte"
+        - "Inspectează discurile"
+        - "Verifică mișcarea etrierului și culisele"
+        - "Caută uzură neuniformă"
+      fr:
+        - "Mesurer l'épaisseur restante"
+        - "Contrôler les deux plaquettes par essieu"
+        - "Contrôler les disques"
+        - "Contrôler l'étrier et les colonnettes"
+        - "Rechercher une usure irrégulière"
+      es:
+        - "Medir espesor restante"
+        - "Comprobar ambas pastillas por eje"
+        - "Inspeccionar discos"
+        - "Comprobar pinza y guías"
+        - "Buscar desgaste irregular"
+      it:
+        - "Misurare lo spessore residuo"
+        - "Controllare entrambe le pastiglie per asse"
+        - "Ispezionare i dischi"
+        - "Controllare pinza e guide"
+        - "Cercare usura irregolare"
+      nl:
+        - "Meet de resterende blokdikte"
+        - "Controleer beide blokken per as"
+        - "Controleer de remschijven"
+        - "Controleer remklauw en geleidepennen"
+        - "Controleer op ongelijkmatige slijtage"
+    systems:
+      - braking
+      - brake_pads
+      - brake_discs
   - id: ford_classic_engine_crank_no_start_carburetor
     vehicle:
       manufacturer: ford
