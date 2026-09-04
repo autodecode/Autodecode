@@ -4934,14 +4934,17 @@ document.createElement("div");
 n.className=
 "no-results";
 
-n.textContent=
-t("no_results");
+n.innerHTML=
+`<div>${t("no_results")}</div>
+<div style="margin-top:8px;font-size:12px;opacity:.75">
+${currentLanguage==="en"?"":t("try_english")}
+</div>`;
 
 resultList.appendChild(n);
 
 return
-
 }
+
 
 resultCount.textContent=
 results.length===1
