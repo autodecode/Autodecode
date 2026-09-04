@@ -1,0 +1,5444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AutoDecode – Repair & Technical</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
+<style>
+*{box-sizing:border-box}html,body{margin:0;padding:0;min-height:100%;font-family:Arial,Helvetica,sans-serif;background:#0b0f14;color:#e8edf3}body{min-height:100vh}header{min-height:72px;background:#111720;border-bottom:1px solid #26303b;display:flex;align-items:center;padding:12px 24px;gap:20px}.logo{font-size:24px;font-weight:700;letter-spacing:-.5px;white-space:nowrap}.logo span,.hero h1 span{color:#4da3ff}.home-link{color:#cbd5e1;text-decoration:none;font-size:14px;padding:9px 13px;border:1px solid #34404d;border-radius:7px}.home-link:hover{color:#fff;border-color:#4da3ff}.language-selector{margin-left:auto;position:relative}.language-button{background:#18202a;color:#e8edf3;border:1px solid #34404d;border-radius:7px;padding:8px 10px;cursor:pointer;font-size:14px}.language-menu{display:none;position:absolute;right:0;top:calc(100% + 7px);background:#151c25;border:1px solid #34404d;border-radius:8px;min-width:145px;overflow:hidden;z-index:1000}.language-menu.active{display:block}.language-option{padding:10px 12px;cursor:pointer;color:#dbe4ee;font-size:14px}.language-option:hover{background:#202b37}main{width:min(1050px,calc(100% - 32px));margin:0 auto;padding:48px 0 70px}.hero{margin-bottom:34px}.hero h1{margin:0 0 10px;font-size:clamp(30px,5vw,46px);line-height:1.1}.hero p{margin:0;color:#8f9baa;font-size:16px;line-height:1.6;max-width:800px}.panel{background:#111720;border:1px solid #26303b;border-radius:12px;padding:24px}.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.field{display:flex;flex-direction:column;gap:7px}.field.full{grid-column:1/-1}label{font-size:13px;color:#aeb9c6;font-weight:600}select,textarea{width:100%;background:#0c1219;color:#e8edf3;border:1px solid #303b48;border-radius:8px;padding:12px 13px;font-size:15px;outline:none}select{min-height:46px}select:focus,textarea:focus{border-color:#4da3ff}select:disabled{opacity:.45}textarea{min-height:125px;resize:vertical;line-height:1.5}.actions{margin-top:22px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}.find-button{background:#4da3ff;color:#06101b;border:0;border-radius:8px;padding:13px 22px;font-size:15px;font-weight:700;cursor:pointer}.find-button:hover{filter:brightness(1.08)}.find-button:disabled{opacity:.5;cursor:not-allowed}.status{font-size:13px;color:#8f9baa}.status.error{color:#ff7777}.status.success{color:#72d79a}.results{margin-top:30px}.results-header{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:15px}.results-header h2{margin:0;font-size:21px}.result-count{color:#8995a3;font-size:13px}.result-card{background:#0c1219;border:1px solid #293542;border-radius:10px;margin-bottom:14px;overflow:hidden}.result-main{padding:19px}.result-top{display:flex;justify-content:space-between;align-items:flex-start;gap:15px}.result-title{margin:0 0 7px;font-size:18px;line-height:1.35}.result-system{color:#8995a3;font-size:12px;text-transform:uppercase;letter-spacing:.5px}.score{flex:0 0 auto;font-size:15px;font-weight:700;color:#4da3ff;background:rgba(77,163,255,.08);border:1px solid rgba(77,163,255,.2);border-radius:7px;padding:7px 9px}.result-description{color:#aeb9c6;font-size:14px;line-height:1.6;margin:14px 0 0}.match-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}.match-tag{font-size:11px;color:#b9c7d6;border:1px solid #303c49;background:#141c25;padding:5px 8px;border-radius:5px}.result-section{border-top:1px solid #202b36;padding:16px 19px}.result-section h4{margin:0 0 10px;font-size:13px;color:#dbe4ee}.result-section ul{margin:0;padding-left:20px;color:#aeb9c6;font-size:13px;line-height:1.65}.result-section li{margin-bottom:4px}.no-results{padding:25px;text-align:center;color:#8f9baa;border:1px dashed #303b48;border-radius:9px}.selected-vehicle{margin-top:18px;padding:12px 14px;background:#0c1219;border:1px solid #26303b;border-radius:8px;color:#9ca8b6;font-size:13px}.selected-vehicle strong{color:#dce5ee}footer{border-top:1px solid #202a34;padding:22px 16px;text-align:center;color:#657180;font-size:12px}@media(max-width:700px){header{padding:12px 14px;gap:10px;flex-wrap:wrap}.logo{font-size:21px}.home-link{font-size:13px;padding:8px 10px}.language-selector{margin-left:auto}main{width:calc(100% - 22px);padding-top:30px}.panel{padding:17px}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.result-top{flex-direction:column}.score{align-self:flex-start}}
+</style>
+</head>
+<body>
+
+<header>
+<div class="logo">Auto<span>Decode</span></div>
+<a href="index.html" class="home-link" data-i18n="home">← Home</a>
+<div class="language-selector">
+<button class="language-button" id="languageButton">🇬🇧 EN ▾</button>
+<div class="language-menu" id="languageMenu">
+<div class="language-option" data-lang="en">🇬🇧 English</div>
+<div class="language-option" data-lang="de">🇩🇪 Deutsch</div>
+<div class="language-option" data-lang="ro">🇷🇴 Română</div>
+<div class="language-option" data-lang="fr">🇫🇷 Français</div>
+<div class="language-option" data-lang="es">🇪🇸 Español</div>
+<div class="language-option" data-lang="it">🇮🇹 Italiano</div>
+<div class="language-option" data-lang="nl">🇳🇱 Nederlands</div>
+</div>
+</div>
+</header>
+
+<main>
+<section class="hero">
+<h1><span>Repair</span> & Technical</h1>
+<p data-i18n="intro">Select your vehicle and describe the problem. AutoDecode will search the technical database and rank the most relevant diagnostic information.</p>
+</section>
+
+<section class="panel">
+<div class="form-grid">
+
+<div class="field">
+<label for="manufacturer" data-i18n="make">Make</label>
+<select id="manufacturer">
+<option value="" data-i18n="select_make">Select make</option>
+</select>
+</div>
+
+<div class="field">
+<label for="model" data-i18n="model">Model</label>
+<select id="model" disabled>
+<option value="" data-i18n="select_model">Select model</option>
+</select>
+</div>
+
+<div class="field">
+<label for="generation" data-i18n="generation">Generation / Platform</label>
+<select id="generation" disabled>
+<option value="" data-i18n="select_generation">Select generation</option>
+</select>
+</div>
+
+<div class="field">
+<label for="year" data-i18n="year">Year</label>
+<select id="year" disabled>
+<option value="" data-i18n="select_year">Select year</option>
+</select>
+</div>
+
+<div class="field">
+<label for="engine" data-i18n="engine">Engine</label>
+<select id="engine" disabled>
+<option value="" data-i18n="select_engine">Select engine</option>
+</select>
+</div>
+
+<div class="field full">
+<label for="problem" data-i18n="problem">Describe the problem</label>
+<textarea id="problem" data-i18n-placeholder="problem_placeholder" placeholder="Example: The engine has very little power at low RPM and sometimes enters limp mode."></textarea>
+</div>
+
+</div>
+
+<div class="selected-vehicle" id="selectedVehicle" hidden></div>
+
+<div class="actions">
+<button class="find-button" id="findButton" disabled data-i18n="find_solution">FIND SOLUTION</button>
+<div class="status" id="status"></div>
+</div>
+
+<section class="results" id="results" hidden>
+<div class="results-header">
+<h2 data-i18n="diagnostic_results">Diagnostic Results</h2>
+<div class="result-count" id="resultCount"></div>
+</div>
+<div id="resultList"></div>
+</section>
+
+</section>
+</main>
+
+<footer>© <span id="yearFooter"></span> AutoDecode</footer>
+
+<script>
+
+/* ============================================================
+   UI / TRANSLATIONS
+============================================================ */
+
+const translations={
+ en:{home:"← Home",intro:"Select your vehicle and describe the problem. AutoDecode will search the technical database and rank the most relevant diagnostic information.",make:"Make",model:"Model",generation:"Generation / Platform",year:"Year",engine:"Engine",problem:"Describe the problem",select_make:"Select make",select_model:"Select model",select_generation:"Select generation",select_year:"Select year",select_engine:"Select engine",problem_placeholder:"Example: The engine has very little power at low RPM and sometimes enters limp mode.",find_solution:"FIND SOLUTION",diagnostic_results:"Diagnostic Results",database_loading:"Loading vehicle database...",database_ready:"Vehicle database ready.",database_error:"Vehicle database could not be loaded.",technical_loading:"Loading technical database...",technical_ready:"Technical database ready.",technical_error:"No technical database is currently available for this manufacturer.",complete_vehicle:"Please complete the vehicle selection.",describe_problem:"Please describe the problem.",searching:"Analyzing vehicle and symptoms...",no_results:"No sufficiently relevant diagnostic information was found.",result_count_one:"1 relevant result",result_count_many:"{n} relevant results",vehicle:"Vehicle",possible_causes:"Possible causes",diagnostic_steps:"Diagnostic procedure",related_dtcs:"Related DTCs",difficulty:"Difficulty",relevance:"Relevance"},
+ de:{home:"← Startseite",intro:"Wählen Sie Ihr Fahrzeug und beschreiben Sie das Problem. AutoDecode durchsucht die technische Datenbank.",make:"Marke",model:"Modell",generation:"Generation / Plattform",year:"Jahr",engine:"Motor",problem:"Problem beschreiben",select_make:"Marke auswählen",select_model:"Modell auswählen",select_generation:"Generation auswählen",select_year:"Jahr auswählen",select_engine:"Motor auswählen",problem_placeholder:"Beispiel: Der Motor hat bei niedrigen Drehzahlen kaum Leistung und geht manchmal in den Notlauf.",find_solution:"LÖSUNG FINDEN",diagnostic_results:"Diagnoseergebnisse",database_loading:"Fahrzeugdatenbank wird geladen...",database_ready:"Fahrzeugdatenbank bereit.",database_error:"Fahrzeugdatenbank konnte nicht geladen werden.",technical_loading:"Technische Datenbank wird geladen...",technical_ready:"Technische Datenbank bereit.",technical_error:"Für diesen Hersteller ist derzeit keine technische Datenbank verfügbar.",complete_vehicle:"Bitte wählen Sie das Fahrzeug vollständig aus.",describe_problem:"Bitte beschreiben Sie das Problem.",searching:"Fahrzeug und Symptome werden analysiert...",no_results:"Keine ausreichend relevanten Diagnoseinformationen gefunden. Versuchen Sie es auf Englisch.",result_count_one:"1 relevantes Ergebnis",result_count_many:"{n} relevante Ergebnisse",vehicle:"Fahrzeug",possible_causes:"Mögliche Ursachen",diagnostic_steps:"Diagnoseverfahren",related_dtcs:"Verwandte DTCs",difficulty:"Schwierigkeit",relevance:"Relevanz"},
+ ro:{home:"← Acasă",intro:"Selectează vehiculul și descrie problema. AutoDecode va căuta în baza tehnică și va ordona informațiile de diagnostic în funcție de relevanță.",make:"Marcă",model:"Model",generation:"Generație / Platformă",year:"An",engine:"Motor",problem:"Descrie problema",select_make:"Selectează marca",select_model:"Selectează modelul",select_generation:"Selectează generația",select_year:"Selectează anul",select_engine:"Selectează motorul",problem_placeholder:"Exemplu: Motorul nu mai trage la turații mici și uneori intră în limp mode.",find_solution:"GĂSEȘTE SOLUȚIA",diagnostic_results:"Rezultate diagnostic",database_loading:"Se încarcă baza de date cu vehicule...",database_ready:"Baza de date cu vehicule este pregătită.",database_error:"Baza de date cu vehicule nu poate fi încărcată.",technical_loading:"Se încarcă baza tehnică...",technical_ready:"Baza tehnică este pregătită.",technical_error:"Nu există încă o bază tehnică disponibilă pentru acest producător.",complete_vehicle:"Completează selecția vehiculului.",describe_problem:"Descrie problema.",searching:"Se analizează vehiculul și simptomele...",no_results:"Nu au fost găsite informații relevante. Încercați în engleză.",result_count_one:"1 rezultat relevant",result_count_many:"{n} rezultate relevante",vehicle:"Vehicul",possible_causes:"Cauze posibile",diagnostic_steps:"Procedură de diagnostic",related_dtcs:"DTC-uri asociate",difficulty:"Dificultate",relevance:"Relevanță"},
+ fr:{home:"← Accueil",intro:"Sélectionnez votre véhicule et décrivez le problème. AutoDecode recherchera les informations techniques pertinentes.",make:"Marque",model:"Modèle",generation:"Génération / Plateforme",year:"Année",engine:"Moteur",problem:"Décrivez le problème",select_make:"Sélectionner la marque",select_model:"Sélectionner le modèle",select_generation:"Sélectionner la génération",select_year:"Sélectionner l'année",select_engine:"Sélectionner le moteur",problem_placeholder:"Exemple : Le moteur manque de puissance à bas régime et passe parfois en mode dégradé.",find_solution:"TROUVER LA SOLUTION",diagnostic_results:"Résultats du diagnostic",database_loading:"Chargement de la base de véhicules...",database_ready:"Base de véhicules prête.",database_error:"Impossible de charger la base de véhicules.",technical_loading:"Chargement de la base technique...",technical_ready:"Base technique prête.",technical_error:"Aucune base technique n'est actuellement disponible pour ce constructeur.",complete_vehicle:"Veuillez compléter la sélection du véhicule.",describe_problem:"Veuillez décrire le problème.",searching:"Analyse du véhicule et des symptômes...",no_results:"Aucune information pertinente trouvée. Essayez en anglais.",result_count_one:"1 résultat pertinent",result_count_many:"{n} résultats pertinents",vehicle:"Véhicule",possible_causes:"Causes possibles",diagnostic_steps:"Procédure de diagnostic",related_dtcs:"DTC associés",difficulty:"Difficulté",relevance:"Pertinence"},
+ es:{home:"← Inicio",intro:"Selecciona tu vehículo y describe el problema. AutoDecode buscará la información técnica más relevante.",make:"Marca",model:"Modelo",generation:"Generación / Plataforma",year:"Año",engine:"Motor",problem:"Describe el problema",select_make:"Seleccionar marca",select_model:"Seleccionar modelo",select_generation:"Seleccionar generación",select_year:"Seleccionar año",select_engine:"Seleccionar motor",problem_placeholder:"Ejemplo: El motor tiene poca potencia a bajas RPM y a veces entra en modo de emergencia.",find_solution:"ENCONTRAR SOLUCIÓN",diagnostic_results:"Resultados del diagnóstico",database_loading:"Cargando base de vehículos...",database_ready:"Base de vehículos lista.",database_error:"No se pudo cargar la base de vehículos.",technical_loading:"Cargando base técnica...",technical_ready:"Base técnica lista.",technical_error:"No hay una base técnica disponible actualmente para este fabricante.",complete_vehicle:"Completa la selección del vehículo.",describe_problem:"Describe el problema.",searching:"Analizando vehículo y síntomas...",no_results:"No se encontró información relevante. Pruebe en inglés.",result_count_one:"1 resultado relevante",result_count_many:"{n} resultados relevantes",vehicle:"Vehículo",possible_causes:"Causas posibles",diagnostic_steps:"Procedimiento de diagnóstico",related_dtcs:"DTC relacionados",difficulty:"Dificultad",relevance:"Relevancia"},
+ it:{home:"← Home",intro:"Seleziona il veicolo e descrivi il problema. AutoDecode cercherà le informazioni tecniche più rilevanti.",make:"Marca",model:"Modello",generation:"Generazione / Piattaforma",year:"Anno",engine:"Motore",problem:"Descrivi il problema",select_make:"Seleziona marca",select_model:"Seleziona modello",select_generation:"Seleziona generazione",select_year:"Seleziona anno",select_engine:"Seleziona motore",problem_placeholder:"Esempio: Il motore ha poca potenza ai bassi regimi e a volte entra in modalità recovery.",find_solution:"TROVA SOLUZIONE",diagnostic_results:"Risultati diagnostici",database_loading:"Caricamento database veicoli...",database_ready:"Database veicoli pronto.",database_error:"Impossibile caricare il database veicoli.",technical_loading:"Caricamento database tecnico...",technical_ready:"Database tecnico pronto.",technical_error:"Nessun database tecnico disponibile per questo costruttore.",complete_vehicle:"Completa la selezione del veicolo.",describe_problem:"Descrivi il problema.",searching:"Analisi del veicolo e dei sintomi...",no_results:"Nessuna informazione pertinente trovata. Prova in inglese.",result_count_one:"1 risultato pertinente",result_count_many:"{n} risultati pertinenti",vehicle:"Veicolo",possible_causes:"Possibili cause",diagnostic_steps:"Procedura diagnostica",related_dtcs:"DTC correlati",difficulty:"Difficoltà",relevance:"Pertinenza"},
+ nl:{home:"← Home",intro:"Selecteer uw voertuig en beschrijf het probleem. AutoDecode zoekt de meest relevante technische diagnose-informatie.",make:"Merk",model:"Model",generation:"Generatie / Platform",year:"Jaar",engine:"Motor",problem:"Beschrijf het probleem",select_make:"Merk selecteren",select_model:"Model selecteren",select_generation:"Generatie selecteren",select_year:"Jaar selecteren",select_engine:"Motor selecteren",problem_placeholder:"Voorbeeld: De motor heeft weinig vermogen bij lage toerentallen en gaat soms in noodloop.",find_solution:"OPLOSSING VINDEN",diagnostic_results:"Diagnoseresultaten",database_loading:"Voertuigendatabase laden...",database_ready:"Voertuigendatabase gereed.",database_error:"Voertuigendatabase kon niet worden geladen.",technical_loading:"Technische database laden...",technical_ready:"Technische database gereed.",technical_error:"Er is momenteel geen technische database beschikbaar voor deze fabrikant.",complete_vehicle:"Voltooi de voertuigselectie.",describe_problem:"Beschrijf het probleem.",searching:"Voertuig en symptomen analyseren...",no_results:"Geen relevante diagnose-informatie gevonden. Probeer het in het Engels.",result_count_one:"1 relevant resultaat",result_count_many:"{n} relevante resultaten",vehicle:"Voertuig",possible_causes:"Mogelijke oorzaken",diagnostic_steps:"Diagnoseprocedure",related_dtcs:"Gerelateerde DTC's",difficulty:"Moeilijkheid",relevance:"Relevantie"}
+};
+
+const flags={en:"🇬🇧",de:"🇩🇪",ro:"🇷🇴",fr:"🇫🇷",es:"🇪🇸",it:"🇮🇹",nl:"🇳🇱"};
+
+let currentLanguage=localStorage.getItem("autodecode_language")||"en";
+if(!translations[currentLanguage])currentLanguage="en";
+
+let manufacturersData=[];
+let selectedManufacturerData=null;
+let technicalDatabase=[];
+let manufacturerDataCache={};
+
+/* ============================================================
+   EXTERNAL SEMANTIC DICTIONARY STATE
+============================================================ */
+
+let semanticDictionary=null;
+let semanticDictionaryReady=false;
+let semanticDictionaryLoading=false;
+let semanticDictionaryError=null;
+let semanticDictionaryPromise=null;
+
+let semanticConcepts={};
+let semanticRelationships=[];
+let semanticPriority={};
+let externalCanonicalAlias={};
+
+/* ============================================================
+   DOM
+============================================================ */
+
+const manufacturerSelect=document.getElementById("manufacturer");
+const modelSelect=document.getElementById("model");
+const generationSelect=document.getElementById("generation");
+const yearSelect=document.getElementById("year");
+const engineSelect=document.getElementById("engine");
+const problemInput=document.getElementById("problem");
+const findButton=document.getElementById("findButton");
+const statusElement=document.getElementById("status");
+const selectedVehicleElement=document.getElementById("selectedVehicle");
+const resultsElement=document.getElementById("results");
+const resultList=document.getElementById("resultList");
+const resultCount=document.getElementById("resultCount");
+
+/* ============================================================
+   UI
+============================================================ */
+
+function t(k){
+return translations[currentLanguage]?.[k]||translations.en[k]||k
+}
+
+function localizePage(){
+
+document.documentElement.lang=currentLanguage;
+
+document.querySelectorAll("[data-i18n]").forEach(e=>{
+e.textContent=t(e.getAttribute("data-i18n"))
+});
+
+document.querySelectorAll("[data-i18n-placeholder]").forEach(e=>{
+e.placeholder=t(e.getAttribute("data-i18n-placeholder"))
+});
+
+document.getElementById("languageButton").textContent=
+`${flags[currentLanguage]} ${currentLanguage.toUpperCase()} ▾`
+
+}
+
+function setStatus(m,type=""){
+
+statusElement.textContent=m;
+statusElement.className="status";
+
+if(type)statusElement.classList.add(type)
+
+}
+
+function resetSelect(s,key){
+
+s.innerHTML="";
+
+const o=document.createElement("option");
+
+o.value="";
+o.textContent=t(key);
+
+s.appendChild(o)
+
+}
+
+function populateSelect(s,items){
+
+for(const item of items||[]){
+
+if(!item?.id)continue;
+
+const o=document.createElement("option");
+
+o.value=item.id;
+o.textContent=item.name||item.id;
+
+s.appendChild(o)
+
+}
+
+}
+
+/* ============================================================
+   TEXT NORMALIZATION
+============================================================ */
+
+function normalizeText(v){
+
+return String(v??"")
+.toLowerCase()
+.replace(/[’‘`´]/g,"'")
+.normalize("NFD")
+.replace(/[\u0300-\u036f]/g,"")
+.replace(/[^a-z0-9]+/g," ")
+.replace(/\s+/g," ")
+.trim()
+
+}
+
+function tokenize(v){
+
+return new Set(
+normalizeText(v)
+.split(" ")
+.filter(Boolean)
+)
+
+}
+
+function escapeRegex(v){
+
+return String(v)
+.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")
+
+}
+
+function phraseMatches(text,phrase){
+
+const a=normalizeText(text);
+const p=normalizeText(phrase);
+
+if(!a||!p)return false;
+
+return (` ${a} `).includes(` ${p} `)
+
+}
+
+function tokenWindowMatches(text,phrase){
+
+const a=normalizeText(text).split(" ").filter(Boolean);
+const p=normalizeText(phrase).split(" ").filter(Boolean);
+
+if(p.length<2||p.length>7)return false;
+
+for(let i=0;i<a.length;i++){
+
+let pos=i;
+let ok=true;
+
+for(const word of p){
+
+let found=-1;
+
+for(
+let j=pos;
+j<Math.min(a.length,pos+6);
+j++
+){
+
+if(a[j]===word){
+
+found=j;
+break
+
+}
+
+}
+
+if(found<0){
+
+ok=false;
+break
+
+}
+
+pos=found+1
+
+}
+
+if(ok)return true
+
+}
+
+return false
+
+}
+
+function fuzzyTokenMatch(text,alias){
+
+const a=normalizeText(text).split(" ").filter(Boolean);
+const p=normalizeText(alias).split(" ").filter(Boolean);
+
+if(p.length!==1||p[0].length<6)return false;
+
+const target=p[0];
+
+return a.some(w=>
+w===target||
+w.startsWith(target)||
+(target.startsWith(w)&&w.length>=5)
+)
+
+}
+
+function matchesAlias(text,alias){
+
+return phraseMatches(text,alias)||
+tokenWindowMatches(text,alias)||
+fuzzyTokenMatch(text,alias)
+
+}
+
+/* ============================================================
+   MULTILINGUAL AUTOMOTIVE SEMANTIC DICTIONARY
+============================================================ */
+
+const symptomAliases={
+
+poor_power:[
+"no power","low power","loss of power","reduced power","poor power",
+"lacks power","lack of power","does not pull","won't accelerate",
+"nu mai trage","nu mai are putere","pierdere de putere","pierde putere",
+"lipsa de putere","fara putere","fără putere","putere redusa","putere redusă",
+"faible puissance","manque de puissance","perte de puissance",
+"manque de puissance moteur","poca potencia","falta de potencia",
+"perdida de potencia","poca potenza","mancanza di potenza",
+"perdita di potenza","weinig vermogen","vermogenverlies",
+"minder vermogen","keine leistung","wenig leistung","leistungsverlust"
+],
+
+low_rpm_power_loss:[
+"low rpm","low revs","low engine speed","at low rpm","low speed acceleration",
+"bas regime","bas régime","a bas regime","à bas régime","basses regimes",
+"bajas rpm","bajo regimen","bajos regimenes","bassi regimi","a bassi regimi",
+"lage toerentallen","bij lage toerentallen","niedrige drehzahl",
+"bei niedrigen drehzahlen","unteren drehzahlen","turații mici","turatii mici",
+"la turații mici","la turatii mici","jos en rpm"
+],
+
+limp_mode:[
+"limp mode","limp home","reduced power mode","emergency mode","safe mode",
+"notlauf","notprogramm","schutzbetrieb","mode degradé","mode dégradé",
+"mode secours","modo emergencia","modo degradado","modalita recovery",
+"modalità recovery","modalita emergenza","noodloop","veiligheidsmodus",
+"mod avarie","mod de avarie","modul avarie","mod degradat","modul degradat"
+],
+
+engine_stall:[
+"engine stalls","engine stalled","engine stall","engine stops while driving",
+"engine stopped while driving","stalls while driving","stalled while driving",
+"cuts out while driving","engine cuts out","motor cuts out",
+"motor stopped while driving","motor geht aus",
+"motor geht während der fahrt aus","geht während der fahrt aus",
+"motor stirbt ab","moteur cale","moteur s'arrete","moteur s'arrête",
+"cale en roulant","s'arrete en roulant","s'arrête en roulant",
+"moteur s'arrête","motor se para","se para en marcha","se apaga en marcha",
+"motor se apaga","motore si spegne","si spegne in marcia",
+"motore si ferma durante la marcia","motor valt uit",
+"valt uit tijdens het rijden","motor slaat af","se opreste in mers",
+"s-a oprit in mers","sa oprit in mers","motorul s-a oprit",
+"motorul sa oprit","s-a oprit","s a oprit","s-a oprit brusc",
+"s a oprit brusc"
+],
+
+crank_no_start:[
+"cranks but does not start","cranks but wont start","cranks but won't start",
+"crank no start","cranking no start","engine cranks no start",
+"turns over but wont start","turns over but won't start",
+"starter turns engine but it does not start","dau la automat","dau la cheie",
+"invarte la automat","învârte la automat","invarteste la automat",
+"invarte dar nu porneste","invarte dar nu pornește",
+"învârte dar nu pornește","învârte dar nu porneste",
+"motorul invarte dar nu porneste","motorul învârte dar nu pornește",
+"le démarreur tourne mais le moteur ne démarre pas",
+"démarreur tourne mais ne démarre pas","tourne mais ne démarre pas",
+"le moteur tourne mais ne démarre pas","el motor gira pero no arranca",
+"gira pero no arranca","il motorino gira ma non parte","gira ma non parte",
+"de startmotor draait maar de motor start niet",
+"motor draait maar start niet","dreht durch springt aber nicht an",
+"motor dreht aber startet nicht"
+],
+
+no_start:[
+"no start","does not start","doesn't start","doesnt start","won't start",
+"wont start","will not start","fails to start","refuses to start",
+"not starting","ne démarre pas","ne demarre pas","ne redémarre pas",
+"ne redemarre pas","ne veut pas démarrer","ne veut pas demarrer",
+"refuse de démarrer","refuse de demarrer","ne part pas","ne arranca",
+"no arranca","no enciende","no vuelve a arrancar","no quiere arrancar",
+"non parte","non si avvia","non riparte","non vuole partire","start niet",
+"start niet meer","wil niet starten","slaat niet aan","springt nicht an",
+"startet nicht","springt nicht mehr an","geht nicht an","nu porneste",
+"nu pornește","nu mai porneste","nu mai pornește","nu porneste deloc",
+"nu pornește deloc","nu vrea sa porneasca","nu vrea să pornească",
+"nu mai ia la automat"
+],
+
+hard_start:[
+"hard start","hard starting","difficult start","difficult starting",
+"long crank","long cranking","starts after several attempts",
+"porneste greu","pornește greu","pornire grea","pornire dificila",
+"pornire dificilă","porneste dupa mai multe incercari",
+"pornește după mai multe încercări","démarrage difficile",
+"démarre difficilement","arrêt démarrage difficile","arranque difícil",
+"arranca con dificultad","avviamento difficile","parte con difficoltà",
+"moeilijk starten","start moeilijk","schwerer start","schwieriger start",
+"startprobleme"
+],
+
+rough_idle:[
+"rough idle","unstable idle","erratic idle","shaky idle",
+"ralanti instabil","ralanti neregulat","ralanti tremurat",
+"ralenti instable","ralenti irrégulier","ralenti mauvais",
+"ralenti inestable","ralenti irregolare","minimo irregolare",
+"stationair onrustig","onrustig stationair","unruhiger leerlauf",
+"unruhiges standgas"
+],
+
+misfire:[
+"misfire","misfiring","engine misfire","cylinder misfire",
+"raté moteur","ratés d'allumage","ratés moteur","fallo de encendido",
+"fallos de encendido","fallo de motor","mancata accensione",
+"mancate accensioni","misfire motore","motor slaat over","overslaan",
+"zündaussetzer","fehlzündung","motor setzt aus","rateu","rateuri",
+"aprindere ratata"
+],
+
+fuel_pressure:[
+"fuel pressure","low fuel pressure","fuel pressure too low",
+"insufficient fuel pressure","fuel pressure low","rail pressure",
+"low rail pressure","rail pressure too low","insufficient rail pressure",
+"Kraftstoffdruck","Kraftstoffdruck zu niedrig","niedriger Kraftstoffdruck",
+"Raildruck","Raildruck zu niedrig","Kraftstoffdruck niedrig",
+"pression carburant","pression de carburant insuffisante",
+"pression carburant trop basse","pression de carburant trop faible",
+"pression rail","pression rail insuffisante","presion de combustible",
+"presión de combustible baja","presión de combustible insuficiente",
+"presion rail baja","pressione carburante","pressione carburante bassa",
+"pressione carburante insufficiente","pressione rail","pressione rail bassa",
+"brandstofdruk","brandstofdruk te laag","onvoldoende brandstofdruk",
+"raildruk te laag","presiune combustibil","presiune combustibil insuficienta",
+"presiune combustibil insuficientă","presiune combustibil scăzută",
+"presiune motorina prea mica","presiune motorină prea mică",
+"presiune rampa","presiune rampa prea mica"
+],
+
+crankshaft:[
+"crankshaft sensor","crank sensor","crank position sensor",
+"crankshaft position sensor","engine speed sensor","Kurbelwellensensor",
+"Kurbelwellenpositionssensor","capteur vilebrequin",
+"capteur de position vilebrequin","sensor de cigüeñal",
+"sensor posición cigüeñal","sensor de posicion del cigueñal",
+"sensore albero motore","sensore posizione albero motore",
+"sensore giri motore","krukassensor","krukassensor positie",
+"senzor arbore cotit","senzor poziție arbore cotit",
+"senzor pozitie arbore cotit","senzor arbore cotit"
+],
+
+camshaft:[
+"camshaft sensor","cam sensor","cam position sensor",
+"camshaft position sensor","Nockenwellensensor",
+"Nockenwellenpositionssensor","capteur arbre à cames",
+"capteur de position arbre à cames","sensor de árbol de levas",
+"sensor posicion arbol de levas","sensore albero a camme",
+"sensore posizione albero a camme","nokkenassensor",
+"nokkenaspositiesensor","senzor arbore cu came",
+"senzor poziție arbore cu came"
+],
+
+synchronization:[
+"crank cam synchronization","cam crank correlation","engine synchronization",
+"timing correlation","synchronisation vilebrequin arbre a cames",
+"synchronisation arbre a cames","correlation vilebrequin arbre a cames",
+"sincronizacion cigüeñal arbol de levas",
+"sincronización árbol de levas",
+"sincronizzazione albero motore albero a camme",
+"krukas nokkenas synchronisatie",
+"Kurbelwelle Nockenwelle Synchronisation",
+"kurbelwelle nockenwelle korrelation",
+"sincronizare arbore cotit","sincronizare arbore cu came"
+],
+
+turbo:[
+"turbo","turbocharger","turbo charger","boost pressure","boost control",
+"underboost","overboost","low boost","high boost","boost too low",
+"boost too high","turbolader","ladedruck","ladedruck zu niedrig",
+"ladedruck zu hoch","suralimentation","pression de suralimentation",
+"suralimentation insuffisante","presion de sobrealimentacion",
+"presión de sobrealimentación","presion turbo baja",
+"pressione sovralimentazione","pressione turbo bassa",
+"turbocharger druk","turbodruk te laag","turbodruk te hoog",
+"presiune turbo","presiune supraalimentare",
+"presiune boost scazuta","presiune boost prea mica"
+],
+
+egr:[
+"egr","egr valve","exhaust gas recirculation","egr stuck","egr blocked",
+"vanne egr","valve egr","recirculation des gaz",
+"recirculación de gases","valvola egr","ricircolo gas di scarico",
+"egr klep","abgasrückführung","abgasrueckfuehrung","agr ventil",
+"supapa egr","valva egr"
+],
+
+dpf:[
+"dpf","diesel particulate filter","particulate filter","soot filter",
+"dpf blocked","dpf clogged","dpf regeneration","regeneration failed",
+"forced regeneration","particules filter","filtre a particules",
+"filtro de particulas","filtro antiparticolato","roetfilter",
+"dieselpartikelfilter","partikelfilter","russpartikelfilter",
+"filtru de particule","filtru particule","regenerare dpf",
+"regenerare filtru particule","filtre particule colmatat"
+],
+
+scr:[
+"scr","adblue","def","urea","reductant",
+"selective catalytic reduction","adblue fault","adblue warning",
+"urea injection","système scr","systeme scr","sistema scr",
+"sistema adblue","scr systeem","adblue systeem","scr system",
+"adblue system","sistem scr","sistem adblue"
+],
+
+maf:[
+"maf","mass air flow","mass airflow","air flow meter","débitmètre",
+"debitmetre","caudalimetro","sensor maf","misuratore massa aria",
+"misuratore di massa aria","luchtmassameter","luftmassenmesser",
+"debitmetru aer","senzor maf"
+],
+
+map:[
+"map sensor","manifold absolute pressure","intake manifold pressure sensor",
+"capteur map","pression collecteur","sensor map","presion colector",
+"sensore map","pressione collettore","inlaaddruksensor",
+"saugrohrdrucksensor","senzor map","senzor presiune galerie"
+],
+
+injector:[
+"injector","injectors","fuel injector","diesel injector","injecteur",
+"injecteur diesel","inyector","inyectores","inyector diesel",
+"iniettore","iniettori","iniettore diesel","brandstofinjector",
+"einspritzdüse","dieselinjektor","injector motorina","injectoare",
+"injector diesel"
+],
+
+coolant:[
+"coolant","coolant temperature","coolant temp","engine coolant temperature",
+"coolant leak","coolant level","temperature coolant",
+"liquide de refroidissement","température liquide de refroidissement",
+"fuga refrigerante","nivel refrigerante","refrigerante",
+"liquido di raffreddamento","temperatura liquido refrigerante",
+"perdita refrigerante","koelvloeistof","koelvloeistoftemperatuur",
+"kühlmitteltemperatur","kühlmittelverlust","antigel",
+"temperatura antigel","lichid de racire"
+],
+
+overheating:[
+"overheating","engine overheating","runs hot","temperature too high",
+"high coolant temperature","surchauffe","moteur chauffe",
+"moteur en surchauffe","sobrecalentamiento","motor se calienta",
+"surriscaldamento","motore surriscaldato","oververhitting",
+"motor wordt te heet","überhitzung","motor wird zu heiß",
+"se incinge","se incinge motorul","supraincalzire","supraîncălzire"
+],
+
+oil_pressure:[
+"oil pressure","low oil pressure","oil pressure low","oil warning",
+"engine oil pressure","pression d'huile","pression huile trop basse",
+"presión de aceite","presión de aceite baja","pressione olio",
+"pressione olio bassa","oliedruk","oliedruk te laag","öldruck",
+"öldruck zu niedrig","presiune ulei","presiune ulei scazuta",
+"presiune ulei scăzută"
+],
+
+battery:[
+"battery","weak battery","dead battery","battery low","battery voltage",
+"low voltage","battery warning","batterie faible",
+"batterie déchargée","bateria baja","bateria descargada",
+"batteria scarica","batteria debole","zwakke accu","lege accu",
+"accuspanning","schwache batterie","batteriespannung",
+"baterie slaba","baterie descărcată","tensiune baterie"
+],
+
+alternator:[
+"alternator","alternator fault","alternator not charging",
+"charging system","charging fault","alternateur","défaut de charge",
+"alternador","sistema de carga","alternatore","sistema di ricarica",
+"dynamo","laadsysteem","lichtmaschine","laderegler","alternator",
+"incarcare alternator","nu incarca alternatorul"
+],
+
+starter:[
+"starter","starter motor","starting motor","starter solenoid",
+"démarreur","motor de arranque","motorino di avviamento",
+"startmotor","anlasser","demaror","motor de pornire"
+],
+
+immobilizer:[
+"immobilizer","immobiliser","immobilizer active","key not recognized",
+"key not detected","transponder","antidémarrage",
+"clé non reconnue","inmovilizador","llave no reconocida",
+"immobilizer","chiave non riconosciuta","immobilisatie",
+"sleutel niet herkend","wegfahrsperre","schlüssel nicht erkannt",
+"imobilizator","cheia nu este recunoscuta"
+],
+
+pats:[
+"pats","passive anti theft","passive anti-theft","theft system",
+"anti theft system","antivol","anti démarrage pats",
+"sistema antirrobo","sistema antifurto","diefstalsysteem",
+"diebstahlschutz","sistem antifurt","pats activ","pats active"
+],
+
+can_bus:[
+"can bus","can communication","can communication fault","can network",
+"communication between modules","no communication","module communication",
+"bus can","communication can","réseau can",
+"communication entre calculateurs","red can","comunicacion can",
+"comunicación can","rete can","comunicazione can","can netwerk",
+"can communicatie","can netzwerk","can kommunikation","retea can",
+"comunicare can","comunicatie module"
+],
+
+lin_bus:[
+"lin bus","lin communication","lin network","lin communication fault",
+"bus lin","réseau lin","communication lin","red lin","comunicacion lin",
+"rete lin","comunicazione lin","lin netwerk","lin communicatie",
+"lin netzwerk","lin kommunikation","retea lin","comunicare lin"
+],
+
+abs:[
+"abs","anti lock brakes","antilock brake","wheel speed sensor","esp",
+"esc","traction control","stability control","abs fault","abs warning",
+"capteur abs","capteur vitesse roue","controle de traction",
+"control de estabilidad","sensor abs","sensor de rueda",
+"controllo trazione","sensore abs","sensore velocita ruota",
+"abs sensor","wielsnelheidssensor","raddrehzahlsensor","esp fehler",
+"senzor viteza roata","control tractiune","control stabilitate"
+],
+
+airbag:[
+"airbag","srs","airbag warning","airbag light","occupant sensor",
+"seat occupancy","prétensionneur","srs airbag","airbag system",
+"airbag systeem","airbagsystem","sistem airbag","martor airbag",
+"airbag aprins"
+],
+
+transmission:[
+"transmission","gearbox","automatic gearbox","manual gearbox",
+"shift problem","gear not engaging","gear slipping","mechatronic",
+"dsg","s tronic","tiptronic","boîte de vitesses","boite de vitesses",
+"probleme de boite","caja de cambios","problema de cambio",
+"cambio automatico","cambio marcia","versnellingsbak",
+"schakelprobleem","getriebe","schaltproblem","cutie viteze",
+"problema cutie","nu schimba vitezele"
+],
+
+ac:[
+"ac","a/c","air conditioning","aircon","climate control","compressor",
+"ac compressor","air conditioning not cold","not cold","no cold air",
+"climatisation","climatisation ne refroidit pas","aire acondicionado",
+"no enfria","aria condizionata","non raffredda","airco",
+"airconditioning","airco wordt niet koud","klimaanlage",
+"klimaanlage kühlt nicht","aer conditionat",
+"aerul conditionat nu raceste"
+],
+
+hvac:[
+"hvac","heater","heating","blower","blower motor","cabin fan",
+"climate control","chauffage","ventilateur habitacle",
+"calefacción","ventilador habitáculo","riscaldamento",
+"ventola abitacolo","verwarming","aanjager","heizung","gebläse",
+"ventilator habitaclu","incalzire habitaclu"
+],
+
+central_locking:[
+"central locking","central lock","door locks","locking problem",
+"car won't lock","car won't unlock","remote locking",
+"verrouillage centralisé","serrure centralisée","cierre centralizado",
+"chiusura centralizzata","chiusura porte","centrale vergrendeling",
+"zentralverriegelung","türverriegelung","inchidere centralizata",
+"inchidere centralizata nu functioneaza"
+],
+
+window:[
+"power window","electric window","window regulator","window motor",
+"window won't open","window won't close","anti pinch","anti-pinch",
+"vitre électrique","lève-vitre","elevalunas","elevalunas electrico",
+"alzacristalli","alzavetro","elektrisch raam","raammechanisme",
+"fensterheber","geam electric","geamul nu se deschide",
+"geamul nu se inchide"
+],
+
+wiper:[
+"wiper","windshield wiper","windscreen wiper","wiper motor",
+"wiper park","washer","windshield washer","essuie glace",
+"essuie-glace","lave glace","limpiaparabrisas","lavaparabrisas",
+"tergicristalli","lavavetri","ruitenwisser","ruitenwissers",
+"wissermotor","scheibenwischer","scheibenwaschanlage",
+"stergatoare","sterge","pompa spalare parbriz"
+],
+
+lighting:[
+"headlight","headlamp","headlamp fault","led headlight","xenon",
+"adaptive headlight","high beam","low beam","turn signal","indicator",
+"brake light","tail light","interior light","phare","feu avant",
+"clignotant","feu stop","faro","intermitente","luz de freno",
+"indicatore di direzione","luce stop","koplamp","richtingaanwijzer",
+"remlicht","scheinwerfer","blinker","bremslicht","far","faruri",
+"semnalizare","stop","lumina interioara"
+],
+
+parking_sensor:[
+"parking sensor","park assist","parking aid","parking sensors","pdc",
+"capteur de stationnement","aide au stationnement",
+"sensor de aparcamiento","asistente de estacionamiento",
+"sensore parcheggio","parcheggio assistito","parkeersensor",
+"park assist","parksensor","einparkhilfe","senzor parcare",
+"senzori parcare"
+],
+
+camera:[
+"rear camera","reverse camera","backup camera","front camera",
+"camera image","camera not working","camera black screen",
+"camera unavailable","caméra de recul","camera de recul",
+"caméra avant","caméra ne fonctionne pas","cámara trasera",
+"cámara de marcha atrás","cámara frontal","cámara no funciona",
+"telecamera posteriore","telecamera retromarcia","telecamera anteriore",
+"achteruitrijcamera","achtercamera","achteruitrijcamera werkt niet",
+"rückfahrkamera","frontkamera","rückfahrkamera funktioniert nicht",
+"camera marsarier","camera fata","camera nu functioneaza"
+],
+
+radar:[
+"radar","front radar","adaptive cruise radar","acc radar","radar sensor",
+"radar blocked","radar unavailable","capteur radar","radar avant",
+"radar bloqué","radar delantero","radar bloqueado","radar anteriore",
+"radar bloccato","radarsensor","radar geblokkeerd","frontradar",
+"radar blockiert","radar fata","radar frontal","radar blocat"
+],
+
+lane_assist:[
+"lane assist","lane keep assist","lane departure warning",
+"lane departure","lane keeping","steering assist","assistant de voie",
+"maintien dans la voie","alerte de franchissement","asistente de carril",
+"mantenimiento de carril","aviso de salida de carril",
+"assistente di corsia","mantenimento corsia","rijstrookassistent",
+"rijstrook verlaten","spurhalteassistent","spurverlassenswarnung",
+"asistenta banda","mentinere banda"
+],
+
+cruise:[
+"cruise control","adaptive cruise control","acc","speed limiter",
+"régulateur de vitesse","régulateur adaptatif","control de crucero",
+"control crucero adaptativo","controllo velocità",
+"cruise control adattivo","adaptieve cruisecontrol","tempomat",
+"adaptiver tempomat","pilot automat","pilot automat adaptiv"
+],
+
+bluetooth:[
+"bluetooth","bluetooth connection","bluetooth pairing",
+"bluetooth won't connect","bluetooth does not connect",
+"bluetooth not connecting","bluetooth disconnected",
+"bluetooth disconnects","bluetooth verbindung",
+"bluetooth verbindet sich nicht","bluetooth kopplung",
+"connexion bluetooth","bluetooth ne se connecte pas",
+"bluetooth ne se connecte plus","bluetooth appairage",
+"conexión bluetooth","bluetooth no conecta","emparejamiento bluetooth",
+"connessione bluetooth","bluetooth non si connette",
+"associazione bluetooth","bluetooth verbinding",
+"bluetooth maakt geen verbinding","bluetooth koppelen",
+"bluetooth funktioniert nicht","bluetooth verbindet nicht",
+"conectare bluetooth","bluetooth nu se conecteaza",
+"bluetooth nu se mai conecteaza"
+],
+
+phone_connection:[
+"phone connection","telephone connection","mobile phone connection",
+"phone not connected","phone won't connect",
+"telephone ne se connecte pas","téléphone ne se connecte pas",
+"telefono no conecta","teléfono no se conecta",
+"telefono non si collega","telefoon maakt geen verbinding",
+"telefon verbindet sich nicht","telefonul nu se conecteaza",
+"telefon nu se conecteaza"
+],
+
+carplay:[
+"apple carplay","carplay","carplay not working",
+"carplay won't connect","carplay connection",
+"carplay ne fonctionne pas","carplay ne se connecte pas",
+"carplay no funciona","carplay no conecta","carplay non funziona",
+"carplay non si collega","carplay werkt niet",
+"carplay maakt geen verbinding","carplay funktioniert nicht",
+"carplay verbindet nicht","carplay nu functioneaza",
+"carplay nu se conecteaza"
+],
+
+android_auto:[
+"android auto","android auto not working","android auto won't connect",
+"android auto connection","android auto ne fonctionne pas",
+"android auto ne se connecte pas","android auto no funciona",
+"android auto no conecta","android auto non funziona",
+"android auto non si collega","android auto werkt niet",
+"android auto maakt geen verbinding","android auto funktioniert nicht",
+"android auto verbindet nicht","android auto nu functioneaza",
+"android auto nu se conecteaza"
+],
+
+usb:[
+"usb","usb connection","usb port","usb not working",
+"usb device not recognized","usb nicht erkannt",
+"usb funktioniert nicht","usb non funziona","usb no funciona",
+"usb ne fonctionne pas","usb niet herkend","usb poort",
+"usb nu functioneaza","usb nu este recunoscut"
+],
+
+no_audio:[
+"no audio","no sound","no sound from speakers","no sound from radio",
+"audio not working","sound not working","mute stuck","no audio output",
+"pas de son","aucun son","son ne fonctionne pas","sin audio",
+"sin sonido","audio no funciona","nessun audio","nessun suono",
+"audio non funziona","geen geluid","geluid werkt niet",
+"kein ton","kein sound","nu are sunet","nu se aude",
+"fara sunet","fără sunet"
+],
+
+amplifier:[
+"amplifier","audio amplifier","sound amplifier","amplificateur",
+"amplificador","amplificatore","versterker","verstärker",
+"amplificator audio"
+],
+
+microphone:[
+"microphone","mic","hands free microphone","voice microphone",
+"microphone fault","micro ne fonctionne pas",
+"microphone ne fonctionne pas","micrófono","micrófono no funciona",
+"microfono","microfono non funziona","microfoon",
+"microfoon werkt niet","mikrofon","mikrofon funktioniert nicht",
+"microfon","microfon nu functioneaza"
+],
+
+voice_control:[
+"voice control","voice command","voice recognition",
+"speech recognition","commande vocale","reconnaissance vocale",
+"control por voz","reconocimiento de voz","controllo vocale",
+"riconoscimento vocale","spraakbediening","spraakherkenning",
+"sprachsteuerung","spracherkennung","comanda vocala",
+"recunoastere vocala"
+],
+
+navigation:[
+"navigation","sat nav","satellite navigation","navigation system",
+"navigation not working","gps navigation",
+"navigation ne fonctionne pas","système de navigation",
+"navegación","navegador","navegacion no funciona",
+"navigazione","navigazione non funziona","navigatie",
+"navigatie werkt niet","navigatieprobleem","navigatie gps",
+"navigatie systeem","navigatie fout","navigație","sistem navigatie"
+],
+
+gps:[
+"gps","gps signal","gps position","gps position wrong",
+"gps location wrong","gps antenna","gps unavailable",
+"signal gps","position gps","antenne gps","señal gps",
+"posición gps","antena gps","segnale gps","posizione gps",
+"antenna gps","gps signaal","gps positie","gps antenne",
+"gps signal","gps position","semnal gps","pozitie gps",
+"antena gps"
+],
+
+display:[
+"display","screen","touchscreen","touch screen",
+"infotainment screen","black screen","screen frozen",
+"display frozen","screen goes black","écran","écran noir",
+"écran tactile","pantalla","pantalla negra","pantalla táctil",
+"schermo","schermo nero","scherm","scherm zwart","bildschirm",
+"schwarzer bildschirm","ecran negru","display negru",
+"ecran tactil","touchscreen nu functioneaza"
+],
+
+infotainment_reboot:[
+"infotainment reboot","infotainment restarts",
+"infotainment restarts itself","radio reboots","radio restarts",
+"screen reboots","system reboots","redémarre tout seul",
+"redémarrage infotainment","se reinicia solo",
+"reinicio del sistema","si riavvia","riavvio infotainment",
+"herstart vanzelf","infotainment herstart","startet neu",
+"infotainment startet neu","se restarteaza",
+"se restarteaza singur","reboot infotainment"
+],
+
+steering_controls:[
+"steering wheel controls","multifunction steering wheel",
+"steering wheel buttons","volant multifonction",
+"commandes au volant","controles del volante","mandos del volante",
+"comandi al volante","stuurwielbediening",
+"multifunctioneel stuurwiel","lenkradtasten",
+"multifunktionslenkrad","comenzi volan","butoane volan"
+],
+
+seat:[
+"seat adjustment","electric seat","seat motor","seat memory",
+"seat heating","seat ventilation","siège électrique",
+"réglage siège","chauffage siège","asiento eléctrico",
+"ajuste asiento","asiento calefactado","sedile elettrico",
+"regolazione sedile","sedile riscaldato","elektrische stoel",
+"stoelverstelling","sitzverstellung","sitzmemory","scaun electric",
+"reglaj scaun","incalzire scaun"
+],
+
+sunroof:[
+"sunroof","panoramic roof","roof motor","sunroof won't open",
+"sunroof won't close","toit ouvrant","toit panoramique",
+"techo solar","techo panorámico","tetto apribile",
+"tetto panoramico","schuifdak","panoramadak","schiebedach",
+"panoramadach","trapa","trapa panoramica",
+"trapa nu se deschide","trapa nu se inchide"
+]
+
+};
+
+/* ============================================================
+   CANONICAL ALIASES
+============================================================ */
+
+const canonicalAlias={
+
+fuel_pressure_low:"fuel_pressure",
+rail_pressure:"fuel_pressure",
+rail_pressure_low:"fuel_pressure",
+boost:"turbo",
+boost_low:"turbo",
+boost_high:"turbo",
+dpf_blocked:"dpf",
+dpf_regeneration:"dpf",
+esp:"abs",
+esc:"abs",
+androidauto:"android_auto",
+carplay_connection:"carplay",
+phone:"phone_connection"
+
+};
+
+/* ============================================================
+   SEMANTIC DICTIONARY HELPERS
+============================================================ */
+
+function mergeUniqueArray(target,values){
+
+if(!Array.isArray(target))target=[];
+if(!Array.isArray(values))values=[values];
+
+for(const value of values){
+
+if(value==null)continue;
+
+if(typeof value==="string"&&!target.includes(value)){
+target.push(value)
+}
+
+}
+
+return target
+
+}
+
+function flattenSemanticAliases(value){
+
+const out=[];
+
+function walk(v){
+
+if(v==null)return;
+
+if(typeof v==="string"){
+
+out.push(v);
+return
+
+}
+
+if(Array.isArray(v)){
+
+for(const x of v)walk(x);
+return
+
+}
+
+if(typeof v==="object"){
+
+for(const x of Object.values(v))walk(x)
+
+}
+
+}
+
+walk(value);
+
+return[
+...new Set(
+out.filter(Boolean)
+)
+]
+
+}
+
+/* ============================================================
+   CANONICALIZATION
+============================================================ */
+
+function canonical(id){
+
+let current=String(id??"").trim();
+
+if(!current)return"";
+
+const visited=new Set();
+
+while(current&&!visited.has(current)){
+
+visited.add(current);
+
+const next=
+externalCanonicalAlias[current]||
+canonicalAlias[current]||
+current;
+
+if(next===current)break;
+
+current=next
+
+}
+
+return current
+
+}
+
+/* ============================================================
+   BUILD EXTERNAL SEMANTIC INDEX
+============================================================ */
+
+function buildSemanticIndex(data){
+
+semanticDictionary=data;
+
+semanticConcepts={};
+semanticRelationships=[];
+semanticPriority={};
+externalCanonicalAlias={};
+
+/*
+   First load external canonical aliases.
+*/
+
+if(
+data?.canonical_alias&&
+typeof data.canonical_alias==="object"
+){
+
+for(
+const [key,value]
+of Object.entries(data.canonical_alias)
+){
+
+if(Array.isArray(value)){
+
+for(const alias of value){
+
+const n=normalizeText(alias);
+
+if(n){
+externalCanonicalAlias[n.replace(/ /g,"_")]=key
+}
+
+}
+
+}else if(typeof value==="string"){
+
+const n=normalizeText(key);
+
+if(n){
+externalCanonicalAlias[n.replace(/ /g,"_")]=value
+}
+
+}
+
+}
+
+}
+
+/*
+   Load concepts.
+   IMPORTANT:
+   aliases can be either:
+   - an array
+   - an object keyed by language
+*/
+
+if(
+data?.concepts&&
+typeof data.concepts==="object"
+){
+
+for(
+const [id,concept]
+of Object.entries(data.concepts)
+){
+
+const canonicalId=
+externalCanonicalAlias[id]||
+id;
+
+const aliases=
+flattenSemanticAliases(
+concept?.aliases||
+concept?.terms||
+concept?.phrases||
+concept?.keywords||
+concept?.translations||
+[]
+);
+
+semanticConcepts[canonicalId]={
+id:canonicalId,
+aliases,
+system:concept?.system||null,
+category:concept?.category||null,
+priority:Number(concept?.priority)||0
+};
+
+if(!symptomAliases[canonicalId]){
+symptomAliases[canonicalId]=[]
+}
+
+symptomAliases[canonicalId]=
+mergeUniqueArray(
+symptomAliases[canonicalId],
+aliases
+)
+
+}
+
+}
+
+/*
+   Load external relationships.
+*/
+
+const relationshipSource=
+data?.relationships;
+
+if(Array.isArray(relationshipSource)){
+
+for(const relation of relationshipSource){
+
+if(!relation||typeof relation!=="object")continue;
+
+let required=
+Array.isArray(relation.required)
+?relation.required
+:Array.isArray(relation.concepts)
+?relation.concepts
+:[];
+
+required=
+required
+.map(x=>canonical(x))
+.filter(Boolean);
+
+if(required.length>=2){
+
+semanticRelationships.push({
+required,
+bonus:Number(relation.bonus)||0
+})
+
+}
+
+}
+
+}else if(
+relationshipSource&&
+typeof relationshipSource==="object"
+){
+
+for(
+const [source,value]
+of Object.entries(relationshipSource)
+){
+
+const sourceCanonical=
+canonical(source);
+
+const targets=
+Array.isArray(value)
+?value
+:value?.concepts||
+value?.related||
+[];
+
+for(const target of targets){
+
+const targetCanonical=
+canonical(target);
+
+if(
+sourceCanonical&&
+targetCanonical&&
+sourceCanonical!==targetCanonical
+){
+
+semanticRelationships.push({
+required:[
+sourceCanonical,
+targetCanonical
+],
+bonus:Number(value?.bonus)||0
+})
+
+}
+
+}
+
+}
+
+}
+
+/*
+   External priorities.
+*/
+
+if(
+data?.priority&&
+typeof data.priority==="object"
+){
+
+for(
+const [id,value]
+of Object.entries(data.priority)
+){
+
+semanticPriority[
+canonical(id)
+]=Number(value)||0
+
+}
+
+}
+
+/*
+   Remove invalid relationship targets.
+*/
+
+semanticRelationships=
+semanticRelationships.filter(rel=>
+Array.isArray(rel.required)&&
+rel.required.every(id=>
+Boolean(id)&&
+(
+semanticConcepts[id]||
+symptomAliases[id]||
+Object.prototype.hasOwnProperty.call(
+canonicalAlias,
+id
+)||
+Object.prototype.hasOwnProperty.call(
+externalCanonicalAlias,
+id
+)
+)
+)
+);
+
+/*
+   Merge external aliases into canonicalAlias.
+
+   IMPORTANT:
+   external aliases are stored normalized with underscores.
+*/
+
+for(
+const [source,target]
+of Object.entries(externalCanonicalAlias)
+){
+
+canonicalAlias[source]=target
+
+}
+
+console.log(
+"AutoDecode semantic dictionary loaded:",
+Object.keys(semanticConcepts).length,
+"concepts"
+)
+
+}
+
+/* ============================================================
+   LOAD SEMANTIC DICTIONARY
+============================================================ */
+
+async function loadSemanticDictionary(){
+
+if(semanticDictionaryReady)
+return true;
+
+if(semanticDictionaryPromise)
+return semanticDictionaryPromise;
+
+semanticDictionaryLoading=true;
+semanticDictionaryError=null;
+
+semanticDictionaryPromise=(async()=>{
+
+try{
+
+const dictionaryUrl=
+new URL(
+"data/technical/semantic/technical_terms.yaml",
+document.baseURI
+).href;
+
+const response=
+await fetch(
+dictionaryUrl,
+{
+cache:"no-cache",
+headers:{
+"Accept":
+"text/yaml,text/plain,application/x-yaml,*/*"
+}
+}
+);
+
+if(!response.ok){
+
+throw new Error(
+`Semantic dictionary HTTP ${response.status} ${response.statusText}`
+)
+
+}
+
+const text=
+await response.text();
+
+if(!text.trim()){
+
+throw new Error(
+"Semantic dictionary file is empty."
+)
+
+}
+
+let data;
+
+try{
+
+data=
+jsyaml.load(text)
+
+}catch(yamlError){
+
+throw new Error(
+`YAML parse error: ${yamlError.message}`
+)
+
+}
+
+if(!data||typeof data!=="object"){
+
+throw new Error(
+"Semantic dictionary contains no valid YAML object."
+)
+
+}
+
+if(
+!data.concepts||
+typeof data.concepts!=="object"
+){
+
+throw new Error(
+"Semantic dictionary has no valid 'concepts' section."
+)
+
+}
+
+buildSemanticIndex(data);
+
+if(!Object.keys(semanticConcepts).length){
+
+throw new Error(
+"Semantic dictionary contains zero concepts."
+)
+
+}
+
+semanticDictionaryReady=true;
+semanticDictionaryLoading=false;
+semanticDictionaryError=null;
+
+return true
+
+}catch(error){
+
+semanticDictionaryReady=false;
+semanticDictionaryLoading=false;
+semanticDictionaryError=error;
+
+console.error(
+"AutoDecode semantic dictionary error:",
+error
+);
+
+return false
+
+}
+
+})();
+
+return semanticDictionaryPromise
+
+}
+
+/* ============================================================
+   USER SYMPTOM DETECTION
+============================================================ */
+
+/*
+   Generic phrases such as "not working" are NOT allowed
+   to create a semantic concept by themselves.
+
+   A specific component phrase must be present.
+*/
+
+const genericSymptomPhrases=new Set([
+
+"not working",
+"does not work",
+"doesn't work",
+"doesnt work",
+"won't work",
+"wont work",
+"will not work",
+"not function",
+"not functioning",
+"not available",
+
+"ne fonctionne pas",
+"ne marche pas",
+"ne fonctionne plus",
+"ne marche plus",
+
+"no funciona",
+"no funciona correctamente",
+
+"non funziona",
+"non funziona più",
+
+"werkt niet",
+"werkt niet meer",
+
+"funktioniert nicht",
+"funktioniert nicht mehr",
+
+"nu functioneaza",
+"nu funcționează",
+"nu mai functioneaza",
+"nu mai funcționează",
+
+"nu merge",
+"nu mai merge"
+
+]);
+
+function isGenericAlias(alias){
+
+const n=
+normalizeText(alias);
+
+return genericSymptomPhrases.has(n)
+
+}
+
+function detectUserSymptoms(problem){
+
+const text=
+normalizeText(problem);
+
+const found=
+new Set();
+
+const evidence=
+new Map();
+
+for(
+const [id,aliases]
+of Object.entries(symptomAliases)
+){
+
+if(!Array.isArray(aliases))continue;
+
+for(const alias of aliases){
+
+if(isGenericAlias(alias))
+continue;
+
+if(matchesAlias(text,alias)){
+
+const c=
+canonical(id);
+
+if(!c)continue;
+
+found.add(c);
+
+const previous=
+evidence.get(c)||0;
+
+const normalizedAlias=
+normalizeText(alias);
+
+let strength=1;
+
+if(
+normalizedAlias.length>=25
+)strength+=4;
+else if(
+normalizedAlias.length>=15
+)strength+=3;
+else if(
+normalizedAlias.length>=8
+)strength+=2;
+
+if(
+phraseMatches(text,alias)
+)strength+=5;
+
+evidence.set(
+c,
+previous+strength
+);
+
+}
+
+}
+
+}
+
+/*
+   Contextual inference for starting problems.
+*/
+
+if(found.has("crank_no_start")){
+found.add("no_start")
+}
+
+if(
+found.has("engine_stall")&&
+found.has("crank_no_start")
+){
+
+found.add("no_start")
+
+}
+
+/*
+   Preserve the concepts with strongest evidence first.
+*/
+
+return[
+...found
+].sort(
+(a,b)=>
+(evidence.get(b)||0)-
+(evidence.get(a)||0)
+)
+
+}
+
+/* ============================================================
+   NORMALIZE SYMPTOM IDS
+============================================================ */
+
+function normalizeSymptomId(value){
+
+const n=
+normalizeText(value)
+.replace(/ /g,"_");
+
+const aliases={
+
+low_power:"poor_power",
+power_loss:"poor_power",
+reduced_power:"poor_power",
+poor_power:"poor_power",
+
+low_rpm:"low_rpm_power_loss",
+low_rpm_power_loss:"low_rpm_power_loss",
+
+limp_mode:"limp_mode",
+notlauf:"limp_mode",
+
+engine_stall:"engine_stall",
+stall:"engine_stall",
+
+crank_no_start:"crank_no_start",
+no_start:"no_start",
+
+hard_start:"hard_start",
+rough_idle:"rough_idle",
+misfire:"misfire",
+
+fuel_pressure:"fuel_pressure",
+fuel_pressure_low:"fuel_pressure",
+rail_pressure:"fuel_pressure",
+rail_pressure_low:"fuel_pressure",
+
+crankshaft:"crankshaft",
+camshaft:"camshaft",
+synchronization:"synchronization",
+
+turbo:"turbo",
+boost:"turbo",
+
+egr:"egr",
+dpf:"dpf",
+scr:"scr",
+adblue:"scr",
+
+maf:"maf",
+map:"map",
+injector:"injector",
+
+coolant:"coolant",
+coolant_temperature:"coolant",
+overheating:"overheating",
+oil_pressure:"oil_pressure",
+
+battery:"battery",
+alternator:"alternator",
+starter:"starter",
+
+immobilizer:"immobilizer",
+immobiliser:"immobilizer",
+pats:"pats",
+
+can_bus:"can_bus",
+can:"can_bus",
+lin_bus:"lin_bus",
+lin:"lin_bus",
+
+abs:"abs",
+esp:"abs",
+esc:"abs",
+
+airbag:"airbag",
+srs:"airbag",
+
+transmission:"transmission",
+gearbox:"transmission",
+
+ac:"ac",
+hvac:"hvac",
+
+central_locking:"central_locking",
+window:"window",
+wiper:"wiper",
+lighting:"lighting",
+
+parking_sensor:"parking_sensor",
+parking_sensors:"parking_sensor",
+
+camera:"camera",
+radar:"radar",
+lane_assist:"lane_assist",
+cruise:"cruise",
+cruise_control:"cruise",
+
+bluetooth:"bluetooth",
+phone_connection:"phone_connection",
+phone:"phone_connection",
+
+carplay:"carplay",
+
+android_auto:"android_auto",
+androidauto:"android_auto",
+
+usb:"usb",
+
+no_audio:"no_audio",
+audio:"no_audio",
+
+amplifier:"amplifier",
+microphone:"microphone",
+voice_control:"voice_control",
+
+navigation:"navigation",
+gps:"gps",
+
+display:"display",
+screen:"display",
+
+infotainment_reboot:"infotainment_reboot",
+
+steering_controls:"steering_controls",
+seat:"seat",
+sunroof:"sunroof"
+
+};
+
+const resolved=
+aliases[n]||
+externalCanonicalAlias[n]||
+canonicalAlias[n]||
+n;
+
+return canonical(resolved)
+
+}
+
+/* ============================================================
+   SEMANTIC CACHE
+============================================================ */
+
+const itemSemanticCache=
+new WeakMap();
+
+const itemTextCache=
+new WeakMap();
+
+/* ============================================================
+   BUILT-IN CONCEPT EXPANSION
+============================================================ */
+
+const conceptExpansion={
+
+no_start:[
+"starter",
+"fuel_pressure",
+"crankshaft",
+"camshaft",
+"synchronization",
+"immobilizer",
+"pats",
+"battery"
+],
+
+crank_no_start:[
+"no_start",
+"starter",
+"fuel_pressure",
+"crankshaft",
+"camshaft",
+"synchronization",
+"immobilizer",
+"pats"
+],
+
+engine_stall:[
+"fuel_pressure",
+"crankshaft",
+"camshaft",
+"synchronization",
+"egr",
+"maf",
+"map",
+"injector",
+"battery",
+"alternator"
+],
+
+poor_power:[
+"turbo",
+"egr",
+"dpf",
+"maf",
+"map",
+"injector"
+],
+
+low_rpm_power_loss:[
+"turbo",
+"egr",
+"dpf",
+"maf",
+"map",
+"injector"
+],
+
+limp_mode:[
+"turbo",
+"egr",
+"dpf",
+"maf",
+"map",
+"fuel_pressure"
+],
+
+bluetooth:[
+"phone_connection"
+],
+
+carplay:[
+"phone_connection"
+],
+
+android_auto:[
+"phone_connection"
+],
+
+navigation:[
+"gps"
+],
+
+gps:[
+"navigation"
+],
+
+display:[
+"infotainment_reboot"
+],
+
+infotainment_reboot:[
+"display"
+],
+
+radar:[
+"cruise",
+"lane_assist"
+],
+
+lane_assist:[
+"camera",
+"radar"
+],
+
+cruise:[
+"radar"
+]
+
+};
+
+/* ============================================================
+   ITEM TEXT
+============================================================ */
+
+function getItemText(item){
+
+if(itemTextCache.has(item))
+return itemTextCache.get(item);
+
+const parts=[];
+
+for(
+const key of [
+"id",
+"system",
+"category",
+"title",
+"description",
+"symptoms",
+"keywords",
+"possible_causes",
+"diagnostic_steps",
+"related_dtcs"
+]
+){
+
+const v=item?.[key];
+
+if(v==null)continue;
+
+if(typeof v==="object"){
+
+parts.push(
+JSON.stringify(v)
+)
+
+}else{
+
+parts.push(
+String(v)
+)
+
+}
+
+}
+
+const text=
+parts.join(" ");
+
+itemTextCache.set(
+item,
+text
+);
+
+return text
+
+}
+
+/* ============================================================
+   CONCEPT EXPANSION
+============================================================ */
+
+function getRelevantConcepts(userSymptoms){
+
+const set=
+new Set(
+userSymptoms.map(canonical)
+);
+
+/*
+   Only expand from the primary user concepts.
+   This is important: generic secondary concepts must
+   not become equally strong as the actual symptom.
+*/
+
+for(const s of userSymptoms){
+
+for(
+const x of conceptExpansion[s]||[]
+){
+
+const c=
+canonical(x);
+
+if(c)set.add(c)
+
+}
+
+}
+
+/*
+   External relationships are deliberately limited.
+   A relation only expands when all of its required
+   concepts are already present, avoiding broad
+   cross-system pollution.
+*/
+
+for(
+const relation of semanticRelationships
+){
+
+const required=
+relation.required||[];
+
+if(
+required.length>=2&&
+required.every(
+id=>set.has(canonical(id))
+)
+){
+
+for(const id of required){
+
+set.add(
+canonical(id)
+)
+
+}
+
+}
+
+}
+
+return[...set]
+
+}
+
+/* ============================================================
+   ITEM SEMANTIC EXTRACTION
+============================================================ */
+
+function getItemSymptoms(
+item,
+relevantConcepts=null
+){
+
+if(!item||typeof item!=="object")
+return[];
+
+if(
+!relevantConcepts&&
+itemSemanticCache.has(item)
+){
+
+return itemSemanticCache.get(item)
+
+}
+
+const out=
+new Set();
+
+/*
+   1. Explicit symptoms from database.
+*/
+
+const raw=
+item?.symptoms||[];
+
+for(
+const s of Array.isArray(raw)
+?raw
+:[raw]
+){
+
+const id=
+normalizeSymptomId(
+typeof s==="string"
+?s
+:s?.id
+);
+
+if(id)out.add(id)
+
+}
+
+/*
+   2. Explicit system concept.
+*/
+
+const system=
+normalizeSymptomId(
+item?.system||""
+);
+
+if(system)out.add(system);
+
+/*
+   3. Match only relevant concepts against the
+      complete technical record.
+
+   This is where exact multilingual aliases are used.
+*/
+
+if(
+relevantConcepts&&
+relevantConcepts.length
+){
+
+const text=
+getItemText(item);
+
+for(
+const id of relevantConcepts
+){
+
+const aliases=
+symptomAliases[id]||[];
+
+if(
+aliases.some(alias=>
+!isGenericAlias(alias)&&
+matchesAlias(text,alias)
+)
+){
+
+out.add(
+canonical(id)
+)
+
+}
+
+}
+
+}else if(!relevantConcepts){
+
+const text=
+getItemText(item);
+
+for(
+const [id,aliases]
+of Object.entries(symptomAliases)
+){
+
+if(
+Array.isArray(aliases)&&
+aliases.some(alias=>
+!isGenericAlias(alias)&&
+matchesAlias(text,alias)
+)
+){
+
+out.add(
+canonical(id)
+)
+
+}
+
+}
+
+const result=
+[...out];
+
+itemSemanticCache.set(
+item,
+result
+);
+
+return result
+
+}
+
+return[...out]
+
+}
+
+/* ============================================================
+   LOCALIZED VALUES
+============================================================ */
+
+function getLocalizedValue(v){
+
+if(!v)return"";
+
+if(typeof v==="string")
+return v;
+
+return v[currentLanguage]||
+v.en||
+v.ro||
+v.de||
+Object.values(v)[0]||
+""
+
+}
+
+/* ============================================================
+   VEHICLE / DATABASE
+============================================================ */
+
+async function loadManufacturers(){
+
+setStatus(
+t("database_loading")
+);
+
+try{
+
+const r=
+await fetch(
+"data/vehicles/manufacturers.yaml",
+{cache:"no-cache"}
+);
+
+if(!r.ok)
+throw Error(`HTTP ${r.status}`);
+
+const d=
+jsyaml.load(
+await r.text()
+);
+
+manufacturersData=
+Array.isArray(d?.manufacturers)
+?d.manufacturers
+:Array.isArray(d)
+?d
+:[];
+
+if(!manufacturersData.length)
+throw Error(
+"Invalid manufacturers structure"
+);
+
+resetSelect(
+manufacturerSelect,
+"select_make"
+);
+
+populateSelect(
+manufacturerSelect,
+manufacturersData
+);
+
+setStatus(
+t("database_ready"),
+"success"
+);
+
+}catch(e){
+
+console.error(e);
+
+setStatus(
+t("database_error"),
+"error"
+)
+
+}
+
+}
+
+async function loadManufacturerData(id){
+
+if(manufacturerDataCache[id])
+return manufacturerDataCache[id];
+
+const r=
+await fetch(
+`data/vehicles/${id}.yaml`,
+{cache:"no-cache"}
+);
+
+if(!r.ok)
+throw Error(
+`Vehicle database HTTP ${r.status}`
+);
+
+const d=
+jsyaml.load(
+await r.text()
+);
+
+manufacturerDataCache[id]=d;
+
+return d
+
+}
+
+async function loadTechnicalDatabase(id){
+
+setStatus(
+t("technical_loading")
+);
+
+technicalDatabase=[];
+
+try{
+
+const databaseUrl=
+new URL(
+`data/technical/diagnostics/${encodeURIComponent(id)}.yaml`,
+document.baseURI
+).href;
+
+console.log("[AutoDecode] Technical database URL:",databaseUrl);
+
+const r=
+await fetch(
+`${databaseUrl}${databaseUrl.includes("?")?"&":"?"}v=${Date.now()}`,
+{
+cache:"no-store",
+headers:{
+"Accept":"text/yaml,text/plain,application/x-yaml,*/*"
+}
+}
+);
+
+console.log(
+"[AutoDecode] Technical database HTTP:",
+r.status,
+r.statusText,
+r.url
+);
+
+if(!r.ok)
+throw Error(
+`Technical database HTTP ${r.status} ${r.statusText} — ${r.url}`
+);
+
+let raw=await r.text();
+
+console.log(
+"[AutoDecode] Technical database bytes:",
+raw.length
+);
+
+if(!raw.trim())
+throw Error("Technical database response is empty.");
+
+/* ============================================================
+   TOLERANT YAML SANITIZER
+   Repairs only safe indentation/formatting mistakes inside
+   technical_data records before js-yaml parses the file.
+============================================================ */
+
+function sanitizeTechnicalYaml(source){
+
+let lines=
+source
+.replace(/\r\n/g,"\n")
+.replace(/\r/g,"\n")
+.split("\n");
+
+let repairs=0;
+let inTechnicalData=false;
+
+for(let i=0;i<lines.length;i++){
+
+let line=lines[i];
+
+if(/^\s*technical_data\s*:/.test(line)){
+inTechnicalData=true;
+continue;
+}
+
+if(!inTechnicalData)continue;
+
+if(!line.trim()||/^\s*#/.test(line))continue;
+
+/*
+ A technical_data record must start at indentation level 2:
+
+   - id: example
+
+ If an accidental extra indentation exists, normalize it.
+*/
+
+if(/^\s+-\s+id\s*:/.test(line)){
+
+const trimmed=line.trim();
+const currentIndent=line.match(/^\s*/)[0].length;
+
+if(/^ -/.test(trimmed)){
+// Defensive branch; normal record syntax is handled below.
+}
+
+if(/^[-]\s+id\s*:/.test(trimmed)&&currentIndent!==2){
+
+lines[i]="  "+trimmed;
+repairs++;
+
+console.warn(
+`[AutoDecode] YAML repair: normalized technical_data record indentation at line ${i+1}`
+);
+
+}
+}
+
+}
+
+return lines.join("\n");
+}
+
+let d;
+let parseError=null;
+
+/* First attempt: parse the original YAML unchanged. */
+try{
+
+d=jsyaml.load(raw);
+
+console.log(
+"[AutoDecode] YAML parsed without repairs."
+);
+
+}catch(error){
+
+parseError=error;
+
+console.warn(
+"[AutoDecode] Initial YAML parse failed. Attempting automatic YAML repair..."
+);
+
+/* Second attempt: repair only safe technical_data indentation. */
+try{
+
+const repairedRaw=
+sanitizeTechnicalYaml(raw);
+
+d=jsyaml.load(repairedRaw);
+
+raw=repairedRaw;
+parseError=null;
+
+console.warn(
+"[AutoDecode] YAML successfully parsed after automatic repair."
+);
+
+}catch(repairError){
+
+parseError=repairError;
+
+console.error(
+"[AutoDecode] YAML automatic repair failed:",
+repairError
+);
+
+}
+}
+
+if(parseError){
+
+const mark=parseError?.mark;
+
+const line=Number.isInteger(mark?.line)
+?mark.line+1
+:null;
+
+const column=Number.isInteger(mark?.column)
+?mark.column+1
+:null;
+
+const location=line
+?` at line ${line}${column?`, column ${column}`:""}`
+:"";
+
+if(line){
+
+const sourceLines=raw.split("\n");
+const start=Math.max(0,line-4);
+const end=Math.min(sourceLines.length,line+3);
+
+console.group(
+`[AutoDecode] YAML error context around line ${line}`
+);
+
+for(let i=start;i<end;i++){
+console.error(
+`${String(i+1).padStart(5," ")} | ${sourceLines[i]}`
+);
+}
+
+console.groupEnd();
+
+}
+
+throw Error(
+`YAML parse error${location}: ${parseError.message||parseError}`
+);
+}
+
+technicalDatabase=
+Array.isArray(d?.technical_data)
+?d.technical_data
+:Array.isArray(d)
+?d
+:[];
+
+if(!technicalDatabase.length)
+throw Error(
+"Invalid technical database structure: 'technical_data' is missing or empty."
+);
+
+console.log(
+"[AutoDecode] Loaded technical records:",
+technicalDatabase.length
+);
+
+console.log(
+"[AutoDecode] Technical database root keys:",
+d&&typeof d==="object"&&!Array.isArray(d)
+?Object.keys(d)
+:"array"
+);
+
+setStatus(
+t("technical_ready"),
+"success"
+);
+
+return true;
+
+}catch(e){
+
+console.error(
+"[AutoDecode] Technical database load failed:",
+e
+);
+
+technicalDatabase=[];
+
+const detail=String(e?.message||e);
+
+setStatus(
+`${t("technical_error")} ${detail}`,
+"error"
+);
+
+return false;
+
+}
+
+}
+
+/* ============================================================
+   SELECTOR LOGIC
+============================================================ */
+
+function resetSelectsAfterMake(){
+
+resetSelect(
+modelSelect,
+"select_model"
+);
+
+resetSelect(
+generationSelect,
+"select_generation"
+);
+
+resetSelect(
+yearSelect,
+"select_year"
+);
+
+resetSelect(
+engineSelect,
+"select_engine"
+);
+
+modelSelect.disabled=
+generationSelect.disabled=
+yearSelect.disabled=
+engineSelect.disabled=true;
+
+selectedVehicleElement.hidden=true
+
+}
+
+function resetAfterModel(){
+
+resetSelect(
+generationSelect,
+"select_generation"
+);
+
+resetSelect(
+yearSelect,
+"select_year"
+);
+
+resetSelect(
+engineSelect,
+"select_engine"
+);
+
+generationSelect.disabled=
+yearSelect.disabled=
+engineSelect.disabled=true
+
+}
+
+function resetAfterGeneration(){
+
+resetSelect(
+yearSelect,
+"select_year"
+);
+
+resetSelect(
+engineSelect,
+"select_engine"
+);
+
+yearSelect.disabled=
+engineSelect.disabled=true
+
+}
+
+function resetAfterYear(){
+
+resetSelect(
+engineSelect,
+"select_engine"
+);
+
+engineSelect.disabled=true
+
+}
+
+manufacturerSelect.addEventListener(
+"change",
+async()=>{
+
+resetSelectsAfterMake();
+
+const id=
+manufacturerSelect.value;
+
+if(!id)return;
+
+try{
+
+selectedManufacturerData=
+await loadManufacturerData(id);
+
+populateSelect(
+modelSelect,
+selectedManufacturerData.models||[]
+);
+
+modelSelect.disabled=false;
+
+await loadTechnicalDatabase(id)
+
+}catch(e){
+
+console.error(e);
+
+setStatus(
+t("database_error"),
+"error"
+)
+
+}
+
+}
+);
+
+modelSelect.addEventListener(
+"change",
+()=>{
+
+resetAfterModel();
+
+const m=
+(selectedManufacturerData?.models||[])
+.find(
+x=>x.id===modelSelect.value
+);
+
+if(!m)return;
+
+populateSelect(
+generationSelect,
+m.generations||[]
+);
+
+generationSelect.disabled=false
+
+}
+);
+
+generationSelect.addEventListener(
+"change",
+()=>{
+
+resetAfterGeneration();
+
+const m=
+(selectedManufacturerData?.models||[])
+.find(
+x=>x.id===modelSelect.value
+);
+
+const g=
+(m?.generations||[])
+.find(
+x=>x.id===generationSelect.value
+);
+
+if(!g)return;
+
+const from=
+Number(
+g.production?.from||0
+);
+
+const to=
+Number(
+g.production?.to||
+new Date().getFullYear()
+);
+
+const years=[];
+
+for(
+let y=from;
+y<=to;
+y++
+){
+
+years.push({
+id:String(y),
+name:String(y)
+})
+
+}
+
+populateSelect(
+yearSelect,
+years
+);
+
+yearSelect.disabled=false
+
+}
+);
+
+yearSelect.addEventListener(
+"change",
+()=>{
+
+resetAfterYear();
+
+const m=
+(selectedManufacturerData?.models||[])
+.find(
+x=>x.id===modelSelect.value
+);
+
+const g=
+(m?.generations||[])
+.find(
+x=>x.id===generationSelect.value
+);
+
+if(!g)return;
+
+populateSelect(
+engineSelect,
+g.engines||[]
+);
+
+engineSelect.disabled=false
+
+}
+);
+
+function vehicleIsReady(){
+
+return Boolean(
+manufacturerSelect.value&&
+modelSelect.value&&
+generationSelect.value&&
+yearSelect.value&&
+engineSelect.value
+)
+
+}
+
+function getSelectedVehicle(){
+
+const man=
+manufacturersData.find(
+x=>x.id===manufacturerSelect.value
+);
+
+const m=
+(selectedManufacturerData?.models||[])
+.find(
+x=>x.id===modelSelect.value
+);
+
+const g=
+(m?.generations||[])
+.find(
+x=>x.id===generationSelect.value
+);
+
+const e=
+(g?.engines||[])
+.find(
+x=>x.id===engineSelect.value
+);
+
+return{
+
+manufacturer:
+man?.id||
+manufacturerSelect.value,
+
+manufacturerName:
+man?.name||
+manufacturerSelect.value,
+
+model:
+m?.id||
+modelSelect.value,
+
+modelName:
+m?.name||
+modelSelect.value,
+
+generation:
+g?.id||
+generationSelect.value,
+
+generationName:
+g?.name||
+generationSelect.value,
+
+year:Number(
+yearSelect.value
+),
+
+engine:
+e?.id||
+engineSelect.value,
+
+engineName:
+e?.name||
+engineSelect.value,
+
+engineCodes:
+e?.engine_codes||[],
+
+fuel:
+e?.fuel||null
+
+}
+
+}
+
+function updateSelectedVehicle(){
+
+if(!vehicleIsReady()){
+
+selectedVehicleElement.hidden=true;
+
+return
+
+}
+
+const v=
+getSelectedVehicle();
+
+selectedVehicleElement.innerHTML=
+`<strong>${escapeHtml(v.manufacturerName)} ${escapeHtml(v.modelName)}</strong> · ${escapeHtml(v.generationName)} · ${escapeHtml(String(v.year))} · ${escapeHtml(v.engineName)}`;
+
+selectedVehicleElement.hidden=false
+
+}
+
+function updateFindButton(){
+
+findButton.disabled=
+!vehicleIsReady()||
+!problemInput.value.trim()
+
+}
+
+engineSelect.addEventListener(
+"change",
+()=>{
+
+updateFindButton();
+updateSelectedVehicle()
+
+}
+);
+
+problemInput.addEventListener(
+"input",
+updateFindButton
+);
+
+/* ============================================================
+   LANGUAGE
+============================================================ */
+
+document.getElementById(
+"languageButton"
+).addEventListener(
+"click",
+()=>{
+
+document.getElementById(
+"languageMenu"
+).classList.toggle("active")
+
+}
+);
+
+document.querySelectorAll(
+".language-option"
+).forEach(
+o=>
+o.addEventListener(
+"click",
+()=>{
+
+const lang=
+o.dataset.lang;
+
+if(!translations[lang])
+return;
+
+currentLanguage=lang;
+
+localStorage.setItem(
+"autodecode_language",
+lang
+);
+
+localizePage();
+
+document.getElementById(
+"languageMenu"
+).classList.remove("active");
+
+updateSelectedVehicle()
+
+}
+)
+);
+
+document.addEventListener(
+"click",
+e=>{
+
+const s=
+document.querySelector(
+".language-selector"
+);
+
+if(
+s&&
+!s.contains(e.target)
+){
+
+document.getElementById(
+"languageMenu"
+).classList.remove("active"
+)
+
+}
+
+}
+);
+
+/* ============================================================
+   VEHICLE MATCH
+============================================================ */
+
+function valueMatches(values,target){
+
+if(values==null)return true;
+
+const arr=
+Array.isArray(values)
+?values
+:[values];
+
+if(!arr.length)return true;
+
+const nt=
+normalizeText(target);
+
+return arr.some(v=>{
+
+if(v==null)return false;
+
+if(typeof v==="object"){
+
+return valueMatches(
+v.id||v.name,
+target
+)
+
+}
+
+const x=
+normalizeText(v);
+
+return(
+x==="all"||
+x==="*"||
+x===nt||
+nt===x
+)
+
+})
+
+}
+
+function calculateVehicleMatch(item,v){
+
+const iv=
+item.vehicle||item;
+
+const score=100;
+
+if(
+iv.manufacturer&&
+!valueMatches(
+iv.manufacturer,
+v.manufacturer
+)&&
+!valueMatches(
+iv.manufacturer_id,
+v.manufacturer
+)
+)return 0;
+
+if(
+iv.make&&
+!valueMatches(
+iv.make,
+v.manufacturer
+)
+)return 0;
+
+if(
+iv.models&&
+!valueMatches(
+iv.models,
+v.model
+)&&
+!valueMatches(
+iv.model,
+v.model
+)
+)return 0;
+
+if(
+iv.model&&
+!valueMatches(
+iv.model,
+v.model
+)
+)return 0;
+
+if(
+iv.generations&&
+!valueMatches(
+iv.generations,
+v.generation
+)
+)return 0;
+
+if(
+iv.generation&&
+!valueMatches(
+iv.generation,
+v.generation
+)
+)return 0;
+
+if(
+iv.engines&&
+!valueMatches(
+iv.engines,
+v.engine
+)&&
+!valueMatches(
+iv.engines,
+v.engineCodes
+)
+)return 0;
+
+if(
+iv.engine&&
+!valueMatches(
+iv.engine,
+v.engine
+)
+)return 0;
+
+return score
+
+}
+
+function calculateYearMatch(item,year){
+
+const p=
+item.vehicle?.production||
+item.production;
+
+if(!p)return 100;
+
+const from=
+Number(p.from||0);
+
+const to=
+Number(p.to||9999);
+
+return year>=from&&year<=to
+?100
+:0
+
+}
+
+/* ============================================================
+   DTC
+============================================================ */
+
+function extractDTCs(problem){
+
+return[
+...new Set(
+String(problem||"")
+.toUpperCase()
+.match(/\b[PCBU]\d{4}\b/g)||[]
+)
+]
+
+}
+
+function calculateDTCMatch(item,dtcs){
+
+if(!dtcs.length)return 0;
+
+const related=
+Array.isArray(item.related_dtcs)
+?item.related_dtcs
+:[];
+
+const keywords=
+Array.isArray(item.keywords)
+?item.keywords
+:[];
+
+let matches=0;
+
+for(const d of dtcs){
+
+if(
+related.some(
+v=>
+String(v)
+.toUpperCase()
+.trim()===d
+)
+){
+
+matches++
+
+}
+
+if(
+keywords.some(
+v=>
+String(v)
+.toUpperCase()
+.trim()===d
+)
+){
+
+matches++
+
+}
+
+}
+
+return matches
+?Math.min(
+100,
+75+matches*15
+)
+:0
+
+}
+
+/* ============================================================
+   SYSTEM SEMANTICS
+============================================================ */
+
+const systemMap={
+
+turbocharger:["turbo"],
+charge_air:["turbo"],
+boost_pressure:["turbo","map"],
+
+egr:["egr"],
+dpf:["dpf"],
+scr:["scr"],
+adblue:["scr"],
+
+air_metering:["maf","map"],
+fuel_injection:["injector","fuel_pressure"],
+fuel_system:["fuel_pressure","injector"],
+fuel_pressure:["fuel_pressure"],
+
+crankshaft:["crankshaft"],
+camshaft:["camshaft"],
+synchronization:["synchronization"],
+
+starting:[
+"no_start",
+"crank_no_start",
+"hard_start",
+"starter"
+],
+
+engine:[
+"engine_stall",
+"no_start",
+"crank_no_start",
+"poor_power",
+"misfire"
+],
+
+cooling:[
+"coolant",
+"overheating"
+],
+
+air_conditioning:[
+"ac",
+"hvac"
+],
+
+climate:[
+"ac",
+"hvac"
+],
+
+transmission:[
+"transmission"
+],
+
+abs_esp:[
+"abs"
+],
+
+esp:[
+"abs"
+],
+
+battery:[
+"battery",
+"alternator"
+],
+
+charging:[
+"battery",
+"alternator"
+],
+
+alternator:[
+"alternator"
+],
+
+starter:[
+"starter"
+],
+
+immobilizer:[
+"immobilizer",
+"pats"
+],
+
+pats:[
+"pats",
+"immobilizer"
+],
+
+can_bus:[
+"can_bus"
+],
+
+can:[
+"can_bus"
+],
+
+lin_bus:[
+"lin_bus"
+],
+
+lin:[
+"lin_bus"
+],
+
+airbag:[
+"airbag"
+],
+
+srs:[
+"airbag"
+],
+
+body:[
+"central_locking",
+"window",
+"wiper",
+"lighting"
+],
+
+central_locking:[
+"central_locking"
+],
+
+door:[
+"central_locking",
+"window"
+],
+
+window:[
+"window"
+],
+
+wiper:[
+"wiper"
+],
+
+lighting:[
+"lighting"
+],
+
+parking:[
+"parking_sensor"
+],
+
+parking_assist:[
+"parking_sensor",
+"camera"
+],
+
+camera:[
+"camera"
+],
+
+rear_camera:[
+"camera"
+],
+
+radar:[
+"radar"
+],
+
+adas:[
+"radar",
+"camera",
+"lane_assist",
+"cruise"
+],
+
+lane_assist:[
+"lane_assist",
+"camera"
+],
+
+cruise_control:[
+"cruise",
+"radar"
+],
+
+adaptive_cruise:[
+"cruise",
+"radar"
+],
+
+infotainment:[
+"bluetooth",
+"phone_connection",
+"carplay",
+"android_auto",
+"usb",
+"no_audio",
+"amplifier",
+"microphone",
+"voice_control",
+"navigation",
+"gps",
+"display",
+"infotainment_reboot",
+"steering_controls"
+],
+
+audio:[
+"no_audio",
+"amplifier",
+"microphone"
+],
+
+bluetooth:[
+"bluetooth"
+],
+
+phone:[
+"phone_connection"
+],
+
+carplay:[
+"carplay"
+],
+
+android_auto:[
+"android_auto"
+],
+
+usb:[
+"usb"
+],
+
+navigation:[
+"navigation",
+"gps"
+],
+
+gps:[
+"gps"
+],
+
+display:[
+"display"
+],
+
+screen:[
+"display"
+],
+
+microphone:[
+"microphone"
+],
+
+voice_control:[
+"voice_control"
+],
+
+steering_wheel:[
+"steering_controls"
+],
+
+seat:[
+"seat"
+],
+
+sunroof:[
+"sunroof"
+]
+
+};
+
+function getSystemGroups(item){
+
+const s=
+normalizeSymptomId(
+item?.system||""
+);
+
+return systemMap[s]||[]
+
+}
+
+function calculateSystemRelevance(
+item,
+userSymptoms
+){
+
+const groups=
+getSystemGroups(item);
+
+if(!groups.length)
+return 0;
+
+let p=0;
+
+for(const g of groups){
+
+if(userSymptoms.includes(g)){
+p+=35
+}
+
+}
+
+return Math.min(
+100,
+p
+)
+
+}
+
+/* ============================================================
+   PRIMARY / COMPONENT SEMANTICS
+============================================================ */
+
+/*
+   These groups define concepts that identify a specific
+   physical/system component.
+
+   A component-specific query must strongly prefer records
+   belonging to the same component/system.
+*/
+
+const semanticDomains={
+
+engine:[
+"engine_stall",
+"no_start",
+"crank_no_start",
+"hard_start",
+"rough_idle",
+"misfire",
+"fuel_pressure",
+"crankshaft",
+"camshaft",
+"synchronization",
+"starter",
+"immobilizer",
+"pats",
+"turbo",
+"egr",
+"dpf",
+"scr",
+"maf",
+"map",
+"injector",
+"coolant",
+"overheating",
+"oil_pressure",
+"battery",
+"alternator"
+],
+
+body:[
+"central_locking",
+"window",
+"wiper",
+"lighting",
+"seat",
+"sunroof"
+],
+
+infotainment:[
+"bluetooth",
+"phone_connection",
+"carplay",
+"android_auto",
+"usb",
+"no_audio",
+"amplifier",
+"microphone",
+"voice_control",
+"navigation",
+"gps",
+"display",
+"infotainment_reboot",
+"steering_controls"
+],
+
+adas:[
+"parking_sensor",
+"camera",
+"radar",
+"lane_assist",
+"cruise"
+],
+
+transmission:[
+"transmission"
+],
+
+climate:[
+"ac",
+"hvac"
+],
+
+chassis:[
+"abs"
+],
+
+network:[
+"can_bus",
+"lin_bus"
+],
+
+safety:[
+"airbag"
+]
+
+};
+
+function getSemanticDomains(concepts){
+
+const result=
+new Set();
+
+for(const domain of Object.keys(semanticDomains)){
+
+const members=
+semanticDomains[domain]||[];
+
+if(
+concepts.some(
+c=>members.includes(c)
+)
+){
+
+result.add(domain)
+
+}
+
+}
+
+return[...result]
+
+}
+
+function getPrimaryUserConcepts(userSymptoms){
+
+/*
+   Concepts with a specific physical component or a
+   high-confidence symptom are primary.
+
+   Generic concepts generated only through expansion
+   are deliberately not promoted.
+*/
+
+const primary=[];
+
+for(const concept of userSymptoms){
+
+if(
+[
+"door_handle_not_working",
+"door_handle_hard_to_open",
+"door_handle_loose",
+"door_handle_broken",
+"door_wont_open_inside",
+"door_wont_open_outside",
+"door_lock_not_working",
+"central_locking_not_working",
+"keyless_entry_not_working",
+"door_open_warning",
+"door_lock_actuator_fault",
+"door_latch_fault",
+"door_cable_broken",
+
+"engine_stall",
+"crank_no_start",
+"no_start",
+"fuel_pressure",
+"crankshaft",
+"camshaft",
+"synchronization",
+"misfire",
+"rough_idle",
+"hard_start",
+
+"bluetooth",
+"carplay",
+"android_auto",
+"usb",
+"navigation",
+"gps",
+"display",
+"no_audio",
+"camera",
+"radar",
+"parking_sensor"
+].includes(concept)
+){
+
+primary.push(concept)
+
+}
+
+}
+
+return primary.length
+?primary
+:userSymptoms.slice(0,3)
+
+}
+
+function conceptsShareDomain(a,b){
+
+if(a===b)return true;
+
+for(
+const members
+of Object.values(semanticDomains)
+){
+
+if(
+members.includes(a)&&
+members.includes(b)
+){
+
+return true
+
+}
+
+}
+
+return false
+
+}
+
+/* ============================================================
+   SEMANTIC RANKING
+============================================================ */
+
+const symptomWeights={
+
+crank_no_start:42,
+engine_stall:40,
+no_start:32,
+
+fuel_pressure:34,
+crankshaft:32,
+camshaft:30,
+synchronization:30,
+starter:28,
+immobilizer:28,
+pats:28,
+
+limp_mode:26,
+poor_power:25,
+low_rpm_power_loss:25,
+turbo:25,
+dpf:25,
+scr:24,
+
+misfire:24,
+rough_idle:23,
+hard_start:23,
+
+coolant:22,
+overheating:22,
+oil_pressure:22,
+
+battery:21,
+alternator:21,
+
+can_bus:21,
+lin_bus:20,
+abs:20,
+
+transmission:22,
+
+ac:18,
+hvac:18,
+
+central_locking:18,
+window:17,
+wiper:17,
+lighting:17,
+
+parking_sensor:18,
+camera:20,
+radar:22,
+lane_assist:21,
+cruise:20,
+
+bluetooth:24,
+phone_connection:24,
+carplay:25,
+android_auto:25,
+
+usb:18,
+no_audio:25,
+amplifier:20,
+microphone:22,
+voice_control:21,
+navigation:23,
+gps:24,
+display:25,
+infotainment_reboot:25,
+steering_controls:20,
+seat:17,
+sunroof:17,
+
+/*
+   Door-specific concepts get intentionally high weights.
+   These values also work for concepts loaded from the
+   external dictionary.
+*/
+
+door_handle_not_working:50,
+door_handle_hard_to_open:50,
+door_handle_loose:50,
+door_handle_broken:55,
+door_wont_open_inside:52,
+door_wont_open_outside:52,
+door_lock_not_working:48,
+central_locking_not_working:45,
+keyless_entry_not_working:45,
+door_open_warning:40,
+door_lock_actuator_fault:50,
+door_latch_fault:50,
+door_cable_broken:52,
+
+default:15
+
+};
+
+const relationships=[
+
+{
+required:[
+"engine_stall",
+"crank_no_start"
+],
+bonus:36
+},
+
+{
+required:[
+"engine_stall",
+"no_start"
+],
+bonus:25
+},
+
+{
+required:[
+"crank_no_start",
+"no_start"
+],
+bonus:30
+},
+
+{
+required:[
+"engine_stall",
+"fuel_pressure"
+],
+bonus:22
+},
+
+{
+required:[
+"no_start",
+"fuel_pressure"
+],
+bonus:22
+},
+
+{
+required:[
+"no_start",
+"crankshaft"
+],
+bonus:27
+},
+
+{
+required:[
+"no_start",
+"camshaft"
+],
+bonus:22
+},
+
+{
+required:[
+"poor_power",
+"low_rpm_power_loss",
+"limp_mode"
+],
+bonus:30
+},
+
+{
+required:[
+"dpf",
+"poor_power"
+],
+bonus:16
+},
+
+{
+required:[
+"turbo",
+"poor_power"
+],
+bonus:21
+},
+
+{
+required:[
+"bluetooth",
+"phone_connection"
+],
+bonus:20
+},
+
+{
+required:[
+"carplay",
+"phone_connection"
+],
+bonus:18
+},
+
+{
+required:[
+"android_auto",
+"phone_connection"
+],
+bonus:18
+},
+
+{
+required:[
+"display",
+"infotainment_reboot"
+],
+bonus:16
+},
+
+{
+required:[
+"camera",
+"parking_sensor"
+],
+bonus:12
+},
+
+{
+required:[
+"radar",
+"cruise"
+],
+bonus:18
+},
+
+{
+required:[
+"radar",
+"lane_assist"
+],
+bonus:15
+}
+
+];
+
+function getMergedRelationships(){
+
+const merged=[
+...relationships
+];
+
+for(
+const rel of semanticRelationships
+){
+
+if(
+!Array.isArray(rel.required)||
+rel.required.length<2
+)continue;
+
+const exists=
+merged.some(
+existing=>
+existing.required.length===
+rel.required.length&&
+existing.required.every(
+x=>rel.required.includes(x)
+)
+);
+
+if(!exists){
+merged.push(rel)
+}
+
+}
+
+return merged
+
+}
+
+/* ============================================================
+   EXACT SEMANTIC EVIDENCE
+============================================================ */
+
+function calculateExactConceptEvidence(
+item,
+problem,
+userSymptoms,
+itemSymptoms
+){
+
+const text=
+normalizeText(problem);
+
+let exact=0;
+let component=0;
+
+const evidence=[];
+
+for(const concept of userSymptoms){
+
+const aliases=
+symptomAliases[concept]||[];
+
+let bestAliasLength=0;
+let matched=false;
+
+for(const alias of aliases){
+
+if(isGenericAlias(alias))
+continue;
+
+if(
+phraseMatches(
+text,
+alias
+)
+){
+
+matched=true;
+
+bestAliasLength=
+Math.max(
+bestAliasLength,
+normalizeText(alias).length
+)
+
+}
+
+}
+
+if(!matched)
+continue;
+
+if(itemSymptoms.includes(concept)){
+
+exact+=
+100+
+Math.min(
+40,
+bestAliasLength
+);
+
+evidence.push({
+concept,
+type:"exact"
+})
+
+}
+
+}
+
+/*
+   Component-level evidence:
+   If a specific user concept and item concept belong
+   to the same technical domain, give a smaller bonus.
+*/
+
+const userDomains=
+getSemanticDomains(
+userSymptoms
+);
+
+const itemDomains=
+getSemanticDomains(
+itemSymptoms
+);
+
+for(const domain of userDomains){
+
+if(itemDomains.includes(domain)){
+
+component+=25
+
+}
+
+}
+
+return{
+exact,
+component,
+evidence
+}
+
+}
+
+/* ============================================================
+   CALCULATE SEMANTIC SCORE
+============================================================ */
+
+function calculateSemanticSymptomScore(
+item,
+problem,
+userSymptoms,
+itemSymptoms
+){
+
+itemSymptoms=
+itemSymptoms||
+getItemSymptoms(
+item,
+getRelevantConcepts(userSymptoms)
+);
+
+let score=0;
+
+const exactEvidence=
+calculateExactConceptEvidence(
+item,
+problem,
+userSymptoms,
+itemSymptoms
+);
+
+/*
+   EXACT concept match is deliberately dominant.
+*/
+
+score+=
+Math.min(
+180,
+exactEvidence.exact
+);
+
+/*
+   Standard concept scoring.
+*/
+
+for(const s of userSymptoms){
+
+if(
+itemSymptoms.includes(s)
+){
+
+score+=
+symptomWeights[s]||
+semanticPriority[s]||
+symptomWeights.default
+
+}
+
+}
+
+/*
+   Relationship bonuses.
+*/
+
+for(
+const rel of getMergedRelationships()
+){
+
+if(
+rel.required.every(
+s=>userSymptoms.includes(s)
+)&&
+rel.required.every(
+s=>itemSymptoms.includes(s)
+)
+){
+
+score+=
+rel.bonus
+
+}
+
+}
+
+/*
+   Keyword evidence.
+
+   Only exact/strong phrase matches are counted.
+*/
+
+const keywords=
+Array.isArray(item.keywords)
+?item.keywords
+:[];
+
+const problemText=
+normalizeText(problem);
+
+let km=0;
+
+for(const k of keywords){
+
+const nk=
+normalizeText(k);
+
+if(
+nk.length>=4&&
+!isGenericAlias(nk)&&
+matchesAlias(
+problemText,
+nk
+)
+){
+
+km++
+
+}
+
+}
+
+score+=
+Math.min(
+18,
+km*5
+);
+
+/*
+   External semantic priority.
+*/
+
+for(const concept of userSymptoms){
+
+if(
+itemSymptoms.includes(concept)&&
+semanticPriority[concept]
+){
+
+score+=
+Math.min(
+20,
+semanticPriority[concept]
+)
+
+}
+
+}
+
+return Math.min(
+180,
+score
+)
+
+}
+
+/* ============================================================
+   SYMPTOM COVERAGE
+============================================================ */
+
+function calculateSymptomCoverage(
+item,
+userSymptoms,
+itemSymptoms
+){
+
+if(!userSymptoms.length)
+return 0;
+
+const is=
+itemSymptoms||
+getItemSymptoms(
+item,
+getRelevantConcepts(userSymptoms)
+);
+
+let m=0;
+
+for(const s of userSymptoms){
+
+if(is.includes(s))
+m++
+
+}
+
+return Math.round(
+m/userSymptoms.length*100
+)
+
+}
+
+/* ============================================================
+   TEXT FALLBACK
+============================================================ */
+
+function calculateTextFallback(
+item,
+problem
+){
+
+const text=
+normalizeText(problem);
+
+const it=
+normalizeText(
+getItemText(item)
+);
+
+if(!text||!it)
+return 0;
+
+const tokens=[
+...tokenize(text)
+].filter(
+x=>
+x.length>=4&&
+!/^(this|that|with|from|does|have|very|mais|plus|avec|para|pero|della|delle|naar|de|het|der|die|das|si|nu|mai|este|un|une|the|and|not|are|was|wir|ist|nicht|pas|les|des|une)$/.test(x)
+);
+
+let hits=0;
+
+for(const w of tokens){
+
+if(
+(` ${it} `).includes(
+` ${w} `
+)
+){
+
+hits++
+
+}
+
+}
+
+return tokens.length
+?Math.min(
+25,
+Math.round(
+hits/tokens.length*25
+)
+)
+:0
+
+}
+
+/* ============================================================
+   SEMANTIC CONFLICT PENALTY
+============================================================ */
+
+/*
+   This is the critical fix for:
+
+   "mânerul ușii nu funcționează"
+                    ↓
+   USB media connection
+
+   A specific body/door concept must not be outranked
+   by a generic infotainment record.
+*/
+
+function calculateSemanticConflict(
+item,
+userSymptoms,
+itemSymptoms,
+exactEvidence
+){
+
+if(!userSymptoms.length)
+return 0;
+
+const primary=
+getPrimaryUserConcepts(
+userSymptoms
+);
+
+if(!primary.length)
+return 0;
+
+const primaryDomains=
+getSemanticDomains(
+primary
+);
+
+const itemDomains=
+getSemanticDomains(
+itemSymptoms
+);
+
+let penalty=0;
+
+/*
+   If an exact primary concept exists in the item,
+   there is no conflict.
+*/
+
+const exactPrimary=
+primary.some(
+c=>itemSymptoms.includes(c)
+);
+
+if(exactPrimary)
+return 0;
+
+/*
+   If the item has a different strong technical domain,
+   apply a large penalty.
+*/
+
+if(
+primaryDomains.length&&
+itemDomains.length
+){
+
+const sameDomain=
+primaryDomains.some(
+d=>itemDomains.includes(d)
+);
+
+if(!sameDomain){
+
+penalty-=110
+
+}
+
+}
+
+/*
+   Even without explicit domain metadata, a known
+   component concept that conflicts with the user query
+   gets penalized.
+*/
+
+const unrelatedSpecific=
+itemSymptoms.some(
+c=>
+!primary.includes(c)&&
+symptomWeights[c]&&
+symptomWeights[c]>=18&&
+!conceptsShareDomain(
+c,
+primary[0]
+)
+);
+
+if(unrelatedSpecific){
+
+penalty-=45
+
+}
+
+/*
+   If the user query contains a highly specific component
+   and the result has no matching concept at all,
+   make the result effectively noncompetitive.
+*/
+
+if(
+exactEvidence?.exact===0&&
+primary.some(
+c=>
+[
+"door_handle_not_working",
+"door_handle_hard_to_open",
+"door_handle_loose",
+"door_handle_broken",
+"door_wont_open_inside",
+"door_wont_open_outside",
+"door_lock_not_working",
+"door_lock_actuator_fault",
+"door_latch_fault",
+"door_cable_broken",
+"usb",
+"bluetooth",
+"carplay",
+"android_auto",
+"navigation",
+"gps",
+"camera",
+"radar",
+"parking_sensor"
+].includes(c)
+)
+){
+
+penalty-=60
+
+}
+
+return penalty
+
+}
+
+/* ============================================================
+   FINAL SCORE
+============================================================ */
+
+function calculateFinalScore({
+
+vehicleMatch,
+yearMatch,
+semanticScore,
+coverage,
+dtcMatch,
+systemMatch,
+userSymptoms,
+item,
+itemSymptoms,
+exactEvidence
+
+}){
+
+if(dtcMatch>0){
+
+return Math.max(
+0,
+Math.min(
+100,
+Math.round(
+vehicleMatch*.15+
+yearMatch*.05+
+semanticScore*.45+
+coverage*.1+
+dtcMatch*.2+
+systemMatch*.05+
+calculateSemanticConflict(
+item,
+userSymptoms,
+itemSymptoms,
+exactEvidence
+)
+)
+)
+)
+
+}
+
+let score=
+vehicleMatch*.15+
+yearMatch*.05+
+semanticScore*.55+
+coverage*.15+
+systemMatch*.15;
+
+score+=
+calculateSemanticConflict(
+item,
+userSymptoms,
+itemSymptoms,
+exactEvidence
+);
+
+/*
+   Exact concept matches get a final independent boost.
+*/
+
+if(
+exactEvidence?.exact>0
+){
+
+score+=
+Math.min(
+25,
+exactEvidence.exact*.12
+)
+
+}
+
+/*
+   Multi-symptom engine-start context remains strong.
+*/
+
+const is=
+itemSymptoms||
+getItemSymptoms(
+item,
+getRelevantConcepts(userSymptoms)
+);
+
+if(
+userSymptoms.includes("engine_stall")&&
+userSymptoms.includes("crank_no_start")&&
+is.includes("engine_stall")&&
+is.includes("crank_no_start")
+){
+
+score+=20
+
+}
+
+const noStart=
+userSymptoms.includes("no_start")||
+userSymptoms.includes("crank_no_start")||
+userSymptoms.includes("engine_stall");
+
+if(
+noStart&&
+!is.includes("no_start")&&
+!is.includes("crank_no_start")&&
+!is.includes("engine_stall")
+){
+
+const sys=
+getSystemGroups(item);
+
+if(
+!sys.some(
+s=>
+[
+"no_start",
+"crank_no_start",
+"engine_stall",
+"starter",
+"fuel_pressure",
+"crankshaft",
+"camshaft",
+"immobilizer",
+"pats"
+].includes(s)
+)
+){
+
+score-=35
+
+}
+
+}
+
+/*
+   A result with no system relevance should not receive
+   artificial points simply because it contains generic
+   words.
+*/
+
+if(
+systemMatch===0&&
+item.system
+){
+
+score-=5
+
+}
+
+return Math.max(
+0,
+Math.min(
+100,
+Math.round(score)
+)
+)
+
+}
+
+/* ============================================================
+   SEARCH
+============================================================ */
+
+async function performSearch(){
+
+resultsElement.hidden=false;
+
+if(!vehicleIsReady()){
+
+setStatus(
+t("complete_vehicle"),
+"error"
+);
+
+return
+
+}
+
+const problem=
+problemInput.value.trim();
+
+if(!problem){
+
+setStatus(
+t("describe_problem"),
+"error"
+);
+
+return
+
+}
+
+if(!technicalDatabase.length){
+
+setStatus(
+t("technical_error"),
+"error"
+);
+
+renderResults([]);
+
+return
+
+}
+
+setStatus(
+t("searching")
+);
+
+/*
+   Ensure dictionary is available.
+   Built-in aliases remain functional if it fails.
+*/
+
+await loadSemanticDictionary();
+
+const vehicle=
+getSelectedVehicle();
+
+const userSymptoms=
+detectUserSymptoms(problem);
+
+const dtcs=
+extractDTCs(problem);
+
+const relevantConcepts=
+getRelevantConcepts(
+userSymptoms
+);
+
+console.log(
+"Detected semantic concepts:",
+userSymptoms
+);
+
+console.log(
+"Relevant semantic concepts:",
+relevantConcepts
+);
+
+console.log(
+"Detected DTCs:",
+dtcs
+);
+
+console.log(
+"External semantic dictionary:",
+semanticDictionaryReady
+);
+
+const results=[];
+
+for(
+const item of technicalDatabase
+){
+
+const vehicleMatch=
+calculateVehicleMatch(
+item,
+vehicle
+);
+
+if(!vehicleMatch)
+continue;
+
+const yearMatch=
+calculateYearMatch(
+item,
+vehicle.year
+);
+
+if(!yearMatch)
+continue;
+
+const itemSymptoms=
+getItemSymptoms(
+item,
+relevantConcepts
+);
+
+const exactEvidence=
+calculateExactConceptEvidence(
+item,
+problem,
+userSymptoms,
+itemSymptoms
+);
+
+let semanticScore=
+calculateSemanticSymptomScore(
+item,
+problem,
+userSymptoms,
+itemSymptoms
+);
+
+const coverage=
+calculateSymptomCoverage(
+item,
+userSymptoms,
+itemSymptoms
+);
+
+const dtcMatch=
+calculateDTCMatch(
+item,
+dtcs
+);
+
+const systemMatch=
+calculateSystemRelevance(
+item,
+userSymptoms
+);
+
+/*
+   If no semantic concepts were detected, use original
+   text search as fallback.
+*/
+
+if(!userSymptoms.length){
+
+semanticScore=
+Math.max(
+semanticScore,
+calculateTextFallback(
+item,
+problem
+)
+);
+
+}else if(
+semanticScore===0&&
+coverage===0&&
+dtcMatch===0
+){
+
+semanticScore=
+calculateTextFallback(
+item,
+problem
+)*.6
+
+}
+
+/*
+   Calculate conflict before final ranking.
+*/
+
+const conflict=
+calculateSemanticConflict(
+item,
+userSymptoms,
+itemSymptoms,
+exactEvidence
+);
+
+const score=
+calculateFinalScore({
+vehicleMatch,
+yearMatch,
+semanticScore,
+coverage,
+dtcMatch,
+systemMatch,
+userSymptoms,
+item,
+itemSymptoms,
+exactEvidence
+});
+
+/*
+   Evidence must be real.
+
+   A result from an unrelated system with only a generic
+   text similarity must not survive.
+*/
+
+const hasExactConcept=
+exactEvidence.exact>0;
+
+const hasSemanticMatch=
+semanticScore>0;
+
+const hasCoverage=
+coverage>0;
+
+const hasDTC=
+dtcMatch>0;
+
+const hasSystemMatch=
+systemMatch>0;
+
+const hasStrongNegativeConflict=
+conflict<=-80;
+
+if(
+hasStrongNegativeConflict&&
+!hasExactConcept&&
+!hasDTC
+){
+
+continue
+
+}
+
+const evidence=
+hasSemanticMatch||
+hasCoverage||
+hasDTC||
+hasSystemMatch||
+hasExactConcept;
+
+if(!evidence)
+continue;
+
+/*
+   Minimum relevance threshold.
+*/
+
+if(score<10)
+continue;
+
+results.push({
+
+item,
+score,
+vehicleMatch,
+yearMatch,
+semanticScore,
+coverage,
+dtcMatch,
+systemMatch,
+exactEvidence,
+conflict
+
+})
+
+}
+
+/* ============================================================
+   RANKING
+============================================================ */
+
+results.sort(
+(a,b)=>{
+
+/*
+   1. Exact DTC
+*/
+
+if(
+a.dtcMatch>0&&
+b.dtcMatch===0
+)return-1;
+
+if(
+a.dtcMatch===0&&
+b.dtcMatch>0
+)return 1;
+
+/*
+   2. Exact semantic concept evidence
+*/
+
+if(
+a.exactEvidence.exact!==
+b.exactEvidence.exact
+){
+
+return(
+b.exactEvidence.exact-
+a.exactEvidence.exact
+)
+
+}
+
+/*
+   3. Symptom coverage
+*/
+
+if(
+b.coverage!==a.coverage
+){
+
+return(
+b.coverage-
+a.coverage
+)
+
+}
+
+/*
+   4. Semantic score
+*/
+
+if(
+b.semanticScore!==
+a.semanticScore
+){
+
+return(
+b.semanticScore-
+a.semanticScore
+)
+
+}
+
+/*
+   5. System relevance
+*/
+
+if(
+b.systemMatch!==
+a.systemMatch
+){
+
+return(
+b.systemMatch-
+a.systemMatch
+)
+
+}
+
+/*
+   6. Final score
+*/
+
+return(
+b.score-
+a.score
+)
+
+}
+);
+
+console.log(
+"Final ranked results:",
+results.slice(0,10).map(r=>({
+title:getLocalizedValue(r.item.title),
+score:r.score,
+semantic:r.semanticScore,
+coverage:r.coverage,
+exact:r.exactEvidence.exact,
+system:r.systemMatch,
+conflict:r.conflict
+}))
+);
+
+renderResults(
+results.slice(0,10)
+);
+
+setStatus(
+results.length
+?""
+:"",
+results.length
+?"success"
+:""
+)
+
+}
+
+findButton.addEventListener(
+"click",
+performSearch
+);
+
+problemInput.addEventListener(
+"keydown",
+e=>{
+
+if(
+(e.ctrlKey||e.metaKey)&&
+e.key==="Enter"
+){
+
+performSearch()
+
+}
+
+}
+);
+
+/* ============================================================
+   RENDERING
+============================================================ */
+
+function addTag(c,text){
+
+const s=
+document.createElement("span");
+
+s.className=
+"match-tag";
+
+s.textContent=text;
+
+c.appendChild(s)
+
+}
+
+function createListSection(
+heading,
+items
+){
+
+const section=
+document.createElement("div");
+
+section.className=
+"result-section";
+
+const h=
+document.createElement("h4");
+
+h.textContent=heading;
+
+const ul=
+document.createElement("ul");
+
+for(const v of items){
+
+const li=
+document.createElement("li");
+
+li.textContent=
+getLocalizedValue(v);
+
+ul.appendChild(li)
+
+}
+
+section.append(
+h,
+ul
+);
+
+return section
+
+}
+
+function renderResults(results){
+
+resultList.innerHTML="";
+
+if(!results.length){
+
+resultCount.textContent="";
+
+const n=
+
+document.createElement("div");
+
+n.className=
+
+"no-results";
+
+n.textContent=
+
+t("no_results");
+
+resultList.appendChild(n);
+
+return
+
+}
+
+resultCount.textContent=
+results.length===1
+?t("result_count_one")
+:t("result_count_many")
+.replace(
+"{n}",
+results.length
+);
+
+for(
+const r of results
+){
+
+const item=
+r.item;
+
+const card=
+document.createElement("article");
+
+card.className=
+"result-card";
+
+const main=
+document.createElement("div");
+
+main.className=
+"result-main";
+
+const top=
+document.createElement("div");
+
+top.className=
+"result-top";
+
+const tc=
+document.createElement("div");
+
+const title=
+document.createElement("h3");
+
+title.className=
+"result-title";
+
+title.textContent=
+getLocalizedValue(
+item.title
+)||
+item.id||
+"Diagnostic result";
+
+const sys=
+document.createElement("div");
+
+sys.className=
+"result-system";
+
+sys.textContent=
+item.system||
+item.category||
+"";
+
+tc.append(
+title,
+sys
+);
+
+const sc=
+document.createElement("div");
+
+sc.className=
+"score";
+
+sc.textContent=
+`${r.score}%`;
+
+top.append(
+tc,
+sc
+);
+
+main.appendChild(top);
+
+const tags=
+document.createElement("div");
+
+tags.className=
+"match-tags";
+
+if(r.coverage>0){
+
+addTag(
+tags,
+`${t("relevance")}: ${r.coverage}%`
+)
+
+}
+
+if(r.exactEvidence?.exact>0){
+
+addTag(
+tags,
+"Exact semantic match"
+)
+
+}else if(r.semanticScore>0){
+
+addTag(
+tags,
+"Semantic match"
+)
+
+}
+
+if(r.dtcMatch>0){
+
+addTag(
+tags,
+"DTC match"
+)
+
+}
+
+if(r.systemMatch>0){
+
+addTag(
+tags,
+"System match"
+)
+
+}
+
+if(
+tags.children.length
+){
+
+main.appendChild(tags)
+
+}
+
+if(item.description){
+
+const p=
+document.createElement("p");
+
+p.className=
+"result-description";
+
+p.textContent=
+getLocalizedValue(
+item.description
+);
+
+main.appendChild(p)
+
+}
+
+card.appendChild(main);
+
+if(
+Array.isArray(item.possible_causes)&&
+item.possible_causes.length
+){
+
+card.appendChild(
+createListSection(
+t("possible_causes"),
+item.possible_causes
+)
+)
+
+}
+
+if(
+Array.isArray(item.diagnostic_steps)&&
+item.diagnostic_steps.length
+){
+
+card.appendChild(
+createListSection(
+t("diagnostic_steps"),
+item.diagnostic_steps
+)
+)
+
+}
+
+if(
+Array.isArray(item.related_dtcs)&&
+item.related_dtcs.length
+){
+
+card.appendChild(
+createListSection(
+t("related_dtcs"),
+item.related_dtcs
+)
+)
+
+}
+
+if(item.difficulty){
+
+const s=
+document.createElement("div");
+
+s.className=
+"result-section";
+
+const h=
+document.createElement("h4");
+
+h.textContent=
+t("difficulty");
+
+const v=
+document.createElement("div");
+
+v.style.color="#aeb9c6";
+v.style.fontSize="13px";
+
+v.textContent=
+getLocalizedValue(
+item.difficulty
+);
+
+s.append(
+h,
+v
+);
+
+card.appendChild(s)
+
+}
+
+resultList.appendChild(card)
+
+}
+
+}
+
+/* ============================================================
+   HTML ESCAPING
+============================================================ */
+
+function escapeHtml(v){
+
+return String(v??"")
+.replace(/&/g,"&amp;")
+.replace(/</g,"&lt;")
+.replace(/>/g,"&gt;")
+.replace(/"/g,"&quot;")
+.replace(/'/g,"&#039;")
+
+}
+
+/* ============================================================
+   INIT
+============================================================ */
+
+document.getElementById(
+"yearFooter"
+).textContent=
+new Date().getFullYear();
+
+localizePage();
+
+(async()=>{
+
+const results=
+await Promise.allSettled([
+
+loadManufacturers(),
+
+loadSemanticDictionary()
+
+]);
+
+const manufacturersResult=
+results[0];
+
+const semanticResult=
+results[1];
+
+if(
+manufacturersResult.status==="rejected"
+){
+
+console.error(
+"Manufacturer database initialization failed.",
+manufacturersResult.reason
+);
+
+}
+
+if(
+semanticResult.status==="rejected"||
+!semanticDictionaryReady
+){
+
+console.error(
+"Semantic dictionary initialization failed.",
+semanticDictionaryError
+);
+
+}
+
+updateFindButton();
+
+})();
+
+</script>
+</body>
+</html>
