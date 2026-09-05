@@ -4864,22 +4864,106 @@ exactEvidence.exact
    Standard concept scoring.
 */
 
+/*
+   Standard concept scoring.
+
+   Generic symptoms such as "poor_power" and "limp_mode"
+   must not allow a highly specific fault to dominate
+   when the user did not mention the specific subsystem.
+
+   Example:
+   "Engine has little power and goes limp mode"
+
+   Turbo:
+   turbo + poor_power + limp_mode
+   -> keeps strong relevance because turbo is supported
+      by the relationship engine.
+
+   Injector / coolant sensor:
+   injector + poor_power + limp_mode
+   coolant + poor_power + limp_mode
+   -> generic symptom contribution is reduced because
+      there is no injector/coolant evidence in the query.
+*/
+
+const genericEngineSymptoms=[
+"poor_power",
+"limp_mode"
+];
+
+const specificEngineConcepts=[
+"turbo",
+"dpf",
+"scr",
+"egr",
+"maf",
+"map",
+"injector",
+"fuel_pressure",
+"crankshaft",
+"camshaft",
+"synchronization",
+"misfire",
+"rough_idle",
+"hard_start",
+"coolant",
+"overheating",
+"oil_pressure",
+"battery",
+"alternator",
+"starter",
+"immobilizer",
+"pats"
+];
+
+const querySpecificEngineConcepts=
+userSymptoms.filter(
+s=>specificEngineConcepts.includes(s)
+);
+
+const itemSpecificEngineConcepts=
+itemSymptoms.filter(
+s=>specificEngineConcepts.includes(s)
+);
+
+const itemHasUnconfirmedSpecificEngineConcept=
+itemSpecificEngineConcepts.some(
+s=>!userSymptoms.includes(s)
+);
+
 for(const s of userSymptoms){
 
 if(
-itemSymptoms.includes(s)
+!itemSymptoms.includes(s)
 ){
+continue;
+}
 
-score+=
+let weight=
 symptomWeights[s]||
 semanticPriority[s]||
-symptomWeights.default
+symptomWeights.default;
+
+
+/*
+   Generic power/limp symptoms are deliberately
+   downweighted for highly specific records when
+   the user gave no evidence for that specific fault.
+*/
+
+if(
+genericEngineSymptoms.includes(s)&&
+itemHasUnconfirmedSpecificEngineConcept&&
+querySpecificEngineConcepts.length===0
+){
+
+weight*=0.20;
 
 }
 
+score+=weight;
+
 }
-
-
 /*
    Relationship bonuses.
 */
