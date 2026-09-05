@@ -6,6 +6,2315 @@ manufacturer:
 
 technical_data:
 
+  - id: ford_pcm_engine_control_module_communication_fault_modern
+    manufacturer: ford
+    models:
+      - fiesta
+      - focus
+      - mondeo
+      - kuga
+      - puma
+      - ecosport
+      - transit
+      - transit_custom
+      - ranger
+    generations:
+      - fiesta_mk7
+      - fiesta_mk8
+      - focus_mk3
+      - focus_mk4
+      - mondeo_mk4
+      - mondeo_mk5
+      - kuga_mk2
+      - kuga_mk3
+      - puma_mk1
+      - ecosport_mk2
+      - transit_mk6
+      - transit_mk7
+      - transit_custom_mk1
+      - transit_custom_mk2
+      - ranger_t6
+      - ranger_t6_2
+    systems:
+      - engine
+      - pcm
+      - can_bus
+    symptoms:
+      en:
+        - "PCM communication fault"
+        - "engine module unavailable"
+        - "multiple engine-related warning messages"
+        - "engine may not start"
+      ro:
+        - "defecțiune comunicație PCM"
+        - "modulul motor nu este disponibil"
+        - "mai multe avertizări legate de motor"
+        - "motorul poate să nu pornească"
+      de:
+        - "Kommunikationsfehler des PCM"
+        - "Motorsteuergerät nicht verfügbar"
+        - "mehrere motorbezogene Warnmeldungen"
+        - "Motor startet möglicherweise nicht"
+      fr:
+        - "défaut de communication PCM"
+        - "calculateur moteur indisponible"
+        - "plusieurs avertissements moteur"
+        - "le moteur peut ne pas démarrer"
+      es:
+        - "fallo de comunicación del PCM"
+        - "módulo del motor no disponible"
+        - "varios avisos relacionados con el motor"
+        - "el motor puede no arrancar"
+      it:
+        - "guasto di comunicazione PCM"
+        - "centralina motore non disponibile"
+        - "più avvisi relativi al motore"
+        - "il motore potrebbe non avviarsi"
+      nl:
+        - "PCM-communicatiestoring"
+        - "motorregelmodule niet beschikbaar"
+        - "meerdere motorgerelateerde waarschuwingen"
+        - "motor start mogelijk niet"
+    possible_causes:
+      en:
+        - "PCM power supply fault"
+        - "PCM ground fault"
+        - "CAN communication fault"
+        - "damaged wiring or connector"
+        - "PCM internal fault"
+      ro:
+        - "defecțiune alimentare PCM"
+        - "defecțiune masă PCM"
+        - "defecțiune comunicație CAN"
+        - "cablaj sau conector deteriorat"
+        - "defecțiune internă PCM"
+      de:
+        - "Fehler der PCM-Stromversorgung"
+        - "Massefehler des PCM"
+        - "CAN-Kommunikationsfehler"
+        - "beschädigte Verkabelung oder Stecker"
+        - "interner PCM-Fehler"
+      fr:
+        - "défaut d'alimentation du PCM"
+        - "défaut de masse du PCM"
+        - "défaut de communication CAN"
+        - "câblage ou connecteur endommagé"
+        - "défaut interne du PCM"
+      es:
+        - "fallo de alimentación del PCM"
+        - "fallo de masa del PCM"
+        - "fallo de comunicación CAN"
+        - "cableado o conector dañado"
+        - "fallo interno del PCM"
+      it:
+        - "guasto alimentazione PCM"
+        - "guasto massa PCM"
+        - "guasto comunicazione CAN"
+        - "cablaggio o connettore danneggiato"
+        - "guasto interno PCM"
+      nl:
+        - "storing PCM-voeding"
+        - "massastoring PCM"
+        - "CAN-communicatiestoring"
+        - "beschadigde bedrading of connector"
+        - "interne PCM-storing"
+    diagnostic_steps:
+      en:
+        - "Scan all modules for communication DTCs"
+        - "Check PCM power supply"
+        - "Check PCM grounds"
+        - "Check CAN communication"
+        - "Inspect PCM connectors and wiring"
+      ro:
+        - "Scanează toate modulele pentru DTC-uri de comunicație"
+        - "Verifică alimentarea PCM"
+        - "Verifică masele PCM"
+        - "Verifică comunicația CAN"
+        - "Inspectează conectorii și cablajul PCM"
+      de:
+        - "Alle Module auf Kommunikationsfehler prüfen"
+        - "PCM-Versorgung prüfen"
+        - "PCM-Masse prüfen"
+        - "CAN-Kommunikation prüfen"
+        - "PCM-Stecker und Verkabelung prüfen"
+      fr:
+        - "Analyser tous les modules à la recherche de défauts de communication"
+        - "Contrôler l'alimentation du PCM"
+        - "Contrôler les masses du PCM"
+        - "Contrôler la communication CAN"
+        - "Inspecter les connecteurs et le câblage du PCM"
+      es:
+        - "Escanear todos los módulos en busca de fallos de comunicación"
+        - "Comprobar alimentación del PCM"
+        - "Comprobar masas del PCM"
+        - "Comprobar comunicación CAN"
+        - "Inspeccionar conectores y cableado del PCM"
+      it:
+        - "Scansionare tutti i moduli per guasti di comunicazione"
+        - "Controllare alimentazione PCM"
+        - "Controllare masse PCM"
+        - "Controllare comunicazione CAN"
+        - "Ispezionare connettori e cablaggio PCM"
+      nl:
+        - "Scan alle modules op communicatie-DTC's"
+        - "PCM-voeding controleren"
+        - "PCM-massa's controleren"
+        - "CAN-communicatie controleren"
+        - "PCM-connectoren en bedrading controleren"
+    dtcs:
+      - U0100
+
+  - id: ford_pcm_p0101_mass_air_flow_range_performance
+    manufacturer: ford
+    models:
+      - fiesta
+      - focus
+      - mondeo
+      - kuga
+      - puma
+      - ecosport
+      - transit
+      - transit_custom
+      - ranger
+    generations:
+      - fiesta_mk7
+      - fiesta_mk8
+      - focus_mk3
+      - focus_mk4
+      - mondeo_mk4
+      - mondeo_mk5
+      - kuga_mk2
+      - kuga_mk3
+      - puma_mk1
+      - ecosport_mk2
+      - transit_mk6
+      - transit_mk7
+      - transit_custom_mk1
+      - transit_custom_mk2
+      - ranger_t6
+      - ranger_t6_2
+    systems:
+      - engine
+      - pcm
+      - air_intake
+      - maf
+    symptoms:
+      en:
+        - "engine hesitation"
+        - "poor acceleration"
+        - "reduced engine power"
+        - "unstable idle"
+        - "increased fuel consumption"
+      ro:
+        - "ezitare motor"
+        - "accelerație slabă"
+        - "putere redusă"
+        - "ralanti instabil"
+        - "consum crescut"
+      de:
+        - "Motorruckeln"
+        - "schlechte Beschleunigung"
+        - "reduzierte Motorleistung"
+        - "instabiler Leerlauf"
+        - "erhöhter Kraftstoffverbrauch"
+      fr:
+        - "hésitation du moteur"
+        - "mauvaise accélération"
+        - "puissance moteur réduite"
+        - "ralenti instable"
+        - "consommation accrue"
+      es:
+        - "vacilación del motor"
+        - "mala aceleración"
+        - "potencia reducida"
+        - "ralentí inestable"
+        - "aumento del consumo"
+      it:
+        - "esitazione del motore"
+        - "scarsa accelerazione"
+        - "potenza ridotta"
+        - "minimo instabile"
+        - "aumento dei consumi"
+      nl:
+        - "motor aarzelt"
+        - "slechte acceleratie"
+        - "verminderd motorvermogen"
+        - "onstabiel stationair toerental"
+        - "verhoogd brandstofverbruik"
+    possible_causes:
+      en:
+        - "contaminated or faulty MAF sensor"
+        - "air intake leak"
+        - "restricted air filter"
+        - "intake duct damage"
+        - "incorrect EGR operation"
+        - "wiring or connector fault"
+      ro:
+        - "senzor MAF murdar sau defect"
+        - "pierdere pe admisie"
+        - "filtru de aer colmatat"
+        - "conductă de admisie deteriorată"
+        - "funcționare incorectă EGR"
+        - "defecțiune cablaj sau conector"
+      de:
+        - "verschmutzter oder defekter MAF-Sensor"
+        - "Undichtigkeit im Ansaugsystem"
+        - "verstopfter Luftfilter"
+        - "beschädigte Ansaugleitung"
+        - "fehlerhafte EGR-Funktion"
+        - "Fehler an Verkabelung oder Stecker"
+      fr:
+        - "capteur MAF encrassé ou défectueux"
+        - "fuite d'air à l'admission"
+        - "filtre à air obstrué"
+        - "conduit d'admission endommagé"
+        - "fonctionnement incorrect de l'EGR"
+        - "défaut de câblage ou connecteur"
+      es:
+        - "sensor MAF sucio o defectuoso"
+        - "fuga en la admisión"
+        - "filtro de aire obstruido"
+        - "conducto de admisión dañado"
+        - "funcionamiento incorrecto de EGR"
+        - "fallo de cableado o conector"
+      it:
+        - "sensore MAF sporco o guasto"
+        - "perdita nell'aspirazione"
+        - "filtro aria ostruito"
+        - "condotto aspirazione danneggiato"
+        - "funzionamento EGR errato"
+        - "guasto cablaggio o connettore"
+      nl:
+        - "vervuilde of defecte MAF-sensor"
+        - "luchtlekkage in de inlaat"
+        - "verstopt luchtfilter"
+        - "beschadigde inlaatslang"
+        - "onjuiste EGR-werking"
+        - "bedradings- of connectorprobleem"
+    diagnostic_steps:
+      en:
+        - "Read PCM DTCs and freeze-frame data"
+        - "Compare MAF readings with engine load and RPM"
+        - "Inspect the complete intake tract"
+        - "Check air filter condition"
+        - "Inspect MAF wiring and connector"
+        - "Check for related EGR or boost faults"
+      ro:
+        - "Citește DTC-urile PCM și datele freeze-frame"
+        - "Compară valorile MAF cu sarcina și turația motorului"
+        - "Inspectează întreaga admisie"
+        - "Verifică starea filtrului de aer"
+        - "Inspectează cablajul și conectorul MAF"
+        - "Verifică eventualele defecțiuni EGR sau de supraalimentare"
+      de:
+        - "PCM-DTCs und Freeze-Frame-Daten auslesen"
+        - "MAF-Werte mit Motorlast und Drehzahl vergleichen"
+        - "gesamten Ansaugtrakt prüfen"
+        - "Luftfilter prüfen"
+        - "MAF-Verkabelung und Stecker prüfen"
+        - "EGR- und Ladedruckfehler prüfen"
+      fr:
+        - "Lire les DTC PCM et les données de freeze-frame"
+        - "Comparer le débit MAF avec la charge et le régime moteur"
+        - "Contrôler tout le circuit d'admission"
+        - "Contrôler le filtre à air"
+        - "Inspecter le câblage et le connecteur MAF"
+        - "Rechercher les défauts EGR ou de suralimentation associés"
+      es:
+        - "Leer DTC del PCM y datos de freeze-frame"
+        - "Comparar MAF con carga y régimen del motor"
+        - "Inspeccionar todo el sistema de admisión"
+        - "Comprobar el filtro de aire"
+        - "Revisar cableado y conector MAF"
+        - "Buscar fallos relacionados de EGR o sobrealimentación"
+      it:
+        - "Leggere DTC PCM e dati freeze-frame"
+        - "Confrontare MAF con carico e regime motore"
+        - "Controllare l'intero circuito aspirazione"
+        - "Controllare il filtro aria"
+        - "Ispezionare cablaggio e connettore MAF"
+        - "Verificare guasti EGR o sovralimentazione correlati"
+      nl:
+        - "PCM-DTC's en freeze-framedata uitlezen"
+        - "MAF-waarden vergelijken met motorbelasting en toerental"
+        - "Volledig inlaatsysteem controleren"
+        - "Luchtfilter controleren"
+        - "MAF-bedrading en connector controleren"
+        - "Gerelateerde EGR- of turbodrukstoringen controleren"
+    dtcs:
+      - P0101
+
+  - id: ford_pcm_p0102_mass_air_flow_low_input
+    manufacturer: ford
+    models:
+      - fiesta
+      - focus
+      - mondeo
+      - kuga
+      - puma
+      - ecosport
+      - transit
+      - transit_custom
+      - ranger
+    generations:
+      - fiesta_mk7
+      - fiesta_mk8
+      - focus_mk3
+      - focus_mk4
+      - mondeo_mk4
+      - mondeo_mk5
+      - kuga_mk2
+      - kuga_mk3
+      - puma_mk1
+      - ecosport_mk2
+      - transit_mk6
+      - transit_mk7
+      - transit_custom_mk1
+      - transit_custom_mk2
+      - ranger_t6
+      - ranger_t6_2
+    systems:
+      - engine
+      - pcm
+      - maf
+    symptoms:
+      en:
+        - "low engine power"
+        - "poor throttle response"
+        - "engine hesitation"
+        - "rough idle"
+      ro:
+        - "putere redusă"
+        - "răspuns slab la accelerație"
+        - "ezitare motor"
+        - "ralanti neregulat"
+      de:
+        - "geringe Motorleistung"
+        - "schlechte Gasannahme"
+        - "Motorruckeln"
+        - "unruhiger Leerlauf"
+      fr:
+        - "faible puissance moteur"
+        - "mauvaise réponse à l'accélérateur"
+        - "hésitation moteur"
+        - "ralenti irrégulier"
+      es:
+        - "baja potencia del motor"
+        - "mala respuesta del acelerador"
+        - "vacilación del motor"
+        - "ralentí irregular"
+      it:
+        - "potenza motore ridotta"
+        - "risposta acceleratore scarsa"
+        - "esitazione motore"
+        - "minimo irregolare"
+      nl:
+        - "laag motorvermogen"
+        - "slechte gasrespons"
+        - "motor aarzelt"
+        - "onregelmatig stationair toerental"
+    possible_causes:
+      en:
+        - "MAF signal circuit fault"
+        - "MAF sensor contamination"
+        - "intake restriction"
+        - "wiring or connector fault"
+        - "sensor power or ground fault"
+      ro:
+        - "defecțiune circuit semnal MAF"
+        - "senzor MAF contaminat"
+        - "restricție admisie"
+        - "defecțiune cablaj sau conector"
+        - "defecțiune alimentare sau masă senzor"
+      de:
+        - "Fehler im MAF-Signalkreis"
+        - "verschmutzter MAF-Sensor"
+        - "Ansaugbegrenzung"
+        - "Fehler an Verkabelung oder Stecker"
+        - "Fehler bei Sensorversorgung oder Masse"
+      fr:
+        - "défaut du circuit de signal MAF"
+        - "capteur MAF contaminé"
+        - "restriction d'admission"
+        - "défaut de câblage ou connecteur"
+        - "défaut d'alimentation ou de masse du capteur"
+      es:
+        - "fallo del circuito de señal MAF"
+        - "sensor MAF contaminado"
+        - "restricción de admisión"
+        - "fallo de cableado o conector"
+        - "fallo de alimentación o masa del sensor"
+      it:
+        - "guasto circuito segnale MAF"
+        - "sensore MAF contaminato"
+        - "restrizione aspirazione"
+        - "guasto cablaggio o connettore"
+        - "guasto alimentazione o massa sensore"
+      nl:
+        - "storing in MAF-signaalcircuit"
+        - "vervuilde MAF-sensor"
+        - "inlaatbeperking"
+        - "bedradings- of connectorstoring"
+        - "storing in sensorvoeding of massa"
+    diagnostic_steps:
+      en:
+        - "Read PCM live MAF data"
+        - "Check MAF signal plausibility"
+        - "Inspect intake restriction"
+        - "Check sensor power and ground"
+        - "Inspect MAF wiring and connector"
+      ro:
+        - "Citește valoarea MAF în timp real"
+        - "Verifică plauzibilitatea semnalului MAF"
+        - "Verifică eventualele restricții pe admisie"
+        - "Verifică alimentarea și masa senzorului"
+        - "Inspectează cablajul și conectorul MAF"
+      de:
+        - "MAF-Livedaten auslesen"
+        - "MAF-Signal auf Plausibilität prüfen"
+        - "Ansaugbegrenzung prüfen"
+        - "Sensorversorgung und Masse prüfen"
+        - "MAF-Verkabelung und Stecker prüfen"
+      fr:
+        - "Lire les données MAF en temps réel"
+        - "Contrôler la plausibilité du signal MAF"
+        - "Rechercher une restriction d'admission"
+        - "Contrôler l'alimentation et la masse du capteur"
+        - "Inspecter le câblage et le connecteur MAF"
+      es:
+        - "Leer datos MAF en vivo"
+        - "Comprobar plausibilidad de la señal MAF"
+        - "Buscar restricciones de admisión"
+        - "Comprobar alimentación y masa del sensor"
+        - "Inspeccionar cableado y conector MAF"
+      it:
+        - "Leggere i dati MAF in tempo reale"
+        - "Controllare la plausibilità del segnale MAF"
+        - "Verificare restrizioni nell'aspirazione"
+        - "Controllare alimentazione e massa del sensore"
+        - "Ispezionare cablaggio e connettore MAF"
+      nl:
+        - "MAF-livegegevens uitlezen"
+        - "MAF-signaal op plausibiliteit controleren"
+        - "Inlaatbeperking controleren"
+        - "Sensorvoeding en massa controleren"
+        - "MAF-bedrading en connector controleren"
+    dtcs:
+      - P0102
+
+  - id: ford_pcm_p0103_mass_air_flow_high_input
+    manufacturer: ford
+    models:
+      - fiesta
+      - focus
+      - mondeo
+      - kuga
+      - puma
+      - ecosport
+      - transit
+      - transit_custom
+      - ranger
+    generations:
+      - fiesta_mk7
+      - fiesta_mk8
+      - focus_mk3
+      - focus_mk4
+      - mondeo_mk4
+      - mondeo_mk5
+      - kuga_mk2
+      - kuga_mk3
+      - puma_mk1
+      - ecosport_mk2
+      - transit_mk6
+      - transit_mk7
+      - transit_custom_mk1
+      - transit_custom_mk2
+      - ranger_t6
+      - ranger_t6_2
+    systems:
+      - engine
+      - pcm
+      - maf
+    symptoms:
+      en:
+        - "rich running condition"
+        - "poor fuel economy"
+        - "unstable idle"
+        - "poor acceleration"
+      ro:
+        - "funcționare cu amestec prea bogat"
+        - "consum crescut"
+        - "ralanti instabil"
+        - "accelerație slabă"
+      de:
+        - "zu fettes Gemisch"
+        - "erhöhter Kraftstoffverbrauch"
+        - "instabiler Leerlauf"
+        - "schlechte Beschleunigung"
+      fr:
+        - "mélange trop riche"
+        - "consommation excessive"
+        - "ralenti instable"
+        - "mauvaise accélération"
+      es:
+        - "mezcla demasiado rica"
+        - "consumo elevado"
+        - "ralentí inestable"
+        - "mala aceleración"
+      it:
+        - "miscela troppo ricca"
+        - "consumi elevati"
+        - "minimo instabile"
+        - "scarsa accelerazione"
+      nl:
+        - "te rijk mengsel"
+        - "hoog brandstofverbruik"
+        - "onstabiel stationair toerental"
+        - "slechte acceleratie"
+    possible_causes:
+      en:
+        - "MAF signal circuit short to voltage"
+        - "incorrect MAF signal"
+        - "sensor contamination"
+        - "wiring fault"
+        - "incorrect air measurement"
+      ro:
+        - "scurtcircuit semnal MAF la tensiune"
+        - "semnal MAF incorect"
+        - "senzor contaminat"
+        - "defecțiune cablaj"
+        - "măsurare incorectă a aerului"
+      de:
+        - "MAF-Signalkurzschluss gegen Spannung"
+        - "falsches MAF-Signal"
+        - "verschmutzter Sensor"
+        - "Verkabelungsfehler"
+        - "fehlerhafte Luftmessung"
+      fr:
+        - "court-circuit du signal MAF vers la tension"
+        - "signal MAF incorrect"
+        - "capteur contaminé"
+        - "défaut de câblage"
+        - "mesure d'air incorrecte"
+      es:
+        - "cortocircuit de señal MAF a tensión"
+        - "señal MAF incorrecta"
+        - "sensor contaminado"
+        - "fallo de cableado"
+        - "medición de aire incorrecta"
+      it:
+        - "cortocircuito segnale MAF verso tensione"
+        - "segnale MAF errato"
+        - "sensore contaminato"
+        - "guasto cablaggio"
+        - "misurazione aria errata"
+      nl:
+        - "MAF-signaal kortgesloten naar spanning"
+        - "onjuiste MAF-signalering"
+        - "vervuilde sensor"
+        - "bedradingsstoring"
+        - "onjuiste luchtmeting"
+    diagnostic_steps:
+      en:
+        - "Read MAF signal with ignition on and engine running"
+        - "Compare MAF value with expected airflow"
+        - "Inspect wiring for shorts"
+        - "Check sensor connector"
+        - "Verify intake system condition"
+      ro:
+        - "Citește semnalul MAF cu contactul pus și motorul pornit"
+        - "Compară valoarea MAF cu debitul de aer așteptat"
+        - "Inspectează cablajul pentru scurtcircuite"
+        - "Verifică mufa senzorului"
+        - "Verifică starea sistemului de admisie"
+      de:
+        - "MAF-Signal bei Zündung und laufendem Motor prüfen"
+        - "MAF-Wert mit dem erwarteten Luftstrom vergleichen"
+        - "Verkabelung auf Kurzschlüsse prüfen"
+        - "Sensorstecker prüfen"
+        - "Ansaugsystem prüfen"
+      fr:
+        - "Contrôler le signal MAF contact mis et moteur tournant"
+        - "Comparer la valeur MAF au débit attendu"
+        - "Rechercher des courts-circuits dans le câblage"
+        - "Contrôler le connecteur"
+        - "Contrôler le circuit d'admission"
+      es:
+        - "Comprobar señal MAF con contacto y motor en marcha"
+        - "Comparar valor MAF con el caudal esperado"
+        - "Buscar cortocircuitos en el cableado"
+        - "Comprobar el conector"
+        - "Verificar el sistema de admisión"
+      it:
+        - "Controllare il segnale MAF con quadro acceso e motore avviato"
+        - "Confrontare il valore MAF con il flusso previsto"
+        - "Controllare il cablaggio per cortocircuiti"
+        - "Controllare il connettore"
+        - "Verificare il sistema aspirazione"
+      nl:
+        - "MAF-signaal controleren met contact aan en motor draaiend"
+        - "MAF-waarde vergelijken met verwachte luchtstroom"
+        - "Bedrading op kortsluiting controleren"
+        - "Sensorconnector controleren"
+        - "Inlaatsysteem controleren"
+    dtcs:
+      - P0103
+
+  - id: ford_pcm_p0112_intake_air_temperature_low_input
+    manufacturer: ford
+    models:
+      - fiesta
+      - focus
+      - mondeo
+      - kuga
+      - puma
+      - ecosport
+      - transit
+      - transit_custom
+      - ranger
+    generations:
+      - fiesta_mk7
+      - fiesta_mk8
+      - focus_mk3
+      - focus_mk4
+      - mondeo_mk4
+      - mondeo_mk5
+      - kuga_mk2
+      - kuga_mk3
+      - puma_mk1
+      - ecosport_mk2
+      - transit_mk6
+      - transit_mk7
+      - transit_custom_mk1
+      - transit_custom_mk2
+      - ranger_t6
+      - ranger_t6_2
+    systems:
+      - engine
+      - pcm
+      - intake_air_temperature
+    symptoms:
+      en:
+        - "incorrect intake air temperature reading"
+        - "poor engine performance"
+        - "fuel mixture correction problems"
+        - "check engine light"
+      ro:
+        - "valoare incorectă temperatură aer admis"
+        - "performanțe slabe ale motorului"
+        - "probleme de corecție amestec"
+        - "martor motor aprins"
+      de:
+        - "falsche Ansauglufttemperatur"
+        - "schlechte Motorleistung"
+        - "Probleme bei der Gemischkorrektur"
+        - "Motorkontrollleuchte"
+      fr:
+        - "température d'air d'admission incorrecte"
+        - "mauvaises performances moteur"
+        - "problèmes de correction du mélange"
+        - "voyant moteur"
+      es:
+        - "lectura incorrecta de temperatura de admisión"
+        - "mal rendimiento del motor"
+        - "problemas de corrección de mezcla"
+        - "testigo de motor"
+      it:
+        - "lettura errata temperatura aria aspirata"
+        - "prestazioni motore ridotte"
+        - "problemi di correzione miscela"
+        - "spia motore"
+      nl:
+        - "onjuiste inlaatluchttemperatuur"
+        - "slechte motorprestaties"
+        - "problemen met mengselcorrectie"
+        - "motorstoringslamp"
+    possible_causes:
+      en:
+        - "IAT sensor short to ground"
+        - "faulty integrated MAF/IAT sensor"
+        - "damaged wiring"
+        - "connector fault"
+        - "sensor contamination"
+      ro:
+        - "senzor IAT în scurt la masă"
+        - "senzor MAF/IAT integrat defect"
+        - "cablaj deteriorat"
+        - "defecțiune conector"
+        - "contaminare senzor"
+      de:
+        - "IAT-Sensor gegen Masse kurzgeschlossen"
+        - "defekter integrierter MAF/IAT-Sensor"
+        - "beschädigte Verkabelung"
+        - "Steckerfehler"
+        - "Sensorverschmutzung"
+      fr:
+        - "capteur IAT en court-circuit à la masse"
+        - "capteur MAF/IAT intégré défectueux"
+        - "câblage endommagé"
+        - "défaut de connecteur"
+        - "capteur contaminé"
+      es:
+        - "sensor IAT en cortocircuito a masa"
+        - "sensor MAF/IAT integrado defectuoso"
+        - "cableado dañado"
+        - "fallo del conector"
+        - "sensor contaminado"
+      it:
+        - "sensore IAT in corto a massa"
+        - "sensore MAF/IAT integrato guasto"
+        - "cablaggio danneggiato"
+        - "guasto connettore"
+        - "sensore contaminato"
+      nl:
+        - "IAT-sensor kortgesloten naar massa"
+        - "defecte geïntegreerde MAF/IAT-sensor"
+        - "beschadigde bedrading"
+        - "connectorstoring"
+        - "vervuilde sensor"
+    diagnostic_steps:
+      en:
+        - "Read IAT live data"
+        - "Compare IAT with ambient temperature when cold"
+        - "Check sensor reference and ground"
+        - "Inspect wiring and connector"
+        - "Check the integrated MAF/IAT assembly where applicable"
+      ro:
+        - "Citește temperatura IAT în timp real"
+        - "Compară IAT cu temperatura ambientală la rece"
+        - "Verifică alimentarea de referință și masa senzorului"
+        - "Inspectează cablajul și conectorul"
+        - "Verifică ansamblul MAF/IAT integrat unde este utilizat"
+      de:
+        - "IAT-Livedaten auslesen"
+        - "IAT bei kaltem Motor mit Außentemperatur vergleichen"
+        - "Referenzversorgung und Masse prüfen"
+        - "Verkabelung und Stecker prüfen"
+        - "Integrierte MAF/IAT-Einheit prüfen"
+      fr:
+        - "Lire les données IAT en temps réel"
+        - "Comparer l'IAT à la température ambiante moteur froid"
+        - "Contrôler la référence et la masse"
+        - "Inspecter le câblage et le connecteur"
+        - "Contrôler l'ensemble MAF/IAT intégré si applicable"
+      es:
+        - "Leer datos IAT en vivo"
+        - "Comparar IAT con temperatura ambiente en frío"
+        - "Comprobar referencia y masa"
+        - "Inspeccionar cableado y conector"
+        - "Comprobar conjunto MAF/IAT integrado cuando corresponda"
+      it:
+        - "Leggere dati IAT in tempo reale"
+        - "Confrontare IAT con temperatura ambiente a motore freddo"
+        - "Controllare riferimento e massa"
+        - "Ispezionare cablaggio e connettore"
+        - "Controllare gruppo MAF/IAT integrato quando presente"
+      nl:
+        - "IAT-livegegevens uitlezen"
+        - "IAT bij koude motor vergelijken met omgevingstemperatuur"
+        - "Referentiespanning en massa controleren"
+        - "Bedrading en connector controleren"
+        - "Geïntegreerde MAF/IAT-eenheid controleren indien van toepassing"
+    dtcs:
+      - P0112
+
+  - id: ford_pcm_p0113_intake_air_temperature_high_input
+    manufacturer: ford
+    models:
+      - fiesta
+      - focus
+      - mondeo
+      - kuga
+      - puma
+      - ecosport
+      - transit
+      - transit_custom
+      - ranger
+    generations:
+      - fiesta_mk7
+      - fiesta_mk8
+      - focus_mk3
+      - focus_mk4
+      - mondeo_mk4
+      - mondeo_mk5
+      - kuga_mk2
+      - kuga_mk3
+      - puma_mk1
+      - ecosport_mk2
+      - transit_mk6
+      - transit_mk7
+      - transit_custom_mk1
+      - transit_custom_mk2
+      - ranger_t6
+      - ranger_t6_2
+    systems:
+      - engine
+      - pcm
+      - intake_air_temperature
+    symptoms:
+      en:
+        - "unrealistically low intake temperature displayed"
+        - "poor cold-start operation"
+        - "engine performance changes"
+        - "check engine light"
+      ro:
+        - "temperatură de admisie afișată nerealist de scăzută"
+        - "pornire la rece dificilă"
+        - "performanțe motor modificate"
+        - "martor motor aprins"
+      de:
+        - "unrealistisch niedrige Ansauglufttemperatur"
+        - "schlechter Kaltstart"
+        - "veränderte Motorleistung"
+        - "Motorkontrollleuchte"
+      fr:
+        - "température d'admission anormalement basse"
+        - "mauvais démarrage à froid"
+        - "performances moteur modifiées"
+        - "voyant moteur"
+      es:
+        - "temperatura de admisión anormalmente baja"
+        - "mal arranque en frío"
+        - "cambios en el rendimiento"
+        - "testigo de motor"
+      it:
+        - "temperatura aspirazione irrealisticamente bassa"
+        - "cattivo avviamento a freddo"
+        - "prestazioni motore alterate"
+        - "spia motore"
+      nl:
+        - "onrealistisch lage inlaatluchttemperatuur"
+        - "slechte koude start"
+        - "veranderde motorprestaties"
+        - "motorstoringslamp"
+    possible_causes:
+      en:
+        - "IAT signal open circuit"
+        - "disconnected sensor"
+        - "damaged wiring"
+        - "connector fault"
+        - "integrated MAF/IAT sensor fault"
+      ro:
+        - "circuit deschis pe semnal IAT"
+        - "senzor deconectat"
+        - "cablaj deteriorat"
+        - "defecțiune conector"
+        - "defecțiune senzor MAF/IAT integrat"
+      de:
+        - "IAT-Signalkreis unterbrochen"
+        - "Sensor abgesteckt"
+        - "beschädigte Verkabelung"
+        - "Steckerfehler"
+        - "Fehler des integrierten MAF/IAT-Sensors"
+      fr:
+        - "circuit de signal IAT ouvert"
+        - "capteur débranché"
+        - "câblage endommagé"
+        - "défaut de connecteur"
+        - "défaut du capteur MAF/IAT intégré"
+      es:
+        - "circuito de señal IAT abierto"
+        - "sensor desconectado"
+        - "cableado dañado"
+        - "fallo del conector"
+        - "fallo del sensor MAF/IAT integrado"
+      it:
+        - "circuito segnale IAT aperto"
+        - "sensore scollegato"
+        - "cablaggio danneggiato"
+        - "guasto connettore"
+        - "guasto sensore MAF/IAT integrato"
+      nl:
+        - "IAT-signaalcircuit open"
+        - "sensor losgekoppeld"
+        - "beschadigde bedrading"
+        - "connectorstoring"
+        - "storing geïntegreerde MAF/IAT-sensor"
+    diagnostic_steps:
+      en:
+        - "Read IAT PID with engine cold"
+        - "Compare the reading with ambient temperature"
+        - "Inspect sensor connector"
+        - "Check continuity of the signal circuit"
+        - "Check the MAF/IAT assembly where applicable"
+      ro:
+        - "Citește PID-ul IAT cu motorul rece"
+        - "Compară valoarea cu temperatura ambientală"
+        - "Inspectează conectorul senzorului"
+        - "Verifică continuitatea circuitului de semnal"
+        - "Verifică ansamblul MAF/IAT unde este cazul"
+      de:
+        - "IAT-PID bei kaltem Motor prüfen"
+        - "Wert mit Außentemperatur vergleichen"
+        - "Sensorstecker prüfen"
+        - "Signalleitung auf Durchgang prüfen"
+        - "MAF/IAT-Einheit prüfen"
+      fr:
+        - "Lire le PID IAT moteur froid"
+        - "Comparer avec la température ambiante"
+        - "Contrôler le connecteur"
+        - "Contrôler la continuité du circuit de signal"
+        - "Contrôler l'ensemble MAF/IAT"
+      es:
+        - "Leer PID IAT con motor frío"
+        - "Comparar con temperatura ambiente"
+        - "Comprobar conector"
+        - "Comprobar continuidad del circuito"
+        - "Comprobar conjunto MAF/IAT"
+      it:
+        - "Leggere PID IAT a motore freddo"
+        - "Confrontare con temperatura ambiente"
+        - "Controllare connettore"
+        - "Controllare continuità circuito segnale"
+        - "Controllare gruppo MAF/IAT"
+      nl:
+        - "IAT-PID bij koude motor uitlezen"
+        - "Waarde vergelijken met omgevingstemperatuur"
+        - "Sensorconnector controleren"
+        - "Signaalcircuit op continuïteit controleren"
+        - "MAF/IAT-eenheid controleren"
+    dtcs:
+      - P0113
+
+  - id: ford_pcm_p0128_coolant_temperature_below_regulating_temperature
+    manufacturer: ford
+    models:
+      - fiesta
+      - focus
+      - mondeo
+      - kuga
+      - puma
+      - ecosport
+      - transit
+      - transit_custom
+      - ranger
+    generations:
+      - fiesta_mk7
+      - fiesta_mk8
+      - focus_mk3
+      - focus_mk4
+      - mondeo_mk4
+      - mondeo_mk5
+      - kuga_mk2
+      - kuga_mk3
+      - puma_mk1
+      - ecosport_mk2
+      - transit_mk6
+      - transit_mk7
+      - transit_custom_mk1
+      - transit_custom_mk2
+      - ranger_t6
+      - ranger_t6_2
+    systems:
+      - engine
+      - pcm
+      - cooling
+      - coolant_temperature
+    symptoms:
+      en:
+        - "engine takes too long to reach operating temperature"
+        - "poor cabin heating"
+        - "increased fuel consumption"
+        - "coolant temperature remains low"
+        - "check engine light"
+      ro:
+        - "motorul ajunge greu la temperatura de funcționare"
+        - "încălzire slabă în habitaclu"
+        - "consum crescut"
+        - "temperatura lichidului rămâne scăzută"
+        - "martor motor aprins"
+      de:
+        - "Motor erreicht Betriebstemperatur zu langsam"
+        - "schlechte Innenraumheizung"
+        - "erhöhter Kraftstoffverbrauch"
+        - "Kühlmitteltemperatur bleibt niedrig"
+        - "Motorkontrollleuchte"
+      fr:
+        - "moteur trop lent à atteindre sa température de fonctionnement"
+        - "chauffage habitacle faible"
+        - "consommation accrue"
+        - "température du liquide de refroidissement trop basse"
+        - "voyant moteur"
+      es:
+        - "el motor tarda en alcanzar la temperatura de servicio"
+        - "calefacción del habitáculo débil"
+        - "aumento del consumo"
+        - "temperatura del refrigerante baja"
+        - "testigo de motor"
+      it:
+        - "motore lento a raggiungere la temperatura di esercizio"
+        - "riscaldamento abitacolo debole"
+        - "consumi aumentati"
+        - "temperatura refrigerante bassa"
+        - "spia motore"
+      nl:
+        - "motor bereikt bedrijfstemperatuur te langzaam"
+        - "slechte interieurverwarming"
+        - "hoger brandstofverbruik"
+        - "koelvloeistoftemperatuur blijft laag"
+        - "motorstoringslamp"
+    possible_causes:
+      en:
+        - "thermostat stuck open"
+        - "coolant temperature sensor fault"
+        - "coolant level or circulation problem"
+        - "cooling system fault"
+        - "incorrect temperature signal"
+      ro:
+        - "termostat blocat deschis"
+        - "senzor temperatură lichid defect"
+        - "problemă nivel sau circulație lichid"
+        - "defecțiune sistem răcire"
+        - "semnal temperatură incorect"
+      de:
+        - "Thermostat offen blockiert"
+        - "Kühlmitteltemperatursensor defekt"
+        - "Problem mit Kühlmittelstand oder Zirkulation"
+        - "Fehler im Kühlsystem"
+        - "falsches Temperatursignal"
+      fr:
+        - "thermostat bloqué ouvert"
+        - "capteur de température du liquide défectueux"
+        - "problème de niveau ou circulation du liquide"
+        - "défaut du système de refroidissement"
+        - "signal de température incorrect"
+      es:
+        - "termostato atascado abierto"
+        - "sensor de temperatura del refrigerante defectuoso"
+        - "problema de nivel o circulación"
+        - "fallo del sistema de refrigeración"
+        - "señal de temperatura incorrecta"
+      it:
+        - "termostato bloccato aperto"
+        - "sensore temperatura refrigerante guasto"
+        - "problema livello o circolazione refrigerante"
+        - "guasto sistema di raffreddamento"
+        - "segnale temperatura errato"
+      nl:
+        - "thermostaat blijft open staan"
+        - "defecte koelvloeistoftemperatuursensor"
+        - "probleem met koelvloeistofniveau of circulatie"
+        - "storing koelsysteem"
+        - "onjuiste temperatuursignalering"
+    diagnostic_steps:
+      en:
+        - "Monitor coolant temperature from cold start"
+        - "Compare PCM temperature data with actual engine temperature"
+        - "Check thermostat operation"
+        - "Check coolant level and circulation"
+        - "Inspect coolant temperature sensor circuit"
+      ro:
+        - "Monitorizează temperatura de la pornirea la rece"
+        - "Compară temperatura din PCM cu temperatura reală a motorului"
+        - "Verifică funcționarea termostatului"
+        - "Verifică nivelul și circulația lichidului"
+        - "Inspectează circuitul senzorului de temperatură"
+      de:
+        - "Kühlmitteltemperatur ab Kaltstart überwachen"
+        - "PCM-Temperaturwert mit tatsächlicher Motortemperatur vergleichen"
+        - "Thermostat prüfen"
+        - "Kühlmittelstand und Zirkulation prüfen"
+        - "Temperatursensorkreis prüfen"
+      fr:
+        - "Surveiller la température dès le démarrage à froid"
+        - "Comparer la température PCM avec la température réelle"
+        - "Contrôler le thermostat"
+        - "Contrôler le niveau et la circulation du liquide"
+        - "Contrôler le circuit du capteur"
+      es:
+        - "Monitorizar la temperatura desde el arranque en frío"
+        - "Comparar temperatura PCM con temperatura real"
+        - "Comprobar el termostato"
+        - "Comprobar nivel y circulación del refrigerante"
+        - "Comprobar circuito del sensor"
+      it:
+        - "Monitorare la temperatura dall'avviamento a freddo"
+        - "Confrontare temperatura PCM con temperatura reale"
+        - "Controllare termostato"
+        - "Controllare livello e circolazione refrigerante"
+        - "Controllare circuito sensore"
+      nl:
+        - "Koelvloeistoftemperatuur vanaf koude start controleren"
+        - "PCM-temperatuur vergelijken met werkelijke motortemperatuur"
+        - "Thermostaat controleren"
+        - "Koelvloeistofniveau en circulatie controleren"
+        - "Temperatuursensorcircuit controleren"
+    dtcs:
+      - P0128
+
+  - id: ford_pcm_p0335_crankshaft_position_sensor_circuit
+    manufacturer: ford
+    models:
+      - fiesta
+      - focus
+      - mondeo
+      - kuga
+      - puma
+      - ecosport
+      - transit
+      - transit_custom
+      - ranger
+    generations:
+      - fiesta_mk7
+      - fiesta_mk8
+      - focus_mk3
+      - focus_mk4
+      - mondeo_mk4
+      - mondeo_mk5
+      - kuga_mk2
+      - kuga_mk3
+      - puma_mk1
+      - ecosport_mk2
+      - transit_mk6
+      - transit_mk7
+      - transit_custom_mk1
+      - transit_custom_mk2
+      - ranger_t6
+      - ranger_t6_2
+    systems:
+      - engine
+      - pcm
+      - crankshaft_position
+      - starting
+    symptoms:
+      en:
+        - "engine cranks but does not start"
+        - "intermittent engine stall"
+        - "no RPM signal during cranking"
+        - "engine warning light"
+      ro:
+        - "motorul învârte dar nu pornește"
+        - "motorul se oprește intermitent"
+        - "lipsește semnalul RPM la pornire"
+        - "martor motor aprins"
+      de:
+        - "Motor dreht, startet aber nicht"
+        - "Motor geht sporadisch aus"
+        - "kein Drehzahlsignal beim Starten"
+        - "Motorkontrollleuchte"
+      fr:
+        - "le moteur tourne mais ne démarre pas"
+        - "calage moteur intermittent"
+        - "aucun signal de régime pendant le démarrage"
+        - "voyant moteur"
+      es:
+        - "el motor gira pero no arranca"
+        - "parada intermitente del motor"
+        - "sin señal de RPM durante el arranque"
+        - "testigo de motor"
+      it:
+        - "il motore gira ma non parte"
+        - "spegnimento intermittente"
+        - "assenza segnale RPM durante l'avviamento"
+        - "spia motore"
+      nl:
+        - "motor draait maar start niet"
+        - "motor valt af en toe uit"
+        - "geen toerentalsignaal tijdens starten"
+        - "motorstoringslamp"
+    possible_causes:
+      en:
+        - "faulty crankshaft position sensor"
+        - "damaged sensor wiring"
+        - "damaged reluctor or trigger wheel"
+        - "incorrect sensor air gap"
+        - "PCM signal circuit fault"
+      ro:
+        - "senzor poziție arbore cotit defect"
+        - "cablaj senzor deteriorat"
+        - "roată fono deteriorată"
+        - "distanță incorectă senzor-roată"
+        - "defecțiune circuit semnal PCM"
+      de:
+        - "Kurbelwellensensor defekt"
+        - "beschädigte Sensorleitung"
+        - "beschädigtes Geberrad"
+        - "falscher Sensorabstand"
+        - "Fehler im PCM-Signalkreis"
+      fr:
+        - "capteur de position vilebrequin défectueux"
+        - "câblage endommagé"
+        - "roue cible endommagée"
+        - "entrefer incorrect"
+        - "défaut du circuit de signal PCM"
+      es:
+        - "sensor de posición del cigüeñal defectuoso"
+        - "cableado dañado"
+        - "rueda fónica dañada"
+        - "entrehierro incorrecto"
+        - "fallo del circuito de señal PCM"
+      it:
+        - "sensore posizione albero motore guasto"
+        - "cablaggio danneggiato"
+        - "ruota fonica danneggiata"
+        - "distanza sensore errata"
+        - "guasto circuito segnale PCM"
+      nl:
+        - "defecte krukassensor"
+        - "beschadigde sensorbedrading"
+        - "beschadigde triggerwiel"
+        - "onjuiste luchtspleet"
+        - "storing in PCM-signaalcircuit"
+    diagnostic_steps:
+      en:
+        - "Read PCM DTCs"
+        - "Monitor engine RPM during cranking"
+        - "Inspect crankshaft sensor wiring and connector"
+        - "Check sensor signal with appropriate test equipment"
+        - "Inspect the trigger wheel where accessible"
+      ro:
+        - "Citește DTC-urile PCM"
+        - "Monitorizează RPM-ul în timpul pornirii"
+        - "Inspectează cablajul și conectorul senzorului"
+        - "Verifică semnalul cu echipamentul adecvat"
+        - "Inspectează roata fono unde este accesibilă"
+      de:
+        - "PCM-DTCs auslesen"
+        - "Motordrehzahl beim Starten überwachen"
+        - "Sensorverkabelung und Stecker prüfen"
+        - "Sensorsignal mit geeigneter Messtechnik prüfen"
+        - "Geberrad prüfen"
+      fr:
+        - "Lire les DTC PCM"
+        - "Surveiller le régime moteur pendant le démarrage"
+        - "Contrôler câblage et connecteur"
+        - "Contrôler le signal avec un équipement adapté"
+        - "Contrôler la roue cible"
+      es:
+        - "Leer DTC del PCM"
+        - "Monitorizar RPM durante el arranque"
+        - "Inspeccionar cableado y conector"
+        - "Comprobar la señal con equipo adecuado"
+        - "Inspeccionar la rueda fónica"
+      it:
+        - "Leggere DTC PCM"
+        - "Monitorare RPM durante l'avviamento"
+        - "Ispezionare cablaggio e connettore"
+        - "Controllare il segnale con strumentazione adeguata"
+        - "Controllare la ruota fonica"
+      nl:
+        - "PCM-DTC's uitlezen"
+        - "Motortoerental tijdens starten controleren"
+        - "Sensorbedrading en connector controleren"
+        - "Sensorsignaal met geschikte meetapparatuur controleren"
+        - "Triggerwiel controleren"
+    dtcs:
+      - P0335
+
+  - id: ford_pcm_p0340_camshaft_position_sensor_circuit
+    manufacturer: ford
+    models:
+      - fiesta
+      - focus
+      - mondeo
+      - kuga
+      - puma
+      - ecosport
+      - transit
+      - transit_custom
+      - ranger
+    generations:
+      - fiesta_mk7
+      - fiesta_mk8
+      - focus_mk3
+      - focus_mk4
+      - mondeo_mk4
+      - mondeo_mk5
+      - kuga_mk2
+      - kuga_mk3
+      - puma_mk1
+      - ecosport_mk2
+      - transit_mk6
+      - transit_mk7
+      - transit_custom_mk1
+      - transit_custom_mk2
+      - ranger_t6
+      - ranger_t6_2
+    systems:
+      - engine
+      - pcm
+      - camshaft_position
+      - timing
+    symptoms:
+      en:
+        - "hard starting"
+        - "engine cranks without starting"
+        - "rough running"
+        - "intermittent engine stall"
+        - "reduced engine performance"
+      ro:
+        - "pornire dificilă"
+        - "motorul învârte fără să pornească"
+        - "funcționare neregulată"
+        - "oprire intermitentă"
+        - "performanță redusă"
+      de:
+        - "schlechter Motorstart"
+        - "Motor dreht ohne zu starten"
+        - "unruhiger Motorlauf"
+        - "sporadisches Absterben"
+        - "reduzierte Motorleistung"
+      fr:
+        - "démarrage difficile"
+        - "moteur qui tourne sans démarrer"
+        - "fonctionnement irrégulier"
+        - "calage intermittent"
+        - "performances réduites"
+      es:
+        - "arranque difícil"
+        - "el motor gira pero no arranca"
+        - "funcionamiento irregular"
+        - "parada intermitente"
+        - "rendimiento reducido"
+      it:
+        - "avviamento difficile"
+        - "motore che gira ma non parte"
+        - "funzionamento irregolare"
+        - "spegnimento intermittente"
+        - "prestazioni ridotte"
+      nl:
+        - "moeilijk starten"
+        - "motor draait maar start niet"
+        - "onrustige motorloop"
+        - "intermitterend afslaan"
+        - "verminderd motorvermogen"
+    possible_causes:
+      en:
+        - "faulty camshaft position sensor"
+        - "damaged wiring"
+        - "connector fault"
+        - "camshaft reluctor problem"
+        - "timing system fault"
+      ro:
+        - "senzor poziție ax came defect"
+        - "cablaj deteriorat"
+        - "defecțiune conector"
+        - "problemă roată fono ax came"
+        - "defecțiune distribuție"
+      de:
+        - "Nockenwellensensor defekt"
+        - "beschädigte Verkabelung"
+        - "Steckerfehler"
+        - "Problem am Nockenwellengeberrad"
+        - "Fehler im Steuertrieb"
+      fr:
+        - "capteur de position d'arbre à cames défectueux"
+        - "câblage endommagé"
+        - "défaut de connecteur"
+        - "problème de cible d'arbre à cames"
+        - "défaut de distribution"
+      es:
+        - "sensor de posición del árbol de levas defectuoso"
+        - "cableado dañado"
+        - "fallo del conector"
+        - "problema de rueda fónica"
+        - "fallo de distribución"
+      it:
+        - "sensore posizione albero a camme guasto"
+        - "cablaggio danneggiato"
+        - "guasto connettore"
+        - "problema ruota fonica albero a camme"
+        - "guasto distribuzione"
+      nl:
+        - "defecte nokkenassensor"
+        - "beschadigde bedrading"
+        - "connectorstoring"
+        - "probleem met nokkenastrigger"
+        - "storing distributie"
+    diagnostic_steps:
+      en:
+        - "Read PCM DTCs"
+        - "Monitor camshaft and crankshaft signals"
+        - "Check sensor wiring and connector"
+        - "Compare camshaft timing data"
+        - "Inspect mechanical timing if correlation is abnormal"
+      ro:
+        - "Citește DTC-urile PCM"
+        - "Monitorizează semnalele axului cu came și arborelui cotit"
+        - "Verifică senzorul și cablajul"
+        - "Compară datele de sincronizare"
+        - "Verifică distribuția mecanică dacă sincronizarea este anormală"
+      de:
+        - "PCM-DTCs auslesen"
+        - "Nockenwellen- und Kurbelwellensignale überwachen"
+        - "Sensorverkabelung prüfen"
+        - "Steuerzeiten vergleichen"
+        - "Mechanische Steuerzeiten prüfen"
+      fr:
+        - "Lire les DTC PCM"
+        - "Surveiller les signaux arbre à cames et vilebrequin"
+        - "Contrôler le câblage"
+        - "Comparer les données de synchronisation"
+        - "Contrôler la distribution mécanique si nécessaire"
+      es:
+        - "Leer DTC del PCM"
+        - "Monitorizar señales de árbol de levas y cigüeñal"
+        - "Comprobar cableado"
+        - "Comparar datos de sincronización"
+        - "Comprobar distribución mecánica si es necesario"
+      it:
+        - "Leggere DTC PCM"
+        - "Monitorare segnali albero a camme e motore"
+        - "Controllare cablaggio"
+        - "Confrontare dati fasatura"
+        - "Controllare distribuzione meccanica se necessario"
+      nl:
+        - "PCM-DTC's uitlezen"
+        - "Nokkenas- en krukassignalen controleren"
+        - "Bedrading controleren"
+        - "Timinggegevens vergelijken"
+        - "Mechanische distributie controleren indien nodig"
+    dtcs:
+      - P0340
+
+  - id: ford_pcm_p0300_random_multiple_cylinder_misfire
+    manufacturer: ford
+    models:
+      - fiesta
+      - focus
+      - mondeo
+      - kuga
+      - puma
+      - ecosport
+      - transit
+      - transit_custom
+      - ranger
+    generations:
+      - fiesta_mk7
+      - fiesta_mk8
+      - focus_mk3
+      - focus_mk4
+      - mondeo_mk4
+      - mondeo_mk5
+      - kuga_mk2
+      - kuga_mk3
+      - puma_mk1
+      - ecosport_mk2
+      - transit_mk6
+      - transit_mk7
+      - transit_custom_mk1
+      - transit_custom_mk2
+      - ranger_t6
+      - ranger_t6_2
+    systems:
+      - engine
+      - pcm
+      - ignition
+      - fuel
+      - misfire
+    symptoms:
+      en:
+        - "engine misfire"
+        - "rough idle"
+        - "engine vibration"
+        - "loss of power"
+        - "flashing check engine light"
+      ro:
+        - "rateu motor"
+        - "ralanti neregulat"
+        - "vibrații motor"
+        - "pierdere de putere"
+        - "martor motor clipitor"
+      de:
+        - "Zündaussetzer"
+        - "unruhiger Leerlauf"
+        - "Motorvibrationen"
+        - "Leistungsverlust"
+        - "blinkende Motorkontrollleuchte"
+      fr:
+        - "ratés moteur"
+        - "ralenti irrégulier"
+        - "vibrations moteur"
+        - "perte de puissance"
+        - "voyant moteur clignotant"
+      es:
+        - "fallos de encendido"
+        - "ralentí irregular"
+        - "vibración del motor"
+        - "pérdida de potencia"
+        - "testigo de motor parpadeando"
+      it:
+        - "mancate accensione"
+        - "minimo irregolare"
+        - "vibrazioni motore"
+        - "perdita di potenza"
+        - "spia motore lampeggiante"
+      nl:
+        - "motoroverslaan"
+        - "onregelmatig stationair toerental"
+        - "motortrillingen"
+        - "vermogensverlies"
+        - "knipperend motorstoringslampje"
+    possible_causes:
+      en:
+        - "ignition system fault on petrol engines"
+        - "fuel delivery problem"
+        - "injector fault"
+        - "air intake or vacuum leak"
+        - "compression problem"
+        - "camshaft or crankshaft timing fault"
+      ro:
+        - "defecțiune sistem aprindere la motoarele pe benzină"
+        - "problemă alimentare cu combustibil"
+        - "injector defect"
+        - "pierdere pe admisie sau vacuum"
+        - "problemă de compresie"
+        - "defecțiune sincronizare axe"
+      de:
+        - "Zündsystemfehler bei Benzinmotoren"
+        - "Kraftstoffversorgungsproblem"
+        - "Injektorfehler"
+        - "Ansaug- oder Unterdruckleck"
+        - "Kompressionsproblem"
+        - "Fehler der Steuerzeiten"
+      fr:
+        - "défaut d'allumage sur moteurs essence"
+        - "problème d'alimentation carburant"
+        - "injecteur défectueux"
+        - "fuite admission ou dépression"
+        - "problème de compression"
+        - "défaut de synchronisation"
+      es:
+        - "fallo de encendido en motores de gasolina"
+        - "problema de suministro de combustible"
+        - "fallo de inyector"
+        - "fuga de admisión o vacío"
+        - "problema de compresión"
+        - "fallo de distribución"
+      it:
+        - "guasto accensione sui motori benzina"
+        - "problema alimentazione carburante"
+        - "guasto iniettore"
+        - "perdita aspirazione o depressione"
+        - "problema compressione"
+        - "errore fasatura"
+      nl:
+        - "ontstekingsprobleem bij benzinemotoren"
+        - "probleem met brandstoftoevoer"
+        - "defecte injector"
+        - "inlaat- of vacuümlek"
+        - "compressieprobleem"
+        - "distributieprobleem"
+    diagnostic_steps:
+      en:
+        - "Read freeze-frame and misfire counters"
+        - "Determine whether misfires are concentrated on one cylinder or distributed"
+        - "Check fuel pressure and injector operation"
+        - "Check ignition components on petrol engines"
+        - "Check intake leaks and engine mechanical condition"
+        - "Check camshaft and crankshaft synchronization"
+      ro:
+        - "Citește freeze-frame și contoarele de rateuri"
+        - "Determină dacă rateurile sunt concentrate pe un cilindru sau distribuite"
+        - "Verifică presiunea combustibilului și funcționarea injectoarelor"
+        - "Verifică aprinderea la motoarele pe benzină"
+        - "Verifică pierderile pe admisie și starea mecanică"
+        - "Verifică sincronizarea axelor cu came și arborelui cotit"
+      de:
+        - "Freeze-Frame und Fehlzündungszähler auslesen"
+        - "Verteilung der Fehlzündungen bestimmen"
+        - "Kraftstoffdruck und Injektoren prüfen"
+        - "Zündanlage bei Benzinmotoren prüfen"
+        - "Ansauglecks und mechanischen Motorzustand prüfen"
+        - "Nocken-/Kurbelwellensynchronisation prüfen"
+      fr:
+        - "Lire les données freeze-frame et les compteurs de ratés"
+        - "Déterminer la répartition des ratés"
+        - "Contrôler pression carburant et injecteurs"
+        - "Contrôler l'allumage des moteurs essence"
+        - "Rechercher les fuites d'admission et contrôler le moteur"
+        - "Contrôler la synchronisation"
+      es:
+        - "Leer freeze-frame y contadores de fallos"
+        - "Determinar la distribución de los fallos"
+        - "Comprobar presión de combustible e inyectores"
+        - "Comprobar encendido en motores de gasolina"
+        - "Buscar fugas de admisión y comprobar estado mecánico"
+        - "Comprobar sincronización"
+      it:
+        - "Leggere freeze-frame e contatori mancate accensioni"
+        - "Determinare la distribuzione dei misfire"
+        - "Controllare pressione carburante e iniettori"
+        - "Controllare accensione sui benzina"
+        - "Controllare perdite aspirazione e condizioni meccaniche"
+        - "Controllare sincronizzazione"
+      nl:
+        - "Freeze-frame en misfiretellers uitlezen"
+        - "Verdeling van misfires bepalen"
+        - "Brandstofdruk en injectoren controleren"
+        - "Ontsteking bij benzinemotoren controleren"
+        - "Inlaatlekkages en mechanische toestand controleren"
+        - "Nokkenas-krukassynchronisatie controleren"
+    dtcs:
+      - P0300
+
+  - id: ford_pcm_p0299_turbocharger_underboost
+    manufacturer: ford
+    models:
+      - fiesta
+      - focus
+      - mondeo
+      - kuga
+      - puma
+      - ecosport
+      - transit
+      - transit_custom
+      - ranger
+    generations:
+      - fiesta_mk7
+      - fiesta_mk8
+      - focus_mk3
+      - focus_mk4
+      - mondeo_mk4
+      - mondeo_mk5
+      - kuga_mk2
+      - kuga_mk3
+      - puma_mk1
+      - ecosport_mk2
+      - transit_mk6
+      - transit_mk7
+      - transit_custom_mk1
+      - transit_custom_mk2
+      - ranger_t6
+      - ranger_t6_2
+    systems:
+      - engine
+      - pcm
+      - turbocharger
+      - boost_control
+    symptoms:
+      en:
+        - "reduced engine power"
+        - "poor acceleration"
+        - "turbocharger response weak"
+        - "limp mode"
+        - "check engine light"
+      ro:
+        - "putere redusă"
+        - "accelerație slabă"
+        - "răspuns slab al turbinei"
+        - "mod avarie"
+        - "martor motor aprins"
+      de:
+        - "reduzierte Motorleistung"
+        - "schlechte Beschleunigung"
+        - "schwache Turboladerreaktion"
+        - "Notlauf"
+        - "Motorkontrollleuchte"
+      fr:
+        - "puissance moteur réduite"
+        - "mauvaise accélération"
+        - "réponse faible du turbocompresseur"
+        - "mode dégradé"
+        - "voyant moteur"
+      es:
+        - "potencia reducida"
+        - "mala aceleración"
+        - "respuesta débil del turbo"
+        - "modo de emergencia"
+        - "testigo de motor"
+      it:
+        - "potenza ridotta"
+        - "scarsa accelerazione"
+        - "risposta turbo debole"
+        - "modalità recovery"
+        - "spia motore"
+      nl:
+        - "verminderd motorvermogen"
+        - "slechte acceleratie"
+        - "zwakke turboreactie"
+        - "noodloop"
+        - "motorstoringslamp"
+    possible_causes:
+      en:
+        - "boost leak"
+        - "turbocharger actuator fault"
+        - "wastegate or variable geometry control problem"
+        - "boost pressure sensor fault"
+        - "restricted intake or exhaust"
+        - "turbocharger mechanical fault"
+      ro:
+        - "pierdere pe circuitul de supraalimentare"
+        - "defecțiune actuator turbină"
+        - "problemă wastegate sau geometrie variabilă"
+        - "defecțiune senzor presiune boost"
+        - "restricție admisie sau evacuare"
+        - "defecțiune mecanică turbină"
+      de:
+        - "Ladedruckleck"
+        - "Turbolader-Stellgliedfehler"
+        - "Wastegate- oder VTG-Problem"
+        - "Ladedrucksensorfehler"
+        - "verstopfter Ansaug- oder Abgasweg"
+        - "mechanischer Turboladerfehler"
+      fr:
+        - "fuite de suralimentation"
+        - "défaut de l'actionneur du turbo"
+        - "problème wastegate ou géométrie variable"
+        - "défaut du capteur de pression"
+        - "restriction admission ou échappement"
+        - "défaut mécanique du turbo"
+      es:
+        - "fuga de sobrealimentación"
+        - "fallo del actuador del turbo"
+        - "problema de wastegate o geometría variable"
+        - "fallo del sensor de presión"
+        - "restricción de admisión o escape"
+        - "fallo mecánico del turbo"
+      it:
+        - "perdita circuito sovralimentazione"
+        - "guasto attuatore turbo"
+        - "problema wastegate o geometria variabile"
+        - "guasto sensore pressione boost"
+        - "restrizione aspirazione o scarico"
+        - "guasto meccanico turbo"
+      nl:
+        - "lekkage in het laaddruksysteem"
+        - "storing turboactuator"
+        - "wastegate- of variabele-geometrieprobleem"
+        - "laaddruksensor defect"
+        - "beperking inlaat of uitlaat"
+        - "mechanische turboschade"
+    diagnostic_steps:
+      en:
+        - "Read PCM boost-related DTCs"
+        - "Compare commanded and actual boost pressure"
+        - "Inspect charge-air hoses and intercooler connections"
+        - "Check boost control actuator operation"
+        - "Check boost pressure sensor plausibility"
+        - "Inspect turbocharger mechanically if control system passes"
+      ro:
+        - "Citește DTC-urile PCM legate de boost"
+        - "Compară presiunea cerută cu cea reală"
+        - "Inspectează furtunurile și conexiunile intercoolerului"
+        - "Verifică actuatorul de control al turbinei"
+        - "Verifică plauzibilitatea senzorului de presiune"
+        - "Inspectează mecanic turbina dacă sistemul de comandă este corect"
+      de:
+        - "Boost-DTCs des PCM auslesen"
+        - "Soll- und Ist-Ladedruck vergleichen"
+        - "Ladeluftschläuche und Ladeluftkühleranschlüsse prüfen"
+        - "Turboladersteller prüfen"
+        - "Ladedrucksensor auf Plausibilität prüfen"
+        - "Turbolader mechanisch prüfen"
+      fr:
+        - "Lire les DTC de suralimentation du PCM"
+        - "Comparer pression demandée et réelle"
+        - "Contrôler durites et raccords de suralimentation"
+        - "Contrôler l'actionneur du turbo"
+        - "Contrôler la plausibilité du capteur de pression"
+        - "Contrôler mécaniquement le turbo si la commande est correcte"
+      es:
+        - "Leer DTC de sobrealimentación del PCM"
+        - "Comparar presión solicitada y real"
+        - "Inspeccionar manguitos y conexiones del intercooler"
+        - "Comprobar actuador del turbo"
+        - "Comprobar plausibilidad del sensor"
+        - "Inspeccionar mecánicamente el turbo"
+      it:
+        - "Leggere DTC boost del PCM"
+        - "Confrontare pressione richiesta e reale"
+        - "Controllare tubi e raccordi intercooler"
+        - "Controllare attuatore turbo"
+        - "Controllare plausibilità sensore pressione"
+        - "Controllare meccanicamente il turbo"
+      nl:
+        - "Boost-DTC's van de PCM uitlezen"
+        - "Gevraagde en werkelijke laaddruk vergelijken"
+        - "Laadluchtslangen en intercooleraansluitingen controleren"
+        - "Turboactuator controleren"
+        - "Laaddruksensor op plausibiliteit controleren"
+        - "Turbo mechanisch controleren indien de regeling goed werkt"
+    dtcs:
+      - P0299
+
+  - id: ford_pcm_p0234_turbocharger_overboost
+    manufacturer: ford
+    models:
+      - fiesta
+      - focus
+      - mondeo
+      - kuga
+      - puma
+      - ecosport
+      - transit
+      - transit_custom
+      - ranger
+    generations:
+      - fiesta_mk7
+      - fiesta_mk8
+      - focus_mk3
+      - focus_mk4
+      - mondeo_mk4
+      - mondeo_mk5
+      - kuga_mk2
+      - kuga_mk3
+      - puma_mk1
+      - ecosport_mk2
+      - transit_mk6
+      - transit_mk7
+      - transit_custom_mk1
+      - transit_custom_mk2
+      - ranger_t6
+      - ranger_t6_2
+    systems:
+      - engine
+      - pcm
+      - turbocharger
+      - boost_control
+    symptoms:
+      en:
+        - "engine enters limp mode"
+        - "power becomes inconsistent"
+        - "boost pressure too high"
+        - "poor throttle response"
+        - "check engine light"
+      ro:
+        - "motorul intră în mod avarie"
+        - "puterea devine instabilă"
+        - "presiune turbo prea mare"
+        - "răspuns slab la accelerație"
+        - "martor motor aprins"
+      de:
+        - "Motor geht in den Notlauf"
+        - "Leistung schwankt"
+        - "Ladedruck zu hoch"
+        - "schlechte Gasannahme"
+        - "Motorkontrollleuchte"
+      fr:
+        - "mode dégradé"
+        - "puissance irrégulière"
+        - "pression turbo excessive"
+        - "mauvaise réponse à l'accélérateur"
+        - "voyant moteur"
+      es:
+        - "modo de emergencia"
+        - "potencia irregular"
+        - "presión de turbo excesiva"
+        - "mala respuesta al acelerador"
+        - "testigo de motor"
+      it:
+        - "modalità recovery"
+        - "potenza irregolare"
+        - "pressione turbo eccessiva"
+        - "risposta acceleratore scarsa"
+        - "spia motore"
+      nl:
+        - "noodloop"
+        - "wisselend motorvermogen"
+        - "te hoge laaddruk"
+        - "slechte gasrespons"
+        - "motorstoringslamp"
+    possible_causes:
+      en:
+        - "wastegate stuck closed"
+        - "variable geometry mechanism sticking"
+        - "boost control actuator fault"
+        - "boost pressure sensor fault"
+        - "control hose or wiring fault"
+      ro:
+        - "wastegate blocat închis"
+        - "geometrie variabilă gripată"
+        - "defecțiune actuator control turbo"
+        - "defecțiune senzor presiune"
+        - "problemă furtun comandă sau cablaj"
+      de:
+        - "Wastegate klemmt geschlossen"
+        - "VTG-Mechanismus schwergängig"
+        - "Fehler des Ladedruckstellers"
+        - "Ladedrucksensor defekt"
+        - "Fehler an Steuerleitung oder Verkabelung"
+      fr:
+        - "wastegate bloqué fermé"
+        - "géométrie variable grippée"
+        - "défaut actionneur turbo"
+        - "capteur de pression défectueux"
+        - "défaut durite de commande ou câblage"
+      es:
+        - "wastegate atascada cerrada"
+        - "geometría variable agarrotada"
+        - "fallo del actuador"
+        - "sensor de presión defectuoso"
+        - "fallo de tubo de control o cableado"
+      it:
+        - "wastegate bloccata chiusa"
+        - "geometria variabile bloccata"
+        - "guasto attuatore turbo"
+        - "sensore pressione guasto"
+        - "guasto tubo comando o cablaggio"
+      nl:
+        - "wastegate vast in gesloten stand"
+        - "variabele geometrie loopt vast"
+        - "storing turboactuator"
+        - "defecte druksensor"
+        - "storing regelslang of bedrading"
+    diagnostic_steps:
+      en:
+        - "Compare commanded and actual boost"
+        - "Check actuator movement"
+        - "Inspect wastegate or variable geometry mechanism"
+        - "Check boost pressure sensor"
+        - "Inspect actuator wiring and control circuit"
+      ro:
+        - "Compară boost-ul cerut cu cel real"
+        - "Verifică mișcarea actuatorului"
+        - "Inspectează wastegate sau mecanismul de geometrie variabilă"
+        - "Verifică senzorul de presiune"
+        - "Inspectează cablajul și circuitul de comandă"
+      de:
+        - "Soll- und Ist-Ladedruck vergleichen"
+        - "Stellerbewegung prüfen"
+        - "Wastegate oder VTG-Mechanismus prüfen"
+        - "Ladedrucksensor prüfen"
+        - "Stellerverkabelung und Steuerkreis prüfen"
+      fr:
+        - "Comparer pression demandée et réelle"
+        - "Contrôler le mouvement de l'actionneur"
+        - "Contrôler wastegate ou géométrie variable"
+        - "Contrôler le capteur de pression"
+        - "Contrôler le câblage et le circuit de commande"
+      es:
+        - "Comparar presión solicitada y real"
+        - "Comprobar movimiento del actuador"
+        - "Inspeccionar wastegate o geometría variable"
+        - "Comprobar sensor de presión"
+        - "Inspeccionar circuito de control"
+      it:
+        - "Confrontare pressione richiesta e reale"
+        - "Controllare movimento attuatore"
+        - "Controllare wastegate o geometria variabile"
+        - "Controllare sensore pressione"
+        - "Controllare cablaggio e circuito comando"
+      nl:
+        - "Gevraagde en werkelijke laaddruk vergelijken"
+        - "Actuatorbeweging controleren"
+        - "Wastegate of variabele geometrie controleren"
+        - "Laaddruksensor controleren"
+        - "Actuatorbedrading en regelcircuit controleren"
+    dtcs:
+      - P0234
+
+  - id: ford_pcm_p0401_egr_flow_insufficient
+    manufacturer: ford
+    models:
+      - fiesta
+      - focus
+      - mondeo
+      - kuga
+      - transit
+      - transit_custom
+      - ranger
+      - ecosport
+    generations:
+      - fiesta_mk7
+      - fiesta_mk8
+      - focus_mk3
+      - focus_mk4
+      - mondeo_mk4
+      - mondeo_mk5
+      - kuga_mk2
+      - kuga_mk3
+      - transit_mk6
+      - transit_mk7
+      - transit_custom_mk1
+      - transit_custom_mk2
+      - ranger_t6
+      - ranger_t6_2
+      - ecosport_mk2
+    systems:
+      - engine
+      - pcm
+      - egr
+      - emissions
+    symptoms:
+      en:
+        - "check engine light"
+        - "rough running"
+        - "poor low-speed response"
+        - "increased emissions"
+        - "reduced fuel economy"
+      ro:
+        - "martor motor aprins"
+        - "funcționare neregulată"
+        - "răspuns slab la turații joase"
+        - "emisii crescute"
+        - "consum crescut"
+      de:
+        - "Motorkontrollleuchte"
+        - "unruhiger Motorlauf"
+        - "schlechte Reaktion bei niedriger Drehzahl"
+        - "erhöhte Emissionen"
+        - "höherer Verbrauch"
+      fr:
+        - "voyant moteur"
+        - "fonctionnement irrégulier"
+        - "mauvaise réponse à bas régime"
+        - "émissions accrues"
+        - "consommation accrue"
+      es:
+        - "testigo de motor"
+        - "funcionamiento irregular"
+        - "mala respuesta a bajas rpm"
+        - "emisiones elevadas"
+        - "consumo elevado"
+      it:
+        - "spia motore"
+        - "funzionamento irregolare"
+        - "scarsa risposta ai bassi regimi"
+        - "emissioni aumentate"
+        - "consumi aumentati"
+      nl:
+        - "motorstoringslamp"
+        - "onrustige motorloop"
+        - "slechte respons bij lage toerentallen"
+        - "hogere emissies"
+        - "hoger brandstofverbruik"
+    possible_causes:
+      en:
+        - "EGR valve restricted by carbon"
+        - "EGR valve not opening correctly"
+        - "EGR cooler or passage restriction"
+        - "EGR position feedback fault"
+        - "wiring or control fault"
+      ro:
+        - "supapă EGR colmatată cu depuneri"
+        - "supapă EGR care nu se deschide corect"
+        - "răcitor sau canal EGR colmatat"
+        - "defecțiune feedback poziție EGR"
+        - "defecțiune comandă sau cablaj"
+      de:
+        - "EGR-Ventil durch Ruß zugesetzt"
+        - "EGR-Ventil öffnet nicht korrekt"
+        - "EGR-Kühler oder Kanal verstopft"
+        - "EGR-Positionsrückmeldung fehlerhaft"
+        - "Steuerungs- oder Verkabelungsfehler"
+      fr:
+        - "vanne EGR encrassée"
+        - "vanne EGR qui ne s'ouvre pas correctement"
+        - "refroidisseur ou passage EGR obstrué"
+        - "défaut de retour de position EGR"
+        - "défaut de commande ou câblage"
+      es:
+        - "válvula EGR obstruida por carbonilla"
+        - "válvula EGR que no abre correctamente"
+        - "enfriador o conducto EGR obstruido"
+        - "fallo de posición EGR"
+        - "fallo de cableado o control"
+      it:
+        - "valvola EGR ostruita da carbonio"
+        - "valvola EGR che non apre correttamente"
+        - "raffreddatore o passaggio EGR ostruito"
+        - "guasto feedback posizione EGR"
+        - "guasto cablaggio o comando"
+      nl:
+        - "EGR-klep vervuild door roet"
+        - "EGR-klep opent niet correct"
+        - "EGR-koeler of kanaal verstopt"
+        - "EGR-positieterugkoppeling defect"
+        - "bedradings- of regelprobleem"
+    diagnostic_steps:
+      en:
+        - "Read EGR-related PCM DTCs"
+        - "Command the EGR valve where supported"
+        - "Compare commanded and actual EGR position"
+        - "Inspect EGR passages for restriction"
+        - "Check related intake and differential-pressure data"
+      ro:
+        - "Citește DTC-urile PCM legate de EGR"
+        - "Comandă supapa EGR unde funcția este disponibilă"
+        - "Compară poziția cerută cu poziția reală"
+        - "Verifică pasajele EGR pentru colmatare"
+        - "Verifică datele asociate de admisie și presiune diferențială"
+      de:
+        - "EGR-DTCs des PCM auslesen"
+        - "EGR-Ventil ansteuern, sofern unterstützt"
+        - "Soll- und Ist-Position vergleichen"
+        - "EGR-Kanäle auf Verstopfung prüfen"
+        - "Ansaug- und Differenzdruckdaten prüfen"
+      fr:
+        - "Lire les DTC EGR du PCM"
+        - "Commander la vanne EGR si disponible"
+        - "Comparer position demandée et réelle"
+        - "Contrôler les passages EGR"
+        - "Contrôler les données d'admission et de pression différentielle"
+      es:
+        - "Leer DTC EGR del PCM"
+        - "Accionar la válvula EGR cuando sea posible"
+        - "Comparar posición solicitada y real"
+        - "Inspeccionar conductos EGR"
+        - "Comprobar datos de admisión y presión diferencial"
+      it:
+        - "Leggere DTC EGR del PCM"
+        - "Comandare valvola EGR quando supportato"
+        - "Confrontare posizione richiesta e reale"
+        - "Controllare passaggi EGR"
+        - "Controllare dati aspirazione e pressione differenziale"
+      nl:
+        - "EGR-DTC's van de PCM uitlezen"
+        - "EGR-klep aansturen indien ondersteund"
+        - "Gevraagde en werkelijke positie vergelijken"
+        - "EGR-kanalen op verstopping controleren"
+        - "Inlaat- en verschildrukgegevens controleren"
+    dtcs:
+      - P0401
+
+  - id: ford_pcm_p0402_egr_flow_excessive
+    manufacturer: ford
+    models:
+      - fiesta
+      - focus
+      - mondeo
+      - kuga
+      - transit
+      - transit_custom
+      - ranger
+      - ecosport
+    generations:
+      - fiesta_mk7
+      - fiesta_mk8
+      - focus_mk3
+      - focus_mk4
+      - mondeo_mk4
+      - mondeo_mk5
+      - kuga_mk2
+      - kuga_mk3
+      - transit_mk6
+      - transit_mk7
+      - transit_custom_mk1
+      - transit_custom_mk2
+      - ranger_t6
+      - ranger_t6_2
+      - ecosport_mk2
+    systems:
+      - engine
+      - pcm
+      - egr
+      - emissions
+    symptoms:
+      en:
+        - "rough idle"
+        - "engine hesitation"
+        - "poor acceleration"
+        - "engine may stall at idle"
+      ro:
+        - "ralanti instabil"
+        - "ezitare motor"
+        - "accelerație slabă"
+        - "motorul se poate opri la ralanti"
+      de:
+        - "unruhiger Leerlauf"
+        - "Motorruckeln"
+        - "schlechte Beschleunigung"
+        - "Motor kann im Leerlauf ausgehen"
+      fr:
+        - "ralenti instable"
+        - "hésitation moteur"
+        - "mauvaise accélération"
+        - "calage possible au ralenti"
+      es:
+        - "ralentí inestable"
+        - "vacilación del motor"
+        - "mala aceleración"
+        - "posible calado al ralentí"
+      it:
+        - "minimo instabile"
+        - "esitazione motore"
+        - "scarsa accelerazione"
+        - "possibile spegnimento al minimo"
+      nl:
+        - "onstabiel stationair toerental"
+        - "motor aarzelt"
+        - "slechte acceleratie"
+        - "motor kan stationair afslaan"
+    possible_causes:
+      en:
+        - "EGR valve stuck open"
+        - "EGR actuator fault"
+        - "incorrect EGR position feedback"
+        - "EGR control wiring fault"
+        - "carbon contamination"
+      ro:
+        - "supapă EGR blocată deschis"
+        - "defecțiune actuator EGR"
+        - "feedback poziție EGR incorect"
+        - "defecțiune cablaj comandă EGR"
+        - "depuneri de carbon"
+      de:
+        - "EGR-Ventil hängt offen"
+        - "EGR-Stellgliedfehler"
+        - "falsche EGR-Positionsrückmeldung"
+        - "Fehler der EGR-Steuerverkabelung"
+        - "Rußablagerungen"
+      fr:
+        - "vanne EGR bloquée ouverte"
+        - "défaut actionneur EGR"
+        - "retour de position incorrect"
+        - "défaut de câblage EGR"
+        - "encrassement carbone"
+      es:
+        - "válvula EGR atascada abierta"
+        - "fallo del actuador EGR"
+        - "señal de posición incorrecta"
+        - "fallo de cableado EGR"
+        - "carbonilla"
+      it:
+        - "valvola EGR bloccata aperta"
+        - "guasto attuatore EGR"
+        - "feedback posizione errato"
+        - "guasto cablaggio EGR"
+        - "depositi carboniosi"
+      nl:
+        - "EGR-klep vast open"
+        - "storing EGR-actuator"
+        - "onjuiste EGR-positieterugmelding"
+        - "storing EGR-bedrading"
+        - "koolstofafzetting"
+    diagnostic_steps:
+      en:
+        - "Read EGR DTCs and live data"
+        - "Check commanded versus actual EGR position"
+        - "Command EGR closed and observe engine response"
+        - "Inspect valve for sticking or contamination"
+        - "Check EGR wiring and connector"
+      ro:
+        - "Citește DTC-urile și datele live EGR"
+        - "Compară poziția cerută cu cea reală"
+        - "Comandă EGR închisă și observă răspunsul motorului"
+        - "Verifică supapa pentru blocare sau depuneri"
+        - "Verifică cablajul și conectorul EGR"
+      de:
+        - "EGR-DTCs und Livedaten auslesen"
+        - "Soll- und Ist-Position vergleichen"
+        - "EGR schließen und Motorreaktion beobachten"
+        - "Ventil auf Klemmen und Verschmutzung prüfen"
+        - "EGR-Verkabelung und Stecker prüfen"
+      fr:
+        - "Lire DTC et données EGR"
+        - "Comparer position demandée et réelle"
+        - "Commander la fermeture et observer la réaction moteur"
+        - "Contrôler l'encrassement et le grippage"
+        - "Contrôler câblage et connecteur"
+      es:
+        - "Leer DTC y datos EGR"
+        - "Comparar posición solicitada y real"
+        - "Cerrar EGR mediante prueba y observar respuesta"
+        - "Comprobar agarrotamiento y carbonilla"
+        - "Comprobar cableado y conector"
+      it:
+        - "Leggere DTC e dati EGR"
+        - "Confrontare posizione richiesta e reale"
+        - "Comandare chiusura EGR e osservare il motore"
+        - "Controllare incrostazioni e bloccaggio"
+        - "Controllare cablaggio e connettore"
+      nl:
+        - "EGR-DTC's en livegegevens uitlezen"
+        - "Gevraagde en werkelijke positie vergelijken"
+        - "EGR sluiten en motorreactie observeren"
+        - "Klep op vastzitten en vervuiling controleren"
+        - "EGR-bedrading en connector controleren"
+    dtcs:
+      - P0402
+
   - id: ford_pcm_crankshaft_position_sensor_no_signal
     manufacturer: ford
     models:
