@@ -3,745 +3,3212 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+
 <title>AutoDecode – Repair & Technical</title>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
+
 <style>
 *{box-sizing:border-box}
-html,body{margin:0;background:#0b0f14;color:#e8edf3;font-family:Arial,sans-serif}
-header{min-height:72px;background:#111720;border-bottom:1px solid #26303b;display:flex;align-items:center;padding:12px 24px;gap:20px}
-.logo{font-size:24px;font-weight:700}.logo span,h1 span{color:#4da3ff}
-.home{color:#cbd5e1;text-decoration:none;border:1px solid #34404d;border-radius:7px;padding:9px 13px}
-.langs{margin-left:auto;position:relative}.langbtn{background:#0c1219;color:#e8edf3;border:1px solid #303b48;border-radius:8px;padding:8px 10px;cursor:pointer}
-.langmenu{display:none;position:absolute;right:0;top:43px;background:#151c25;border:1px solid #34404d;border-radius:8px;overflow:hidden;z-index:20}.langmenu.open{display:block}
-.langmenu div{padding:9px 12px;white-space:nowrap;cursor:pointer}.langmenu div:hover{background:#202b37}
-main{width:min(1050px,calc(100% - 22px));margin:auto;padding:44px 0 70px}
-.hero{margin-bottom:30px}.hero h1{font-size:clamp(30px,5vw,46px);margin:0 0 10px}.hero p{color:#8f9baa;line-height:1.6;max-width:800px}
-.panel{background:#111720;border:1px solid #26303b;border-radius:12px;padding:24px}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:17px}.field{display:flex;flex-direction:column;gap:7px}.full{grid-column:1/-1}
-label{font-size:13px;color:#aeb9c6;font-weight:600}
-select,textarea{background:#0c1219;color:#e8edf3;border:1px solid #303b48;border-radius:8px}
-select{min-height:46px;padding:11px 13px}textarea{min-height:125px;padding:12px 13px;resize:vertical;line-height:1.5;outline:0}
-select:focus,textarea:focus{border-color:#4da3ff}select:disabled{opacity:.45}
-.vehicle{margin-top:17px;padding:12px 14px;background:#0c1219;border:1px solid #26303b;border-radius:8px;color:#9ca8b6;font-size:13px}
-.actions{margin-top:20px;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
-.find{background:#4da3ff;color:#06101b;border:0;border-radius:8px;padding:13px 22px;font-weight:700;cursor:pointer}.find:disabled{opacity:.5;cursor:not-allowed}
-.status{font-size:13px;color:#8f9baa}.success{color:#72d79a}.error{color:#ff7777}
-.results{margin-top:30px}.rhead{display:flex;justify-content:space-between;margin-bottom:15px;gap:15px}.rhead h2{margin:0;font-size:21px}.count{color:#8995a3;font-size:13px}
-.card{background:#0c1219;border:1px solid #293542;border-radius:10px;margin-bottom:14px;overflow:hidden}.top{display:flex;justify-content:space-between;gap:15px;padding:19px}
-.title{font-size:18px;margin:0 0 7px}.system{font-size:12px;color:#8995a3;text-transform:uppercase}.score{color:#4da3ff;border:1px solid #29425d;background:#141d27;border-radius:7px;padding:7px 9px;height:max-content;white-space:nowrap;font-weight:700}
-.desc{color:#aeb9c6;line-height:1.6;margin:13px 0 0}.tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}.tag{font-size:11px;color:#b9c7d6;border:1px solid #303c49;background:#141c25;padding:5px 8px;border-radius:5px}
-.section{border-top:1px solid #202b36;padding:15px 19px}.section h4{margin:0 0 9px;font-size:13px}.section ul{margin:0;padding-left:20px;color:#aeb9c6;font-size:13px;line-height:1.6}
-.empty{padding:25px;text-align:center;color:#8f9baa;border:1px dashed #303b48;border-radius:9px}
-footer{text-align:center;border-top:1px solid #202a34;padding:22px;color:#657180;font-size:12px}
-@media(max-width:700px){header{padding:12px 14px;gap:10px}.logo{font-size:21px}.home{padding:8px 10px}.grid{grid-template-columns:1fr}.full{grid-column:auto}.panel{padding:17px}.top{flex-direction:column}.rhead{flex-direction:column}}
+
+html,body{
+    margin:0;
+    background:#0b0f14;
+    color:#e8edf3;
+    font:15px Arial,sans-serif
+}
+
+header{
+    min-height:72px;
+    background:#111720;
+    border-bottom:1px solid #26303b;
+    display:flex;
+    align-items:center;
+    padding:12px 24px;
+    gap:20px
+}
+
+.logo{
+    font-size:24px;
+    font-weight:700
+}
+
+.logo span,
+h1 span{
+    color:#4da3ff
+}
+
+.home{
+    color:#cbd5e1;
+    text-decoration:none;
+    border:1px solid #34404d;
+    border-radius:7px;
+    padding:9px 13px
+}
+
+.langs{
+    margin-left:auto;
+    position:relative
+}
+
+.langbtn,
+select,
+textarea{
+    background:#0c1219;
+    color:#e8edf3;
+    border:1px solid #303b48;
+    border-radius:8px
+}
+
+.langbtn{
+    padding:8px 10px;
+    cursor:pointer
+}
+
+.langmenu{
+    display:none;
+    position:absolute;
+    right:0;
+    top:43px;
+    background:#151c25;
+    border:1px solid #34404d;
+    border-radius:8px;
+    overflow:hidden;
+    z-index:20
+}
+
+.langmenu.open{
+    display:block
+}
+
+.langmenu div{
+    padding:9px 12px;
+    white-space:nowrap;
+    cursor:pointer
+}
+
+.langmenu div:hover{
+    background:#202b37
+}
+
+main{
+    width:min(1050px,calc(100% - 22px));
+    margin:auto;
+    padding:44px 0 70px
+}
+
+.hero{
+    margin-bottom:30px
+}
+
+.hero h1{
+    font-size:clamp(30px,5vw,46px);
+    margin:0 0 10px
+}
+
+.hero p{
+    color:#8f9baa;
+    line-height:1.6;
+    max-width:800px
+}
+
+.panel{
+    background:#111720;
+    border:1px solid #26303b;
+    border-radius:12px;
+    padding:24px
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:17px
+}
+
+.field{
+    display:flex;
+    flex-direction:column;
+    gap:7px
+}
+
+.full{
+    grid-column:1/-1
+}
+
+label{
+    font-size:13px;
+    color:#aeb9c6;
+    font-weight:600
+}
+
+select{
+    min-height:46px;
+    padding:11px 13px
+}
+
+textarea{
+    min-height:125px;
+    padding:12px 13px;
+    resize:vertical;
+    line-height:1.5;
+    outline:0
+}
+
+select:focus,
+textarea:focus{
+    border-color:#4da3ff
+}
+
+select:disabled{
+    opacity:.45
+}
+
+.vehicle{
+    margin-top:17px;
+    padding:12px 14px;
+    background:#0c1219;
+    border:1px solid #26303b;
+    border-radius:8px;
+    color:#9ca8b6;
+    font-size:13px
+}
+
+.actions{
+    margin-top:20px;
+    display:flex;
+    gap:14px;
+    align-items:center;
+    flex-wrap:wrap
+}
+
+.find{
+    background:#4da3ff;
+    color:#06101b;
+    border:0;
+    border-radius:8px;
+    padding:13px 22px;
+    font-weight:700;
+    cursor:pointer
+}
+
+.find:disabled{
+    opacity:.5;
+    cursor:not-allowed
+}
+
+.status{
+    font-size:13px;
+    color:#8f9baa
+}
+
+.success{
+    color:#72d79a
+}
+
+.error{
+    color:#ff7777
+}
+
+.results{
+    margin-top:30px
+}
+
+.rhead{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:15px;
+    gap:15px
+}
+
+.rhead h2{
+    margin:0;
+    font-size:21px
+}
+
+.count{
+    color:#8995a3;
+    font-size:13px
+}
+
+.card{
+    background:#0c1219;
+    border:1px solid #293542;
+    border-radius:10px;
+    margin-bottom:14px;
+    overflow:hidden
+}
+
+.top{
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+    padding:19px
+}
+
+.title{
+    font-size:18px;
+    margin:0 0 7px
+}
+
+.system{
+    font-size:12px;
+    color:#8995a3;
+    text-transform:uppercase
+}
+
+.score{
+    color:#4da3ff;
+    border:1px solid #29425d;
+    background:#141d27;
+    border-radius:7px;
+    padding:7px 9px;
+    height:max-content;
+    white-space:nowrap;
+    font-weight:700
+}
+
+.desc{
+    color:#aeb9c6;
+    line-height:1.6;
+    margin:13px 0 0
+}
+
+.tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:7px;
+    margin-top:12px
+}
+
+.tag{
+    font-size:11px;
+    color:#b9c7d6;
+    border:1px solid #303c49;
+    background:#141c25;
+    padding:5px 8px;
+    border-radius:5px
+}
+
+.section{
+    border-top:1px solid #202b36;
+    padding:15px 19px
+}
+
+.section h4{
+    margin:0 0 9px;
+    font-size:13px
+}
+
+.section ul{
+    margin:0;
+    padding-left:20px;
+    color:#aeb9c6;
+    font-size:13px;
+    line-height:1.6
+}
+
+.empty{
+    padding:25px;
+    text-align:center;
+    color:#8f9baa;
+    border:1px dashed #303b48;
+    border-radius:9px
+}
+
+.debug{
+    margin-top:8px;
+    font-size:11px;
+    color:#687585;
+    word-break:break-word
+}
+
+footer{
+    text-align:center;
+    border-top:1px solid #202a34;
+    padding:22px;
+    color:#657180;
+    font-size:12px
+}
+
+@media(max-width:700px){
+
+    header{
+        padding:12px 14px;
+        gap:10px
+    }
+
+    .logo{
+        font-size:21px
+    }
+
+    .home{
+        padding:8px 10px
+    }
+
+    .grid{
+        grid-template-columns:1fr
+    }
+
+    .full{
+        grid-column:auto
+    }
+
+    .panel{
+        padding:17px
+    }
+
+    .top{
+        flex-direction:column
+    }
+
+    .rhead{
+        flex-direction:column
+    }
+}
 </style>
 </head>
+
 <body>
+
 <header>
-<div class="logo">Auto<span>Decode</span></div>
-<a class="home" href="index.html" id="home"></a>
-<div class="langs">
-<button class="langbtn" id="langbtn" type="button"></button>
-<div class="langmenu" id="langmenu">
-<div data-l="en">🇬🇧 English</div>
-<div data-l="de">🇩🇪 Deutsch</div>
-<div data-l="ro">🇷🇴 Română</div>
-<div data-l="fr">🇫🇷 Français</div>
-<div data-l="es">🇪🇸 Español</div>
-<div data-l="it">🇮🇹 Italiano</div>
-<div data-l="nl">🇳🇱 Nederlands</div>
-</div>
-</div>
+
+    <div class="logo">
+        Auto<span>Decode</span>
+    </div>
+
+    <a
+        class="home"
+        href="index.html"
+        id="home"
+    ></a>
+
+    <div class="langs">
+
+        <button
+            class="langbtn"
+            id="langbtn"
+            type="button"
+        >
+            🇬🇧 EN ▾
+        </button>
+
+        <div
+            class="langmenu"
+            id="langmenu"
+        >
+            <div data-l="en">🇬🇧 English</div>
+            <div data-l="de">🇩🇪 Deutsch</div>
+            <div data-l="ro">🇷🇴 Română</div>
+            <div data-l="fr">🇫🇷 Français</div>
+            <div data-l="es">🇪🇸 Español</div>
+            <div data-l="it">🇮🇹 Italiano</div>
+            <div data-l="nl">🇳🇱 Nederlands</div>
+        </div>
+
+    </div>
+
 </header>
 
 <main>
+
 <section class="hero">
-<h1><span>Repair</span> & Technical</h1>
-<p id="intro"></p>
+
+    <h1>
+        <span>Repair</span> & Technical
+    </h1>
+
+    <p id="intro"></p>
+
 </section>
 
 <section class="panel">
+
 <div class="grid">
-<div class="field"><label id="lm"></label><select id="make"></select></div>
-<div class="field"><label id="lmodel"></label><select id="model" disabled></select></div>
-<div class="field"><label id="lg"></label><select id="generation" disabled></select></div>
-<div class="field"><label id="ly"></label><select id="year" disabled></select></div>
-<div class="field"><label id="le"></label><select id="engine" disabled></select></div>
-<div class="field full"><label id="lp"></label><textarea id="problem"></textarea></div>
+
+    <div class="field">
+
+        <label id="lm"></label>
+
+        <select id="make">
+            <option value=""></option>
+        </select>
+
+    </div>
+
+    <div class="field">
+
+        <label id="lmodel"></label>
+
+        <select
+            id="model"
+            disabled
+        >
+            <option value=""></option>
+        </select>
+
+    </div>
+
+    <div class="field">
+
+        <label id="lg"></label>
+
+        <select
+            id="generation"
+            disabled
+        >
+            <option value=""></option>
+        </select>
+
+    </div>
+
+    <div class="field">
+
+        <label id="ly"></label>
+
+        <select
+            id="year"
+            disabled
+        >
+            <option value=""></option>
+        </select>
+
+    </div>
+
+    <div class="field">
+
+        <label id="le"></label>
+
+        <select
+            id="engine"
+            disabled
+        >
+            <option value=""></option>
+        </select>
+
+    </div>
+
+    <div class="field full">
+
+        <label id="lp"></label>
+
+        <textarea id="problem"></textarea>
+
+    </div>
+
 </div>
 
-<div class="vehicle" id="vehicle" hidden></div>
+<div
+    class="vehicle"
+    id="vehicle"
+    hidden
+></div>
 
 <div class="actions">
-<button class="find" id="find" disabled></button>
-<div class="status" id="status"></div>
+
+    <button
+        class="find"
+        id="find"
+        disabled
+    ></button>
+
+    <div
+        class="status"
+        id="status"
+    ></div>
+
 </div>
 
-<section class="results" id="results" hidden>
-<div class="rhead"><h2 id="rh"></h2><div class="count" id="count"></div></div>
-<div id="list"></div>
+<section
+    class="results"
+    id="results"
+    hidden
+>
+
+    <div class="rhead">
+
+        <h2 id="rh"></h2>
+
+        <div
+            class="count"
+            id="count"
+        ></div>
+
+    </div>
+
+    <div id="list"></div>
+
 </section>
+
 </section>
+
 </main>
 
-<footer>© <span id="fy"></span> AutoDecode</footer>
+<footer>
+    © <span id="fy"></span> AutoDecode
+</footer>
+
 
 <script>
+
+/* =========================================================
+   LANGUAGE DATA
+   ========================================================= */
+
 const I={
-en:{home:'← Home',intro:'Select your vehicle and describe the problem. AutoDecode searches the technical database and ranks the most relevant diagnostic information.',make:'Make',model:'Model',generation:'Generation / Platform',year:'Year',engine:'Engine',problem:'Describe the problem',sm:'Select make',smod:'Select model',sg:'Select generation',sy:'Select year',se:'Select engine',ph:'Example: The engine has very little power at low RPM and sometimes enters limp mode.',find:'FIND SOLUTION',rh:'Diagnostic Results',loading:'Loading...',ready:'Technical database ready.',error:'Technical database could not be loaded.',complete:'Please complete the vehicle selection.',describe:'Please describe the problem.',search:'Analyzing vehicle and symptoms...',none:'No sufficiently relevant diagnostic information was found.',one:'1 relevant result',many:'{n} relevant results',vehicle:'Vehicle',causes:'Possible causes',steps:'Diagnostic procedure',dtcs:'Related DTCs',difficulty:'Difficulty',rel:'Relevance'},
-de:{home:'← Startseite',intro:'Wählen Sie Ihr Fahrzeug und beschreiben Sie das Problem. AutoDecode durchsucht die technische Datenbank.',make:'Marke',model:'Modell',generation:'Generation / Plattform',year:'Jahr',engine:'Motor',problem:'Problem beschreiben',sm:'Marke auswählen',smod:'Modell auswählen',sg:'Generation auswählen',sy:'Jahr auswählen',se:'Motor auswählen',ph:'Beispiel: Der Motor hat bei niedrigen Drehzahlen kaum Leistung und geht manchmal in den Notlauf.',find:'LÖSUNG FINDEN',rh:'Diagnoseergebnisse',loading:'Wird geladen...',ready:'Technische Datenbank bereit.',error:'Technische Datenbank konnte nicht geladen werden.',complete:'Bitte wählen Sie das Fahrzeug vollständig aus.',describe:'Bitte beschreiben Sie das Problem.',search:'Fahrzeug und Symptome werden analysiert...',none:'Keine ausreichend relevanten Diagnoseinformationen gefunden.',one:'1 relevantes Ergebnis',many:'{n} relevante Ergebnisse',vehicle:'Fahrzeug',causes:'Mögliche Ursachen',steps:'Diagnoseverfahren',dtcs:'Verwandte DTCs',difficulty:'Schwierigkeit',rel:'Relevanz'},
-ro:{home:'← Acasă',intro:'Selectează vehiculul și descrie problema. AutoDecode caută în baza tehnică și ordonează rezultatele după relevanță.',make:'Marcă',model:'Model',generation:'Generație / Platformă',year:'An',engine:'Motor',problem:'Descrie problema',sm:'Selectează marca',smod:'Selectează modelul',sg:'Selectează generația',sy:'Selectează anul',se:'Selectează motorul',ph:'Exemplu: Motorul nu mai trage la turații mici și uneori intră în limp mode.',find:'GĂSEȘTE SOLUȚIA',rh:'Rezultate diagnostic',loading:'Se încarcă...',ready:'Baza tehnică este pregătită.',error:'Baza tehnică nu a putut fi încărcată.',complete:'Completează selecția vehiculului.',describe:'Descrie problema.',search:'Se analizează vehiculul și simptomele...',none:'Nu au fost găsite informații suficient de relevante.',one:'1 rezultat relevant',many:'{n} rezultate relevante',vehicle:'Vehicul',causes:'Cauze posibile',steps:'Procedură de diagnostic',dtcs:'DTC-uri asociate',difficulty:'Dificultate',rel:'Relevanță'},
-fr:{home:'← Accueil',intro:'Sélectionnez le véhicule et décrivez le problème. AutoDecode recherche dans la base technique.',make:'Marque',model:'Modèle',generation:'Génération / Plateforme',year:'Année',engine:'Moteur',problem:'Décrivez le problème',sm:'Sélectionner la marque',smod:'Sélectionner le modèle',sg:'Sélectionner la génération',sy:"Sélectionner l'année",se:'Sélectionner le moteur',ph:'Exemple : Le moteur manque de puissance à bas régime et passe parfois en mode dégradé.',find:'TROUVER LA SOLUTION',rh:'Résultats du diagnostic',loading:'Chargement...',ready:'Base technique prête.',error:'Impossible de charger la base technique.',complete:'Veuillez compléter la sélection du véhicule.',describe:'Veuillez décrire le problème.',search:'Analyse du véhicule et des symptômes...',none:"Aucune information suffisamment pertinente n'a été trouvée.",one:'1 résultat pertinent',many:'{n} résultats pertinents',vehicle:'Véhicule',causes:'Causes possibles',steps:'Procédure de diagnostic',dtcs:'DTC associés',difficulty:'Difficulté',rel:'Pertinence'},
-es:{home:'← Inicio',intro:'Seleccione el vehículo y describa el problema. AutoDecode buscará en la base técnica.',make:'Marca',model:'Modelo',generation:'Generación / Plataforma',year:'Año',engine:'Motor',problem:'Describa el problema',sm:'Seleccionar marca',smod:'Seleccionar modelo',sg:'Seleccionar generación',sy:'Seleccionar año',se:'Seleccionar motor',ph:'Ejemplo: El motor tiene poca potencia a bajas RPM y a veces entra en modo de emergencia.',find:'ENCONTRAR SOLUCIÓN',rh:'Resultados del diagnóstico',loading:'Cargando...',ready:'Base técnica lista.',error:'No se pudo cargar la base técnica.',complete:'Complete la selección del vehículo.',describe:'Describa el problema.',search:'Analizando vehículo y síntomas...',none:'No se encontró información de diagnóstico suficientemente relevante.',one:'1 resultado relevante',many:'{n} resultados relevantes',vehicle:'Vehículo',causes:'Posibles causas',steps:'Procedimiento de diagnóstico',dtcs:'DTC relacionados',difficulty:'Dificultad',rel:'Relevancia'},
-it:{home:'← Home',intro:'Seleziona il veicolo e descrivi il problema. AutoDecode cercherà nella banca dati tecnica.',make:'Marca',model:'Modello',generation:'Generazione / Piattaforma',year:'Anno',engine:'Motore',problem:'Descrivi il problema',sm:'Seleziona marca',smod:'Seleziona modello',sg:'Seleziona generazione',sy:'Seleziona anno',se:'Seleziona motore',ph:'Esempio: Il motore ha poca potenza ai bassi regimi e a volte entra in modalità emergenza.',find:'TROVA SOLUZIONE',rh:'Risultati diagnostici',loading:'Caricamento...',ready:'Banca dati tecnica pronta.',error:'Impossibile caricare la banca dati tecnica.',complete:'Completa la selezione del veicolo.',describe:'Descrivi il problema.',search:'Analisi del veicolo e dei sintomi...',none:'Nessuna informazione diagnostica sufficientemente rilevante.',one:'1 risultato rilevante',many:'{n} risultati rilevanti',vehicle:'Veicolo',causes:'Possibili cause',steps:'Procedura diagnostica',dtcs:'DTC correlati',difficulty:'Difficoltà',rel:'Rilevanza'},
-nl:{home:'← Home',intro:'Selecteer uw voertuig en beschrijf het probleem. AutoDecode zoekt in de technische database.',make:'Merk',model:'Model',generation:'Generatie / Platform',year:'Jaar',engine:'Motor',problem:'Beschrijf het probleem',sm:'Merk selecteren',smod:'Model selecteren',sg:'Generatie selecteren',sy:'Jaar selecteren',se:'Motor selecteren',ph:'Voorbeeld: De motor heeft weinig vermogen bij lage toerentallen en gaat soms in noodloop.',find:'OPLOSSING VINDEN',rh:'Diagnoseresultaten',loading:'Laden...',ready:'Technische database gereed.',error:'Technische database kon niet worden geladen.',complete:'Voltooi de voertuigselectie.',describe:'Beschrijf het probleem.',search:'Voertuig en symptomen worden geanalyseerd...',none:'Geen voldoende relevante diagnose-informatie gevonden.',one:'1 relevant resultaat',many:'{n} relevante resultaten',vehicle:'Voertuig',causes:'Mogelijke oorzaken',steps:'Diagnoseprocedure',dtcs:"Gerelateerde DTC's",difficulty:'Moeilijkheid',rel:'Relevantie'}
+
+    en:{
+        home:'← Home',
+        intro:'Select your vehicle and describe the problem. AutoDecode will search the technical database and rank the most relevant diagnostic information.',
+        make:'Make',
+        model:'Model',
+        generation:'Generation / Platform',
+        year:'Year',
+        engine:'Engine',
+        problem:'Describe the problem',
+        sm:'Select make',
+        smod:'Select model',
+        sg:'Select generation',
+        sy:'Select year',
+        se:'Select engine',
+        ph:'Example: The engine has very little power at low RPM and sometimes enters limp mode.',
+        find:'FIND SOLUTION',
+        rh:'Diagnostic Results',
+        loading:'Loading...',
+        ready:'Technical database ready.',
+        error:'Technical database could not be loaded.',
+        complete:'Please complete the vehicle selection.',
+        describe:'Please describe the problem.',
+        search:'Analyzing vehicle and symptoms...',
+        none:'No sufficiently relevant diagnostic information was found.',
+        one:'1 relevant result',
+        many:'{n} relevant results',
+        vehicle:'Vehicle',
+        causes:'Possible causes',
+        steps:'Diagnostic procedure',
+        dtcs:'Related DTCs',
+        difficulty:'Difficulty',
+        rel:'Relevance'
+    },
+
+    de:{
+        home:'← Startseite',
+        intro:'Wählen Sie Ihr Fahrzeug und beschreiben Sie das Problem. AutoDecode durchsucht die technische Datenbank und ordnet die relevantesten Diagnoseinformationen.',
+        make:'Marke',
+        model:'Modell',
+        generation:'Generation / Plattform',
+        year:'Jahr',
+        engine:'Motor',
+        problem:'Problem beschreiben',
+        sm:'Marke auswählen',
+        smod:'Modell auswählen',
+        sg:'Generation auswählen',
+        sy:'Jahr auswählen',
+        se:'Motor auswählen',
+        ph:'Beispiel: Der Motor hat bei niedrigen Drehzahlen kaum Leistung und geht manchmal in den Notlauf.',
+        find:'LÖSUNG FINDEN',
+        rh:'Diagnoseergebnisse',
+        loading:'Wird geladen...',
+        ready:'Technische Datenbank bereit.',
+        error:'Technische Datenbank konnte nicht geladen werden.',
+        complete:'Bitte wählen Sie das Fahrzeug vollständig aus.',
+        describe:'Bitte beschreiben Sie das Problem.',
+        search:'Fahrzeug und Symptome werden analysiert...',
+        none:'Keine ausreichend relevanten Diagnoseinformationen gefunden.',
+        one:'1 relevantes Ergebnis',
+        many:'{n} relevante Ergebnisse',
+        vehicle:'Fahrzeug',
+        causes:'Mögliche Ursachen',
+        steps:'Diagnoseverfahren',
+        dtcs:'Verwandte DTCs',
+        difficulty:'Schwierigkeit',
+        rel:'Relevanz'
+    },
+
+    ro:{
+        home:'← Acasă',
+        intro:'Selectează vehiculul și descrie problema. AutoDecode va căuta în baza tehnică și va ordona rezultatele după relevanță.',
+        make:'Marcă',
+        model:'Model',
+        generation:'Generație / Platformă',
+        year:'An',
+        engine:'Motor',
+        problem:'Descrie problema',
+        sm:'Selectează marca',
+        smod:'Selectează modelul',
+        sg:'Selectează generația',
+        sy:'Selectează anul',
+        se:'Selectează motorul',
+        ph:'Exemplu: Motorul nu mai trage la turații mici și uneori intră în limp mode.',
+        find:'GĂSEȘTE SOLUȚIA',
+        rh:'Rezultate diagnostic',
+        loading:'Se încarcă...',
+        ready:'Baza tehnică este pregătită.',
+        error:'Baza tehnică nu a putut fi încărcată.',
+        complete:'Completează selecția vehiculului.',
+        describe:'Descrie problema.',
+        search:'Se analizează vehiculul și simptomele...',
+        none:'Nu au fost găsite informații suficient de relevante.',
+        one:'1 rezultat relevant',
+        many:'{n} rezultate relevante',
+        vehicle:'Vehicul',
+        causes:'Cauze posibile',
+        steps:'Procedură de diagnostic',
+        dtcs:'DTC-uri asociate',
+        difficulty:'Dificultate',
+        rel:'Relevanță'
+    },
+
+    fr:{
+        home:'← Accueil',
+        intro:'Sélectionnez votre véhicule et décrivez le problème. AutoDecode recherchera dans la base technique et classera les informations de diagnostic les plus pertinentes.',
+        make:'Marque',
+        model:'Modèle',
+        generation:'Génération / Plateforme',
+        year:'Année',
+        engine:'Moteur',
+        problem:'Décrire le problème',
+        sm:'Sélectionner la marque',
+        smod:'Sélectionner le modèle',
+        sg:'Sélectionner la génération',
+        sy:"Sélectionner l'année",
+        se:'Sélectionner le moteur',
+        ph:'Exemple : Le moteur manque fortement de puissance à bas régime et passe parfois en mode dégradé.',
+        find:'TROUVER LA SOLUTION',
+        rh:'Résultats du diagnostic',
+        loading:'Chargement...',
+        ready:'Base technique prête.',
+        error:'La base technique n’a pas pu être chargée.',
+        complete:'Veuillez sélectionner complètement le véhicule.',
+        describe:'Veuillez décrire le problème.',
+        search:'Analyse du véhicule et des symptômes...',
+        none:'Aucune information de diagnostic suffisamment pertinente trouvée.',
+        one:'1 résultat pertinent',
+        many:'{n} résultats pertinents',
+        vehicle:'Véhicule',
+        causes:'Causes possibles',
+        steps:'Procédure de diagnostic',
+        dtcs:'DTC associés',
+        difficulty:'Difficulté',
+        rel:'Pertinence'
+    },
+
+    es:{
+        home:'← Inicio',
+        intro:'Selecciona tu vehículo y describe el problema. AutoDecode buscará en la base de datos técnica y clasificará la información de diagnóstico más relevante.',
+        make:'Marca',
+        model:'Modelo',
+        generation:'Generación / Plataforma',
+        year:'Año',
+        engine:'Motor',
+        problem:'Describe el problema',
+        sm:'Seleccionar marca',
+        smod:'Seleccionar modelo',
+        sg:'Seleccionar generación',
+        sy:'Seleccionar año',
+        se:'Seleccionar motor',
+        ph:'Ejemplo: El motor tiene muy poca potencia a bajas revoluciones y a veces entra en modo de emergencia.',
+        find:'ENCONTRAR SOLUCIÓN',
+        rh:'Resultados del diagnóstico',
+        loading:'Cargando...',
+        ready:'Base de datos técnica lista.',
+        error:'No se pudo cargar la base de datos técnica.',
+        complete:'Completa la selección del vehículo.',
+        describe:'Describe el problema.',
+        search:'Analizando el vehículo y los síntomas...',
+        none:'No se encontró información de diagnóstico suficientemente relevante.',
+        one:'1 resultado relevante',
+        many:'{n} resultados relevantes',
+        vehicle:'Vehículo',
+        causes:'Posibles causas',
+        steps:'Procedimiento de diagnóstico',
+        dtcs:'DTC relacionados',
+        difficulty:'Dificultad',
+        rel:'Relevancia'
+    },
+
+    it:{
+        home:'← Home',
+        intro:'Seleziona il veicolo e descrivi il problema. AutoDecode cercherà nel database tecnico e classificherà le informazioni diagnostiche più rilevanti.',
+        make:'Marca',
+        model:'Modello',
+        generation:'Generazione / Piattaforma',
+        year:'Anno',
+        engine:'Motore',
+        problem:'Descrivi il problema',
+        sm:'Seleziona marca',
+        smod:'Seleziona modello',
+        sg:'Seleziona generazione',
+        sy:'Seleziona anno',
+        se:'Seleziona motore',
+        ph:'Esempio: Il motore ha pochissima potenza ai bassi regimi e a volte entra in modalità emergenza.',
+        find:'TROVA SOLUZIONE',
+        rh:'Risultati diagnostici',
+        loading:'Caricamento...',
+        ready:'Database tecnico pronto.',
+        error:'Impossibile caricare il database tecnico.',
+        complete:'Completa la selezione del veicolo.',
+        describe:'Descrivi il problema.',
+        search:'Analisi del veicolo e dei sintomi...',
+        none:'Non sono state trovate informazioni diagnostiche sufficientemente rilevanti.',
+        one:'1 risultato rilevante',
+        many:'{n} risultati rilevanti',
+        vehicle:'Veicolo',
+        causes:'Possibili cause',
+        steps:'Procedura diagnostica',
+        dtcs:'DTC correlati',
+        difficulty:'Difficoltà',
+        rel:'Rilevanza'
+    },
+
+    nl:{
+        home:'← Home',
+        intro:'Selecteer je voertuig en beschrijf het probleem. AutoDecode doorzoekt de technische database en rangschikt de meest relevante diagnose-informatie.',
+        make:'Merk',
+        model:'Model',
+        generation:'Generatie / Platform',
+        year:'Jaar',
+        engine:'Motor',
+        problem:'Beschrijf het probleem',
+        sm:'Selecteer merk',
+        smod:'Selecteer model',
+        sg:'Selecteer generatie',
+        sy:'Selecteer jaar',
+        se:'Selecteer motor',
+        ph:'Voorbeeld: De motor heeft bij lage toerentallen zeer weinig vermogen en gaat soms in noodloop.',
+        find:'OPLOSSING VINDEN',
+        rh:'Diagnoseresultaten',
+        loading:'Laden...',
+        ready:'Technische database gereed.',
+        error:'De technische database kon niet worden geladen.',
+        complete:'Voltooi de voertuigselectie.',
+        describe:'Beschrijf het probleem.',
+        search:'Voertuig en symptomen worden geanalyseerd...',
+        none:'Geen voldoende relevante diagnose-informatie gevonden.',
+        one:'1 relevant resultaat',
+        many:'{n} relevante resultaten',
+        vehicle:'Voertuig',
+        causes:'Mogelijke oorzaken',
+        steps:'Diagnoseprocedure',
+        dtcs:'Gerelateerde DTC’s',
+        difficulty:'Moeilijkheid',
+        rel:'Relevantie'
+    }
+
 };
 
-const $=id=>document.getElementById(id);
-let L=localStorage.getItem('autodecode_language')||'en',makers=[],vehicles=null,tdb=[],currentManufacturer=null;
 
-function N(v){
-return String(v??'').toLowerCase()
-.replace(/doesn['’]?t\b/g,'does not').replace(/doesnt\b/g,'does not')
-.replace(/isn['’]?t\b/g,'is not').replace(/isnt\b/g,'is not')
-.replace(/aren['’]?t\b/g,'are not').replace(/arent\b/g,'are not')
-.replace(/wasn['’]?t\b/g,'was not').replace(/wasnt\b/g,'was not')
-.replace(/weren['’]?t\b/g,'were not').replace(/werent\b/g,'were not')
-.replace(/won['’]?t\b/g,'will not').replace(/wont\b/g,'will not')
-.replace(/can['’]?t\b/g,'cannot').replace(/cant\b/g,'cannot')
-.replace(/couldn['’]?t\b/g,'could not').replace(/couldnt\b/g,'could not')
-.replace(/wouldn['’]?t\b/g,'would not').replace(/wouldnt\b/g,'would not')
-.replace(/shouldn['’]?t\b/g,'should not').replace(/shouldnt\b/g,'should not')
-.replace(/didn['’]?t\b/g,'did not').replace(/didnt\b/g,'did not')
-.replace(/don['’]?t\b/g,'do not').replace(/dont\b/g,'do not')
-.normalize('NFD').replace(/[\u0300-\u036f]/g,'')
-.replace(/[^a-z0-9]+/g,' ').replace(/\s+/g,' ').trim();
-}
+/* =========================================================
+   GLOBAL STATE
+   ========================================================= */
 
-function localizedValue(v){
-if(v==null)return '';
-if(typeof v==='string'||typeof v==='number'||typeof v==='boolean')return String(v);
-if(Array.isArray(v))return v.map(localizedValue).filter(Boolean).join(', ');
-if(typeof v==='object'){
-let x=v[L]??v.en??v.ro??v.de??v.fr??v.es??v.it??v.nl;
-if(x!=null)return localizedValue(x);
-for(const z of Object.values(v)){let r=localizedValue(z);if(r)return r}
-}
-return '';
-}
+let L='en';
 
-function valueArray(v){
-if(v==null)return [];
-if(Array.isArray(v))return v.map(localizedValue).filter(Boolean);
-if(typeof v==='object')return valueArray(v[L]??v.en??v.ro??v.de??v.fr??v.es??v.it??v.nl);
-return [String(v)];
-}
+let makers=[];
 
-function cleanText(v){
-if(v==null)return '';
-if(Array.isArray(v))return v.map(cleanText).filter(Boolean).join(' ');
-if(typeof v==='object')return Object.values(v).map(cleanText).filter(Boolean).join(' ');
-return String(v);
-}
+let vdb=null;
 
-const FIELDS={
-primary:['title','name','problem','issue','symptom','description','fault','failure'],
-symptoms:['symptoms','complaint','conditions'],
-keywords:['keywords','tags'],
-system:['system','subsystem','category','component'],
-causes:['possible_causes','causes'],
-steps:['diagnostic_steps','steps','procedure'],
-dtc:['related_dtcs','dtcs','dtc','codes'],
-weak:['notes','references','reference']
+let tdb=[];
+
+let loaded='';
+
+
+/* =========================================================
+   SYMPTOM CONCEPTS
+   ========================================================= */
+
+const A={
+
+    poor_power:[
+        'little power',
+        'low power',
+        'loss of power',
+        'power loss',
+        'no power',
+        'weak engine',
+        'lacks power',
+        'pierdere de putere',
+        'pierdere putere',
+        'nu mai trage',
+        'nu trage',
+        'lipsa de putere'
+    ],
+
+    low_rpm_power_loss:[
+        'low rpm',
+        'low rev',
+        'low revs',
+        'low engine speed',
+        'turații mici',
+        'turatii mici',
+        'turații joase',
+        'turatii joase'
+    ],
+
+    limp_mode:[
+        'limp mode',
+        'limp-home',
+        'limp home',
+        'reduced power mode',
+        'safe mode',
+        'notlauf',
+        'modo de emergencia',
+        'mode dégradé',
+        'modalità emergenza',
+        'noodloop',
+        'mod protecție',
+        'mod protectie'
+    ],
+
+    engine_stall:[
+        'engine stalls',
+        'engine stall',
+        'stalls',
+        'cuts out',
+        'engine cuts out',
+        'se oprește',
+        'se opreste',
+        'calează',
+        'caleaza'
+    ],
+
+    no_start:[
+        "won't start",
+        'will not start',
+        'does not start',
+        'no start',
+        'not starting',
+        'nu pornește',
+        'nu porneste'
+    ],
+
+    hard_start:[
+        'hard starting',
+        'hard start',
+        'difficult to start',
+        'starting difficulty',
+        'pornire dificilă',
+        'pornire dificila'
+    ],
+
+    rough_idle:[
+        'rough idle',
+        'unstable idle',
+        'erratic idle',
+        'ralanti instabil'
+    ],
+
+    misfire:[
+        'misfire',
+        'misfiring',
+        'engine misfire',
+        'rateu',
+        'rateuri',
+        'rateu motor'
+    ],
+
+    turbo:[
+        'turbo',
+        'turbocharger',
+        'turbocharger fault',
+        'turbocompresor',
+        'turbolader'
+    ],
+
+    egr:[
+        'egr',
+        'exhaust gas recirculation',
+        'recirculare gaze'
+    ],
+
+    dpf:[
+        'dpf',
+        'diesel particulate filter',
+        'particulate filter',
+        'filtru de particule'
+    ],
+
+    maf:[
+        'maf',
+        'mass air flow',
+        'air flow meter',
+        'debitmetru'
+    ],
+
+    map:[
+        'map sensor',
+        'boost pressure sensor',
+        'manifold pressure sensor',
+        'pressure sensor',
+        'senzor map'
+    ],
+
+    injector:[
+        'injector',
+        'injectors',
+        'injektor',
+        'inyector',
+        'injecteur',
+        'iniettore'
+    ],
+
+    fuel_pressure:[
+        'fuel pressure',
+        'rail pressure',
+        'fuel rail',
+        'common rail pressure',
+        'presiune combustibil',
+        'presiune rampă',
+        'presiune rampa'
+    ],
+
+    crankshaft:[
+        'crankshaft',
+        'crank sensor',
+        'crankshaft sensor',
+        'arbore cotit',
+        'senzor arbore cotit'
+    ],
+
+    camshaft:[
+        'camshaft',
+        'cam sensor',
+        'camshaft sensor',
+        'arbore cu came',
+        'senzor ax came'
+    ],
+
+    synchronization:[
+        'crank cam correlation',
+        'cam crank correlation',
+        'timing correlation',
+        'synchronization',
+        'synchronisation',
+        'sincronizare'
+    ],
+
+    coolant:[
+        'coolant',
+        'coolant temperature',
+        'engine temperature',
+        'temperature sensor',
+        'antifreeze',
+        'lichid de răcire',
+        'temperatura motorului',
+        'senzor temperatură'
+    ],
+
+    overheating:[
+        'overheating',
+        'runs hot',
+        'too hot',
+        'engine overheating',
+        'supraîncălzire',
+        'se încinge'
+    ],
+
+    oil_pressure:[
+        'oil pressure',
+        'low oil pressure',
+        'presiune ulei'
+    ],
+
+    battery:[
+        'battery',
+        'weak battery',
+        'baterie'
+    ],
+
+    alternator:[
+        'alternator',
+        'generator',
+        'alternator fault'
+    ],
+
+    voltage:[
+        'system voltage',
+        'voltage high',
+        'voltage low',
+        'low voltage',
+        'high voltage',
+        'tensiune'
+    ]
+
 };
 
-const FW={primary:8,symptoms:6,keywords:5,system:0,causes:1,steps:.05,dtc:2,weak:0};
 
-function fieldText(r,keys){
-return cleanText(keys.flatMap(k=>r[k]!=null?[r[k]]:[]));
-}
+const E={
 
-function profileText(r){
-let o={};
-for(const k of Object.keys(FIELDS))o[k]=N(fieldText(r,FIELDS[k]));
-return o;
-}
+    poor_power:[
+        'turbo',
+        'egr',
+        'dpf',
+        'maf',
+        'map',
+        'injector'
+    ],
 
-const SEM={
-black_smoke:{p:['black smoke','black exhaust','black soot','sooty exhaust','dark smoke','dark exhaust','black exhaust smoke','fum negru','fum negru pe evacuare'],d:'engine',w:70},
-white_smoke:{p:['white smoke','white exhaust','white vapour','white vapor','steam from exhaust','white smoke from exhaust','fum alb','abur alb'],d:'engine',w:65},
-blue_smoke:{p:['blue smoke','blue exhaust','blue smoke from exhaust','oil smoke','fum albastru'],d:'engine',w:70},
-smoke:{p:['smoke','smoking','smoky exhaust','exhaust smoke','fum','fum evacuare'],d:'engine',w:35},
-stall:{p:['engine stalls','engine stall','engine stops','engine stop','engine shuts off','engine cuts out','engine cuts off','cuts out','cut out','dies while driving','died while driving','motor stops','motor stopped','engine stopped','engine has stopped','engine stopped running','stopped while running','stopped while driving','se opreste','se oprea','s a oprit','s a oprit in mers','caleaza','motorul s a oprit','motorul s a oprit in mers'],d:'engine',w:70},
-no_start:{p:['does not start','does not restart','will not start','will not restart','cannot start','cannot restart','unable to start','unable to restart','no start','no restart','not starting','not start','engine does not start','engine will not start','engine cannot start','wont start','won t start','nu porneste','nu mai porneste','nu reporneste','nu mai reporneste','nu porneste motorul'],d:'engine',w:70},
-hard_start:{p:['hard start','hard starting','difficult start','difficult starting','starts hard','long crank','long cranking','takes long to start','porneste greu','pornire grea','pornire lunga'],d:'engine',w:55},
-power_loss:{p:['loss of power','power loss','lose power','loses power','lost power','little power','low power','poor power','no power','weak acceleration','poor acceleration','poor performance','underpowered','lack of power','sluggish','nu mai trage','nu are putere','pierdere de putere','lipsa de putere'],d:'engine',w:60},
-limp_mode:{p:['limp mode','reduced power','reduced engine power','emergency mode','failsafe mode','notlauf','mode degrade','degraded mode','mod avarie','modul avarie','limp'],d:'engine',w:65},
-low_rpm:{p:['low rpm','low rev','low revs','low engine speed','below 2000 rpm','below 2500 rpm','at low rpm','at low revs','turatii mici','turatii joase','turatii scazute'],d:'engine',w:30},
-acceleration:{p:['when accelerating','under acceleration','during acceleration','accelerating','acceleration','when i accelerate','when gas is applied','when pressing accelerator','pedala de acceleratie','la accelerare','cand accelerez'],d:'engine',w:20},
-idle:{p:['at idle','idle','idling','when stopped','at traffic lights','ralanti','la ralanti','stationary'],d:'engine',w:25},
-rough_idle:{p:['rough idle','rough running','unstable idle','unstable running','shaking idle','engine shakes at idle','ralanti instabil','ralanti neregulat'],d:'engine',w:60},
-misfire:{p:['misfire','misfiring','engine misfire','missing','jerking','juddering','engine shaking','rateu','rateuri','trepidatii'],d:'engine',w:60},
-overheating:{p:['overheating','overheat','overheated','too hot','runs hot','running hot','high engine temperature','temperature too high','supraincalzire','se incinge','temperatura prea mare'],d:'cooling',w:65},
-coolant:{p:['coolant leak','coolant loss','losing coolant','antifreeze leak','water loss','coolant','antifreeze','pierde antigel','pierdere antigel','lichid de racire'],d:'cooling',w:55},
-oil:{p:['oil pressure','low oil','oil leak','oil consumption','burning oil','losing oil','ulei','presiune ulei','pierde ulei','consum ulei'],d:'lubrication',w:50},
-fuel:{p:['fuel pressure','fuel system','fuel problem','fuel supply','fuel starvation','fuel','diesel fuel','petrol fuel','combustibil','motorina','benzina','presiune combustibil'],d:'fuel',w:45},
-injector:{p:['injector','injectors','injector problem','injector fault','injection','injectie'],d:'fuel',w:48},
-turbo:{p:['turbo','turbocharger','boost','boost pressure','turbo lag','no boost','low boost','turbina','presiune turbo'],d:'air',w:48},
-egr:{p:['egr','exhaust gas recirculation','egr valve','supapa egr'],d:'air',w:48},
-dpf:{p:['dpf','particulate filter','diesel particulate filter','blocked dpf','dpf regeneration','filtru particule','filtru de particule'],d:'exhaust',w:48},
-maf:{p:['maf','mass air flow','air flow sensor','mass airflow','debitmetru','senzor debit aer'],d:'air',w:48},
-map:{p:['map sensor','manifold pressure','boost sensor','map','senzor map'],d:'air',w:48},
-battery:{p:['battery','weak battery','dead battery','low battery','batterie','baterie','acumulator'],d:'electrical',w:40},
-alternator:{p:['alternator','charging system','not charging','charge light','alternator fault','alternator problem','nu incarca'],d:'electrical',w:45},
-voltage:{p:['voltage','low voltage','high voltage','electrical supply','volt','voltage problem','tensiune','voltaj'],d:'electrical',w:40},
-crankshaft:{p:['crankshaft sensor','crank sensor','engine speed sensor','crankshaft position','senzor arbore cotit','senzor turatie'],d:'engine',w:48},
-camshaft:{p:['camshaft sensor','cam sensor','camshaft position','senzor arbore came','senzor ax cu came'],d:'engine',w:48},
-timing:{p:['timing','cam crank correlation','correlation','synchronization','sync','timing problem','distributie','sincronizare'],d:'engine',w:48},
-noise:{p:['noise','noisy','rattle','rattling','knock','knocking','click','clicking','whine','whining','squeal','grinding','buzz','zgomot','bataie','huruit','scartait'],d:'mechanical',w:40},
-vibration:{p:['vibration','vibrating','shaking','shake','judder','vibratie','vibratii','tremurat'],d:'mechanical',w:38},
-leak:{p:['leak','leaking','fluid loss','dripping','drips','scurgere','pierdere','curge','pierde lichid'],d:'fluid',w:30}
+    low_rpm_power_loss:[
+        'turbo',
+        'egr',
+        'dpf',
+        'maf',
+        'map',
+        'injector'
+    ],
+
+    limp_mode:[
+        'turbo',
+        'egr',
+        'dpf',
+        'maf',
+        'map',
+        'fuel_pressure'
+    ],
+
+    no_start:[
+        'fuel_pressure',
+        'crankshaft',
+        'camshaft',
+        'synchronization',
+        'injector'
+    ],
+
+    rough_idle:[
+        'injector',
+        'maf',
+        'egr',
+        'fuel_pressure',
+        'coolant'
+    ],
+
+    misfire:[
+        'injector',
+        'crankshaft',
+        'camshaft',
+        'fuel_pressure'
+    ],
+
+    hard_start:[
+        'fuel_pressure',
+        'crankshaft',
+        'camshaft',
+        'injector'
+    ]
+
 };
 
-const DOMAIN_RULES={
-engine:['engine','motor','combustion','cylinder','crankshaft','camshaft','timing','injector','injection'],
-air:['turbo','turbocharger','boost','egr','maf','map','air intake','intake manifold','air flow'],
-fuel:['fuel','injector','injection','fuel pressure','fuel pump','combustibil','motorina','benzina'],
-exhaust:['exhaust','dpf','particulate','smoke','soot','catalyst','evacuare'],
-cooling:['coolant','antifreeze','radiator','thermostat','water pump','cooling','racire','antigel'],
-lubrication:['oil','oil pressure','lubrication','ulei'],
-electrical:['battery','alternator','voltage','charging','electrical','wiring','baterie','voltaj','tensiune'],
-mechanical:['noise','vibration','bearing','belt','pulley','shaft','mechanical','zgomot','vibratie'],
-chassis:['brake','brakes','abs','esp','traction','stability','braking','frana','frane'],
-body:['wiper','windshield','washer','lighting','headlight','taillight','cluster','instrument panel','body','geam','stergator','stergatoare'],
-hvac:['hvac','air conditioning','a/c','climate','heater','heating','blower','compressor'],
-transmission:['transmission','gearbox','gear','clutch','shift','schimbator','ambreiaj','cutie viteze'],
-steering:['steering','power steering','directie','volan'],
-suspension:['suspension','shock absorber','strut','spring','amortizor','arc']
+
+const W={
+
+    poor_power:25,
+    low_rpm_power_loss:28,
+    limp_mode:30,
+    turbo:28,
+    egr:24,
+    dpf:24,
+    maf:24,
+    map:24,
+    injector:23,
+    fuel_pressure:31,
+    crankshaft:31,
+    camshaft:29,
+    synchronization:30,
+    engine_stall:40,
+    no_start:34,
+    hard_start:25,
+    rough_idle:24,
+    misfire:26,
+    coolant:20,
+    overheating:30,
+    oil_pressure:30,
+    battery:20,
+    alternator:20,
+    voltage:20
+
 };
 
-const RELATED={
-stall:['no_start','hard_start','fuel','injector','crankshaft','camshaft','timing','battery','alternator'],
-no_start:['stall','hard_start','fuel','injector','crankshaft','camshaft','timing','battery','alternator'],
-power_loss:['limp_mode','turbo','egr','maf','map','dpf','fuel','injector'],
-limp_mode:['power_loss','turbo','egr','maf','map','dpf','fuel','injector'],
-black_smoke:['fuel','injector','egr','maf','map','turbo','dpf'],
-white_smoke:['coolant','fuel','injector','turbo'],
-blue_smoke:['oil','turbo','leak'],
-overheating:['coolant'],
-hard_start:['battery','fuel','injector','crankshaft','camshaft','timing'],
-rough_idle:['misfire','injector','egr','maf','map'],
-misfire:['injector','fuel','maf','egr','camshaft','crankshaft']
-};
 
-const STOP=new Set('the a an and or but when while with from into then after before has have had is are was were does did will not cannot can could would should do car vehicle problem my your our their this that it its to of in on at for by as i you he she they we me'.split(' '));
+/* =========================================================
+   DOM / NORMALIZATION HELPERS
+   ========================================================= */
 
-function words(s){
-return new Set(N(s).split(' ').filter(x=>x.length>=3&&!STOP.has(x)));
+const $=x=>document.getElementById(x);
+
+
+const N=s=>
+    String(s??'')
+        .toLowerCase()
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g,'')
+        .replace(/[^\p{L}\p{N} ]+/gu,' ')
+        .replace(/\s+/g,' ')
+        .trim();
+
+
+const C=s=>
+    N(s).replace(/ /g,'_');
+
+
+const esc=s=>
+    String(s??'').replace(
+        /[&<>"']/g,
+        m=>({
+            '&':'&amp;',
+            '<':'&lt;',
+            '>':'&gt;',
+            '"':'&quot;',
+            "'":'&#39;'
+        }[m])
+    );
+
+
+/* =========================================================
+   GENERIC YAML VALUE HELPERS
+   ========================================================= */
+
+function localizedValue(value){
+
+    if(value==null){
+        return '';
+    }
+
+    if(typeof value==='string'){
+        return value;
+    }
+
+    if(Array.isArray(value)){
+
+        return value
+            .map(localizedValue)
+            .filter(Boolean)
+            .join(', ');
+
+    }
+
+    if(typeof value==='object'){
+
+        let selected =
+            value[L] ??
+            value.en ??
+            value.ro;
+
+        if(selected!=null){
+
+            if(Array.isArray(selected)){
+
+                return selected
+                    .map(localizedValue)
+                    .filter(Boolean)
+                    .join(', ');
+
+            }
+
+            if(typeof selected==='object'){
+
+                return localizedValue(selected);
+
+            }
+
+            return String(selected);
+
+        }
+
+        for(const x of Object.values(value)){
+
+            let result=
+                localizedValue(x);
+
+            if(result){
+                return result;
+            }
+
+        }
+
+    }
+
+    return String(value);
+
 }
 
-function phraseMatch(text,phrase){
-let t=N(text),p=N(phrase);
-if(!t||!p)return false;
-if(t===p||t.includes(' '+p+' ')||t.startsWith(p+' ')||t.endsWith(' '+p))return true;
-if(p.length<5||p.includes(' '))return false;
-return t.split(' ').some(w=>w===p||w.length>=6&&p.length>=6&&(w.startsWith(p.slice(0,6))||p.startsWith(w.slice(0,6))));
+
+function localizedArray(value){
+
+    if(value==null){
+        return [];
+    }
+
+    if(Array.isArray(value)){
+        return value
+            .filter(x=>x!=null)
+            .map(x=>String(x));
+    }
+
+    if(typeof value==='object'){
+
+        let selected=
+            value[L] ??
+            value.en ??
+            value.ro;
+
+        if(Array.isArray(selected)){
+            return selected
+                .filter(x=>x!=null)
+                .map(x=>String(x));
+        }
+
+        if(selected!=null){
+            return [String(selected)];
+        }
+
+        return [];
+    }
+
+    return [String(value)];
 }
 
-function fieldHit(text,concept){
-let d=SEM[concept];
-return !!d&&d.p.some(p=>phraseMatch(text,p));
+
+function valueArray(value){
+
+    if(value==null){
+        return [];
+    }
+
+    if(Array.isArray(value)){
+        return value;
+    }
+
+    return [value];
 }
 
-function detectConcepts(text){
-let out=[];
-for(const [k,v] of Object.entries(SEM))if(v.p.some(p=>phraseMatch(text,p)))out.push(k);
-return [...new Set(out)];
+
+/* =========================================================
+   TEXT EXTRACTION
+   ========================================================= */
+
+function textValue(value){
+
+    if(value==null){
+        return '';
+    }
+
+    if(typeof value==='string'){
+        return value;
+    }
+
+    if(Array.isArray(value)){
+        return value
+            .map(textValue)
+            .filter(Boolean)
+            .join(' ');
+    }
+
+    if(typeof value==='object'){
+
+        return Object.values(value)
+            .map(textValue)
+            .filter(Boolean)
+            .join(' ');
+    }
+
+    return String(value);
 }
 
-function detectDomains(text){
-let n=N(text),out=new Set();
-for(const [d,terms] of Object.entries(DOMAIN_RULES))
-if(terms.some(x=>phraseMatch(n,x)))out.add(d);
-return out;
+
+function txt(x){
+
+    return N([
+
+        x.title,
+        x.description,
+        x.system,
+        x.category,
+        x.symptoms,
+        x.keywords,
+        x.possible_causes,
+        x.diagnostic_steps,
+        x.related_dtcs
+
+    ]
+    .map(textValue)
+    .filter(Boolean)
+    .join(' '));
 }
 
-function analyseInput(q){
-let n=N(q),concepts=detectConcepts(n),domains=detectDomains(n);
-for(const c of concepts)if(SEM[c]?.d)domains.add(SEM[c].d);
 
-let context=[];
-if(/stopped while running|stopped while driving|died while driving|engine stopped|engine stopped running|motor stopped|motorul s a oprit|s a oprit in mers/.test(n))context.push('stall_running');
-if(/stopped and (will not|does not|cannot) (restart|start)|stopped and not restart|stopped.*not.*restart/.test(n))context.push('stall_restart');
-if(/when accelerating|while accelerating|during acceleration|accelerating|cand accelerez|la accelerare/.test(n))context.push('acceleration');
-if(/low rpm|low rev|low engine speed|turatii mici|turatii joase/.test(n))context.push('low_rpm');
-if(/at idle|idling|rough idle|ralanti/.test(n))context.push('idle');
+function has(t,a){
 
-if(concepts.includes('stall')&&concepts.includes('no_start'))concepts.push('stall_restart');
-if(concepts.includes('power_loss')&&concepts.includes('limp_mode'))concepts.push('power_limp');
-
-return{raw:q,n,concepts:[...new Set(concepts)],domains:[...domains],context};
+    return a.some(x=>
+        t.includes(N(x))
+    );
 }
 
-function resultProfile(r){
-let f=profileText(r);
-let high=f.primary+' '+f.symptoms+' '+f.keywords;
-let domains=new Set(detectDomains(f.system));
 
-for(const c of detectConcepts(high))if(SEM[c]?.d)domains.add(SEM[c].d);
+/* =========================================================
+   DIAGNOSTIC CONCEPT DETECTION
+   ========================================================= */
 
-if(!domains.size){
-for(const c of detectConcepts(f.primary))if(SEM[c]?.d)domains.add(SEM[c].d);
+function concepts(q){
+
+    let n=N(q);
+
+    let p=[];
+
+    for(
+        let [c,a]
+        of Object.entries(A)
+    ){
+
+        if(has(n,a)){
+            p.push(c);
+        }
+
+    }
+
+    return [...new Set(p)];
+
 }
 
-return{...f,high,concepts:detectConcepts(high),domains:[...domains]};
+
+function expanded(p){
+
+    return [
+        ...new Set([
+            ...p,
+            ...p.flatMap(c=>E[c]||[])
+        ])
+    ];
+
 }
 
-function family(d){
-if(['engine','air','fuel','exhaust','cooling','lubrication','mechanical'].includes(d))return'powertrain';
-return d;
-}
 
-function inputFamilies(input){
-return new Set(input.domains.map(family));
-}
-
-function resultFamilies(result){
-return new Set(result.domains.map(family));
-}
-
-function compatible(input,result){
-let wanted=inputFamilies(input);
-let got=resultFamilies(result);
-if(!wanted.size)return true;
-
-for(const d of wanted)if(got.has(d))return true;
-
-if(wanted.has('powertrain')&&(input.concepts.includes('stall_restart')||input.concepts.includes('power_limp'))){
-if(result.concepts.some(c=>['battery','alternator','voltage','fuel','injector','crankshaft','camshaft','timing','turbo','egr','maf','map','dpf'].includes(c)))return true;
-}
-
-return false;
-}
-
-function hardGate(input,result){
-let h=result.high,c=result.concepts;
-
-if(input.concepts.includes('stall_restart')){
-let direct=fieldHit(h,'stall')||fieldHit(h,'no_start')||fieldHit(h,'hard_start');
-let relevant=c.some(x=>['fuel','injector','crankshaft','camshaft','timing','battery','alternator'].includes(x));
-if(!direct&&!relevant)return false;
-}
-
-if(input.concepts.includes('power_limp')){
-let direct=fieldHit(h,'power_loss')||fieldHit(h,'limp_mode');
-let relevant=c.some(x=>['turbo','egr','maf','map','dpf','fuel','injector'].includes(x));
-if(!direct&&!relevant)return false;
-}
-
-let smoke=input.concepts.filter(x=>['black_smoke','white_smoke','blue_smoke'].includes(x));
-if(smoke.length){
-let direct=smoke.some(x=>fieldHit(h,x));
-let related=smoke.some(x=>(RELATED[x]||[]).some(y=>fieldHit(h,y)||fieldHit(result.causes,y)));
-if(!direct&&!related)return false;
-}
-
-return true;
-}
-
-function lexical(input,result){
-let a=words(input.raw),s=0;
-let p=new Set(result.primary.split(' ')),y=new Set(result.symptoms.split(' ')),k=new Set(result.keywords.split(' '));
-for(const w of a){
-if(p.has(w))s+=8;
-else if(y.has(w))s+=6;
-else if(k.has(w))s+=5;
-}
-return Math.min(30,s);
-}
-
-function semantic(input,result){
-let s=0,h=result.high,sys=result.system,causes=result.causes;
-
-for(const c of input.concepts){
-if(c==='stall_restart'||c==='power_limp')continue;
-if(fieldHit(h,c))s+=Math.min(55,SEM[c].w*.8);
-else if(fieldHit(sys,c))s+=Math.min(20,SEM[c].w*.3);
-else if(fieldHit(causes,c))s+=Math.min(12,SEM[c].w*.18);
-}
-
-if(input.concepts.includes('stall_restart')){
-if(fieldHit(h,'stall'))s+=55;
-if(fieldHit(h,'no_start'))s+=55;
-if(fieldHit(h,'hard_start'))s+=22;
-for(const c of ['fuel','injector','crankshaft','camshaft','timing','battery','alternator'])
-if(fieldHit(h,c))s+=9;
-}
-
-if(input.concepts.includes('power_limp')){
-if(fieldHit(h,'power_loss'))s+=55;
-if(fieldHit(h,'limp_mode'))s+=55;
-for(const c of ['turbo','egr','maf','map','dpf','fuel','injector'])
-if(fieldHit(h,c))s+=9;
-}
-
-return s;
-}
-
-function contextScore(input,result){
-let s=0,t=result.primary+' '+result.symptoms+' '+result.keywords;
-if(input.context.includes('acceleration')&&/accelerat|throttle|load|under load/.test(t))s+=18;
-if(input.context.includes('low_rpm')&&/low rpm|low rev|low engine speed/.test(t))s+=18;
-if(input.context.includes('idle')&&/idle|idling|ralanti/.test(t))s+=18;
-if(input.context.includes('stall_running')&&fieldHit(t,'stall'))s+=28;
-if(input.context.includes('stall_restart')&&(fieldHit(t,'stall')||fieldHit(t,'no_start')))s+=28;
-return s;
-}
-
-function domainScore(input,result){
-let a=inputFamilies(input),b=resultFamilies(result),s=0;
-for(const d of a)if(b.has(d))s+=45;
-return s;
-}
-
-function extractDTCs(q){
-return[...new Set(String(q).toUpperCase().match(/\b[PCBU][0-9]{4}\b/g)||[])];
-}
-
-function dtcScore(q,r){
-let codes=extractDTCs(q);
-if(!codes.length)return 0;
-let text=N(fieldText(r,FIELDS.dtc)).toUpperCase(),s=0;
-for(const c of codes)if(text.includes(c))s+=120;
-return s;
-}
-
-function score(r,input){
-let result=resultProfile(r);
-if(!compatible(input,result))return null;
-if(!hardGate(input,result))return null;
-
-let s=domainScore(input,result);
-s+=semantic(input,result);
-s+=lexical(input,result);
-s+=contextScore(input,result);
-s+=dtcScore(input.raw,r);
-
-return{r,s:Math.round(s)};
-}
-
-function idValue(v){
-if(v==null)return '';
-if(typeof v==='string'||typeof v==='number')return String(v);
-if(typeof v==='object')return String(v.id??v.name??v.code??'');
-return String(v);
-}
-
-function matchesValue(sel,value){
-if(value==null||value==='all')return true;
-let wanted=[N(idValue(sel.id)),N(idValue(sel.name))].filter(Boolean);
-if(Array.isArray(value))return !value.length||value.some(x=>wanted.includes(N(idValue(x))));
-if(typeof value==='object'){
-let vals=Object.values(value).flatMap(x=>Array.isArray(x)?x:[x]).map(idValue).map(N);
-return vals.some(x=>wanted.includes(x));
-}
-return wanted.includes(N(idValue(value)));
-}
-
-function vehicleMatch(r,v){
-let x=r.vehicle&&typeof r.vehicle==='object'?r.vehicle:r;
-return matchesValue(v.m,x.models??x.model??x.make_model)&&
-matchesValue(v.g,x.generations??x.generation)&&
-matchesValue(v.e,x.engines??x.engine);
-}
+/* =========================================================
+   TITLE / SYSTEM
+   ========================================================= */
 
 function title(r){
-let v=localizedValue(r.title)||localizedValue(r.name)||localizedValue(r.description)||localizedValue(r.symptom)||localizedValue(r.problem)||localizedValue(r.issue);
-if(v)return v;
-if(r.id)return String(r.id).replace(/^ford_/i,'').replace(/[_-]+/g,' ').replace(/\s+/g,' ').trim().replace(/\b\w/g,c=>c.toUpperCase());
-return 'Diagnostic information';
+
+    /*
+     * Prefer the proper human-readable diagnostic title.
+     */
+
+    let value =
+        localizedValue(r.title) ||
+        localizedValue(r.name) ||
+        localizedValue(r.description) ||
+        localizedValue(r.symptom) ||
+        localizedValue(r.problem) ||
+        localizedValue(r.issue);
+
+    if(value){
+        return value;
+    }
+
+    /*
+     * Last-resort fallback.
+     *
+     * Do not expose the raw backend ID directly.
+     * Convert it into a readable title instead.
+     */
+
+    if(r.id){
+
+        return String(r.id)
+            .replace(/^ford_/i,'')
+            .replace(/[_-]+/g,' ')
+            .replace(/\s+/g,' ')
+            .trim()
+            .replace(/\b\w/g,c=>c.toUpperCase());
+
+    }
+
+    return 'Diagnostic information';
+
 }
 
-async function yaml(path){
-let r=await fetch(path,{cache:'no-store'});
-if(!r.ok)throw new Error(`${path}: HTTP ${r.status}`);
-return jsyaml.load(await r.text());
+
+function systemName(r){
+
+    if(Array.isArray(r.system)){
+        return r.system.join(' / ');
+    }
+
+    return localizedValue(r.system) ||
+           localizedValue(r.category) ||
+           'diagnostics';
 }
 
-function resetSelect(id,placeholder,disabled=true){
-let e=$(id);e.innerHTML='';
-let o=document.createElement('option');o.value='';o.textContent=placeholder;e.appendChild(o);e.disabled=disabled;
+
+/* =========================================================
+   VEHICLE MATCHING
+   ========================================================= */
+
+function matchesValue(selected,value){
+
+    if(
+        value==null ||
+        value==='all'
+    ){
+        return true;
+    }
+
+    if(Array.isArray(value)){
+
+        return value.some(x=>
+            N(x)===N(selected)
+        );
+    }
+
+    return N(value)===N(selected);
 }
 
-function option(id,name){
-let o=document.createElement('option');o.value=id;o.textContent=name;return o;
+
+function vehicleMatch(r,v){
+
+    /*
+     * Modern schema:
+     *
+     * vehicle:
+     *   manufacturer:
+     *   models:
+     *   generations:
+     *   engines:
+     *
+     * Legacy schema:
+     *
+     * models:
+     * generations:
+     * engines:
+     *
+     * Support both.
+     */
+
+    let x =
+        r.vehicle &&
+        typeof r.vehicle==='object'
+            ? r.vehicle
+            : r;
+
+    return (
+
+        matchesValue(
+            v.m.id,
+            x.models
+        )
+
+        &&
+
+        matchesValue(
+            v.g.id,
+            x.generations
+        )
+
+        &&
+
+        matchesValue(
+            v.e.id,
+            x.engines
+        )
+
+    );
+
 }
 
-function manufacturerName(m){return localizedValue(m.name)||m.id}
 
-function setVehicle(){
-let m=makers.find(x=>x.id===$('make').value);
-if(!m){$('vehicle').hidden=true;return}
-let model=(vehicles?.models||[]).find(x=>x.id===$('model').value);
-let generation=model?.generations?.find(x=>x.id===$('generation').value);
-let engine=generation?.engines?.find(x=>String(x.id)===$('engine').value);
-if(!model||!generation||!engine){$('vehicle').hidden=true;return}
-$('vehicle').hidden=false;
-$('vehicle').textContent=`${I[L].vehicle}: ${manufacturerName(m)} · ${localizedValue(model.name)} · ${localizedValue(generation.name)} · ${localizedValue(engine.name)}`;
+/* =========================================================
+   DIAGNOSTIC SCORING
+   ========================================================= */
+
+function score(r,p,q){
+
+    let t=txt(r);
+
+    let symptoms=
+        localizedArray(r.symptoms)
+        .map(C);
+
+    let s=new Set(symptoms);
+
+    let keywords=
+        localizedArray(r.keywords)
+        .map(N);
+
+    let z=0;
+
+    let m=[];
+
+
+    for(const c of p){
+
+        let a=
+            A[c]||
+            [c.replaceAll('_',' ')];
+
+
+        let direct=s.has(c);
+
+
+        let key=keywords.some(x=>
+            a.some(y=>
+                x===N(y) ||
+                x.includes(N(y)) ||
+                N(y).includes(x)
+            )
+        );
+
+
+        let phrase=has(t,a);
+
+
+        if(direct){
+
+            z+=W[c]||20;
+            m.push(c);
+
+        }
+
+        else if(key){
+
+            z+=(W[c]||20)*.72;
+            m.push(c);
+
+        }
+
+        else if(phrase){
+
+            z+=(W[c]||20)*.42;
+            m.push(c);
+
+        }
+
+    }
+
+
+    /* Derived concepts are hints only. */
+
+    for(
+        const c of expanded(p)
+            .filter(x=>!p.includes(x))
+    ){
+
+        if(
+            has(
+                t,
+                A[c]||
+                [c.replaceAll('_',' ')]
+            )
+        ){
+
+            z+=4;
+
+        }
+
+    }
+
+
+    let dtcs=
+        localizedArray(r.related_dtcs);
+
+
+    if(
+        dtcs.some(x=>
+            N(q).includes(N(x))
+        )
+    ){
+
+        z+=35;
+
+    }
+
+
+    if(
+        p.length>=2 &&
+        p.every(c=>
+            has(
+                t,
+                A[c]||
+                [c.replaceAll('_',' ')]
+            )
+        )
+    ){
+
+        z+=18;
+
+    }
+
+
+    let spec=N([
+
+        r.id,
+        r.system,
+        r.keywords,
+        r.related_dtcs
+
+    ]
+    .map(textValue)
+    .join(' '));
+
+
+    if(
+        p.includes('low_rpm_power_loss') &&
+        has(
+            spec,
+            [
+                'p0299',
+                'underboost',
+                'turbo',
+                'boost'
+            ]
+        )
+    ){
+
+        z+=24;
+
+    }
+
+
+    if(
+        p.includes('limp_mode') &&
+        has(
+            spec,
+            [
+                'underboost',
+                'overboost',
+                'turbo',
+                'egr',
+                'dpf',
+                'fuel pressure'
+            ]
+        )
+    ){
+
+        z+=16;
+
+    }
+
+
+    if(
+        p.includes('poor_power') &&
+        p.includes('limp_mode') &&
+        has(
+            spec,
+            [
+                'injector circuit',
+                'coolant',
+                'coolant temperature',
+                'system voltage'
+            ]
+        )
+    ){
+
+        z-=20;
+
+    }
+
+
+    return{
+
+        r,
+
+        s:
+            Math.max(
+                0,
+                Math.min(
+                    100,
+                    z
+                )
+            ),
+
+        m:[
+            ...new Set(m)
+        ]
+
+    };
+
 }
 
-function updateFind(){
-$('find').disabled=!($('make').value&&$('model').value&&$('generation').value&&$('engine').value);
+
+/* =========================================================
+   LANGUAGE
+   ========================================================= */
+
+function setLang(){
+
+    let x=I[L]||I.en;
+
+
+    [
+        ['home','home'],
+        ['intro','intro'],
+        ['lm','make'],
+        ['lmodel','model'],
+        ['lg','generation'],
+        ['ly','year'],
+        ['le','engine'],
+        ['lp','problem'],
+        ['find','find'],
+        ['rh','rh']
+
+    ].forEach(([id,k])=>{
+
+        $(id).textContent=x[k];
+
+    });
+
+
+    $('problem').placeholder=x.ph;
+
+
+    $('langbtn').textContent={
+
+        en:'🇬🇧 EN',
+        de:'🇩🇪 DE',
+        ro:'🇷🇴 RO',
+        fr:'🇫🇷 FR',
+        es:'🇪🇸 ES',
+        it:'🇮🇹 IT',
+        nl:'🇳🇱 NL'
+
+    }[L]+' ▾';
+
+
+    [
+        'make',
+        'model',
+        'generation',
+        'year',
+        'engine'
+
+    ].forEach((id,i)=>{
+
+        let k=[
+
+            'sm',
+            'smod',
+            'sg',
+            'sy',
+            'se'
+
+        ][i];
+
+
+        $(id).options[0].textContent=x[k];
+
+    });
+
 }
 
-function loadModels(){
-resetSelect('model',I[L].smod);resetSelect('generation',I[L].sg);resetSelect('year',I[L].sy);resetSelect('engine',I[L].se);
-currentManufacturer=makers.find(x=>x.id===$('make').value)||null;
-if(!currentManufacturer)return;
-let models=Array.isArray(vehicles?.models)?vehicles.models:[];
-for(const x of models)$('model').appendChild(option(x.id,localizedValue(x.name)||x.id));
-$('model').disabled=!models.length;setVehicle();updateFind();
+
+/* =========================================================
+   SELECT HELPERS
+   ========================================================= */
+
+function reset(id,k,off=true){
+
+    $(id).innerHTML=
+        '<option value="">'+
+        esc((I[L]||I.en)[k])+
+        '</option>';
+
+    $(id).disabled=off;
+
 }
 
-function loadGenerations(){
-resetSelect('generation',I[L].sg);resetSelect('year',I[L].sy);resetSelect('engine',I[L].se);
-let model=(vehicles?.models||[]).find(x=>x.id===$('model').value),g=Array.isArray(model?.generations)?model.generations:[];
-for(const x of g)$('generation').appendChild(option(x.id,localizedValue(x.name)||x.id));
-$('generation').disabled=!g.length;setVehicle();updateFind();
+
+function fill(id,a,k){
+
+    reset(
+        id,
+        k,
+        false
+    );
+
+
+    valueArray(a).forEach(x=>{
+
+        if(x==null){
+            return;
+        }
+
+
+        if(
+            typeof x==='object'
+        ){
+
+            let name=
+                localizedValue(x.name)||
+                localizedValue(x.title)||
+                x.id;
+
+
+            let value=
+                x.id??name;
+
+
+            $(id).add(
+                new Option(
+                    name,
+                    value
+                )
+            );
+
+        }
+
+        else{
+
+            $(id).add(
+                new Option(
+                    x,
+                    x
+                )
+            );
+
+        }
+
+    });
+
 }
 
-function loadYearsAndEngines(){
-resetSelect('year',I[L].sy);resetSelect('engine',I[L].se);
-let model=(vehicles?.models||[]).find(x=>x.id===$('model').value),g=model?.generations?.find(x=>x.id===$('generation').value);
-if(!g){updateFind();return}
-let from=Number(g.production?.from),to=Number(g.production?.to);
-if(Number.isFinite(from)&&Number.isFinite(to)){
-for(let y=from;y<=to;y++)$('year').appendChild(option(String(y),String(y)));
-$('year').disabled=false;
-}
-let engines=Array.isArray(g.engines)?g.engines:[];
-for(const x of engines){
-let n=localizedValue(x.name)||x.id;
-if(x.fuel)n+=` · ${x.fuel}`;
-$('engine').appendChild(option(String(x.id),n));
-}
-$('engine').disabled=!engines.length;setVehicle();updateFind();
-}
 
-async function loadTech(){
-let id=$('make').value;
-if(!id){tdb=[];return}
-let d=await yaml(`data/technical/diagnostics/${id}.yaml`);
-tdb=Array.isArray(d?.technical_data)?d.technical_data.filter(Boolean):[];
-}
+/* =========================================================
+   CURRENT VEHICLE
+   ========================================================= */
 
-function setLang(lang){
-if(!I[lang])lang='en';
-L=lang;
-localStorage.setItem('autodecode_language',L);
-let T=I[L];
-$('home').textContent=T.home;
-$('intro').textContent=T.intro;
-$('lm').textContent=T.make;
-$('lmodel').textContent=T.model;
-$('lg').textContent=T.generation;
-$('ly').textContent=T.year;
-$('le').textContent=T.engine;
-$('lp').textContent=T.problem;
-$('find').textContent=T.find;
-$('rh').textContent=T.rh;
-$('problem').placeholder=T.ph;
-$('langbtn').textContent={en:'🇬🇧 EN ▾',de:'🇩🇪 DE ▾',ro:'🇷🇴 RO ▾',fr:'🇫🇷 FR ▾',es:'🇪🇸 ES ▾',it:'🇮🇹 IT ▾',nl:'🇳🇱 NL ▾'}[L];
-resetSelect('make',T.sm,false);
-for(const m of makers)$('make').appendChild(option(m.id,manufacturerName(m)));
-resetSelect('model',T.smod);
-resetSelect('generation',T.sg);
-resetSelect('year',T.sy);
-resetSelect('engine',T.se);
-$('find').disabled=true;
-setVehicle();
-}
+function current(){
 
-function section(heading,items){
-let d=document.createElement('div');d.className='section';
-let h=document.createElement('h4');h.textContent=heading;d.appendChild(h);
-let ul=document.createElement('ul');
-for(const x of items){
-let li=document.createElement('li');li.textContent=x;ul.appendChild(li);
-}
-d.appendChild(ul);
-return d;
+    let m=
+        vdb?.models?.find(
+            x=>
+                x.id===
+                $('model').value
+        );
+
+
+    let g=
+        m?.generations?.find(
+            x=>
+                x.id===
+                $('generation').value
+        );
+
+
+    let e=
+        g?.engines?.find(
+            x=>
+                x.id===
+                $('engine').value
+        );
+
+
+    let mk=
+        makers.find(
+            x=>
+                x.id===
+                $('make').value
+        );
+
+
+    return{
+
+        mk,
+        m,
+        g,
+        e,
+        y:$('year').value
+
+    };
+
 }
 
-function renderList(rows){
-$('results').hidden=false;
-$('list').innerHTML='';
-if(!rows.length){
-$('count').textContent='';
-$('list').innerHTML=`<div class="empty">${I[L].none}</div>`;
-return;
+
+/* =========================================================
+   YAML FETCH
+   ========================================================= */
+
+async function yaml(u){
+
+    let r=await fetch(
+
+        u+
+        (u.includes('?')?'&':'?')+
+        'v='+Date.now(),
+
+        {
+
+            cache:'no-store',
+
+            headers:{
+                Accept:
+                    'text/yaml,text/plain,application/x-yaml,*/*'
+            }
+
+        }
+
+    );
+
+
+    if(!r.ok){
+
+        throw Error(
+            'HTTP '+r.status+
+            ' — '+u
+        );
+
+    }
+
+
+    let text=
+        await r.text();
+
+
+    if(!text.trim()){
+
+        throw Error(
+            'Empty response — '+u
+        );
+
+    }
+
+
+    try{
+
+        return jsyaml.load(text);
+
+    }
+
+    catch(e){
+
+        throw Error(
+            'YAML parse error in '+u+
+            ': '+e.message
+        );
+
+    }
+
 }
-$('count').textContent=rows.length===1?I[L].one:I[L].many.replace('{n}',rows.length);
 
-for(const item of rows){
-let r=item.r,card=document.createElement('article');card.className='card';
-let top=document.createElement('div');top.className='top';
-let left=document.createElement('div'),h=document.createElement('h3');
-h.className='title';h.textContent=title(r);left.appendChild(h);
 
-if(r.system||r.category){
-let s=document.createElement('div');s.className='system';
-s.textContent=[localizedValue(r.system),localizedValue(r.category)].filter(Boolean).join(' · ');
-left.appendChild(s);
+/* =========================================================
+   YEAR GENERATION
+   ========================================================= */
+
+function years(g){
+
+    let a=
+        Number(
+            g?.production?.from
+        )||0;
+
+
+    let b=
+        Number(
+            g?.production?.to
+        )||
+        new Date().getFullYear();
+
+
+    if(
+        !a ||
+        b<a
+    ){
+
+        return [];
+
+    }
+
+
+    return Array.from(
+
+        {
+            length:
+                Math.max(
+                    0,
+                    b-a+1
+                )
+        },
+
+        (_,i)=>
+            String(a+i)
+
+    );
+
 }
 
-let description=localizedValue(r.description||r.problem||r.issue);
-if(description){
-let p=document.createElement('p');p.className='desc';p.textContent=description;left.appendChild(p);
+
+/* =========================================================
+   VEHICLE DISPLAY
+   ========================================================= */
+
+function showVehicle(){
+
+    let v=current();
+
+
+    if(
+        !v.mk ||
+        !v.m ||
+        !v.g ||
+        !v.e ||
+        !v.y
+    ){
+
+        $('vehicle').hidden=true;
+
+        $('find').disabled=true;
+
+        return;
+
+    }
+
+
+    $('vehicle').hidden=false;
+
+
+    let codes=
+        Array.isArray(
+            v.e.engine_codes
+        )
+            ?v.e.engine_codes
+            :[];
+
+
+    $('vehicle').innerHTML=
+
+        '<strong>'+
+        esc(
+            (I[L]||I.en).vehicle
+        )+
+        ':</strong> '+
+
+        esc(
+            localizedValue(v.mk.name)
+        )+
+        ' '+
+
+        esc(
+            localizedValue(v.m.name)
+        )+
+        ' '+
+
+        esc(
+            localizedValue(v.g.name)
+        )+
+
+        ' · '+
+
+        esc(v.y)+
+
+        ' · '+
+
+        esc(
+            localizedValue(v.e.name)
+        )+
+
+        (
+
+            codes.length
+
+            ?
+
+            ' · '+
+            esc(
+                codes.join(', ')
+            )
+
+            :
+
+            ''
+
+        );
+
+
+    $('find').disabled=false;
+
 }
 
-let symptoms=valueArray(r.symptoms);
-if(symptoms.length){
-let tags=document.createElement('div');tags.className='tags';
-for(const x of symptoms.slice(0,12)){
-let t=document.createElement('span');t.className='tag';t.textContent=x;tags.appendChild(t);
+
+/* =========================================================
+   TECHNICAL DATABASE
+   ========================================================= */
+
+async function loadTech(id){
+
+    if(
+        loaded===id &&
+        Array.isArray(tdb)
+    ){
+
+        return;
+
+    }
+
+
+    let url=
+        'data/technical/diagnostics/'+
+        encodeURIComponent(id)+
+        '.yaml';
+
+
+    $('status').textContent=
+        (I[L]||I.en).loading;
+
+    $('status').className='status';
+
+
+    try{
+
+        let r=
+            await fetch(
+
+                url+
+                '?v='+Date.now(),
+
+                {
+
+                    cache:'no-store',
+
+                    headers:{
+                        Accept:
+                            'text/yaml,text/plain,application/x-yaml,*/*'
+                    }
+
+                }
+
+            );
+
+
+        if(!r.ok){
+
+            throw Error(
+                'HTTP '+r.status+
+                ' while loading '+url
+            );
+
+        }
+
+
+        let text=
+            await r.text();
+
+
+        if(!text.trim()){
+
+            throw Error(
+                'Empty technical database: '+url
+            );
+
+        }
+
+
+        let d;
+
+
+        try{
+
+            d=
+                jsyaml.load(text);
+
+        }
+
+        catch(e){
+
+            throw Error(
+                'YAML parse error in '+url+
+                ': '+e.message
+            );
+
+        }
+
+
+        if(
+            !d ||
+            !Array.isArray(
+                d.technical_data
+            )
+        ){
+
+            throw Error(
+                'Invalid technical_data structure in '+url
+            );
+
+        }
+
+
+        tdb=
+            d.technical_data
+                .filter(
+                    x=>
+                        x &&
+                        typeof x==='object'
+                );
+
+
+        loaded=id;
+
+
+        console.log(
+            'TECH DATABASE LOADED:',
+            id,
+            tdb.length,
+            'entries'
+        );
+
+
+        $('status').textContent=
+            (I[L]||I.en).ready;
+
+        $('status').className=
+            'status success';
+
+
+    }
+
+    catch(e){
+
+        console.error(
+            'TECH DATABASE ERROR:',
+            {
+                manufacturer:id,
+                url:url,
+                error:e
+            }
+        );
+
+
+        tdb=[];
+        loaded='';
+
+
+        $('status').textContent=
+            (I[L]||I.en).error;
+
+        $('status').className=
+            'status error';
+
+
+        let debug=
+            document.getElementById(
+                'debug-status'
+            );
+
+
+        if(debug){
+
+            debug.textContent=
+                e.message;
+
+        }
+
+
+        throw e;
+
+    }
+
 }
-left.appendChild(tags);
-}
 
-let sc=document.createElement('div');sc.className='score';
-sc.textContent=`${I[L].rel}: ${item.s}`;
-top.appendChild(left);top.appendChild(sc);card.appendChild(top);
 
-let causes=valueArray(r.possible_causes??r.causes);
-if(causes.length)card.appendChild(section(I[L].causes,causes));
+/* =========================================================
+   VEHICLE DATABASE
+   ========================================================= */
 
-let steps=valueArray(r.diagnostic_steps??r.steps);
-if(steps.length)card.appendChild(section(I[L].steps,steps));
+$('make').onchange=async()=>{
 
-let dtcs=valueArray(r.related_dtcs??r.dtcs??r.dtc);
-if(dtcs.length)card.appendChild(section(I[L].dtcs,dtcs));
+    let id=$('make').value;
 
-$('list').appendChild(card);
-}
-}
 
-async function search(){
-let q=$('problem').value.trim();
+    reset(
+        'model',
+        'smod'
+    );
 
-if(!$('make').value||!$('model').value||!$('generation').value||!$('engine').value){
-$('status').textContent=I[L].complete;
-$('status').className='status error';
-return;
-}
+    reset(
+        'generation',
+        'sg'
+    );
 
-if(!q){
-$('status').textContent=I[L].describe;
-$('status').className='status error';
-return;
-}
+    reset(
+        'year',
+        'sy'
+    );
 
-$('status').textContent=I[L].search;
-$('status').className='status';
-$('results').hidden=true;
+    reset(
+        'engine',
+        'se'
+    );
 
-try{
-await loadTech();
 
-let model=(vehicles?.models||[]).find(x=>x.id===$('model').value);
-let generation=model?.generations?.find(x=>x.id===$('generation').value);
-let engine=generation?.engines?.find(x=>String(x.id)===$('engine').value);
-if(!model||!generation||!engine)throw new Error('Incomplete vehicle selection');
+    $('vehicle').hidden=true;
 
-let v={
-m:{id:$('make').value,name:currentManufacturer?.name},
-g:{id:generation.id,name:generation.name},
-e:{id:engine.id,name:engine.name}
+    $('find').disabled=true;
+
+    $('results').hidden=true;
+
+
+    vdb=null;
+
+
+    if(!id){
+
+        loaded='';
+        tdb=[];
+
+        $('status').textContent='';
+
+        return;
+
+    }
+
+
+    try{
+
+        $('status').textContent=
+            (I[L]||I.en).loading;
+
+        $('status').className=
+            'status';
+
+
+        /*
+         * Load vehicle database.
+         */
+
+        vdb=
+            await yaml(
+                'data/vehicles/'+
+                encodeURIComponent(id)+
+                '.yaml'
+            );
+
+
+        if(
+            !vdb ||
+            !Array.isArray(
+                vdb.models
+            )
+        ){
+
+            throw Error(
+                'Invalid vehicle database structure for '+id
+            );
+
+        }
+
+
+        fill(
+            'model',
+            vdb.models,
+            'smod'
+        );
+
+
+        /*
+         * Load technical database
+         * immediately when manufacturer
+         * is selected.
+         */
+
+        await loadTech(id);
+
+
+        $('status').textContent=
+            (I[L]||I.en).ready;
+
+        $('status').className=
+            'status success';
+
+    }
+
+    catch(e){
+
+        console.error(
+            'MAKE LOAD ERROR:',
+            id,
+            e
+        );
+
+
+        $('status').textContent=
+            (I[L]||I.en).error;
+
+        $('status').className=
+            'status error';
+
+
+        let debug=
+            document.getElementById(
+                'debug-status'
+            );
+
+
+        if(debug){
+
+            debug.textContent=
+                e.message;
+
+        }
+
+    }
+
 };
 
-let input=analyseInput(q);
-let vehicleRows=tdb.filter(r=>vehicleMatch(r,v));
 
-let rows=vehicleRows
-.map(r=>score(r,input))
-.filter(Boolean)
-.filter(x=>x.s>=35)
-.sort((a,b)=>b.s-a.s)
-.slice(0,20);
+/* =========================================================
+   MODEL
+   ========================================================= */
 
-renderList(rows);
+$('model').onchange=()=>{
 
-$('status').textContent=I[L].ready;
-$('status').className='status success';
+    let m=
+        vdb?.models?.find(
+            x=>
+                x.id===
+                $('model').value
+        );
 
-}catch(error){
-console.error(error);
-$('status').textContent=I[L].error;
-$('status').className='status error';
-$('results').hidden=false;
-$('count').textContent='';
-$('list').innerHTML=`<div class="empty">${I[L].error}</div>`;
-}
-}
 
-async function init(){
-$('fy').textContent=new Date().getFullYear();
+    reset(
+        'generation',
+        'sg'
+    );
 
-$('langbtn').addEventListener('click',()=>$('langmenu').classList.toggle('open'));
+    reset(
+        'year',
+        'sy'
+    );
 
-document.querySelectorAll('[data-l]').forEach(el=>el.addEventListener('click',()=>{
-setLang(el.dataset.l);
-$('langmenu').classList.remove('open');
-}));
+    reset(
+        'engine',
+        'se'
+    );
 
-document.addEventListener('click',e=>{
-if(!e.target.closest('.langs'))$('langmenu').classList.remove('open');
-});
 
-try{
-let d=await yaml('data/vehicles/manufacturers.yaml');
-if(!Array.isArray(d?.manufacturers))throw new Error('Invalid manufacturers database');
-makers=d.manufacturers.filter(Boolean);
-setLang(L);
-$('status').textContent=I[L].ready;
-$('status').className='status success';
-}catch(e){
-console.error(e);
-setLang(L);
-$('status').textContent=I[L].error;
-$('status').className='status error';
-}
+    $('vehicle').hidden=true;
 
-$('make').addEventListener('change',async()=>{
-let id=$('make').value;
-vehicles=null;
-if(!id){updateFind();return}
+    $('find').disabled=true;
 
-$('status').textContent=I[L].loading;
-$('status').className='status';
 
-try{
-vehicles=await yaml(`data/vehicles/${id}.yaml`);
-loadModels();
-await loadTech();
-$('status').textContent=I[L].ready;
-$('status').className='status success';
-}catch(e){
-console.error(e);
-$('status').textContent=I[L].error;
-$('status').className='status error';
-}
-});
+    if(m){
 
-$('model').addEventListener('change',loadGenerations);
-$('generation').addEventListener('change',loadYearsAndEngines);
-$('year').addEventListener('change',()=>{setVehicle();updateFind()});
-$('engine').addEventListener('change',()=>{setVehicle();updateFind()});
-$('problem').addEventListener('input',()=>$('results').hidden=true);
-$('find').addEventListener('click',search);
-}
+        fill(
+            'generation',
+            m.generations||[],
+            'sg'
+        );
 
-init();
+    }
+
+};
+
+
+/* =========================================================
+   GENERATION
+   ========================================================= */
+
+$('generation').onchange=()=>{
+
+    let v=current();
+
+
+    reset(
+        'year',
+        'sy'
+    );
+
+    reset(
+        'engine',
+        'se'
+    );
+
+
+    $('vehicle').hidden=true;
+
+    $('find').disabled=true;
+
+
+    if(v.g){
+
+        let ys=
+            years(v.g);
+
+
+        if(ys.length){
+
+            fill(
+                'year',
+                ys.map(
+                    x=>({
+                        id:x,
+                        name:x
+                    })
+                ),
+                'sy'
+            );
+
+        }
+
+
+        fill(
+            'engine',
+            v.g.engines||[],
+            'se'
+        );
+
+    }
+
+};
+
+
+/* =========================================================
+   YEAR / ENGINE
+   ========================================================= */
+
+$('year').onchange=showVehicle;
+
+$('engine').onchange=showVehicle;
+
+
+/* =========================================================
+   LANGUAGE MENU
+   ========================================================= */
+
+$('langbtn').onclick=()=>{
+
+    $('langmenu')
+        .classList
+        .toggle('open');
+
+};
+
+
+document
+    .querySelectorAll('[data-l]')
+    .forEach(x=>{
+
+        x.onclick=()=>{
+
+            L=x.dataset.l;
+
+            $('langmenu')
+                .classList
+                .remove('open');
+
+
+            setLang();
+
+
+            /*
+             * Refresh current vehicle display
+             * in the selected language.
+             */
+
+            showVehicle();
+
+
+            /*
+             * Refresh status language if
+             * technical DB is already loaded.
+             */
+
+            if(
+                loaded &&
+                tdb.length
+            ){
+
+                $('status').textContent=
+                    (I[L]||I.en).ready;
+
+                $('status').className=
+                    'status success';
+
+            }
+
+        };
+
+    });
+
+
+document.addEventListener(
+    'click',
+    e=>{
+
+        if(
+            !e.target.closest('.langs')
+        ){
+
+            $('langmenu')
+                .classList
+                .remove('open');
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   PROBLEM INPUT
+   ========================================================= */
+
+$('problem').oninput=()=>{
+
+    $('results').hidden=true;
+
+};
+
+
+/* =========================================================
+   DIAGNOSTIC SEARCH
+   ========================================================= */
+
+$('find').onclick=async()=>{
+
+    let v=current();
+
+    let q=
+        $('problem')
+            .value
+            .trim();
+
+    let u=
+        I[L]||I.en;
+
+
+    if(
+        !v.mk ||
+        !v.m ||
+        !v.g ||
+        !v.e ||
+        !v.y
+    ){
+
+        $('status').textContent=
+            u.complete;
+
+        $('status').className=
+            'status error';
+
+        return;
+
+    }
+
+
+    if(!q){
+
+        $('status').textContent=
+            u.describe;
+
+        $('status').className=
+            'status error';
+
+        return;
+
+    }
+
+
+    $('find').disabled=true;
+
+    $('status').textContent=
+        u.search;
+
+    $('status').className=
+        'status';
+
+
+    try{
+
+        /*
+         * Normally already loaded when
+         * the manufacturer was selected.
+         *
+         * This remains as a safety fallback.
+         */
+
+        await loadTech(
+            v.mk.id
+        );
+
+
+        let p=
+            concepts(q);
+
+
+        console.log(
+            'Detected concepts:',
+            p
+        );
+
+
+        let vehicleRows=
+            tdb.filter(
+                r=>
+                    vehicleMatch(
+                        r,
+                        v
+                    )
+            );
+
+
+        console.log(
+            'Vehicle compatible entries:',
+            vehicleRows.length,
+            '/',
+            tdb.length
+        );
+
+
+        let rows=
+            vehicleRows
+
+                .map(
+                    r=>
+                        score(
+                            r,
+                            p,
+                            q
+                        )
+                )
+
+                .filter(
+                    x=>
+                        x.s>=8
+                )
+
+                .sort(
+                    (a,b)=>
+                        b.s-a.s
+                )
+
+                .slice(
+                    0,
+                    20
+                );
+
+
+        $('results').hidden=false;
+
+
+        $('count').textContent=
+
+            rows.length===1
+
+            ?
+
+            u.one
+
+            :
+
+            u.many.replace(
+                '{n}',
+                rows.length
+            );
+
+
+        $('list').innerHTML=
+
+            rows.length
+
+            ?
+
+            rows.map(
+                x=>{
+
+                    let r=x.r;
+
+
+                    let causes=
+                        localizedArray(
+                            r.possible_causes
+                        );
+
+
+                    let steps=
+                        localizedArray(
+                            r.diagnostic_steps
+                        );
+
+
+                    let dtcs=
+                        localizedArray(
+                            r.related_dtcs
+                        );
+
+
+                    let symptoms=
+                        localizedArray(
+                            r.symptoms
+                        );
+
+
+                    return `
+
+<article class="card">
+
+    <div class="top">
+
+        <div>
+
+            <h3 class="title">
+                ${esc(title(r))}
+            </h3>
+
+            <div class="system">
+                ${esc(systemName(r))}
+            </div>
+
+            ${
+                r.description
+                ?
+
+                `<p class="desc">
+                    ${esc(
+                        localizedValue(
+                            r.description
+                        )
+                    )}
+                </p>`
+
+                :
+
+                ''
+            }
+
+            <div class="tags">
+
+                ${
+                    x.m.map(
+                        a=>
+                            `<span class="tag">
+                                ${esc(
+                                    a.replaceAll(
+                                        '_',
+                                        ' '
+                                    )
+                                )}
+                            </span>`
+                    ).join('')
+                }
+
+                ${
+                    dtcs.map(
+                        a=>
+                            `<span class="tag">
+                                ${esc(a)}
+                            </span>`
+                    ).join('')
+                }
+
+            </div>
+
+        </div>
+
+
+        <div class="score">
+            ${esc(u.rel)}: ${Math.round(x.s)}
+        </div>
+
+    </div>
+
+
+    ${
+        causes.length
+
+        ?
+
+        `<div class="section">
+
+            <h4>
+                ${esc(u.causes)}
+            </h4>
+
+            <ul>
+
+                ${
+                    causes
+                        .map(
+                            a=>
+                                `<li>${esc(a)}</li>`
+                        )
+                        .join('')
+                }
+
+            </ul>
+
+        </div>`
+
+        :
+
+        ''
+    }
+
+
+    ${
+        steps.length
+
+        ?
+
+        `<div class="section">
+
+            <h4>
+                ${esc(u.steps)}
+            </h4>
+
+            <ul>
+
+                ${
+                    steps
+                        .map(
+                            a=>
+                                `<li>${esc(a)}</li>`
+                        )
+                        .join('')
+                }
+
+            </ul>
+
+        </div>`
+
+        :
+
+        ''
+    }
+
+
+    ${
+        dtcs.length
+
+        ?
+
+        `<div class="section">
+
+            <h4>
+                ${esc(u.dtcs)}
+            </h4>
+
+            <ul>
+
+                ${
+                    dtcs
+                        .map(
+                            a=>
+                                `<li>${esc(a)}</li>`
+                        )
+                        .join('')
+                }
+
+            </ul>
+
+        </div>`
+
+        :
+
+        ''
+    }
+
+
+    ${
+        r.difficulty
+
+        ?
+
+        `<div class="section">
+
+            <h4>
+                ${esc(u.difficulty)}
+            </h4>
+
+            <div class="desc">
+                ${esc(
+                    localizedValue(
+                        r.difficulty
+                    )
+                )}
+            </div>
+
+        </div>`
+
+        :
+
+        ''
+    }
+
+</article>
+
+`;
+
+                }
+            ).join('')
+
+            :
+
+            `<div class="empty">
+                ${esc(u.none)}
+            </div>`;
+
+
+        $('status').textContent=
+            u.ready;
+
+        $('status').className=
+            'status success';
+
+
+        let debug=
+            document.getElementById(
+                'debug-status'
+            );
+
+
+        if(debug){
+
+            debug.textContent=
+                `${tdb.length} technical entries loaded · ${vehicleRows.length} compatible with selected vehicle · ${rows.length} relevant`;
+
+        }
+
+    }
+
+    catch(e){
+
+        console.error(
+            'Diagnostic search error:',
+            e
+        );
+
+
+        $('status').textContent=
+            u.error;
+
+        $('status').className=
+            'status error';
+
+
+        let debug=
+            document.getElementById(
+                'debug-status'
+            );
+
+
+        if(debug){
+
+            debug.textContent=
+                e.message;
+
+        }
+
+    }
+
+
+    $('find').disabled=false;
+
+    showVehicle();
+
+};
+
+
+/* =========================================================
+   INITIALIZATION
+   ========================================================= */
+
+$('fy').textContent=
+    new Date().getFullYear();
+
+
+setLang();
+
+
+$('status').textContent=
+    I.en.loading;
+
+
+/*
+ * Hidden technical debug line.
+ * It becomes useful if a database fails.
+ */
+
+let debugStatus=
+    document.createElement('div');
+
+debugStatus.id=
+    'debug-status';
+
+debugStatus.className=
+    'debug';
+
+$('status')
+    .parentElement
+    .appendChild(
+        debugStatus
+    );
+
+
+/* =========================================================
+   MANUFACTURERS DATABASE
+   ========================================================= */
+
+(async()=>{
+
+    try{
+
+        let d=
+            await yaml(
+                'data/vehicles/manufacturers.yaml'
+            );
+
+
+        if(
+            !d ||
+            !Array.isArray(
+                d.manufacturers
+            )
+        ){
+
+            throw Error(
+                'Invalid manufacturers database structure'
+            );
+
+        }
+
+
+        makers=
+            d.manufacturers;
+
+
+        fill(
+            'make',
+            makers,
+            'sm'
+        );
+
+
+        $('status').textContent='';
+
+        $('status').className=
+            'status';
+
+    }
+
+    catch(e){
+
+        console.error(
+            'MANUFACTURERS DATABASE ERROR:',
+            e
+        );
+
+
+        $('status').textContent=
+            I[L].error;
+
+        $('status').className=
+            'status error';
+
+
+        debugStatus.textContent=
+            e.message;
+
+    }
+
+})();
+
 </script>
+
 </body>
 </html>
