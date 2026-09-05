@@ -6,6 +6,459 @@ manufacturer:
 
 technical_data:
 
+  - id: ford_focus_mk2_blue_exhaust_smoke
+    vehicle:
+      manufacturer: ford
+      models:
+        - focus
+      generations:
+        - focus_mk2
+      engines:
+        - 16_tdci
+        - 18_tdci
+        - 20_tdci
+        - 16_zetec
+        - 18_zetec
+        - 20_duratec
+        - 25_st
+    category: diagnostics
+    system: engine
+    title:
+      en: Blue Exhaust Smoke Diagnosis
+      ro: Diagnosticare fum albastru la evacuare
+      de: Diagnose von blauem Abgasrauch
+      fr: Diagnostic de fumée bleue à l'échappement
+      es: Diagnóstico de humo azul por el escape
+      it: Diagnosi del fumo blu allo scarico
+      nl: Diagnose van blauwe rook uit de uitlaat
+    symptoms:
+      - blue exhaust smoke
+      - blue smoke
+      - oil smoke
+      - smoke during acceleration
+      - smoke after idling
+      - increased oil consumption
+      - fum albastru
+      - fum albastru pe evacuare
+      - fum de ulei
+      - fum la accelerare
+      - fum după ralanti
+      - consum crescut de ulei
+      - blauer Abgasrauch
+      - blauer Rauch
+      - erhöhter Ölverbrauch
+      - fumée bleue
+      - consommation d'huile élevée
+      - humo azul
+      - consumo elevado de aceite
+      - fumo blu
+      - consumo elevato di olio
+      - blauwe rook
+      - verhoogd olieverbruik
+    keywords:
+      - blue smoke
+      - blue exhaust
+      - oil burning
+      - burning oil
+      - oil consumption
+      - fum albastru
+      - fum ulei
+      - consum ulei
+    possible_causes:
+      - worn piston rings
+      - worn valve stem seals
+      - turbocharger oil seal leakage
+      - excessive crankcase pressure
+      - excessive oil level
+      - turbocharger bearing or seal fault
+    diagnostic_steps:
+      - Check engine oil level and condition.
+      - Determine whether smoke occurs during acceleration, deceleration, or after prolonged idling.
+      - Check crankcase ventilation and crankcase pressure.
+      - Inspect intake system for excessive oil contamination.
+      - Check turbocharger shaft play and oil leakage where applicable.
+      - Perform compression testing if internal engine wear is suspected.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: ford_focus_mk2_white_smoke_after_warmup
+    vehicle:
+      manufacturer: ford
+      models:
+        - focus
+      generations:
+        - focus_mk2
+      engines:
+        - 16_tdci
+        - 18_tdci
+        - 20_tdci
+        - 16_zetec
+        - 18_zetec
+        - 20_duratec
+        - 25_st
+    category: diagnostics
+    system: engine
+    title:
+      en: Persistent White Exhaust Smoke After Warm-Up
+      ro: Fum alb persistent la evacuare după încălzirea motorului
+      de: Anhaltender weißer Abgasrauch nach dem Warmlauf
+      fr: Fumée blanche persistante après la mise en température
+      es: Humo blanco persistente después de calentar el motor
+      it: Fumo bianco persistente dopo il riscaldamento
+      nl: Aanhoudende witte rook na opwarmen van de motor
+    symptoms:
+      - persistent white smoke
+      - white smoke after warm-up
+      - white exhaust smoke
+      - coolant loss
+      - sweet exhaust smell
+      - rough running
+      - overheating
+      - fum alb persistent
+      - fum alb după încălzire
+      - fum alb la evacuare
+      - pierdere antigel
+      - miros dulce la evacuare
+      - funcționare neregulată
+      - supraîncălzire
+      - weißer Rauch nach dem Warmlauf
+      - Kühlmittelverlust
+      - süßlicher Abgasgeruch
+      - fumée blanche persistante
+      - perte de liquide de refroidissement
+      - odeur sucrée à l'échappement
+      - humo blanco persistente
+      - pérdida de refrigerante
+      - olor dulce en el escape
+      - fumo bianco persistente
+      - perdita di refrigerante
+      - witte rook na opwarmen
+      - koelvloeistofverlies
+    keywords:
+      - white smoke
+      - white exhaust smoke
+      - coolant in combustion
+      - coolant consumption
+      - head gasket
+      - cylinder head
+      - fum alb
+      - antigel consumat
+      - garnitura chiulasă
+    possible_causes:
+      - coolant entering the combustion chamber
+      - head gasket failure
+      - cracked cylinder head
+      - cracked engine block
+      - coolant leak into cylinder
+      - severe EGR cooler leakage where fitted
+    diagnostic_steps:
+      - Verify whether the smoke persists after the engine reaches operating temperature.
+      - Check coolant level and monitor coolant loss.
+      - Check for combustion gases in the cooling system.
+      - Inspect spark plugs or glow plugs for abnormal coolant contamination where applicable.
+      - Perform compression or leak-down testing where required.
+      - Inspect the engine oil for coolant contamination.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: ford_focus_mk2_black_smoke_under_load
+    vehicle:
+      manufacturer: ford
+      models:
+        - focus
+      generations:
+        - focus_mk2
+      engines:
+        - 16_tdci
+        - 18_tdci
+        - 20_tdci
+        - 16_zetec
+        - 18_zetec
+        - 20_duratec
+        - 25_st
+    category: diagnostics
+    system: air_fuel
+    title:
+      en: Black Exhaust Smoke Under Load
+      ro: Fum negru la evacuare sub sarcină
+      de: Schwarzer Abgasrauch unter Last
+      fr: Fumée noire à l'échappement sous charge
+      es: Humo negro por el escape bajo carga
+      it: Fumo nero allo scarico sotto carico
+      nl: Zwarte rook uit de uitlaat onder belasting
+    symptoms:
+      - black smoke under load
+      - black smoke during acceleration
+      - black exhaust
+      - poor acceleration
+      - loss of power
+      - increased fuel consumption
+      - fum negru sub sarcină
+      - fum negru la accelerație
+      - evacuare neagră
+      - accelerație slabă
+      - pierdere de putere
+      - consum crescut
+      - schwarzer Rauch unter Last
+      - Leistungsverlust
+      - fumée noire sous charge
+      - manque de puissance
+      - humo negro bajo carga
+      - pérdida de potencia
+      - fumo nero sotto carico
+      - perdita di potenza
+      - zwarte rook onder belasting
+      - vermogensverlies
+    keywords:
+      - black smoke
+      - black exhaust
+      - smoke under load
+      - rich mixture
+      - insufficient air
+      - boost leak
+      - fum negru
+      - fum la accelerație
+      - amestec bogat
+      - lipsă aer
+      - pierdere presiune turbo
+    possible_causes:
+      - insufficient intake air
+      - boost hose leak
+      - turbocharger underboost
+      - restricted air filter
+      - faulty MAF sensor
+      - faulty MAP sensor
+      - EGR valve stuck open
+      - excessive fueling
+      - injector fault
+      - restricted exhaust or DPF where fitted
+    diagnostic_steps:
+      - Inspect the air filter and intake system.
+      - Inspect turbocharger and intercooler hoses for leaks.
+      - Compare requested and actual boost pressure where supported.
+      - Check MAF and MAP readings.
+      - Inspect EGR operation.
+      - Check injector operation and fuel delivery.
+      - Check DPF restriction where fitted.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: ford_focus_mk2_exhaust_condensation
+    vehicle:
+      manufacturer: ford
+      models:
+        - focus
+      generations:
+        - focus_mk2
+      engines:
+        - 16_tdci
+        - 18_tdci
+        - 20_tdci
+        - 16_zetec
+        - 18_zetec
+        - 20_duratec
+        - 25_st
+    category: diagnostics
+    system: exhaust
+    title:
+      en: White Vapor/Condensation From Exhaust
+      ro: Abur alb/condens la evacuare
+      de: Weißer Wasserdampf/Kondensat aus dem Auspuff
+      fr: Vapeur blanche/condensation à l'échappement
+      es: Vapor blanco/condensación del escape
+      it: Vapore bianco/condensa allo scarico
+      nl: Witte waterdamp/condens uit de uitlaat
+    symptoms:
+      - white vapor from exhaust
+      - exhaust condensation
+      - steam from exhaust
+      - vapor disappears after warm-up
+      - water dripping from exhaust
+      - abur alb la evacuare
+      - condens la evacuare
+      - abur dispare după încălzire
+      - apă la evacuare
+      - weißer Wasserdampf
+      - Kondenswasser
+      - vapeur blanche
+      - condensation à l'échappement
+      - vapor blanco
+      - condensación
+      - vapore bianco
+      - condensa
+      - witte waterdamp
+      - condenswater
+    keywords:
+      - exhaust condensation
+      - white vapor
+      - steam
+      - water from exhaust
+      - condens
+      - abur evacuare
+      - condens evacuare
+    possible_causes:
+      - normal exhaust condensation during cold operation
+      - cold ambient temperature
+      - short-trip operation
+      - excessive water accumulation in exhaust system
+      - coolant entering combustion chamber if vapor persists when fully warm
+    diagnostic_steps:
+      - Observe the exhaust after the engine reaches operating temperature.
+      - Check whether the vapor decreases as the exhaust system warms.
+      - Check coolant level and monitor for unexplained loss.
+      - Check exhaust smell for abnormal sweet coolant odor.
+      - Investigate further if dense vapor persists after full warm-up.
+    related_dtcs: []
+    difficulty: basic
+
+  - id: ford_focus_mk2_oil_consumption_exhaust
+    vehicle:
+      manufacturer: ford
+      models:
+        - focus
+      generations:
+        - focus_mk2
+      engines:
+        - 16_tdci
+        - 18_tdci
+        - 20_tdci
+        - 16_zetec
+        - 18_zetec
+        - 20_duratec
+        - 25_st
+    category: diagnostics
+    system: lubrication
+    title:
+      en: Excessive Engine Oil Consumption
+      ro: Consum excesiv de ulei motor
+      de: Übermäßiger Motorölverbrauch
+      fr: Consommation excessive d'huile moteur
+      es: Consumo excesivo de aceite del motor
+      it: Consumo eccessivo di olio motore
+      nl: Overmatig motorolieverbruik
+    symptoms:
+      - excessive oil consumption
+      - low engine oil level
+      - blue exhaust smoke
+      - oil smoke
+      - oil fouled spark plugs
+      - oil in intake
+      - consum excesiv de ulei
+      - nivel scăzut ulei
+      - fum albastru
+      - fum de ulei
+      - ulei în admisie
+      - übermäßiger Ölverbrauch
+      - blauer Abgasrauch
+      - consommation d'huile élevée
+      - fumée bleue
+      - consumo elevado de aceite
+      - humo azul
+      - consumo elevato di olio
+      - fumo blu
+      - overmatig olieverbruik
+      - blauwe rook
+    keywords:
+      - oil consumption
+      - excessive oil consumption
+      - burning oil
+      - oil loss
+      - blue smoke
+      - consum ulei
+      - ulei ars
+      - pierdere ulei
+    possible_causes:
+      - external oil leak
+      - worn piston rings
+      - worn valve stem seals
+      - turbocharger oil leakage
+      - crankcase ventilation fault
+      - excessive crankcase pressure
+      - excessive oil level
+    diagnostic_steps:
+      - Verify the oil level and correct oil specification.
+      - Inspect the engine and turbocharger for external oil leaks.
+      - Inspect crankcase ventilation.
+      - Check the intake system for excessive oil accumulation.
+      - Determine when blue smoke occurs during engine operation.
+      - Perform compression or leak-down testing if internal wear is suspected.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: ford_focus_mk2_exhaust_fuel_smell
+    vehicle:
+      manufacturer: ford
+      models:
+        - focus
+      generations:
+        - focus_mk2
+      engines:
+        - 16_tdci
+        - 18_tdci
+        - 20_tdci
+        - 16_zetec
+        - 18_zetec
+        - 20_duratec
+        - 25_st
+    category: diagnostics
+    system: exhaust
+    title:
+      en: Strong Unburned Fuel Smell From Exhaust
+      ro: Miros puternic de combustibil nearsoarsă la evacuare
+      de: Starker Geruch nach unverbranntem Kraftstoff aus dem Auspuff
+      fr: Forte odeur de carburant imbrûlé à l'échappement
+      es: Fuerte olor a combustible sin quemar por el escape
+      it: Forte odore di carburante incombusto allo scarico
+      nl: Sterke geur van onverbrande brandstof uit de uitlaat
+    symptoms:
+      - strong fuel smell from exhaust
+      - unburned fuel smell
+      - rough idle
+      - misfire
+      - black smoke
+      - increased fuel consumption
+      - miros puternic de combustibil
+      - combustibil nearsoarsă
+      - ralanti instabil
+      - rateuri
+      - fum negru
+      - consum crescut
+      - Geruch nach unverbranntem Kraftstoff
+      - Fehlzündungen
+      - odeur de carburant imbrûlé
+      - ratés moteur
+      - olor a combustible sin quemar
+      - fallos de encendido
+      - odore di carburante incombusto
+      - mancate accensioni
+      - geur van onverbrande brandstof
+    keywords:
+      - unburned fuel
+      - fuel smell exhaust
+      - rich mixture
+      - misfire
+      - injector leaking
+      - combustibil nearsoarsă
+      - miros benzină evacuare
+      - miros motorină evacuare
+    possible_causes:
+      - injector leakage
+      - injector control fault
+      - ignition misfire on petrol engines
+      - incomplete combustion
+      - excessive fueling
+      - faulty oxygen sensor on applicable petrol engines
+      - low compression
+    diagnostic_steps:
+      - Determine whether the engine is petrol or diesel.
+      - Check for stored misfire or fuel-system faults.
+      - Inspect injector operation.
+      - On petrol engines, check ignition components and oxygen sensor feedback.
+      - Check fuel mixture or injection correction where supported.
+      - Check compression if incomplete combustion is suspected.
+    related_dtcs: []
+    difficulty: advanced
+
   - id: ford_focus_mk2_injector_cylinder_1_fault
     vehicle:
       manufacturer: ford
