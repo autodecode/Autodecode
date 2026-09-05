@@ -6,6 +6,886 @@ manufacturer:
 
 technical_data:
 
+  - id: ford_focus_mk2_p0299_turbo_underboost
+    vehicle:
+      manufacturer: ford
+      models:
+        - focus
+      generations:
+        - focus_mk2
+      engines:
+        - 16_tdci
+        - 18_tdci
+        - 20_tdci
+    category: diagnostics
+    system: turbocharger
+    title:
+      en: Turbocharger Underboost
+      ro: Presiune turbo insuficientă
+      de: Turbolader-Unterdruck
+      fr: Sous-pression du turbocompresseur
+      es: Baja presión del turbocompresor
+      it: Sottoalimentazione del turbocompressore
+      nl: Turbo-onderdruk
+    symptoms:
+      - low engine power
+      - poor acceleration
+      - loss of power under load
+      - low rpm power loss
+      - limp mode
+      - turbo boost too low
+      - engine feels flat
+      - putere redusă
+      - accelerație slabă
+      - pierdere de putere la sarcină
+      - pierdere de putere la turații joase
+      - mod protecție
+      - presiune turbo scăzută
+    keywords:
+      - P0299
+      - underboost
+      - turbo underboost
+      - boost pressure low
+      - turbo pressure low
+      - presiune turbo mică
+      - presiune supraalimentare mică
+      - turbo slab
+      - lipsă putere
+    possible_causes:
+      - turbocharger actuator fault
+      - vacuum leak
+      - damaged vacuum hose
+      - boost hose leak
+      - intercooler leak
+      - restricted air intake
+      - faulty MAP sensor
+      - EGR fault
+      - turbocharger mechanical fault
+    diagnostic_steps:
+      - Check boost hoses and intercooler connections.
+      - Check vacuum supply and vacuum hoses.
+      - Check turbocharger actuator operation.
+      - Compare commanded and actual boost pressure.
+      - Check MAP sensor readings.
+      - Inspect the intake system for leaks.
+    related_dtcs:
+      - P0299
+      - P0235
+      - P0236
+      - P0237
+      - P0238
+    difficulty: advanced
+
+  - id: ford_focus_mk2_p0234_turbo_overboost
+    vehicle:
+      manufacturer: ford
+      models:
+        - focus
+      generations:
+        - focus_mk2
+      engines:
+        - 16_tdci
+        - 18_tdci
+        - 20_tdci
+    category: diagnostics
+    system: turbocharger
+    title:
+      en: Turbocharger Overboost
+      ro: Suprapresiune turbo
+      de: Turbolader-Überdruck
+      fr: Surpression du turbocompresseur
+      es: Sobrepresión del turbocompresor
+      it: Sovrapressione del turbocompressore
+      nl: Turbo-overdruk
+    symptoms:
+      - sudden loss of power
+      - limp mode
+      - reduced engine power
+      - boost pressure too high
+      - power loss at higher rpm
+      - putere redusă
+      - mod protecție
+      - presiune turbo prea mare
+      - pierdere bruscă de putere
+    keywords:
+      - P0234
+      - overboost
+      - turbo overboost
+      - boost too high
+      - suprapresiune turbo
+      - presiune turbo prea mare
+    possible_causes:
+      - sticking turbocharger actuator
+      - variable geometry mechanism restriction
+      - vacuum control fault
+      - boost control solenoid fault
+      - MAP sensor fault
+      - turbocharger control fault
+    diagnostic_steps:
+      - Check actual versus commanded boost pressure.
+      - Check turbocharger actuator movement.
+      - Inspect vacuum hoses.
+      - Check boost control solenoid.
+      - Check MAP sensor signal.
+    related_dtcs:
+      - P0234
+      - P0235
+      - P0236
+      - P0243
+      - P0244
+    difficulty: advanced
+
+  - id: ford_focus_mk2_boost_pressure_sensor_fault
+    vehicle:
+      manufacturer: ford
+      models:
+        - focus
+      generations:
+        - focus_mk2
+      engines:
+        - 16_tdci
+        - 18_tdci
+        - 20_tdci
+        - 16_zetec
+        - 18_zetec
+        - 20_duratec
+    category: diagnostics
+    system: boost_pressure
+    title:
+      en: Boost Pressure Sensor Fault
+      ro: Defecțiune senzor presiune supraalimentare
+      de: Fehler des Ladedrucksensors
+      fr: Défaut du capteur de pression de suralimentation
+      es: Fallo del sensor de presión de sobrealimentación
+      it: Guasto sensore pressione sovralimentazione
+      nl: Storing laaddruksensor
+    symptoms:
+      - poor acceleration
+      - reduced engine power
+      - limp mode
+      - incorrect boost pressure
+      - hesitation under load
+      - putere redusă
+      - accelerație slabă
+      - mod protecție
+      - presiune turbo incorectă
+    keywords:
+      - MAP
+      - boost pressure sensor
+      - manifold pressure sensor
+      - P0235
+      - P0236
+      - P0237
+      - P0238
+      - senzor MAP
+      - senzor presiune turbo
+      - senzor presiune admisie
+    possible_causes:
+      - faulty MAP sensor
+      - contaminated sensor
+      - wiring fault
+      - connector fault
+      - intake pressure leak
+      - incorrect reference voltage
+    diagnostic_steps:
+      - Check MAP sensor supply voltage.
+      - Check sensor ground.
+      - Check signal voltage.
+      - Compare MAP reading with actual atmospheric pressure.
+      - Inspect wiring and connector.
+      - Inspect intake and boost system for leaks.
+    related_dtcs:
+      - P0235
+      - P0236
+      - P0237
+      - P0238
+    difficulty: medium
+
+  - id: ford_focus_mk2_p0101_maf_range_performance
+    vehicle:
+      manufacturer: ford
+      models:
+        - focus
+      generations:
+        - focus_mk2
+      engines:
+        - 16_tdci
+        - 18_tdci
+        - 20_tdci
+        - 16_zetec
+        - 18_zetec
+        - 20_duratec
+    category: diagnostics
+    system: air_management
+    title:
+      en: Mass Air Flow Range/Performance Fault
+      ro: Defecțiune debitmetru MAF - interval/performanță
+      de: Luftmassenmesser Bereich/Leistung
+      fr: Défaut de plage/performance du débitmètre
+      es: Fallo de rango/rendimiento del caudalímetro
+      it: Errore intervallo/prestazioni misuratore massa aria
+      nl: MAF-bereik/prestatie fout
+    symptoms:
+      - low engine power
+      - poor acceleration
+      - limp mode
+      - unstable idle
+      - hesitation
+      - excessive fuel consumption
+      - engine stalls
+      - putere redusă
+      - accelerație slabă
+      - mod protecție
+      - ralanti instabil
+      - ezitare
+      - consum ridicat
+    keywords:
+      - P0101
+      - MAF
+      - mass air flow
+      - airflow sensor
+      - debitmetru
+      - senzor debit aer
+      - debitmetru aer
+    possible_causes:
+      - contaminated MAF sensor
+      - failed MAF sensor
+      - intake air leak
+      - air filter restriction
+      - wiring fault
+      - incorrect airflow signal
+      - EGR flow problem
+    diagnostic_steps:
+      - Inspect the air filter.
+      - Inspect the intake system for leaks.
+      - Check MAF connector and wiring.
+      - Check MAF supply and ground.
+      - Compare measured airflow with engine operating conditions.
+      - Check for implausible airflow values.
+    related_dtcs:
+      - P0101
+      - P0102
+      - P0103
+      - P0104
+    difficulty: medium
+
+  - id: ford_focus_mk2_p0401_egr_insufficient_flow
+    vehicle:
+      manufacturer: ford
+      models:
+        - focus
+      generations:
+        - focus_mk2
+      engines:
+        - 16_tdci
+        - 18_tdci
+        - 20_tdci
+        - 16_zetec
+        - 18_zetec
+        - 20_duratec
+    category: diagnostics
+    system: egr
+    title:
+      en: EGR Insufficient Flow
+      ro: Debit EGR insuficient
+      de: EGR-Durchfluss zu gering
+      fr: Débit EGR insuffisant
+      es: Flujo EGR insuficiente
+      it: Flusso EGR insufficiente
+      nl: Onvoldoende EGR-doorstroming
+    symptoms:
+      - reduced engine power
+      - poor acceleration
+      - low rpm hesitation
+      - rough idle
+      - increased emissions
+      - limp mode
+      - putere redusă
+      - accelerație slabă
+      - ezitare la turații joase
+      - ralanti instabil
+      - emisii crescute
+      - mod protecție
+    keywords:
+      - P0401
+      - EGR
+      - EGR insufficient flow
+      - EGR blocked
+      - EGR valve
+      - supapă EGR
+      - debit EGR
+      - EGR înfundat
+    possible_causes:
+      - carbon buildup in EGR valve
+      - restricted EGR passage
+      - faulty EGR valve
+      - EGR position sensor fault
+      - wiring fault
+      - intake restriction
+    diagnostic_steps:
+      - Inspect EGR valve.
+      - Check EGR position feedback.
+      - Inspect EGR passages for carbon buildup.
+      - Check electrical connector and wiring.
+      - Verify commanded versus actual EGR position.
+    related_dtcs:
+      - P0400
+      - P0401
+      - P0403
+      - P0404
+      - P0409
+    difficulty: medium
+
+  - id: ford_focus_mk2_p0404_egr_control_fault
+    vehicle:
+      manufacturer: ford
+      models:
+        - focus
+      generations:
+        - focus_mk2
+      engines:
+        - 16_tdci
+        - 18_tdci
+        - 20_tdci
+    category: diagnostics
+    system: egr
+    title:
+      en: EGR Control Range/Performance Fault
+      ro: Defecțiune control EGR - interval/performanță
+      de: EGR-Regelbereich/Leistungsfehler
+      fr: Défaut de commande EGR
+      es: Fallo de control EGR
+      it: Guasto controllo EGR
+      nl: EGR-regelstoring
+    symptoms:
+      - poor acceleration
+      - reduced engine power
+      - rough idle
+      - hesitation
+      - black smoke
+      - limp mode
+      - accelerație slabă
+      - putere redusă
+      - ralanti instabil
+      - ezitare
+      - fum negru
+      - mod protecție
+    keywords:
+      - P0404
+      - EGR control
+      - EGR position
+      - EGR valve stuck
+      - EGR position sensor
+      - comandă EGR
+      - poziție EGR
+      - supapă EGR blocată
+    possible_causes:
+      - sticking EGR valve
+      - carbon deposits
+      - failed EGR position sensor
+      - electrical fault
+      - connector fault
+      - wiring fault
+    diagnostic_steps:
+      - Check EGR valve movement.
+      - Check EGR position feedback.
+      - Inspect EGR valve for carbon deposits.
+      - Check wiring and connector.
+      - Perform EGR actuator test where supported.
+    related_dtcs:
+      - P0403
+      - P0404
+      - P0409
+    difficulty: medium
+
+  - id: ford_focus_mk2_p0087_fuel_rail_pressure_low
+    vehicle:
+      manufacturer: ford
+      models:
+        - focus
+      generations:
+        - focus_mk2
+      engines:
+        - 16_tdci
+        - 18_tdci
+        - 20_tdci
+    category: diagnostics
+    system: fuel_injection
+    title:
+      en: Fuel Rail Pressure Too Low
+      ro: Presiune prea mică în rampa de combustibil
+      de: Kraftstoff-Raildruck zu niedrig
+      fr: Pression de rampe de carburant trop basse
+      es: Presión del riel de combustible demasiado baja
+      it: Pressione rail carburante troppo bassa
+      nl: Brandstofraildruk te laag
+    symptoms:
+      - low engine power
+      - poor acceleration
+      - hard starting
+      - engine stalls
+      - limp mode
+      - reduced engine torque
+      - putere redusă
+      - accelerație slabă
+      - pornire dificilă
+      - motorul se oprește
+      - mod protecție
+      - cuplu redus
+    keywords:
+      - P0087
+      - fuel rail pressure
+      - low rail pressure
+      - common rail
+      - fuel pressure
+      - presiune rampă
+      - presiune combustibil
+      - common rail
+    possible_causes:
+      - restricted fuel filter
+      - low fuel supply pressure
+      - fuel pressure regulator fault
+      - fuel metering valve fault
+      - injector excessive return flow
+      - high pressure pump fault
+      - fuel system air ingress
+    diagnostic_steps:
+      - Check fuel filter condition.
+      - Check low pressure fuel supply.
+      - Compare commanded and actual rail pressure.
+      - Check injector return flow.
+      - Check fuel pressure control components.
+      - Inspect the fuel system for air ingress.
+    related_dtcs:
+      - P0087
+      - P0088
+      - P0191
+    difficulty: advanced
+
+  - id: ford_focus_mk2_p0191_fuel_rail_pressure_sensor
+    vehicle:
+      manufacturer: ford
+      models:
+        - focus
+      generations:
+        - focus_mk2
+      engines:
+        - 16_tdci
+        - 18_tdci
+        - 20_tdci
+    category: diagnostics
+    system: fuel_injection
+    title:
+      en: Fuel Rail Pressure Sensor Range/Performance
+      ro: Defecțiune senzor presiune rampă - interval/performanță
+      de: Kraftstoff-Raildrucksensor Bereich/Leistung
+      fr: Défaut de plage/performance du capteur de pression de rampe
+      es: Fallo de rango/rendimiento del sensor de presión del riel
+      it: Errore intervallo/prestazioni sensore pressione rail
+      nl: Brandstofraildruksensor bereik/prestatie
+    symptoms:
+      - poor engine performance
+      - low power
+      - hard starting
+      - engine stalls
+      - unstable engine operation
+      - limp mode
+      - funcționare slabă a motorului
+      - putere redusă
+      - pornire dificilă
+      - motorul se oprește
+      - funcționare instabilă
+      - mod protecție
+    keywords:
+      - P0191
+      - fuel rail pressure sensor
+      - rail pressure sensor
+      - common rail pressure
+      - senzor presiune rampă
+      - senzor presiune rail
+    possible_causes:
+      - faulty rail pressure sensor
+      - wiring fault
+      - connector fault
+      - unstable fuel pressure
+      - fuel pressure control fault
+    diagnostic_steps:
+      - Check rail pressure sensor wiring.
+      - Check sensor supply and ground.
+      - Compare sensor signal with actual rail pressure.
+      - Compare commanded and measured rail pressure.
+      - Inspect the fuel pressure control system.
+    related_dtcs:
+      - P0191
+      - P0192
+      - P0193
+    difficulty: advanced
+
+  - id: ford_focus_mk2_p0380_glow_plug_circuit
+    vehicle:
+      manufacturer: ford
+      models:
+        - focus
+      generations:
+        - focus_mk2
+      engines:
+        - 16_tdci
+        - 18_tdci
+        - 20_tdci
+    category: diagnostics
+    system: glow_plugs
+    title:
+      en: Glow Plug/Heater Circuit Fault
+      ro: Defecțiune circuit bujii incandescente
+      de: Fehler im Glühkerzenkreis
+      fr: Défaut du circuit de préchauffage
+      es: Fallo del circuito de calentadores
+      it: Guasto circuito candelette
+      nl: Storing gloeibougiecircuit
+    symptoms:
+      - hard cold starting
+      - extended cranking when cold
+      - rough cold running
+      - white smoke during cold start
+      - diesel starting difficulty
+      - pornire dificilă la rece
+      - pornire lungă
+      - funcționare neregulată la rece
+      - fum alb la pornire
+    keywords:
+      - P0380
+      - glow plug
+      - glow plugs
+      - heater circuit
+      - bujii incandescente
+      - bujie incandescentă
+      - preîncălzire
+      - releu bujii
+    possible_causes:
+      - failed glow plug
+      - glow plug relay fault
+      - wiring fault
+      - fuse fault
+      - poor electrical connection
+    diagnostic_steps:
+      - Check glow plug resistance.
+      - Check glow plug supply voltage.
+      - Check glow plug relay.
+      - Inspect wiring and connectors.
+    related_dtcs:
+      - P0380
+    difficulty: medium
+
+  - id: ford_focus_mk2_p0335_crankshaft_position_sensor
+    vehicle:
+      manufacturer: ford
+      models:
+        - focus
+      generations:
+        - focus_mk2
+      engines:
+        - 16_tdci
+        - 18_tdci
+        - 20_tdci
+        - 16_zetec
+        - 18_zetec
+        - 20_duratec
+    category: diagnostics
+    system: crankshaft
+    title:
+      en: Crankshaft Position Sensor Fault
+      ro: Defecțiune senzor poziție arbore cotit
+      de: Fehler Kurbelwellensensor
+      fr: Défaut du capteur de position du vilebrequin
+      es: Fallo del sensor de posición del cigüeñal
+      it: Guasto sensore posizione albero motore
+      nl: Storing krukassensor
+    symptoms:
+      - crank no start
+      - intermittent no start
+      - engine stalls
+      - loss of power
+      - rough running
+      - engine speed signal missing
+      - motorul învârte dar nu pornește
+      - pornire intermitentă imposibilă
+      - motorul se oprește
+      - pierdere de putere
+      - funcționare neregulată
+    keywords:
+      - P0335
+      - P0336
+      - crankshaft position sensor
+      - CKP
+      - crank sensor
+      - senzor arbore cotit
+      - senzor CKP
+      - senzor turație motor
+    possible_causes:
+      - failed crankshaft position sensor
+      - damaged wiring
+      - poor connector contact
+      - damaged reluctor
+      - incorrect sensor signal
+    diagnostic_steps:
+      - Check crankshaft sensor wiring.
+      - Check sensor supply where applicable.
+      - Check engine speed signal during cranking.
+      - Inspect sensor mounting and reluctor.
+      - Check connector condition.
+    related_dtcs:
+      - P0321
+      - P0322
+      - P0335
+      - P0336
+      - P0337
+      - P0339
+    difficulty: advanced
+
+  - id: ford_focus_mk2_p0340_camshaft_position_sensor
+    vehicle:
+      manufacturer: ford
+      models:
+        - focus
+      generations:
+        - focus_mk2
+      engines:
+        - 16_tdci
+        - 18_tdci
+        - 20_tdci
+        - 16_zetec
+        - 18_zetec
+        - 20_duratec
+    category: diagnostics
+    system: camshaft
+    title:
+      en: Camshaft Position Sensor Fault
+      ro: Defecțiune senzor poziție arbore cu came
+      de: Fehler Nockenwellensensor
+      fr: Défaut du capteur de position d'arbre à cames
+      es: Fallo del sensor de posición del árbol de levas
+      it: Guasto sensore posizione albero a camme
+      nl: Storing nokkenassensor
+    symptoms:
+      - hard starting
+      - crank no start
+      - intermittent starting
+      - poor engine performance
+      - loss of power
+      - rough running
+      - pornire dificilă
+      - motorul învârte dar nu pornește
+      - pornire intermitentă
+      - funcționare slabă
+      - pierdere de putere
+    keywords:
+      - P0340
+      - P0341
+      - camshaft position sensor
+      - CMP
+      - cam sensor
+      - senzor arbore cu came
+      - senzor CMP
+    possible_causes:
+      - failed camshaft position sensor
+      - damaged wiring
+      - poor connector contact
+      - timing problem
+      - incorrect sensor signal
+    diagnostic_steps:
+      - Check camshaft sensor wiring.
+      - Check sensor signal.
+      - Inspect connector.
+      - Verify camshaft timing where required.
+      - Compare crankshaft and camshaft signals.
+    related_dtcs:
+      - P0340
+      - P0341
+      - P0342
+      - P0343
+      - P0344
+    difficulty: advanced
+
+  - id: ford_focus_mk2_p2563_turbo_actuator_position
+    vehicle:
+      manufacturer: ford
+      models:
+        - focus
+      generations:
+        - focus_mk2
+      engines:
+        - 16_tdci
+        - 18_tdci
+        - 20_tdci
+    category: diagnostics
+    system: turbocharger
+    title:
+      en: Turbocharger Boost Control Position Sensor Fault
+      ro: Defecțiune senzor poziție comandă turbo
+      de: Fehler Positionssensor der Turboladerregelung
+      fr: Défaut du capteur de position de commande du turbo
+      es: Fallo del sensor de posición del control del turbo
+      it: Guasto sensore posizione comando turbo
+      nl: Storing positiesensor turboregeling
+    symptoms:
+      - loss of power
+      - low rpm power loss
+      - poor acceleration
+      - limp mode
+      - unstable boost
+      - turbo control fault
+      - pierdere de putere
+      - pierdere de putere la turații joase
+      - accelerație slabă
+      - mod protecție
+      - presiune turbo instabilă
+    keywords:
+      - P2563
+      - turbo actuator
+      - turbo position sensor
+      - boost control position
+      - actuator turbo
+      - poziție actuator turbo
+      - senzor poziție turbo
+    possible_causes:
+      - turbo actuator fault
+      - variable geometry mechanism sticking
+      - position sensor fault
+      - wiring fault
+      - connector fault
+    diagnostic_steps:
+      - Check turbo actuator position feedback.
+      - Inspect actuator wiring.
+      - Check actuator movement.
+      - Inspect turbocharger mechanism for sticking.
+      - Compare commanded and actual actuator position.
+    related_dtcs:
+      - P2563
+    difficulty: advanced
+
+  - id: ford_focus_mk2_p2452_dpf_differential_pressure_sensor
+    vehicle:
+      manufacturer: ford
+      models:
+        - focus
+      generations:
+        - focus_mk2
+      engines:
+        - 16_tdci
+        - 18_tdci
+        - 20_tdci
+    category: diagnostics
+    system: dpf
+    title:
+      en: Diesel Particulate Filter Differential Pressure Sensor Fault
+      ro: Defecțiune senzor presiune diferențială DPF
+      de: Fehler des DPF-Differenzdrucksensors
+      fr: Défaut du capteur de pression différentielle FAP
+      es: Fallo del sensor de presión diferencial del DPF
+      it: Guasto sensore pressione differenziale DPF
+      nl: Storing DPF-drukverschilsensor
+    symptoms:
+      - reduced engine power
+      - limp mode
+      - DPF warning
+      - failed regeneration
+      - poor acceleration
+      - high exhaust back pressure
+      - putere redusă
+      - mod protecție
+      - martor DPF
+      - regenerare eșuată
+      - accelerație slabă
+      - contrapresiune evacuare ridicată
+    keywords:
+      - P2452
+      - P2453
+      - DPF pressure sensor
+      - differential pressure sensor
+      - DPF sensor
+      - senzor presiune diferențială
+      - senzor DPF
+      - presiune diferențială DPF
+    possible_causes:
+      - failed differential pressure sensor
+      - blocked pressure hoses
+      - damaged pressure hose
+      - wiring fault
+      - connector fault
+      - overloaded DPF
+    diagnostic_steps:
+      - Inspect differential pressure sensor hoses.
+      - Check hoses for blockage or cracking.
+      - Check sensor wiring and connector.
+      - Compare differential pressure readings.
+      - Check DPF loading and regeneration status.
+    related_dtcs:
+      - P2452
+      - P2453
+      - P2463
+    difficulty: advanced
+
+  - id: ford_focus_mk2_p2463_dpf_soot_accumulation
+    vehicle:
+      manufacturer: ford
+      models:
+        - focus
+      generations:
+        - focus_mk2
+      engines:
+        - 16_tdci
+        - 18_tdci
+        - 20_tdci
+    category: diagnostics
+    system: dpf
+    title:
+      en: Diesel Particulate Filter Soot Accumulation
+      ro: Acumulare excesivă de funingine în DPF
+      de: Übermäßige Rußansammlung im DPF
+      fr: Accumulation excessive de suie dans le FAP
+      es: Acumulación excesiva de hollín en el DPF
+      it: Accumulo eccessivo di fuliggine nel DPF
+      nl: Overmatige roetophoping in DPF
+    symptoms:
+      - reduced engine power
+      - limp mode
+      - poor acceleration
+      - frequent regeneration
+      - high fuel consumption
+      - increased exhaust back pressure
+      - putere redusă
+      - mod protecție
+      - accelerație slabă
+      - regenerări frecvente
+      - consum ridicat
+      - contrapresiune ridicată
+    keywords:
+      - P2463
+      - DPF blocked
+      - DPF clogged
+      - soot accumulation
+      - particulate filter
+      - filtru de particule
+      - DPF înfundat
+      - funingine DPF
+    possible_causes:
+      - excessive soot loading
+      - failed regeneration
+      - differential pressure sensor fault
+      - exhaust temperature sensor fault
+      - unsuitable driving conditions
+    diagnostic_steps:
+      - Check DPF calculated soot load.
+      - Check differential pressure.
+      - Check regeneration history.
+      - Check exhaust temperature sensors.
+      - Verify the cause of regeneration failure before forced regeneration.
+    related_dtcs:
+      - P2452
+      - P2453
+      - P2463
+    difficulty: advanced
+
   - id: ford_pcm_engine_control_module_communication_fault_modern
     manufacturer: ford
     models:
