@@ -5273,6 +5273,32 @@ c=>strongEngineConcepts.includes(c)
    to an engine/powertrain-related system.
 */
 
+   const itemIsIndividualInjector=
+/injector.*cylinder|cylinder.*injector/i.test(
+getItemText(item)
+)||
+/injector_cylinder/i.test(item.id||"");
+
+const queryHasSpecificEngineConcept=
+primary.some(c=>[
+"misfire",
+"rough_idle",
+"injector",
+"fuel_pressure",
+"crankshaft",
+"camshaft",
+"synchronization"
+].includes(c));
+
+if(
+itemIsIndividualInjector&&
+!queryHasSpecificEngineConcept&&
+primary.includes("poor_power")&&
+primary.includes("limp_mode")
+){
+penalty-=25;
+}
+
 const itemSystems=
 typeof getSystemGroups==="function"
 ?getSystemGroups(item)
