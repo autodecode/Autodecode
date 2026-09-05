@@ -2248,7 +2248,7 @@ return d
 
 }
 
-async function loadTechnicalDatabase(id) {
+async function loadTechnicalDatabase(id){
   setStatus(t("technical_loading"));
   technicalDatabase = [];
 
@@ -2277,8 +2277,8 @@ async function loadTechnicalDatabase(id) {
       r.url
     );
 
-    if (!r.ok) {
-      throw new Error(
+    if(!r.ok){
+      throw Error(
         `Technical database HTTP ${r.status} ${r.statusText} — ${r.url}`
       );
     }
@@ -2290,415 +2290,643 @@ async function loadTechnicalDatabase(id) {
       raw.length
     );
 
-    if (!raw.trim()) {
-      throw new Error("Technical database response is empty.");
+    if(!raw.trim()){
+      throw Error("Technical database response is empty.");
     }
 
-    /*
-     * ============================================================
-     * TOLERANT YAML PARSER
-     * ============================================================
-     *
-     * First we try the original YAML.
-     *
-     * If it fails because of indentation, we attempt to repair
-     * common indentation problems inside technical_data.
-     *
-     * The sanitizer works structurally:
-     *
-     * technical_data
-     *   - id:
-     *       vehicle:
-     *       title:
-     *       symptoms:
-     *       causes:
-     *       diagnostic_steps:
-     *
-     * It does NOT blindly replace every "- id:" in the file.
-     */
+    let d;
 
-    function sanitizeTechnicalYaml(source) {
-      const lines = source
-        .replace(/\r\n/g, "\n")
-        .replace(/\r/g, "\n")
-        .split("\n");
+    /* ============================================================
+       1. FIRST TRY: NORMAL YAML
+       ============================================================ */
 
-      let technicalDataStarted = false;
-      let recordStarted = false;
-      let repairs = 0;
-
-      /*
-       * Keys which belong directly to one technical record.
-       */
-      const recordKeys = new Set([
-        "id",
-        "vehicle",
-        "title",
-        "description",
-        "symptoms",
-        "causes",
-        "possible_causes",
-        "diagnostic_steps",
-        "repair_steps",
-        "related_dtcs",
-        "difficulty",
-        "notes",
-        "system",
-        "subsystem",
-        "conditions",
-        "test_conditions",
-        "diagnosis",
-        "solution",
-        "checks",
-        "fix",
-        "severity",
-        "priority"
-      ]);
-
-      /*
-       * Keys which normally occur inside "vehicle" or other
-       * nested objects.
-       */
-      const nestedKeys = new Set([
-        "manufacturer",
-        "models",
-        "generation",
-        "engines",
-        "years",
-        "year",
-        "engine",
-        "fuel",
-        "transmission",
-        "body",
-        "market",
-        "region",
-        "platform",
-        "en",
-        "de",
-        "ro",
-        "fr",
-        "es",
-        "it",
-        "nl"
-      ]);
-
-      for (let i = 0; i < lines.length; i++) {
-        const original = lines[i];
-        const trimmed = original.trim();
-
-        /*
-         * Find the technical_data section.
-         */
-        if (/^\s*technical_data\s*:/.test(original)) {
-          technicalDataStarted = true;
-          continue;
-        }
-
-        if (!technicalDataStarted) {
-          continue;
-        }
-
-        if (!trimmed || trimmed.startsWith("#")) {
-          continue;
-        }
-
-        /*
-         * ========================================================
-         * NEW TECHNICAL RECORD
-         * ========================================================
-         *
-         * Whatever indentation the "- id:" currently has,
-         * normalize it to two spaces.
-         *
-         * Example:
-         *
-         *             - id: ford_xxx
-         *
-         * becomes:
-         *
-         *   - id: ford_xxx
-         */
-
-        const recordMatch = trimmed.match(
-          /^-\s+id\s*:\s*([A-Za-z0-9_.:-]+)(?:\s*(#.*))?$/
-        );
-
-        if (recordMatch) {
-          const comment = recordMatch[2]
-            ? ` ${recordMatch[2]}`
-            : "";
-
-          const fixedLine =
-            `  - id: ${recordMatch[1]}${comment}`;
-
-          if (original !== fixedLine) {
-            lines[i] = fixedLine;
-            repairs++;
-
-            console.warn(
-              `[AutoDecode] YAML repair: technical record indentation at line ${i + 1}`
-            );
-          }
-
-          recordStarted = true;
-          continue;
-        }
-
-        if (!recordStarted) {
-          continue;
-        }
-
-        /*
-         * ========================================================
-         * DIRECT RECORD KEYS
-         * ========================================================
-         *
-         * These must normally be four spaces deep.
-         *
-         * Example:
-         *
-         *       title:
-         *       vehicle:
-         *       symptoms:
-         */
-
-        const keyMatch = trimmed.match(
-          /^([A-Za-z_][A-Za-z0-9_-]*)\s*:(.*)$/
-        );
-
-        if (keyMatch && recordKeys.has(keyMatch[1])) {
-          const key = keyMatch[1];
-          const value = keyMatch[2] || "";
-
-          const fixedLine =
-            `    ${key}:${value}`;
-
-          /*
-           * Only repair if indentation is clearly wrong.
-           */
-          const currentIndent =
-            (original.match(/^\s*/) || [""])[0].length;
-
-          if (currentIndent !== 4) {
-            lines[i] = fixedLine;
-            repairs++;
-
-            console.warn(
-              `[AutoDecode] YAML repair: record key "${key}" at line ${i + 1}`
-            );
-          }
-
-          continue;
-        }
-
-        /*
-         * ========================================================
-         * NESTED KEYS
-         * ========================================================
-         *
-         * Examples:
-         *
-         *       vehicle:
-         *         manufacturer:
-         *         models:
-         *
-         * or:
-         *
-         *       title:
-         *         en:
-         */
-
-        if (keyMatch && nestedKeys.has(keyMatch[1])) {
-          const key = keyMatch[1];
-          const value = keyMatch[2] || "";
-
-          const currentIndent =
-            (original.match(/^\s*/) || [""])[0].length;
-
-          /*
-           * Only fix obviously excessive indentation.
-           * Normal 6+ spaces remain untouched.
-           */
-          if (currentIndent > 8) {
-            lines[i] =
-              `      ${key}:${value}`;
-
-            repairs++;
-
-            console.warn(
-              `[AutoDecode] YAML repair: nested key "${key}" at line ${i + 1}`
-            );
-          }
-
-          continue;
-        }
-
-        /*
-         * ========================================================
-         * LIST ITEMS
-         * ========================================================
-         *
-         * Do not globally modify YAML lists.
-         *
-         * We only repair severely over-indented lists when the
-         * previous property clearly indicates a list.
-         */
-
-        if (/^-\s+/.test(trimmed)) {
-          const currentIndent =
-            (original.match(/^\s*/) || [""])[0].length;
-
-          if (currentIndent >= 10) {
-            let previous = "";
-
-            for (let p = i - 1; p >= 0; p--) {
-              if (lines[p].trim()) {
-                previous = lines[p].trim();
-                break;
-              }
-            }
-
-            if (
-              /^(models|engines|years|symptoms|causes|diagnostic_steps|repair_steps|related_dtcs|checks|conditions|test_conditions)\s*:/.test(
-                previous
-              )
-            ) {
-              lines[i] =
-                `      ${trimmed}`;
-
-              repairs++;
-
-              console.warn(
-                `[AutoDecode] YAML repair: list indentation at line ${i + 1}`
-              );
-            }
-          }
-        }
-      }
-
-      /*
-       * Remove trailing whitespace only.
-       * Never touch normal indentation here.
-       */
-      for (let i = 0; i < lines.length; i++) {
-        lines[i] = lines[i].replace(/[ \t]+$/, "");
-      }
-
-      console.log(
-        `[AutoDecode] YAML sanitizer applied ${repairs} repair(s).`
-      );
-
-      return lines.join("\n");
-    }
-
-    /*
-     * ============================================================
-     * PARSE ORIGINAL YAML
-     * ============================================================
-     */
-
-    let d = null;
-    let parseError = null;
-
-    try {
+    try{
       d = jsyaml.load(raw);
 
       console.log(
-        "[AutoDecode] Technical database YAML parsed normally."
+        "[AutoDecode] YAML parsed normally."
       );
 
-    } catch (error) {
-      parseError = error;
+    }catch(parseError){
 
       console.warn(
-        "[AutoDecode] Initial YAML parse failed."
+        "[AutoDecode] Normal YAML parsing failed. Starting structural repair...",
+        parseError
       );
 
-      /*
-       * ==========================================================
-       * SECOND ATTEMPT — AUTOMATIC REPAIR
-       * ==========================================================
-       */
+      /* ==========================================================
+         2. STRUCTURAL YAML REPAIR
+         ========================================================== */
 
-      try {
-        const repairedRaw =
-          sanitizeTechnicalYaml(raw);
+      const repaired = repairTechnicalYaml(raw);
 
-        d = jsyaml.load(repairedRaw);
+      console.log(
+        "[AutoDecode] Repaired YAML size:",
+        repaired.length
+      );
 
-        parseError = null;
+      try{
+
+        d = jsyaml.load(repaired);
 
         console.log(
-          "[AutoDecode] Technical database YAML parsed successfully after automatic repair."
+          "[AutoDecode] Repaired YAML parsed successfully."
         );
 
-      } catch (repairError) {
-        parseError = repairError;
+      }catch(repairedError){
 
         console.error(
-          "[AutoDecode] YAML automatic repair failed:",
-          repairError
+          "[AutoDecode] Repaired YAML still invalid:",
+          repairedError
+        );
+
+        const mark =
+          repairedError?.mark ||
+          parseError?.mark ||
+          null;
+
+        const line =
+          Number.isInteger(mark?.line)
+            ? mark.line + 1
+            : null;
+
+        const column =
+          Number.isInteger(mark?.column)
+            ? mark.column + 1
+            : null;
+
+        let context = "";
+
+        if(line){
+          const lines = repaired.split(/\r?\n/);
+          const from = Math.max(0, line - 4);
+          const to = Math.min(lines.length, line + 3);
+
+          context = "\n\nYAML context:\n";
+
+          for(let i = from; i < to; i++){
+            context +=
+              `${String(i + 1).padStart(6," ")} | ${lines[i]}\n`;
+          }
+        }
+
+        throw Error(
+          `YAML parse error at line ${
+            line || "unknown"
+          }${
+            column ? `, column ${column}` : ""
+          }: ${
+            repairedError.message || repairedError
+          }${context}`
         );
       }
+    }
+
+    /* ============================================================
+       3. EXTRACT DATABASE
+       ============================================================ */
+
+    technicalDatabase =
+      Array.isArray(d?.technical_data)
+        ? d.technical_data
+        : Array.isArray(d)
+          ? d
+          : [];
+
+    if(!Array.isArray(technicalDatabase)){
+      technicalDatabase = [];
+    }
+
+    if(!technicalDatabase.length){
+      throw Error(
+        "Invalid technical database structure: 'technical_data' is missing or empty."
+      );
+    }
+
+    console.log(
+      "[AutoDecode] Loaded technical records:",
+      technicalDatabase.length
+    );
+
+    console.log(
+      "[AutoDecode] Technical database root keys:",
+      d &&
+      typeof d === "object" &&
+      !Array.isArray(d)
+        ? Object.keys(d)
+        : "array"
+    );
+
+    setStatus(
+      t("technical_ready"),
+      "success"
+    );
+
+    return true;
+
+  }catch(e){
+
+    console.error(
+      "[AutoDecode] Technical database load failed:",
+      e
+    );
+
+    technicalDatabase = [];
+
+    const detail =
+      String(e?.message || e);
+
+    setStatus(
+      `${t("technical_error")} ${detail}`,
+      "error"
+    );
+
+    return false;
+  }
+}
+
+
+/* ================================================================
+   AUTO-DECODE STRUCTURAL YAML REPAIR
+   ================================================================ */
+
+function repairTechnicalYaml(source){
+
+  const lines = source.replace(/\r\n/g,"\n").split("\n");
+
+  const output = [];
+
+  let insideTechnicalData = false;
+  let currentRecord = false;
+
+  /*
+   * Keys which contain YAML arrays.
+   *
+   * Their "-" children must always be indented one level deeper.
+   */
+  const arrayKeys = new Set([
+    "models",
+    "systems",
+    "symptoms",
+    "causes",
+    "checks",
+    "solutions",
+    "related_dtcs",
+    "dtcs",
+    "keywords",
+    "aliases",
+    "components",
+    "engines",
+    "years",
+    "variants",
+    "modules",
+    "tests",
+    "steps",
+    "possible_causes",
+    "possible_solutions",
+    "affected_systems",
+    "supported_models",
+    "references"
+  ]);
+
+  /*
+   * Keys which normally contain nested objects.
+   */
+  const objectKeys = new Set([
+    "vehicle",
+    "title",
+    "description",
+    "diagnosis",
+    "diagnostic",
+    "repair",
+    "procedure",
+    "condition",
+    "requirements",
+    "engine",
+    "transmission",
+    "system",
+    "metadata"
+  ]);
+
+  /*
+   * Technical record keys.
+   *
+   * These MUST sit directly under:
+   *
+   * technical_data:
+   *
+   * at indentation level 2.
+   */
+  const recordKeys = new Set([
+    "id",
+    "vehicle",
+    "title",
+    "description",
+    "symptoms",
+    "causes",
+    "checks",
+    "solutions",
+    "models",
+    "systems",
+    "related_dtcs",
+    "difficulty",
+    "keywords",
+    "aliases",
+    "components",
+    "engines",
+    "years",
+    "variants",
+    "modules",
+    "tests",
+    "steps",
+    "possible_causes",
+    "possible_solutions",
+    "affected_systems",
+    "supported_models",
+    "references"
+  ]);
+
+  /*
+   * Remove comments only when they are not inside quotes.
+   * We deliberately keep the original text otherwise.
+   */
+  function getKey(text){
+
+    const m = text.match(/^([A-Za-z0-9_]+):(?:\s|$)/);
+
+    return m ? m[1] : null;
+  }
+
+  function isListItem(text){
+    return /^-\s/.test(text.trim()) || text.trim() === "-";
+  }
+
+  function isRecordStart(text){
+    return /^-\s+id\s*:/.test(text.trim());
+  }
+
+  function isTechnicalRoot(text){
+    return /^technical_data\s*:/.test(text.trim());
+  }
+
+  /*
+   * Determine whether this is clearly a technical record key.
+   */
+  function isRecordKey(text){
+
+    const key = getKey(text.trim());
+
+    return !!key && recordKeys.has(key);
+  }
+
+  /*
+   * Find nearest previous non-empty line.
+   */
+  function previousMeaningful(index){
+
+    for(let i=index-1;i>=0;i--){
+
+      if(lines[i].trim() !== ""){
+        return {
+          index:i,
+          text:lines[i]
+        };
+      }
+    }
+
+    return null;
+  }
+
+  /*
+   * Find next non-empty line.
+   */
+  function nextMeaningful(index){
+
+    for(let i=index+1;i<lines.length;i++){
+
+      if(lines[i].trim() !== ""){
+        return {
+          index:i,
+          text:lines[i]
+        };
+      }
+    }
+
+    return null;
+  }
+
+  /*
+   * Track the currently active YAML hierarchy.
+   *
+   * Each entry:
+   *
+   * {
+   *   key,
+   *   indent
+   * }
+   */
+  const stack = [];
+
+  function cleanStack(indent){
+
+    while(
+      stack.length &&
+      indent <= stack[stack.length - 1].indent
+    ){
+      stack.pop();
+    }
+  }
+
+  for(let i=0;i<lines.length;i++){
+
+    const original = lines[i];
+
+    if(original.trim() === ""){
+      output.push("");
+      continue;
+    }
+
+    const trimmed = original.trim();
+
+    /*
+     * Preserve YAML document markers.
+     */
+    if(trimmed === "---" || trimmed === "..."){
+      output.push(trimmed);
+      continue;
     }
 
     /*
-     * ============================================================
-     * DETAILED ERROR
-     * ============================================================
+     * Detect technical_data root.
      */
+    if(isTechnicalRoot(original)){
+      insideTechnicalData = true;
+      currentRecord = false;
+      stack.length = 0;
 
-    if (parseError) {
-      const mark = parseError?.mark;
-
-      const line = Number.isInteger(mark?.line)
-        ? mark.line + 1
-        : null;
-
-      const column = Number.isInteger(mark?.column)
-        ? mark.column + 1
-        : null;
-
-      const location = line
-        ? ` at line ${line}${column ? `, column ${column}` : ""}`
-        : "";
-
-      /*
-       * Print the problematic area in console.
-       */
-      if (line) {
-        const sourceLines =
-          raw.split("\n");
-
-        const start =
-          Math.max(0, line - 5);
-
-        const end =
-          Math.min(
-            sourceLines.length,
-            line + 4
-          );
-
-        console.group(
-          `[AutoDecode] YAML error context around line ${line}`
-        );
-
-        for (let i = start; i < end; i++) {
-          console.error(
-            `${String(i + 1).padStart(5, " ")} | ${sourceLines[i]}`
-          );
-        }
-
-        console.groupEnd();
-      }
-
-      throw new Error(
-        `YAML parse error${location}: ${
-          parseError.message || parseError
-        }`
-      );
+      output.push("technical_data:");
+      continue;
     }
 
+    /*
+     * Before technical_data we preserve the original indentation,
+     * because manufacturer metadata is already valid.
+     */
+    if(!insideTechnicalData){
+
+      output.push(original);
+      continue;
+    }
+
+    /* ============================================================
+       TECHNICAL RECORD START
+       ============================================================ */
+
+    if(isRecordStart(original)){
+
+      currentRecord = true;
+
+      stack.length = 0;
+
+      /*
+       * EVERY technical record starts at exactly 2 spaces.
+       */
+      output.push(
+        "  " + trimmed
+      );
+
+      /*
+       * id is now the first key inside the record.
+       */
+      stack.push({
+        key:"__record__",
+        indent:2
+      });
+
+      continue;
+    }
+
+    /*
+     * If we encounter another top-level YAML section after the
+     * technical database, stop applying technical normalization.
+     */
+    if(
+      currentRecord &&
+      trimmed.endsWith(":") &&
+      !isRecordKey(original) &&
+      original.search(/\S/) === 0
+    ){
+
+      /*
+       * Usually this means a new root-level section.
+       */
+      if(
+        trimmed !== "models:" &&
+        trimmed !== "systems:" &&
+        trimmed !== "symptoms:"
+      ){
+        currentRecord = false;
+        insideTechnicalData = false;
+
+        output.push(original);
+        continue;
+      }
+    }
+
+    /* ============================================================
+       NORMALIZE RECORD KEYS
+       ============================================================ */
+
+    const key = getKey(trimmed);
+
+    if(key && recordKeys.has(key)){
+
+      /*
+       * All direct record keys are exactly 4 spaces.
+       */
+      const indent = 4;
+
+      output.push(
+        " ".repeat(indent) + trimmed
+      );
+
+      /*
+       * Remove hierarchy deeper than record level.
+       */
+      while(
+        stack.length &&
+        stack[stack.length - 1].indent >= indent
+      ){
+        stack.pop();
+      }
+
+      stack.push({
+        key,
+        indent
+      });
+
+      continue;
+    }
+
+    /* ============================================================
+       LIST ITEMS
+       ============================================================ */
+
+    if(isListItem(original)){
+
+      /*
+       * Determine parent from stack.
+       */
+      const parent =
+        stack.length
+          ? stack[stack.length - 1]
+          : null;
+
+      let indent = 6;
+
+      if(parent){
+
+        /*
+         * Array values must be one level deeper than their key.
+         */
+        indent = parent.indent + 2;
+      }
+
+      /*
+       * If the previous meaningful line is a key such as models:
+       * force the list under it.
+       */
+      const prev = previousMeaningful(i);
+
+      if(prev){
+
+        const prevKey = getKey(prev.text.trim());
+
+        if(prevKey && arrayKeys.has(prevKey)){
+
+          const prevIndent =
+            prev.text.search(/\S/);
+
+          indent = prevIndent + 2;
+
+          /*
+           * If the parent key itself was repaired to 4 spaces,
+           * list must therefore be 6.
+           */
+          if(prevIndent < 4){
+            indent = 6;
+          }
+        }
+      }
+
+      /*
+       * Never allow technical list items to become root-level.
+       */
+      if(indent < 6){
+        indent = 6;
+      }
+
+      output.push(
+        " ".repeat(indent) + trimmed
+      );
+
+      continue;
+    }
+
+    /* ============================================================
+       NESTED KEYS
+       ============================================================ */
+
+    if(key){
+
+      /*
+       * Find parent context.
+       */
+      const parent =
+        stack.length
+          ? stack[stack.length - 1]
+          : null;
+
+      let indent = 6;
+
+      if(parent){
+
+        /*
+         * Nested keys are always two spaces deeper.
+         */
+        indent = parent.indent + 2;
+
+        /*
+         * But never let a nested key escape the record.
+         */
+        if(indent > 12){
+          indent = 8;
+        }
+      }
+
+      /*
+       * Special handling for title translations:
+       *
+       * title:
+       *   en:
+       *   ro:
+       *   ...
+       */
+      if(parent && parent.key === "title"){
+        indent = 6;
+      }
+
+      /*
+       * Special handling for vehicle:
+       *
+       * vehicle:
+       *   manufacturer:
+       *   model:
+       *   year:
+       */
+      if(parent && parent.key === "vehicle"){
+        indent = 6;
+      }
+
+      output.push(
+        " ".repeat(indent) + trimmed
+      );
+
+      cleanStack(indent);
+
+      stack.push({
+        key,
+        indent
+      });
+
+      continue;
+    }
+
+    /* ============================================================
+       SCALAR / MULTILINE CONTENT
+       ============================================================ */
+
+    /*
+     * Preserve multiline scalar lines but ensure they remain
+     * inside the current record.
+     */
+    let indent = 6;
+
+    if(stack.length){
+      indent =
+        Math.min(
+          stack[stack.length - 1].indent + 2,
+          10
+        );
+    }
+
+    output.push(
+      " ".repeat(indent) + trimmed
+    );
+  }
+
+  return output.join("\n");
+}
     /*
      * ============================================================
      * EXTRACT TECHNICAL DATABASE
