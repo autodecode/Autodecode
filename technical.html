@@ -114,7 +114,8 @@ return String(v??'').toLowerCase()
 .replace(/shouldn['’]?t\b/g,'should not').replace(/shouldnt\b/g,'should not')
 .replace(/didn['’]?t\b/g,'did not').replace(/didnt\b/g,'did not')
 .replace(/don['’]?t\b/g,'do not').replace(/dont\b/g,'do not')
-.normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,' ').replace(/\s+/g,' ').trim();
+.normalize('NFD').replace(/[\u0300-\u036f]/g,'')
+.replace(/[^a-z0-9]+/g,' ').replace(/\s+/g,' ').trim();
 }
 
 function localizedValue(v){
@@ -154,33 +155,28 @@ dtc:['related_dtcs','dtcs','dtc','codes'],
 weak:['notes','references','reference']
 };
 
+const FW={primary:8,symptoms:6,keywords:5,system:0,causes:1,steps:.05,dtc:2,weak:0};
+
 function fieldText(r,keys){
 return cleanText(keys.flatMap(k=>r[k]!=null?[r[k]]:[]));
 }
 
 function profileText(r){
-return{
-primary:N(fieldText(r,FIELDS.primary)),
-symptoms:N(fieldText(r,FIELDS.symptoms)),
-keywords:N(fieldText(r,FIELDS.keywords)),
-system:N(fieldText(r,FIELDS.system)),
-causes:N(fieldText(r,FIELDS.causes)),
-steps:N(fieldText(r,FIELDS.steps)),
-dtc:N(fieldText(r,FIELDS.dtc)),
-weak:N(fieldText(r,FIELDS.weak))
-};
+let o={};
+for(const k of Object.keys(FIELDS))o[k]=N(fieldText(r,FIELDS[k]));
+return o;
 }
 
 const SEM={
-black_smoke:{p:['black smoke','black exhaust','black soot','sooty exhaust','dark smoke','dark exhaust','fum negru','fum negru pe evacuare'],d:'engine',w:70},
+black_smoke:{p:['black smoke','black exhaust','black soot','sooty exhaust','dark smoke','dark exhaust','black exhaust smoke','fum negru','fum negru pe evacuare'],d:'engine',w:70},
 white_smoke:{p:['white smoke','white exhaust','white vapour','white vapor','steam from exhaust','white smoke from exhaust','fum alb','abur alb'],d:'engine',w:65},
 blue_smoke:{p:['blue smoke','blue exhaust','blue smoke from exhaust','oil smoke','fum albastru'],d:'engine',w:70},
 smoke:{p:['smoke','smoking','smoky exhaust','exhaust smoke','fum','fum evacuare'],d:'engine',w:35},
-stall:{p:['engine stalls','engine stall','engine stops','engine stop','engine shuts off','engine cuts out','cuts out','cut out','dies while driving','died while driving','motor stops','motor stopped','engine stopped','se opreste','se oprea','caleaza','s a oprit','stopped while running','stopped and will not restart'],d:'engine',w:70},
-no_start:{p:['does not start','does not restart','will not start','will not restart','cannot start','cannot restart','unable to start','unable to restart','no start','no restart','not starting','not start','engine does not start','engine will not start','nu porneste','nu mai porneste','nu reporneste'],d:'engine',w:70},
+stall:{p:['engine stalls','engine stall','engine stops','engine stop','engine shuts off','engine cuts out','engine cuts off','cuts out','cut out','dies while driving','died while driving','motor stops','motor stopped','engine stopped','engine has stopped','engine stopped running','stopped while running','stopped while driving','se opreste','se oprea','s a oprit','s a oprit in mers','caleaza','motorul s a oprit','motorul s a oprit in mers'],d:'engine',w:70},
+no_start:{p:['does not start','does not restart','will not start','will not restart','cannot start','cannot restart','unable to start','unable to restart','no start','no restart','not starting','not start','engine does not start','engine will not start','engine cannot start','wont start','won t start','nu porneste','nu mai porneste','nu reporneste','nu mai reporneste','nu porneste motorul'],d:'engine',w:70},
 hard_start:{p:['hard start','hard starting','difficult start','difficult starting','starts hard','long crank','long cranking','takes long to start','porneste greu','pornire grea','pornire lunga'],d:'engine',w:55},
 power_loss:{p:['loss of power','power loss','lose power','loses power','lost power','little power','low power','poor power','no power','weak acceleration','poor acceleration','poor performance','underpowered','lack of power','sluggish','nu mai trage','nu are putere','pierdere de putere','lipsa de putere'],d:'engine',w:60},
-limp_mode:{p:['limp mode','reduced power','reduced engine power','emergency mode','failsafe mode','notlauf','mode degrade','mod avarie','modul avarie','limp'],d:'engine',w:65},
+limp_mode:{p:['limp mode','reduced power','reduced engine power','emergency mode','failsafe mode','notlauf','mode degrade','degraded mode','mod avarie','modul avarie','limp'],d:'engine',w:65},
 low_rpm:{p:['low rpm','low rev','low revs','low engine speed','below 2000 rpm','below 2500 rpm','at low rpm','at low revs','turatii mici','turatii joase','turatii scazute'],d:'engine',w:30},
 acceleration:{p:['when accelerating','under acceleration','during acceleration','accelerating','acceleration','when i accelerate','when gas is applied','when pressing accelerator','pedala de acceleratie','la accelerare','cand accelerez'],d:'engine',w:20},
 idle:{p:['at idle','idle','idling','when stopped','at traffic lights','ralanti','la ralanti','stationary'],d:'engine',w:25},
@@ -225,20 +221,20 @@ suspension:['suspension','shock absorber','strut','spring','amortizor','arc']
 };
 
 const RELATED={
-stall:['no_start','fuel','injector','crankshaft','camshaft','timing','battery','alternator'],
-no_start:['stall','fuel','injector','crankshaft','camshaft','timing','battery','alternator'],
+stall:['no_start','hard_start','fuel','injector','crankshaft','camshaft','timing','battery','alternator'],
+no_start:['stall','hard_start','fuel','injector','crankshaft','camshaft','timing','battery','alternator'],
 power_loss:['limp_mode','turbo','egr','maf','map','dpf','fuel','injector'],
 limp_mode:['power_loss','turbo','egr','maf','map','dpf','fuel','injector'],
 black_smoke:['fuel','injector','egr','maf','map','turbo','dpf'],
 white_smoke:['coolant','fuel','injector','turbo'],
 blue_smoke:['oil','turbo','leak'],
-overheating:['coolant','water_pump'],
+overheating:['coolant'],
 hard_start:['battery','fuel','injector','crankshaft','camshaft','timing'],
 rough_idle:['misfire','injector','egr','maf','map'],
-misfire:['injector','fuel','maf','egr','camshaft','crankshaft'],
+misfire:['injector','fuel','maf','egr','camshaft','crankshaft']
 };
 
-const STOP=new Set('the a an and or but when while with from into then after before has have had is are was were does did will not cannot can could would should do car vehicle problem my your our their this that it its to of in on at for by as with i you he she they we me'.split(' '));
+const STOP=new Set('the a an and or but when while with from into then after before has have had is are was were does did will not cannot can could would should do car vehicle problem my your our their this that it its to of in on at for by as i you he she they we me'.split(' '));
 
 function words(s){
 return new Set(N(s).split(' ').filter(x=>x.length>=3&&!STOP.has(x)));
@@ -248,10 +244,13 @@ function phraseMatch(text,phrase){
 let t=N(text),p=N(phrase);
 if(!t||!p)return false;
 if(t===p||t.includes(' '+p+' ')||t.startsWith(p+' ')||t.endsWith(' '+p))return true;
-let pw=p.split(' ');
-if(pw.length>1)return false;
-if(p.length<5)return false;
-return t.split(' ').some(w=>w.length>=5&&(w===p||w.startsWith(p.slice(0,Math.min(6,p.length)))));
+if(p.length<5||p.includes(' '))return false;
+return t.split(' ').some(w=>w===p||w.length>=6&&p.length>=6&&(w.startsWith(p.slice(0,6))||p.startsWith(w.slice(0,6))));
+}
+
+function fieldHit(text,concept){
+let d=SEM[concept];
+return !!d&&d.p.some(p=>phraseMatch(text,p));
 }
 
 function detectConcepts(text){
@@ -269,107 +268,139 @@ return out;
 
 function analyseInput(q){
 let n=N(q),concepts=detectConcepts(n),domains=detectDomains(n);
-
-for(const c of concepts){
-let d=SEM[c]?.d;
-if(d)domains.add(d);
-}
-
-if(concepts.includes('black_smoke')||concepts.includes('white_smoke')||concepts.includes('blue_smoke')){
-domains.add('engine');domains.add('exhaust');
-}
-
-if(concepts.includes('stall')&&concepts.includes('no_start'))concepts.push('stall_restart');
-if(concepts.includes('power_loss')&&concepts.includes('limp_mode'))concepts.push('power_limp');
+for(const c of concepts)if(SEM[c]?.d)domains.add(SEM[c].d);
 
 let context=[];
-if(/stopped while running|stopped while driving|died while driving|engine stopped|motor stopped|s a oprit/.test(n))context.push('stall_running');
-if(/stopped and (will not|does not|cannot) restart|stopped and (will not|does not|cannot) start|stopped.*not restart/.test(n))context.push('stall_restart');
+if(/stopped while running|stopped while driving|died while driving|engine stopped|engine stopped running|motor stopped|motorul s a oprit|s a oprit in mers/.test(n))context.push('stall_running');
+if(/stopped and (will not|does not|cannot) (restart|start)|stopped and not restart|stopped.*not.*restart/.test(n))context.push('stall_restart');
 if(/when accelerating|while accelerating|during acceleration|accelerating|cand accelerez|la accelerare/.test(n))context.push('acceleration');
 if(/low rpm|low rev|low engine speed|turatii mici|turatii joase/.test(n))context.push('low_rpm');
 if(/at idle|idling|rough idle|ralanti/.test(n))context.push('idle');
+
+if(concepts.includes('stall')&&concepts.includes('no_start'))concepts.push('stall_restart');
+if(concepts.includes('power_loss')&&concepts.includes('limp_mode'))concepts.push('power_limp');
 
 return{raw:q,n,concepts:[...new Set(concepts)],domains:[...domains],context};
 }
 
 function resultProfile(r){
-let f=profileText(r),concepts=detectConcepts(f.primary+' '+f.symptoms+' '+f.keywords),domains=new Set();
-for(const d of detectDomains(f.system))domains.add(d);
-for(const c of concepts)if(SEM[c]?.d)domains.add(SEM[c].d);
-return{...f,concepts,domains:[...domains]};
+let f=profileText(r);
+let high=f.primary+' '+f.symptoms+' '+f.keywords;
+let domains=new Set(detectDomains(f.system));
+
+for(const c of detectConcepts(high))if(SEM[c]?.d)domains.add(SEM[c].d);
+
+if(!domains.size){
+for(const c of detectConcepts(f.primary))if(SEM[c]?.d)domains.add(SEM[c].d);
 }
 
-function domainFamily(d){
-if(['engine','air','fuel','exhaust'].includes(d))return'engine';
+return{...f,high,concepts:detectConcepts(high),domains:[...domains]};
+}
+
+function family(d){
+if(['engine','air','fuel','exhaust','cooling','lubrication','mechanical'].includes(d))return'powertrain';
 return d;
 }
 
+function inputFamilies(input){
+return new Set(input.domains.map(family));
+}
+
+function resultFamilies(result){
+return new Set(result.domains.map(family));
+}
+
 function compatible(input,result){
-if(!input.domains.length)return true;
-let id=new Set(input.domains.map(domainFamily)),rd=new Set(result.domains.map(domainFamily));
-if(!rd.size)return false;
-for(const d of id)if(rd.has(d))return true;
+let wanted=inputFamilies(input);
+let got=resultFamilies(result);
+if(!wanted.size)return true;
+
+for(const d of wanted)if(got.has(d))return true;
+
+if(wanted.has('powertrain')&&(input.concepts.includes('stall_restart')||input.concepts.includes('power_limp'))){
+if(result.concepts.some(c=>['battery','alternator','voltage','fuel','injector','crankshaft','camshaft','timing','turbo','egr','maf','map','dpf'].includes(c)))return true;
+}
+
 return false;
 }
 
-function fieldHit(text,concept){
-let d=SEM[concept];
-return d&&d.p.some(p=>phraseMatch(text,p));
-}
-
-function lexical(input,result){
-let a=words(input),s=0;
-for(const w of a){
-if(result.primary.split(' ').includes(w))s+=9;
-else if(result.symptoms.split(' ').includes(w))s+=7;
-else if(result.keywords.split(' ').includes(w))s+=5;
-else if(result.system.split(' ').includes(w))s+=2;
-}
-return Math.min(28,s);
-}
-
-function semantic(input,result){
-let s=0;
-const high=result.primary+' '+result.symptoms+' '+result.keywords;
-const system=result.system;
-const causes=result.causes;
-
-for(const c of input.concepts){
-if(c==='stall_restart'||c==='power_limp')continue;
-if(fieldHit(high,c))s+=Math.min(48,SEM[c].w*.7);
-else if(fieldHit(system,c))s+=Math.min(22,SEM[c].w*.35);
-else if(fieldHit(causes,c))s+=Math.min(15,SEM[c].w*.22);
-else if(RELATED[c]?.some(x=>fieldHit(high,x)))s+=10;
-}
+function hardGate(input,result){
+let h=result.high,c=result.concepts;
 
 if(input.concepts.includes('stall_restart')){
-if(fieldHit(high,'stall'))s+=42;
-if(fieldHit(high,'no_start'))s+=42;
-if(fieldHit(high,'hard_start'))s+=16;
-for(const c of RELATED.stall)if(fieldHit(high,c))s+=7;
+let direct=fieldHit(h,'stall')||fieldHit(h,'no_start')||fieldHit(h,'hard_start');
+let relevant=c.some(x=>['fuel','injector','crankshaft','camshaft','timing','battery','alternator'].includes(x));
+if(!direct&&!relevant)return false;
 }
 
 if(input.concepts.includes('power_limp')){
-if(fieldHit(high,'power_loss'))s+=40;
-if(fieldHit(high,'limp_mode'))s+=40;
-for(const c of RELATED.power_loss)if(fieldHit(high,c))s+=8;
+let direct=fieldHit(h,'power_loss')||fieldHit(h,'limp_mode');
+let relevant=c.some(x=>['turbo','egr','maf','map','dpf','fuel','injector'].includes(x));
+if(!direct&&!relevant)return false;
 }
 
-if(input.concepts.some(x=>['black_smoke','white_smoke','blue_smoke'].includes(x))){
 let smoke=input.concepts.filter(x=>['black_smoke','white_smoke','blue_smoke'].includes(x));
-if(!smoke.some(c=>fieldHit(high,c)||fieldHit(system,c)||fieldHit(causes,c)))s-=70;
+if(smoke.length){
+let direct=smoke.some(x=>fieldHit(h,x));
+let related=smoke.some(x=>(RELATED[x]||[]).some(y=>fieldHit(h,y)||fieldHit(result.causes,y)));
+if(!direct&&!related)return false;
+}
+
+return true;
+}
+
+function lexical(input,result){
+let a=words(input.raw),s=0;
+let p=new Set(result.primary.split(' ')),y=new Set(result.symptoms.split(' ')),k=new Set(result.keywords.split(' '));
+for(const w of a){
+if(p.has(w))s+=8;
+else if(y.has(w))s+=6;
+else if(k.has(w))s+=5;
+}
+return Math.min(30,s);
+}
+
+function semantic(input,result){
+let s=0,h=result.high,sys=result.system,causes=result.causes;
+
+for(const c of input.concepts){
+if(c==='stall_restart'||c==='power_limp')continue;
+if(fieldHit(h,c))s+=Math.min(55,SEM[c].w*.8);
+else if(fieldHit(sys,c))s+=Math.min(20,SEM[c].w*.3);
+else if(fieldHit(causes,c))s+=Math.min(12,SEM[c].w*.18);
+}
+
+if(input.concepts.includes('stall_restart')){
+if(fieldHit(h,'stall'))s+=55;
+if(fieldHit(h,'no_start'))s+=55;
+if(fieldHit(h,'hard_start'))s+=22;
+for(const c of ['fuel','injector','crankshaft','camshaft','timing','battery','alternator'])
+if(fieldHit(h,c))s+=9;
+}
+
+if(input.concepts.includes('power_limp')){
+if(fieldHit(h,'power_loss'))s+=55;
+if(fieldHit(h,'limp_mode'))s+=55;
+for(const c of ['turbo','egr','maf','map','dpf','fuel','injector'])
+if(fieldHit(h,c))s+=9;
 }
 
 return s;
 }
 
 function contextScore(input,result){
-let s=0,t=result.primary+' '+result.symptoms+' '+result.keywords+' '+result.causes;
-if(input.context.includes('acceleration')&&/accelerat|throttle|load|under load/.test(t))s+=20;
-if(input.context.includes('low_rpm')&&/low rpm|low rev|low engine speed|low speed/.test(t))s+=20;
-if(input.context.includes('idle')&&/idle|idling|ralanti/.test(t))s+=20;
-if(input.context.includes('stall_running')&&(fieldHit(t,'stall')||/running|driving/.test(t)))s+=25;
-if(input.context.includes('stall_restart')&&(fieldHit(t,'stall')||fieldHit(t,'no_start')))s+=25;
+let s=0,t=result.primary+' '+result.symptoms+' '+result.keywords;
+if(input.context.includes('acceleration')&&/accelerat|throttle|load|under load/.test(t))s+=18;
+if(input.context.includes('low_rpm')&&/low rpm|low rev|low engine speed/.test(t))s+=18;
+if(input.context.includes('idle')&&/idle|idling|ralanti/.test(t))s+=18;
+if(input.context.includes('stall_running')&&fieldHit(t,'stall'))s+=28;
+if(input.context.includes('stall_restart')&&(fieldHit(t,'stall')||fieldHit(t,'no_start')))s+=28;
+return s;
+}
+
+function domainScore(input,result){
+let a=inputFamilies(input),b=resultFamilies(result),s=0;
+for(const d of a)if(b.has(d))s+=45;
 return s;
 }
 
@@ -381,49 +412,28 @@ function dtcScore(q,r){
 let codes=extractDTCs(q);
 if(!codes.length)return 0;
 let text=N(fieldText(r,FIELDS.dtc)).toUpperCase(),s=0;
-for(const c of codes)if(text.includes(c))s+=100;
+for(const c of codes)if(text.includes(c))s+=120;
 return s;
 }
 
 function score(r,input){
 let result=resultProfile(r);
 if(!compatible(input,result))return null;
+if(!hardGate(input,result))return null;
 
-let s=0;
-s+=domainScore(input,result);
+let s=domainScore(input,result);
 s+=semantic(input,result);
-s+=lexical(input.raw,result);
+s+=lexical(input,result);
 s+=contextScore(input,result);
 s+=dtcScore(input.raw,r);
 
-if(input.concepts.includes('stall_restart')){
-let direct=fieldHit(result.primary+' '+result.symptoms+' '+result.keywords,'stall')||fieldHit(result.primary+' '+result.symptoms+' '+result.keywords,'no_start');
-if(!direct){
-let related=['fuel','injector','crankshaft','camshaft','timing','battery','alternator','hard_start'];
-if(!related.some(c=>fieldHit(result.primary+' '+result.symptoms+' '+result.keywords+' '+result.system,c)))s-=35;
-}
-}
-
-if(input.concepts.includes('power_limp')){
-let direct=fieldHit(result.primary+' '+result.symptoms+' '+result.keywords,'power_loss')||fieldHit(result.primary+' '+result.symptoms+' '+result.keywords,'limp_mode');
-let related=RELATED.power_loss.some(c=>fieldHit(result.primary+' '+result.symptoms+' '+result.keywords,c));
-if(!direct&&!related)s-=35;
-}
-
 return{r,s:Math.round(s)};
-}
-
-function domainScore(input,result){
-let a=new Set(input.domains.map(domainFamily)),b=new Set(result.domains.map(domainFamily)),s=0;
-for(const d of a)if(b.has(d))s+=40;
-if(a.has('engine')&&b.has('engine'))s+=20;
-return s;
 }
 
 function idValue(v){
 if(v==null)return '';
 if(typeof v==='string'||typeof v==='number')return String(v);
-if(typeof v==='object')return String(v.id??v.name??'');
+if(typeof v==='object')return String(v.id??v.name??v.code??'');
 return String(v);
 }
 
@@ -431,12 +441,18 @@ function matchesValue(sel,value){
 if(value==null||value==='all')return true;
 let wanted=[N(idValue(sel.id)),N(idValue(sel.name))].filter(Boolean);
 if(Array.isArray(value))return !value.length||value.some(x=>wanted.includes(N(idValue(x))));
+if(typeof value==='object'){
+let vals=Object.values(value).flatMap(x=>Array.isArray(x)?x:[x]).map(idValue).map(N);
+return vals.some(x=>wanted.includes(x));
+}
 return wanted.includes(N(idValue(value)));
 }
 
 function vehicleMatch(r,v){
 let x=r.vehicle&&typeof r.vehicle==='object'?r.vehicle:r;
-return matchesValue(v.m,x.models??x.model)&&matchesValue(v.g,x.generations??x.generation)&&matchesValue(v.e,x.engines??x.engine);
+return matchesValue(v.m,x.models??x.model??x.make_model)&&
+matchesValue(v.g,x.generations??x.generation)&&
+matchesValue(v.e,x.engines??x.engine);
 }
 
 function title(r){
@@ -505,7 +521,8 @@ $('year').disabled=false;
 }
 let engines=Array.isArray(g.engines)?g.engines:[];
 for(const x of engines){
-let n=localizedValue(x.name)||x.id;if(x.fuel)n+=` · ${x.fuel}`;
+let n=localizedValue(x.name)||x.id;
+if(x.fuel)n+=` · ${x.fuel}`;
 $('engine').appendChild(option(String(x.id),n));
 }
 $('engine').disabled=!engines.length;setVehicle();updateFind();
@@ -519,70 +536,114 @@ tdb=Array.isArray(d?.technical_data)?d.technical_data.filter(Boolean):[];
 }
 
 function setLang(lang){
-if(!I[lang])lang='en';L=lang;localStorage.setItem('autodecode_language',L);
+if(!I[lang])lang='en';
+L=lang;
+localStorage.setItem('autodecode_language',L);
 let T=I[L];
-$('home').textContent=T.home;$('intro').textContent=T.intro;
-$('lm').textContent=T.make;$('lmodel').textContent=T.model;$('lg').textContent=T.generation;$('ly').textContent=T.year;$('le').textContent=T.engine;$('lp').textContent=T.problem;
-$('find').textContent=T.find;$('rh').textContent=T.rh;$('problem').placeholder=T.ph;
+$('home').textContent=T.home;
+$('intro').textContent=T.intro;
+$('lm').textContent=T.make;
+$('lmodel').textContent=T.model;
+$('lg').textContent=T.generation;
+$('ly').textContent=T.year;
+$('le').textContent=T.engine;
+$('lp').textContent=T.problem;
+$('find').textContent=T.find;
+$('rh').textContent=T.rh;
+$('problem').placeholder=T.ph;
 $('langbtn').textContent={en:'🇬🇧 EN ▾',de:'🇩🇪 DE ▾',ro:'🇷🇴 RO ▾',fr:'🇫🇷 FR ▾',es:'🇪🇸 ES ▾',it:'🇮🇹 IT ▾',nl:'🇳🇱 NL ▾'}[L];
 resetSelect('make',T.sm,false);
 for(const m of makers)$('make').appendChild(option(m.id,manufacturerName(m)));
-resetSelect('model',T.smod);resetSelect('generation',T.sg);resetSelect('year',T.sy);resetSelect('engine',T.se);
-$('find').disabled=true;setVehicle();
+resetSelect('model',T.smod);
+resetSelect('generation',T.sg);
+resetSelect('year',T.sy);
+resetSelect('engine',T.se);
+$('find').disabled=true;
+setVehicle();
 }
 
 function section(heading,items){
 let d=document.createElement('div');d.className='section';
 let h=document.createElement('h4');h.textContent=heading;d.appendChild(h);
 let ul=document.createElement('ul');
-for(const x of items){let li=document.createElement('li');li.textContent=x;ul.appendChild(li)}
-d.appendChild(ul);return d;
+for(const x of items){
+let li=document.createElement('li');li.textContent=x;ul.appendChild(li);
+}
+d.appendChild(ul);
+return d;
 }
 
 function renderList(rows){
-$('results').hidden=false;$('list').innerHTML='';
-if(!rows.length){$('count').textContent='';$('list').innerHTML=`<div class="empty">${I[L].none}</div>`;return}
+$('results').hidden=false;
+$('list').innerHTML='';
+if(!rows.length){
+$('count').textContent='';
+$('list').innerHTML=`<div class="empty">${I[L].none}</div>`;
+return;
+}
 $('count').textContent=rows.length===1?I[L].one:I[L].many.replace('{n}',rows.length);
 
 for(const item of rows){
 let r=item.r,card=document.createElement('article');card.className='card';
 let top=document.createElement('div');top.className='top';
-let left=document.createElement('div'),h=document.createElement('h3');h.className='title';h.textContent=title(r);left.appendChild(h);
+let left=document.createElement('div'),h=document.createElement('h3');
+h.className='title';h.textContent=title(r);left.appendChild(h);
 
 if(r.system||r.category){
-let s=document.createElement('div');s.className='system';s.textContent=[localizedValue(r.system),localizedValue(r.category)].filter(Boolean).join(' · ');left.appendChild(s);
+let s=document.createElement('div');s.className='system';
+s.textContent=[localizedValue(r.system),localizedValue(r.category)].filter(Boolean).join(' · ');
+left.appendChild(s);
 }
 
 let description=localizedValue(r.description||r.problem||r.issue);
-if(description){let p=document.createElement('p');p.className='desc';p.textContent=description;left.appendChild(p)}
+if(description){
+let p=document.createElement('p');p.className='desc';p.textContent=description;left.appendChild(p);
+}
 
 let symptoms=valueArray(r.symptoms);
 if(symptoms.length){
 let tags=document.createElement('div');tags.className='tags';
-for(const x of symptoms.slice(0,12)){let t=document.createElement('span');t.className='tag';t.textContent=x;tags.appendChild(t)}
+for(const x of symptoms.slice(0,12)){
+let t=document.createElement('span');t.className='tag';t.textContent=x;tags.appendChild(t);
+}
 left.appendChild(tags);
 }
 
-let sc=document.createElement('div');sc.className='score';sc.textContent=`${I[L].rel}: ${item.s}`;
+let sc=document.createElement('div');sc.className='score';
+sc.textContent=`${I[L].rel}: ${item.s}`;
 top.appendChild(left);top.appendChild(sc);card.appendChild(top);
 
-let causes=valueArray(r.possible_causes??r.causes);if(causes.length)card.appendChild(section(I[L].causes,causes));
-let steps=valueArray(r.diagnostic_steps??r.steps);if(steps.length)card.appendChild(section(I[L].steps,steps));
-let dtcs=valueArray(r.related_dtcs??r.dtcs??r.dtc);if(dtcs.length)card.appendChild(section(I[L].dtcs,dtcs));
+let causes=valueArray(r.possible_causes??r.causes);
+if(causes.length)card.appendChild(section(I[L].causes,causes));
+
+let steps=valueArray(r.diagnostic_steps??r.steps);
+if(steps.length)card.appendChild(section(I[L].steps,steps));
+
+let dtcs=valueArray(r.related_dtcs??r.dtcs??r.dtc);
+if(dtcs.length)card.appendChild(section(I[L].dtcs,dtcs));
+
 $('list').appendChild(card);
 }
 }
 
 async function search(){
 let q=$('problem').value.trim();
+
 if(!$('make').value||!$('model').value||!$('generation').value||!$('engine').value){
-$('status').textContent=I[L].complete;$('status').className='status error';return;
-}
-if(!q){
-$('status').textContent=I[L].describe;$('status').className='status error';return;
+$('status').textContent=I[L].complete;
+$('status').className='status error';
+return;
 }
 
-$('status').textContent=I[L].search;$('status').className='status';$('results').hidden=true;
+if(!q){
+$('status').textContent=I[L].describe;
+$('status').className='status error';
+return;
+}
+
+$('status').textContent=I[L].search;
+$('status').className='status';
+$('results').hidden=true;
 
 try{
 await loadTech();
@@ -604,36 +665,22 @@ let vehicleRows=tdb.filter(r=>vehicleMatch(r,v));
 let rows=vehicleRows
 .map(r=>score(r,input))
 .filter(Boolean)
-.filter(x=>x.s>=18)
+.filter(x=>x.s>=35)
 .sort((a,b)=>b.s-a.s)
 .slice(0,20);
 
-if(!rows.length&&input.concepts.length){
-let relaxed=vehicleRows
-.map(r=>score(r,input))
-.filter(Boolean)
-.filter(x=>x.s>=8)
-.sort((a,b)=>b.s-a.s)
-.slice(0,10);
-rows=relaxed;
-}
-
-if(!rows.length&&!input.concepts.length&&input.domains.length){
-rows=vehicleRows
-.map(r=>score(r,input))
-.filter(Boolean)
-.filter(x=>x.s>=15)
-.sort((a,b)=>b.s-a.s)
-.slice(0,10);
-}
-
 renderList(rows);
-$('status').textContent=I[L].ready;$('status').className='status success';
+
+$('status').textContent=I[L].ready;
+$('status').className='status success';
 
 }catch(error){
 console.error(error);
-$('status').textContent=I[L].error;$('status').className='status error';
-$('results').hidden=false;$('count').textContent='';$('list').innerHTML=`<div class="empty">${I[L].error}</div>`;
+$('status').textContent=I[L].error;
+$('status').className='status error';
+$('results').hidden=false;
+$('count').textContent='';
+$('list').innerHTML=`<div class="empty">${I[L].error}</div>`;
 }
 }
 
@@ -643,7 +690,8 @@ $('fy').textContent=new Date().getFullYear();
 $('langbtn').addEventListener('click',()=>$('langmenu').classList.toggle('open'));
 
 document.querySelectorAll('[data-l]').forEach(el=>el.addEventListener('click',()=>{
-setLang(el.dataset.l);$('langmenu').classList.remove('open');
+setLang(el.dataset.l);
+$('langmenu').classList.remove('open');
 }));
 
 document.addEventListener('click',e=>{
@@ -653,22 +701,35 @@ if(!e.target.closest('.langs'))$('langmenu').classList.remove('open');
 try{
 let d=await yaml('data/vehicles/manufacturers.yaml');
 if(!Array.isArray(d?.manufacturers))throw new Error('Invalid manufacturers database');
-makers=d.manufacturers.filter(Boolean);setLang(L);
-$('status').textContent=I[L].ready;$('status').className='status success';
+makers=d.manufacturers.filter(Boolean);
+setLang(L);
+$('status').textContent=I[L].ready;
+$('status').className='status success';
 }catch(e){
-console.error(e);setLang(L);$('status').textContent=I[L].error;$('status').className='status error';
+console.error(e);
+setLang(L);
+$('status').textContent=I[L].error;
+$('status').className='status error';
 }
 
 $('make').addEventListener('change',async()=>{
-let id=$('make').value;vehicles=null;
+let id=$('make').value;
+vehicles=null;
 if(!id){updateFind();return}
-$('status').textContent=I[L].loading;$('status').className='status';
+
+$('status').textContent=I[L].loading;
+$('status').className='status';
+
 try{
 vehicles=await yaml(`data/vehicles/${id}.yaml`);
-loadModels();await loadTech();
-$('status').textContent=I[L].ready;$('status').className='status success';
+loadModels();
+await loadTech();
+$('status').textContent=I[L].ready;
+$('status').className='status success';
 }catch(e){
-console.error(e);$('status').textContent=I[L].error;$('status').className='status error';
+console.error(e);
+$('status').textContent=I[L].error;
+$('status').className='status error';
 }
 });
 
