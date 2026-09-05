@@ -6,6 +6,2018 @@ manufacturer:
 
 technical_data:
 
+  - id: ford_focus_mk3_cold_start_extended_cranking
+    vehicle:
+      manufacturer: ford
+      models:
+        - focus
+      generations:
+        - focus_mk3
+      engines: all
+    category: diagnostics
+    system: engine
+    title:
+      en: Extended Cranking Before Engine Starts
+      ro: Pornire după acționare îndelungată a demarorului
+      de: Verlängertes Starten vor dem Anspringen
+      fr: Démarrage après un long entraînement du démarreur
+      es: Arranque tras un tiempo prolongado de accionamiento del motor de arranque
+      it: Avviamento dopo un lungo azionamento del motorino
+      nl: Lang starten voordat de motor aanslaat
+    symptoms:
+      - extended cranking
+      - long crank
+      - engine takes too long to start
+      - starts after several seconds
+      - hard starting
+      - pornire lungă
+      - demaror acționat mult timp
+      - pornește greu
+      - schweres Starten
+      - démarrage difficile
+      - arranque prolongado
+      - avviamento prolungato
+      - lang starten
+    keywords:
+      - long crank
+      - extended cranking
+      - hard start
+      - delayed start
+      - pornire dificilă
+    possible_causes:
+      - low fuel pressure
+      - fuel pressure bleeding down
+      - weak battery
+      - starter motor speed too low
+      - crankshaft position signal fault
+      - camshaft position signal fault
+      - injector leakage
+      - glow plug system fault on diesel engines
+    diagnostic_steps:
+      - Check battery voltage during cranking.
+      - Check engine cranking speed.
+      - Check fuel pressure during cranking.
+      - Check crankshaft and camshaft synchronization.
+      - Check injector operation and leakage where applicable.
+      - Compare cold-start behavior with warm-start behavior.
+    related_dtcs: []
+    difficulty: intermediate
+
+  - id: ford_focus_mk3_engine_starts_then_stalls
+    vehicle:
+      manufacturer: ford
+      models:
+        - focus
+      generations:
+        - focus_mk3
+      engines: all
+    category: diagnostics
+    system: engine
+    title:
+      en: Engine Starts Then Stalls
+      ro: Motorul pornește și apoi se oprește
+      de: Motor startet und geht anschließend aus
+      fr: Le moteur démarre puis cale
+      es: El motor arranca y después se cala
+      it: Il motore si avvia e poi si spegne
+      nl: Motor start en valt daarna uit
+    symptoms:
+      - starts and stalls
+      - engine starts then stops
+      - stalls immediately after starting
+      - starts normally then dies
+      - pornește și se oprește
+      - se oprește imediat după pornire
+      - motor startet und geht aus
+      - démarre puis cale
+      - arranca y se cala
+      - si avvia e si spegne
+      - start en valt uit
+    keywords:
+      - starts and stalls
+      - engine stalls after start
+      - starts then dies
+      - pornește apoi moare
+    possible_causes:
+      - fuel pressure loss
+      - crankshaft signal loss
+      - immobilizer authorization fault
+      - throttle control fault
+      - severe air metering fault
+      - EGR stuck open
+      - injector control fault
+      - electrical power supply interruption
+    diagnostic_steps:
+      - Scan all engine and body control modules.
+      - Check whether engine speed remains visible during the stall.
+      - Check fuel pressure while the engine is running.
+      - Check immobilizer status.
+      - Check throttle and air-metering data.
+      - Check electrical supply to the PCM.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: ford_focus_mk3_engine_stalls_when_hot
+    vehicle:
+      manufacturer: ford
+      models:
+        - focus
+      generations:
+        - focus_mk3
+      engines: all
+    category: diagnostics
+    system: engine
+    title:
+      en: Engine Stalls When Hot
+      ro: Motorul se oprește când este cald
+      de: Motor geht bei warmem Zustand aus
+      fr: Le moteur cale à chaud
+      es: El motor se cala cuando está caliente
+      it: Il motore si spegne a caldo
+      nl: Motor valt uit wanneer hij warm is
+    symptoms:
+      - hot engine stall
+      - stalls when hot
+      - engine stops after warming up
+      - restarts after cooling
+      - se oprește la cald
+      - pornește din nou după răcire
+      - geht bei warmem Motor aus
+      - cale à chaud
+      - se cala en caliente
+      - si spegne a caldo
+      - valt uit bij warme motor
+    keywords:
+      - hot stall
+      - stalls when hot
+      - hot restart
+      - se oprește la cald
+    possible_causes:
+      - crankshaft position sensor thermal fault
+      - camshaft position sensor thermal fault
+      - fuel pump thermal failure
+      - ignition component thermal failure
+      - PCM power supply fault
+      - fuel pressure loss
+    diagnostic_steps:
+      - Scan the vehicle immediately after the stall.
+      - Check engine RPM signal during cranking.
+      - Check fuel pressure while the fault is present.
+      - Check PCM power and ground circuits.
+      - Compare sensor signals cold and hot.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: ford_focus_mk3_engine_vibration_at_idle
+    vehicle:
+      manufacturer: ford
+      models:
+        - focus
+      generations:
+        - focus_mk3
+      engines: all
+    category: diagnostics
+    system: engine
+    title:
+      en: Excessive Engine Vibration at Idle
+      ro: Vibrații excesive ale motorului la ralanti
+      de: Übermäßige Motorvibrationen im Leerlauf
+      fr: Vibrations moteur excessives au ralenti
+      es: Vibraciones excesivas del motor al ralentí
+      it: Vibrazioni eccessive del motore al minimo
+      nl: Overmatige motortrillingen bij stationair toerental
+    symptoms:
+      - engine vibration at idle
+      - excessive vibration
+      - rough idle vibration
+      - vibration through body
+      - vibrații motor la ralanti
+      - vibrații în caroserie
+      - starke Vibrationen im Leerlauf
+      - vibrations au ralenti
+      - vibraciones al ralentí
+      - vibrazioni al minimo
+      - trillingen stationair
+    keywords:
+      - idle vibration
+      - engine vibration
+      - rough idle
+      - vibrații ralanti
+    possible_causes:
+      - engine misfire
+      - worn engine mount
+      - dual mass flywheel fault
+      - injector imbalance
+      - unstable idle control
+      - vacuum or intake leak
+      - EGR malfunction
+    diagnostic_steps:
+      - Check misfire counters.
+      - Check injector correction or balance values where supported.
+      - Inspect engine and transmission mounts.
+      - Check idle speed stability.
+      - Inspect the intake and vacuum system.
+      - Assess dual mass flywheel operation on applicable engines.
+    related_dtcs: []
+    difficulty: intermediate
+
+  - id: ford_focus_mk3_engine_knocking_noise
+    vehicle:
+      manufacturer: ford
+      models:
+        - focus
+      generations:
+        - focus_mk3
+      engines: all
+    category: diagnostics
+    system: engine
+    title:
+      en: Engine Knocking or Tapping Noise
+      ro: Bătăi sau ticăituri ale motorului
+      de: Klopf- oder Tickgeräusche des Motors
+      fr: Claquement ou cliquetis du moteur
+      es: Golpeteo o traqueteo del motor
+      it: Battito o ticchettio del motore
+      nl: Kloppend of tikkend motorgeluid
+    symptoms:
+      - engine knocking
+      - engine tapping
+      - ticking noise
+      - metallic engine noise
+      - bătăi motor
+      - ticăit motor
+      - zgomot metalic
+      - Motorklopfen
+      - claquement moteur
+      - golpeteo del motor
+      - battito motore
+      - tikkend motorgeluid
+    keywords:
+      - engine knock
+      - engine tapping
+      - ticking
+      - metallic noise
+      - bătăi motor
+    possible_causes:
+      - low engine oil pressure
+      - low oil level
+      - valvetrain wear
+      - timing component wear
+      - injector noise
+      - connecting rod bearing wear
+      - piston or combustion noise
+    diagnostic_steps:
+      - Check engine oil level and specification.
+      - Measure oil pressure if mechanical wear is suspected.
+      - Identify whether the noise follows engine speed.
+      - Determine whether the noise changes with engine temperature.
+      - Inspect timing and valvetrain components where required.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: ford_focus_mk3_excessive_cooling_fan_operation
+    vehicle:
+      manufacturer: ford
+      models:
+        - focus
+      generations:
+        - focus_mk3
+      engines: all
+    category: diagnostics
+    system: cooling
+    title:
+      en: Cooling Fan Runs Excessively
+      ro: Ventilatorul de răcire funcționează excesiv
+      de: Kühlerlüfter läuft übermäßig
+      fr: Ventilateur de refroidissement fonctionnant excessivement
+      es: Ventilador de refrigeración funcionando excesivamente
+      it: Ventola di raffreddamento in funzione eccessiva
+      nl: Koelventilator draait overmatig
+    symptoms:
+      - cooling fan runs constantly
+      - radiator fan runs after shutdown
+      - fan runs at high speed
+      - cooling fan always on
+      - ventilator pornește permanent
+      - ventilatorul merge după oprirea motorului
+      - ventilator la turație mare
+      - Kühlerlüfter läuft ständig
+      - ventilateur tourne en permanence
+      - ventilador funciona continuamente
+      - ventola sempre attiva
+      - koelventilator draait continu
+    keywords:
+      - cooling fan always on
+      - radiator fan
+      - fan high speed
+      - ventilator radiator
+    possible_causes:
+      - coolant temperature sensor fault
+      - air conditioning pressure fault
+      - fan control module fault
+      - PCM failsafe strategy
+      - wiring fault
+      - excessive coolant temperature
+    diagnostic_steps:
+      - Scan PCM and cooling system related modules.
+      - Check coolant temperature data.
+      - Check A/C pressure data.
+      - Inspect fan control wiring and connectors.
+      - Determine whether the fan is operating as a failsafe response.
+    related_dtcs: []
+    difficulty: intermediate
+
+  - id: ford_focus_mk3_coolant_level_drops_without_external_leak
+    vehicle:
+      manufacturer: ford
+      models:
+        - focus
+      generations:
+        - focus_mk3
+      engines: all
+    category: diagnostics
+    system: cooling
+    title:
+      en: Coolant Level Drops Without Visible External Leak
+      ro: Scade nivelul antigelului fără scurgere externă vizibilă
+      de: Kühlmittelverlust ohne sichtbare äußere Undichtigkeit
+      fr: Baisse du liquide de refroidissement sans fuite externe visible
+      es: Pérdida de refrigerante sin fuga externa visible
+      it: Calo del liquido refrigerante senza perdita esterna visibile
+      nl: Koelvloeistofverlies zonder zichtbare externe lekkage
+    symptoms:
+      - coolant level drops
+      - unexplained coolant loss
+      - coolant loss without leak
+      - low coolant level
+      - scade antigelul
+      - pierdere antigel fără scurgere
+      - nivel antigel scăzut
+      - Kühlmittelverlust
+      - perte de liquide de refroidissement
+      - pérdida de refrigerante
+      - perdita di refrigerante
+      - koelvloeistofverlies
+    keywords:
+      - coolant loss
+      - unexplained coolant loss
+      - coolant disappearing
+      - pierdere antigel
+    possible_causes:
+      - internal coolant leak
+      - head gasket failure
+      - EGR cooler leak where fitted
+      - heater core leak
+      - small external leak evaporating on hot components
+      - coolant cap pressure fault
+    diagnostic_steps:
+      - Pressure-test the cooling system.
+      - Inspect for dried coolant residue.
+      - Check engine oil for coolant contamination.
+      - Check exhaust for persistent white vapor.
+      - Test for combustion gases in the cooling system.
+      - Inspect the EGR cooler where fitted.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: ford_focus_mk3_oil_level_increasing_diesel
+    vehicle:
+      manufacturer: ford
+      models:
+        - focus
+      generations:
+        - focus_mk3
+      engines:
+        - 16_tdci
+        - 20_tdci
+        - 15_tdci
+    category: diagnostics
+    system: lubrication
+    title:
+      en: Engine Oil Level Increasing on Diesel Engine
+      ro: Creșterea nivelului uleiului la motor diesel
+      de: Steigender Motorölstand bei Dieselmotor
+      fr: Augmentation du niveau d'huile sur moteur diesel
+      es: Aumento del nivel de aceite en motor diésel
+      it: Aumento del livello dell'olio su motore diesel
+      nl: Stijgend motoroliepeil bij dieselmotor
+    symptoms:
+      - oil level increasing
+      - oil level above maximum
+      - rising engine oil level
+      - fuel dilution
+      - increasing oil level
+      - nivel ulei în creștere
+      - ulei peste maxim
+      - diluție cu motorină
+      - steigender Ölstand
+      - dilution de l'huile
+      - nivel de aceite creciente
+      - diluizione dell'olio
+      - stijgend oliepeil
+    keywords:
+      - rising oil level
+      - oil dilution
+      - fuel in oil
+      - oil level increasing
+      - nivel ulei crește
+    possible_causes:
+      - DPF regeneration fuel dilution
+      - incomplete DPF regeneration
+      - injector leakage
+      - excessive post injection
+      - fuel system fault
+    diagnostic_steps:
+      - Check engine oil level immediately.
+      - Check oil condition for diesel fuel contamination.
+      - Review DPF regeneration history where available.
+      - Check injector operation.
+      - Check for excessive or aborted regeneration events.
+      - Replace contaminated engine oil before continued operation if required.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: ford_focus_mk3_dpf_regeneration_fails_repeatedly
+    vehicle:
+      manufacturer: ford
+      models:
+        - focus
+      generations:
+        - focus_mk3
+      engines:
+        - 16_tdci
+        - 20_tdci
+        - 15_tdci
+    category: diagnostics
+    system: dpf
+    title:
+      en: Repeatedly Failed DPF Regeneration
+      ro: Regenerări DPF eșuate în mod repetat
+      de: Wiederholt fehlgeschlagene DPF-Regeneration
+      fr: Régénérations DPF répétitivement échouées
+      es: Regeneraciones del DPF fallidas repetidamente
+      it: Rigenerazioni DPF ripetutamente fallite
+      nl: Herhaaldelijk mislukte DPF-regeneratie
+    symptoms:
+      - DPF regeneration fails
+      - repeated regeneration failure
+      - DPF warning
+      - frequent regeneration
+      - reduced power
+      - regenerare DPF eșuată
+      - regenerări frecvente
+      - martor DPF
+      - putere redusă
+      - DPF-Regeneration fehlgeschlagen
+      - régénération DPF échouée
+      - regeneración DPF fallida
+      - rigenerazione DPF fallita
+      - mislukte DPF-regeneratie
+    keywords:
+      - DPF regeneration
+      - failed regeneration
+      - DPF blocked
+      - regeneration failure
+      - regenerare DPF
+    possible_causes:
+      - excessive soot loading
+      - faulty differential pressure sensor
+      - exhaust temperature sensor fault
+      - EGR fault
+      - injector fault
+      - thermostat keeping engine too cold
+      - short-trip operation
+      - exhaust restriction
+    diagnostic_steps:
+      - Check calculated DPF soot load.
+      - Check differential pressure across the DPF.
+      - Check exhaust temperature sensor readings.
+      - Verify engine reaches normal operating temperature.
+      - Check EGR and injector operation.
+      - Determine whether regeneration conditions are being achieved.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: ford_focus_mk3_dpf_warning_after_short_trips
+    vehicle:
+      manufacturer: ford
+      models:
+        - focus
+      generations:
+        - focus_mk3
+      engines:
+        - 16_tdci
+        - 20_tdci
+        - 15_tdci
+    category: diagnostics
+    system: dpf
+    title:
+      en: DPF Warning After Repeated Short Trips
+      ro: Martor DPF după deplasări repetate pe distanțe scurte
+      de: DPF-Warnung nach wiederholten Kurzstrecken
+      fr: Témoin DPF après trajets courts répétés
+      es: Testigo DPF después de trayectos cortos repetidos
+      it: Spia DPF dopo percorsi brevi ripetuti
+      nl: DPF-waarschuwing na herhaalde korte ritten
+    symptoms:
+      - DPF warning after short trips
+      - frequent DPF regeneration
+      - incomplete regeneration
+      - DPF light
+      - short journey driving
+      - martor DPF
+      - drumuri scurte
+      - regenerare incompletă
+      - DPF-Warnung
+      - trajets courts
+      - testigo DPF
+      - percorsi brevi
+      - DPF-waarschuwing
+    keywords:
+      - DPF short trips
+      - incomplete regeneration
+      - DPF warning
+      - regenerare incompletă
+    possible_causes:
+      - repeated interrupted regeneration
+      - excessive soot accumulation
+      - engine not reaching operating temperature
+      - faulty thermostat
+      - sensor fault preventing regeneration
+    diagnostic_steps:
+      - Check DPF soot load and regeneration history.
+      - Verify coolant temperature during normal driving.
+      - Check differential pressure sensor readings.
+      - Check exhaust temperature sensors.
+      - Determine whether normal regeneration conditions can be achieved.
+    related_dtcs: []
+    difficulty: intermediate
+
+  - id: ford_focus_mk3_boost_hose_oil_residue
+    vehicle:
+      manufacturer: ford
+      models:
+        - focus
+      generations:
+        - focus_mk3
+      engines:
+        - 10_ecoboost
+        - 15_ecoboost
+        - 16_ecoboost
+        - 20_ecoboost
+        - 16_tdci
+        - 20_tdci
+        - 15_tdci
+    category: diagnostics
+    system: turbocharging
+    title:
+      en: Oil Residue Around Turbocharger Charge-Air Hoses
+      ro: Urme de ulei în jurul furtunurilor de supraalimentare
+      de: Ölspuren an Ladeluftschläuchen
+      fr: Traces d'huile autour des durites de suralimentation
+      es: Restos de aceite alrededor de los manguitos de sobrealimentación
+      it: Tracce d'olio sui tubi di sovralimentazione
+      nl: Oliesporen rond turboslangen
+    symptoms:
+      - oil around boost hose
+      - oily intercooler hose
+      - oil residue on charge pipe
+      - boost leak
+      - loss of power
+      - ulei pe furtun turbo
+      - urme de ulei pe intercooler
+      - pierdere presiune turbo
+      - Öl an Ladeluftschlauch
+      - fuite de suralimentation
+      - fuga de sobrealimentación
+      - perdita di sovralimentazione
+      - lekkage turboslang
+    keywords:
+      - oil around boost hose
+      - oily intercooler hose
+      - boost hose leak
+      - furtun intercooler ulei
+    possible_causes:
+      - normal crankcase oil mist accumulation
+      - charge-air hose seal leak
+      - intercooler hose split
+      - excessive turbocharger oil leakage
+      - excessive crankcase pressure
+    diagnostic_steps:
+      - Inspect hose joints and seals for leakage.
+      - Check for boost pressure loss.
+      - Inspect the intercooler for excessive oil accumulation.
+      - Check turbocharger condition if oil contamination is excessive.
+      - Check crankcase ventilation.
+    related_dtcs: []
+    difficulty: intermediate
+
+  - id: ford_focus_mk3_throttle_response_delay
+    vehicle:
+      manufacturer: ford
+      models:
+        - focus
+      generations:
+        - focus_mk3
+      engines: all
+    category: diagnostics
+    system: throttle_control
+    title:
+      en: Delayed Throttle Response
+      ro: Răspuns întârziat al accelerației
+      de: Verzögerte Gasannahme
+      fr: Réponse retardée de l'accélérateur
+      es: Respuesta retardada del acelerador
+      it: Risposta ritardata dell'acceleratore
+      nl: Vertraagde gasrespons
+    symptoms:
+      - delayed throttle response
+      - throttle lag
+      - accelerator delay
+      - hesitation when pressing accelerator
+      - răspuns întârziat accelerație
+      - lag accelerație
+      - ezitare la accelerare
+      - verzögerte Gasannahme
+      - retard à l'accélération
+      - retraso del acelerador
+      - ritardo acceleratore
+      - vertraagde gasrespons
+    keywords:
+      - throttle lag
+      - delayed throttle response
+      - accelerator hesitation
+      - lag accelerație
+    possible_causes:
+      - electronic throttle fault
+      - accelerator pedal sensor fault
+      - turbocharger response delay
+      - MAF/MAP signal error
+      - EGR malfunction
+      - traction control intervention
+      - throttle adaptation issue
+    diagnostic_steps:
+      - Check accelerator pedal position signals.
+      - Check throttle position data.
+      - Scan for PCM and ABS/traction-control faults.
+      - Check MAF/MAP readings where applicable.
+      - Compare requested and actual torque or boost where supported.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: ford_focus_mk3_accelerator_pedal_intermittent
+    vehicle:
+      manufacturer: ford
+      models:
+        - focus
+      generations:
+        - focus_mk3
+      engines: all
+    category: diagnostics
+    system: throttle_control
+    title:
+      en: Intermittent Accelerator Pedal Response
+      ro: Răspuns intermitent al pedalei de accelerație
+      de: Unterbrochene Reaktion des Gaspedals
+      fr: Réponse intermittente de la pédale d'accélérateur
+      es: Respuesta intermitente del pedal del acelerador
+      it: Risposta intermittente del pedale acceleratore
+      nl: Intermitterende reactie van het gaspedaal
+    symptoms:
+      - accelerator intermittently stops responding
+      - intermittent throttle
+      - accelerator pedal cuts out
+      - reduced engine power
+      - pedala accelerație nu răspunde intermitent
+      - accelerație întreruptă
+      - putere redusă
+      - Gaspedal reagiert zeitweise nicht
+      - pédale intermittente
+      - pedal del acelerador intermitente
+      - pedale acceleratore intermittente
+      - gaspedaal reageert soms niet
+    keywords:
+      - accelerator pedal fault
+      - intermittent throttle
+      - pedal not responding
+      - accelerație intermitentă
+    possible_causes:
+      - accelerator pedal position sensor fault
+      - wiring fault
+      - connector fault
+      - PCM signal fault
+      - power supply interruption
+    diagnostic_steps:
+      - Monitor both accelerator pedal position signals.
+      - Check signal correlation.
+      - Inspect pedal connector and wiring.
+      - Perform a wiggle test where safe.
+      - Scan for related PCM faults.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: ford_fiesta_mk7_ecoboost_cold_start_misfire
+    vehicle:
+      manufacturer: ford
+      models:
+        - fiesta
+      generations:
+        - fiesta_mk7
+      engines:
+        - 10_ecoboost
+        - 10_ecoboost_92
+        - 10_ecoboost_103
+        - 15_ecoboost_st
+    category: diagnostics
+    system: ignition
+    title:
+      en: Cold-Start Misfire on EcoBoost Engine
+      ro: Rateu la pornirea la rece la motor EcoBoost
+      de: Fehlzündung beim Kaltstart eines EcoBoost-Motors
+      fr: Ratés au démarrage à froid sur moteur EcoBoost
+      es: Fallos de encendido en frío en motor EcoBoost
+      it: Mancate accensioni a freddo su motore EcoBoost
+      nl: Misfire bij koude start van EcoBoost-motor
+    symptoms:
+      - cold start misfire
+      - rough cold start
+      - engine shakes when cold
+      - misfire disappears when warm
+      - rateu la rece
+      - ralanti neregulat la rece
+      - motorul trepidează la rece
+      - Fehlzündung beim Kaltstart
+      - ratés à froid
+      - fallos de encendido en frío
+      - mancate accensioni a freddo
+      - misfire bij koude start
+    keywords:
+      - cold start misfire
+      - EcoBoost misfire
+      - rough cold start
+      - rateu la rece
+    possible_causes:
+      - spark plug fault
+      - ignition coil fault
+      - injector issue
+      - intake valve deposits
+      - vacuum leak
+      - coolant temperature sensor error
+      - low compression
+    diagnostic_steps:
+      - Check misfire counters by cylinder.
+      - Inspect spark plugs and ignition coils.
+      - Check fuel trims and injector operation.
+      - Check intake air leaks.
+      - Compare coolant temperature with ambient temperature before starting.
+      - Perform compression testing if the misfire persists.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: ford_fiesta_mk7_ecoboost_rough_idle_warm
+    vehicle:
+      manufacturer: ford
+      models:
+        - fiesta
+      generations:
+        - fiesta_mk7
+      engines:
+        - 10_ecoboost
+        - 10_ecoboost_92
+        - 10_ecoboost_103
+        - 15_ecoboost_st
+    category: diagnostics
+    system: engine
+    title:
+      en: Rough Idle After Engine Reaches Operating Temperature
+      ro: Ralanti instabil după încălzirea motorului
+      de: Unruhiger Leerlauf bei warmem Motor
+      fr: Ralenti instable moteur chaud
+      es: Ralentí inestable con el motor caliente
+      it: Minimo irregolare a motore caldo
+      nl: Onrustig stationair toerental bij warme motor
+    symptoms:
+      - rough warm idle
+      - unstable idle when hot
+      - engine shakes at idle
+      - warm idle fluctuation
+      - ralanti instabil la cald
+      - motor trepidează la ralanti
+      - variații ralanti
+      - unruhiger Leerlauf
+      - ralenti instable à chaud
+      - ralentí inestable en caliente
+      - minimo irregolare a caldo
+      - onrustig stationair
+    keywords:
+      - rough warm idle
+      - warm idle
+      - idle fluctuation
+      - ralanti la cald
+    possible_causes:
+      - vacuum leak
+      - PCV system fault
+      - throttle body contamination
+      - ignition misfire
+      - injector imbalance
+      - purge valve leakage
+      - oxygen sensor feedback issue
+    diagnostic_steps:
+      - Check short- and long-term fuel trims.
+      - Inspect vacuum and PCV systems.
+      - Check purge valve operation.
+      - Check throttle position and idle control.
+      - Check misfire counters.
+    related_dtcs: []
+    difficulty: intermediate
+
+  - id: ford_fiesta_mk7_ecoboost_turbo_hissing_noise
+    vehicle:
+      manufacturer: ford
+      models:
+        - fiesta
+      generations:
+        - fiesta_mk7
+      engines:
+        - 10_ecoboost
+        - 10_ecoboost_92
+        - 10_ecoboost_103
+        - 15_ecoboost_st
+    category: diagnostics
+    system: turbocharging
+    title:
+      en: Hissing Noise Under Boost
+      ro: Șuierat la evacuarea/admisiunea aerului sub presiune
+      de: Zischgeräusch unter Ladedruck
+      fr: Bruit de sifflement sous pression de suralimentation
+      es: Silbido bajo presión de sobrealimentación
+      it: Sibilo sotto pressione di sovralimentazione
+      nl: Sissend geluid onder turbodruk
+    symptoms:
+      - hissing under acceleration
+      - boost leak noise
+      - turbo hissing
+      - air escaping noise
+      - șuierat la accelerație
+      - pierdere presiune turbo
+      - zgomot de aer
+      - Zischen unter Last
+      - sifflement à l'accélération
+      - silbido al acelerar
+      - sibilo in accelerazione
+      - sissend geluid bij accelereren
+    keywords:
+      - turbo hissing
+      - boost leak
+      - air leak
+      - șuierat turbo
+    possible_causes:
+      - charge-air hose leak
+      - intercooler leak
+      - loose hose connection
+      - cracked intake pipe
+      - turbocharger fault
+      - wastegate or boost control issue
+    diagnostic_steps:
+      - Inspect all charge-air hoses and connections.
+      - Pressure-test the intake/charge-air system.
+      - Check requested and actual boost.
+      - Inspect the turbocharger and boost-control system.
+      - Check for oil residue around leaking joints.
+    related_dtcs: []
+    difficulty: intermediate
+
+  - id: ford_kuga_mk2_diesel_exhaust_blue_smoke
+    vehicle:
+      manufacturer: ford
+      models:
+        - kuga
+      generations:
+        - kuga_mk2
+      engines:
+        - 20_tdci
+        - 15_tdci
+    category: diagnostics
+    system: exhaust
+    title:
+      en: Blue Smoke From Diesel Exhaust
+      ro: Fum albastru la evacuarea motorului diesel
+      de: Blauer Rauch aus dem Dieselabgas
+      fr: Fumée bleue à l'échappement diesel
+      es: Humo azul del escape diésel
+      it: Fumo blu allo scarico diesel
+      nl: Blauwe rook uit dieseluitlaat
+    symptoms:
+      - blue smoke diesel
+      - blue exhaust smoke
+      - oil smoke
+      - increased oil consumption
+      - fum albastru diesel
+      - fum de ulei
+      - consum ulei
+      - blauer Dieselrauch
+      - fumée bleue diesel
+      - humo azul diésel
+      - fumo blu diesel
+      - blauwe dieselrook
+    keywords:
+      - diesel blue smoke
+      - turbo oil leak
+      - oil burning
+      - fum albastru diesel
+    possible_causes:
+      - turbocharger oil leakage
+      - excessive crankcase pressure
+      - piston ring wear
+      - valve stem seal wear
+      - excessive oil entering intake
+    diagnostic_steps:
+      - Check engine oil consumption.
+      - Inspect turbocharger and charge-air system for excessive oil.
+      - Check crankcase ventilation.
+      - Determine when the smoke occurs.
+      - Perform compression testing where required.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: ford_kuga_mk2_diesel_coolant_temperature_too_low
+    vehicle:
+      manufacturer: ford
+      models:
+        - kuga
+      generations:
+        - kuga_mk2
+      engines:
+        - 20_tdci
+        - 15_tdci
+    category: diagnostics
+    system: cooling
+    title:
+      en: Diesel Engine Runs Below Normal Temperature
+      ro: Motorul diesel funcționează sub temperatura normală
+      de: Dieselmotor erreicht nicht die normale Betriebstemperatur
+      fr: Moteur diesel fonctionnant sous la température normale
+      es: Motor diésel funcionando por debajo de la temperatura normal
+      it: Motore diesel con temperatura di esercizio troppo bassa
+      nl: Dieselmotor blijft onder de normale bedrijfstemperatuur
+    symptoms:
+      - engine runs too cold
+      - coolant temperature too low
+      - heater weak
+      - poor fuel economy
+      - frequent DPF regeneration
+      - motor prea rece
+      - temperatură antigel prea mică
+      - încălzire slabă
+      - consum crescut
+      - regenerări DPF frecvente
+      - Motor wird nicht warm
+      - température trop basse
+      - motor demasiado frío
+      - motore troppo freddo
+      - motor wordt niet warm
+    keywords:
+      - engine running cold
+      - thermostat stuck open
+      - low coolant temperature
+      - motor diesel rece
+    possible_causes:
+      - thermostat stuck open
+      - coolant temperature sensor fault
+      - cooling system control fault
+      - excessive cooling airflow
+    diagnostic_steps:
+      - Monitor coolant temperature from cold start.
+      - Compare scan-tool temperature with actual engine temperature.
+      - Check thermostat operation.
+      - Check whether low temperature is contributing to DPF regeneration problems.
+    related_dtcs: []
+    difficulty: intermediate
+
+  - id: ford_kuga_mk2_awd_warning
+    vehicle:
+      manufacturer: ford
+      models:
+        - kuga
+      generations:
+        - kuga_mk2
+      engines: all
+    category: diagnostics
+    system: awd
+    title:
+      en: AWD System Warning
+      ro: Avertizare sistem AWD
+      de: Warnung Allradantrieb
+      fr: Alerte du système AWD
+      es: Advertencia del sistema AWD
+      it: Avviso sistema AWD
+      nl: AWD-systeemwaarschuwing
+    symptoms:
+      - AWD warning
+      - four wheel drive warning
+      - AWD fault message
+      - rear wheels not driven
+      - avertizare AWD
+      - eroare tracțiune integrală
+      - mesaj sistem AWD
+      - Warnung Allrad
+      - défaut transmission intégrale
+      - fallo de tracción total
+      - guasto trazione integrale
+      - AWD-storing
+    keywords:
+      - AWD fault
+      - four wheel drive
+      - AWD warning
+      - tracțiune integrală
+    possible_causes:
+      - AWD control module fault
+      - rear differential clutch fault
+      - overheating AWD coupling
+      - wheel speed sensor fault
+      - low battery voltage
+      - wiring or communication fault
+    diagnostic_steps:
+      - Scan AWD and ABS modules.
+      - Check wheel-speed sensor data.
+      - Check battery and charging voltage.
+      - Inspect AWD coupling and wiring.
+      - Check for stored communication faults.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: ford_kuga_mk2_automatic_transmission_harsh_shift
+    vehicle:
+      manufacturer: ford
+      models:
+        - kuga
+      generations:
+        - kuga_mk2
+      engines: all
+    category: diagnostics
+    system: transmission
+    title:
+      en: Harsh Automatic Transmission Shifting
+      ro: Schimbări bruște ale transmisiei automate
+      de: Harte Schaltvorgänge des Automatikgetriebes
+      fr: Changements de rapports brusques de la boîte automatique
+      es: Cambios bruscos de la transmisión automática
+      it: Cambi marcia bruschi del cambio automatico
+      nl: Harde schakelingen van de automatische transmissie
+    symptoms:
+      - harsh gear shift
+      - hard shifting
+      - transmission jerking
+      - harsh engagement
+      - schimbări bruște
+      - smucituri transmisie
+      - cuplare brutală
+      - harte Schaltvorgänge
+      - à-coups de boîte
+      - tirones de transmisión
+      - cambi marcia bruschi
+      - harde schakelingen
+    keywords:
+      - harsh shifting
+      - transmission jerk
+      - automatic transmission
+      - schimbări bruște cutie
+    possible_causes:
+      - transmission fluid issue
+      - transmission adaptation issue
+      - solenoid fault
+      - valve body fault
+      - transmission control module fault
+      - engine torque-management fault
+    diagnostic_steps:
+      - Scan the transmission control module.
+      - Check transmission fluid condition where serviceable.
+      - Check commanded and actual gear.
+      - Review transmission adaptation values where supported.
+      - Check engine torque-related faults.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: ford_mondeo_mk4_diesel_dual_mass_flywheel_vibration
+    vehicle:
+      manufacturer: ford
+      models:
+        - mondeo
+      generations:
+        - mondeo_mk4
+      engines:
+        - 16_tdci
+        - 18_tdci
+        - 20_tdci
+        - 22_tdci
+    category: diagnostics
+    system: clutch
+    title:
+      en: Dual-Mass Flywheel Vibration
+      ro: Vibrații cauzate de volantă cu masă dublă
+      de: Vibrationen durch Zweimassenschwungrad
+      fr: Vibrations du volant moteur bi-masse
+      es: Vibraciones del volante bimasa
+      it: Vibrazioni del volano bimassa
+      nl: Trillingen door dubbelmassa vliegwiel
+    symptoms:
+      - dual mass flywheel vibration
+      - vibration at idle
+      - vibration during clutch engagement
+      - rattling from transmission
+      - vibrații volantă
+      - vibrații la ralanti
+      - vibrații la cuplarea ambreiajului
+      - Zweimassenschwungrad Vibrationen
+      - vibrations volant bimasse
+      - vibraciones volante bimasa
+      - vibrazioni volano bimassa
+      - trillingen dubbelmassa vliegwiel
+    keywords:
+      - dual mass flywheel
+      - DMF vibration
+      - flywheel rattle
+      - volantă masă dublă
+    possible_causes:
+      - worn dual mass flywheel
+      - excessive flywheel free play
+      - clutch wear
+      - engine misfire
+      - transmission mount wear
+    diagnostic_steps:
+      - Check whether vibration changes when the clutch is operated.
+      - Listen for flywheel rattle at idle.
+      - Check engine misfire data.
+      - Inspect clutch and flywheel according to manufacturer procedure.
+      - Check engine and transmission mounts.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: ford_mondeo_mk4_diesel_clutch_slip
+    vehicle:
+      manufacturer: ford
+      models:
+        - mondeo
+      generations:
+        - mondeo_mk4
+      engines:
+        - 16_tdci
+        - 18_tdci
+        - 20_tdci
+        - 22_tdci
+    category: diagnostics
+    system: clutch
+    title:
+      en: Clutch Slips Under High Load
+      ro: Ambreiajul patinează sub sarcină
+      de: Kupplung rutscht unter hoher Last
+      fr: Embrayage qui patine sous forte charge
+      es: Embrague patina bajo carga elevada
+      it: Frizione che slitta sotto carico elevato
+      nl: Koppeling slipt onder hoge belasting
+    symptoms:
+      - clutch slipping
+      - engine rpm rises without acceleration
+      - poor acceleration in high gear
+      - clutch smell
+      - ambreiaj patinează
+      - turația crește fără accelerație corespunzătoare
+      - accelerație slabă în treaptă superioară
+      - miros de ambreiaj
+      - Kupplung rutscht
+      - embrayage patine
+      - embrague patina
+      - frizione slitta
+      - koppeling slipt
+    keywords:
+      - clutch slip
+      - clutch slipping
+      - rpm flare
+      - ambreiaj patinează
+    possible_causes:
+      - worn clutch disc
+      - weak pressure plate
+      - oil contamination
+      - hydraulic clutch fault
+      - excessive clutch wear
+    diagnostic_steps:
+      - Road-test under controlled high-load conditions.
+      - Compare engine RPM with vehicle acceleration.
+      - Check clutch hydraulic operation.
+      - Inspect for oil contamination.
+      - Inspect clutch and pressure plate if slip is confirmed.
+    related_dtcs: []
+    difficulty: intermediate
+
+  - id: ford_mondeo_mk5_adblue_warning
+    vehicle:
+      manufacturer: ford
+      models:
+        - mondeo
+      generations:
+        - mondeo_mk5
+      engines: all
+    category: diagnostics
+    system: scr
+    title:
+      en: AdBlue/SCR Warning
+      ro: Avertizare AdBlue/SCR
+      de: AdBlue-/SCR-Warnung
+      fr: Alerte AdBlue/SCR
+      es: Advertencia AdBlue/SCR
+      it: Avviso AdBlue/SCR
+      nl: AdBlue/SCR-waarschuwing
+    symptoms:
+      - AdBlue warning
+      - SCR warning
+      - emissions system warning
+      - AdBlue countdown
+      - no restart countdown
+      - martor AdBlue
+      - avertizare SCR
+      - avertizare sistem emisii
+      - numărătoare inversă pornire
+      - AdBlue-Warnung
+      - alerte SCR
+      - advertencia SCR
+      - avviso SCR
+      - SCR-waarschuwing
+    keywords:
+      - AdBlue
+      - SCR
+      - DEF
+      - emissions warning
+      - AdBlue countdown
+    possible_causes:
+      - low AdBlue level
+      - AdBlue quality issue
+      - NOx sensor fault
+      - SCR dosing fault
+      - AdBlue pump fault
+      - crystallized injector
+      - wiring or communication fault
+    diagnostic_steps:
+      - Check AdBlue level and quality information.
+      - Scan SCR and engine modules.
+      - Check NOx sensor readings.
+      - Inspect SCR injector for crystallization.
+      - Check AdBlue pump pressure where supported.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: ford_mondeo_mk5_nox_sensor_fault
+    vehicle:
+      manufacturer: ford
+      models:
+        - mondeo
+      generations:
+        - mondeo_mk5
+      engines: all
+    category: diagnostics
+    system: scr
+    title:
+      en: NOx Sensor Fault Diagnosis
+      ro: Diagnosticare senzor NOx
+      de: Diagnose des NOx-Sensors
+      fr: Diagnostic du capteur NOx
+      es: Diagnóstico del sensor NOx
+      it: Diagnosi del sensore NOx
+      nl: Diagnose NOx-sensor
+    symptoms:
+      - NOx sensor fault
+      - emissions warning
+      - SCR fault
+      - AdBlue warning
+      - increased emissions
+      - martor NOx
+      - avertizare emisii
+      - eroare SCR
+      - avertizare AdBlue
+      - NOx-Sensorfehler
+      - défaut capteur NOx
+      - fallo sensor NOx
+      - guasto sensore NOx
+      - NOx-sensorfout
+    keywords:
+      - NOx sensor
+      - NOx fault
+      - SCR sensor
+      - senzor NOx
+    possible_causes:
+      - failed NOx sensor
+      - sensor heater fault
+      - wiring fault
+      - connector corrosion
+      - SCR system fault causing implausible NOx readings
+    diagnostic_steps:
+      - Scan the SCR and engine control modules.
+      - Check NOx sensor communication and supply.
+      - Check sensor heater operation where supported.
+      - Compare NOx readings with operating conditions.
+      - Inspect wiring and connectors.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: ford_smax_mk2_power_tailgate_not_operating
+    vehicle:
+      manufacturer: ford
+      models:
+        - smax
+      generations:
+        - smax_mk2
+      engines: all
+    category: diagnostics
+    system: body
+    title:
+      en: Power Tailgate Does Not Operate
+      ro: Hayonul electric nu funcționează
+      de: Elektrische Heckklappe funktioniert nicht
+      fr: Hayon électrique ne fonctionne pas
+      es: Portón eléctrico no funciona
+      it: Portellone elettrico non funziona
+      nl: Elektrische achterklep werkt niet
+    symptoms:
+      - power tailgate not working
+      - electric tailgate not opening
+      - tailgate stops moving
+      - tailgate reverses
+      - hayon electric defect
+      - hayon nu se deschide
+      - hayon se oprește
+      - Heckklappe funktioniert nicht
+      - hayon électrique en panne
+      - portón eléctrico no funciona
+      - portellone elettrico guasto
+      - elektrische achterklep defect
+    keywords:
+      - power tailgate
+      - electric tailgate
+      - tailgate fault
+      - hayon electric
+    possible_causes:
+      - tailgate motor fault
+      - position sensor fault
+      - obstacle detection activation
+      - wiring fault
+      - low battery voltage
+      - body control module fault
+    diagnostic_steps:
+      - Check battery voltage.
+      - Scan body control modules.
+      - Check tailgate motor operation.
+      - Inspect wiring through the tailgate hinges.
+      - Check position and anti-pinch signals where supported.
+    related_dtcs: []
+    difficulty: intermediate
+
+  - id: ford_smax_mk2_parking_sensor_false_alerts
+    vehicle:
+      manufacturer: ford
+      models:
+        - smax
+      generations:
+        - smax_mk2
+      engines: all
+    category: diagnostics
+    system: parking_assistance
+    title:
+      en: Parking Sensors Give False Obstacle Warnings
+      ro: Senzorii de parcare dau avertizări false
+      de: Parksensoren melden fälschlicherweise Hindernisse
+      fr: Faux avertissements des capteurs de stationnement
+      es: Avisos falsos de los sensores de aparcamiento
+      it: Falsi avvisi dei sensori di parcheggio
+      nl: Parkeersensoren geven valse obstakelwaarschuwingen
+    symptoms:
+      - parking sensor false warning
+      - parking sensor beeps continuously
+      - obstacle detected with nothing present
+      - parking sensor fault
+      - senzori parcare avertizare falsă
+      - senzori parcare bip continuu
+      - obstacol detectat fără obstacol
+      - Parksensor warnt fälschlicherweise
+      - faux avertissement radar de stationnement
+      - sensor de aparcamiento falso
+      - sensore parcheggio falso
+      - parkeersensor vals alarm
+    keywords:
+      - parking sensor false alarm
+      - parking sensor
+      - PDC false warning
+      - senzor parcare
+    possible_causes:
+      - contaminated sensor surface
+      - damaged parking sensor
+      - sensor mounting issue
+      - wiring fault
+      - moisture inside sensor
+      - parking assistance module fault
+    diagnostic_steps:
+      - Clean all parking sensors.
+      - Check sensor mounting and alignment.
+      - Scan the parking assistance module.
+      - Identify the affected sensor.
+      - Inspect sensor wiring and connectors.
+    related_dtcs: []
+    difficulty: intermediate
+
+  - id: ford_kuga_mk3_12v_battery_drain
+    vehicle:
+      manufacturer: ford
+      models:
+        - kuga
+      generations:
+        - kuga_mk3
+      engines: all
+    category: diagnostics
+    system: electrical
+    title:
+      en: 12V Battery Discharges While Vehicle Is Parked
+      ro: Bateria de 12 V se descarcă în timpul staționării
+      de: 12-V-Batterie entlädt sich während des Parkens
+      fr: Batterie 12 V qui se décharge à l'arrêt
+      es: Batería de 12 V se descarga con el vehículo estacionado
+      it: Batteria 12 V si scarica durante la sosta
+      nl: 12V-accu loopt leeg tijdens parkeren
+    symptoms:
+      - battery drains overnight
+      - battery discharge while parked
+      - flat battery after several days
+      - parasitic drain
+      - bateria se descarcă peste noapte
+      - consum parazit
+      - bateria moartă după staționare
+      - Batterie entlädt sich im Stand
+      - décharge batterie à l'arrêt
+      - batería descargada estacionado
+      - batteria scarica in sosta
+      - accu loopt leeg
+    keywords:
+      - battery drain
+      - parasitic drain
+      - overnight battery discharge
+      - consum parazit
+      - baterie se descarcă
+    possible_causes:
+      - module failing to enter sleep mode
+      - aftermarket accessory
+      - telematics module activity
+      - body control module activity
+      - faulty battery
+      - charging system issue
+    diagnostic_steps:
+      - Test battery condition and state of charge.
+      - Measure parasitic current after vehicle modules enter sleep mode.
+      - Check for modules remaining awake.
+      - Disconnect aftermarket accessories during testing.
+      - Scan body and communication modules for faults.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: ford_kuga_mk3_12v_battery_low_voltage_messages
+    vehicle:
+      manufacturer: ford
+      models:
+        - kuga
+      generations:
+        - kuga_mk3
+      engines: all
+    category: diagnostics
+    system: electrical
+    title:
+      en: Multiple Low-Voltage Warnings
+      ro: Mai multe avertizări de tensiune scăzută
+      de: Mehrere Unterspannungswarnungen
+      fr: Multiples alertes de sous-tension
+      es: Múltiples avisos de baja tensión
+      it: Molteplici avvisi di bassa tensione
+      nl: Meerdere waarschuwingen voor lage spanning
+    symptoms:
+      - multiple electrical warnings
+      - low voltage warning
+      - modules shutting down
+      - intermittent electrical faults
+      - multiple warning lights
+      - avertizări electrice multiple
+      - tensiune scăzută
+      - module care se opresc
+      - mehrere Unterspannungswarnungen
+      - alertes de sous-tension
+      - avisos de baja tensión
+      - avvisi di bassa tensione
+      - lage-spanningswaarschuwingen
+    keywords:
+      - low voltage
+      - undervoltage
+      - multiple electrical faults
+      - tensiune scăzută
+    possible_causes:
+      - weak 12V battery
+      - charging system fault
+      - poor ground connection
+      - loose battery terminal
+      - excessive voltage drop
+    diagnostic_steps:
+      - Measure battery voltage at rest.
+      - Measure voltage during engine cranking.
+      - Check charging voltage.
+      - Perform voltage-drop tests on positive and ground circuits.
+      - Scan all modules for undervoltage history.
+    related_dtcs: []
+    difficulty: intermediate
+
+  - id: ford_kuga_mk3_start_stop_unavailable
+    vehicle:
+      manufacturer: ford
+      models:
+        - kuga
+      generations:
+        - kuga_mk3
+      engines: all
+    category: diagnostics
+    system: electrical
+    title:
+      en: Auto Start-Stop System Unavailable
+      ro: Sistemul Auto Start-Stop indisponibil
+      de: Auto-Start-Stopp-System nicht verfügbar
+      fr: Système Start-Stop indisponible
+      es: Sistema Start-Stop no disponible
+      it: Sistema Start-Stop non disponibile
+      nl: Auto Start-Stop-systeem niet beschikbaar
+    symptoms:
+      - start stop unavailable
+      - auto start stop disabled
+      - start stop not working
+      - start-stop indisponibil
+      - sistem start stop dezactivat
+      - Start-Stopp nicht verfügbar
+      - système start-stop indisponible
+      - start-stop no disponible
+      - start-stop non disponibile
+      - start-stop niet beschikbaar
+    keywords:
+      - start stop unavailable
+      - auto start stop
+      - start-stop fault
+      - start stop indisponibil
+    possible_causes:
+      - low battery state of charge
+      - battery condition insufficient
+      - engine temperature not reached
+      - high electrical load
+      - HVAC demand
+      - brake or clutch switch condition
+      - system fault stored
+    diagnostic_steps:
+      - Check battery state of charge and condition.
+      - Check battery monitoring data where supported.
+      - Verify engine operating temperature.
+      - Check electrical load and climate-control demand.
+      - Scan the relevant control modules for inhibiting faults.
+    related_dtcs: []
+    difficulty: intermediate
+
+  - id: ford_puma_mk1_ecoboost_engine_shudder
+    vehicle:
+      manufacturer: ford
+      models:
+        - puma
+      generations:
+        - puma_mk1
+      engines: all
+    category: diagnostics
+    system: engine
+    title:
+      en: EcoBoost Engine Shudder During Light Acceleration
+      ro: Trepidații ale motorului EcoBoost la accelerație ușoară
+      de: EcoBoost-Motor ruckelt bei leichter Beschleunigung
+      fr: À-coups du moteur EcoBoost à faible accélération
+      es: Tirones del motor EcoBoost con aceleración ligera
+      it: Strattonamenti del motore EcoBoost a bassa accelerazione
+      nl: EcoBoost-motor schokt bij lichte acceleratie
+    symptoms:
+      - engine shudder
+      - hesitation during light acceleration
+      - jerking at low load
+      - drivability hesitation
+      - trepidații motor
+      - ezitare la accelerație ușoară
+      - smucituri la sarcină mică
+      - Motor ruckelt
+      - à-coups à faible charge
+      - tirones a baja carga
+      - strattonamenti a basso carico
+      - motor schokt bij lage belasting
+    keywords:
+      - engine shudder
+      - low load hesitation
+      - EcoBoost hesitation
+      - trepidații accelerație
+    possible_causes:
+      - ignition misfire
+      - spark plug wear
+      - ignition coil weakness
+      - fuel mixture issue
+      - throttle control issue
+      - turbocharger control instability
+      - engine mount issue
+    diagnostic_steps:
+      - Check misfire counters during light-load operation.
+      - Inspect spark plugs and ignition coils.
+      - Check fuel trims.
+      - Monitor throttle and boost parameters.
+      - Determine whether the vibration follows engine speed or vehicle speed.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: ford_puma_mk1_ecoboost_high_fuel_consumption
+    vehicle:
+      manufacturer: ford
+      models:
+        - puma
+      generations:
+        - puma_mk1
+      engines: all
+    category: diagnostics
+    system: fuel_system
+    title:
+      en: Excessive Fuel Consumption on EcoBoost Engine
+      ro: Consum excesiv de combustibil la motor EcoBoost
+      de: Überhöhter Kraftstoffverbrauch bei EcoBoost-Motor
+      fr: Consommation excessive de carburant sur moteur EcoBoost
+      es: Consumo excesivo de combustible en motor EcoBoost
+      it: Consumo eccessivo di carburante su motore EcoBoost
+      nl: Overmatig brandstofverbruik bij EcoBoost-motor
+    symptoms:
+      - high fuel consumption
+      - excessive fuel usage
+      - poor fuel economy
+      - fuel consumption increased
+      - consum mare
+      - consum crescut
+      - economie de combustibil slabă
+      - hoher Kraftstoffverbrauch
+      - consommation élevée
+      - consumo elevado
+      - consumo eccessivo
+      - hoog brandstofverbruik
+    keywords:
+      - high fuel consumption
+      - poor fuel economy
+      - rich mixture
+      - consum combustibil
+    possible_causes:
+      - thermostat fault
+      - oxygen sensor issue
+      - MAF/MAP measurement error
+      - injector leakage
+      - fuel pressure issue
+      - ignition misfire
+      - brake drag
+      - low tyre pressure
+    diagnostic_steps:
+      - Verify fuel consumption under comparable driving conditions.
+      - Check engine operating temperature.
+      - Check fuel trims and oxygen sensor operation.
+      - Check injector operation.
+      - Inspect intake air measurement.
+      - Check for mechanical causes such as brake drag and low tyre pressure.
+    related_dtcs: []
+    difficulty: intermediate
+
+  - id: ford_puma_mk1_front_camera_unavailable
+    vehicle:
+      manufacturer: ford
+      models:
+        - puma
+      generations:
+        - puma_mk1
+      engines: all
+    category: diagnostics
+    system: driver_assistance
+    title:
+      en: Front Camera Driver Assistance Unavailable
+      ro: Camera frontală pentru asistență indisponibilă
+      de: Frontkamera-Fahrerassistenz nicht verfügbar
+      fr: Assistance caméra avant indisponible
+      es: Asistencia de cámara frontal no disponible
+      it: Assistenza telecamera anteriore non disponibile
+      nl: Rijhulpcamera aan de voorzijde niet beschikbaar
+    symptoms:
+      - front camera unavailable
+      - driver assistance unavailable
+      - lane keeping unavailable
+      - traffic sign recognition unavailable
+      - camera blocked warning
+      - camera frontală indisponibilă
+      - asistență indisponibilă
+      - menținere bandă indisponibilă
+      - Frontkamera nicht verfügbar
+      - caméra avant indisponible
+      - cámara frontal no disponible
+      - telecamera anteriore non disponibile
+      - frontcamera niet beschikbaar
+    keywords:
+      - front camera
+      - camera blocked
+      - driver assistance unavailable
+      - lane keeping unavailable
+      - cameră frontală
+    possible_causes:
+      - dirty camera windshield area
+      - camera obstruction
+      - poor visibility
+      - camera calibration issue
+      - camera module fault
+      - CAN communication fault
+    diagnostic_steps:
+      - Inspect and clean the camera viewing area.
+      - Check for obstruction, condensation, or windshield damage.
+      - Scan driver-assistance modules.
+      - Check camera calibration status where supported.
+      - Check communication faults.
+    related_dtcs: []
+    difficulty: intermediate
+
+  - id: ford_ranger_mk3_diesel_black_smoke_acceleration
+    vehicle:
+      manufacturer: ford
+      models:
+        - ranger
+      generations:
+        - ranger_mk3
+      engines:
+        - 22_tdc_i
+        - 20_bi_turbo
+        - 32_tdc_i
+    category: diagnostics
+    system: air_fuel
+    title:
+      en: Black Smoke During Hard Acceleration
+      ro: Fum negru la accelerație puternică
+      de: Schwarzer Rauch bei starker Beschleunigung
+      fr: Fumée noire lors d'une forte accélération
+      es: Humo negro durante una aceleración fuerte
+      it: Fumo nero durante una forte accelerazione
+      nl: Zwarte rook bij sterke acceleratie
+    symptoms:
+      - black smoke hard acceleration
+      - black exhaust under load
+      - smoke when towing
+      - loss of power
+      - fum negru la accelerație puternică
+      - fum la tractare
+      - pierdere de putere
+      - schwarzer Rauch bei Vollast
+      - fumée noire à forte accélération
+      - humo negro bajo carga
+      - fumo nero sotto carico
+      - zwarte rook bij volle belasting
+    keywords:
+      - black smoke
+      - diesel smoke
+      - smoke under load
+      - towing smoke
+      - fum negru diesel
+    possible_causes:
+      - boost leak
+      - restricted air filter
+      - EGR fault
+      - MAF sensor error
+      - turbocharger control fault
+      - injector over-fueling
+      - intake restriction
+    diagnostic_steps:
+      - Inspect the complete intake and charge-air system.
+      - Check MAF and MAP readings.
+      - Compare requested and actual boost.
+      - Inspect EGR operation.
+      - Check injector correction and fuel delivery.
+      - Inspect the air filter.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: ford_ranger_mk3_diesel_white_smoke_cold
+    vehicle:
+      manufacturer: ford
+      models:
+        - ranger
+      generations:
+        - ranger_mk3
+      engines:
+        - 22_tdc_i
+        - 20_bi_turbo
+        - 32_tdc_i
+    category: diagnostics
+    system: combustion
+    title:
+      en: White Smoke From Diesel Exhaust During Cold Start
+      ro: Fum alb la evacuare la pornirea la rece a motorului diesel
+      de: Weißer Rauch beim Kaltstart des Dieselmotors
+      fr: Fumée blanche au démarrage à froid du diesel
+      es: Humo blanco durante el arranque en frío del diésel
+      it: Fumo bianco all'avviamento a freddo del diesel
+      nl: Witte rook bij koude start van dieselmotor
+    symptoms:
+      - white smoke cold start
+      - diesel white smoke
+      - rough cold start
+      - unburned diesel smell
+      - fum alb la rece
+      - fum alb diesel
+      - pornire neregulată la rece
+      - miros motorină nearsoarsă
+      - weißer Rauch beim Kaltstart
+      - fumée blanche à froid
+      - humo blanco en frío
+      - fumo bianco a freddo
+      - witte rook bij koude start
+    keywords:
+      - diesel white smoke
+      - white smoke cold start
+      - unburned diesel
+      - fum alb motorină
+    possible_causes:
+      - glow plug fault
+      - injector spray fault
+      - low compression
+      - fuel pressure issue
+      - coolant entering combustion chamber
+      - injection timing issue
+    diagnostic_steps:
+      - Check glow plug operation.
+      - Check fuel pressure during cold cranking.
+      - Check injector correction and operation.
+      - Verify coolant temperature reading before starting.
+      - Perform compression testing if required.
+      - Determine whether smoke disappears completely after warm-up.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: ford_ranger_mk3_diesel_oil_level_rising
+    vehicle:
+      manufacturer: ford
+      models:
+        - ranger
+      generations:
+        - ranger_mk3
+      engines:
+        - 22_tdc_i
+        - 20_bi_turbo
+        - 32_tdc_i
+    category: diagnostics
+    system: lubrication
+    title:
+      en: Rising Engine Oil Level on Diesel
+      ro: Creșterea nivelului uleiului la motor diesel
+      de: Steigender Motorölstand beim Diesel
+      fr: Niveau d'huile moteur diesel en augmentation
+      es: Aumento del nivel de aceite del motor diésel
+      it: Aumento del livello dell'olio motore diesel
+      nl: Stijgend motoroliepeil bij diesel
+    symptoms:
+      - oil level rising
+      - oil above maximum
+      - fuel dilution
+      - diesel in engine oil
+      - rising oil level
+      - nivel ulei în creștere
+      - ulei peste maxim
+      - motorină în ulei
+      - steigender Ölstand
+      - carburant dans l'huile
+      - combustible en el aceite
+      - gasolio nell'olio
+      - diesel in motorolie
+    keywords:
+      - rising oil level
+      - diesel dilution
+      - fuel in oil
+      - oil level increasing
+      - nivel ulei crește
+    possible_causes:
+      - DPF regeneration dilution
+      - injector leakage
+      - excessive post injection
+      - incomplete regeneration
+      - fuel system fault
+    diagnostic_steps:
+      - Check oil level and condition.
+      - Check DPF regeneration history.
+      - Check injector leakage and correction values.
+      - Check for excessive regeneration frequency.
+      - Replace oil if significant fuel dilution is confirmed.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: ford_ranger_mk3_automatic_transmission_overheating
+    vehicle:
+      manufacturer: ford
+      models:
+        - ranger
+      generations:
+        - ranger_mk3
+      engines: all
+    category: diagnostics
+    system: transmission
+    title:
+      en: Automatic Transmission Overheating
+      ro: Supraîncălzirea transmisiei automate
+      de: Überhitzung des Automatikgetriebes
+      fr: Surchauffe de la transmission automatique
+      es: Sobrecalentamiento de la transmisión automática
+      it: Surriscaldamento del cambio automatico
+      nl: Oververhitting van de automatische transmissie
+    symptoms:
+      - transmission overheating
+      - transmission temperature warning
+      - harsh shifting when hot
+      - towing transmission overheating
+      - cutie automată se supraîncălzește
+      - temperatură transmisie ridicată
+      - schimbări dure la cald
+      - supraîncălzire la tractare
+      - Getriebe überhitzt
+      - surchauffe boîte
+      - transmisión sobrecalentada
+      - cambio surriscaldato
+      - transmissie oververhit
+    keywords:
+      - transmission overheating
+      - gearbox temperature
+      - automatic transmission hot
+      - transmisie supraîncălzită
+    possible_causes:
+      - low transmission fluid
+      - degraded transmission fluid
+      - restricted transmission cooler
+      - excessive towing load
+      - transmission slip
+      - temperature sensor fault
+      - cooling system fault
+    diagnostic_steps:
+      - Check transmission temperature data.
+      - Inspect transmission fluid condition where applicable.
+      - Inspect transmission cooling system.
+      - Check for transmission slip.
+      - Scan the transmission control module for temperature-related faults.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: ford_ranger_mk3_four_wheel_drive_not_engaging
+    vehicle:
+      manufacturer: ford
+      models:
+        - ranger
+      generations:
+        - ranger_mk3
+      engines: all
+    category: diagnostics
+    system: four_wheel_drive
+    title:
+      en: Four-Wheel Drive Does Not Engage
+      ro: Tracțiunea integrală nu se cuplează
+      de: Allradantrieb lässt sich nicht zuschalten
+      fr: La transmission intégrale ne s'enclenche pas
+      es: La tracción a las cuatro ruedas no se conecta
+      it: La trazione integrale non si inserisce
+      nl: Vierwielaandrijving schakelt niet in
+    symptoms:
+      - four wheel drive not engaging
+      - 4x4 not working
+      - 4WD unavailable
+      - transfer case fault
+      - 4x4 nu se cuplează
+      - tracțiune integrală indisponibilă
+      - cutie de transfer
+      - Allrad schaltet nicht ein
+      - transmission intégrale inactive
+      - 4x4 no funciona
+      - 4x4 non inseribile
+      - vierwielaandrijving werkt niet
+    keywords:
+      - 4x4 not engaging
+      - 4WD fault
+      - transfer case
+      - tracțiune integrală
+    possible_causes:
+      - transfer case actuator fault
+      - 4WD control module fault
+      - shift motor fault
+      - wiring fault
+      - low battery voltage
+      - mechanical transfer case fault
+    diagnostic_steps:
+      - Scan the four-wheel-drive control system.
+      - Check 4WD mode commands and feedback.
+      - Check actuator operation.
+      - Inspect wiring and connectors.
+      - Check battery voltage.
+      - Inspect transfer-case mechanical operation if electrical controls are functional.
+    related_dtcs: []
+    difficulty: advanced
+
   - id: ford_focus_mk2_blue_exhaust_smoke
     vehicle:
       manufacturer: ford
