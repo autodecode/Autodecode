@@ -738,7 +738,7 @@ const I={
         sm:'Seleziona marca',
         smod:'Seleziona modello',
         sg:'Seleziona generazione',
-        sy:"Seleziona anno",
+        sy:'Seleziona anno',
         se:'Seleziona motore',
         ph:'Esempio: Il motore ha pochissima potenza ai bassi regimi e a volte entra in modalità emergenza.',
         find:'TROVA SOLUZIONE',
@@ -1177,21 +1177,57 @@ function localizedValue(value){
     }
 
     if(Array.isArray(value)){
-        return value.join(', ');
+
+        return value
+            .map(localizedValue)
+            .filter(Boolean)
+            .join(', ');
+
     }
 
     if(typeof value==='object'){
 
-        return (
+        let selected =
             value[L] ??
             value.en ??
-            value.ro ??
-            Object.values(value)[0] ??
-            ''
-        );
+            value.ro;
+
+        if(selected!=null){
+
+            if(Array.isArray(selected)){
+
+                return selected
+                    .map(localizedValue)
+                    .filter(Boolean)
+                    .join(', ');
+
+            }
+
+            if(typeof selected==='object'){
+
+                return localizedValue(selected);
+
+            }
+
+            return String(selected);
+
+        }
+
+        for(const x of Object.values(value)){
+
+            let result=
+                localizedValue(x);
+
+            if(result){
+                return result;
+            }
+
+        }
+
     }
 
     return String(value);
+
 }
 
 
@@ -1329,6 +1365,7 @@ function concepts(q){
     }
 
     return [...new Set(p)];
+
 }
 
 
@@ -1340,6 +1377,7 @@ function expanded(p){
             ...p.flatMap(c=>E[c]||[])
         ])
     ];
+
 }
 
 
@@ -1349,9 +1387,42 @@ function expanded(p){
 
 function title(r){
 
-    return localizedValue(r.title) ||
-           r.id ||
-           'Diagnostic information';
+    /*
+     * Prefer the proper human-readable diagnostic title.
+     */
+
+    let value =
+        localizedValue(r.title) ||
+        localizedValue(r.name) ||
+        localizedValue(r.description) ||
+        localizedValue(r.symptom) ||
+        localizedValue(r.problem) ||
+        localizedValue(r.issue);
+
+    if(value){
+        return value;
+    }
+
+    /*
+     * Last-resort fallback.
+     *
+     * Do not expose the raw backend ID directly.
+     * Convert it into a readable title instead.
+     */
+
+    if(r.id){
+
+        return String(r.id)
+            .replace(/^ford_/i,'')
+            .replace(/[_-]+/g,' ')
+            .replace(/\s+/g,' ')
+            .trim()
+            .replace(/\b\w/g,c=>c.toUpperCase());
+
+    }
+
+    return 'Diagnostic information';
+
 }
 
 
@@ -1393,7 +1464,29 @@ function matchesValue(selected,value){
 
 function vehicleMatch(r,v){
 
-    let x=r.vehicle||{};
+    /*
+     * Modern schema:
+     *
+     * vehicle:
+     *   manufacturer:
+     *   models:
+     *   generations:
+     *   engines:
+     *
+     * Legacy schema:
+     *
+     * models:
+     * generations:
+     * engines:
+     *
+     * Support both.
+     */
+
+    let x =
+        r.vehicle &&
+        typeof r.vehicle==='object'
+            ? r.vehicle
+            : r;
 
     return (
 
@@ -1417,6 +1510,7 @@ function vehicleMatch(r,v){
         )
 
     );
+
 }
 
 
