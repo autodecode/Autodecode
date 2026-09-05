@@ -348,38 +348,159 @@ fuzzyTokenMatch(text,alias)
 const symptomAliases={
 
 poor_power:[
-"no power","low power","little power","very little power",
-"engine has little power","engine has very little power",
-"engine has low power","engine has reduced power",
-"loss of power","reduced power","poor power",
-"lacks power","lack of power","does not pull","won't accelerate",
-"reduced engine power","loss of engine power",
-"poor engine performance","reduced engine performance",
-"engine lacks power","engine has no power",
-"poor acceleration","nu mai trage","nu mai are putere","pierdere de putere","pierde putere",
-"lipsa de putere","fara putere","fără putere","putere redusa","putere redusă","faible puissance","manque de puissance","perte de puissance",
+"no power",
+"low power",
+"little power",
+"very little power",
+"engine has little power",
+"engine has very little power",
+"engine has low power",
+"engine has reduced power",
+"loss of power",
+"reduced power",
+"poor power",
+"lacks power",
+"lack of power",
+"engine lacks power",
+"engine has no power",
+"loss of engine power",
+"reduced engine power",
+"poor engine performance",
+"reduced engine performance",
+"poor acceleration",
+"does not pull",
+"won't accelerate",
+
+"nu mai trage",
+"nu mai are putere",
+"pierdere de putere",
+"pierde putere",
+"lipsa de putere",
+"fara putere",
+"fără putere",
+"putere redusa",
+"putere redusă",
+
+"faible puissance",
+"manque de puissance",
+"perte de puissance",
 "manque de puissance moteur",
-"poca potencia","falta de potencia","perdida de potencia",
-"poca potenza","mancanza di potenza","perdita di potenza",
-"weinig vermogen","vermogenverlies","minder vermogen",
-"keine leistung","wenig leistung","leistungsverlust"
+
+"poca potencia",
+"falta de potencia",
+"perdida de potencia",
+
+"poca potenza",
+"mancanza di potenza",
+"perdita di potenza",
+
+"weinig vermogen",
+"vermogenverlies",
+"minder vermogen",
+
+"keine leistung",
+"wenig leistung",
+"leistungsverlust"
 ],
 
 low_rpm_power_loss:[
-"low rpm","low revs","low engine speed","at low rpm","low speed acceleration",
-"bas regime","bas régime","a bas regime","à bas régime","basses regimes",
-"bajas rpm","bajo regimen","bajos regimenes","bassi regimi","a bassi regimi",
-"lage toerentallen","bij lage toerentallen","niedrige drehzahl",
-"bei niedrigen drehzahlen","unteren drehzahlen","turații mici","turatii mici",
-"la turații mici","la turatii mici","jos en rpm"
+"low rpm",
+"low revs",
+"low engine speed",
+"at low rpm",
+"at low revs",
+"low rpm acceleration",
+"low rev acceleration",
+"poor low rpm power",
+"low rpm power loss",
+"loss of power at low rpm",
+"little power at low rpm",
+"very little power at low rpm",
+"engine has little power at low rpm",
+"engine has low power at low rpm",
+"low speed acceleration",
+
+"bas regime",
+"bas régime",
+"a bas regime",
+"à bas régime",
+"basses regimes",
+
+"bajas rpm",
+"bajo regimen",
+"bajos regimenes",
+
+"bassi regimi",
+"a bassi regimi",
+
+"lage toerentallen",
+"bij lage toerentallen",
+
+"niedrige drehzahl",
+"bei niedrigen drehzahlen",
+"unteren drehzahlen",
+
+"turații mici",
+"turatii mici",
+"la turații mici",
+"la turatii mici",
+
+"jos en rpm"
 ],
 
 limp_mode:[
-"limp mode","limp home","reduced power mode","emergency mode","safe mode",
-"notlauf","notprogramm","schutzbetrieb","mode degradé","mode dégradé",
-"mode secours","modo emergencia","modo degradado","modalita recovery",
-"modalità recovery","modalita emergenza","noodloop","veiligheidsmodus",
-"mod avarie","mod de avarie","modul avarie","mod degradat","modul degradat"
+"limp mode",
+"goes into limp mode",
+"goes in limp mode",
+"goes limp mode",
+"went into limp mode",
+"went in limp mode",
+"went limp mode",
+"engine goes into limp mode",
+"engine goes in limp mode",
+"engine goes limp mode",
+"engine went into limp mode",
+"engine went limp mode",
+"car goes into limp mode",
+"car goes in limp mode",
+"car goes limp mode",
+"car went into limp mode",
+"vehicle goes into limp mode",
+"vehicle goes limp mode",
+"enters limp mode",
+"entering limp mode",
+"entered limp mode",
+"keeps going into limp mode",
+"intermittent limp mode",
+"limp-home",
+"limp home",
+"reduced power mode",
+"emergency mode",
+"safe mode",
+
+"notlauf",
+"notprogramm",
+"schutzbetrieb",
+
+"mode degrade",
+"mode dégradé",
+"mode secours",
+
+"modo emergencia",
+"modo degradado",
+
+"modalita recovery",
+"modalità recovery",
+"modalita emergenza",
+
+"noodloop",
+"veiligheidsmodus",
+
+"mod avarie",
+"mod de avarie",
+"modul avarie",
+"mod degradat",
+"modul degradat"
 ],
 
 engine_stall:[
@@ -4054,6 +4175,11 @@ engine:[
 "hard_start",
 "rough_idle",
 "misfire",
+
+"poor_power",
+"low_rpm_power_loss",
+"limp_mode",
+
 "fuel_pressure",
 "crankshaft",
 "camshaft",
@@ -4200,6 +4326,10 @@ if(
 "rough_idle",
 "hard_start",
 
+"poor_power",
+"low_rpm_power_loss",
+"limp_mode",
+
 "bluetooth",
 "carplay",
 "android_auto",
@@ -4211,10 +4341,11 @@ if(
 "camera",
 "radar",
 "parking_sensor"
+
 ].includes(concept)
 ){
 
-primary.push(concept)
+primary.push(concept);
 
 }
 
@@ -4222,7 +4353,7 @@ primary.push(concept)
 
 return primary.length
 ?primary
-:userSymptoms.slice(0,3)
+:userSymptoms.slice(0,3);
 
 }
 
