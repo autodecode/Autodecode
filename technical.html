@@ -5023,7 +5023,6 @@ userSymptoms,
 itemSymptoms,
 exactEvidence
 ){
-
 if(!userSymptoms.length)
 return 0;
 
@@ -5047,47 +5046,110 @@ itemSymptoms
 
 let penalty=0;
 
-/*
-   If an exact primary concept exists in the item,
-   there is no conflict.
-*/
+/* Strong engine-related user symptoms */
+const strongEngineConcepts=[
+"engine_stall",
+"crank_no_start",
+"no_start",
+"fuel_pressure",
+"crankshaft",
+"camshaft",
+"synchronization",
+"misfire",
+"rough_idle",
+"hard_start",
+"poor_power",
+"low_rpm_power_loss",
+"limp_mode",
+"turbo",
+"dpf",
+"scr",
+"egr",
+"maf",
+"map",
+"injector",
+"coolant",
+"overheating",
+"oil_pressure"
+];
 
+const strongEnginePrimary=
+primary.some(
+c=>strongEngineConcepts.includes(c)
+);
+
+/*
+ * Determine whether the result actually belongs
+ * to an engine/powertrain-related system.
+ */
+const itemSystems=
+typeof getSystemGroups==="function"
+?getSystemGroups(item)
+:[];
+
+const engineSystems=[
+"engine",
+"pcm",
+"ecm",
+"powertrain",
+"fuel",
+"turbo",
+"dpf",
+"egr",
+"engine_management",
+"engine_control"
+];
+
+const itemIsEngine=
+itemDomains.includes("engine")||
+itemSystems.some(
+s=>engineSystems.includes(
+String(s).toLowerCase()
+)
+);
+
+/*
+ * Critical mismatch:
+ * If the user describes a strong engine symptom,
+ * a non-engine result must be heavily suppressed.
+ *
+ * This prevents cases such as:
+ * "Engine has little power and goes limp mode"
+ * returning an ABS power-supply fault merely because
+ * the generic word "power" appears in both records.
+ */
+if(
+strongEnginePrimary &&
+!itemIsEngine &&
+!primary.some(
+c=>itemSymptoms.includes(c)
+)
+){
+penalty-=140;
+}
+
+/* Exact primary concept match overrides domain penalty */
 const exactPrimary=
 primary.some(
 c=>itemSymptoms.includes(c)
 );
 
 if(exactPrimary)
-return 0;
-
-/*
-   If the item has a different strong technical domain,
-   apply a large penalty.
-*/
+return penalty;
 
 if(
 primaryDomains.length&&
 itemDomains.length
 ){
-
 const sameDomain=
 primaryDomains.some(
 d=>itemDomains.includes(d)
 );
 
 if(!sameDomain){
-
-penalty-=110
-
+penalty-=110;
 }
-
 }
-
-/*
-   Even without explicit domain metadata, a known
-   component concept that conflicts with the user query
-   gets penalized.
-*/
 
 const unrelatedSpecific=
 itemSymptoms.some(
@@ -5102,9 +5164,7 @@ primary[0]
 );
 
 if(unrelatedSpecific){
-
-penalty-=45
-
+penalty-=45;
 }
 
 /*
