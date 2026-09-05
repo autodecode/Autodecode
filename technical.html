@@ -2453,26 +2453,19 @@ async function loadTechnicalDatabase(id){
 function repairTechnicalYaml(source){
 
   const lines = source.replace(/\r\n/g,"\n").split("\n");
-
-  const output = [];
+  const result = [];
 
   let insideTechnicalData = false;
-  let currentRecord = false;
 
-  /*
-   * Keys which contain YAML arrays.
-   *
-   * Their "-" children must always be indented one level deeper.
-   */
   const arrayKeys = new Set([
     "models",
+    "generations",
     "systems",
     "symptoms",
     "causes",
     "checks",
     "solutions",
     "related_dtcs",
-    "dtcs",
     "keywords",
     "aliases",
     "components",
@@ -2489,45 +2482,17 @@ function repairTechnicalYaml(source){
     "references"
   ]);
 
-  /*
-   * Keys which normally contain nested objects.
-   */
-  const objectKeys = new Set([
-    "vehicle",
-    "title",
-    "description",
-    "diagnosis",
-    "diagnostic",
-    "repair",
-    "procedure",
-    "condition",
-    "requirements",
-    "engine",
-    "transmission",
-    "system",
-    "metadata"
-  ]);
-
-  /*
-   * Technical record keys.
-   *
-   * These MUST sit directly under:
-   *
-   * technical_data:
-   *
-   * at indentation level 2.
-   */
   const recordKeys = new Set([
     "id",
     "vehicle",
     "title",
     "description",
+    "models",
+    "systems",
     "symptoms",
     "causes",
     "checks",
     "solutions",
-    "models",
-    "systems",
     "related_dtcs",
     "difficulty",
     "keywords",
@@ -2546,14 +2511,27 @@ function repairTechnicalYaml(source){
     "references"
   ]);
 
-  /*
-   * Remove comments only when they are not inside quotes.
-   * We deliberately keep the original text otherwise.
-   */
+  const vehicleKeys = new Set([
+    "manufacturer",
+    "model",
+    "models",
+    "generation",
+    "generations",
+    "year",
+    "years",
+    "engine",
+    "engines",
+    "body",
+    "fuel",
+    "transmission",
+    "drive",
+    "variant"
+  ]);
+
+  let context = [];
+
   function getKey(text){
-
     const m = text.match(/^([A-Za-z0-9_]+):(?:\s|$)/);
-
     return m ? m[1] : null;
   }
 
@@ -2565,367 +2543,216 @@ function repairTechnicalYaml(source){
     return /^-\s+id\s*:/.test(text.trim());
   }
 
-  function isTechnicalRoot(text){
-    return /^technical_data\s*:/.test(text.trim());
-  }
-
-  /*
-   * Determine whether this is clearly a technical record key.
-   */
-  function isRecordKey(text){
-
-    const key = getKey(text.trim());
-
-    return !!key && recordKeys.has(key);
-  }
-
-  /*
-   * Find nearest previous non-empty line.
-   */
-  function previousMeaningful(index){
-
-    for(let i=index-1;i>=0;i--){
-
-      if(lines[i].trim() !== ""){
-        return {
-          index:i,
-          text:lines[i]
-        };
-      }
-    }
-
-    return null;
-  }
-
-  /*
-   * Find next non-empty line.
-   */
-  function nextMeaningful(index){
-
-    for(let i=index+1;i<lines.length;i++){
-
-      if(lines[i].trim() !== ""){
-        return {
-          index:i,
-          text:lines[i]
-        };
-      }
-    }
-
-    return null;
-  }
-
-  /*
-   * Track the currently active YAML hierarchy.
-   *
-   * Each entry:
-   *
-   * {
-   *   key,
-   *   indent
-   * }
-   */
-  const stack = [];
-
-  function cleanStack(indent){
+  function setContext(key, indent){
 
     while(
-      stack.length &&
-      indent <= stack[stack.length - 1].indent
+      context.length &&
+      context[context.length - 1].indent >= indent
     ){
-      stack.pop();
+      context.pop();
     }
+
+    context.push({
+      key,
+      indent
+    });
+  }
+
+  function getParent(){
+    return context.length
+      ? context[context.length - 1]
+      : null;
   }
 
   for(let i=0;i<lines.length;i++){
 
     const original = lines[i];
-
-    if(original.trim() === ""){
-      output.push("");
-      continue;
-    }
-
     const trimmed = original.trim();
 
-    /*
-     * Preserve YAML document markers.
-     */
-    if(trimmed === "---" || trimmed === "..."){
-      output.push(trimmed);
+    if(trimmed === ""){
+      result.push("");
       continue;
     }
 
     /*
-     * Detect technical_data root.
-     */
-    if(isTechnicalRoot(original)){
-      insideTechnicalData = true;
-      currentRecord = false;
-      stack.length = 0;
-
-      output.push("technical_data:");
-      continue;
-    }
-
-    /*
-     * Before technical_data we preserve the original indentation,
-     * because manufacturer metadata is already valid.
+     * Everything before technical_data is left EXACTLY as it was.
      */
     if(!insideTechnicalData){
 
-      output.push(original);
-      continue;
-    }
+      result.push(original);
 
-    /* ============================================================
-       TECHNICAL RECORD START
-       ============================================================ */
-
-    if(isRecordStart(original)){
-
-      currentRecord = true;
-
-      stack.length = 0;
-
-      /*
-       * EVERY technical record starts at exactly 2 spaces.
-       */
-      output.push(
-        "  " + trimmed
-      );
-
-      /*
-       * id is now the first key inside the record.
-       */
-      stack.push({
-        key:"__record__",
-        indent:2
-      });
+      if(trimmed === "technical_data:"){
+        insideTechnicalData = true;
+      }
 
       continue;
     }
 
     /*
-     * If we encounter another top-level YAML section after the
-     * technical database, stop applying technical normalization.
+     * New technical record
      */
-    if(
-      currentRecord &&
-      trimmed.endsWith(":") &&
-      !isRecordKey(original) &&
-      original.search(/\S/) === 0
-    ){
+    if(isRecordStart(trimmed)){
 
-      /*
-       * Usually this means a new root-level section.
-       */
-      if(
-        trimmed !== "models:" &&
-        trimmed !== "systems:" &&
-        trimmed !== "symptoms:"
-      ){
-        currentRecord = false;
-        insideTechnicalData = false;
+      context = [];
 
-        output.push(original);
-        continue;
-      }
-    }
-
-    /* ============================================================
-       NORMALIZE RECORD KEYS
-       ============================================================ */
-
-    const key = getKey(trimmed);
-
-    if(key && recordKeys.has(key)){
-
-      /*
-       * All direct record keys are exactly 4 spaces.
-       */
-      const indent = 4;
-
-      output.push(
-        " ".repeat(indent) + trimmed
+      result.push(
+        "  " + trimmed
       );
 
-      /*
-       * Remove hierarchy deeper than record level.
-       */
-      while(
-        stack.length &&
-        stack[stack.length - 1].indent >= indent
-      ){
-        stack.pop();
-      }
-
-      stack.push({
-        key,
-        indent
+      context.push({
+        key: "__record__",
+        indent: 2
       });
 
       continue;
     }
 
-    /* ============================================================
-       LIST ITEMS
-       ============================================================ */
+    const key = getKey(trimmed);
 
-    if(isListItem(original)){
+    /*
+     * Direct keys belonging to the technical record
+     */
+    if(key && recordKeys.has(key)){
 
-      /*
-       * Determine parent from stack.
-       */
-      const parent =
-        stack.length
-          ? stack[stack.length - 1]
-          : null;
+      const indent = 4;
+
+      result.push(
+        " ".repeat(indent) + trimmed
+      );
+
+      setContext(key, indent);
+
+      continue;
+    }
+
+    /*
+     * Keys inside vehicle:
+     *
+     * vehicle:
+     *   manufacturer:
+     *   models:
+     *   generations:
+     */
+    if(
+      key &&
+      vehicleKeys.has(key) &&
+      context.some(x => x.key === "vehicle")
+    ){
+
+      const indent = 6;
+
+      result.push(
+        " ".repeat(indent) + trimmed
+      );
+
+      setContext(key, indent);
+
+      continue;
+    }
+
+    /*
+     * List items.
+     *
+     * Example:
+     *
+     * models:
+     *   - focus
+     *   - fiesta
+     *
+     * generations:
+     *   - focus_mk2
+     */
+    if(isListItem(trimmed)){
+
+      const parent = getParent();
 
       let indent = 6;
 
       if(parent){
-
-        /*
-         * Array values must be one level deeper than their key.
-         */
         indent = parent.indent + 2;
       }
 
-      /*
-       * If the previous meaningful line is a key such as models:
-       * force the list under it.
-       */
-      const prev = previousMeaningful(i);
-
-      if(prev){
-
-        const prevKey = getKey(prev.text.trim());
-
-        if(prevKey && arrayKeys.has(prevKey)){
-
-          const prevIndent =
-            prev.text.search(/\S/);
-
-          indent = prevIndent + 2;
-
-          /*
-           * If the parent key itself was repaired to 4 spaces,
-           * list must therefore be 6.
-           */
-          if(prevIndent < 4){
-            indent = 6;
-          }
-        }
-      }
-
-      /*
-       * Never allow technical list items to become root-level.
-       */
       if(indent < 6){
         indent = 6;
       }
 
-      output.push(
+      result.push(
         " ".repeat(indent) + trimmed
       );
 
       continue;
     }
 
-    /* ============================================================
-       NESTED KEYS
-       ============================================================ */
-
+    /*
+     * Nested keys
+     */
     if(key){
 
-      /*
-       * Find parent context.
-       */
-      const parent =
-        stack.length
-          ? stack[stack.length - 1]
-          : null;
+      const parent = getParent();
 
       let indent = 6;
 
       if(parent){
-
-        /*
-         * Nested keys are always two spaces deeper.
-         */
         indent = parent.indent + 2;
-
-        /*
-         * But never let a nested key escape the record.
-         */
-        if(indent > 12){
-          indent = 8;
-        }
       }
 
       /*
-       * Special handling for title translations:
-       *
        * title:
        *   en:
        *   ro:
-       *   ...
+       *   de:
        */
       if(parent && parent.key === "title"){
         indent = 6;
       }
 
       /*
-       * Special handling for vehicle:
-       *
        * vehicle:
        *   manufacturer:
-       *   model:
-       *   year:
+       *   models:
+       *   generations:
        */
       if(parent && parent.key === "vehicle"){
         indent = 6;
       }
 
-      output.push(
+      /*
+       * Array-related nested structure
+       */
+      if(parent && arrayKeys.has(parent.key)){
+        indent = parent.indent + 2;
+      }
+
+      result.push(
         " ".repeat(indent) + trimmed
       );
 
-      cleanStack(indent);
-
-      stack.push({
-        key,
-        indent
-      });
+      setContext(key, indent);
 
       continue;
     }
 
-    /* ============================================================
-       SCALAR / MULTILINE CONTENT
-       ============================================================ */
-
     /*
-     * Preserve multiline scalar lines but ensure they remain
-     * inside the current record.
+     * Scalar / continuation content
      */
+    const parent = getParent();
+
     let indent = 6;
 
-    if(stack.length){
-      indent =
-        Math.min(
-          stack[stack.length - 1].indent + 2,
-          10
-        );
+    if(parent){
+      indent = parent.indent + 2;
     }
 
-    output.push(
+    if(indent < 6){
+      indent = 6;
+    }
+
+    result.push(
       " ".repeat(indent) + trimmed
     );
   }
 
-  return output.join("\n");
+  return result.join("\n");
 }
    
 /* ============================================================
