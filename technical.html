@@ -3880,7 +3880,25 @@ engine:[
 "no_start",
 "crank_no_start",
 "poor_power",
-"misfire"
+"low_rpm_power_loss",
+"limp_mode",
+"misfire",
+"rough_idle",
+"hard_start",
+"fuel_pressure",
+"crankshaft",
+"camshaft",
+"synchronization",
+"turbo",
+"egr",
+"dpf",
+"scr",
+"maf",
+"map",
+"injector",
+"coolant",
+"overheating",
+"oil_pressure"
 ],
 
 cooling:[
@@ -4115,6 +4133,7 @@ sunroof:[
 
 };
 
+
 function getSystemGroups(item){
 
 const s=
@@ -4125,6 +4144,7 @@ item?.system||""
 return systemMap[s]||[]
 
 }
+
 
 function calculateSystemRelevance(
 item,
@@ -4154,17 +4174,10 @@ p
 
 }
 
+
 /* ============================================================
    PRIMARY / COMPONENT SEMANTICS
 ============================================================ */
-
-/*
-   These groups define concepts that identify a specific
-   physical/system component.
-
-   A component-specific query must strongly prefer records
-   belonging to the same component/system.
-*/
 
 const semanticDomains={
 
@@ -4185,8 +4198,6 @@ engine:[
 "camshaft",
 "synchronization",
 "starter",
-"immobilizer",
-"pats",
 "turbo",
 "egr",
 "dpf",
@@ -4197,6 +4208,10 @@ engine:[
 "coolant",
 "overheating",
 "oil_pressure",
+
+"immobilizer",
+"pats",
+
 "battery",
 "alternator"
 ],
@@ -4259,6 +4274,7 @@ safety:[
 
 };
 
+
 function getSemanticDomains(concepts){
 
 const result=
@@ -4285,15 +4301,8 @@ return[...result]
 
 }
 
+
 function getPrimaryUserConcepts(userSymptoms){
-
-/*
-   Concepts with a specific physical component or a
-   high-confidence symptom are primary.
-
-   Generic concepts generated only through expansion
-   are deliberately not promoted.
-*/
 
 const primary=[];
 
@@ -4330,6 +4339,17 @@ if(
 "low_rpm_power_loss",
 "limp_mode",
 
+"turbo",
+"dpf",
+"scr",
+"egr",
+"maf",
+"map",
+"injector",
+"coolant",
+"overheating",
+"oil_pressure",
+
 "bluetooth",
 "carplay",
 "android_auto",
@@ -4357,6 +4377,7 @@ return primary.length
 
 }
 
+
 function conceptsShareDomain(a,b){
 
 if(a===b)return true;
@@ -4380,6 +4401,7 @@ return true
 return false
 
 }
+
 
 /* ============================================================
    SEMANTIC RANKING
@@ -4405,6 +4427,10 @@ low_rpm_power_loss:25,
 turbo:25,
 dpf:25,
 scr:24,
+egr:24,
+maf:24,
+map:24,
+injector:24,
 
 misfire:24,
 rough_idle:23,
@@ -4455,12 +4481,6 @@ steering_controls:20,
 seat:17,
 sunroof:17,
 
-/*
-   Door-specific concepts get intentionally high weights.
-   These values also work for concepts loaded from the
-   external dictionary.
-*/
-
 door_handle_not_working:50,
 door_handle_hard_to_open:50,
 door_handle_loose:50,
@@ -4478,6 +4498,7 @@ door_cable_broken:52,
 default:15
 
 };
+
 
 const relationships=[
 
@@ -4548,6 +4569,14 @@ bonus:30
 
 {
 required:[
+"poor_power",
+"limp_mode"
+],
+bonus:28
+},
+
+{
+required:[
 "dpf",
 "poor_power"
 ],
@@ -4560,6 +4589,38 @@ required:[
 "poor_power"
 ],
 bonus:21
+},
+
+{
+required:[
+"turbo",
+"limp_mode"
+],
+bonus:18
+},
+
+{
+required:[
+"egr",
+"poor_power"
+],
+bonus:16
+},
+
+{
+required:[
+"maf",
+"poor_power"
+],
+bonus:15
+},
+
+{
+required:[
+"map",
+"poor_power"
+],
+bonus:15
 },
 
 {
@@ -4620,6 +4681,7 @@ bonus:15
 
 ];
 
+
 function getMergedRelationships(){
 
 const merged=[
@@ -4654,6 +4716,7 @@ merged.push(rel)
 return merged
 
 }
+
 
 /* ============================================================
    EXACT SEMANTIC EVIDENCE
@@ -4727,11 +4790,6 @@ type:"exact"
 
 }
 
-/*
-   Component-level evidence:
-   If a specific user concept and item concept belong
-   to the same technical domain, give a smaller bonus.
-*/
 
 const userDomains=
 getSemanticDomains(
@@ -4761,6 +4819,7 @@ evidence
 
 }
 
+
 /* ============================================================
    CALCULATE SEMANTIC SCORE
 ============================================================ */
@@ -4789,6 +4848,7 @@ userSymptoms,
 itemSymptoms
 );
 
+
 /*
    EXACT concept match is deliberately dominant.
 */
@@ -4798,6 +4858,7 @@ Math.min(
 180,
 exactEvidence.exact
 );
+
 
 /*
    Standard concept scoring.
@@ -4817,6 +4878,7 @@ symptomWeights.default
 }
 
 }
+
 
 /*
    Relationship bonuses.
@@ -4842,10 +4904,12 @@ rel.bonus
 
 }
 
+
 /*
    Keyword evidence.
 
-   Only exact/strong phrase matches are counted.
+   Generic automotive words are deliberately excluded.
+   They cannot create a meaningful semantic match alone.
 */
 
 const keywords=
@@ -4858,14 +4922,50 @@ normalizeText(problem);
 
 let km=0;
 
+const genericKeywordBlocklist=[
+"power",
+"loss",
+"fault",
+"faulty",
+"problem",
+"issue",
+"failure",
+"warning",
+"error",
+"signal",
+"circuit",
+"control",
+"system",
+"module",
+"voltage",
+"electrical",
+"communication",
+"connection",
+"performance",
+"operation",
+"condition",
+"function"
+];
+
 for(const k of keywords){
 
 const nk=
 normalizeText(k);
 
 if(
-nk.length>=4&&
-!isGenericAlias(nk)&&
+nk.length<4||
+isGenericAlias(nk)
+){
+continue;
+}
+
+if(
+genericKeywordBlocklist.includes(nk)
+){
+continue;
+}
+
+if(
 matchesAlias(
 problemText,
 nk
@@ -4883,6 +4983,7 @@ Math.min(
 18,
 km*5
 );
+
 
 /*
    External semantic priority.
@@ -4905,12 +5006,103 @@ semanticPriority[concept]
 
 }
 
+
+/*
+   Strong multi-symptom engine context.
+
+   When the user explicitly describes power loss and limp mode,
+   engine-related records receive an additional semantic boost.
+*/
+
+const strongEngineQueryConcepts=[
+"engine_stall",
+"crank_no_start",
+"no_start",
+"fuel_pressure",
+"crankshaft",
+"camshaft",
+"synchronization",
+"misfire",
+"rough_idle",
+"hard_start",
+"poor_power",
+"low_rpm_power_loss",
+"limp_mode",
+"turbo",
+"dpf",
+"scr",
+"egr",
+"maf",
+"map",
+"injector",
+"coolant",
+"overheating",
+"oil_pressure"
+];
+
+const strongEngineQuery=
+userSymptoms.filter(
+s=>strongEngineQueryConcepts.includes(s)
+);
+
+const itemIsEngine=
+getSemanticDomains(itemSymptoms).includes("engine")||
+getSystemGroups(item).some(
+s=>[
+"engine",
+"pcm",
+"ecm",
+"powertrain",
+"fuel",
+"turbo",
+"dpf",
+"egr",
+"engine_management",
+"engine_control"
+].includes(
+String(s).toLowerCase()
+)
+);
+
+if(
+strongEngineQuery.length>=2&&
+itemIsEngine
+){
+
+score+=20;
+
+}
+
+
+/*
+   Explicit ABS/chassis contradiction.
+
+   ABS should not benefit from generic "power" wording
+   when the actual query is clearly engine-related.
+*/
+
+if(
+strongEngineQuery.length>=1&&
+getSemanticDomains(itemSymptoms).includes("chassis")&&
+!itemSymptoms.some(
+s=>strongEngineQueryConcepts.includes(s)
+)
+){
+
+score-=30;
+
+}
+
 return Math.min(
 180,
+Math.max(
+0,
 score
+)
 )
 
 }
+
 
 /* ============================================================
    SYMPTOM COVERAGE
@@ -4946,6 +5138,7 @@ m/userSymptoms.length*100
 )
 
 }
+
 
 /* ============================================================
    TEXT FALLBACK
@@ -5002,20 +5195,10 @@ hits/tokens.length*25
 
 }
 
+
 /* ============================================================
    SEMANTIC CONFLICT PENALTY
 ============================================================ */
-
-/*
-   This is the critical fix for:
-
-   "mânerul ușii nu funcționează"
-                    ↓
-   USB media connection
-
-   A specific body/door concept must not be outranked
-   by a generic infotainment record.
-*/
 
 function calculateSemanticConflict(
 item,
@@ -5023,6 +5206,7 @@ userSymptoms,
 itemSymptoms,
 exactEvidence
 ){
+
 if(!userSymptoms.length)
 return 0;
 
@@ -5046,7 +5230,11 @@ itemSymptoms
 
 let penalty=0;
 
-/* Strong engine-related user symptoms */
+
+/*
+   Strong engine-related user symptoms.
+*/
+
 const strongEngineConcepts=[
 "engine_stall",
 "crank_no_start",
@@ -5073,15 +5261,18 @@ const strongEngineConcepts=[
 "oil_pressure"
 ];
 
-const strongEnginePrimary=
-primary.some(
+
+const enginePrimaryConcepts=
+primary.filter(
 c=>strongEngineConcepts.includes(c)
 );
 
+
 /*
- * Determine whether the result actually belongs
- * to an engine/powertrain-related system.
- */
+   Determine whether the result actually belongs
+   to an engine/powertrain-related system.
+*/
+
 const itemSystems=
 typeof getSystemGroups==="function"
 ?getSystemGroups(item)
@@ -5108,27 +5299,46 @@ String(s).toLowerCase()
 )
 );
 
+
 /*
- * Critical mismatch:
- * If the user describes a strong engine symptom,
- * a non-engine result must be heavily suppressed.
- *
- * This prevents cases such as:
- * "Engine has little power and goes limp mode"
- * returning an ABS power-supply fault merely because
- * the generic word "power" appears in both records.
- */
+   CRITICAL ENGINE MISMATCH.
+
+   Example:
+
+   User:
+   "Engine has little power and goes limp mode"
+
+   Primary:
+   poor_power
+   limp_mode
+
+   Result:
+   ABS
+
+   ABS is not an engine result and has no matching
+   engine concept.
+
+   Therefore it receives a very strong penalty.
+*/
+
 if(
-strongEnginePrimary &&
-!itemIsEngine &&
-!primary.some(
+enginePrimaryConcepts.length>=1&&
+!itemIsEngine&&
+!enginePrimaryConcepts.some(
 c=>itemSymptoms.includes(c)
 )
 ){
-penalty-=140;
+
+penalty-=180;
+
 }
 
-/* Exact primary concept match overrides domain penalty */
+
+/*
+   Exact primary concept match overrides
+   domain mismatch for legitimate results.
+*/
+
 const exactPrimary=
 primary.some(
 c=>itemSymptoms.includes(c)
@@ -5137,19 +5347,37 @@ c=>itemSymptoms.includes(c)
 if(exactPrimary)
 return penalty;
 
+
+/*
+   Domain mismatch.
+
+   A specific component/system should strongly
+   prefer records from the same technical domain.
+*/
+
 if(
 primaryDomains.length&&
 itemDomains.length
 ){
+
 const sameDomain=
 primaryDomains.some(
 d=>itemDomains.includes(d)
 );
 
 if(!sameDomain){
+
 penalty-=110;
+
 }
+
 }
+
+
+/*
+   If the result contains another high-confidence
+   concept from a different domain, penalize it.
+*/
 
 const unrelatedSpecific=
 itemSymptoms.some(
@@ -5164,13 +5392,36 @@ primary[0]
 );
 
 if(unrelatedSpecific){
+
 penalty-=45;
+
 }
 
+
 /*
-   If the user query contains a highly specific component
-   and the result has no matching concept at all,
-   make the result effectively noncompetitive.
+   Additional protection against ABS/chassis
+   results for engine-specific queries.
+*/
+
+const itemIsChassis=
+itemDomains.includes("chassis");
+
+if(
+enginePrimaryConcepts.length>=1&&
+itemIsChassis&&
+!enginePrimaryConcepts.some(
+c=>itemSymptoms.includes(c)
+)
+){
+
+penalty-=80;
+
+}
+
+
+/*
+   Component-specific protection for doors,
+   infotainment and ADAS.
 */
 
 if(
@@ -5201,13 +5452,15 @@ c=>
 )
 ){
 
-penalty-=60
+penalty-=60;
 
 }
+
 
 return penalty
 
 }
+
 
 /* ============================================================
    FINAL SCORE
@@ -5253,12 +5506,14 @@ exactEvidence
 
 }
 
+
 let score=
 vehicleMatch*.15+
 yearMatch*.05+
 semanticScore*.55+
 coverage*.15+
 systemMatch*.15;
+
 
 score+=
 calculateSemanticConflict(
@@ -5267,6 +5522,7 @@ userSymptoms,
 itemSymptoms,
 exactEvidence
 );
+
 
 /*
    Exact concept matches get a final independent boost.
@@ -5283,6 +5539,7 @@ exactEvidence.exact*.12
 )
 
 }
+
 
 /*
    Multi-symptom engine-start context remains strong.
@@ -5306,10 +5563,12 @@ score+=20
 
 }
 
+
 const noStart=
 userSymptoms.includes("no_start")||
 userSymptoms.includes("crank_no_start")||
 userSymptoms.includes("engine_stall");
+
 
 if(
 noStart&&
@@ -5344,10 +5603,84 @@ score-=35
 
 }
 
+
+/*
+   Strong engine query protection at final score level.
+
+   This is deliberately independent of the semantic
+   conflict calculation, so a non-engine record cannot
+   reach the top merely through generic keyword evidence.
+*/
+
+const strongEngineFinalConcepts=[
+"engine_stall",
+"crank_no_start",
+"no_start",
+"fuel_pressure",
+"crankshaft",
+"camshaft",
+"synchronization",
+"misfire",
+"rough_idle",
+"hard_start",
+"poor_power",
+"low_rpm_power_loss",
+"limp_mode",
+"turbo",
+"dpf",
+"scr",
+"egr",
+"maf",
+"map",
+"injector",
+"coolant",
+"overheating",
+"oil_pressure"
+];
+
+const strongEngineFinalQuery=
+userSymptoms.filter(
+s=>strongEngineFinalConcepts.includes(s)
+);
+
+const finalItemDomains=
+getSemanticDomains(is);
+
+const finalItemIsEngine=
+finalItemDomains.includes("engine")||
+getSystemGroups(item).some(
+s=>[
+"engine",
+"pcm",
+"ecm",
+"powertrain",
+"fuel",
+"turbo",
+"dpf",
+"egr",
+"engine_management",
+"engine_control"
+].includes(
+String(s).toLowerCase()
+)
+);
+
+if(
+strongEngineFinalQuery.length>=1&&
+!finalItemIsEngine&&
+!strongEngineFinalQuery.some(
+s=>is.includes(s)
+)
+){
+
+score-=120;
+
+}
+
+
 /*
    A result with no system relevance should not receive
-   artificial points simply because it contains generic
-   words.
+   artificial points simply because it contains generic words.
 */
 
 if(
@@ -5359,6 +5692,7 @@ score-=5
 
 }
 
+
 return Math.max(
 0,
 Math.min(
@@ -5368,7 +5702,7 @@ Math.round(score)
 )
 
 }
-
+   
 /* ============================================================
    SEARCH
 ============================================================ */
