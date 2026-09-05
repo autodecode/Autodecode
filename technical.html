@@ -2252,7 +2252,7 @@ async function loadTechnicalDatabase(id){
   setStatus(t("technical_loading"));
   technicalDatabase = [];
 
-  try {
+  try{
     const databaseUrl = new URL(
       `data/technical/diagnostics/${encodeURIComponent(id)}.yaml`,
       document.baseURI
@@ -2294,127 +2294,105 @@ async function loadTechnicalDatabase(id){
       throw Error("Technical database response is empty.");
     }
 
+    /*
+     * IMPORTANT:
+     * Parse the YAML exactly as it exists.
+     * We DO NOT modify indentation or structure.
+     */
     let d;
-
-    /* ============================================================
-       1. FIRST TRY: NORMAL YAML
-       ============================================================ */
 
     try{
       d = jsyaml.load(raw);
-
-      console.log(
-        "[AutoDecode] YAML parsed normally."
-      );
-
     }catch(parseError){
 
-      console.warn(
-        "[AutoDecode] Normal YAML parsing failed. Starting structural repair...",
-        parseError
-      );
+      const mark = parseError?.mark;
 
-      /* ==========================================================
-         2. STRUCTURAL YAML REPAIR
-         ========================================================== */
+      const line =
+        Number.isInteger(mark?.line)
+          ? mark.line + 1
+          : null;
 
-      const repaired = repairTechnicalYaml(raw);
+      const column =
+        Number.isInteger(mark?.column)
+          ? mark.column + 1
+          : null;
 
-      console.log(
-        "[AutoDecode] Repaired YAML size:",
-        repaired.length
-      );
+      let context = "";
 
-      try{
+      if(line){
 
-        d = jsyaml.load(repaired);
+        const lines = raw.split(/\r?\n/);
 
-        console.log(
-          "[AutoDecode] Repaired YAML parsed successfully."
-        );
+        const start = Math.max(0, line - 4);
+        const end = Math.min(lines.length, line + 3);
 
-      }catch(repairedError){
+        context = "\n\nYAML context:\n";
 
-        console.error(
-          "[AutoDecode] Repaired YAML still invalid:",
-          repairedError
-        );
+        for(let i = start; i < end; i++){
 
-        const mark =
-          repairedError?.mark ||
-          parseError?.mark ||
-          null;
-
-        const line =
-          Number.isInteger(mark?.line)
-            ? mark.line + 1
-            : null;
-
-        const column =
-          Number.isInteger(mark?.column)
-            ? mark.column + 1
-            : null;
-
-        let context = "";
-
-        if(line){
-          const lines = repaired.split(/\r?\n/);
-          const from = Math.max(0, line - 4);
-          const to = Math.min(lines.length, line + 3);
-
-          context = "\n\nYAML context:\n";
-
-          for(let i = from; i < to; i++){
-            context +=
-              `${String(i + 1).padStart(6," ")} | ${lines[i]}\n`;
-          }
+          context +=
+            `${String(i + 1).padStart(6, " ")} | ${lines[i]}\n`;
         }
-
-        throw Error(
-          `YAML parse error at line ${
-            line || "unknown"
-          }${
-            column ? `, column ${column}` : ""
-          }: ${
-            repairedError.message || repairedError
-          }${context}`
-        );
       }
+
+      throw Error(
+        `YAML parse error at line ${
+          line || "unknown"
+        }${
+          column ? `, column ${column}` : ""
+        }: ${
+          parseError.message || parseError
+        }${context}`
+      );
     }
 
-    /* ============================================================
-       3. EXTRACT DATABASE
-       ============================================================ */
-
-    technicalDatabase =
+    /*
+     * Extract raw technical_data.
+     */
+    const rawTechnicalData =
       Array.isArray(d?.technical_data)
         ? d.technical_data
         : Array.isArray(d)
           ? d
           : [];
 
-    if(!Array.isArray(technicalDatabase)){
-      technicalDatabase = [];
-    }
+    if(!rawTechnicalData.length){
 
-    if(!technicalDatabase.length){
       throw Error(
         "Invalid technical database structure: 'technical_data' is missing or empty."
       );
     }
 
     console.log(
-      "[AutoDecode] Loaded technical records:",
+      "[AutoDecode] Raw technical records:",
+      rawTechnicalData.length
+    );
+
+    /*
+     * Normalize Audi / Ford / future manufacturer schemas
+     * into the common AutoDecode internal structure.
+     */
+    technicalDatabase =
+      normalizeTechnicalDatabase(
+        rawTechnicalData,
+        id
+      );
+
+    if(!Array.isArray(technicalDatabase) || !technicalDatabase.length){
+
+      throw Error(
+        "Technical database could not be normalized."
+      );
+    }
+
+    console.log(
+      "[AutoDecode] Normalized technical records:",
       technicalDatabase.length
     );
 
     console.log(
-      "[AutoDecode] Technical database root keys:",
-      d &&
-      typeof d === "object" &&
-      !Array.isArray(d)
-        ? Object.keys(d)
-        : "array"
+      "[AutoDecode] First normalized record:",
+      technicalDatabase[0]
     );
 
     setStatus(
@@ -2447,312 +2425,636 @@ async function loadTechnicalDatabase(id){
 
 
 /* ================================================================
-   AUTO-DECODE STRUCTURAL YAML REPAIR
+   AUTODECODE TECHNICAL DATABASE NORMALIZER
+
+   Supports both:
+
+   AUDI schema:
+   vehicle:
+     manufacturer:
+     models:
+     generations:
+     engines:
+
+   FORD schema:
+   manufacturer:
+   models:
+   generations:
+   systems:
+
+   Also supports multilingual Ford fields:
+
+   symptoms:
+     en:
+       - ...
+     ro:
+       - ...
+
+   while Audi may use:
+
+   symptoms:
+     - ...
+
+   The original database records are NOT modified.
+   New normalized objects are created.
    ================================================================ */
 
-function repairTechnicalYaml(source){
+function normalizeTechnicalDatabase(records, manufacturerId){
 
-  const lines = source.replace(/\r\n/g,"\n").split("\n");
-  const result = [];
-
-  let insideTechnicalData = false;
-
-  const arrayKeys = new Set([
-    "models",
-    "generations",
-    "systems",
-    "symptoms",
-    "causes",
-    "checks",
-    "solutions",
-    "related_dtcs",
-    "keywords",
-    "aliases",
-    "components",
-    "engines",
-    "years",
-    "variants",
-    "modules",
-    "tests",
-    "steps",
-    "possible_causes",
-    "possible_solutions",
-    "affected_systems",
-    "supported_models",
-    "references"
-  ]);
-
-  const recordKeys = new Set([
-    "id",
-    "vehicle",
-    "title",
-    "description",
-    "models",
-    "systems",
-    "symptoms",
-    "causes",
-    "checks",
-    "solutions",
-    "related_dtcs",
-    "difficulty",
-    "keywords",
-    "aliases",
-    "components",
-    "engines",
-    "years",
-    "variants",
-    "modules",
-    "tests",
-    "steps",
-    "possible_causes",
-    "possible_solutions",
-    "affected_systems",
-    "supported_models",
-    "references"
-  ]);
-
-  const vehicleKeys = new Set([
-    "manufacturer",
-    "model",
-    "models",
-    "generation",
-    "generations",
-    "year",
-    "years",
-    "engine",
-    "engines",
-    "body",
-    "fuel",
-    "transmission",
-    "drive",
-    "variant"
-  ]);
-
-  let context = [];
-
-  function getKey(text){
-    const m = text.match(/^([A-Za-z0-9_]+):(?:\s|$)/);
-    return m ? m[1] : null;
+  if(!Array.isArray(records)){
+    return [];
   }
 
-  function isListItem(text){
-    return /^-\s/.test(text.trim()) || text.trim() === "-";
-  }
+  /*
+   * Current UI language.
+   *
+   * AutoDecode supports:
+   * en, de, ro, fr, es, it, nl
+   */
+  const currentLanguage =
+    typeof currentLang !== "undefined" &&
+    currentLang
+      ? String(currentLang).toLowerCase()
+      : "en";
 
-  function isRecordStart(text){
-    return /^-\s+id\s*:/.test(text.trim());
-  }
+  /*
+   * Convert anything into an array.
+   *
+   * Examples:
+   *
+   * "focus"
+   *     -> ["focus"]
+   *
+   * ["focus","fiesta"]
+   *     -> same array
+   *
+   * null
+   *     -> []
+   */
+  function toArray(value){
 
-  function setContext(key, indent){
-
-    while(
-      context.length &&
-      context[context.length - 1].indent >= indent
-    ){
-      context.pop();
+    if(value == null){
+      return [];
     }
 
-    context.push({
-      key,
-      indent
-    });
-  }
-
-  function getParent(){
-    return context.length
-      ? context[context.length - 1]
-      : null;
-  }
-
-  for(let i=0;i<lines.length;i++){
-
-    const original = lines[i];
-    const trimmed = original.trim();
-
-    if(trimmed === ""){
-      result.push("");
-      continue;
-    }
-
-    /*
-     * Everything before technical_data is left EXACTLY as it was.
-     */
-    if(!insideTechnicalData){
-
-      result.push(original);
-
-      if(trimmed === "technical_data:"){
-        insideTechnicalData = true;
-      }
-
-      continue;
-    }
-
-    /*
-     * New technical record
-     */
-    if(isRecordStart(trimmed)){
-
-      context = [];
-
-      result.push(
-        "  " + trimmed
+    if(Array.isArray(value)){
+      return value.filter(
+        item => item != null
       );
-
-      context.push({
-        key: "__record__",
-        indent: 2
-      });
-
-      continue;
     }
 
-    const key = getKey(trimmed);
+    return [value];
+  }
+
+  /*
+   * Normalize strings.
+   */
+  function cleanString(value){
+
+    if(value == null){
+      return "";
+    }
+
+    return String(value).trim();
+  }
+
+  /*
+   * Extract a multilingual field.
+   *
+   * Ford:
+   *
+   * {
+   *   en: [...],
+   *   ro: [...],
+   *   de: [...]
+   * }
+   *
+   * Audi:
+   *
+   * [...]
+   *
+   * Result is ALWAYS an array.
+   */
+  function normalizeLocalizedArray(value){
+
+    if(value == null){
+      return [];
+    }
 
     /*
-     * Direct keys belonging to the technical record
+     * Already an array.
      */
-    if(key && recordKeys.has(key)){
+    if(Array.isArray(value)){
 
-      const indent = 4;
-
-      result.push(
-        " ".repeat(indent) + trimmed
-      );
-
-      setContext(key, indent);
-
-      continue;
+      return value
+        .map(item => cleanString(item))
+        .filter(Boolean);
     }
 
     /*
-     * Keys inside vehicle:
-     *
-     * vehicle:
-     *   manufacturer:
-     *   models:
-     *   generations:
+     * Simple scalar.
+     */
+    if(typeof value === "string" ||
+       typeof value === "number"){
+
+      return [String(value).trim()];
+    }
+
+    /*
+     * Multilingual object.
      */
     if(
-      key &&
-      vehicleKeys.has(key) &&
-      context.some(x => x.key === "vehicle")
+      typeof value === "object" &&
+      !Array.isArray(value)
     ){
 
-      const indent = 6;
+      /*
+       * Preferred language first.
+       */
+      const languages = [
+        currentLanguage,
+        "en",
+        "ro",
+        "de",
+        "fr",
+        "es",
+        "it",
+        "nl"
+      ];
 
-      result.push(
-        " ".repeat(indent) + trimmed
-      );
+      for(const lang of languages){
 
-      setContext(key, indent);
+        if(
+          Object.prototype.hasOwnProperty.call(
+            value,
+            lang
+          )
+        ){
 
-      continue;
+          const selected =
+            value[lang];
+
+          if(Array.isArray(selected)){
+
+            return selected
+              .map(item => cleanString(item))
+              .filter(Boolean);
+          }
+
+          if(
+            typeof selected === "string" &&
+            selected.trim()
+          ){
+
+            return [selected.trim()];
+          }
+        }
+      }
+
+      /*
+       * If no known language exists,
+       * flatten all values as fallback.
+       */
+      const fallback = [];
+
+      for(const val of Object.values(value)){
+
+        if(Array.isArray(val)){
+
+          for(const item of val){
+
+            const str =
+              cleanString(item);
+
+            if(str){
+              fallback.push(str);
+            }
+          }
+
+        }else{
+
+          const str =
+            cleanString(val);
+
+          if(str){
+            fallback.push(str);
+          }
+        }
+      }
+
+      return fallback;
     }
 
+    return [];
+  }
+
+  /*
+   * Normalize localized object while retaining ALL languages.
+   *
+   * This is useful if the diagnostic UI later needs to switch
+   * language without reloading the database.
+   */
+  function normalizeLocalizedObject(value){
+
+    if(
+      !value ||
+      typeof value !== "object" ||
+      Array.isArray(value)
+    ){
+      return value;
+    }
+
+    const result = {};
+
+    for(const [lang, content] of Object.entries(value)){
+
+      if(Array.isArray(content)){
+
+        result[lang] =
+          content
+            .map(item => cleanString(item))
+            .filter(Boolean);
+
+      }else if(content != null){
+
+        result[lang] =
+          cleanString(content);
+      }
+    }
+
+    return result;
+  }
+
+  /*
+   * Normalize vehicle information.
+   */
+  function normalizeVehicle(record){
+
     /*
-     * List items.
+     * Audi:
      *
-     * Example:
+     * vehicle:
+     *   manufacturer: audi
+     *   models: all
+     *   generations: all
+     *   engines: all
+     */
+
+    const audiVehicle =
+      record.vehicle &&
+      typeof record.vehicle === "object"
+        ? record.vehicle
+        : {};
+
+    /*
+     * Ford:
      *
+     * manufacturer: ford
      * models:
      *   - focus
-     *   - fiesta
-     *
      * generations:
      *   - focus_mk2
      */
-    if(isListItem(trimmed)){
 
-      const parent = getParent();
+    const manufacturer =
+      cleanString(
+        audiVehicle.manufacturer ||
+        record.manufacturer ||
+        manufacturerId
+      ).toLowerCase();
 
-      let indent = 6;
-
-      if(parent){
-        indent = parent.indent + 2;
-      }
-
-      if(indent < 6){
-        indent = 6;
-      }
-
-      result.push(
-        " ".repeat(indent) + trimmed
+    const models =
+      toArray(
+        audiVehicle.models ??
+        record.models
       );
 
-      continue;
-    }
-
-    /*
-     * Nested keys
-     */
-    if(key){
-
-      const parent = getParent();
-
-      let indent = 6;
-
-      if(parent){
-        indent = parent.indent + 2;
-      }
-
-      /*
-       * title:
-       *   en:
-       *   ro:
-       *   de:
-       */
-      if(parent && parent.key === "title"){
-        indent = 6;
-      }
-
-      /*
-       * vehicle:
-       *   manufacturer:
-       *   models:
-       *   generations:
-       */
-      if(parent && parent.key === "vehicle"){
-        indent = 6;
-      }
-
-      /*
-       * Array-related nested structure
-       */
-      if(parent && arrayKeys.has(parent.key)){
-        indent = parent.indent + 2;
-      }
-
-      result.push(
-        " ".repeat(indent) + trimmed
+    const generations =
+      toArray(
+        audiVehicle.generations ??
+        record.generations
       );
 
-      setContext(key, indent);
-
-      continue;
-    }
+    const engines =
+      toArray(
+        audiVehicle.engines ??
+        record.engines
+      );
 
     /*
-     * Scalar / continuation content
+     * Preserve additional vehicle information when available.
      */
-    const parent = getParent();
+    const vehicle = {
+      manufacturer,
+      models,
+      generations,
+      engines
+    };
 
-    let indent = 6;
+    /*
+     * Optional vehicle fields.
+     */
+    const optionalVehicleKeys = [
+      "model",
+      "generation",
+      "year",
+      "years",
+      "body",
+      "fuel",
+      "transmission",
+      "drive",
+      "variant"
+    ];
 
-    if(parent){
-      indent = parent.indent + 2;
+    for(const key of optionalVehicleKeys){
+
+      if(
+        audiVehicle[key] !== undefined &&
+        vehicle[key] === undefined
+      ){
+
+        vehicle[key] =
+          audiVehicle[key];
+      }
+
+      if(
+        record[key] !== undefined &&
+        vehicle[key] === undefined
+      ){
+
+        vehicle[key] =
+          record[key];
+      }
     }
 
-    if(indent < 6){
-      indent = 6;
+    return vehicle;
+  }
+
+  /*
+   * Normalize system.
+   *
+   * Audi:
+   *
+   * system: windshield_wipers
+   *
+   * Ford:
+   *
+   * systems:
+   *   - abs
+   *   - esc
+   *   - wheel_speed
+   */
+  function normalizeSystems(record){
+
+    let systems = [];
+
+    if(record.system != null){
+      systems.push(
+        ...toArray(record.system)
+      );
     }
 
-    result.push(
-      " ".repeat(indent) + trimmed
+    if(record.systems != null){
+      systems.push(
+        ...toArray(record.systems)
+      );
+    }
+
+    return [
+      ...new Set(
+        systems
+          .map(value => cleanString(value))
+          .filter(Boolean)
+      )
+    ];
+  }
+
+  /*
+   * Normalize all fields which can be multilingual arrays.
+   */
+  function normalizeArrayField(record, key){
+
+    return normalizeLocalizedArray(
+      record[key]
     );
   }
 
-  return result.join("\n");
+  /*
+   * Build normalized record.
+   */
+  return records
+    .map((record, index) => {
+
+      if(
+        !record ||
+        typeof record !== "object"
+      ){
+        return null;
+      }
+
+      const vehicle =
+        normalizeVehicle(record);
+
+      const systems =
+        normalizeSystems(record);
+
+      /*
+       * Keep the original title object.
+       *
+       * This means the application can still use:
+       *
+       * title.en
+       * title.ro
+       * title.de
+       *
+       * etc.
+       */
+      let title = record.title;
+
+      if(
+        title == null
+      ){
+        title = "";
+      }else if(
+        typeof title === "object" &&
+        !Array.isArray(title)
+      ){
+        title =
+          normalizeLocalizedObject(title);
+      }else{
+        title =
+          cleanString(title);
+      }
+
+      /*
+       * Normalize diagnostic content.
+       */
+      const symptoms =
+        normalizeArrayField(
+          record,
+          "symptoms"
+        );
+
+      const possibleCauses =
+        normalizeArrayField(
+          record,
+          "possible_causes"
+        );
+
+      const diagnosticSteps =
+        normalizeArrayField(
+          record,
+          "diagnostic_steps"
+        );
+
+      /*
+       * Some databases may use alternate names.
+       */
+      const causes =
+        possibleCauses.length
+          ? possibleCauses
+          : normalizeArrayField(
+              record,
+              "causes"
+            );
+
+      const checks =
+        diagnosticSteps.length
+          ? diagnosticSteps
+          : normalizeArrayField(
+              record,
+              "checks"
+            );
+
+      const solutions =
+        normalizeArrayField(
+          record,
+          "solutions"
+        );
+
+      const keywords =
+        normalizeArrayField(
+          record,
+          "keywords"
+        );
+
+      const aliases =
+        normalizeArrayField(
+          record,
+          "aliases"
+        );
+
+      const relatedDtcs =
+        normalizeArrayField(
+          record,
+          "related_dtcs"
+        );
+
+      const dtcs =
+        normalizeArrayField(
+          record,
+          "dtcs"
+        );
+
+      /*
+       * Combine DTC fields.
+       */
+      const allDtcs = [
+        ...relatedDtcs,
+        ...dtcs
+      ].filter(Boolean);
+
+      /*
+       * Remove duplicate DTCs.
+       */
+      const uniqueDtcs = [
+        ...new Set(allDtcs)
+      ];
+
+      /*
+       * Final normalized record.
+       *
+       * IMPORTANT:
+       * We retain the original record using _raw.
+       * Nothing from the YAML is lost.
+       */
+      return {
+
+        id:
+          cleanString(
+            record.id
+          ) ||
+          `technical_record_${index}`,
+
+        vehicle,
+
+        manufacturer:
+          vehicle.manufacturer,
+
+        models:
+          vehicle.models,
+
+        generations:
+          vehicle.generations,
+
+        engines:
+          vehicle.engines,
+
+        systems,
+
+        /*
+         * Both names are provided for compatibility.
+         */
+        system:
+          systems.length
+            ? systems[0]
+            : "",
+
+        category:
+          cleanString(
+            record.category
+          ),
+
+        title,
+
+        symptoms,
+
+        possible_causes:
+          causes,
+
+        causes,
+
+        diagnostic_steps:
+          checks,
+
+        checks,
+
+        solutions,
+
+        keywords,
+
+        aliases,
+
+        related_dtcs:
+          uniqueDtcs,
+
+        dtcs:
+          uniqueDtcs,
+
+        difficulty:
+          cleanString(
+            record.difficulty
+          ),
+
+        /*
+         * Preserve all original data.
+         */
+        _raw:
+          record
+      };
+
+    })
+    .filter(Boolean);
 }
    
 /* ============================================================
