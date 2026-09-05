@@ -210,7 +210,7 @@ it:{
 home:'← Home',intro:'Seleziona il veicolo e descrivi il problema. AutoDecode cercherà nel database tecnico e classificherà le informazioni diagnostiche più rilevanti.',
 make:'Marca',model:'Modello',generation:'Generazione / Piattaforma',year:'Anno',engine:'Motore',
 problem:'Descrivi il problema',sm:'Seleziona marca',smod:'Seleziona modello',sg:'Seleziona generazione',
-sy:'Seleziona anno',se:'Seleziona motore',
+sy:'Seleziona anno',se:'Seleziona il motore',
 ph:'Esempio: Il motore ha pochissima potenza ai bassi regimi e a volte entra in modalità emergenza.',
 find:'TROVA SOLUZIONE',rh:'Risultati diagnostici',loading:'Caricamento...',
 ready:'Database tecnico pronto.',error:'Impossibile caricare il database tecnico.',
@@ -249,7 +249,7 @@ turbo:['turbo','turbocharger','turbocharger fault','boost','boost pressure','und
 egr:['egr','exhaust gas recirculation','recirculare gaze','agr','recirculation des gaz','abgasrückführung','recirculación de gases'],
 dpf:['dpf','diesel particulate filter','particulate filter','filtru de particule','dieselpartikelfilter','filtre à particules','filtro de partículas','filtro antiparticolato'],
 maf:['maf','mass air flow','mass airflow','air flow meter','air mass meter','debitmetru','luftmassenmesser','débitmètre','caudalimetro','misuratore massa aria','luchtmassameter'],
-map:['map sensor','boost pressure sensor','manifold pressure sensor','manifold absolute pressure','pressure sensor','senzor map','ladedrucksensor','capteur map','sensor map','sensore map'],
+map:['map sensor','boost pressure sensor','manifold pressure sensor','manifold absolute pressure','pressure sensor','senzor map','ladedrucksensor','capteur map','sensor map','sensore map','luchtdruksensor'],
 injector:['injector','injectors','fuel injector','injektor','inyector','injecteur','iniettore','injector combustibil','brandstofinjector'],
 fuel_pressure:['fuel pressure','rail pressure','fuel rail','common rail pressure','low fuel pressure','high fuel pressure','presiune combustibil','presiune rampă','presiune rampa','kraftstoffdruck','pression carburant','presión de combustible','pressione carburante','brandstofdruk'],
 crankshaft:['crankshaft','crank sensor','crankshaft sensor','engine speed sensor','arbore cotit','senzor arbore cotit','kurbelwellensensor','capteur vilebrequin','sensor cigüeñal','sensore albero motore','krukassensor'],
@@ -575,6 +575,7 @@ valueArray(a).forEach(x=>{
 if(x==null)return;
 if(typeof x==='object'){
 let name=localizedValue(x.name)||localizedValue(x.title)||localizedValue(x.description)||x.id;
+if(id==='engine'&&x.power_hp!=null)name+=' — '+x.power_hp+' HP';
 let value=x.id??name;
 $(id).add(new Option(name,value));
 }else $(id).add(new Option(x,x));
