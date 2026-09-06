@@ -6,6 +6,3703 @@ manufacturer:
 
 technical_data:
 
+  - id: dacia_engine_variable_valve_timing_actuator_fault
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - sandero
+        - duster
+        - jogger
+      generations:
+        - logan_ii
+        - logan_iii
+        - sandero_ii
+        - sandero_iii
+        - duster_ii
+        - duster_iii
+        - jogger_i
+      engines:
+        - dacia_logan_ii_898
+        - dacia_logan_iii_999_tce90
+        - dacia_logan_iii_999_tce100
+    category: diagnostics
+    system: Engine management
+    title:
+      en: Variable valve timing actuator fault
+      ro: Defecțiune actuator distribuție variabilă
+      de: Fehler am Aktuator der variablen Ventilsteuerung
+      fr: Défaut de l'actionneur de distribution variable
+      es: Fallo del actuador de distribución variable
+      it: Guasto attuatore distribuzione variabile
+      nl: Storing actuator variabele kleptiming
+    symptoms:
+      - Engine hesitation
+      - Reduced torque
+      - Rough running
+      - Poor acceleration
+    keywords:
+      - variable valve timing
+      - VVT actuator
+      - cam timing actuator
+      - valve timing
+      - phase actuator
+    possible_causes:
+      - Faulty VVT actuator
+      - Restricted oil passage
+      - Incorrect oil pressure
+      - Wiring fault
+      - Mechanical camshaft timing problem
+    diagnostic_steps:
+      - Read camshaft timing and actuator-related faults.
+      - Compare commanded and actual camshaft position.
+      - Check actuator power supply and control wiring.
+      - Verify engine oil level and condition.
+      - Check mechanical timing if commanded and actual positions remain inconsistent.
+    related_dtcs:
+      - P0010
+      - P0013
+    difficulty: hard
+
+  - id: dacia_engine_camshaft_timing_overadvanced
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - sandero
+        - duster
+        - jogger
+      generations:
+        - logan_ii
+        - logan_iii
+        - sandero_ii
+        - sandero_iii
+        - duster_ii
+        - duster_iii
+        - jogger_i
+      engines:
+        - dacia_logan_ii_898
+        - dacia_logan_iii_999_tce90
+        - dacia_logan_iii_999_tce100
+    category: diagnostics
+    system: Engine management
+    title:
+      en: Camshaft timing over-advanced
+      ro: Distribuție ax cu came prea avansată
+      de: Nockenwellensteuerung zu weit vorverstellt
+      fr: Calage de l'arbre à cames trop avancé
+      es: Distribución del árbol de levas demasiado adelantada
+      it: Fasatura albero a camme troppo anticipata
+      nl: Nokkenastiming te ver gevorderd
+    symptoms:
+      - Rough idle
+      - Difficult starting
+      - Reduced power
+      - Engine warning lamp
+    keywords:
+      - cam timing advanced
+      - over advanced
+      - camshaft timing
+      - timing advance
+      - P0011
+    possible_causes:
+      - VVT actuator stuck advanced
+      - Oil control valve contamination
+      - Incorrect mechanical timing
+      - Excessive timing chain wear
+      - Incorrect oil pressure
+    diagnostic_steps:
+      - Read camshaft actual angle with the engine warm.
+      - Compare actual angle with commanded angle.
+      - Inspect the oil control circuit.
+      - Check mechanical timing marks.
+      - Measure timing chain or actuator movement where applicable.
+    related_dtcs:
+      - P0011
+    difficulty: hard
+
+  - id: dacia_engine_camshaft_timing_overretarded
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - sandero
+        - duster
+        - jogger
+      generations:
+        - logan_ii
+        - logan_iii
+        - sandero_ii
+        - sandero_iii
+        - duster_ii
+        - duster_iii
+        - jogger_i
+      engines:
+        - dacia_logan_ii_898
+        - dacia_logan_iii_999_tce90
+        - dacia_logan_iii_999_tce100
+    category: diagnostics
+    system: Engine management
+    title:
+      en: Camshaft timing over-retarded
+      ro: Distribuție ax cu came prea întârziată
+      de: Nockenwellensteuerung zu weit zurückgestellt
+      fr: Calage de l'arbre à cames trop retardé
+      es: Distribución del árbol de levas demasiado retrasada
+      it: Fasatura albero a camme troppo ritardata
+      nl: Nokkenastiming te ver vertraagd
+    symptoms:
+      - Poor low-speed response
+      - Hard starting
+      - Rough idle
+      - Reduced engine efficiency
+    keywords:
+      - cam timing retarded
+      - over retarded
+      - camshaft position
+      - valve timing
+      - P0012
+    possible_causes:
+      - VVT actuator stuck retarded
+      - Oil control valve fault
+      - Low oil pressure
+      - Mechanical timing error
+      - Timing chain wear
+    diagnostic_steps:
+      - Check commanded and actual camshaft angle.
+      - Verify engine oil pressure and specification.
+      - Inspect the VVT oil control circuit.
+      - Check mechanical timing.
+      - Inspect timing components for excessive wear.
+    related_dtcs:
+      - P0012
+    difficulty: hard
+
+  - id: dacia_engine_camshaft_actuator_slow_response
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - sandero
+        - duster
+      generations:
+        - logan_ii
+        - sandero_ii
+        - duster_ii
+      engines:
+        - dacia_logan_ii_898
+    category: diagnostics
+    system: Engine management
+    title:
+      en: Camshaft actuator slow response
+      ro: Răspuns lent al actuatorului axului cu came
+      de: Langsame Reaktion des Nockenwellenaktuators
+      fr: Réponse lente de l'actionneur d'arbre à cames
+      es: Respuesta lenta del actuador del árbol de levas
+      it: Risposta lenta dell'attuatore albero a camme
+      nl: Trage reactie nokkenasactuator
+    symptoms:
+      - Hesitation during acceleration
+      - Rough idle
+      - Delayed torque response
+      - Engine warning lamp
+    keywords:
+      - VVT slow response
+      - cam actuator slow
+      - camshaft response
+      - phase control slow
+    possible_causes:
+      - Sludge in oil control passage
+      - Weak actuator
+      - Low oil pressure
+      - Restricted oil filter
+      - Wiring resistance
+    diagnostic_steps:
+      - Command the actuator with the diagnostic system.
+      - Compare commanded and actual camshaft movement.
+      - Check oil pressure.
+      - Inspect actuator connector and wiring.
+      - Inspect oil control passages if response remains slow.
+    related_dtcs:
+      - P000A
+    difficulty: hard
+
+  - id: dacia_engine_variable_valve_timing_oil_control_valve_fault
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - sandero
+        - duster
+      generations:
+        - logan_ii
+        - sandero_ii
+        - duster_ii
+      engines:
+        - dacia_logan_ii_898
+    category: diagnostics
+    system: Engine lubrication and timing
+    title:
+      en: Variable valve timing oil control valve fault
+      ro: Defecțiune electrovalvă control ulei distribuție variabilă
+      de: Fehler am Ölregelventil der variablen Ventilsteuerung
+      fr: Défaut de l'électrovanne de commande d'huile de distribution variable
+      es: Fallo de la válvula de control de aceite de distribución variable
+      it: Guasto elettrovalvola olio distribuzione variabile
+      nl: Storing oliesolenoïde variabele kleptiming
+    symptoms:
+      - Poor acceleration
+      - Rough idle
+      - Timing fault
+      - Increased fuel consumption
+    keywords:
+      - VVT solenoid
+      - oil control valve
+      - camshaft solenoid
+      - VVT valve
+    possible_causes:
+      - Solenoid contamination
+      - Electrical open circuit
+      - Short circuit
+      - Restricted oil passage
+      - Incorrect engine oil
+    diagnostic_steps:
+      - Measure solenoid resistance.
+      - Check power and ECU control signals.
+      - Inspect the solenoid filter and oil passage.
+      - Activate the valve with diagnostic equipment where supported.
+      - Verify camshaft response after repair.
+    related_dtcs:
+      - P0010
+      - P0013
+    difficulty: medium
+
+  - id: dacia_engine_turbo_wastegate_position_sensor_fault
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - sandero
+        - duster
+        - jogger
+      generations:
+        - logan_ii
+        - logan_iii
+        - sandero_ii
+        - sandero_iii
+        - duster_ii
+        - duster_iii
+        - jogger_i
+      engines:
+        - dacia_logan_ii_898
+        - dacia_logan_iii_999_tce90
+        - dacia_logan_iii_999_tce100
+    category: diagnostics
+    system: Turbocharger control
+    title:
+      en: Turbo wastegate position sensor fault
+      ro: Defecțiune senzor poziție wastegate turbo
+      de: Fehler am Wastegate-Positionssensor
+      fr: Défaut du capteur de position de wastegate
+      es: Fallo del sensor de posición de la wastegate
+      it: Guasto sensore posizione wastegate
+      nl: Storing wastegate-positiesensor
+    symptoms:
+      - Boost fluctuation
+      - Reduced power
+      - Overboost or underboost
+      - Engine warning lamp
+    keywords:
+      - wastegate position
+      - turbo actuator position
+      - turbo position sensor
+      - boost actuator sensor
+    possible_causes:
+      - Faulty position sensor
+      - Wastegate actuator wear
+      - Wiring fault
+      - Connector corrosion
+      - Mechanical wastegate binding
+    diagnostic_steps:
+      - Read commanded and actual wastegate position.
+      - Check sensor reference voltage and ground.
+      - Monitor signal while commanding actuator movement.
+      - Inspect actuator linkage.
+      - Check turbocharger mechanical movement.
+    related_dtcs:
+      - P2562
+      - P2563
+    difficulty: hard
+
+  - id: dacia_engine_turbo_actuator_calibration_lost
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - sandero
+        - duster
+      generations:
+        - logan_ii
+        - sandero_ii
+        - duster_ii
+      engines:
+        - dacia_logan_ii_898
+    category: diagnostics
+    system: Turbocharger control
+    title:
+      en: Turbo actuator calibration lost
+      ro: Calibrare pierdută actuator turbo
+      de: Kalibrierung des Turboladeraktuators verloren
+      fr: Calibration perdue de l'actionneur du turbocompresseur
+      es: Calibración perdida del actuador del turbocompresor
+      it: Calibrazione persa dell'attuatore turbo
+      nl: Kalibratie turbodrukactuator verloren
+    symptoms:
+      - Reduced turbo response
+      - Limp mode
+      - Boost regulation fault
+      - Intermittent power loss
+    keywords:
+      - turbo calibration
+      - actuator calibration
+      - wastegate calibration
+      - turbo relearn
+    possible_causes:
+      - Actuator replacement without calibration
+      - Position sensor fault
+      - Battery voltage interruption
+      - ECU adaptation loss
+      - Mechanical actuator binding
+    diagnostic_steps:
+      - Check stored actuator calibration faults.
+      - Verify battery voltage during initialization.
+      - Run the manufacturer's actuator calibration routine if supported.
+      - Confirm actual actuator movement.
+      - Clear adaptations and perform a controlled road test.
+    related_dtcs:
+      - P2563
+    difficulty: medium
+
+  - id: dacia_engine_turbocharger_oil_supply_restriction
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - sandero
+        - duster
+      generations:
+        - logan_i
+        - logan_ii
+        - sandero_i
+        - sandero_ii
+        - duster_i
+        - duster_ii
+      engines:
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: Turbocharger lubrication
+    title:
+      en: Turbocharger oil supply restriction
+      ro: Restricție alimentare cu ulei a turbocompresorului
+      de: Einschränkung der Ölversorgung des Turboladers
+      fr: Restriction de l'alimentation en huile du turbocompresseur
+      es: Restricción del suministro de aceite del turbocompresor
+      it: Restrizione alimentazione olio turbocompressore
+      nl: Beperkte olietoevoer naar turbo
+    symptoms:
+      - Turbocharger noise
+      - Oil consumption
+      - Reduced boost
+      - Blue smoke
+    keywords:
+      - turbo oil feed
+      - turbo lubrication
+      - oil supply turbo
+      - blocked oil line
+    possible_causes:
+      - Restricted oil feed pipe
+      - Carbon deposits
+      - Incorrect oil specification
+      - Low engine oil pressure
+      - Previous turbocharger failure debris
+    diagnostic_steps:
+      - Inspect the turbocharger oil feed pipe.
+      - Check for carbon restriction.
+      - Verify engine oil pressure.
+      - Inspect turbo shaft radial and axial play.
+      - Replace contaminated oil and filter after correcting the cause.
+    related_dtcs: []
+    difficulty: hard
+
+  - id: dacia_engine_turbocharger_intercooler_oil_accumulation
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - sandero
+        - duster
+      generations:
+        - logan_i
+        - logan_ii
+        - sandero_i
+        - sandero_ii
+        - duster_i
+        - duster_ii
+      engines:
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: Turbocharger and intake
+    title:
+      en: Excessive oil accumulation in intercooler
+      ro: Acumulare excesivă de ulei în intercooler
+      de: Übermäßige Ölansammlung im Ladeluftkühler
+      fr: Accumulation excessive d'huile dans l'intercooler
+      es: Acumulación excesiva de aceite en el intercooler
+      it: Eccessivo accumulo di olio nell'intercooler
+      nl: Overmatige olieophoping in intercooler
+    symptoms:
+      - Oil in boost pipes
+      - Blue smoke
+      - Reduced power
+      - Increased oil consumption
+    keywords:
+      - intercooler oil
+      - charge air oil
+      - turbo oil leak
+      - boost pipe oil
+    possible_causes:
+      - Turbocharger oil leakage
+      - Excessive crankcase pressure
+      - Breather system fault
+      - Long-term oil mist accumulation
+    diagnostic_steps:
+      - Inspect the quantity and distribution of oil in the charge-air system.
+      - Check crankcase ventilation.
+      - Inspect turbocharger compressor-side leakage.
+      - Check engine oil consumption.
+      - Clean the charge-air system when contamination is excessive.
+    related_dtcs: []
+    difficulty: medium
+
+  - id: dacia_diesel_egr_position_sensor_disagreement
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - sandero
+        - duster
+        - dokker
+        - lodgy
+      generations:
+        - logan_i
+        - logan_ii
+        - sandero_i
+        - sandero_ii
+        - duster_i
+        - duster_ii
+        - dokker_i
+        - lodgy_i
+      engines:
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: EGR control
+    title:
+      en: EGR position feedback disagreement
+      ro: Neconcordanță feedback poziție EGR
+      de: Abweichung der EGR-Positionsrückmeldung
+      fr: Désaccord du retour de position EGR
+      es: Discrepancia de posición de la EGR
+      it: Disaccordo feedback posizione EGR
+      nl: Afwijking EGR-positieterugmelding
+    symptoms:
+      - Rough idle
+      - Reduced power
+      - Increased smoke
+      - Engine warning lamp
+    keywords:
+      - EGR position
+      - EGR feedback
+      - EGR commanded actual
+      - EGR position disagreement
+    possible_causes:
+      - Carbon deposits
+      - EGR actuator wear
+      - Position sensor fault
+      - Wiring problem
+      - Sticking EGR valve
+    diagnostic_steps:
+      - Compare commanded and actual EGR position.
+      - Inspect the valve for carbon deposits.
+      - Check sensor reference, ground and signal.
+      - Test actuator movement.
+      - Verify EGR response under changing engine load.
+    related_dtcs:
+      - P0405
+      - P0406
+    difficulty: medium
+
+  - id: dacia_diesel_egr_cooler_bypass_fault
+    vehicle:
+      manufacturer: dacia
+      models:
+        - duster
+        - logan
+        - sandero
+      generations:
+        - duster_ii
+        - logan_ii
+        - sandero_ii
+      engines:
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: EGR cooling
+    title:
+      en: EGR cooler bypass control fault
+      ro: Defecțiune comandă bypass răcitor EGR
+      de: Fehler der EGR-Kühler-Bypasssteuerung
+      fr: Défaut de commande du bypass du refroidisseur EGR
+      es: Fallo del bypass del enfriador EGR
+      it: Guasto bypass raffreddatore EGR
+      nl: Storing EGR-koelerbypass
+    symptoms:
+      - Engine temperature instability
+      - Reduced performance
+      - Excessive exhaust smoke
+      - EGR-related fault
+    keywords:
+      - EGR cooler bypass
+      - EGR cooler valve
+      - EGR cooling
+      - bypass actuator
+    possible_causes:
+      - Faulty bypass actuator
+      - Sticking valve
+      - Wiring fault
+      - Coolant flow restriction
+      - Carbon contamination
+    diagnostic_steps:
+      - Read EGR cooling actuator data.
+      - Command the bypass valve where supported.
+      - Check actuator wiring.
+      - Inspect coolant circulation.
+      - Check for mechanical restriction or carbon contamination.
+    related_dtcs: []
+    difficulty: hard
+
+  - id: dacia_diesel_dpf_regeneration_temperature_not_reached
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - sandero
+        - duster
+        - dokker
+        - lodgy
+      generations:
+        - logan_i
+        - logan_ii
+        - sandero_i
+        - sandero_ii
+        - duster_i
+        - duster_ii
+        - dokker_i
+        - lodgy_i
+      engines:
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: DPF regeneration
+    title:
+      en: DPF regeneration temperature not reached
+      ro: Temperatura necesară regenerării DPF nu este atinsă
+      de: Regenerationstemperatur des DPF wird nicht erreicht
+      fr: Température de régénération du FAP non atteinte
+      es: No se alcanza la temperatura de regeneración del DPF
+      it: Temperatura di rigenerazione DPF non raggiunta
+      nl: Regeneratietemperatuur DPF wordt niet bereikt
+    symptoms:
+      - Frequent regeneration attempts
+      - DPF warning
+      - Increased fuel consumption
+      - Reduced engine performance
+    keywords:
+      - DPF regeneration temperature
+      - regeneration incomplete
+      - DPF temperature
+      - exhaust temperature low
+    possible_causes:
+      - Low exhaust temperature
+      - Faulty exhaust temperature sensor
+      - Thermostat problem
+      - Incorrect injection strategy
+      - Excessive short-distance driving
+    diagnostic_steps:
+      - Read exhaust temperature sensors during regeneration.
+      - Check engine coolant temperature.
+      - Verify regeneration conditions.
+      - Inspect exhaust temperature sensor signals.
+      - Check whether regeneration completes after correcting temperature-related faults.
+    related_dtcs: []
+    difficulty: medium
+
+  - id: dacia_diesel_dpf_regeneration_aborted_repeatedly
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - sandero
+        - duster
+        - dokker
+        - lodgy
+      generations:
+        - logan_i
+        - logan_ii
+        - sandero_i
+        - sandero_ii
+        - duster_i
+        - duster_ii
+        - dokker_i
+        - lodgy_i
+      engines:
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: DPF regeneration
+    title:
+      en: Repeatedly aborted DPF regeneration
+      ro: Regenerări DPF întrerupte repetat
+      de: Wiederholt abgebrochene DPF-Regeneration
+      fr: Régénérations FAP interrompues à répétition
+      es: Regeneraciones DPF interrumpidas repetidamente
+      it: Rigenerazioni DPF interrotte ripetutamente
+      nl: Herhaaldelijk afgebroken DPF-regeneratie
+    symptoms:
+      - DPF warning
+      - Rising oil level
+      - Increased fuel consumption
+      - Reduced power
+    keywords:
+      - DPF regeneration aborted
+      - interrupted regeneration
+      - failed regeneration
+      - repeated DPF regeneration
+    possible_causes:
+      - Short driving cycles
+      - Engine temperature too low
+      - Exhaust temperature fault
+      - Excessive soot loading
+      - Regeneration inhibition fault
+    diagnostic_steps:
+      - Check regeneration history.
+      - Identify why regeneration requests are being cancelled.
+      - Verify engine and exhaust temperatures.
+      - Check DPF soot estimate.
+      - Check engine oil for fuel dilution if regeneration has been repeatedly attempted.
+    related_dtcs: []
+    difficulty: medium
+
+  - id: dacia_diesel_dpf_differential_pressure_sensor_offset
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - sandero
+        - duster
+        - dokker
+        - lodgy
+      generations:
+        - logan_i
+        - logan_ii
+        - sandero_i
+        - sandero_ii
+        - duster_i
+        - duster_ii
+        - dokker_i
+        - lodgy_i
+      engines:
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: DPF pressure monitoring
+    title:
+      en: DPF differential pressure sensor offset
+      ro: Offset senzor presiune diferențială DPF
+      de: Offset des DPF-Differenzdrucksensors
+      fr: Décalage du capteur de pression différentielle FAP
+      es: Desviación del sensor de presión diferencial DPF
+      it: Offset sensore pressione differenziale DPF
+      nl: Offset DPF-drukverschilsensor
+    symptoms:
+      - Incorrect soot loading estimate
+      - Regeneration problems
+      - DPF warning
+      - Engine performance reduction
+    keywords:
+      - DPF pressure offset
+      - differential pressure zero
+      - DPF sensor zero
+      - pressure sensor calibration
+    possible_causes:
+      - Sensor drift
+      - Blocked pressure hoses
+      - Electrical offset
+      - Incorrect sensor replacement procedure
+    diagnostic_steps:
+      - Compare sensor pressure with engine off.
+      - Inspect both pressure hoses.
+      - Check sensor supply and signal voltage.
+      - Compare measured pressure with expected values at idle and load.
+      - Perform sensor calibration if supported.
+    related_dtcs:
+      - P2452
+      - P2453
+    difficulty: medium
+
+  - id: dacia_diesel_dpf_pressure_hose_condensation
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - sandero
+        - duster
+        - dokker
+        - lodgy
+      generations:
+        - logan_i
+        - logan_ii
+        - sandero_i
+        - sandero_ii
+        - duster_i
+        - duster_ii
+        - dokker_i
+        - lodgy_i
+      engines:
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: DPF pressure monitoring
+    title:
+      en: DPF pressure hose condensation or contamination
+      ro: Condens sau contaminare în furtunurile senzorului DPF
+      de: Kondensat oder Verschmutzung in den DPF-Druckleitungen
+      fr: Condensation ou contamination des durites du capteur FAP
+      es: Condensación o contaminación en los tubos del sensor DPF
+      it: Condensa o contaminazione nei tubi sensore DPF
+      nl: Condens of vervuiling in DPF-drukslangen
+    symptoms:
+      - Implausible DPF pressure
+      - False regeneration request
+      - DPF warning
+      - Intermittent pressure readings
+    keywords:
+      - DPF hose condensation
+      - pressure hose contamination
+      - DPF pressure pipe
+      - differential pressure hose
+    possible_causes:
+      - Condensation
+      - Soot contamination
+      - Moisture accumulation
+      - Damaged hose
+    diagnostic_steps:
+      - Remove and inspect both pressure hoses.
+      - Check for moisture or soot contamination.
+      - Verify hose routing and connection.
+      - Inspect sensor response after cleaning or replacement.
+      - Confirm pressure readings at idle and under load.
+    related_dtcs: []
+    difficulty: easy
+
+  - id: dacia_diesel_exhaust_temperature_sensor_upstream_implausible
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - sandero
+        - duster
+        - dokker
+        - lodgy
+      generations:
+        - logan_i
+        - logan_ii
+        - sandero_i
+        - sandero_ii
+        - duster_i
+        - duster_ii
+        - dokker_i
+        - lodgy_i
+      engines:
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: Exhaust temperature monitoring
+    title:
+      en: Upstream exhaust temperature sensor implausible
+      ro: Semnal implauzibil senzor temperatură gaze amonte
+      de: Unplausibles Signal des Abgastemperatursensors vor dem Filter
+      fr: Signal incohérent du capteur de température des gaz en amont
+      es: Señal incoherente del sensor de temperatura de gases aguas arriba
+      it: Segnale non plausibile sensore temperatura gas a monte
+      nl: Ongeldig signaal uitlaattemperatuursensor vóór filter
+    symptoms:
+      - DPF regeneration problems
+      - Engine warning lamp
+      - Incorrect exhaust temperature
+      - Increased fuel consumption
+    keywords:
+      - EGT sensor implausible
+      - exhaust temperature sensor
+      - upstream EGT
+      - exhaust gas temperature
+    possible_causes:
+      - Sensor drift
+      - Wiring resistance
+      - Connector corrosion
+      - Exhaust leak near sensor
+    diagnostic_steps:
+      - Compare sensor temperature with ambient temperature after cold soak.
+      - Monitor temperature rise during engine operation.
+      - Check wiring and connector.
+      - Compare with other exhaust temperature sensors.
+      - Inspect for exhaust leakage around the sensor.
+    related_dtcs:
+      - P0544
+      - P0545
+      - P0546
+    difficulty: medium
+
+  - id: dacia_diesel_exhaust_temperature_sensor_downstream_implausible
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - sandero
+        - duster
+        - dokker
+        - lodgy
+      generations:
+        - logan_i
+        - logan_ii
+        - sandero_i
+        - sandero_ii
+        - duster_i
+        - duster_ii
+        - dokker_i
+        - lodgy_i
+      engines:
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: Exhaust temperature monitoring
+    title:
+      en: Downstream exhaust temperature sensor implausible
+      ro: Semnal implauzibil senzor temperatură gaze aval
+      de: Unplausibles Signal des Abgastemperatursensors nach dem Filter
+      fr: Signal incohérent du capteur de température des gaz en aval
+      es: Señal incoherente del sensor de temperatura de gases aguas abajo
+      it: Segnale non plausibile sensore temperatura gas a valle
+      nl: Ongeldig signaal uitlaattemperatuursensor na filter
+    symptoms:
+      - Regeneration interruption
+      - Incorrect DPF temperature calculation
+      - Warning lamp
+      - Increased fuel consumption
+    keywords:
+      - downstream EGT
+      - exhaust temperature sensor downstream
+      - DPF temperature sensor
+      - EGT signal
+    possible_causes:
+      - Sensor degradation
+      - Wiring fault
+      - Connector contamination
+      - Exhaust leakage
+    diagnostic_steps:
+      - Compare cold sensor readings.
+      - Monitor temperature during normal driving.
+      - Compare sensor response with upstream temperature.
+      - Inspect wiring and connectors.
+      - Verify the sensor response during regeneration if safely supported.
+    related_dtcs:
+      - P2031
+      - P2032
+      - P2033
+    difficulty: medium
+
+  - id: dacia_diesel_glow_plug_afterglow_control_fault
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - sandero
+        - duster
+        - dokker
+        - lodgy
+      generations:
+        - logan_i
+        - logan_ii
+        - sandero_i
+        - sandero_ii
+        - duster_i
+        - duster_ii
+        - dokker_i
+        - lodgy_i
+      engines:
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: Diesel glow plug control
+    title:
+      en: Glow plug afterglow control fault
+      ro: Defecțiune comandă post-încălzire bujii incandescente
+      de: Fehler der Nachglühsteuerung
+      fr: Défaut de post-chauffage des bougies de préchauffage
+      es: Fallo del control de postcalentamiento
+      it: Guasto controllo post-riscaldamento candelette
+      nl: Storing nagloeiregeling gloeibougies
+    symptoms:
+      - Rough cold running
+      - Increased white smoke after start
+      - Cold-start vibration
+      - Longer warm-up
+    keywords:
+      - glow plug afterglow
+      - post glow
+      - afterglow control
+      - diesel cold running
+    possible_causes:
+      - Glow plug control module fault
+      - Power supply problem
+      - ECU command fault
+      - Wiring resistance
+    diagnostic_steps:
+      - Read glow plug control parameters.
+      - Check module supply and ground.
+      - Monitor afterglow command after engine start.
+      - Verify current draw where measurement equipment permits.
+      - Inspect module connectors and wiring.
+    related_dtcs: []
+    difficulty: medium
+
+  - id: dacia_diesel_injector_cylinder_balance_deviation
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - sandero
+        - duster
+        - dokker
+        - lodgy
+      generations:
+        - logan_i
+        - logan_ii
+        - sandero_i
+        - sandero_ii
+        - duster_i
+        - duster_ii
+        - dokker_i
+        - lodgy_i
+      engines:
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: Diesel fuel injection
+    title:
+      en: Excessive injector cylinder balance deviation
+      ro: Abatere excesivă a corecției injectorului pe cilindru
+      de: Übermäßige Zylinderabweichung der Einspritzkorrektur
+      fr: Écart excessif de correction d'injecteur par cylindre
+      es: Desviación excesiva de corrección del inyector por cilindro
+      it: Eccessiva deviazione della correzione iniettore cilindro
+      nl: Te grote cilinderafwijking van injectorcorrectie
+    symptoms:
+      - Rough idle
+      - Engine vibration
+      - Poor fuel economy
+      - Difficult starting
+    keywords:
+      - injector correction
+      - cylinder balance
+      - injection deviation
+      - injector compensation
+    possible_causes:
+      - Injector wear
+      - Compression imbalance
+      - Fuel pressure instability
+      - Combustion chamber deposits
+    diagnostic_steps:
+      - Read injector correction values at stable idle.
+      - Compare all cylinders under identical conditions.
+      - Check fuel rail pressure.
+      - Perform injector leak-off testing.
+      - Check compression if one cylinder remains significantly different.
+    related_dtcs: []
+    difficulty: medium
+
+  - id: dacia_diesel_injector_coding_mismatch
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - sandero
+        - duster
+        - dokker
+        - lodgy
+      generations:
+        - logan_i
+        - logan_ii
+        - sandero_i
+        - sandero_ii
+        - duster_i
+        - duster_ii
+        - dokker_i
+        - lodgy_i
+      engines:
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: Diesel fuel injection
+    title:
+      en: Injector coding mismatch
+      ro: Codare injector incorectă
+      de: Falsche Injektorkodierung
+      fr: Codage d'injecteur incorrect
+      es: Codificación incorrecta del inyector
+      it: Codifica iniettore errata
+      nl: Verkeerde injectorkodering
+    symptoms:
+      - Rough idle
+      - Poor combustion
+      - Increased smoke
+      - Difficult starting
+    keywords:
+      - injector coding
+      - injector code
+      - correction code
+      - injector programming
+    possible_causes:
+      - Incorrect injector code entered
+      - Injector replaced without programming
+      - ECU memory mismatch
+      - Incorrect cylinder assignment
+    diagnostic_steps:
+      - Read stored injector correction codes.
+      - Compare codes with physical injector markings.
+      - Verify cylinder assignment.
+      - Program the correct injector codes using compatible diagnostic equipment.
+      - Recheck correction values after adaptation.
+    related_dtcs: []
+    difficulty: medium
+
+  - id: dacia_diesel_fuel_rail_pressure_regulation_oscillation
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - sandero
+        - duster
+        - dokker
+        - lodgy
+      generations:
+        - logan_i
+        - logan_ii
+        - sandero_i
+        - sandero_ii
+        - duster_i
+        - duster_ii
+        - dokker_i
+        - lodgy_i
+      engines:
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: Diesel fuel pressure control
+    title:
+      en: Fuel rail pressure regulation oscillation
+      ro: Oscilații ale presiunii în rampa de combustibil
+      de: Schwankungen der Raildruckregelung
+      fr: Oscillation de la régulation de pression de rail
+      es: Oscilación de la regulación de presión del rail
+      it: Oscillazione regolazione pressione rail
+      nl: Schommeling van raildrukregeling
+    symptoms:
+      - Hunting idle
+      - Hesitation
+      - Engine vibration
+      - Intermittent power loss
+    keywords:
+      - rail pressure oscillation
+      - fuel pressure fluctuation
+      - rail pressure unstable
+      - pressure hunting
+    possible_causes:
+      - Fuel pressure regulator instability
+      - Injector return flow imbalance
+      - Air in fuel
+      - Restricted fuel supply
+      - Pressure sensor signal instability
+    diagnostic_steps:
+      - Log commanded and actual rail pressure.
+      - Check pressure variation at idle and under load.
+      - Inspect low-pressure fuel supply.
+      - Perform injector leak-off testing.
+      - Check pressure regulator and sensor signals.
+    related_dtcs: []
+    difficulty: hard
+
+  - id: dacia_diesel_low_pressure_fuel_supply_restriction
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - sandero
+        - duster
+        - dokker
+        - lodgy
+      generations:
+        - logan_i
+        - logan_ii
+        - sandero_i
+        - sandero_ii
+        - duster_i
+        - duster_ii
+        - dokker_i
+        - lodgy_i
+      engines:
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: Diesel fuel supply
+    title:
+      en: Low-pressure diesel fuel supply restriction
+      ro: Restricție alimentare combustibil pe circuitul de joasă presiune
+      de: Einschränkung der Diesel-Kraftstoffversorgung im Niederdruckkreis
+      fr: Restriction de l'alimentation diesel basse pression
+      es: Restricción del suministro de combustible diésel de baja presión
+      it: Restrizione alimentazione diesel a bassa pressione
+      nl: Beperking brandstoftoevoer lage druk diesel
+    symptoms:
+      - Engine hesitation
+      - Hard starting
+      - Rail pressure drop
+      - Reduced power
+    keywords:
+      - low pressure fuel
+      - diesel fuel restriction
+      - supply restriction
+      - fuel starvation
+    possible_causes:
+      - Restricted fuel filter
+      - Blocked pickup
+      - Collapsed fuel hose
+      - Air leak in fuel line
+    diagnostic_steps:
+      - Measure fuel supply pressure under load.
+      - Inspect fuel filter and lines.
+      - Check for air bubbles in transparent sections where applicable.
+      - Inspect tank pickup and hoses.
+      - Verify supply pressure during cranking and acceleration.
+    related_dtcs: []
+    difficulty: medium
+
+  - id: dacia_diesel_fuel_system_air_ingress
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - sandero
+        - duster
+        - dokker
+        - lodgy
+      generations:
+        - logan_i
+        - logan_ii
+        - sandero_i
+        - sandero_ii
+        - duster_i
+        - duster_ii
+        - dokker_i
+        - lodgy_i
+      engines:
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: Diesel fuel supply
+    title:
+      en: Air ingress into diesel fuel system
+      ro: Pătrundere de aer în instalația de alimentare diesel
+      de: Lufteintritt in das Dieselkraftstoffsystem
+      fr: Entrée d'air dans le circuit de carburant diesel
+      es: Entrada de aire en el sistema de combustible diésel
+      it: Ingresso aria nel circuito carburante diesel
+      nl: Luchtinlaat in dieselsysteem
+    symptoms:
+      - Long crank after parking
+      - Hard starting
+      - Engine stalls
+      - Rail pressure delay
+    keywords:
+      - air in fuel
+      - diesel air leak
+      - fuel system air
+      - fuel drainback
+    possible_causes:
+      - Fuel line seal leak
+      - Filter housing seal
+      - Quick connector leak
+      - Cracked fuel hose
+      - Tank pickup connection leak
+    diagnostic_steps:
+      - Inspect fuel lines and filter housing.
+      - Check for air bubbles during priming.
+      - Perform a fuel drainback test.
+      - Inspect quick-connect seals.
+      - Pressure-test the low-pressure circuit where appropriate.
+    related_dtcs: []
+    difficulty: medium
+
+  - id: dacia_engine_crankcase_pressure_excessive
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - sandero
+        - duster
+        - dokker
+        - lodgy
+      generations:
+        - logan_i
+        - logan_ii
+        - sandero_i
+        - sandero_ii
+        - duster_i
+        - duster_ii
+        - dokker_i
+        - lodgy_i
+      engines:
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: Crankcase ventilation
+    title:
+      en: Excessive crankcase pressure
+      ro: Presiune excesivă în carter
+      de: Überhöhter Kurbelgehäusedruck
+      fr: Pression excessive dans le carter
+      es: Presión excesiva en el cárter
+      it: Pressione eccessiva nel basamento
+      nl: Overmatige carterdruk
+    symptoms:
+      - Oil leaks
+      - Oil consumption
+      - Blue smoke
+      - Turbo oil leakage
+    keywords:
+      - crankcase pressure
+      - blowby
+      - crankcase ventilation
+      - excessive blow by
+    possible_causes:
+      - Blocked crankcase ventilation
+      - Excessive piston blow-by
+      - Worn piston rings
+      - Breather restriction
+    diagnostic_steps:
+      - Measure crankcase pressure using suitable equipment.
+      - Inspect the crankcase ventilation system.
+      - Check for blocked breather passages.
+      - Evaluate engine blow-by.
+      - Perform compression or leak-down testing if mechanical wear is suspected.
+    related_dtcs: []
+    difficulty: hard
+
+  - id: dacia_engine_crankcase_ventilation_pressure_regulator_fault
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - sandero
+        - duster
+        - dokker
+        - lodgy
+      generations:
+        - logan_i
+        - logan_ii
+        - sandero_i
+        - sandero_ii
+        - duster_i
+        - duster_ii
+        - dokker_i
+        - lodgy_i
+      engines:
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: Crankcase ventilation
+    title:
+      en: Crankcase ventilation pressure regulator fault
+      ro: Defecțiune regulator presiune ventilație carter
+      de: Fehler des Kurbelgehäuse-Druckreglers
+      fr: Défaut du régulateur de pression du carter
+      es: Fallo del regulador de presión del cárter
+      it: Guasto regolatore pressione basamento
+      nl: Storing carterdrukregelaar
+    symptoms:
+      - Oil mist in intake
+      - Oil leaks
+      - Rough running
+      - Increased oil consumption
+    keywords:
+      - PCV pressure regulator
+      - crankcase regulator
+      - breather valve
+      - crankcase ventilation valve
+    possible_causes:
+      - Faulty pressure regulator
+      - Blocked ventilation passage
+      - Diaphragm failure
+      - Excessive crankcase pressure
+    diagnostic_steps:
+      - Inspect the ventilation valve or regulator.
+      - Check crankcase pressure.
+      - Inspect intake for excessive oil mist.
+      - Check ventilation hoses for blockage.
+      - Verify pressure after repair.
+    related_dtcs: []
+    difficulty: medium
+
+  - id: dacia_engine_intake_manifold_pressure_drop_under_load
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - sandero
+        - duster
+      generations:
+        - logan_i
+        - logan_ii
+        - sandero_i
+        - sandero_ii
+        - duster_i
+        - duster_ii
+      engines:
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: Turbocharged intake
+    title:
+      en: Intake manifold pressure drops excessively under load
+      ro: Presiunea din admisie scade excesiv sub sarcină
+      de: Ladedruck fällt unter Last übermäßig ab
+      fr: Chute excessive de pression d'admission sous charge
+      es: Caída excesiva de presión de admisión bajo carga
+      it: Caduta eccessiva pressione aspirazione sotto carico
+      nl: Overmatige daling inlaaddruk onder belasting
+    symptoms:
+      - Poor acceleration
+      - Low boost
+      - Smoke under acceleration
+      - Turbocharger appears active but vehicle lacks power
+    keywords:
+      - intake pressure drop
+      - boost pressure drop
+      - charge air pressure
+      - pressure loss under load
+    possible_causes:
+      - Charge-air leak
+      - Intercooler leak
+      - Loose hose connection
+      - Turbocharger flow limitation
+      - Intake restriction
+    diagnostic_steps:
+      - Log requested and actual boost pressure during acceleration.
+      - Pressure-test the charge-air system.
+      - Inspect intercooler and hose joints.
+      - Check turbocharger operation.
+      - Inspect intake restriction if pressure remains low without visible leaks.
+    related_dtcs: []
+    difficulty: medium
+
+  - id: dacia_engine_exhaust_backpressure_excessive
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - sandero
+        - duster
+        - dokker
+        - lodgy
+      generations:
+        - logan_i
+        - logan_ii
+        - sandero_i
+        - sandero_ii
+        - duster_i
+        - duster_ii
+        - dokker_i
+        - lodgy_i
+      engines:
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: Exhaust system
+    title:
+      en: Excessive exhaust backpressure
+      ro: Contrapresiune excesivă pe evacuare
+      de: Überhöhter Abgasgegendruck
+      fr: Contre-pression excessive des gaz d'échappement
+      es: Contrapresión excesiva de escape
+      it: Contropressione eccessiva allo scarico
+      nl: Overmatige uitlaattegendruk
+    symptoms:
+      - Severe power loss
+      - Turbo response degradation
+      - High exhaust temperature
+      - Engine struggles under load
+    keywords:
+      - exhaust backpressure
+      - exhaust restriction
+      - high back pressure
+      - blocked exhaust
+    possible_causes:
+      - Restricted DPF
+      - Collapsed catalyst
+      - Damaged exhaust component
+      - Severe soot accumulation
+    diagnostic_steps:
+      - Measure exhaust backpressure before the restrictive component.
+      - Compare pressure at idle and under load.
+      - Check DPF differential pressure.
+      - Inspect catalytic converter and exhaust internals.
+      - Confirm restriction location before replacement.
+    related_dtcs: []
+    difficulty: hard
+
+  - id: dacia_engine_catalyst_efficiency_degraded
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - sandero
+        - duster
+      generations:
+        - logan_i
+        - logan_ii
+        - sandero_i
+        - sandero_ii
+        - duster_i
+        - duster_ii
+      engines:
+        - dacia_logan_i_1461
+        - dacia_logan_i_1390
+        - dacia_logan_i_1598
+        - dacia_logan_ii_1149
+        - dacia_logan_ii_898
+    category: diagnostics
+    system: Emissions control
+    title:
+      en: Catalytic converter efficiency degraded
+      ro: Eficiență degradată a catalizatorului
+      de: Verringerte Katalysatorwirkung
+      fr: Efficacité du catalyseur dégradée
+      es: Eficiencia del catalizador degradada
+      it: Efficienza del catalizzatore ridotta
+      nl: Verminderde katalysatorefficiëntie
+    symptoms:
+      - Engine warning lamp
+      - Increased emissions
+      - Possible fuel economy reduction
+      - Exhaust odor
+    keywords:
+      - catalyst efficiency
+      - catalytic converter
+      - catalyst degradation
+      - P0420
+    possible_causes:
+      - Catalyst aging
+      - Persistent misfire
+      - Excessive oil consumption
+      - Fuel mixture fault
+      - Exhaust leak
+    diagnostic_steps:
+      - Check upstream and downstream oxygen sensor behavior.
+      - Verify there are no active misfire or mixture faults.
+      - Inspect exhaust for leaks.
+      - Evaluate catalyst temperature behavior.
+      - Confirm catalyst efficiency before replacement.
+    related_dtcs:
+      - P0420
+    difficulty: medium
+
+  - id: dacia_engine_catalyst_temperature_abnormal
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - sandero
+        - duster
+      generations:
+        - logan_i
+        - logan_ii
+        - sandero_i
+        - sandero_ii
+        - duster_i
+        - duster_ii
+      engines:
+        - dacia_logan_i_1390
+        - dacia_logan_i_1598
+        - dacia_logan_ii_1149
+        - dacia_logan_ii_898
+    category: diagnostics
+    system: Emissions control
+    title:
+      en: Abnormal catalytic converter temperature
+      ro: Temperatură anormală a catalizatorului
+      de: Abnormale Katalysatortemperatur
+      fr: Température anormale du catalyseur
+      es: Temperatura anormal del catalizador
+      it: Temperatura anomala del catalizzatore
+      nl: Abnormale katalysatortemperatuur
+    symptoms:
+      - Exhaust odor
+      - Reduced power
+      - Excessive fuel consumption
+      - Engine warning lamp
+    keywords:
+      - catalyst temperature
+      - catalytic converter overheating
+      - catalyst overheating
+      - exhaust temperature
+    possible_causes:
+      - Rich mixture
+      - Misfire
+      - Ignition fault
+      - Restricted catalyst
+      - Incorrect oxygen sensor feedback
+    diagnostic_steps:
+      - Check for active misfire and fuel-trim faults.
+      - Monitor catalyst temperature.
+      - Check oxygen sensor signals.
+      - Inspect exhaust flow.
+      - Correct the upstream engine fault before replacing the catalyst.
+    related_dtcs: []
+    difficulty: medium
+
+  - id: dacia_engine_o2_sensor_response_slow
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - sandero
+        - duster
+      generations:
+        - logan_i
+        - logan_ii
+        - sandero_i
+        - sandero_ii
+        - duster_i
+        - duster_ii
+      engines:
+        - dacia_logan_i_1390
+        - dacia_logan_i_1598
+        - dacia_logan_ii_1149
+        - dacia_logan_ii_898
+    category: diagnostics
+    system: Oxygen sensor control
+    title:
+      en: Oxygen sensor response too slow
+      ro: Răspuns prea lent al senzorului de oxigen
+      de: Zu langsame Reaktion der Lambdasonde
+      fr: Réponse trop lente de la sonde lambda
+      es: Respuesta demasiado lenta del sensor de oxígeno
+      it: Risposta troppo lenta della sonda lambda
+      nl: Te trage reactie van lambdasensor
+    symptoms:
+      - Fuel economy reduction
+      - Unstable fuel trims
+      - Engine warning lamp
+      - Emissions increase
+    keywords:
+      - O2 sensor slow response
+      - lambda slow
+      - oxygen sensor response
+      - P0133
+    possible_causes:
+      - Aging oxygen sensor
+      - Contamination
+      - Exhaust leak
+      - Fuel mixture problem
+      - Sensor heater issue
+    diagnostic_steps:
+      - Monitor oxygen sensor switching or response rate.
+      - Check exhaust for leaks.
+      - Verify fuel trims.
+      - Confirm heater operation.
+      - Compare sensor behavior with expected response under changing mixture conditions.
+    related_dtcs:
+      - P0133
+    difficulty: medium
+
+  - id: dacia_engine_o2_sensor_signal_stuck_rich
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - sandero
+        - duster
+      generations:
+        - logan_i
+        - logan_ii
+        - sandero_i
+        - sandero_ii
+        - duster_i
+        - duster_ii
+      engines:
+        - dacia_logan_i_1390
+        - dacia_logan_i_1598
+        - dacia_logan_ii_1149
+        - dacia_logan_ii_898
+    category: diagnostics
+    system: Oxygen sensor control
+    title:
+      en: Oxygen sensor signal stuck rich
+      ro: Semnal senzor oxigen blocat pe amestec bogat
+      de: Lambdasondensignal auf fett festgelegt
+      fr: Signal de sonde lambda bloqué sur riche
+      es: Señal del sensor de oxígeno bloqueada en rico
+      it: Segnale sonda lambda bloccato su ricco
+      nl: Lambdasensorsignaal vast op rijk
+    symptoms:
+      - Black exhaust smoke
+      - High fuel consumption
+      - Rough running
+      - Engine warning lamp
+    keywords:
+      - O2 stuck rich
+      - lambda rich
+      - oxygen signal rich
+      - P0172
+    possible_causes:
+      - Excessive fuel delivery
+      - Injector leakage
+      - Fuel pressure too high
+      - Sensor contamination
+      - Intake air measurement error
+    diagnostic_steps:
+      - Verify the oxygen sensor signal.
+      - Check fuel pressure.
+      - Inspect injector leakage.
+      - Compare measured air mass or manifold pressure with expected values.
+      - Check for an exhaust leak that could distort oxygen measurements.
+    related_dtcs:
+      - P0132
+    difficulty: medium
+
+  - id: dacia_engine_o2_sensor_signal_stuck_lean
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - sandero
+        - duster
+      generations:
+        - logan_i
+        - logan_ii
+        - sandero_i
+        - sandero_ii
+        - duster_i
+        - duster_ii
+      engines:
+        - dacia_logan_i_1390
+        - dacia_logan_i_1598
+        - dacia_logan_ii_1149
+        - dacia_logan_ii_898
+    category: diagnostics
+    system: Oxygen sensor control
+    title:
+      en: Oxygen sensor signal stuck lean
+      ro: Semnal senzor oxigen blocat pe amestec sărac
+      de: Lambdasondensignal auf mager festgelegt
+      fr: Signal de sonde lambda bloqué sur pauvre
+      es: Señal del sensor de oxígeno bloqueada en pobre
+      it: Segnale sonda lambda bloccato su magro
+      nl: Lambdasensorsignaal vast op arm
+    symptoms:
+      - Hesitation
+      - Poor acceleration
+      - Rough idle
+      - Increased emissions
+    keywords:
+      - O2 stuck lean
+      - lambda lean
+      - oxygen signal lean
+      - P0131
+    possible_causes:
+      - Intake air leak
+      - Low fuel pressure
+      - Injector restriction
+      - Exhaust leak
+      - Oxygen sensor fault
+    diagnostic_steps:
+      - Verify oxygen sensor signal.
+      - Check intake for unmetered air.
+      - Measure fuel pressure.
+      - Check injector operation.
+      - Inspect exhaust upstream of the sensor.
+    related_dtcs:
+      - P0131
+    difficulty: medium
+
+  - id: dacia_engine_evap_vapor_line_restriction
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - sandero
+        - duster
+      generations:
+        - logan_i
+        - logan_ii
+        - sandero_i
+        - sandero_ii
+        - duster_i
+        - duster_ii
+      engines:
+        - dacia_logan_i_1390
+        - dacia_logan_i_1598
+        - dacia_logan_ii_1149
+        - dacia_logan_ii_898
+    category: diagnostics
+    system: EVAP system
+    title:
+      en: EVAP vapor line restriction
+      ro: Restricție conductă vapori EVAP
+      de: Einschränkung der EVAP-Dampfleitung
+      fr: Restriction de la conduite de vapeurs EVAP
+      es: Restricción de la línea de vapores EVAP
+      it: Restrizione linea vapori EVAP
+      nl: Verstopping EVAP-dampleiding
+    symptoms:
+      - Fuel tank pressure abnormal
+      - Refueling difficulty
+      - Fuel odor
+      - Engine mixture disturbance
+    keywords:
+      - EVAP restriction
+      - vapor line blocked
+      - fuel vapor line
+      - EVAP flow restriction
+    possible_causes:
+      - Blocked vapor line
+      - Charcoal canister contamination
+      - Pinched hose
+      - Liquid fuel entering EVAP system
+    diagnostic_steps:
+      - Inspect EVAP hoses for kinks and restrictions.
+      - Check charcoal canister condition.
+      - Verify purge and vent flow.
+      - Check fuel tank pressure behavior.
+      - Inspect for liquid fuel contamination.
+    related_dtcs: []
+    difficulty: medium
+
+  - id: dacia_engine_fuel_tank_vacuum_after_drive
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - sandero
+        - duster
+      generations:
+        - logan_i
+        - logan_ii
+        - sandero_i
+        - sandero_ii
+        - duster_i
+        - duster_ii
+      engines:
+        - dacia_logan_i_1390
+        - dacia_logan_i_1598
+        - dacia_logan_ii_1149
+        - dacia_logan_ii_898
+    category: diagnostics
+    system: Fuel tank ventilation
+    title:
+      en: Excessive fuel tank vacuum after driving
+      ro: Vacuum excesiv în rezervor după mers
+      de: Übermäßiger Unterdruck im Kraftstofftank nach der Fahrt
+      fr: Dépression excessive dans le réservoir après conduite
+      es: Vacío excesivo en el depósito después de conducir
+      it: Vuoto eccessivo nel serbatoio dopo la marcia
+      nl: Overmatig vacuüm in brandstoftank na rijden
+    symptoms:
+      - Hissing when fuel cap is opened
+      - Reduced engine power
+      - Engine hesitation
+      - Fuel supply restriction
+    keywords:
+      - fuel tank vacuum
+      - tank pressure
+      - fuel cap vacuum
+      - tank vent blocked
+    possible_causes:
+      - Blocked tank ventilation
+      - EVAP vent restriction
+      - Charcoal canister blockage
+      - Faulty vent valve
+    diagnostic_steps:
+      - Monitor tank pressure.
+      - Inspect EVAP vent path.
+      - Check vent valve operation.
+      - Inspect charcoal canister.
+      - Confirm normal tank pressure after repair.
+    related_dtcs: []
+    difficulty: medium
+
+  - id: dacia_engine_idle_air_control_adaptation_limit
+    vehicle:
+      manufacturer: dacia
+      models:
+        - supernova
+        - solenza
+        - logan
+        - sandero
+      generations:
+        - supernova
+        - solenza
+        - logan_i
+        - sandero_i
+      engines:
+        - dacia_supernova_1390
+        - dacia_solenza_1390
+        - dacia_logan_i_1390
+        - dacia_logan_i_1598
+    category: diagnostics
+    system: Engine idle control
+    title:
+      en: Idle air control adaptation limit reached
+      ro: Limită de adaptare control aer ralanti atinsă
+      de: Adaptationsgrenze der Leerlaufregelung erreicht
+      fr: Limite d'adaptation du contrôle d'air au ralenti atteinte
+      es: Límite de adaptación del control de aire de ralentí alcanzado
+      it: Limite adattamento controllo aria minimo raggiunto
+      nl: Adaptatielimiet stationaire luchtregeling bereikt
+    symptoms:
+      - Unstable idle
+      - Idle speed too high
+      - Engine stalls at idle
+      - Idle fluctuation
+    keywords:
+      - idle adaptation
+      - idle air control adaptation
+      - idle learned value
+      - idle trim
+    possible_causes:
+      - Throttle body contamination
+      - Vacuum leak
+      - Incorrect base air flow
+      - Idle actuator wear
+      - ECU adaptation out of range
+    diagnostic_steps:
+      - Read idle adaptation values.
+      - Inspect throttle body and idle air passages.
+      - Check for vacuum leaks.
+      - Verify throttle position at closed throttle.
+      - Perform idle adaptation procedure where supported.
+    related_dtcs: []
+    difficulty: medium
+
+  - id: dacia_engine_cold_start_fuel_enrichment_incorrect
+    vehicle:
+      manufacturer: dacia
+      models:
+        - supernova
+        - solenza
+        - logan
+        - sandero
+      generations:
+        - supernova
+        - solenza
+        - logan_i
+        - sandero_i
+      engines:
+        - dacia_supernova_1390
+        - dacia_solenza_1390
+        - dacia_logan_i_1390
+        - dacia_logan_i_1598
+    category: diagnostics
+    system: Engine management
+    title:
+      en: Incorrect cold-start fuel enrichment
+      ro: Îmbogățire incorectă a amestecului la pornirea la rece
+      de: Falsche Kraftstoffanreicherung beim Kaltstart
+      fr: Enrichissement incorrect au démarrage à froid
+      es: Enriquecimiento incorrecto durante el arranque en frío
+      it: Arricchimento errato all'avviamento a freddo
+      nl: Onjuiste brandstofverrijking bij koude start
+    symptoms:
+      - Hard cold start
+      - Rough running after cold start
+      - Excessive fuel consumption
+      - Black smoke
+    keywords:
+      - cold start enrichment
+      - cold enrichment
+      - cold mixture
+      - starting fuel
+    possible_causes:
+      - Incorrect coolant temperature signal
+      - Injector leakage
+      - Fuel pressure fault
+      - Incorrect ECU adaptation
+      - Intake air measurement error
+    diagnostic_steps:
+      - Compare coolant and intake air temperatures before starting.
+      - Monitor injector pulse width during cold start.
+      - Check fuel pressure.
+      - Inspect mixture corrections after warm-up.
+      - Verify whether enrichment changes appropriately with coolant temperature.
+    related_dtcs: []
+    difficulty: medium
+
+  - id: dacia_engine_deceleration_fuel_cut_not_active
+    vehicle:
+      manufacturer: dacia
+      models:
+        - supernova
+        - solenza
+        - logan
+        - sandero
+      generations:
+        - supernova
+        - solenza
+        - logan_i
+        - sandero_i
+      engines:
+        - dacia_supernova_1390
+        - dacia_solenza_1390
+        - dacia_logan_i_1390
+        - dacia_logan_i_1598
+    category: diagnostics
+    system: Engine management
+    title:
+      en: Deceleration fuel cut not activating correctly
+      ro: Întreruperea injecției la decelerare nu se activează corect
+      de: Schubabschaltung arbeitet nicht korrekt
+      fr: Coupure de carburant en décélération incorrecte
+      es: Corte de combustible en deceleración incorrecto
+      it: Cut-off carburante in rilascio non corretto
+      nl: Brandstofafslag bij decelereren werkt niet correct
+    symptoms:
+      - High fuel consumption
+      - Engine braking behavior abnormal
+      - Exhaust popping
+      - Idle transition instability
+    keywords:
+      - deceleration fuel cut
+      - overrun fuel cut
+      - fuel cut off
+      - engine braking
+    possible_causes:
+      - Throttle position signal incorrect
+      - Engine speed input fault
+      - ECU strategy condition not met
+      - Vacuum or throttle control problem
+    diagnostic_steps:
+      - Monitor throttle position during closed-throttle deceleration.
+      - Check engine speed signal.
+      - Verify injector command during overrun.
+      - Check ECU operating conditions for fuel cut.
+      - Inspect throttle return and switch signals where applicable.
+    related_dtcs: []
+    difficulty: medium
+
+  - id: dacia_engine_idle_speed_target_inconsistent
+    vehicle:
+      manufacturer: dacia
+      models:
+        - supernova
+        - solenza
+        - logan
+        - sandero
+      generations:
+        - supernova
+        - solenza
+        - logan_i
+        - sandero_i
+      engines:
+        - dacia_supernova_1390
+        - dacia_solenza_1390
+        - dacia_logan_i_1390
+        - dacia_logan_i_1598
+    category: diagnostics
+    system: Engine idle control
+    title:
+      en: Idle speed target inconsistent with operating conditions
+      ro: Turație țintă de ralanti incorectă în funcție de condițiile de funcționare
+      de: Unpassende Leerlauf-Soll-Drehzahl
+      fr: Consigne de ralenti incohérente
+      es: Régimen objetivo de ralentí incoherente
+      it: Regime minimo target incoerente
+      nl: Onjuiste gewenste stationaire toerental
+    symptoms:
+      - Idle too high
+      - Idle too low
+      - Idle fluctuation
+      - Stalling when loads are applied
+    keywords:
+      - idle target
+      - idle speed target
+      - idle rpm command
+      - idle control
+    possible_causes:
+      - Incorrect coolant temperature input
+      - Throttle adaptation problem
+      - Electrical load compensation fault
+      - Air leak
+      - ECU adaptation problem
+    diagnostic_steps:
+      - Compare requested and actual idle speed.
+      - Check coolant temperature input.
+      - Monitor electrical and HVAC load compensation.
+      - Inspect throttle and intake system.
+      - Perform adaptation if supported.
+    related_dtcs: []
+    difficulty: medium
+
+  - id: dacia_engine_ac_load_idle_compensation_fault
+    vehicle:
+      manufacturer: dacia
+      models:
+        - supernova
+        - solenza
+        - logan
+        - sandero
+      generations:
+        - supernova
+        - solenza
+        - logan_i
+        - sandero_i
+      engines:
+        - dacia_supernova_1390
+        - dacia_solenza_1390
+        - dacia_logan_i_1390
+        - dacia_logan_i_1598
+    category: diagnostics
+    system: Engine idle compensation
+    title:
+      en: A/C load idle compensation fault
+      ro: Defecțiune compensare ralanti la sarcina instalației A/C
+      de: Fehler der Leerlaufkompensation bei Klimaanlagenlast
+      fr: Défaut de compensation du ralenti avec charge de climatisation
+      es: Fallo de compensación del ralentí con carga del A/C
+      it: Guasto compensazione minimo con carico A/C
+      nl: Storing stationaire compensatie bij aircobelasting
+    symptoms:
+      - RPM drops when A/C engages
+      - Engine nearly stalls with A/C
+      - Idle fluctuation
+      - Compressor engagement causes vibration
+    keywords:
+      - AC idle compensation
+      - air conditioning idle
+      - compressor idle load
+      - idle compensation
+    possible_causes:
+      - ECU load request not received
+      - Throttle control problem
+      - Excessive compressor load
+      - Idle adaptation problem
+    diagnostic_steps:
+      - Monitor A/C request and engine load parameters.
+      - Check idle speed before and after compressor engagement.
+      - Verify compressor mechanical load.
+      - Check throttle or idle actuator response.
+      - Verify ECU compensation strategy.
+    related_dtcs: []
+    difficulty: medium
+
+  - id: dacia_engine_alternator_load_idle_compensation_fault
+    vehicle:
+      manufacturer: dacia
+      models:
+        - supernova
+        - solenza
+        - logan
+        - sandero
+      generations:
+        - supernova
+        - solenza
+        - logan_i
+        - sandero_i
+      engines:
+        - dacia_supernova_1390
+        - dacia_solenza_1390
+        - dacia_logan_i_1390
+        - dacia_logan_i_1598
+    category: diagnostics
+    system: Engine idle compensation
+    title:
+      en: Alternator load idle compensation fault
+      ro: Defecțiune compensare ralanti la sarcina alternatorului
+      de: Fehler der Leerlaufkompensation bei Generatorlast
+      fr: Défaut de compensation du ralenti avec charge alternateur
+      es: Fallo de compensación del ralentí con carga del alternador
+      it: Guasto compensazione minimo con carico alternatore
+      nl: Storing stationaire compensatie bij dynamobelasting
+    symptoms:
+      - RPM drops when electrical loads are switched on
+      - Idle instability
+      - Engine vibration
+      - Occasional stalling
+    keywords:
+      - alternator idle load
+      - electrical load compensation
+      - idle compensation alternator
+      - generator load
+    possible_causes:
+      - ECU load compensation fault
+      - Alternator excessive mechanical load
+      - Idle actuator response problem
+      - Battery or charging system fault
+    diagnostic_steps:
+      - Monitor idle speed with increasing electrical load.
+      - Measure charging voltage and current.
+      - Check ECU load compensation parameters.
+      - Inspect alternator mechanical condition.
+      - Verify idle actuator response.
+    related_dtcs: []
+    difficulty: medium
+
+  - id: dacia_engine_fuel_pump_pwm_control_abnormal
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - sandero
+        - duster
+      generations:
+        - logan_ii
+        - sandero_ii
+        - duster_ii
+      engines:
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: Fuel pump control
+    title:
+      en: Fuel pump PWM control abnormal
+      ro: Comandă PWM anormală a pompei de combustibil
+      de: Fehlerhafte PWM-Ansteuerung der Kraftstoffpumpe
+      fr: Commande PWM anormale de la pompe à carburant
+      es: Control PWM anormal de la bomba de combustible
+      it: Comando PWM anomalo pompa carburante
+      nl: Abwijkende PWM-aansturing brandstofpomp
+    symptoms:
+      - Fuel pressure fluctuation
+      - Hard starting
+      - Reduced power
+      - Intermittent engine cut-out
+    keywords:
+      - fuel pump PWM
+      - pump duty cycle
+      - fuel pump control
+      - variable fuel pump
+    possible_causes:
+      - Pump controller fault
+      - Wiring resistance
+      - ECU command fault
+      - Fuel pump wear
+    diagnostic_steps:
+      - Monitor pump command duty cycle.
+      - Measure actual fuel pressure.
+      - Check pump supply and ground.
+      - Inspect controller wiring.
+      - Compare commanded pump output with pressure response.
+    related_dtcs: []
+    difficulty: hard
+
+  - id: dacia_engine_fuel_pump_current_too_high
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - sandero
+        - duster
+      generations:
+        - logan_i
+        - logan_ii
+        - sandero_i
+        - sandero_ii
+        - duster_i
+        - duster_ii
+      engines:
+        - dacia_logan_i_1390
+        - dacia_logan_i_1598
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1149
+        - dacia_logan_ii_898
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: Fuel pump
+    title:
+      en: Fuel pump current consumption too high
+      ro: Consum de curent prea mare al pompei de combustibil
+      de: Zu hoher Stromverbrauch der Kraftstoffpumpe
+      fr: Consommation de courant excessive de la pompe à carburant
+      es: Consumo de corriente excesivo de la bomba de combustible
+      it: Assorbimento eccessivo della pompa carburante
+      nl: Te hoge stroomopname brandstofpomp
+    symptoms:
+      - Fuel pressure instability
+      - Pump noise
+      - Hard starting
+      - Intermittent engine shutdown
+    keywords:
+      - fuel pump current
+      - pump amperage
+      - fuel pump overload
+      - pump current draw
+    possible_causes:
+      - Pump wear
+      - Restricted fuel filter
+      - Restricted fuel pickup
+      - Electrical resistance
+      - Internal pump mechanical damage
+    diagnostic_steps:
+      - Measure pump current under normal operating conditions.
+      - Compare current with fuel pressure.
+      - Inspect fuel filter and pickup.
+      - Check wiring voltage drop.
+      - Replace the pump only after confirming mechanical or electrical overload.
+    related_dtcs: []
+    difficulty: medium
+
+  - id: dacia_engine_fuel_pump_current_too_low
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - sandero
+        - duster
+      generations:
+        - logan_i
+        - logan_ii
+        - sandero_i
+        - sandero_ii
+        - duster_i
+        - duster_ii
+      engines:
+        - dacia_logan_i_1390
+        - dacia_logan_i_1598
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1149
+        - dacia_logan_ii_898
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: Fuel pump
+    title:
+      en: Fuel pump current consumption too low
+      ro: Consum de curent prea mic al pompei de combustibil
+      de: Zu niedriger Stromverbrauch der Kraftstoffpumpe
+      fr: Consommation de courant trop faible de la pompe à carburant
+      es: Consumo de corriente demasiado bajo de la bomba de combustible
+      it: Assorbimento troppo basso della pompa carburante
+      nl: Te lage stroomopname brandstofpomp
+    symptoms:
+      - Low fuel pressure
+      - Hard starting
+      - Engine hesitation
+      - Reduced power
+    keywords:
+      - fuel pump low current
+      - pump current low
+      - weak fuel pump
+      - fuel pressure low
+    possible_causes:
+      - Worn pump motor
+      - Poor electrical connection
+      - Low pump supply voltage
+      - Internal pump fault
+    diagnostic_steps:
+      - Measure pump voltage under load.
+      - Measure current consumption.
+      - Check ground voltage drop.
+      - Compare pump current with delivered fuel pressure.
+      - Inspect electrical connectors and relay contacts.
+    related_dtcs: []
+    difficulty: medium
+
+  - id: dacia_engine_ecu_internal_ram_memory_fault
+    vehicle:
+      manufacturer: dacia
+      models:
+        - supernova
+        - solenza
+        - logan
+        - sandero
+        - duster
+      generations:
+        - supernova
+        - solenza
+        - logan_i
+        - logan_ii
+        - sandero_i
+        - sandero_ii
+        - duster_i
+        - duster_ii
+      engines:
+        - dacia_supernova_1390
+        - dacia_solenza_1390
+        - dacia_solenza_1461
+        - dacia_logan_i_1390
+        - dacia_logan_i_1598
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1149
+        - dacia_logan_ii_898
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: Engine ECU
+    title:
+      en: Engine ECU internal memory fault
+      ro: Defecțiune memorie internă ECU motor
+      de: Interner Speicherfehler des Motorsteuergeräts
+      fr: Défaut de mémoire interne du calculateur moteur
+      es: Fallo de memoria interna de la ECU del motor
+      it: Guasto memoria interna ECU motore
+      nl: Interne geheugenfout motor-ECU
+    symptoms:
+      - Multiple unrelated engine faults
+      - Intermittent no-start
+      - Loss of stored adaptations
+      - Engine warning lamp
+    keywords:
+      - ECU memory
+      - internal RAM
+      - ECU internal fault
+      - control module memory
+    possible_causes:
+      - ECU hardware fault
+      - Voltage instability
+      - Internal memory corruption
+      - Water or heat damage
+    diagnostic_steps:
+      - Verify ECU supply voltage and ground.
+      - Check whether unrelated faults return simultaneously.
+      - Inspect ECU connector and housing.
+      - Confirm whether internal memory faults return after clearing.
+      - Verify ECU programming status before replacement.
+    related_dtcs:
+      - P0600
+      - P0606
+    difficulty: hard
+
+  - id: dacia_engine_ecu_internal_processor_fault
+    vehicle:
+      manufacturer: dacia
+      models:
+        - supernova
+        - solenza
+        - logan
+        - sandero
+        - duster
+      generations:
+        - supernova
+        - solenza
+        - logan_i
+        - logan_ii
+        - sandero_i
+        - sandero_ii
+        - duster_i
+        - duster_ii
+      engines:
+        - dacia_supernova_1390
+        - dacia_solenza_1390
+        - dacia_solenza_1461
+        - dacia_logan_i_1390
+        - dacia_logan_i_1598
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1149
+        - dacia_logan_ii_898
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: Engine ECU
+    title:
+      en: Engine ECU processor performance fault
+      ro: Defecțiune procesor intern ECU motor
+      de: Prozessorfehler des Motorsteuergeräts
+      fr: Défaut du processeur du calculateur moteur
+      es: Fallo del procesador de la ECU del motor
+      it: Guasto processore ECU motore
+      nl: Processorstoring motor-ECU
+    symptoms:
+      - Engine warning lamp
+      - Intermittent no-start
+      - Multiple communication faults
+      - Unstable engine operation
+    keywords:
+      - ECU processor
+      - ECU internal processor
+      - processor performance
+      - P0606
+    possible_causes:
+      - ECU hardware failure
+      - Internal voltage regulator fault
+      - Software corruption
+      - Voltage surge
+    diagnostic_steps:
+      - Check battery and ECU supply voltage.
+      - Inspect ECU grounds.
+      - Check communication stability.
+      - Clear faults and verify whether the processor fault returns.
+      - Verify software version and programming integrity before ECU replacement.
+    related_dtcs:
+      - P0606
+    difficulty: hard
+
+  - id: dacia_engine_ecu_calibration_checksum_fault
+    vehicle:
+      manufacturer: dacia
+      models:
+        - supernova
+        - solenza
+        - logan
+        - sandero
+        - duster
+      generations:
+        - supernova
+        - solenza
+        - logan_i
+        - logan_ii
+        - sandero_i
+        - sandero_ii
+        - duster_i
+        - duster_ii
+      engines:
+        - dacia_supernova_1390
+        - dacia_solenza_1390
+        - dacia_solenza_1461
+        - dacia_logan_i_1390
+        - dacia_logan_i_1598
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1149
+        - dacia_logan_ii_898
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: Engine ECU
+    title:
+      en: Engine ECU calibration checksum fault
+      ro: Eroare checksum calibrare ECU motor
+      de: Prüfsummenfehler der ECU-Kalibrierung
+      fr: Défaut de somme de contrôle de calibration ECU
+      es: Error de checksum de calibración de la ECU
+      it: Errore checksum calibrazione ECU
+      nl: Checksumfout ECU-kalibratie
+    symptoms:
+      - Engine warning lamp
+      - No-start condition
+      - Unstable engine operation
+      - Programming-related fault
+    keywords:
+      - ECU checksum
+      - calibration checksum
+      - software integrity
+      - calibration corruption
+    possible_causes:
+      - Corrupted calibration
+      - Interrupted programming
+      - ECU memory fault
+      - Voltage loss during programming
+    diagnostic_steps:
+      - Confirm the exact stored checksum fault.
+      - Verify ECU supply voltage.
+      - Check programming history if available.
+      - Reprogram using the correct manufacturer calibration procedure where required.
+      - Verify ECU operation and fault memory after programming.
+    related_dtcs:
+      - P0601
+    difficulty: hard
+
+  - id: dacia_engine_ecu_keep_alive_memory_fault
+    vehicle:
+      manufacturer: dacia
+      models:
+        - supernova
+        - solenza
+        - logan
+        - sandero
+        - duster
+      generations:
+        - supernova
+        - solenza
+        - logan_i
+        - logan_ii
+        - sandero_i
+        - sandero_ii
+        - duster_i
+        - duster_ii
+      engines:
+        - dacia_supernova_1390
+        - dacia_solenza_1390
+        - dacia_solenza_1461
+        - dacia_logan_i_1390
+        - dacia_logan_i_1598
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1149
+        - dacia_logan_ii_898
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: Engine ECU power supply
+    title:
+      en: ECU keep-alive memory power fault
+      ro: Defecțiune alimentare memorie permanentă ECU
+      de: Fehler der Dauerstromversorgung des ECU-Speichers
+      fr: Défaut d'alimentation mémoire permanente du calculateur
+      es: Fallo de alimentación de memoria permanente de la ECU
+      it: Guasto alimentazione memoria permanente ECU
+      nl: Storing permanente ECU-geheugenvoeding
+    symptoms:
+      - Lost adaptations
+      - Clock or learned values reset
+      - Intermittent engine faults
+      - Multiple settings lost
+    keywords:
+      - keep alive memory
+      - KAM
+      - ECU permanent power
+      - memory supply
+    possible_causes:
+      - Permanent power interruption
+      - Fuse fault
+      - Corroded connector
+      - Battery disconnect
+      - Wiring fault
+    diagnostic_steps:
+      - Check permanent ECU battery supply.
+      - Check ECU memory supply fuse.
+      - Measure voltage with ignition off.
+      - Inspect grounds and connectors.
+      - Verify whether learned values are lost after key cycles.
+    related_dtcs:
+      - P0603
+    difficulty: medium
+
+  - id: dacia_engine_ecu_programming_voltage_interruption
+    vehicle:
+      manufacturer: dacia
+      models:
+        - supernova
+        - solenza
+        - logan
+        - sandero
+        - duster
+      generations:
+        - supernova
+        - solenza
+        - logan_i
+        - logan_ii
+        - sandero_i
+        - sandero_ii
+        - duster_i
+        - duster_ii
+      engines:
+        - dacia_supernova_1390
+        - dacia_solenza_1390
+        - dacia_solenza_1461
+        - dacia_logan_i_1390
+        - dacia_logan_i_1598
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1149
+        - dacia_logan_ii_898
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: Engine ECU programming
+    title:
+      en: ECU programming interrupted by voltage loss
+      ro: Programare ECU întreruptă din cauza pierderii tensiunii
+      de: ECU-Programmierung durch Spannungsverlust unterbrochen
+      fr: Programmation ECU interrompue par perte de tension
+      es: Programación de ECU interrumpida por pérdida de tensión
+      it: Programmazione ECU interrotta da perdita di tensione
+      nl: ECU-programmering onderbroken door spanningsverlies
+    symptoms:
+      - Engine does not start after programming
+      - ECU communication failure
+      - Calibration fault
+      - Immobilizer-related start problem
+    keywords:
+      - ECU programming interrupted
+      - programming voltage
+      - ECU flash interrupted
+      - programming failure
+    possible_causes:
+      - Battery voltage drop
+      - Diagnostic interface interruption
+      - Ignition switched off during programming
+      - Incorrect programming procedure
+    diagnostic_steps:
+      - Verify battery voltage and support equipment.
+      - Confirm ECU communication.
+      - Check stored programming or calibration faults.
+      - Restore correct software using the manufacturer's programming procedure.
+      - Verify immobilizer synchronization if required after programming.
+    related_dtcs: []
+    difficulty: hard
+
+  - id: dacia_can_bus_high_resistance_fault
+    vehicle:
+      manufacturer: dacia
+      models:
+        - supernova
+        - solenza
+        - logan
+        - sandero
+        - duster
+        - dokker
+        - lodgy
+      generations:
+        - supernova
+        - solenza
+        - logan_i
+        - logan_ii
+        - sandero_i
+        - sandero_ii
+        - duster_i
+        - duster_ii
+        - dokker_i
+        - lodgy_i
+      engines:
+        - dacia_supernova_1390
+        - dacia_solenza_1390
+        - dacia_solenza_1461
+        - dacia_logan_i_1390
+        - dacia_logan_i_1598
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1149
+        - dacia_logan_ii_898
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: CAN communication
+    title:
+      en: CAN bus high resistance fault
+      ro: Defecțiune rezistență mare pe magistrala CAN
+      de: Hoher Widerstand auf dem CAN-Bus
+      fr: Résistance excessive sur le réseau CAN
+      es: Resistencia excesiva en la red CAN
+      it: Resistenza elevata sulla rete CAN
+      nl: Te hoge weerstand op CAN-bus
+    symptoms:
+      - Multiple communication faults
+      - Intermittent module dropouts
+      - Warning lamps
+      - Diagnostic communication instability
+    keywords:
+      - CAN high resistance
+      - CAN wiring resistance
+      - CAN network
+      - CAN intermittent
+    possible_causes:
+      - Corroded connector
+      - Damaged CAN wiring
+      - Poor splice connection
+      - Connector terminal tension problem
+    diagnostic_steps:
+      - Measure CAN resistance with the network powered down.
+      - Check CAN-H and CAN-L wiring continuity.
+      - Inspect connectors and splices.
+      - Monitor bus voltage during communication.
+      - Isolate the affected network branch if necessary.
+    related_dtcs: []
+    difficulty: hard
+
+  - id: dacia_can_bus_short_to_battery
+    vehicle:
+      manufacturer: dacia
+      models:
+        - supernova
+        - solenza
+        - logan
+        - sandero
+        - duster
+        - dokker
+        - lodgy
+      generations:
+        - supernova
+        - solenza
+        - logan_i
+        - logan_ii
+        - sandero_i
+        - sandero_ii
+        - duster_i
+        - duster_ii
+        - dokker_i
+        - lodgy_i
+      engines:
+        - dacia_supernova_1390
+        - dacia_solenza_1390
+        - dacia_solenza_1461
+        - dacia_logan_i_1390
+        - dacia_logan_i_1598
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1149
+        - dacia_logan_ii_898
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: CAN communication
+    title:
+      en: CAN bus short to battery
+      ro: Scurtcircuit magistrală CAN la tensiunea bateriei
+      de: CAN-Bus Kurzschluss gegen Batteriespannung
+      fr: Court-circuit du réseau CAN vers la batterie
+      es: Cortocircuito de la red CAN a batería
+      it: Cortocircuito rete CAN verso batteria
+      nl: CAN-bus kortsluiting naar accuspanning
+    symptoms:
+      - Multiple modules offline
+      - Diagnostic communication failure
+      - Warning lamps
+      - Engine or body functions unavailable
+    keywords:
+      - CAN short battery
+      - CAN high voltage
+      - CAN-H short to power
+      - CAN bus short
+    possible_causes:
+      - Damaged CAN wire
+      - Water intrusion
+      - Module internal short
+      - Incorrect aftermarket wiring
+    diagnostic_steps:
+      - Measure CAN-H and CAN-L voltages.
+      - Disconnect suspected modules one at a time.
+      - Inspect harness sections for battery contact.
+      - Check aftermarket equipment wiring.
+      - Confirm normal bus voltage after isolation.
+    related_dtcs: []
+    difficulty: hard
+
+  - id: dacia_can_bus_short_to_ground
+    vehicle:
+      manufacturer: dacia
+      models:
+        - supernova
+        - solenza
+        - logan
+        - sandero
+        - duster
+        - dokker
+        - lodgy
+      generations:
+        - supernova
+        - solenza
+        - logan_i
+        - logan_ii
+        - sandero_i
+        - sandero_ii
+        - duster_i
+        - duster_ii
+        - dokker_i
+        - lodgy_i
+      engines:
+        - dacia_supernova_1390
+        - dacia_solenza_1390
+        - dacia_solenza_1461
+        - dacia_logan_i_1390
+        - dacia_logan_i_1598
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1149
+        - dacia_logan_ii_898
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: CAN communication
+    title:
+      en: CAN bus short to ground
+      ro: Scurtcircuit magistrală CAN la masă
+      de: CAN-Bus Kurzschluss gegen Masse
+      fr: Court-circuit du réseau CAN vers la masse
+      es: Cortocircuito de la red CAN a masa
+      it: Cortocircuito rete CAN verso massa
+      nl: CAN-bus kortsluiting naar massa
+    symptoms:
+      - Multiple modules offline
+      - Communication failure
+      - Multiple warning lamps
+      - Intermittent vehicle functions
+    keywords:
+      - CAN short ground
+      - CAN low voltage
+      - CAN bus ground short
+      - CAN wiring
+    possible_causes:
+      - Damaged harness
+      - Water intrusion
+      - Module internal fault
+      - Harness crushed against body
+    diagnostic_steps:
+      - Check CAN-H and CAN-L voltage levels.
+      - Inspect harness routing.
+      - Disconnect suspected modules sequentially.
+      - Check resistance to ground with power removed.
+      - Repair the affected network branch and verify communication.
+    related_dtcs: []
+    difficulty: hard
+
+  - id: dacia_uch_battery_voltage_interruption_memory_loss
+    vehicle:
+      manufacturer: dacia
+      models:
+        - supernova
+        - solenza
+        - logan
+        - sandero
+        - duster
+        - dokker
+        - lodgy
+      generations:
+        - supernova
+        - solenza
+        - logan_i
+        - logan_ii
+        - sandero_i
+        - sandero_ii
+        - duster_i
+        - duster_ii
+        - dokker_i
+        - lodgy_i
+      engines:
+        - dacia_supernova_1390
+        - dacia_solenza_1390
+        - dacia_solenza_1461
+        - dacia_logan_i_1390
+        - dacia_logan_i_1598
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1149
+        - dacia_logan_ii_898
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: Body control
+    title:
+      en: UCH battery voltage interruption with memory loss
+      ro: Pierdere alimentare UCH cu pierderea memoriei
+      de: UCH-Spannungsunterbrechung mit Speicherverlust
+      fr: Coupure d'alimentation UCH avec perte de mémoire
+      es: Interrupción de alimentación UCH con pérdida de memoria
+      it: Interruzione alimentazione UCH con perdita memoria
+      nl: UCH-spanningsonderbreking met geheugenverlies
+    symptoms:
+      - Lost body settings
+      - Remote key synchronization issue
+      - Intermittent central locking
+      - Multiple body faults after battery replacement
+    keywords:
+      - UCH memory loss
+      - body module power loss
+      - UCH reset
+      - battery disconnect UCH
+    possible_causes:
+      - Battery voltage interruption
+      - Poor UCH supply connection
+      - Fuse contact problem
+      - Battery terminal instability
+    diagnostic_steps:
+      - Check permanent UCH power supply.
+      - Inspect relevant fuses and terminals.
+      - Check battery terminal condition.
+      - Read UCH event memory.
+      - Perform required initialization procedures after restoring stable power.
+    related_dtcs: []
+    difficulty: medium
+
+  - id: dacia_abs_brake_switch_plausibility_fault
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - sandero
+        - duster
+        - dokker
+        - lodgy
+      generations:
+        - logan_i
+        - logan_ii
+        - sandero_i
+        - sandero_ii
+        - duster_i
+        - duster_ii
+        - dokker_i
+        - lodgy_i
+      engines:
+        - dacia_logan_i_1390
+        - dacia_logan_i_1598
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1149
+        - dacia_logan_ii_898
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: ABS/ESP
+    title:
+      en: Brake switch plausibility fault
+      ro: Defecțiune de plauzibilitate a contactului de frână
+      de: Plausibilitätsfehler des Bremsschalters
+      fr: Défaut de plausibilité du contacteur de frein
+      es: Fallo de plausibilidad del interruptor de freno
+      it: Guasto plausibilità interruttore freno
+      nl: Plausibiliteitsfout remschakelaar
+    symptoms:
+      - ABS or ESP warning
+      - Cruise control unavailable
+      - Brake lights abnormal
+      - Traction control intervention abnormal
+    keywords:
+      - brake switch plausibility
+      - brake pedal switch
+      - stop switch
+      - brake signal
+    possible_causes:
+      - Misadjusted brake switch
+      - Failed switch
+      - Wiring fault
+      - Conflicting brake signals
+    diagnostic_steps:
+      - Monitor all brake switch states.
+      - Compare pedal position with brake light operation.
+      - Check switch adjustment.
+      - Inspect wiring and connector.
+      - Verify ABS/ESP receives consistent brake status.
+    related_dtcs:
+      - P0504
+    difficulty: easy
+
+  - id: dacia_abs_hydraulic_unit_pressure_sensor_signal_implausible
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - sandero
+        - duster
+      generations:
+        - logan_ii
+        - sandero_ii
+        - duster_ii
+      engines:
+        - dacia_logan_ii_1149
+        - dacia_logan_ii_898
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: ABS/ESP
+    title:
+      en: ABS hydraulic pressure sensor signal implausible
+      ro: Semnal implauzibil senzor presiune hidraulică ABS
+      de: Unplausibles Signal des ABS-Hydraulikdrucksensors
+      fr: Signal incohérent du capteur de pression hydraulique ABS
+      es: Señal incoherente del sensor de presión hidráulica ABS
+      it: Segnale non plausibile sensore pressione idraulica ABS
+      nl: Ongeldig signaal ABS-hydraulische druksensor
+    symptoms:
+      - ABS warning
+      - ESP warning
+      - Uneven brake assistance
+      - ABS intervention unavailable
+    keywords:
+      - ABS pressure sensor
+      - hydraulic pressure sensor
+      - brake pressure signal
+      - pressure plausibility
+    possible_causes:
+      - Pressure sensor drift
+      - Internal hydraulic unit fault
+      - Wiring fault
+      - Low system voltage
+    diagnostic_steps:
+      - Read brake pressure with pedal released.
+      - Compare pressure sensor output with pedal input.
+      - Check sensor supply and ground.
+      - Verify hydraulic unit connector.
+      - Perform calibration if supported.
+    related_dtcs: []
+    difficulty: hard
+
+  - id: dacia_esp_brake_pressure_signal_implausible
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - sandero
+        - duster
+      generations:
+        - logan_ii
+        - sandero_ii
+        - duster_ii
+      engines:
+        - dacia_logan_ii_1149
+        - dacia_logan_ii_898
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: ESP
+    title:
+      en: ESP brake pressure signal implausible
+      ro: Semnal implauzibil presiune frână pentru ESP
+      de: Unplausibles Bremsdrucksignal für ESP
+      fr: Signal de pression de freinage incohérent pour ESP
+      es: Señal de presión de freno incoherente para ESP
+      it: Segnale pressione freno non plausibile per ESP
+      nl: Ongeldig remdruksignaal voor ESP
+    symptoms:
+      - ESP warning
+      - Traction control disabled
+      - ABS/ESP intervention abnormal
+      - Brake system warning
+    keywords:
+      - ESP brake pressure
+      - brake pressure plausibility
+      - stability control pressure
+      - ESP pressure sensor
+    possible_causes:
+      - Pressure sensor fault
+      - Brake switch disagreement
+      - Hydraulic unit fault
+      - Sensor calibration loss
+    diagnostic_steps:
+      - Compare brake switch state with pressure increase.
+      - Check pressure sensor signal.
+      - Inspect ABS hydraulic unit.
+      - Perform pressure sensor calibration where supported.
+      - Road-test only after verifying stable brake pressure data.
+    related_dtcs: []
+    difficulty: hard
+
+  - id: dacia_srs_crash_sensor_signal_implausible
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - sandero
+        - duster
+        - dokker
+        - lodgy
+      generations:
+        - logan_i
+        - logan_ii
+        - sandero_i
+        - sandero_ii
+        - duster_i
+        - duster_ii
+        - dokker_i
+        - lodgy_i
+      engines:
+        - dacia_logan_i_1390
+        - dacia_logan_i_1598
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1149
+        - dacia_logan_ii_898
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: SRS
+    title:
+      en: Crash sensor signal implausible
+      ro: Semnal implauzibil senzor de impact
+      de: Unplausibles Signal des Crashsensors
+      fr: Signal incohérent du capteur de choc
+      es: Señal incoherente del sensor de impacto
+      it: Segnale non plausibile sensore d'urto
+      nl: Ongeldig signaal botssensor
+    symptoms:
+      - Airbag warning lamp
+      - SRS system disabled
+      - Stored crash sensor fault
+    keywords:
+      - crash sensor
+      - impact sensor
+      - acceleration sensor SRS
+      - crash signal
+    possible_causes:
+      - Sensor fault
+      - Damaged wiring
+      - Connector corrosion
+      - Previous collision damage
+    diagnostic_steps:
+      - Read SRS fault memory.
+      - Inspect sensor mounting and connector.
+      - Check supply and ground.
+      - Verify sensor signal against other crash sensors.
+      - Do not replace SRS components without following the manufacturer safety procedure.
+    related_dtcs: []
+    difficulty: hard
+
+  - id: dacia_srs_internal_memory_fault
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - sandero
+        - duster
+        - dokker
+        - lodgy
+      generations:
+        - logan_i
+        - logan_ii
+        - sandero_i
+        - sandero_ii
+        - duster_i
+        - duster_ii
+        - dokker_i
+        - lodgy_i
+      engines:
+        - dacia_logan_i_1390
+        - dacia_logan_i_1598
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1149
+        - dacia_logan_ii_898
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: SRS
+    title:
+      en: Airbag control module internal memory fault
+      ro: Defecțiune memorie internă modul airbag
+      de: Interner Speicherfehler des Airbagsteuergeräts
+      fr: Défaut de mémoire interne du calculateur d'airbag
+      es: Fallo de memoria interna del módulo de airbag
+      it: Guasto memoria interna centralina airbag
+      nl: Interne geheugenfout airbagmodule
+    symptoms:
+      - Airbag warning lamp
+      - SRS communication fault
+      - Multiple stored SRS faults
+    keywords:
+      - airbag ECU memory
+      - SRS internal memory
+      - airbag module fault
+      - SRS control module
+    possible_causes:
+      - Internal module fault
+      - Voltage instability
+      - Crash data corruption
+      - Water or heat damage
+    diagnostic_steps:
+      - Verify SRS module power and ground.
+      - Read all stored SRS faults.
+      - Determine whether faults return after clearing.
+      - Check crash data status where diagnostic equipment supports it.
+      - Replace or repair the module only according to manufacturer procedure.
+    related_dtcs: []
+    difficulty: hard
+
+  - id: dacia_uch_ignition_status_signal_implausible
+    vehicle:
+      manufacturer: dacia
+      models:
+        - supernova
+        - solenza
+        - logan
+        - sandero
+        - duster
+        - dokker
+        - lodgy
+      generations:
+        - supernova
+        - solenza
+        - logan_i
+        - logan_ii
+        - sandero_i
+        - sandero_ii
+        - duster_i
+        - duster_ii
+        - dokker_i
+        - lodgy_i
+      engines:
+        - dacia_supernova_1390
+        - dacia_solenza_1390
+        - dacia_solenza_1461
+        - dacia_logan_i_1390
+        - dacia_logan_i_1598
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1149
+        - dacia_logan_ii_898
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: UCH and ignition
+    title:
+      en: Ignition status signal implausible
+      ro: Semnal implauzibil stare contact
+      de: Unplausibles Zündstatussignal
+      fr: Signal d'état du contact incohérent
+      es: Señal de estado de encendido incoherente
+      it: Segnale stato accensione non plausibile
+      nl: Ongeldig contactstatussignaal
+    symptoms:
+      - Accessories remain powered
+      - Engine does not wake correctly
+      - Intermittent module communication
+      - Starting system abnormal
+    keywords:
+      - ignition status
+      - ignition switch signal
+      - UCH ignition
+      - key status
+    possible_causes:
+      - Ignition switch fault
+      - UCH input fault
+      - Wiring resistance
+      - Connector fault
+    diagnostic_steps:
+      - Monitor ignition status parameters.
+      - Compare physical key position with UCH status.
+      - Check ignition switch outputs.
+      - Inspect wiring and connectors.
+      - Verify module wake-up and sleep transitions.
+    related_dtcs: []
+    difficulty: medium
+
+  - id: dacia_uch_sleep_mode_not_entered
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - sandero
+        - duster
+        - dokker
+        - lodgy
+      generations:
+        - logan_i
+        - logan_ii
+        - sandero_i
+        - sandero_ii
+        - duster_i
+        - duster_ii
+        - dokker_i
+        - lodgy_i
+      engines:
+        - dacia_logan_i_1390
+        - dacia_logan_i_1598
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1149
+        - dacia_logan_ii_898
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: Body control
+    title:
+      en: UCH sleep mode not entered
+      ro: UCH nu intră în modul sleep
+      de: UCH wechselt nicht in den Schlafmodus
+      fr: UCH n'entre pas en mode veille
+      es: UCH no entra en modo reposo
+      it: UCH non entra in modalità sleep
+      nl: UCH gaat niet naar slaapstand
+    symptoms:
+      - Battery drain after locking
+      - Interior systems remain active
+      - Network remains awake
+      - Intermittent electrical behavior
+    keywords:
+      - UCH sleep
+      - body module sleep
+      - vehicle network awake
+      - sleep mode
+    possible_causes:
+      - Door status signal stuck active
+      - Trunk or hood switch active
+      - CAN module staying awake
+      - Remote or key detection fault
+    diagnostic_steps:
+      - Monitor UCH sleep status.
+      - Check door, hood and trunk states.
+      - Identify modules keeping the network awake.
+      - Monitor current draw after vehicle lock.
+      - Correct the wake-up source and confirm sleep current.
+    related_dtcs: []
+    difficulty: hard
+
+  - id: dacia_uch_wake_up_request_stuck_active
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - sandero
+        - duster
+        - dokker
+        - lodgy
+      generations:
+        - logan_i
+        - logan_ii
+        - sandero_i
+        - sandero_ii
+        - duster_i
+        - duster_ii
+        - dokker_i
+        - lodgy_i
+      engines:
+        - dacia_logan_i_1390
+        - dacia_logan_i_1598
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1149
+        - dacia_logan_ii_898
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: Body network
+    title:
+      en: Body network wake-up request stuck active
+      ro: Cerere de trezire a rețelei de caroserie blocată activ
+      de: Dauerhafte Aufweckanforderung des Karosserienetzwerks
+      fr: Demande de réveil permanente du réseau de carrosserie
+      es: Solicitud de activación permanente de la red de carrocería
+      it: Richiesta di risveglio permanente rete carrozzeria
+      nl: Wake-upverzoek carrosserienetwerk blijft actief
+    symptoms:
+      - Battery drain
+      - Modules remain awake
+      - Intermittent electrical activity
+      - CAN traffic after vehicle lock
+    keywords:
+      - wake up request
+      - network wake
+      - CAN wake
+      - body network active
+    possible_causes:
+      - Stuck switch input
+      - Faulty module
+      - CAN communication activity
+      - UCH internal fault
+    diagnostic_steps:
+      - Monitor wake-up sources.
+      - Check door and access inputs.
+      - Identify active CAN nodes after locking.
+      - Disconnect suspected module branches systematically.
+      - Confirm that the vehicle enters normal sleep mode.
+    related_dtcs: []
+    difficulty: hard
+
+  - id: dacia_climate_ac_pressure_signal_implausible
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - sandero
+        - duster
+        - dokker
+        - lodgy
+      generations:
+        - logan_i
+        - logan_ii
+        - sandero_i
+        - sandero_ii
+        - duster_i
+        - duster_ii
+        - dokker_i
+        - lodgy_i
+      engines:
+        - dacia_logan_i_1390
+        - dacia_logan_i_1598
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1149
+        - dacia_logan_ii_898
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: Air conditioning
+    title:
+      en: A/C refrigerant pressure signal implausible
+      ro: Semnal implauzibil senzor presiune agent frigorific A/C
+      de: Unplausibles Signal des Klimaanlagendrucksensors
+      fr: Signal incohérent du capteur de pression de climatisation
+      es: Señal incoherente del sensor de presión del A/C
+      it: Segnale non plausibile sensore pressione A/C
+      nl: Ongeldig signaal A/C-druksensor
+    symptoms:
+      - Compressor does not engage
+      - A/C cooling intermittent
+      - Cooling fan behavior abnormal
+      - A/C warning
+    keywords:
+      - AC pressure sensor
+      - refrigerant pressure
+      - AC pressure signal
+      - climate pressure sensor
+    possible_causes:
+      - Pressure sensor fault
+      - Refrigerant charge abnormal
+      - Wiring fault
+      - Connector corrosion
+    diagnostic_steps:
+      - Read refrigerant pressure parameter.
+      - Compare pressure with ambient conditions.
+      - Check sensor supply and ground.
+      - Inspect connector and wiring.
+      - Verify actual refrigerant pressure with appropriate service equipment.
+    related_dtcs: []
+    difficulty: medium
+
+  - id: dacia_climate_evaporator_temperature_sensor_implausible
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - sandero
+        - duster
+        - dokker
+        - lodgy
+      generations:
+        - logan_ii
+        - sandero_ii
+        - duster_ii
+        - dokker_i
+        - lodgy_i
+      engines:
+        - dacia_logan_ii_1149
+        - dacia_logan_ii_898
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: Air conditioning
+    title:
+      en: A/C evaporator temperature sensor implausible
+      ro: Semnal implauzibil senzor temperatură evaporator A/C
+      de: Unplausibles Signal des Verdampfertemperatursensors
+      fr: Signal incohérent du capteur de température d'évaporateur
+      es: Señal incoherente del sensor de temperatura del evaporador
+      it: Segnale non plausibile sensore temperatura evaporatore
+      nl: Ongeldig signaal verdampertemperatuursensor
+    symptoms:
+      - A/C cuts out unexpectedly
+      - Evaporator icing
+      - Poor cooling
+      - Compressor cycling abnormal
+    keywords:
+      - evaporator temperature
+      - AC evaporator sensor
+      - evaporator icing
+      - climate temperature sensor
+    possible_causes:
+      - Sensor drift
+      - Sensor open or shorted
+      - Wiring fault
+      - Evaporator airflow problem
+    diagnostic_steps:
+      - Compare sensor reading with actual evaporator temperature.
+      - Check sensor resistance or signal.
+      - Inspect wiring and connector.
+      - Check evaporator airflow.
+      - Verify compressor cycling after repair.
+    related_dtcs: []
+    difficulty: medium
+
+  - id: dacia_parking_assist_supply_voltage_fault
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - sandero
+        - duster
+        - dokker
+        - lodgy
+      generations:
+        - logan_ii
+        - sandero_ii
+        - duster_ii
+        - dokker_i
+        - lodgy_i
+      engines:
+        - dacia_logan_ii_1149
+        - dacia_logan_ii_898
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: Parking assistance
+    title:
+      en: Parking assist module supply voltage fault
+      ro: Defecțiune alimentare modul asistență parcare
+      de: Versorgungsspannungsfehler des Parkassistenzmoduls
+      fr: Défaut d'alimentation du module d'aide au stationnement
+      es: Fallo de alimentación del módulo de asistencia al aparcamiento
+      it: Guasto alimentazione modulo assistenza parcheggio
+      nl: Voedingsspanningsfout parkeermodule
+    symptoms:
+      - Parking sensors unavailable
+      - Parking assist warning
+      - Module communication fault
+    keywords:
+      - parking module power
+      - parking assist voltage
+      - PDC supply
+      - parking sensor module
+    possible_causes:
+      - Blown fuse
+      - Poor ground
+      - Water ingress
+      - Wiring fault
+      - Low battery voltage
+    diagnostic_steps:
+      - Check module power supply.
+      - Measure voltage drop on ground.
+      - Inspect fuse and connector.
+      - Check module housing for water ingress.
+      - Confirm communication after restoring supply.
+    related_dtcs: []
+    difficulty: medium
+
+  - id: dacia_tpms_wheel_position_not_learned
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - sandero
+        - duster
+        - dokker
+        - lodgy
+        - jogger
+      generations:
+        - logan_ii
+        - sandero_ii
+        - duster_ii
+        - dokker_i
+        - lodgy_i
+        - jogger_i
+      engines:
+        - dacia_logan_ii_1149
+        - dacia_logan_ii_898
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: TPMS
+    title:
+      en: TPMS wheel position not learned
+      ro: Poziția roții TPMS nu este învățată
+      de: TPMS-Radposition nicht angelernt
+      fr: Position de roue TPMS non apprise
+      es: Posición de rueda TPMS no aprendida
+      it: Posizione ruota TPMS non appresa
+      nl: TPMS-wielpositie niet aangeleerd
+    symptoms:
+      - Tire pressure warning remains active
+      - Wheel positions displayed incorrectly
+      - TPMS identification incomplete
+    keywords:
+      - TPMS relearn
+      - wheel position learning
+      - sensor position
+      - tire sensor location
+    possible_causes:
+      - Wheel rotation
+      - Sensor replacement
+      - Learning procedure not completed
+      - Sensor ID mismatch
+    diagnostic_steps:
+      - Read stored TPMS sensor IDs.
+      - Compare sensor IDs with physical wheel positions.
+      - Perform the wheel-position learning procedure.
+      - Confirm each sensor transmits correctly.
+      - Verify pressure display after a road test.
+    related_dtcs: []
+    difficulty: easy
+
+  - id: dacia_instrument_cluster_can_data_missing
+    vehicle:
+      manufacturer: dacia
+      models:
+        - supernova
+        - solenza
+        - logan
+        - sandero
+        - duster
+        - dokker
+        - lodgy
+      generations:
+        - supernova
+        - solenza
+        - logan_i
+        - logan_ii
+        - sandero_i
+        - sandero_ii
+        - duster_i
+        - duster_ii
+        - dokker_i
+        - lodgy_i
+      engines:
+        - dacia_supernova_1390
+        - dacia_solenza_1390
+        - dacia_solenza_1461
+        - dacia_logan_i_1390
+        - dacia_logan_i_1598
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1149
+        - dacia_logan_ii_898
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: Instrument cluster
+    title:
+      en: Instrument cluster missing CAN data
+      ro: Lipsă date CAN către instrumentarul de bord
+      de: Fehlende CAN-Daten im Kombiinstrument
+      fr: Données CAN manquantes au combiné d'instruments
+      es: Faltan datos CAN en el cuadro de instrumentos
+      it: Dati CAN mancanti nel quadro strumenti
+      nl: CAN-gegevens ontbreken in instrumentenpaneel
+    symptoms:
+      - Multiple gauges unavailable
+      - Warning lamps incorrect
+      - Speed or engine data missing
+      - Intermittent cluster behavior
+    keywords:
+      - instrument cluster CAN
+      - cluster missing data
+      - dashboard CAN
+      - CAN data missing
+    possible_causes:
+      - CAN communication fault
+      - Cluster power supply issue
+      - ECU communication interruption
+      - UCH communication fault
+    diagnostic_steps:
+      - Check cluster supply and ground.
+      - Read cluster communication faults.
+      - Compare missing parameters with ECU data.
+      - Inspect CAN wiring at the cluster.
+      - Verify network communication stability.
+    related_dtcs: []
+    difficulty: medium
+
   - id: dacia_engine_vvt_actuator_response_slow
     vehicle:
       manufacturer: dacia
