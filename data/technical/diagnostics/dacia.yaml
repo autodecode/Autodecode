@@ -6,6 +6,2042 @@ manufacturer:
 
 technical_data:
 
+  - id: dacia_pre_electronic_low_engine_compression
+    vehicle:
+      manufacturer: dacia
+      models:
+        - "1100"
+        - "1300"
+        - "1300_break"
+        - "1301"
+        - "1302"
+        - "1310"
+        - "1310_break"
+        - "1310_sport"
+        - "1304"
+        - "1305"
+        - "1307"
+        - "1309"
+        - "1320"
+        - "1325"
+      generations: all
+      engines: all
+    category: diagnostics
+    system: engine
+    title:
+      en: Low Engine Compression
+      ro: Compresie scăzută a motorului
+      de: Niedrige Motorkompression
+      fr: Faible compression du moteur
+      es: Baja compresión del motor
+      it: Bassa compressione del motore
+      nl: Lage motorcompressie
+    symptoms:
+      - difficult starting
+      - low engine power
+      - uneven idle
+      - misfire
+      - excessive crankcase pressure
+      - engine consumes oil
+      - pornire dificilă
+      - putere redusă
+      - ralanti neregulat
+      - motorul ratează
+      - presiune mare în carter
+      - consum de ulei
+      - schwieriger Start
+      - geringe Motorleistung
+      - unruhiger Leerlauf
+      - Zündaussetzer
+      - hoher Kurbelgehäusedruck
+      - démarrage difficile
+      - manque de puissance
+      - ralenti irrégulier
+      - ratés moteur
+      - pression élevée dans le carter
+      - consommation d'huile
+      - arranque difícil
+      - baja potencia
+      - ralentí irregular
+      - fallos de encendido
+      - presión elevada en el cárter
+      - consumo de aceite
+      - avviamento difficile
+      - bassa potenza
+      - minimo irregolare
+      - mancate accensioni
+      - pressione elevata nel basamento
+      - consumo di olio
+      - moeilijk starten
+      - laag motorvermogen
+      - onregelmatig stationair
+      - hoge carterdruk
+      - olieverbruik
+    keywords:
+      - low compression
+      - compression test
+      - engine compression
+      - compresie motor
+      - test compresie
+      - niedrige Kompression
+      - compression moteur
+      - baja compresión
+      - bassa compressione
+      - lage compressie
+    possible_causes:
+      - worn piston rings
+      - worn cylinder walls
+      - burned valve
+      - leaking valve seat
+      - damaged cylinder head gasket
+      - incorrect valve clearance
+      - damaged piston
+    diagnostic_steps:
+      - Perform a compression test on all cylinders.
+      - Compare cylinder readings.
+      - Repeat the test with a small amount of oil added to low cylinders.
+      - Inspect valve clearances.
+      - Perform a cylinder leak-down test where equipment is available.
+    repair_actions:
+      - Adjust incorrect valve clearances.
+      - Repair or replace damaged valves.
+      - Repair the cylinder head where required.
+      - Replace worn piston rings or pistons.
+      - Recondition worn cylinders where required.
+    severity: high
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: dacia_pre_electronic_valve_clearance_incorrect
+    vehicle:
+      manufacturer: dacia
+      models:
+        - "1300"
+        - "1300_break"
+        - "1301"
+        - "1302"
+        - "1310"
+        - "1310_break"
+        - "1310_sport"
+        - "1304"
+        - "1305"
+        - "1307"
+        - "1309"
+        - "1320"
+        - "1325"
+      generations: all
+      engines: all
+    category: diagnostics
+    system: engine
+    title:
+      en: Incorrect Valve Clearance
+      ro: Joc incorect la supape
+      de: Falsches Ventilspiel
+      fr: Jeu aux soupapes incorrect
+      es: Holgura de válvulas incorrecta
+      it: Gioco valvole errato
+      nl: Verkeerde klepspeling
+    symptoms:
+      - noisy valve train
+      - rough idle
+      - loss of power
+      - hard starting
+      - engine misfire
+      - reduced compression
+      - zgomot în zona supapelor
+      - ralanti neregulat
+      - pierdere de putere
+      - pornire dificilă
+      - rateuri
+      - compresie redusă
+      - Ventiltriebgeräusche
+      - unruhiger Leerlauf
+      - Leistungsverlust
+      - schwieriger Start
+      - faible compression
+      - bruit de soupapes
+      - ralenti irrégulier
+      - perte de puissance
+      - démarrage difficile
+      - ruido de válvulas
+      - ralentí irregular
+      - pérdida de potencia
+      - arranque difícil
+      - rumore delle valvole
+      - minimo irregolare
+      - perdita di potenza
+      - avviamento difficile
+      - kleppengeluid
+      - onregelmatig stationair
+      - vermogensverlies
+    keywords:
+      - valve clearance
+      - valve adjustment
+      - tappet clearance
+      - joc supape
+      - reglaj supape
+      - Ventilspiel
+      - réglage soupapes
+      - holgura válvulas
+      - gioco valvole
+      - klepspeling
+    possible_causes:
+      - incorrect valve adjustment
+      - valve seat wear
+      - rocker arm wear
+      - valve stem wear
+      - incorrect maintenance
+    diagnostic_steps:
+      - Check valve clearances with the engine in the specified position.
+      - Compare measured clearances with specifications.
+      - Inspect rocker arms and valve contact surfaces.
+      - Check valve train components for abnormal wear.
+    repair_actions:
+      - Adjust valve clearances to specification.
+      - Replace worn rocker arm components.
+      - Repair worn valve train components.
+      - Inspect valve seats if correct adjustment cannot be maintained.
+    severity: medium
+    related_dtcs: []
+    difficulty: intermediate
+
+  - id: dacia_pre_electronic_timing_chain_or_belt_misalignment
+    vehicle:
+      manufacturer: dacia
+      models:
+        - "1310"
+        - "1310_break"
+        - "1310_sport"
+        - "1304"
+        - "1305"
+        - "1307"
+        - "1309"
+        - "1320"
+        - "1325"
+      generations: all
+      engines: all
+    category: diagnostics
+    system: engine
+    title:
+      en: Incorrect Mechanical Valve Timing
+      ro: Calare incorectă a distribuției mecanice
+      de: Falsche mechanische Steuerzeiten
+      fr: Calage incorrect de la distribution mécanique
+      es: Calado incorrecto de la distribución mecánica
+      it: Fasatura meccanica della distribuzione errata
+      nl: Verkeerde mechanische distributietiming
+    symptoms:
+      - engine difficult to start
+      - loss of power
+      - rough idle
+      - backfire
+      - poor acceleration
+      - low compression
+      - motorul pornește greu
+      - pierdere de putere
+      - ralanti neregulat
+      - rateuri în admisie sau evacuare
+      - accelerație slabă
+      - compresie scăzută
+      - Motor startet schlecht
+      - Leistungsverlust
+      - unruhiger Leerlauf
+      - Fehlzündungen
+      - faible compression
+      - démarrage difficile
+      - perte de puissance
+      - retour de flamme
+      - arranque difícil
+      - pérdida de potencia
+      - petardeo
+      - baja compresión
+      - avviamento difficile
+      - perdita di potenza
+      - ritorno di fiamma
+      - bassa compressione
+      - moeilijk starten
+      - vermogensverlies
+      - terugslag
+      - lage compressie
+    keywords:
+      - valve timing
+      - camshaft timing
+      - timing alignment
+      - mechanical timing
+      - distribuție decalată
+      - calare distribuție
+      - Steuerzeiten
+      - calage distribution
+      - distribución fuera de punto
+      - fasatura distribuzione
+      - distributietiming
+    possible_causes:
+      - timing belt installed incorrectly where fitted
+      - timing chain installed incorrectly where fitted
+      - worn timing components
+      - slipped timing drive
+      - incorrect crankshaft reference
+      - incorrect camshaft reference
+    diagnostic_steps:
+      - Verify crankshaft timing position.
+      - Verify camshaft timing position.
+      - Check timing marks.
+      - Inspect timing drive components for abnormal wear.
+      - Check compression if timing displacement is suspected.
+    repair_actions:
+      - Correct mechanical timing.
+      - Replace damaged timing components.
+      - Replace worn tensioning components where applicable.
+      - Recheck engine timing after repair.
+    severity: critical
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: dacia_pre_electronic_exhaust_restriction
+    vehicle:
+      manufacturer: dacia
+      models:
+        - "1100"
+        - "1300"
+        - "1300_break"
+        - "1301"
+        - "1302"
+        - "1310"
+        - "1310_break"
+        - "1310_sport"
+        - "1304"
+        - "1305"
+        - "1307"
+        - "1309"
+        - "1320"
+        - "1325"
+      generations: all
+      engines: all
+    category: diagnostics
+    system: exhaust
+    title:
+      en: Restricted Exhaust System
+      ro: Sistem de evacuare obturat
+      de: Eingeschränkte Abgasanlage
+      fr: Système d'échappement obstrué
+      es: Sistema de escape obstruido
+      it: Impianto di scarico ostruito
+      nl: Verstopte uitlaat
+    symptoms:
+      - severe loss of power
+      - engine will not rev freely
+      - poor acceleration
+      - engine stalls under load
+      - exhaust manifold glows red
+      - high exhaust back pressure
+      - pierdere severă de putere
+      - motorul nu se turează liber
+      - accelerație slabă
+      - motorul se oprește la sarcină
+      - evacuarea se înroșește
+      - contrapresiune mare
+      - starker Leistungsverlust
+      - Motor dreht nicht frei hoch
+      - schlechte Beschleunigung
+      - Motor geht unter Last aus
+      - Abgaskrümmer glüht
+      - forte perte de puissance
+      - moteur ne monte pas librement en régime
+      - cale sous charge
+      - contre-pression élevée
+      - pérdida grave de potencia
+      - motor no sube de vueltas
+      - se cala bajo carga
+      - alta contrapresión
+      - forte perdita di potenza
+      - motore non sale di giri
+      - si spegne sotto carico
+      - contropressione elevata
+      - ernstig vermogensverlies
+      - motor draait niet vrij door
+      - valt uit onder belasting
+      - hoge tegendruk
+    keywords:
+      - restricted exhaust
+      - blocked exhaust
+      - exhaust back pressure
+      - evacuare înfundată
+      - evacuare obturată
+      - Abgas verstopft
+      - échappement obstrué
+      - escape obstruido
+      - scarico ostruito
+      - verstopte uitlaat
+    possible_causes:
+      - collapsed muffler internals
+      - damaged exhaust pipe
+      - blocked exhaust silencer
+      - foreign object in exhaust
+      - excessive carbon deposits
+    diagnostic_steps:
+      - Inspect the exhaust system externally.
+      - Check exhaust gas flow at the tailpipe.
+      - Compare engine behavior with exhaust restriction suspected.
+      - Measure exhaust back pressure where equipment is available.
+      - Inspect mufflers and pipes for internal collapse.
+    repair_actions:
+      - Replace a collapsed muffler.
+      - Repair damaged exhaust piping.
+      - Remove the source of exhaust blockage.
+    severity: high
+    related_dtcs: []
+    difficulty: intermediate
+
+  - id: dacia_pre_electronic_exhaust_manifold_leak
+    vehicle:
+      manufacturer: dacia
+      models:
+        - "1100"
+        - "1300"
+        - "1300_break"
+        - "1301"
+        - "1302"
+        - "1310"
+        - "1310_break"
+        - "1310_sport"
+        - "1304"
+        - "1305"
+        - "1307"
+        - "1309"
+        - "1320"
+        - "1325"
+      generations: all
+      engines: all
+    category: diagnostics
+    system: exhaust
+    title:
+      en: Exhaust Manifold Leak
+      ro: Pierdere la galeria de evacuare
+      de: Abgasleck am Abgaskrümmer
+      fr: Fuite du collecteur d'échappement
+      es: Fuga en el colector de escape
+      it: Perdita dal collettore di scarico
+      nl: Lek bij het uitlaatspruitstuk
+    symptoms:
+      - exhaust ticking noise
+      - exhaust smell in engine compartment
+      - noisy cold start
+      - loss of performance
+      - soot around manifold
+      - zgomot de gaze la pornire
+      - miros de gaze în compartimentul motor
+      - motor mai zgomotos la rece
+      - pierdere de performanță
+      - funingine în jurul galeriei
+      - Abgasgeräusch beim Kaltstart
+      - Abgasgeruch im Motorraum
+      - Leistungsverlust
+      - suie d'échappement
+      - odeur de gaz d'échappement
+      - perte de performance
+      - ruido de escape
+      - olor de gases en el vano motor
+      - pérdida de rendimiento
+      - rumore di scarico
+      - odore di gas nel vano motore
+      - perdita di prestazioni
+      - uitlaatgeluid bij koude start
+      - uitlaatgasgeur
+      - vermogensverlies
+    keywords:
+      - exhaust manifold leak
+      - exhaust leak
+      - manifold gasket
+      - galerie evacuare
+      - garnitură galerie
+      - Abgaskrümmer undicht
+      - fuite échappement
+      - fuga colector
+      - perdita collettore
+      - uitlaatspruitstuk lek
+    possible_causes:
+      - damaged exhaust manifold gasket
+      - cracked exhaust manifold
+      - loose manifold fasteners
+      - warped mating surface
+      - damaged exhaust flange
+    diagnostic_steps:
+      - Inspect the manifold and gasket area for soot.
+      - Listen for leakage during cold starting.
+      - Inspect manifold fasteners.
+      - Check the manifold for cracks.
+      - Inspect mating surfaces.
+    repair_actions:
+      - Replace the exhaust manifold gasket.
+      - Tighten or replace damaged fasteners.
+      - Repair or replace a cracked manifold.
+      - Restore damaged mating surfaces.
+    severity: medium
+    related_dtcs: []
+    difficulty: intermediate
+
+  - id: dacia_pre_electronic_starter_solenoid_fault
+    vehicle:
+      manufacturer: dacia
+      models:
+        - "1100"
+        - "1300"
+        - "1300_break"
+        - "1301"
+        - "1302"
+        - "1310"
+        - "1310_break"
+        - "1310_sport"
+        - "1304"
+        - "1305"
+        - "1307"
+        - "1309"
+        - "1320"
+        - "1325"
+      generations: all
+      engines: all
+    category: diagnostics
+    system: starting
+    title:
+      en: Starter Solenoid Fault
+      ro: Defecțiune solenoid demaror
+      de: Fehler am Anlassermagnetschalter
+      fr: Défaut du solénoïde du démarreur
+      es: Fallo del solenoide del motor de arranque
+      it: Guasto del solenoide del motorino di avviamento
+      nl: Defecte startsolenoïde
+    symptoms:
+      - starter clicks but does not crank
+      - intermittent starting
+      - starter engages slowly
+      - single click when starting
+      - starter operates after repeated attempts
+      - demarorul face clic dar nu învârte motorul
+      - pornire intermitentă
+      - demarorul cuplează greu
+      - un singur clic la pornire
+      - pornește după mai multe încercări
+      - Anlasser klickt ohne zu drehen
+      - Startprobleme
+      - démarreur qui clique
+      - démarrage intermittent
+      - démarreur s'engage lentement
+      - clic unique au démarrage
+      - motor de arranque hace clic
+      - arranque intermitente
+      - acopla lentamente
+      - motorino fa clic ma non gira
+      - avviamento intermittente
+      - solenoide lento
+      - startmotor klikt maar draait niet
+      - intermitterend starten
+      - startmotor grijpt langzaam aan
+    keywords:
+      - starter solenoid
+      - starter relay
+      - starter clicks
+      - solenoid demaror
+      - clic demaror
+      - Anlassermagnetschalter
+      - solénoïde démarreur
+      - solenoide arranque
+      - solenoide motorino
+      - startsolenoïde
+    possible_causes:
+      - worn solenoid contacts
+      - weak solenoid coil
+      - poor electrical connection
+      - low battery voltage
+      - worn starter motor
+      - damaged starter control circuit
+    diagnostic_steps:
+      - Check battery voltage before starting.
+      - Check voltage at the starter solenoid control terminal.
+      - Check voltage drop across the main starter connections.
+      - Inspect solenoid terminals.
+      - Test starter operation under load.
+    repair_actions:
+      - Clean or repair starter connections.
+      - Replace defective solenoid components.
+      - Rebuild or replace the starter motor.
+      - Repair the starter control circuit.
+    severity: high
+    related_dtcs: []
+    difficulty: intermediate
+
+  - id: dacia_pre_electronic_starter_motor_slow_cranking
+    vehicle:
+      manufacturer: dacia
+      models:
+        - "1100"
+        - "1300"
+        - "1300_break"
+        - "1301"
+        - "1302"
+        - "1310"
+        - "1310_break"
+        - "1310_sport"
+        - "1304"
+        - "1305"
+        - "1307"
+        - "1309"
+        - "1320"
+        - "1325"
+      generations: all
+      engines: all
+    category: diagnostics
+    system: starting
+    title:
+      en: Slow Starter Motor Cranking
+      ro: Demarorul învârte lent
+      de: Anlasser dreht zu langsam
+      fr: Démarreur tournant lentement
+      es: Motor de arranque gira lentamente
+      it: Motorino di avviamento gira lentamente
+      nl: Startmotor draait langzaam
+    symptoms:
+      - slow cranking
+      - engine turns over slowly
+      - difficult starting
+      - starter gets hot
+      - lights dim heavily during starting
+      - demaror lent
+      - motorul se învârte greu
+      - pornire dificilă
+      - demarorul se încălzește
+      - luminile scad puternic la pornire
+      - langsames Durchdrehen
+      - schwieriger Start
+      - Anlasser wird heiß
+      - faible vitesse de démarrage
+      - démarrage difficile
+      - démarreur chauffe
+      - arranque lento
+      - dificultad de arranque
+      - motor de arranque caliente
+      - avviamento lento
+      - motorino caldo
+      - langzaam ronddraaien
+      - startmotor wordt heet
+    keywords:
+      - slow cranking
+      - starter motor slow
+      - low cranking speed
+      - demaror lent
+      - pornire lentă
+      - Anlasser langsam
+      - démarreur lent
+      - arranque lento
+      - motorino lento
+      - startmotor langzaam
+    possible_causes:
+      - discharged battery
+      - sulfated battery
+      - corroded battery terminals
+      - poor engine ground connection
+      - high resistance starter cable
+      - worn starter motor
+      - starter bearing wear
+      - engine mechanical resistance
+    diagnostic_steps:
+      - Measure battery voltage before cranking.
+      - Measure voltage during cranking.
+      - Check voltage drop on positive and ground circuits.
+      - Inspect battery terminals and engine ground strap.
+      - Test starter current draw where equipment is available.
+      - Check for abnormal mechanical engine resistance.
+    repair_actions:
+      - Charge or replace the battery.
+      - Clean battery terminals.
+      - Repair the engine ground connection.
+      - Replace damaged starter cables.
+      - Rebuild or replace a worn starter motor.
+    severity: high
+    related_dtcs: []
+    difficulty: intermediate
+
+  - id: dacia_pre_electronic_alternator_overcharging
+    vehicle:
+      manufacturer: dacia
+      models:
+        - "1100"
+        - "1300"
+        - "1300_break"
+        - "1301"
+        - "1302"
+        - "1310"
+        - "1310_break"
+        - "1310_sport"
+        - "1304"
+        - "1305"
+        - "1307"
+        - "1309"
+        - "1320"
+        - "1325"
+      generations: all
+      engines: all
+    category: diagnostics
+    system: charging
+    title:
+      en: Alternator Overcharging
+      ro: Supratensiune de încărcare a alternatorului
+      de: Überladung durch die Lichtmaschine
+      fr: Surcharge de l'alternateur
+      es: Sobrecarga del alternador
+      it: Sovraccarica dell'alternatore
+      nl: Overladen door de dynamo
+    symptoms:
+      - charging voltage too high
+      - battery overheating
+      - battery loses electrolyte
+      - bulbs fail repeatedly
+      - strong electrical smell
+      - tensiune de încărcare prea mare
+      - bateria se încălzește
+      - bateria pierde electrolit
+      - becurile se ard repetat
+      - miros electric
+      - Ladespannung zu hoch
+      - Batterie wird heiß
+      - Batterie verliert Elektrolyt
+      - Lampen fallen häufig aus
+      - tension de charge trop élevée
+      - batterie chauffe
+      - perte d'électrolyte
+      - ampoules grillent fréquemment
+      - tensión de carga demasiado alta
+      - batería caliente
+      - pérdida de electrolito
+      - bombillas se queman
+      - tensione di carica troppo alta
+      - batteria calda
+      - perdita di elettrolito
+      - lampadine bruciate
+      - laadspanning te hoog
+      - accu wordt heet
+      - lampen branden door
+    keywords:
+      - alternator overcharging
+      - high charging voltage
+      - voltage regulator
+      - supratensiune alternator
+      - regulator tensiune
+      - Lichtmaschine überlädt
+      - surcharge alternateur
+      - sobrecarga alternador
+      - sovraccarica alternatore
+      - dynamo overlaadt
+    possible_causes:
+      - defective voltage regulator
+      - poor regulator ground
+      - incorrect regulator connection
+      - alternator internal fault
+      - damaged charging circuit
+    diagnostic_steps:
+      - Measure battery voltage with the engine stopped.
+      - Measure charging voltage at idle.
+      - Measure charging voltage at increased engine speed.
+      - Inspect voltage regulator connections and ground.
+      - Check charging circuit wiring.
+    repair_actions:
+      - Replace the defective voltage regulator.
+      - Repair regulator ground connections.
+      - Repair damaged charging wiring.
+      - Rebuild or replace the alternator where required.
+    severity: critical
+    related_dtcs: []
+    difficulty: intermediate
+
+  - id: dacia_pre_electronic_carburetor_flooding
+    vehicle:
+      manufacturer: dacia
+      models:
+        - "1100"
+        - "1300"
+        - "1300_break"
+        - "1301"
+        - "1302"
+        - "1310"
+        - "1310_break"
+        - "1310_sport"
+        - "1304"
+        - "1305"
+        - "1307"
+        - "1309"
+        - "1320"
+        - "1325"
+      generations: all
+      engines: all
+    category: diagnostics
+    system: fuel
+    title:
+      en: Carburetor Flooding
+      ro: Înecarea carburatorului
+      de: Überfluten des Vergasers
+      fr: Noyage du carburateur
+      es: Ahogamiento del carburador
+      it: Ingolfamento del carburatore
+      nl: Verzuipen van de carburateur
+    symptoms:
+      - engine flooded
+      - fuel smell after starting attempt
+      - wet spark plugs
+      - engine will not start after repeated cranking
+      - carburator flooding
+      - carburator overflow
+      - carburator too rich
+      - carburator se îneacă
+      - miros puternic de benzină
+      - bujii ude
+      - motor înecat
+      - Vergaser läuft über
+      - Motor abgesoffen
+      - starker Kraftstoffgeruch
+      - bougies mouillées
+      - carburateur noyé
+      - olor fuerte a gasolina
+      - carburador ahogado
+      - candele bagnate
+      - carburatore ingolfato
+      - sterke benzinegeur
+      - bougies nat
+      - carburateur verzuipt
+    keywords:
+      - flooded engine
+      - carburetor flooding
+      - wet spark plugs
+      - fuel overflow
+      - motor înecat
+      - carburator inundat
+      - abgesoffener Motor
+      - carburateur noyé
+      - carburador ahogado
+      - carburatore ingolfato
+      - verzopen motor
+    possible_causes:
+      - stuck float needle valve
+      - incorrect float level
+      - damaged float
+      - excessive fuel pressure
+      - automatic choke stuck closed
+      - manual choke left engaged
+      - leaking carburetor gasket
+      - contaminated carburetor
+    diagnostic_steps:
+      - Inspect the carburetor for visible fuel overflow.
+      - Check float movement and float condition.
+      - Inspect the float needle valve for leakage or sticking.
+      - Check float level against specification.
+      - Inspect choke operation.
+      - Remove and inspect spark plugs for fuel wetting.
+      - Check fuel pressure where a fuel pump pressure specification is available.
+    repair_actions:
+      - Clean the carburetor.
+      - Replace a defective float needle valve.
+      - Correct the float level.
+      - Replace a damaged float.
+      - Repair or replace the choke mechanism.
+      - Replace leaking carburetor gaskets.
+    severity: medium
+    related_dtcs: []
+    difficulty: intermediate
+
+  - id: dacia_pre_electronic_carburetor_lean_running
+    vehicle:
+      manufacturer: dacia
+      models:
+        - "1100"
+        - "1300"
+        - "1300_break"
+        - "1301"
+        - "1302"
+        - "1310"
+        - "1310_break"
+        - "1310_sport"
+        - "1304"
+        - "1305"
+        - "1307"
+        - "1309"
+        - "1320"
+        - "1325"
+      generations: all
+      engines: all
+    category: diagnostics
+    system: fuel
+    title:
+      en: Carburetor Lean Running
+      ro: Funcționare săracă a amestecului carburatorului
+      de: Mageres Gemisch beim Vergaserbetrieb
+      fr: Mélange pauvre du carburateur
+      es: Mezcla pobre del carburador
+      it: Miscela magra del carburatore
+      nl: Arm mengsel bij carburateur
+    symptoms:
+      - engine runs lean
+      - hesitation during acceleration
+      - engine surges
+      - poor throttle response
+      - backfire through intake
+      - engine lacks fuel
+      - amestec sărac
+      - ezitare la accelerare
+      - motorul dă în nas
+      - rateuri în admisie
+      - schlechte Gasannahme
+      - Ruckeln beim Beschleunigen
+      - Fehlzündungen im Ansaugtrakt
+      - hésitation à l'accélération
+      - retour de flamme à l'admission
+      - falta de respuesta al acelerar
+      - petardeo por admisión
+      - esitazione in accelerazione
+      - ritorno di fiamma nell'aspirazione
+      - aarzeling bij accelereren
+      - terugslag in de inlaat
+    keywords:
+      - lean mixture
+      - lean carburetor
+      - hesitation
+      - intake backfire
+      - amestec sărac
+      - ezitare accelerație
+      - mageres Gemisch
+      - mélange pauvre
+      - mezcla pobre
+      - miscela magra
+      - arm mengsel
+    possible_causes:
+      - restricted fuel jet
+      - partially blocked fuel passage
+      - low fuel level in carburetor
+      - vacuum leak
+      - incorrect mixture adjustment
+      - insufficient fuel delivery
+      - restricted fuel filter
+      - weak mechanical fuel pump
+    diagnostic_steps:
+      - Inspect the carburetor jets and passages.
+      - Check fuel level in the carburetor.
+      - Inspect intake manifold and carburetor mounting surfaces for air leaks.
+      - Check fuel filter condition.
+      - Check fuel delivery from the mechanical pump.
+      - Verify basic mixture and idle adjustments.
+    repair_actions:
+      - Clean restricted jets and passages.
+      - Repair intake air leaks.
+      - Replace a restricted fuel filter.
+      - Repair or replace the mechanical fuel pump.
+      - Adjust the carburetor to specification.
+    severity: medium
+    related_dtcs: []
+    difficulty: intermediate
+
+  - id: dacia_pre_electronic_carburetor_rich_running
+    vehicle:
+      manufacturer: dacia
+      models:
+        - "1100"
+        - "1300"
+        - "1300_break"
+        - "1301"
+        - "1302"
+        - "1310"
+        - "1310_break"
+        - "1310_sport"
+        - "1304"
+        - "1305"
+        - "1307"
+        - "1309"
+        - "1320"
+        - "1325"
+      generations: all
+      engines: all
+    category: diagnostics
+    system: fuel
+    title:
+      en: Carburetor Rich Running
+      ro: Funcționare cu amestec bogat
+      de: Zu fettes Gemisch beim Vergaserbetrieb
+      fr: Mélange trop riche du carburateur
+      es: Mezcla demasiado rica del carburador
+      it: Miscela troppo ricca del carburatore
+      nl: Te rijk mengsel bij carburateur
+    symptoms:
+      - black exhaust smoke
+      - strong fuel smell
+      - excessive fuel consumption
+      - sooty spark plugs
+      - engine runs rich
+      - poor fuel economy
+      - fum negru
+      - miros puternic de benzină
+      - consum mare de carburant
+      - bujii afumate
+      - amestec bogat
+      - schwarzer Abgasrauch
+      - starker Kraftstoffgeruch
+      - hoher Kraftstoffverbrauch
+      - verrußte Zündkerzen
+      - fumée noire
+      - forte odeur de carburant
+      - consommation excessive
+      - bougies encrassées
+      - humo negro
+      - olor fuerte a combustible
+      - consumo excesivo
+      - bujías ennegrecidas
+      - fumo nero
+      - odore forte di carburante
+      - consumo elevato
+      - candele annerite
+      - zwarte uitlaatrook
+      - sterke brandstofgeur
+      - hoog brandstofverbruik
+      - vervuilde bougies
+    keywords:
+      - rich mixture
+      - rich running
+      - black smoke
+      - excessive fuel consumption
+      - amestec bogat
+      - fum negru
+      - fettes Gemisch
+      - mélange riche
+      - mezcla rica
+      - miscela ricca
+      - rijk mengsel
+    possible_causes:
+      - excessive fuel level
+      - leaking float needle valve
+      - incorrect float adjustment
+      - choke stuck closed
+      - incorrect mixture adjustment
+      - oversized or incorrect jet
+      - restricted air intake
+      - carburetor contamination
+    diagnostic_steps:
+      - Inspect the air filter and intake path.
+      - Check choke operation and full opening when warm.
+      - Inspect the float and needle valve.
+      - Check carburetor fuel level.
+      - Inspect spark plugs for carbon deposits.
+      - Verify carburetor adjustment against specification.
+    repair_actions:
+      - Repair the choke mechanism.
+      - Correct the carburetor fuel level.
+      - Replace a leaking needle valve.
+      - Clean the carburetor.
+      - Replace a restricted air filter.
+      - Restore correct mixture adjustment.
+    severity: medium
+    related_dtcs: []
+    difficulty: intermediate
+
+  - id: dacia_pre_electronic_mechanical_fuel_pump_weak
+    vehicle:
+      manufacturer: dacia
+      models:
+        - "1100"
+        - "1300"
+        - "1300_break"
+        - "1301"
+        - "1302"
+        - "1310"
+        - "1310_break"
+        - "1310_sport"
+        - "1304"
+        - "1305"
+        - "1307"
+        - "1309"
+        - "1320"
+        - "1325"
+      generations: all
+      engines: all
+    category: diagnostics
+    system: fuel
+    title:
+      en: Weak Mechanical Fuel Pump
+      ro: Pompă mecanică de combustibil cu debit insuficient
+      de: Schwache mechanische Kraftstoffpumpe
+      fr: Pompe à carburant mécanique faible
+      es: Bomba mecánica de combustible débil
+      it: Pompa carburante meccanica debole
+      nl: Zwakke mechanische brandstofpomp
+    symptoms:
+      - engine loses power under load
+      - engine cuts out during acceleration
+      - engine runs normally at low speed
+      - fuel starvation
+      - engine stops after sustained driving
+      - engine restarts after cooling
+      - pierdere de putere la sarcină
+      - motorul se oprește la accelerare
+      - lipsă alimentare cu carburant
+      - se oprește după mers prelungit
+      - își revine după răcire
+      - Leistungsverlust unter Last
+      - Kraftstoffmangel
+      - Motor geht bei Belastung aus
+      - startet nach dem Abkühlen wieder
+      - perte de puissance sous charge
+      - manque de carburant
+      - cale sous charge
+      - recupera después de enfriarse
+      - perdita di potenza sotto carico
+      - mancanza di carburante
+      - si spegne dopo la marcia prolungata
+      - vermogensverlies onder belasting
+      - brandstoftekort
+      - motor valt uit na langere rit
+    keywords:
+      - weak fuel pump
+      - fuel starvation
+      - low fuel delivery
+      - mechanical fuel pump
+      - pompă benzină slabă
+      - lipsă carburant
+      - schwache Kraftstoffpumpe
+      - pompe faible
+      - bomba débil
+      - pompa debole
+      - zwakke brandstofpomp
+    possible_causes:
+      - worn mechanical fuel pump diaphragm
+      - weak pump spring
+      - restricted fuel filter
+      - blocked fuel line
+      - air entering the fuel supply line
+      - damaged pump actuating mechanism
+      - fuel tank pickup restriction
+    diagnostic_steps:
+      - Check fuel delivery volume from the pump.
+      - Check fuel pressure where specification is available.
+      - Inspect the fuel filter.
+      - Inspect fuel lines for restriction or air ingress.
+      - Check the pump diaphragm and actuating mechanism.
+      - Compare fuel delivery when cold and after the fault appears.
+    repair_actions:
+      - Replace a worn mechanical fuel pump.
+      - Replace a restricted fuel filter.
+      - Repair or replace damaged fuel lines.
+      - Clean a restricted fuel tank pickup.
+    severity: high
+    related_dtcs: []
+    difficulty: intermediate
+
+  - id: dacia_pre_electronic_ignition_timing_incorrect
+    vehicle:
+      manufacturer: dacia
+      models:
+        - "1100"
+        - "1300"
+        - "1300_break"
+        - "1301"
+        - "1302"
+        - "1310"
+        - "1310_break"
+        - "1310_sport"
+        - "1304"
+        - "1305"
+        - "1307"
+        - "1309"
+        - "1320"
+        - "1325"
+      generations: all
+      engines: all
+    category: diagnostics
+    system: ignition
+    title:
+      en: Incorrect Ignition Timing
+      ro: Avans de aprindere incorect
+      de: Falscher Zündzeitpunkt
+      fr: Calage d'allumage incorrect
+      es: Avance de encendido incorrecta
+      it: Anticipo di accensione errato
+      nl: Verkeerd ontstekingstijdstip
+    symptoms:
+      - hard starting
+      - loss of power
+      - engine overheating
+      - engine knocking
+      - backfire
+      - poor acceleration
+      - unstable idle
+      - pornire dificilă
+      - pierdere de putere
+      - supraîncălzire
+      - detonație
+      - rateuri
+      - accelerație slabă
+      - ralanti instabil
+      - schwieriger Start
+      - Leistungsverlust
+      - Motorüberhitzung
+      - Klopfen
+      - Fehlzündungen
+      - démarrage difficile
+      - perte de puissance
+      - surchauffe moteur
+      - cliquetis
+      - retour de flamme
+      - arranque difícil
+      - pérdida de potencia
+      - sobrecalentamiento
+      - detonación
+      - fallo de encendido
+      - avviamento difficile
+      - perdita di potenza
+      - surriscaldamento
+      - battito in testa
+      - mancata accensione
+      - moeilijk starten
+      - vermogensverlies
+      - motor oververhit
+      - pingelen
+      - terugslag
+    keywords:
+      - ignition timing
+      - ignition advance
+      - incorrect advance
+      - ignition timing adjustment
+      - avans aprindere
+      - reglaj avans
+      - Zündzeitpunkt
+      - calage allumage
+      - avance encendido
+      - anticipo accensione
+      - ontstekingstijdstip
+    possible_causes:
+      - distributor timing incorrectly adjusted
+      - distributor installed incorrectly
+      - worn distributor drive
+      - incorrect contact breaker adjustment
+      - damaged centrifugal advance mechanism
+      - damaged vacuum advance mechanism
+      - incorrect timing reference
+    diagnostic_steps:
+      - Verify ignition timing using the specified timing reference.
+      - Inspect distributor installation and adjustment.
+      - Check contact breaker condition and gap where applicable.
+      - Check centrifugal advance operation.
+      - Check vacuum advance operation where fitted.
+      - Inspect distributor drive for excessive wear.
+    repair_actions:
+      - Correct ignition timing.
+      - Adjust contact breaker gap.
+      - Repair the distributor advance mechanism.
+      - Replace worn distributor components.
+      - Correct distributor installation.
+    severity: high
+    related_dtcs: []
+    difficulty: intermediate
+
+  - id: dacia_pre_electronic_distributor_cap_rotor_fault
+    vehicle:
+      manufacturer: dacia
+      models:
+        - "1100"
+        - "1300"
+        - "1300_break"
+        - "1301"
+        - "1302"
+        - "1310"
+        - "1310_break"
+        - "1310_sport"
+        - "1304"
+        - "1305"
+        - "1307"
+        - "1309"
+        - "1320"
+        - "1325"
+      generations: all
+      engines: all
+    category: diagnostics
+    system: ignition
+    title:
+      en: Distributor Cap or Rotor Fault
+      ro: Defecțiune capac sau rotor distribuitor
+      de: Fehler an Verteilerkappe oder Verteilerläufer
+      fr: Défaut de tête ou de rotor d'allumeur
+      es: Fallo de tapa o rotor del distribuidor
+      it: Guasto alla calotta o al rotore dello spinterogeno
+      nl: Defecte verdelerkap of rotor
+    symptoms:
+      - intermittent misfire
+      - engine misfires when damp
+      - hard starting
+      - engine stalls
+      - poor acceleration
+      - weak spark
+      - rateuri intermitente
+      - motorul ratează pe umezeală
+      - pornire dificilă
+      - motorul se oprește
+      - scânteie slabă
+      - Aussetzer bei Feuchtigkeit
+      - schwieriger Start
+      - Motor geht aus
+      - Fehlzündungen
+      - ratés par temps humide
+      - démarrage difficile
+      - moteur cale
+      - étincelle faible
+      - fallos con humedad
+      - arranque difícil
+      - motor se cala
+      - chispa débil
+      - mancate accensioni con umidità
+      - avviamento difficile
+      - scintilla debole
+      - ontstekingsproblemen bij vocht
+      - moeilijk starten
+      - motor valt uit
+      - zwakke vonk
+    keywords:
+      - distributor cap
+      - rotor arm
+      - cracked distributor cap
+      - wet ignition
+      - capac delcou
+      - rotor delcou
+      - capac distribuitor crăpat
+      - Verteilerkappe
+      - Verteilerläufer
+      - tête d'allumeur
+      - rotor d'allumeur
+      - tapa distribuidor
+      - rotor distribuidor
+      - calotta spinterogeno
+      - rotore
+      - verdelerkap
+      - rotor
+    possible_causes:
+      - cracked distributor cap
+      - carbon tracking
+      - worn rotor
+      - moisture inside distributor
+      - corroded distributor terminals
+      - excessive distributor shaft play
+    diagnostic_steps:
+      - Remove and visually inspect the distributor cap.
+      - Check for cracks, carbon tracking, moisture, and corrosion.
+      - Inspect the rotor contact surface.
+      - Check distributor shaft play.
+      - Inspect high-voltage terminals and leads.
+    repair_actions:
+      - Replace a cracked distributor cap.
+      - Replace a worn rotor.
+      - Clean corroded terminals.
+      - Dry and seal the distributor where appropriate.
+      - Repair excessive distributor shaft wear.
+    severity: medium
+    related_dtcs: []
+    difficulty: basic
+
+  - id: dacia_pre_electronic_contact_breaker_wear
+    vehicle:
+      manufacturer: dacia
+      models:
+        - "1100"
+        - "1300"
+        - "1300_break"
+        - "1301"
+        - "1302"
+        - "1310"
+        - "1310_break"
+        - "1310_sport"
+        - "1304"
+        - "1305"
+        - "1307"
+        - "1309"
+        - "1320"
+        - "1325"
+      generations: all
+      engines: all
+    category: diagnostics
+    system: ignition
+    title:
+      en: Contact Breaker Wear or Incorrect Gap
+      ro: Uzură sau reglaj incorect al platourilor de aprindere
+      de: Verschleiß oder falscher Kontaktabstand des Unterbrechers
+      fr: Usure ou mauvais réglage des vis platinées
+      es: Desgaste o reglaje incorrecto de los platinos
+      it: Usura o regolazione errata delle puntine
+      nl: Slijtage of verkeerde contactpuntafstand
+    symptoms:
+      - intermittent misfire
+      - unstable idle
+      - hard starting
+      - loss of power
+      - engine hesitation
+      - ignition timing changes
+      - rateuri intermitente
+      - ralanti instabil
+      - pornire dificilă
+      - pierdere de putere
+      - ezitare
+      - avans instabil
+      - unregelmäßige Zündaussetzer
+      - instabiler Leerlauf
+      - schwieriger Start
+      - Leistungsverlust
+      - ratés intermittents
+      - ralenti instable
+      - démarrage difficile
+      - pérdida de potencia
+      - ralentí inestable
+      - avviamento difficile
+      - perdita di potenza
+      - minimo irregolare
+      - ontstekingsuitval
+      - onstabiel stationair
+      - moeilijk starten
+    keywords:
+      - contact breaker
+      - points gap
+      - ignition points
+      - platinos
+      - vis platinées
+      - Unterbrecherkontakte
+      - puntine
+      - contactpunten
+    possible_causes:
+      - worn contact breaker points
+      - incorrect contact gap
+      - burned contact surfaces
+      - weak contact breaker spring
+      - worn distributor cam
+      - incorrect condenser operation
+    diagnostic_steps:
+      - Inspect contact breaker surfaces.
+      - Measure contact gap.
+      - Inspect distributor cam condition.
+      - Check contact breaker spring tension.
+      - Inspect the condenser and wiring.
+      - Verify ignition timing after adjustment.
+    repair_actions:
+      - Replace worn contact breaker points.
+      - Set the correct contact gap.
+      - Replace a defective condenser.
+      - Repair worn distributor components.
+      - Recheck ignition timing.
+    severity: medium
+    related_dtcs: []
+    difficulty: intermediate
+
+  - id: dacia_pre_electronic_engine_thermostat_stuck_open
+    vehicle:
+      manufacturer: dacia
+      models:
+        - "1100"
+        - "1300"
+        - "1300_break"
+        - "1301"
+        - "1302"
+        - "1310"
+        - "1310_break"
+        - "1310_sport"
+        - "1304"
+        - "1305"
+        - "1307"
+        - "1309"
+        - "1320"
+        - "1325"
+      generations: all
+      engines: all
+    category: diagnostics
+    system: cooling
+    title:
+      en: Thermostat Stuck Open
+      ro: Termostat blocat pe deschis
+      de: Thermostat hängt offen
+      fr: Thermostat bloqué ouvert
+      es: Termostato atascado abierto
+      it: Termostato bloccato aperto
+      nl: Thermostaat blijft open staan
+    symptoms:
+      - engine takes too long to warm up
+      - engine runs too cool
+      - poor heater performance
+      - increased fuel consumption
+      - temperature drops during highway driving
+      - motorul se încălzește greu
+      - temperatura rămâne scăzută
+      - încălzire slabă în habitaclu
+      - consum crescut
+      - temperatura scade la mers constant
+      - Motor wird zu langsam warm
+      - Motor bleibt zu kalt
+      - Heizung schwach
+      - höherer Kraftstoffverbrauch
+      - moteur chauffe lentement
+      - chauffage habitacle faible
+      - consommation accrue
+      - motor demasiado frío
+      - calefacción débil
+      - consumo elevado
+      - motore troppo freddo
+      - riscaldamento abitacolo debole
+      - consumo elevato
+      - motor blijft te koud
+      - interieurverwarming zwak
+    keywords:
+      - thermostat stuck open
+      - engine runs cold
+      - slow warm up
+      - termostat deschis
+      - motor rece
+      - încălzire lentă
+      - Thermostat offen
+      - moteur froid
+      - termostato abierto
+      - termostato aperto
+      - thermostaat open
+    possible_causes:
+      - thermostat stuck open
+      - incorrect thermostat
+      - missing thermostat
+      - thermostat opening temperature too low
+    diagnostic_steps:
+      - Monitor coolant temperature during warm-up.
+      - Compare upper radiator hose temperature during warm-up.
+      - Check thermostat opening behavior.
+      - Verify the thermostat specification.
+    repair_actions:
+      - Replace a thermostat that remains open.
+      - Install the correct thermostat specification.
+      - Restore the cooling system to its intended configuration.
+    severity: low
+    related_dtcs: []
+    difficulty: basic
+
+  - id: dacia_pre_electronic_cooling_system_airlock
+    vehicle:
+      manufacturer: dacia
+      models:
+        - "1100"
+        - "1300"
+        - "1300_break"
+        - "1301"
+        - "1302"
+        - "1310"
+        - "1310_break"
+        - "1310_sport"
+        - "1304"
+        - "1305"
+        - "1307"
+        - "1309"
+        - "1320"
+        - "1325"
+      generations: all
+      engines: all
+    category: diagnostics
+    system: cooling
+    title:
+      en: Cooling System Airlock
+      ro: Dop de aer în sistemul de răcire
+      de: Luft im Kühlsystem
+      fr: Poche d'air dans le circuit de refroidissement
+      es: Bolsa de aire en el sistema de refrigeración
+      it: Aria nel circuito di raffreddamento
+      nl: Luchtbel in het koelsysteem
+    symptoms:
+      - temperature fluctuates
+      - heater output changes
+      - coolant gurgling
+      - localized overheating
+      - coolant level changes after cooling
+      - temperatura fluctuantă
+      - încălzirea habitaclului variază
+      - zgomot de bolborosire în instalație
+      - supraîncălzire locală
+      - nivelul lichidului se schimbă după răcire
+      - schwankende Motortemperatur
+      - Heizung schwankt
+      - Gluckern im Kühlsystem
+      - örtliche Überhitzung
+      - température fluctuante
+      - chauffage irrégulier
+      - gargouillement du liquide
+      - surchauffe localisée
+      - temperatura fluctuante
+      - calefacción irregular
+      - burbujeo del refrigerante
+      - surriscaldamento localizzato
+      - riscaldamento irregolare
+      - temperatura variabile
+      - verwarming wisselt
+      - borrelen in koelsysteem
+    keywords:
+      - cooling system airlock
+      - air in coolant
+      - coolant bleeding
+      - aerisire sistem răcire
+      - aer în antigel
+      - Luft im Kühlsystem
+      - air dans le liquide
+      - aire en refrigerante
+      - aria nel refrigerante
+      - lucht in koelvloeistof
+    possible_causes:
+      - coolant drained without proper bleeding
+      - coolant leak allowing air entry
+      - incorrect filling procedure
+      - cylinder head gasket leak
+      - damaged cooling system seal
+    diagnostic_steps:
+      - Check coolant level when the engine is cold.
+      - Inspect the system for external leaks.
+      - Check for trapped air according to the applicable filling procedure.
+      - Observe heater operation during warm-up.
+      - Check for combustion gases if repeated air entry is suspected.
+    repair_actions:
+      - Correctly bleed the cooling system.
+      - Repair the source of coolant leakage.
+      - Replace damaged seals.
+      - Investigate internal combustion-gas leakage if air repeatedly returns.
+    severity: high
+    related_dtcs: []
+    difficulty: intermediate
+
+  - id: dacia_pre_electronic_engine_oil_pressure_low_mechanical
+    vehicle:
+      manufacturer: dacia
+      models:
+        - "1100"
+        - "1300"
+        - "1300_break"
+        - "1301"
+        - "1302"
+        - "1310"
+        - "1310_break"
+        - "1310_sport"
+        - "1304"
+        - "1305"
+        - "1307"
+        - "1309"
+        - "1320"
+        - "1325"
+      generations: all
+      engines: all
+    category: diagnostics
+    system: lubrication
+    title:
+      en: Low Mechanical Engine Oil Pressure
+      ro: Presiune mecanică scăzută a uleiului de motor
+      de: Niedriger mechanischer Motoröldruck
+      fr: Faible pression mécanique d'huile moteur
+      es: Baja presión mecánica de aceite del motor
+      it: Bassa pressione meccanica dell'olio motore
+      nl: Lage mechanische motoroliedruk
+    symptoms:
+      - oil pressure warning
+      - oil pressure low at idle
+      - engine rattling
+      - valvetrain noise
+      - warning light flickers when hot
+      - martor presiune ulei
+      - presiune mică la ralanti
+      - motor zgomotos
+      - zgomot în distribuție
+      - martorul pâlpâie la cald
+      - Öldruckwarnung
+      - niedriger Öldruck im Leerlauf
+      - Ventiltriebgeräusche
+      - Warnleuchte flackert bei warmem Motor
+      - voyant de pression d'huile
+      - pression faible au ralenti
+      - bruit du moteur
+      - témoin qui clignote à chaud
+      - testigo de presión de aceite
+      - presión baja al ralentí
+      - ruido del tren de válvulas
+      - spia pressione olio
+      - pressione bassa al minimo
+      - rumore della distribuzione
+      - oliedruklampje
+      - lage druk stationair
+      - klepbedieningsgeluid
+    keywords:
+      - low oil pressure
+      - mechanical oil pressure
+      - oil pressure at idle
+      - presiune ulei
+      - presiune mică ulei
+      - niedriger Öldruck
+      - faible pression d'huile
+      - baja presión de aceite
+      - bassa pressione olio
+      - lage oliedruk
+    possible_causes:
+      - low engine oil level
+      - incorrect oil viscosity
+      - worn oil pump
+      - blocked oil pickup
+      - excessive bearing clearance
+      - worn crankshaft bearings
+      - faulty pressure relief valve
+      - worn camshaft or valvetrain components
+    diagnostic_steps:
+      - Check engine oil level and condition.
+      - Verify the oil specification and viscosity.
+      - Confirm oil pressure with a mechanical pressure gauge.
+      - Check pressure at idle and higher engine speed.
+      - Inspect the oil pickup and pump if pressure remains low.
+      - Measure relevant bearing clearances during engine inspection.
+    repair_actions:
+      - Correct the engine oil level and specification.
+      - Replace a defective oil pump.
+      - Clean a restricted oil pickup.
+      - Repair excessive bearing clearance.
+      - Replace defective pressure relief components.
+    severity: critical
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: dacia_pre_electronic_clutch_dragging
+    vehicle:
+      manufacturer: dacia
+      models:
+        - "1300"
+        - "1300_break"
+        - "1301"
+        - "1302"
+        - "1310"
+        - "1310_break"
+        - "1310_sport"
+        - "1304"
+        - "1305"
+        - "1307"
+        - "1309"
+        - "1320"
+        - "1325"
+      generations: all
+      engines: all
+    category: diagnostics
+    system: transmission
+    title:
+      en: Clutch Dragging
+      ro: Ambreiajul nu se decuplează complet
+      de: Kupplung trennt nicht vollständig
+      fr: Embrayage qui ne débraye pas complètement
+      es: Embrague que no desacopla completamente
+      it: Frizione che non disinnesta completamente
+      nl: Koppeling ontkoppelt niet volledig
+    symptoms:
+      - gears difficult to engage with engine running
+      - reverse gear grinds
+      - vehicle creeps with clutch pedal fully depressed
+      - clutch pedal adjustment difficult
+      - hard shifting when stationary
+      - vitezele intră greu cu motorul pornit
+      - marșarierul cârâie
+      - mașina tinde să înainteze cu ambreiajul apăsat
+      - schimbare dificilă pe loc
+      - Gänge schwer einzulegen
+      - Rückwärtsgang kracht
+      - Fahrzeug bewegt sich trotz getretener Kupplung
+      - vitesses difficiles à engager
+      - marche arrière qui craque
+      - véhicule avance avec pédale enfoncée
+      - marchas difíciles de engranar
+      - rasca la marcha atrás
+      - veicolo avanza con frizione premuta
+      - retromarcia gratta
+      - versnellingen moeilijk in te schakelen
+      - achteruit kraakt
+    keywords:
+      - clutch drag
+      - clutch not releasing
+      - reverse gear grinding
+      - ambreiaj patinează
+      - ambreiaj nu decuplează
+      - Kupplung trennt nicht
+      - embrayage colle
+      - embrague arrastra
+      - frizione trascina
+      - koppeling sleept
+    possible_causes:
+      - incorrect clutch cable adjustment
+      - stretched clutch cable
+      - worn clutch release mechanism
+      - warped clutch disc
+      - damaged pressure plate
+      - pilot bearing seizure where fitted
+      - clutch disc contamination
+    diagnostic_steps:
+      - Check clutch pedal free play.
+      - Inspect clutch cable or linkage adjustment.
+      - Check clutch release travel.
+      - Test reverse gear engagement with the engine running.
+      - Inspect clutch components if external adjustment is correct.
+    repair_actions:
+      - Adjust clutch free play.
+      - Replace a stretched or damaged clutch cable.
+      - Repair the clutch release mechanism.
+      - Replace warped or damaged clutch components.
+    severity: high
+    related_dtcs: []
+    difficulty: intermediate
+
+  - id: dacia_pre_electronic_manual_transmission_oil_low
+    vehicle:
+      manufacturer: dacia
+      models:
+        - "1300"
+        - "1300_break"
+        - "1301"
+        - "1302"
+        - "1310"
+        - "1310_break"
+        - "1310_sport"
+        - "1304"
+        - "1305"
+        - "1307"
+        - "1309"
+        - "1320"
+        - "1325"
+      generations: all
+      engines: all
+    category: diagnostics
+    system: transmission
+    title:
+      en: Low Manual Transmission Oil Level
+      ro: Nivel scăzut al uleiului din cutia manuală
+      de: Niedriger Ölstand im Schaltgetriebe
+      fr: Niveau d'huile faible dans la boîte manuelle
+      es: Nivel bajo de aceite en la caja manual
+      it: Livello basso dell'olio nel cambio manuale
+      nl: Laag oliepeil in de handgeschakelde versnellingsbak
+    symptoms:
+      - gearbox noise
+      - whining from transmission
+      - difficult gear engagement
+      - transmission becomes noisy when hot
+      - oil leakage from gearbox
+      - zgomot cutie de viteze
+      - huruit sau șuierat
+      - viteze greu de selectat
+      - zgomot mai puternic la cald
+      - pierdere de ulei
+      - Getriebegeräusche
+      - Heulen aus dem Getriebe
+      - Ölverlust
+      - bruit de boîte
+      - sifflement de transmission
+      - fuite d'huile
+      - ruido de caja
+      - zumbido de transmisión
+      - fuga de aceite
+      - rumore del cambio
+      - fischio della trasmissione
+      - perdita d'olio
+      - versnellingsbakgeluid
+      - olie lekkage
+    keywords:
+      - low gearbox oil
+      - transmission oil level
+      - gearbox whining
+      - ulei cutie
+      - nivel ulei cutie
+      - Getriebeölstand
+      - niveau huile boîte
+      - nivel aceite caja
+      - livello olio cambio
+      - versnellingsbakolie
+    possible_causes:
+      - external gearbox oil leak
+      - worn seal
+      - damaged gearbox housing
+      - insufficient previous filling
+      - incorrect oil specification
+    diagnostic_steps:
+      - Inspect the gearbox externally for oil leaks.
+      - Check the oil level using the specified procedure.
+      - Inspect gearbox seals and casing.
+      - Check oil condition for metallic contamination.
+      - Verify the correct lubricant specification.
+    repair_actions:
+      - Repair gearbox oil leaks.
+      - Replace defective seals.
+      - Restore the correct oil level.
+      - Replace contaminated or incorrect lubricant.
+    severity: high
+    related_dtcs: []
+    difficulty: intermediate
+
+  - id: dacia_pre_electronic_front_brake_caliper_sticking
+    vehicle:
+      manufacturer: dacia
+      models:
+        - "1300"
+        - "1300_break"
+        - "1301"
+        - "1302"
+        - "1310"
+        - "1310_break"
+        - "1310_sport"
+        - "1304"
+        - "1305"
+        - "1307"
+        - "1309"
+        - "1320"
+        - "1325"
+      generations: all
+      engines: all
+    category: diagnostics
+    system: braking
+    title:
+      en: Front Brake Caliper Sticking
+      ro: Etrier de frână față blocat
+      de: Festsitzender vorderer Bremssattel
+      fr: Étrier de frein avant grippé
+      es: Pinza de freno delantera agarrotada
+      it: Pinza freno anteriore bloccata
+      nl: Vastzittende voorremklauw
+    symptoms:
+      - one front wheel gets hot
+      - vehicle pulls to one side
+      - brake smell
+      - increased rolling resistance
+      - brake does not release fully
+      - o roată față se încinge
+      - mașina trage într-o parte
+      - miros de frână încinsă
+      - rezistență la rulare
+      - frâna rămâne ușor aplicată
+      - ein Vorderrad wird heiß
+      - Fahrzeug zieht zur Seite
+      - Bremsgeruch
+      - résistance au roulement
+      - odeur de frein
+      - frein reste légèrement engagé
+      - una rueda delantera se calienta
+      - el vehículo tira hacia un lado
+      - olor a freno
+      - una ruota anteriore si surriscalda
+      - il veicolo tira da un lato
+      - odore di freni
+      - één voorwiel wordt heet
+      - rem blijft licht aangrijpen
+    keywords:
+      - sticking brake caliper
+      - seized caliper
+      - hot front wheel
+      - etrier blocat
+      - frână blocată
+      - festsitzender Bremssattel
+      - étrier grippé
+      - pinza agarrotada
+      - pinza bloccata
+      - vastzittende remklauw
+    possible_causes:
+      - seized caliper piston
+      - seized guide pins
+      - damaged caliper seal
+      - restricted flexible brake hose
+      - corrosion in caliper bore
+    diagnostic_steps:
+      - Compare front wheel temperatures after controlled braking.
+      - Check whether the affected wheel releases after the brake pedal is released.
+      - Inspect caliper piston movement.
+      - Inspect guide pins where fitted.
+      - Check the flexible brake hose for internal restriction.
+    repair_actions:
+      - Rebuild or replace a seized caliper.
+      - Clean or replace seized guide pins.
+      - Replace a restricted flexible brake hose.
+      - Replace damaged seals.
+    severity: high
+    related_dtcs: []
+    difficulty: intermediate
+
+  - id: dacia_pre_electronic_rear_brake_adjustment_incorrect
+    vehicle:
+      manufacturer: dacia
+      models:
+        - "1300"
+        - "1300_break"
+        - "1301"
+        - "1302"
+        - "1310"
+        - "1310_break"
+        - "1310_sport"
+        - "1304"
+        - "1305"
+        - "1307"
+        - "1309"
+        - "1320"
+        - "1325"
+      generations: all
+      engines: all
+    category: diagnostics
+    system: braking
+    title:
+      en: Incorrect Rear Drum Brake Adjustment
+      ro: Reglaj incorect al frânelor spate cu tambur
+      de: Falsche Einstellung der hinteren Trommelbremsen
+      fr: Mauvais réglage des freins arrière à tambour
+      es: Ajuste incorrecto de los frenos traseros de tambor
+      it: Regolazione errata dei freni posteriori a tamburo
+      nl: Verkeerde afstelling van de achterste trommelremmen
+    symptoms:
+      - long brake pedal travel
+      - weak rear braking
+      - handbrake travel excessive
+      - rear brakes engage unevenly
+      - pedal improves after repeated pumping
+      - cursă mare a pedalei de frână
+      - frânare spate slabă
+      - frâna de mână are cursă mare
+      - frânele spate acționează neuniform
+      - pedala se întărește după pompare
+      - langer Pedalweg
+      - schwache Hinterradbremsen
+      - Handbremsweg zu lang
+      - freinage arrière irrégulier
+      - course de pédale longue
+      - frein arrière faible
+      - recorrido excesivo del pedal
+      - frenado trasero débil
+      - recorrido excesivo del freno de mano
+      - corsa lunga del pedale
+      - frenata posteriore debole
+      - handremweg te lang
+    keywords:
+      - rear brake adjustment
+      - drum brake adjustment
+      - long brake pedal
+      - reglaj frâne spate
+      - tamburi frână
+      - Einstellung Trommelbremse
+      - réglage frein tambour
+      - ajuste freno tambor
+      - regolazione freno a tamburo
+      - trommelrem afstelling
+    possible_causes:
+      - excessive brake shoe clearance
+      - automatic adjuster malfunction where fitted
+      - incorrect manual adjustment
+      - worn brake shoes
+      - stretched parking brake cable
+      - contaminated brake drum
+    diagnostic_steps:
+      - Inspect rear brake shoe clearance.
+      - Check the condition of the brake shoes and drums.
+      - Inspect the adjustment mechanism.
+      - Check parking brake cable travel.
+      - Verify rear brake operation on both sides.
+    repair_actions:
+      - Correct rear brake shoe adjustment.
+      - Replace worn brake shoes.
+      - Repair the adjustment mechanism.
+      - Replace damaged parking brake cables.
+      - Clean or replace contaminated brake components.
+    severity: high
+    related_dtcs: []
+    difficulty: intermediate
+
   - id: dacia_pre_electronic_engine_will_not_start
     vehicle:
       manufacturer: dacia
