@@ -6,6 +6,646 @@ manufacturer:
 
 technical_data:
 
+  - id: dacia_engine_fuel_rail_pressure_too_low
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - sandero
+        - duster
+        - dokker
+        - lodgy
+      generations:
+        - logan_ii
+        - sandero_ii
+        - duster_i
+        - duster_ii
+        - dokker_i
+        - lodgy_i
+      engines:
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: Fuel injection
+    title:
+      en: Fuel rail pressure too low
+      ro: Presiune prea mică în rampa de combustibil
+      de: Kraftstoff-Raildruck zu niedrig
+      fr: Pression de rampe de carburant trop faible
+      es: Presión del riel de combustible demasiado baja
+      it: Pressione rail carburante troppo bassa
+      nl: Brandstofraildruk te laag
+    symptoms:
+      - Difficult starting
+      - Loss of power
+      - Engine hesitation
+      - Engine stalling
+    keywords:
+      - low rail pressure
+      - fuel rail pressure low
+      - rail pressure insufficient
+      - insufficient fuel pressure
+      - common rail pressure
+    possible_causes:
+      - Restricted fuel filter
+      - Low-pressure fuel supply problem
+      - High-pressure pump wear
+      - Fuel pressure regulator fault
+      - Excessive injector return flow
+    diagnostic_steps:
+      - Compare specified and actual rail pressure during cranking and acceleration.
+      - Check low-pressure fuel supply.
+      - Inspect and replace the fuel filter if restricted.
+      - Perform injector leak-off testing.
+      - Test high-pressure pump output and pressure regulation.
+    related_dtcs:
+      - P0087
+    difficulty: hard
+
+  - id: dacia_engine_fuel_rail_pressure_too_high
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - sandero
+        - duster
+        - dokker
+        - lodgy
+      generations:
+        - logan_ii
+        - sandero_ii
+        - duster_i
+        - duster_ii
+        - dokker_i
+        - lodgy_i
+      engines:
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: Fuel injection
+    title:
+      en: Fuel rail pressure too high
+      ro: Presiune prea mare în rampa de combustibil
+      de: Kraftstoff-Raildruck zu hoch
+      fr: Pression de rampe de carburant trop élevée
+      es: Presión del riel de combustible demasiado alta
+      it: Pressione rail carburante troppo alta
+      nl: Brandstofraildruk te hoog
+    symptoms:
+      - Rough running
+      - Difficult starting
+      - Reduced power
+      - Engine warning lamp
+    keywords:
+      - high rail pressure
+      - fuel pressure too high
+      - rail pressure excessive
+      - common rail pressure high
+    possible_causes:
+      - Faulty fuel pressure regulator
+      - Faulty rail pressure sensor
+      - High-pressure pump regulation fault
+      - Restricted fuel return
+      - Electrical control fault
+    diagnostic_steps:
+      - Compare commanded and actual rail pressure.
+      - Inspect rail pressure sensor wiring.
+      - Check pressure regulator operation.
+      - Verify fuel return restriction.
+      - Test high-pressure pump regulation.
+    related_dtcs:
+      - P0088
+    difficulty: hard
+
+  - id: dacia_engine_rail_pressure_sensor_signal_fault
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - sandero
+        - duster
+        - dokker
+        - lodgy
+      generations:
+        - logan_ii
+        - sandero_ii
+        - duster_i
+        - duster_ii
+        - dokker_i
+        - lodgy_i
+      engines:
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: Fuel injection
+    title:
+      en: Fuel rail pressure sensor signal fault
+      ro: Defecțiune semnal senzor presiune rampă
+      de: Signalfehler des Kraftstoff-Raildrucksensors
+      fr: Défaut de signal du capteur de pression de rampe
+      es: Fallo de señal del sensor de presión del riel
+      it: Guasto segnale sensore pressione rail
+      nl: Signaalstoring brandstofraildruksensor
+    symptoms:
+      - Difficult starting
+      - Engine hesitation
+      - Reduced power
+      - Engine stalling
+    keywords:
+      - rail pressure sensor
+      - fuel pressure sensor
+      - common rail sensor
+      - rail pressure signal
+    possible_causes:
+      - Faulty pressure sensor
+      - Wiring open circuit
+      - Wiring short circuit
+      - Poor sensor ground
+      - Unstable reference voltage
+    diagnostic_steps:
+      - Check sensor reference voltage and ground.
+      - Monitor sensor signal with diagnostic equipment.
+      - Compare reported pressure with actual system pressure.
+      - Inspect connector and wiring.
+      - Replace the sensor only after confirming the circuit is correct.
+    related_dtcs:
+      - P0190
+      - P0191
+      - P0192
+      - P0193
+    difficulty: medium
+
+  - id: dacia_engine_injector_return_flow_excessive
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - sandero
+        - duster
+        - dokker
+        - lodgy
+      generations:
+        - logan_i
+        - logan_ii
+        - sandero_i
+        - sandero_ii
+        - duster_i
+        - duster_ii
+        - dokker_i
+        - lodgy_i
+      engines:
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: Fuel injection
+    title:
+      en: Excessive injector return flow
+      ro: Debit excesiv pe returul injectorului
+      de: Zu hoher Rücklauf eines Einspritzventils
+      fr: Débit de retour excessif d'un injecteur
+      es: Caudal de retorno excesivo de un inyector
+      it: Flusso di ritorno eccessivo dell'iniettore
+      nl: Overmatige retourstroom van injector
+    symptoms:
+      - Hard starting
+      - Low rail pressure
+      - Rough idle
+      - Loss of power
+    keywords:
+      - injector leak-off
+      - injector return flow
+      - excessive injector return
+      - injector back leak
+      - injector leak off test
+    possible_causes:
+      - Internal injector wear
+      - Injector valve leakage
+      - Contaminated fuel
+      - Injector damage
+      - Excessive injector return quantity
+    diagnostic_steps:
+      - Perform an injector leak-off test.
+      - Compare return quantities between injectors.
+      - Check rail pressure during cranking.
+      - Inspect fuel quality and contamination.
+      - Replace or repair the injector identified as abnormal.
+    related_dtcs: []
+    difficulty: medium
+
+  - id: dacia_engine_fuel_filter_restriction
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - sandero
+        - duster
+        - dokker
+        - lodgy
+      generations:
+        - logan_i
+        - logan_ii
+        - sandero_i
+        - sandero_ii
+        - duster_i
+        - duster_ii
+        - dokker_i
+        - lodgy_i
+      engines:
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: Fuel supply
+    title:
+      en: Fuel filter restriction
+      ro: Filtru de combustibil colmatat
+      de: Kraftstofffilter verstopft
+      fr: Filtre à carburant colmaté
+      es: Filtro de combustible obstruido
+      it: Filtro carburante intasato
+      nl: Verstopte brandstoffilter
+    symptoms:
+      - Difficult starting
+      - Loss of power
+      - Engine hesitation
+      - Engine stalling under load
+    keywords:
+      - clogged fuel filter
+      - blocked fuel filter
+      - restricted fuel filter
+      - diesel filter restriction
+      - fuel starvation
+    possible_causes:
+      - Saturated filter element
+      - Water contamination
+      - Dirt contamination
+      - Incorrect fuel
+      - Long service interval
+    diagnostic_steps:
+      - Check fuel filter service history.
+      - Inspect the filter for contamination and water.
+      - Measure fuel pressure before and after the filter where applicable.
+      - Replace the filter if restriction is confirmed.
+      - Prime the fuel system and check for leaks.
+    related_dtcs: []
+    difficulty: easy
+
+  - id: dacia_engine_boost_pressure_too_low
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - sandero
+        - duster
+        - dokker
+        - lodgy
+      generations:
+        - logan_i
+        - logan_ii
+        - sandero_i
+        - sandero_ii
+        - duster_i
+        - duster_ii
+        - dokker_i
+        - lodgy_i
+      engines:
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: Turbocharger control
+    title:
+      en: Boost pressure too low
+      ro: Presiune de supraalimentare prea mică
+      de: Ladedruck zu niedrig
+      fr: Pression de suralimentation trop faible
+      es: Presión de sobrealimentación demasiado baja
+      it: Pressione di sovralimentazione troppo bassa
+      nl: Turbodruk te laag
+    symptoms:
+      - Poor acceleration
+      - Low RPM power loss
+      - Limp mode
+      - Reduced maximum power
+    keywords:
+      - underboost
+      - low boost
+      - insufficient boost
+      - turbo pressure low
+      - P0299
+    possible_causes:
+      - Boost hose leak
+      - Intercooler leak
+      - Turbo actuator fault
+      - Variable geometry restriction
+      - EGR or intake system problem
+    diagnostic_steps:
+      - Compare requested and measured boost pressure.
+      - Inspect all charge-air hoses and intercooler connections.
+      - Check vacuum or electronic turbo actuator operation.
+      - Inspect turbocharger control mechanism.
+      - Check intake and EGR systems for abnormal airflow.
+    related_dtcs:
+      - P0299
+    difficulty: hard
+
+  - id: dacia_engine_boost_pressure_too_high
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - sandero
+        - duster
+        - dokker
+        - lodgy
+      generations:
+        - logan_i
+        - logan_ii
+        - sandero_i
+        - sandero_ii
+        - duster_i
+        - duster_ii
+        - dokker_i
+        - lodgy_i
+      engines:
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: Turbocharger control
+    title:
+      en: Boost pressure too high
+      ro: Presiune de supraalimentare prea mare
+      de: Ladedruck zu hoch
+      fr: Pression de suralimentation trop élevée
+      es: Presión de sobrealimentación demasiado alta
+      it: Pressione di sovralimentazione troppo alta
+      nl: Turbodruk te hoog
+    symptoms:
+      - Limp mode
+      - Sudden power reduction
+      - Turbo surge
+      - Engine warning lamp
+    keywords:
+      - overboost
+      - excessive boost
+      - turbo pressure high
+      - boost control fault
+      - P0234
+    possible_causes:
+      - Sticking turbocharger vanes
+      - Wastegate actuator fault
+      - Boost control solenoid fault
+      - Incorrect vacuum control
+      - Faulty boost pressure sensor
+    diagnostic_steps:
+      - Compare commanded and measured boost pressure.
+      - Inspect turbo actuator movement.
+      - Check vacuum lines and control valves.
+      - Inspect variable geometry or wastegate mechanism.
+      - Verify boost pressure sensor operation.
+    related_dtcs:
+      - P0234
+    difficulty: hard
+
+  - id: dacia_engine_map_sensor_signal_low
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - sandero
+        - duster
+        - dokker
+        - lodgy
+      generations:
+        - logan_i
+        - logan_ii
+        - sandero_i
+        - sandero_ii
+        - duster_i
+        - duster_ii
+        - dokker_i
+        - lodgy_i
+      engines:
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: Engine management
+    title:
+      en: MAP sensor signal too low
+      ro: Semnal senzor MAP prea mic
+      de: MAP-Sensorsignal zu niedrig
+      fr: Signal du capteur MAP trop faible
+      es: Señal del sensor MAP demasiado baja
+      it: Segnale sensore MAP troppo basso
+      nl: MAP-sensorsignaal te laag
+    symptoms:
+      - Reduced power
+      - Poor acceleration
+      - Rough running
+      - Limp mode
+    keywords:
+      - MAP sensor low signal
+      - manifold pressure sensor low
+      - boost sensor low
+      - P0107
+    possible_causes:
+      - Faulty MAP sensor
+      - Signal short to ground
+      - Reference voltage fault
+      - Sensor ground fault
+      - Wiring damage
+    diagnostic_steps:
+      - Check sensor reference voltage.
+      - Verify sensor ground.
+      - Measure signal voltage with ignition on and engine running.
+      - Compare manifold pressure with atmospheric pressure.
+      - Inspect connector and wiring.
+    related_dtcs:
+      - P0107
+    difficulty: medium
+
+  - id: dacia_engine_map_sensor_signal_high
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - sandero
+        - duster
+        - dokker
+        - lodgy
+      generations:
+        - logan_i
+        - logan_ii
+        - sandero_i
+        - sandero_ii
+        - duster_i
+        - duster_ii
+        - dokker_i
+        - lodgy_i
+      engines:
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: Engine management
+    title:
+      en: MAP sensor signal too high
+      ro: Semnal senzor MAP prea mare
+      de: MAP-Sensorsignal zu hoch
+      fr: Signal du capteur MAP trop élevé
+      es: Señal del sensor MAP demasiado alta
+      it: Segnale sensore MAP troppo alto
+      nl: MAP-sensorsignaal te hoog
+    symptoms:
+      - Reduced power
+      - Poor acceleration
+      - Excessive fuel consumption
+      - Engine warning lamp
+    keywords:
+      - MAP sensor high signal
+      - manifold pressure sensor high
+      - boost sensor high
+      - P0108
+    possible_causes:
+      - Faulty MAP sensor
+      - Signal short to voltage
+      - Incorrect reference voltage
+      - Sensor wiring fault
+      - Intake pressure abnormality
+    diagnostic_steps:
+      - Check MAP sensor reference voltage and ground.
+      - Measure signal voltage.
+      - Compare reported pressure with atmospheric pressure.
+      - Inspect wiring for short to positive.
+      - Check actual intake pressure under load.
+    related_dtcs:
+      - P0108
+    difficulty: medium
+
+  - id: dacia_engine_crankshaft_position_signal_interruption
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - sandero
+        - duster
+        - dokker
+        - lodgy
+      generations:
+        - logan_i
+        - logan_ii
+        - sandero_i
+        - sandero_ii
+        - duster_i
+        - duster_ii
+        - dokker_i
+        - lodgy_i
+      engines:
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: Engine management
+    title:
+      en: Crankshaft position signal interruption
+      ro: Întrerupere semnal senzor poziție arbore cotit
+      de: Unterbrechung des Kurbelwellensignals
+      fr: Interruption du signal du capteur de position du vilebrequin
+      es: Interrupción de la señal del sensor de posición del cigüeñal
+      it: Interruzione segnale sensore posizione albero motore
+      nl: Onderbreking krukassignaal
+    symptoms:
+      - Engine stalls
+      - No start
+      - Intermittent starting
+      - Loss of engine RPM signal
+    keywords:
+      - crankshaft signal intermittent
+      - crank sensor dropout
+      - crankshaft position signal loss
+      - engine speed signal missing
+    possible_causes:
+      - Faulty crankshaft position sensor
+      - Damaged wiring
+      - Poor connector contact
+      - Excessive sensor air gap
+      - Crankshaft reluctor damage
+    diagnostic_steps:
+      - Monitor engine RPM during cranking.
+      - Check crankshaft sensor supply and signal.
+      - Inspect connector and wiring.
+      - Check sensor mounting and air gap where applicable.
+      - Inspect the reluctor or trigger wheel if signal remains unstable.
+    related_dtcs:
+      - P0335
+      - P0336
+    difficulty: medium
+
+  - id: dacia_engine_camshaft_position_signal_interruption
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - sandero
+        - duster
+        - dokker
+        - lodgy
+      generations:
+        - logan_i
+        - logan_ii
+        - sandero_i
+        - sandero_ii
+        - duster_i
+        - duster_ii
+        - dokker_i
+        - lodgy_i
+      engines:
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: Engine management
+    title:
+      en: Camshaft position signal interruption
+      ro: Întrerupere semnal senzor poziție ax cu came
+      de: Unterbrechung des Nockenwellensignals
+      fr: Interruption du signal du capteur de position d'arbre à cames
+      es: Interrupción de la señal del sensor de posición del árbol de levas
+      it: Interruzione segnale sensore posizione albero a camme
+      nl: Onderbreking nokkenassignaal
+    symptoms:
+      - Difficult starting
+      - Engine stalling
+      - Rough running
+      - Reduced power
+    keywords:
+      - camshaft signal intermittent
+      - cam sensor dropout
+      - camshaft position signal loss
+      - cam sensor signal missing
+    possible_causes:
+      - Faulty camshaft position sensor
+      - Wiring interruption
+      - Poor connector contact
+      - Sensor contamination
+      - Mechanical timing problem
+    diagnostic_steps:
+      - Monitor camshaft position signal during starting.
+      - Check sensor supply and ground.
+      - Inspect signal wiring.
+      - Compare camshaft and crankshaft synchronization.
+      - Check mechanical timing if the signal remains incorrect.
+    related_dtcs:
+      - P0340
+      - P0341
+    difficulty: medium
+
   - id: dacia_engine_variable_valve_timing_actuator_fault
     vehicle:
       manufacturer: dacia
