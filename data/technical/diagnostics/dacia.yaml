@@ -6,6 +6,1032 @@ manufacturer:
 
 technical_data:
 
+  - id: dacia_electronic_oxygen_sensor_upstream_fault
+    vehicle:
+      manufacturer: dacia
+      models:
+        - supernova
+        - solenza
+        - logan
+        - logan_mcv
+        - logan_van
+        - logan_pickup
+        - sandero
+        - sandero_stepway
+        - duster
+        - lodgy
+        - dokker
+        - jogger
+        - bigster
+      generations: all
+      engines: all
+    category: diagnostics
+    system: engine
+    title:
+      en: Upstream Oxygen Sensor Fault
+      ro: Defecțiune sondă lambda amonte
+      de: Fehler der Lambdasonde vor Katalysator
+      fr: Défaut de la sonde lambda amont
+      es: Fallo de la sonda lambda anterior
+      it: Guasto della sonda lambda a monte
+      nl: Storing voorste lambdasonde
+    symptoms:
+      - poor fuel economy
+      - unstable idle
+      - hesitation
+      - increased emissions
+      - engine warning light
+      - consum crescut
+      - ralanti instabil
+      - ezitare la accelerație
+      - emisii crescute
+      - hoher Kraftstoffverbrauch
+      - consommation élevée
+      - consumo elevado
+      - verhoogd brandstofverbruik
+    keywords:
+      - upstream oxygen sensor
+      - lambda sensor
+      - O2 sensor
+      - oxygen sensor
+      - sondă lambda
+      - sonda lambda
+    possible_causes:
+      - failed oxygen sensor
+      - damaged sensor wiring
+      - exhaust leak upstream of sensor
+      - intake air leak
+      - contaminated sensor
+      - sensor heater fault
+    diagnostic_steps:
+      - Monitor upstream oxygen sensor or lambda data with a diagnostic tool.
+      - Check sensor response during closed-loop operation.
+      - Inspect wiring and connector.
+      - Check for exhaust leaks before the sensor.
+      - Check mixture-related faults before replacing the sensor.
+    related_dtcs: []
+    difficulty: intermediate
+
+  - id: dacia_electronic_oxygen_sensor_heater_fault
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - logan_mcv
+        - logan_van
+        - logan_pickup
+        - sandero
+        - sandero_stepway
+        - duster
+        - lodgy
+        - dokker
+      generations: all
+      engines: all
+    category: diagnostics
+    system: engine
+    title:
+      en: Oxygen Sensor Heater Circuit Fault
+      ro: Defecțiune circuit încălzire sondă lambda
+      de: Fehler im Heizkreis der Lambdasonde
+      fr: Défaut du circuit de chauffage de la sonde lambda
+      es: Fallo del circuito calefactor de la sonda lambda
+      it: Guasto del circuito riscaldatore della sonda lambda
+      nl: Storing in verwarmingscircuit lambdasonde
+    symptoms:
+      - delayed closed-loop operation
+      - increased fuel consumption
+      - emissions increase
+      - engine warning light
+      - poor cold running
+      - consum crescut
+      - emisii crescute
+      - funcționare slabă la rece
+      - verzögerter Regelbetrieb
+      - émissions élevées
+      - emisiones elevadas
+      - emissioni elevate
+      - verhoogde emissies
+    keywords:
+      - oxygen sensor heater
+      - lambda heater
+      - O2 heater
+      - încălzire sondă lambda
+      - rezistență sondă lambda
+    possible_causes:
+      - failed oxygen sensor heater
+      - open heater circuit
+      - blown fuse
+      - damaged wiring
+      - connector fault
+      - ECU heater control fault
+    diagnostic_steps:
+      - Check heater circuit resistance.
+      - Verify heater supply voltage.
+      - Check heater ground or ECU control.
+      - Inspect fuse and wiring.
+      - Inspect the sensor connector for corrosion or heat damage.
+    related_dtcs: []
+    difficulty: intermediate
+
+  - id: dacia_electronic_downstream_oxygen_sensor_fault
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - logan_mcv
+        - sandero
+        - sandero_stepway
+        - duster
+        - lodgy
+        - dokker
+      generations: all
+      engines: all
+    category: diagnostics
+    system: engine
+    title:
+      en: Downstream Oxygen Sensor Fault
+      ro: Defecțiune sondă lambda aval
+      de: Fehler der Lambdasonde nach Katalysator
+      fr: Défaut de la sonde lambda aval
+      es: Fallo de la sonda lambda posterior
+      it: Guasto della sonda lambda a valle
+      nl: Storing achterste lambdasonde
+    symptoms:
+      - engine warning light
+      - increased emissions
+      - catalyst efficiency fault
+      - abnormal oxygen sensor readings
+      - check engine light
+      - martor motor aprins
+      - emisii crescute
+      - valori anormale sondă lambda
+      - Motorkontrollleuchte
+      - émissions élevées
+      - emisiones elevadas
+      - spia motore
+      - motorstoringslampje
+    keywords:
+      - downstream oxygen sensor
+      - post catalyst lambda
+      - rear O2 sensor
+      - sondă lambda aval
+      - sonda lambda după catalizator
+    possible_causes:
+      - failed downstream oxygen sensor
+      - damaged wiring
+      - exhaust leak
+      - catalytic converter problem
+      - sensor contamination
+    diagnostic_steps:
+      - Compare downstream oxygen sensor behavior with the upstream sensor.
+      - Inspect sensor wiring and connector.
+      - Check for exhaust leaks.
+      - Evaluate catalytic converter operation.
+      - Check sensor heater operation where applicable.
+    related_dtcs: []
+    difficulty: intermediate
+
+  - id: dacia_electronic_fuel_injector_circuit_open
+    vehicle:
+      manufacturer: dacia
+      models:
+        - supernova
+        - solenza
+        - logan
+        - logan_mcv
+        - logan_van
+        - logan_pickup
+        - sandero
+        - sandero_stepway
+        - duster
+        - lodgy
+        - dokker
+        - jogger
+        - bigster
+      generations: all
+      engines: all
+    category: diagnostics
+    system: engine
+    title:
+      en: Fuel Injector Circuit Open
+      ro: Circuit deschis injector combustibil
+      de: Unterbrechung im Einspritzventilkreis
+      fr: Circuit ouvert d'injecteur de carburant
+      es: Circuito abierto del inyector de combustible
+      it: Circuito aperto dell'iniettore carburante
+      nl: Onderbreking in injectorbrandstofcircuit
+    symptoms:
+      - engine misfire
+      - rough idle
+      - poor acceleration
+      - loss of power
+      - difficult starting
+      - motor cu rateuri
+      - ralanti instabil
+      - pierdere de putere
+      - pornire dificilă
+      - Fehlzündung
+      - ratés moteur
+      - fallos de encendido
+      - mancata accensione
+      - motor loopt onregelmatig
+    keywords:
+      - injector circuit
+      - injector open circuit
+      - fuel injector
+      - injector
+      - circuit injector
+      - circuit deschis injector
+    possible_causes:
+      - open injector winding
+      - damaged injector wiring
+      - loose connector
+      - corroded connector
+      - ECU injector driver fault
+    diagnostic_steps:
+      - Identify the affected injector from fault data.
+      - Inspect injector connector and wiring.
+      - Measure injector electrical resistance where applicable.
+      - Check injector power and ECU control.
+      - Compare the affected cylinder with the other injectors.
+    related_dtcs: []
+    difficulty: intermediate
+
+  - id: dacia_electronic_fuel_injector_leakage
+    vehicle:
+      manufacturer: dacia
+      models:
+        - supernova
+        - solenza
+        - logan
+        - logan_mcv
+        - logan_van
+        - logan_pickup
+        - sandero
+        - sandero_stepway
+        - duster
+        - lodgy
+        - dokker
+      generations: all
+      engines: all
+    category: diagnostics
+    system: engine
+    title:
+      en: Fuel Injector Leakage
+      ro: Pierdere internă injector combustibil
+      de: Internes Leck des Einspritzventils
+      fr: Fuite interne de l'injecteur de carburant
+      es: Fuga interna del inyector de combustible
+      it: Perdita interna dell'iniettore carburante
+      nl: Interne lekkage van brandstofinjector
+    symptoms:
+      - hard starting
+      - rough idle
+      - fuel smell
+      - excessive fuel consumption
+      - black smoke
+      - misfire
+      - pornire dificilă
+      - ralanti instabil
+      - miros de combustibil
+      - consum crescut
+      - fum negru
+      - Kraftstoffgeruch
+      - odeur de carburant
+      - olor a combustible
+      - odore di carburante
+      - brandstofgeur
+    keywords:
+      - injector leak
+      - leaking injector
+      - injector leakage
+      - injector leaking
+      - injector care pierde
+      - fuite injecteur
+    possible_causes:
+      - worn injector valve
+      - contaminated injector
+      - damaged injector seat
+      - excessive injector wear
+      - fuel pressure abnormality
+    diagnostic_steps:
+      - Check fuel pressure after engine shutdown.
+      - Perform injector balance testing where supported.
+      - Inspect spark plugs for evidence of over-fuelling on petrol engines.
+      - Check crankcase oil for fuel dilution where applicable.
+      - Compare injector behavior between cylinders.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: dacia_electronic_fuel_pressure_low
+    vehicle:
+      manufacturer: dacia
+      models:
+        - solenza
+        - logan
+        - logan_mcv
+        - logan_van
+        - logan_pickup
+        - sandero
+        - sandero_stepway
+        - duster
+        - lodgy
+        - dokker
+        - jogger
+        - bigster
+      generations: all
+      engines: all
+    category: diagnostics
+    system: fuel
+    title:
+      en: Fuel Pressure Too Low
+      ro: Presiune combustibil prea mică
+      de: Kraftstoffdruck zu niedrig
+      fr: Pression de carburant trop basse
+      es: Presión de combustible demasiado baja
+      it: Pressione carburante troppo bassa
+      nl: Brandstofdruk te laag
+    symptoms:
+      - hard starting
+      - engine hesitation
+      - poor acceleration
+      - loss of power
+      - engine stalls
+      - lean running
+      - pornire dificilă
+      - ezitare
+      - accelerație slabă
+      - pierdere de putere
+      - motorul se oprește
+      - Gemisch zu mager
+      - hésitation
+      - pérdida de potencia
+      - esitazione
+      - vermogensverlies
+    keywords:
+      - low fuel pressure
+      - fuel pressure
+      - fuel supply
+      - insufficient fuel pressure
+      - presiune combustibil
+      - presiune rampă
+      - fuel rail pressure
+    possible_causes:
+      - weak fuel pump
+      - restricted fuel filter
+      - restricted fuel line
+      - faulty fuel pressure regulator
+      - fuel pressure sensor fault
+      - low electrical supply to fuel pump
+    diagnostic_steps:
+      - Measure fuel pressure under the conditions described by the fault.
+      - Compare actual pressure with the specified pressure.
+      - Check fuel pump electrical supply.
+      - Inspect filter and fuel lines.
+      - Check pressure regulator operation.
+      - Check pressure sensor data where fitted.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: dacia_electronic_fuel_pressure_high
+    vehicle:
+      manufacturer: dacia
+      models:
+        - solenza
+        - logan
+        - logan_mcv
+        - logan_van
+        - logan_pickup
+        - sandero
+        - sandero_stepway
+        - duster
+        - lodgy
+        - dokker
+      generations: all
+      engines: all
+    category: diagnostics
+    system: fuel
+    title:
+      en: Fuel Pressure Too High
+      ro: Presiune combustibil prea mare
+      de: Kraftstoffdruck zu hoch
+      fr: Pression de carburant trop élevée
+      es: Presión de combustible demasiado alta
+      it: Pressione carburante troppo alta
+      nl: Brandstofdruk te hoog
+    symptoms:
+      - rich mixture
+      - black smoke
+      - rough idle
+      - hard starting
+      - excessive fuel consumption
+      - mixture fault
+      - amestec prea bogat
+      - fum negru
+      - ralanti instabil
+      - pornire dificilă
+      - consum crescut
+      - Gemisch zu fett
+      - mélange trop riche
+      - mezcla rica
+      - miscela ricca
+      - rijk mengsel
+    keywords:
+      - high fuel pressure
+      - fuel pressure regulator
+      - excessive rail pressure
+      - presiune combustibil mare
+      - regulator presiune
+    possible_causes:
+      - faulty fuel pressure regulator
+      - restricted fuel return
+      - pressure control fault
+      - fuel pressure sensor fault
+      - ECU control fault
+    diagnostic_steps:
+      - Measure actual fuel pressure.
+      - Compare pressure with specified values.
+      - Inspect regulator operation.
+      - Check pressure sensor signal where fitted.
+      - Inspect fuel return system where applicable.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: dacia_electronic_fuel_pump_control_fault
+    vehicle:
+      manufacturer: dacia
+      models:
+        - solenza
+        - logan
+        - logan_mcv
+        - logan_van
+        - logan_pickup
+        - sandero
+        - sandero_stepway
+        - duster
+        - lodgy
+        - dokker
+        - jogger
+        - bigster
+      generations: all
+      engines: all
+    category: diagnostics
+    system: fuel
+    title:
+      en: Fuel Pump Control Fault
+      ro: Defecțiune comandă pompă combustibil
+      de: Fehler der Kraftstoffpumpenansteuerung
+      fr: Défaut de commande de la pompe à carburant
+      es: Fallo del control de la bomba de combustible
+      it: Guasto del comando della pompa carburante
+      nl: Storing brandstofpompaansturing
+    symptoms:
+      - engine does not start
+      - intermittent no start
+      - engine stalls
+      - low fuel pressure
+      - fuel pump does not run
+      - motorul nu pornește
+      - pornire intermitentă
+      - motorul se oprește
+      - presiune combustibil scăzută
+      - Kraftstoffpumpe läuft nicht
+      - pompe à carburant inactive
+      - bomba de combustible no funciona
+      - pompa carburante non funziona
+      - brandstofpomp werkt niet
+    keywords:
+      - fuel pump relay
+      - fuel pump control
+      - fuel pump command
+      - pompă combustibil
+      - releu pompă
+    possible_causes:
+      - failed fuel pump
+      - faulty relay
+      - fuse fault
+      - damaged wiring
+      - poor ground
+      - ECU control fault
+    diagnostic_steps:
+      - Check whether the fuel pump is commanded during key-on or cranking.
+      - Check fuse and relay operation.
+      - Measure voltage at the pump.
+      - Check pump ground.
+      - Check wiring continuity.
+    related_dtcs: []
+    difficulty: intermediate
+
+  - id: dacia_electronic_evap_purge_valve_stuck_open
+    vehicle:
+      manufacturer: dacia
+      models:
+        - supernova
+        - solenza
+        - logan
+        - logan_mcv
+        - logan_van
+        - logan_pickup
+        - sandero
+        - sandero_stepway
+        - duster
+        - lodgy
+        - dokker
+      generations: all
+      engines: all
+    category: diagnostics
+    system: emissions
+    title:
+      en: EVAP Purge Valve Stuck Open
+      ro: Supapă purjare EVAP blocată deschis
+      de: EVAP-Spülventil offen blockiert
+      fr: Électrovanne de purge EVAP bloquée ouverte
+      es: Válvula de purga EVAP atascada abierta
+      it: Valvola di spurgo EVAP bloccata aperta
+      nl: EVAP-spoelklep blijft open staan
+    symptoms:
+      - hard starting after refuelling
+      - rough idle
+      - engine hesitation
+      - rich or lean mixture
+      - fuel vapour smell
+      - pornire dificilă după alimentare
+      - ralanti instabil
+      - ezitare
+      - miros de vapori de combustibil
+      - Startprobleme nach dem Tanken
+      - démarrage difficile après ravitaillement
+      - arranque difícil después de repostar
+      - avviamento difficile dopo il rifornimento
+      - moeilijk starten na tanken
+    keywords:
+      - EVAP purge
+      - purge valve
+      - canister valve
+      - supapă EVAP
+      - electrovalvă purjare
+    possible_causes:
+      - purge valve mechanically stuck open
+      - contaminated valve
+      - damaged wiring
+      - incorrect ECU control
+      - split EVAP hose
+    diagnostic_steps:
+      - Check purge valve operation.
+      - Verify valve sealing when commanded closed.
+      - Inspect EVAP hoses.
+      - Check electrical resistance and control.
+      - Check fuel tank vapor system for additional faults.
+    related_dtcs: []
+    difficulty: intermediate
+
+  - id: dacia_electronic_evap_purge_valve_stuck_closed
+    vehicle:
+      manufacturer: dacia
+      models:
+        - supernova
+        - solenza
+        - logan
+        - logan_mcv
+        - logan_van
+        - logan_pickup
+        - sandero
+        - sandero_stepway
+        - duster
+        - lodgy
+        - dokker
+      generations: all
+      engines: all
+    category: diagnostics
+    system: emissions
+    title:
+      en: EVAP Purge Valve Stuck Closed
+      ro: Supapă purjare EVAP blocată închis
+      de: EVAP-Spülventil geschlossen blockiert
+      fr: Électrovanne de purge EVAP bloquée fermée
+      es: Válvula de purga EVAP atascada cerrada
+      it: Valvola di spurgo EVAP bloccata chiusa
+      nl: EVAP-spoelklep blijft gesloten
+    symptoms:
+      - engine warning light
+      - fuel vapour system fault
+      - increased emissions
+      - fuel smell
+      - purge flow absent
+      - martor motor
+      - defect sistem vapori combustibil
+      - emisii crescute
+      - miros de combustibil
+      - Motorkontrollleuchte
+      - émissions élevées
+      - olor a combustible
+      - odore di carburante
+      - brandstofgeur
+    keywords:
+      - EVAP purge valve
+      - purge flow
+      - canister purge
+      - EVAP
+      - purjare vapori
+    possible_causes:
+      - purge valve stuck closed
+      - failed solenoid
+      - blocked EVAP hose
+      - damaged wiring
+      - ECU control fault
+    diagnostic_steps:
+      - Command the purge valve with a diagnostic tool where supported.
+      - Verify purge flow.
+      - Inspect valve and hoses.
+      - Check valve resistance and supply.
+      - Check ECU command circuit.
+    related_dtcs: []
+    difficulty: intermediate
+
+  - id: dacia_electronic_evap_system_leak
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - logan_mcv
+        - logan_van
+        - logan_pickup
+        - sandero
+        - sandero_stepway
+        - duster
+        - lodgy
+        - dokker
+      generations: all
+      engines: all
+    category: diagnostics
+    system: emissions
+    title:
+      en: EVAP System Leak
+      ro: Pierdere de etanșeitate sistem EVAP
+      de: Leck im EVAP-System
+      fr: Fuite du système EVAP
+      es: Fuga del sistema EVAP
+      it: Perdita nel sistema EVAP
+      nl: Lekkage in EVAP-systeem
+    symptoms:
+      - engine warning light
+      - fuel vapour smell
+      - EVAP leak detected
+      - increased emissions
+      - difficulty passing emissions inspection
+      - martor motor
+      - miros de vapori de combustibil
+      - pierdere etanșeitate EVAP
+      - emisii crescute
+      - Motorkontrollleuchte
+      - odeur de vapeurs de carburant
+      - olor a vapores de combustible
+      - odore di vapori di carburante
+      - brandstofdampgeur
+    keywords:
+      - EVAP leak
+      - fuel vapour leak
+      - evaporative emissions
+      - leak detection
+      - pierdere EVAP
+      - vapori combustibil
+    possible_causes:
+      - loose fuel filler cap
+      - cracked EVAP hose
+      - damaged canister
+      - faulty purge valve
+      - tank ventilation fault
+    diagnostic_steps:
+      - Inspect the fuel filler cap and seal.
+      - Inspect EVAP hoses and connections.
+      - Check canister condition.
+      - Perform EVAP leak testing where equipment is available.
+      - Verify purge and ventilation valve operation.
+    related_dtcs: []
+    difficulty: intermediate
+
+  - id: dacia_electronic_knock_sensor_fault
+    vehicle:
+      manufacturer: solenza
+      models:
+        - solenza
+      generations:
+        - solenza
+      engines:
+        - dacia_solenza_1390
+    category: diagnostics
+    system: engine
+    title:
+      en: Knock Sensor Fault
+      ro: Defecțiune senzor detonație
+      de: Klopfsensorfehler
+      fr: Défaut du capteur de cliquetis
+      es: Fallo del sensor de detonación
+      it: Guasto del sensore di battito
+      nl: Storing pingelsensor
+    symptoms:
+      - reduced engine performance
+      - ignition timing retard
+      - increased fuel consumption
+      - engine warning light
+      - reduced acceleration
+      - putere redusă
+      - consum crescut
+      - accelerație slabă
+      - martor motor
+      - Leistungsverlust
+      - perte de puissance
+      - pérdida de potencia
+      - perdita di potenza
+      - vermogensverlies
+    keywords:
+      - knock sensor
+      - detonation sensor
+      - ping sensor
+      - senzor detonație
+      - senzor detonatie
+    possible_causes:
+      - failed knock sensor
+      - damaged wiring
+      - poor sensor mounting
+      - connector fault
+      - ECU input fault
+    diagnostic_steps:
+      - Check knock sensor signal with a suitable diagnostic tool.
+      - Inspect sensor mounting and connector.
+      - Check wiring continuity.
+      - Check sensor response where test equipment permits.
+      - Verify ignition timing strategy after repair.
+    related_dtcs: []
+    difficulty: intermediate
+
+  - id: dacia_electronic_engine_ecu_power_ground_fault
+    vehicle:
+      manufacturer: dacia
+      models:
+        - supernova
+        - solenza
+        - logan
+        - logan_mcv
+        - logan_van
+        - logan_pickup
+        - sandero
+        - sandero_stepway
+        - duster
+        - lodgy
+        - dokker
+        - jogger
+        - bigster
+      generations: all
+      engines: all
+    category: diagnostics
+    system: engine
+    title:
+      en: Engine ECU Power or Ground Fault
+      ro: Defecțiune alimentare sau masă ECU motor
+      de: Fehler der ECU-Versorgung oder Masse
+      fr: Défaut d'alimentation ou de masse du calculateur moteur
+      es: Fallo de alimentación o masa de la ECU del motor
+      it: Guasto alimentazione o massa della ECU motore
+      nl: Storing in voeding of massa van motor-ECU
+    symptoms:
+      - engine does not start
+      - intermittent stalling
+      - multiple engine faults
+      - diagnostic communication loss
+      - random sensor faults
+      - motorul nu pornește
+      - oprire intermitentă
+      - mai multe erori motor
+      - pierdere comunicare diagnostic
+      - Motor startet nicht
+      - calages intermittents
+      - pérdida de comunicación
+      - spegnimenti intermittenti
+      - communicatieverlies
+    keywords:
+      - ECU power
+      - ECU ground
+      - engine control module
+      - ECM power
+      - alimentare ECU
+      - masă ECU
+      - masa ECU
+    possible_causes:
+      - blown ECU fuse
+      - faulty ECU relay
+      - poor engine ground
+      - corroded power connection
+      - damaged wiring
+      - low battery voltage
+    diagnostic_steps:
+      - Check battery voltage.
+      - Check ECU fuses and relays.
+      - Measure ECU supply voltage under load.
+      - Check ECU grounds for voltage drop.
+      - Inspect connectors for corrosion or water ingress.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: dacia_electronic_engine_ecu_communication_fault
+    vehicle:
+      manufacturer: dacia
+      models:
+        - supernova
+        - solenza
+        - logan
+        - logan_mcv
+        - logan_van
+        - logan_pickup
+        - sandero
+        - sandero_stepway
+        - duster
+        - lodgy
+        - dokker
+        - jogger
+        - bigster
+      generations: all
+      engines: all
+    category: diagnostics
+    system: engine
+    title:
+      en: Engine ECU Diagnostic Communication Fault
+      ro: Defecțiune comunicare diagnostic cu ECU motor
+      de: Diagnosekommunikationsfehler des Motorsteuergeräts
+      fr: Défaut de communication de diagnostic avec le calculateur moteur
+      es: Fallo de comunicación de diagnóstico con la ECU del motor
+      it: Guasto comunicazione diagnostica con la ECU motore
+      nl: Diagnostische communicatiestoring met motor-ECU
+    symptoms:
+      - scan tool cannot connect to ECU
+      - intermittent diagnostic communication
+      - multiple modules unavailable
+      - engine may not start
+      - diagnostic connection drops
+      - testerul nu se conectează la ECU
+      - comunicare intermitentă
+      - mai multe module indisponibile
+      - motorul poate să nu pornească
+      - Diagnosegerät kann ECU nicht erreichen
+      - communication intermittente
+      - comunicación intermitente
+      - comunicazione intermittente
+      - intermitterende communicatie
+    keywords:
+      - ECU communication
+      - diagnostic communication
+      - OBD communication
+      - engine ECU
+      - comunicare ECU
+      - comunicare OBD
+    possible_causes:
+      - ECU power supply fault
+      - diagnostic line fault
+      - CAN or communication wiring fault
+      - connector corrosion
+      - ECU internal fault
+      - low system voltage
+    diagnostic_steps:
+      - Verify battery and system voltage.
+      - Check whether other modules communicate.
+      - Check ECU power and grounds.
+      - Inspect diagnostic and communication wiring.
+      - Check connectors for corrosion or water ingress.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: dacia_electronic_engine_coolant_fan_control_fault
+    vehicle:
+      manufacturer: dacia
+      models:
+        - supernova
+        - solenza
+        - logan
+        - logan_mcv
+        - logan_van
+        - logan_pickup
+        - sandero
+        - sandero_stepway
+        - duster
+        - lodgy
+        - dokker
+        - jogger
+        - bigster
+      generations: all
+      engines: all
+    category: diagnostics
+    system: cooling
+    title:
+      en: Engine Cooling Fan Control Fault
+      ro: Defecțiune comandă ventilator răcire motor
+      de: Fehler der Kühlerlüfteransteuerung
+      fr: Défaut de commande du ventilateur de refroidissement
+      es: Fallo del control del ventilador de refrigeración
+      it: Guasto del comando della ventola di raffreddamento
+      nl: Storing aansturing koelventilator
+    symptoms:
+      - cooling fan does not operate
+      - cooling fan runs continuously
+      - engine overheating
+      - air conditioning performance reduced
+      - fan starts at incorrect temperature
+      - ventilatorul nu pornește
+      - ventilatorul merge continuu
+      - motor supraîncălzit
+      - temperatura de pornire incorectă
+      - Kühlerlüfter läuft nicht
+      - ventilateur fonctionne en continu
+      - ventilador funciona continuamente
+      - ventola sempre attiva
+      - koelventilator draait continu
+    keywords:
+      - cooling fan
+      - radiator fan
+      - fan control
+      - ventilator răcire
+      - electroventilator
+    possible_causes:
+      - failed cooling fan motor
+      - faulty fan relay
+      - damaged wiring
+      - failed coolant temperature input
+      - fuse fault
+      - ECU fan control fault
+    diagnostic_steps:
+      - Check fan command with a diagnostic tool where supported.
+      - Test fan motor operation.
+      - Check fuses and relays.
+      - Inspect wiring and grounds.
+      - Compare coolant temperature data with actual engine temperature.
+    related_dtcs: []
+    difficulty: intermediate
+
+  - id: dacia_electronic_intake_air_leak_after_throttle
+    vehicle:
+      manufacturer: supernova
+      models:
+        - supernova
+        - solenza
+        - logan
+        - logan_mcv
+        - logan_van
+        - logan_pickup
+        - sandero
+        - sandero_stepway
+        - duster
+        - lodgy
+        - dokker
+      generations: all
+      engines: all
+    category: diagnostics
+    system: intake
+    title:
+      en: Intake Air Leak After Throttle
+      ro: Pierdere de aer după clapeta de accelerație
+      de: Falschluftleck hinter der Drosselklappe
+      fr: Prise d'air après le papillon
+      es: Fuga de aire después de la mariposa
+      it: Perdita d'aria dopo la farfalla
+      nl: Luchtlekkage na de gasklep
+    symptoms:
+      - unstable idle
+      - high idle speed
+      - lean mixture
+      - hesitation
+      - poor acceleration
+      - ralanti instabil
+      - ralanti ridicat
+      - amestec sărac
+      - ezitare
+      - accelerație slabă
+      - instabiler Leerlauf
+      - prise d'air
+      - mezcla pobre
+      - miscela magra
+      - arm mengsel
+    keywords:
+      - vacuum leak
+      - intake leak
+      - unmetered air
+      - false air
+      - aer fals
+      - pierdere vacuum
+      - pierdere aer admisie
+    possible_causes:
+      - cracked intake hose
+      - damaged manifold gasket
+      - split vacuum hose
+      - throttle body seal leak
+      - brake booster vacuum leak
+    diagnostic_steps:
+      - Inspect intake hoses and manifold connections.
+      - Check vacuum hoses.
+      - Test the intake system for leaks.
+      - Monitor fuel trims where supported.
+      - Inspect throttle body sealing surfaces.
+    related_dtcs: []
+    difficulty: intermediate
+
   - id: dacia_electronic_crankshaft_sensor_no_signal
     vehicle:
       manufacturer: dacia
