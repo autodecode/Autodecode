@@ -6,6 +6,787 @@ manufacturer:
 
 technical_data:
 
+  - id: dacia_engine_throttle_position_sensor_range_performance
+  vehicle:
+    manufacturer: dacia
+    models:
+      - supernova
+      - solenza
+      - logan
+      - logan_mcv
+      - logan_van
+      - logan_pickup
+      - sandero
+      - sandero_stepway
+    generations:
+      - supernova
+      - solenza
+      - logan_i
+      - logan_mcv_i
+      - logan_van_i
+      - logan_pickup_i
+      - sandero_i
+      - sandero_stepway_i
+    engines:
+      - dacia_supernova_1390
+      - dacia_solenza_1390
+      - dacia_logan_i_1390
+      - dacia_logan_i_1598
+      - dacia_logan_mcv_i_1390
+      - dacia_logan_mcv_i_1598
+      - dacia_logan_van_1390
+      - dacia_logan_van_1598
+      - dacia_logan_pickup_1598
+      - dacia_sandero_i_1390
+      - dacia_sandero_i_1598
+      - dacia_sandero_stepway_i_1598
+  category: diagnostics
+  system: engine
+  title:
+    en: Throttle Position Sensor Range/Performance Fault
+    ro: Defecțiune domeniu/funcționare senzor poziție clapetă accelerație
+    de: Fehler Bereich/Funktion Drosselklappenpositionssensor
+    fr: Défaut de plage/performance du capteur de position du papillon
+    es: Fallo de rango/rendimiento del sensor de posición de mariposa
+    it: Guasto intervallo/prestazioni sensore posizione farfalla
+    nl: Bereik/prestatie fout gasklepstandsensor
+  symptoms:
+    - unstable idle
+    - hesitation when accelerating
+    - poor throttle response
+    - engine may stall
+    - intermittent loss of power
+  keywords:
+    - throttle position
+    - TPS
+    - throttle sensor
+    - accelerator hesitation
+    - clapeta accelerație
+    - poziție clapetă
+    - senzor clapetă
+    - accelerație ezitantă
+  possible_causes:
+    - Throttle position sensor worn or contaminated
+    - Damaged sensor track
+    - Incorrect sensor supply voltage
+    - Poor electrical connection
+    - Wiring fault
+    - Throttle body mechanical binding
+  diagnostic_steps:
+    - Read throttle position live data with diagnostic equipment.
+    - Slowly operate the accelerator and verify that throttle position changes smoothly without sudden jumps.
+    - Check the sensor reference voltage and ground.
+    - Inspect the connector and wiring for corrosion or damaged terminals.
+    - Inspect the throttle body for contamination or mechanical binding.
+  related_dtcs:
+    - P0121
+    - P0122
+    - P0123
+  difficulty: medium
+
+- id: dacia_engine_throttle_position_sensor_signal_low
+  vehicle:
+    manufacturer: dacia
+    models:
+      - supernova
+      - solenza
+      - logan
+      - logan_mcv
+      - logan_van
+      - logan_pickup
+      - sandero
+      - sandero_stepway
+    generations:
+      - supernova
+      - solenza
+      - logan_i
+      - logan_mcv_i
+      - logan_van_i
+      - logan_pickup_i
+      - sandero_i
+      - sandero_stepway_i
+    engines:
+      - dacia_supernova_1390
+      - dacia_solenza_1390
+      - dacia_logan_i_1390
+      - dacia_logan_i_1598
+      - dacia_logan_mcv_i_1390
+      - dacia_logan_mcv_i_1598
+      - dacia_logan_van_1390
+      - dacia_logan_van_1598
+      - dacia_logan_pickup_1598
+      - dacia_sandero_i_1390
+      - dacia_sandero_i_1598
+      - dacia_sandero_stepway_i_1598
+  category: diagnostics
+  system: engine
+  title:
+    en: Throttle Position Sensor Signal Low
+    ro: Semnal scăzut senzor poziție clapetă accelerație
+    de: Signal Drosselklappenpositionssensor zu niedrig
+    fr: Signal trop faible du capteur de position du papillon
+    es: Señal baja del sensor de posición de mariposa
+    it: Segnale basso sensore posizione farfalla
+    nl: Gasklepstandsensor signaal te laag
+  symptoms:
+    - poor throttle response
+    - hesitation
+    - unstable idle
+    - reduced engine power
+    - engine may stall
+  keywords:
+    - TPS low
+    - throttle sensor low
+    - throttle position low
+    - semnal TPS scăzut
+    - senzor clapetă semnal mic
+    - poziție clapetă scăzută
+  possible_causes:
+    - Short to ground in the sensor signal circuit
+    - Faulty throttle position sensor
+    - Sensor reference voltage fault
+    - Poor sensor ground
+    - Damaged wiring
+    - Corroded connector
+  diagnostic_steps:
+    - Measure the throttle position sensor signal voltage.
+    - Compare the signal at closed and open throttle positions.
+    - Check for a short to ground.
+    - Verify the sensor reference voltage and ground.
+    - Inspect wiring continuity between the sensor and ECU.
+  related_dtcs:
+    - P0122
+  difficulty: medium
+
+- id: dacia_engine_throttle_position_sensor_signal_high
+  vehicle:
+    manufacturer: dacia
+    models:
+      - supernova
+      - solenza
+      - logan
+      - logan_mcv
+      - logan_van
+      - logan_pickup
+      - sandero
+      - sandero_stepway
+    generations:
+      - supernova
+      - solenza
+      - logan_i
+      - logan_mcv_i
+      - logan_van_i
+      - logan_pickup_i
+      - sandero_i
+      - sandero_stepway_i
+    engines:
+      - dacia_supernova_1390
+      - dacia_solenza_1390
+      - dacia_logan_i_1390
+      - dacia_logan_i_1598
+      - dacia_logan_mcv_i_1390
+      - dacia_logan_mcv_i_1598
+      - dacia_logan_van_1390
+      - dacia_logan_van_1598
+      - dacia_logan_pickup_1598
+      - dacia_sandero_i_1390
+      - dacia_sandero_i_1598
+      - dacia_sandero_stepway_i_1598
+  category: diagnostics
+  system: engine
+  title:
+    en: Throttle Position Sensor Signal High
+    ro: Semnal ridicat senzor poziție clapetă accelerație
+    de: Signal Drosselklappenpositionssensor zu hoch
+    fr: Signal trop élevé du capteur de position du papillon
+    es: Señal alta del sensor de posición de mariposa
+    it: Segnale alto sensore posizione farfalla
+    nl: Gasklepstandsensor signaal te hoog
+  symptoms:
+    - high idle
+    - poor throttle response
+    - hesitation
+    - engine may enter reduced power mode
+  keywords:
+    - TPS high
+    - throttle sensor high
+    - throttle position high
+    - semnal TPS ridicat
+    - senzor clapetă semnal mare
+  possible_causes:
+    - Signal circuit shorted to reference voltage
+    - Faulty throttle position sensor
+    - Wiring insulation damage
+    - Incorrect sensor supply
+    - Connector fault
+  diagnostic_steps:
+    - Monitor throttle position voltage with diagnostic equipment.
+    - Verify the signal is within the expected range.
+    - Check for a short to the sensor reference voltage.
+    - Inspect the wiring and connector.
+    - Compare the sensor signal with actual throttle position.
+  related_dtcs:
+    - P0123
+  difficulty: medium
+
+- id: dacia_engine_accelerator_pedal_position_sensor_range_performance
+  vehicle:
+    manufacturer: dacia
+    models:
+      - logan
+      - logan_mcv
+      - sandero
+      - sandero_stepway
+      - duster
+      - lodgy
+      - dokker
+      - spring
+      - jogger
+      - bigster
+    generations:
+      - logan_ii
+      - logan_iii
+      - logan_mcv_ii
+      - sandero_i
+      - sandero_ii
+      - sandero_iii
+      - sandero_stepway_i
+      - sandero_stepway_ii
+      - sandero_stepway_iii
+      - duster_i
+      - duster_ii
+      - duster_iii
+      - lodgy_i
+      - dokker_i
+      - spring_i
+      - spring_ii
+      - jogger_i
+      - bigster_i
+    engines: all
+  category: diagnostics
+  system: engine
+  title:
+    en: Accelerator Pedal Position Sensor Range/Performance Fault
+    ro: Defecțiune domeniu/funcționare senzor poziție pedală accelerație
+    de: Fehler Bereich/Funktion Gaspedalpositionssensor
+    fr: Défaut de plage/performance du capteur de position de pédale d'accélérateur
+    es: Fallo de rango/rendimiento del sensor de posición del pedal del acelerador
+    it: Guasto intervallo/prestazioni sensore posizione pedale acceleratore
+    nl: Bereik/prestatie fout gaspedaalpositiesensor
+  symptoms:
+    - accelerator response inconsistent
+    - hesitation
+    - reduced engine power
+    - limp mode
+    - engine speed does not follow pedal input
+  keywords:
+    - accelerator pedal sensor
+    - APP sensor
+    - accelerator pedal position
+    - pedal position
+    - senzor pedală accelerație
+    - poziție pedală
+    - pedala accelerație nu răspunde
+  possible_causes:
+    - Accelerator pedal position sensor fault
+    - Sensor track wear
+    - Wiring fault
+    - Connector contact resistance
+    - Sensor reference or ground fault
+    - ECU input fault
+  diagnostic_steps:
+    - Read both accelerator pedal position signals using live data.
+    - Slowly press the accelerator and check that both signals change smoothly.
+    - Compare the two redundant sensor tracks for plausibility.
+    - Check sensor supply voltage and ground.
+    - Inspect the connector and wiring.
+  related_dtcs:
+    - P2122
+    - P2123
+    - P2127
+    - P2128
+  difficulty: medium
+
+- id: dacia_engine_accelerator_pedal_signal_intermittent
+  vehicle:
+    manufacturer: dacia
+    models:
+      - logan
+      - logan_mcv
+      - sandero
+      - sandero_stepway
+      - duster
+      - lodgy
+      - dokker
+    generations:
+      - logan_ii
+      - logan_iii
+      - logan_mcv_ii
+      - sandero_i
+      - sandero_ii
+      - sandero_iii
+      - sandero_stepway_i
+      - sandero_stepway_ii
+      - sandero_stepway_iii
+      - duster_i
+      - duster_ii
+      - duster_iii
+      - lodgy_i
+      - dokker_i
+    engines: all
+  category: diagnostics
+  system: engine
+  title:
+    en: Intermittent Accelerator Pedal Position Signal
+    ro: Semnal intermitent poziție pedală accelerație
+    de: Intermittierendes Signal des Gaspedalpositionssensors
+    fr: Signal intermittent du capteur de position de pédale d'accélérateur
+    es: Señal intermitente del sensor de posición del pedal del acelerador
+    it: Segnale intermittente sensore posizione pedale acceleratore
+    nl: Intermitterend signaal gaspedaalpositiesensor
+  symptoms:
+    - intermittent loss of throttle response
+    - sudden reduced power
+    - intermittent limp mode
+    - engine speed drops unexpectedly
+  keywords:
+    - intermittent accelerator
+    - intermittent pedal signal
+    - accelerator cuts out
+    - throttle cuts out
+    - pedala accelerație întrerupe
+    - accelerația dispare
+    - semnal pedală intermitent
+  possible_causes:
+    - Loose accelerator pedal connector
+    - Damaged wiring
+    - Internal sensor wear
+    - Connector corrosion
+    - Poor sensor ground
+    - ECU signal interruption
+  diagnostic_steps:
+    - Monitor both pedal position signals while moving the pedal and wiring harness.
+    - Look for sudden signal drops or implausible changes.
+    - Inspect the pedal connector and terminal tension.
+    - Perform continuity and voltage-drop tests on the signal circuits.
+    - Check stored and pending DTCs for correlation with the event.
+  related_dtcs:
+    - P2138
+  difficulty: medium
+
+- id: dacia_engine_intake_air_leak_unmetered
+  vehicle:
+    manufacturer: dacia
+    models:
+      - logan
+      - logan_mcv
+      - logan_van
+      - sandero
+      - sandero_stepway
+      - duster
+      - lodgy
+      - dokker
+    generations:
+      - logan_i
+      - logan_ii
+      - logan_mcv_i
+      - logan_mcv_ii
+      - logan_van_i
+      - sandero_i
+      - sandero_ii
+      - sandero_stepway_i
+      - sandero_stepway_ii
+      - duster_i
+      - duster_ii
+      - lodgy_i
+      - dokker_i
+    engines: all
+  category: diagnostics
+  system: intake
+  title:
+    en: Unmetered Intake Air Leak
+    ro: Pierdere de aer nemăsurat pe admisie
+    de: Nicht gemessene Falschluft im Ansaugsystem
+    fr: Prise d'air non mesurée dans l'admission
+    es: Entrada de aire no medido en la admisión
+    it: Aspirazione di aria non misurata
+    nl: Ongemeten luchtlekkage in het inlaatsysteem
+  symptoms:
+    - rough idle
+    - high idle
+    - lean mixture
+    - hesitation
+    - poor fuel economy
+    - engine may stall
+  keywords:
+    - vacuum leak
+    - intake leak
+    - false air
+    - unmetered air
+    - air leak
+    - fals air
+    - pierdere vacuum
+    - falsă admisie
+    - aer fals
+    - pierdere aer admisie
+  possible_causes:
+    - Cracked vacuum hose
+    - Intake manifold gasket leak
+    - Throttle body gasket leak
+    - Brake booster hose leak
+    - PCV or crankcase ventilation hose leak
+    - Loose intake connection
+  diagnostic_steps:
+    - Inspect all intake and vacuum hoses for cracks and loose connections.
+    - Check intake manifold and throttle body sealing surfaces.
+    - Perform a smoke test where available.
+    - Monitor fuel trims and compare short-term and long-term corrections.
+    - Repair the leak and verify that fuel trims return toward normal.
+  related_dtcs:
+    - P0171
+  difficulty: medium
+
+- id: dacia_engine_intake_manifold_runner_control_fault
+  vehicle:
+    manufacturer: dacia
+    models:
+      - logan
+      - sandero
+      - sandero_stepway
+      - duster
+      - lodgy
+      - dokker
+      - jogger
+    generations:
+      - logan_ii
+      - sandero_ii
+      - sandero_stepway_ii
+      - duster_ii
+      - lodgy_i
+      - dokker_i
+      - jogger_i
+    engines: all
+  category: diagnostics
+  system: intake
+  title:
+    en: Intake Manifold Runner Control Fault
+    ro: Defecțiune comandă clapete galerie de admisie
+    de: Fehler der Saugrohrklappensteuerung
+    fr: Défaut de commande des volets du collecteur d'admission
+    es: Fallo del control de las mariposas del colector de admisión
+    it: Guasto comando farfalle collettore di aspirazione
+    nl: Storing regeling inlaatspruitstukkleppen
+  symptoms:
+    - reduced engine torque
+    - poor low RPM response
+    - hesitation
+    - uneven engine operation
+    - increased fuel consumption
+  keywords:
+    - intake runner
+    - intake manifold flap
+    - manifold runner
+    - swirl flap
+    - clapete galerie admisie
+    - clapete admisie
+    - swirl
+    - volet admission
+  possible_causes:
+    - Runner actuator failure
+    - Sticking intake manifold mechanism
+    - Carbon deposits
+    - Vacuum actuator leak
+    - Electrical wiring fault
+    - Position sensor fault
+  diagnostic_steps:
+    - Check actuator operation using diagnostic equipment where supported.
+    - Inspect the intake manifold mechanism for carbon contamination or mechanical binding.
+    - Check actuator vacuum supply if vacuum operated.
+    - Inspect electrical wiring and connector condition.
+    - Compare commanded and actual runner position.
+  related_dtcs:
+    - P2004
+    - P2006
+    - P2015
+  difficulty: hard
+
+- id: dacia_engine_fuel_trim_system_too_rich
+  vehicle:
+    manufacturer: dacia
+    models:
+      - supernova
+      - solenza
+      - logan
+      - logan_mcv
+      - sandero
+      - sandero_stepway
+      - duster
+      - lodgy
+      - dokker
+    generations:
+      - supernova
+      - solenza
+      - logan_i
+      - logan_ii
+      - logan_mcv_i
+      - logan_mcv_ii
+      - sandero_i
+      - sandero_ii
+      - sandero_stepway_i
+      - sandero_stepway_ii
+      - duster_i
+      - duster_ii
+      - lodgy_i
+      - dokker_i
+    engines: all
+  category: diagnostics
+  system: engine
+  title:
+    en: Fuel Trim Indicates System Too Rich
+    ro: Corecția amestecului indică sistem prea bogat
+    de: Kraftstoffkorrektur zeigt zu fettes Gemisch
+    fr: Correction de carburant indiquant un mélange trop riche
+    es: Corrección de combustible indicando mezcla demasiado rica
+    it: Correzione carburante indica miscela troppo ricca
+    nl: Brandstofcorrectie geeft te rijk mengsel aan
+  symptoms:
+    - black smoke
+    - poor fuel economy
+    - rough idle
+    - hesitation
+    - fuel smell from exhaust
+    - difficult hot starting
+  keywords:
+    - rich mixture
+    - system too rich
+    - fuel trim rich
+    - mixture rich
+    - amestec bogat
+    - prea mult combustibil
+    - consum mare
+    - fum negru
+  possible_causes:
+    - Leaking fuel injector
+    - Excessive fuel pressure
+    - Faulty oxygen sensor
+    - Faulty coolant temperature sensor
+    - Incorrect MAF or MAP signal
+    - EVAP purge valve stuck open
+  diagnostic_steps:
+    - Read short-term and long-term fuel trims.
+    - Compare oxygen sensor operation with commanded mixture.
+    - Check fuel pressure against specification.
+    - Check injector leakage after engine shutdown.
+    - Verify coolant temperature and intake air measurements.
+    - Test the EVAP purge valve for unwanted flow at idle.
+  related_dtcs:
+    - P0172
+  difficulty: medium
+
+- id: dacia_engine_fuel_trim_system_too_lean
+  vehicle:
+    manufacturer: dacia
+    models:
+      - supernova
+      - solenza
+      - logan
+      - logan_mcv
+      - sandero
+      - sandero_stepway
+      - duster
+      - lodgy
+      - dokker
+    generations:
+      - supernova
+      - solenza
+      - logan_i
+      - logan_ii
+      - logan_mcv_i
+      - logan_mcv_ii
+      - sandero_i
+      - sandero_ii
+      - sandero_stepway_i
+      - sandero_stepway_ii
+      - duster_i
+      - duster_ii
+      - lodgy_i
+      - dokker_i
+    engines: all
+  category: diagnostics
+  system: engine
+  title:
+    en: Fuel Trim Indicates System Too Lean
+    ro: Corecția amestecului indică sistem prea sărac
+    de: Kraftstoffkorrektur zeigt zu mageres Gemisch
+    fr: Correction de carburant indiquant un mélange trop pauvre
+    es: Corrección de combustible indicando mezcla demasiado pobre
+    it: Correzione carburante indica miscela troppo magra
+    nl: Brandstofcorrectie geeft te arm mengsel aan
+  symptoms:
+    - rough idle
+    - hesitation
+    - poor acceleration
+    - engine may stall
+    - increased fuel consumption
+  keywords:
+    - lean mixture
+    - system too lean
+    - fuel trim lean
+    - mixture lean
+    - amestec sărac
+    - amestec prea sărac
+    - aer fals
+    - prea puțin combustibil
+  possible_causes:
+    - Unmetered intake air
+    - Low fuel pressure
+    - Restricted fuel supply
+    - Weak fuel pump
+    - Injector flow restriction
+    - Incorrect MAF or MAP signal
+  diagnostic_steps:
+    - Read short-term and long-term fuel trims.
+    - Compare fuel trims at idle and under load.
+    - Inspect the intake system for unmetered air leaks.
+    - Measure fuel pressure under idle and load conditions.
+    - Check injector flow and electrical operation.
+    - Verify MAF or MAP readings against engine operating conditions.
+  related_dtcs:
+    - P0171
+  difficulty: medium
+
+- id: dacia_engine_evap_purge_flow_incorrect
+  vehicle:
+    manufacturer: dacia
+    models:
+      - logan
+      - logan_mcv
+      - sandero
+      - sandero_stepway
+      - duster
+      - lodgy
+      - dokker
+      - jogger
+    generations:
+      - logan_ii
+      - logan_iii
+      - logan_mcv_ii
+      - sandero_ii
+      - sandero_iii
+      - sandero_stepway_ii
+      - sandero_stepway_iii
+      - duster_ii
+      - duster_iii
+      - lodgy_i
+      - dokker_i
+      - jogger_i
+    engines: all
+  category: diagnostics
+  system: fuel_evaporation
+  title:
+    en: EVAP Purge Flow Incorrect
+    ro: Debit incorect prin sistemul de purjare EVAP
+    de: Unzulässiger Durchfluss im EVAP-Spülsystem
+    fr: Débit incorrect de purge EVAP
+    es: Flujo incorrecto de purga EVAP
+    it: Flusso di spurgo EVAP non corretto
+    nl: Onjuiste EVAP-spoelstroom
+  symptoms:
+    - rough idle
+    - hard starting after refueling
+    - fuel smell
+    - unstable idle
+    - increased emissions
+  keywords:
+    - EVAP purge flow
+    - purge flow incorrect
+    - canister purge
+    - purge valve flow
+    - purjare EVAP
+    - valvă canistră
+    - supapă purjare
+    - pornire grea după alimentare
+  possible_causes:
+    - Purge valve leaking when commanded closed
+    - Purge valve restricted
+    - Incorrect purge control
+    - EVAP hose routing fault
+    - Charcoal canister saturated or damaged
+  diagnostic_steps:
+    - Check purge valve operation using an actuator test where supported.
+    - Verify that the valve remains closed when it should not be flowing.
+    - Inspect EVAP hoses for blockage or incorrect routing.
+    - Check purge flow during controlled operation.
+    - Investigate hard starting specifically after refueling.
+  related_dtcs:
+    - P0496
+  difficulty: medium
+
+- id: dacia_engine_fuel_tank_pressure_sensor_fault
+  vehicle:
+    manufacturer: dacia
+    models:
+      - logan
+      - logan_mcv
+      - sandero
+      - sandero_stepway
+      - duster
+      - lodgy
+      - dokker
+    generations:
+      - logan_ii
+      - logan_iii
+      - logan_mcv_ii
+      - sandero_ii
+      - sandero_iii
+      - sandero_stepway_ii
+      - sandero_stepway_iii
+      - duster_ii
+      - duster_iii
+      - lodgy_i
+      - dokker_i
+    engines: all
+  category: diagnostics
+  system: fuel_evaporation
+  title:
+    en: Fuel Tank Pressure Sensor Fault
+    ro: Defecțiune senzor presiune rezervor combustibil
+    de: Fehler des Kraftstofftankdrucksensors
+    fr: Défaut du capteur de pression du réservoir de carburant
+    es: Fallo del sensor de presión del depósito de combustible
+    it: Guasto sensore pressione serbatoio carburante
+    nl: Storing brandstoftankdruksensor
+  symptoms:
+    - EVAP warning
+    - fuel smell
+    - difficult diagnosis of EVAP leaks
+    - hard starting in some conditions
+  keywords:
+    - fuel tank pressure
+    - tank pressure sensor
+    - EVAP pressure sensor
+    - FTPS
+    - presiune rezervor
+    - senzor presiune rezervor
+  possible_causes:
+    - Faulty tank pressure sensor
+    - Damaged wiring
+    - Sensor reference voltage fault
+    - Connector corrosion
+    - EVAP system pressure abnormal
+  diagnostic_steps:
+    - Read the fuel tank pressure sensor value with diagnostic equipment.
+    - Compare the reading with expected ambient pressure conditions.
+    - Check sensor supply voltage and ground.
+    - Inspect wiring and connector terminals.
+    - Perform an EVAP system pressure or leak test where applicable.
+  related_dtcs:
+    - P0450
+    - P0451
+    - P0452
+    - P0453
+  difficulty: medium
+
   - id: dacia_engine_ecu_internal_memory_fault
     vehicle:
       manufacturer: dacia
