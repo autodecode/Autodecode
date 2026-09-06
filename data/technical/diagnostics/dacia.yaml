@@ -6,6 +6,3882 @@ manufacturer:
 
 technical_data:
 
+  - id: dacia_electronic_crankshaft_sensor_no_signal
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - logan_mcv
+        - sandero
+        - sandero_stepway
+        - duster
+        - lodgy
+        - dokker
+        - solenza
+        - supernova
+      generations: all
+      engines: all
+    category: diagnostics
+    system: engine
+    title:
+      en: Crankshaft Position Sensor No Signal
+      ro: Lipsă semnal senzor poziție arbore cotit
+      de: Kein Signal vom Kurbelwellensensor
+      fr: Absence de signal du capteur de position du vilebrequin
+      es: Sin señal del sensor de posición del cigüeñal
+      it: Assenza del segnale del sensore di posizione dell'albero motore
+      nl: Geen signaal van de krukassensor
+    symptoms:
+      - engine does not start
+      - intermittent no start
+      - engine stalls suddenly
+      - crankshaft sensor signal missing
+      - motorul nu pornește
+      - motorul se oprește brusc
+      - lipsă semnal senzor arbore cotit
+      - Motor startet nicht
+      - moteur ne démarre pas
+      - motor no arranca
+      - motore non si avvia
+      - motor start niet
+    keywords:
+      - crankshaft sensor
+      - CKP
+      - no RPM signal
+      - senzor vibrochen
+      - senzor arbore cotit
+    possible_causes:
+      - failed crankshaft position sensor
+      - damaged sensor wiring
+      - damaged sensor connector
+      - incorrect sensor air gap
+      - damaged trigger wheel
+      - ECU power or ground fault
+    diagnostic_steps:
+      - Check engine RPM signal during cranking.
+      - Inspect crankshaft sensor wiring and connector.
+      - Check sensor supply and signal where applicable.
+      - Inspect the trigger wheel for mechanical damage.
+      - Check sensor air gap and mounting position.
+      - Check ECU fault memory.
+    related_dtcs: []
+    difficulty: intermediate
+
+  - id: dacia_electronic_camshaft_sensor_no_signal
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - logan_mcv
+        - sandero
+        - sandero_stepway
+        - duster
+        - lodgy
+        - dokker
+      generations: all
+      engines: all
+    category: diagnostics
+    system: engine
+    title:
+      en: Camshaft Position Sensor No Signal
+      ro: Lipsă semnal senzor poziție arbore cu came
+      de: Kein Signal vom Nockenwellensensor
+      fr: Absence de signal du capteur de position d'arbre à cames
+      es: Sin señal del sensor de posición del árbol de levas
+      it: Assenza del segnale del sensore di posizione dell'albero a camme
+      nl: Geen signaal van de nokkenassensor
+    symptoms:
+      - engine cranks but does not start
+      - hard starting
+      - long cranking
+      - intermittent starting
+      - loss of engine synchronization
+      - motorul învârte dar nu pornește
+      - pornire dificilă
+      - pornire lungă
+      - schweres Starten
+      - démarrage difficile
+      - arranque difícil
+      - avviamento difficile
+      - moeilijk starten
+    keywords:
+      - camshaft sensor
+      - CMP
+      - cam sensor
+      - senzor ax cu came
+    possible_causes:
+      - failed camshaft position sensor
+      - damaged wiring
+      - connector corrosion
+      - incorrect sensor air gap
+      - timing system fault
+      - ECU input fault
+    diagnostic_steps:
+      - Check camshaft signal with a suitable scan tool or oscilloscope.
+      - Inspect sensor wiring and connector.
+      - Compare camshaft and crankshaft synchronization.
+      - Check mechanical timing.
+      - Check sensor supply voltage where applicable.
+    related_dtcs: []
+    difficulty: intermediate
+
+  - id: dacia_electronic_crank_cam_synchronization_fault
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - logan_mcv
+        - sandero
+        - sandero_stepway
+        - duster
+        - lodgy
+        - dokker
+      generations: all
+      engines: all
+    category: diagnostics
+    system: engine
+    title:
+      en: Crankshaft and Camshaft Synchronization Fault
+      ro: Eroare sincronizare arbore cotit și arbore cu came
+      de: Fehler der Kurbelwellen-Nockenwellen-Synchronisation
+      fr: Défaut de synchronisation vilebrequin-arbre à cames
+      es: Fallo de sincronización cigüeñal-árbol de levas
+      it: Errore di sincronizzazione albero motore-albero a camme
+      nl: Fout in krukas-nokkenas-synchronisatie
+    symptoms:
+      - engine does not start
+      - difficult starting
+      - rough running
+      - misfire
+      - reduced power
+      - motorul nu pornește
+      - pornire dificilă
+      - funcționare neregulată
+      - Fehlzündungen
+      - ratés moteur
+      - fallos de encendido
+      - mancata accensione
+      - motor loopt onregelmatig
+    keywords:
+      - synchronization
+      - crank cam correlation
+      - cam crank correlation
+      - sincronizare
+      - corelare arbori
+    possible_causes:
+      - incorrect mechanical timing
+      - stretched timing chain
+      - timing belt displacement
+      - failed camshaft sensor
+      - failed crankshaft sensor
+      - damaged trigger wheel
+    diagnostic_steps:
+      - Compare crankshaft and camshaft signals.
+      - Check mechanical timing marks.
+      - Inspect timing belt or chain condition.
+      - Check sensor signals and wiring.
+      - Verify synchronization after timing system repairs.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: dacia_electronic_engine_coolant_temperature_sensor_implausible
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - logan_mcv
+        - sandero
+        - sandero_stepway
+        - duster
+        - lodgy
+        - dokker
+        - solenza
+        - supernova
+      generations: all
+      engines: all
+    category: diagnostics
+    system: engine
+    title:
+      en: Engine Coolant Temperature Sensor Implausible Reading
+      ro: Valoare neverosimilă a senzorului de temperatură lichid răcire
+      de: Unplausibler Kühlmitteltemperaturwert
+      fr: Valeur incohérente du capteur de température du liquide de refroidissement
+      es: Lectura incoherente del sensor de temperatura del refrigerante
+      it: Lettura anomala del sensore temperatura liquido refrigerante
+      nl: Ongeloofwaardige waarde van koelvloeistoftemperatuursensor
+    symptoms:
+      - hard cold starting
+      - rich mixture
+      - poor fuel economy
+      - cooling fan runs incorrectly
+      - temperature reading incorrect
+      - pornire dificilă la rece
+      - consum crescut
+      - ventilatorul funcționează incorect
+      - Kaltstartprobleme
+      - consommation élevée
+      - consumo elevado
+      - hoog brandstofverbruik
+    keywords:
+      - ECT sensor
+      - coolant temperature sensor
+      - temperature sensor
+      - senzor temperatură
+      - senzor antigel
+    possible_causes:
+      - failed coolant temperature sensor
+      - damaged wiring
+      - connector corrosion
+      - poor sensor ground
+      - ECU reference voltage fault
+    diagnostic_steps:
+      - Compare coolant temperature with ambient temperature when cold.
+      - Monitor coolant temperature through diagnostic data.
+      - Inspect sensor wiring and connector.
+      - Measure sensor resistance against temperature.
+      - Check reference and ground circuits.
+    related_dtcs: []
+    difficulty: intermediate
+
+  - id: dacia_electronic_intake_air_temperature_sensor_fault
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - logan_mcv
+        - sandero
+        - sandero_stepway
+        - duster
+        - lodgy
+        - dokker
+      generations: all
+      engines: all
+    category: diagnostics
+    system: engine
+    title:
+      en: Intake Air Temperature Sensor Fault
+      ro: Defecțiune senzor temperatură aer admis
+      de: Fehler des Ansauglufttemperatursensors
+      fr: Défaut du capteur de température d'air d'admission
+      es: Fallo del sensor de temperatura del aire de admisión
+      it: Guasto del sensore temperatura aria aspirata
+      nl: Storing aanzuigluchttemperatuursensor
+    symptoms:
+      - poor cold running
+      - poor fuel economy
+      - hesitation
+      - unstable engine operation
+      - incorrect intake temperature reading
+      - funcționare slabă la rece
+      - consum crescut
+      - ezitare la accelerație
+      - schlechter Kaltlauf
+      - hésitation
+      - vacilación
+      - esitazione
+      - aarzeling
+    keywords:
+      - IAT sensor
+      - intake temperature
+      - air temperature sensor
+      - senzor IAT
+    possible_causes:
+      - failed IAT sensor
+      - damaged wiring
+      - connector fault
+      - contamination
+      - reference voltage fault
+    diagnostic_steps:
+      - Compare intake temperature with ambient temperature.
+      - Monitor live sensor data.
+      - Inspect wiring and connector.
+      - Test sensor resistance where applicable.
+      - Check ECU reference voltage.
+    related_dtcs: []
+    difficulty: intermediate
+
+  - id: dacia_electronic_map_sensor_fault
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - logan_mcv
+        - sandero
+        - sandero_stepway
+        - duster
+        - lodgy
+        - dokker
+      generations: all
+      engines: all
+    category: diagnostics
+    system: engine
+    title:
+      en: MAP Sensor Fault
+      ro: Defecțiune senzor presiune absolută galerie
+      de: Fehler des MAP-Sensors
+      fr: Défaut du capteur de pression absolue du collecteur
+      es: Fallo del sensor MAP
+      it: Guasto del sensore MAP
+      nl: MAP-sensorstoring
+    symptoms:
+      - poor acceleration
+      - unstable idle
+      - excessive fuel consumption
+      - engine hesitation
+      - reduced power
+      - accelerație slabă
+      - ralanti instabil
+      - consum crescut
+      - Leistungsverlust
+      - perte de puissance
+      - pérdida de potencia
+      - perdita di potenza
+      - vermogensverlies
+    keywords:
+      - MAP
+      - manifold pressure
+      - intake pressure
+      - senzor MAP
+      - presiune galerie
+    possible_causes:
+      - failed MAP sensor
+      - blocked pressure port
+      - damaged wiring
+      - vacuum leak
+      - reference voltage fault
+    diagnostic_steps:
+      - Compare MAP reading with atmospheric pressure with engine off.
+      - Monitor MAP response during acceleration.
+      - Inspect sensor port for contamination.
+      - Check wiring, supply and ground.
+      - Check intake system for leaks.
+    related_dtcs: []
+    difficulty: intermediate
+
+  - id: dacia_electronic_maf_sensor_fault
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - logan_mcv
+        - sandero
+        - sandero_stepway
+        - duster
+        - lodgy
+        - dokker
+      generations: all
+      engines: all
+    category: diagnostics
+    system: engine
+    title:
+      en: MAF Sensor Fault
+      ro: Defecțiune debitmetru aer
+      de: Fehler des Luftmassenmessers
+      fr: Défaut du débitmètre d'air
+      es: Fallo del caudalímetro de aire
+      it: Guasto del misuratore massa aria
+      nl: Storing luchtmassameter
+    symptoms:
+      - lack of power
+      - poor acceleration
+      - excessive fuel consumption
+      - black smoke
+      - unstable idle
+      - lipsă de putere
+      - accelerație slabă
+      - fum negru
+      - Leistungsverlust
+      - fumée noire
+      - humo negro
+      - fumo nero
+      - zwarte rook
+    keywords:
+      - MAF
+      - mass air flow
+      - air flow meter
+      - debitmetru
+      - debitmetru aer
+    possible_causes:
+      - contaminated MAF sensor
+      - failed MAF sensor
+      - intake air leak
+      - damaged wiring
+      - air filter restriction
+    diagnostic_steps:
+      - Inspect MAF sensor for contamination.
+      - Check live airflow values.
+      - Compare airflow with engine load and RPM.
+      - Inspect intake system for leaks.
+      - Check sensor wiring and connector.
+    related_dtcs: []
+    difficulty: intermediate
+
+  - id: dacia_electronic_throttle_position_sensor_fault
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - logan_mcv
+        - sandero
+        - sandero_stepway
+        - duster
+        - lodgy
+        - dokker
+      generations: all
+      engines: all
+    category: diagnostics
+    system: engine
+    title:
+      en: Throttle Position Sensor Fault
+      ro: Defecțiune senzor poziție clapetă accelerație
+      de: Fehler des Drosselklappenpositionssensors
+      fr: Défaut du capteur de position du papillon
+      es: Fallo del sensor de posición de mariposa
+      it: Guasto del sensore posizione farfalla
+      nl: Storing gaskleppositiesensor
+    symptoms:
+      - hesitation
+      - unstable idle
+      - poor acceleration
+      - throttle response delay
+      - engine may enter limp mode
+      - ezitare
+      - ralanti instabil
+      - răspuns întârziat la accelerație
+      - verzögerte Gasannahme
+      - réponse d'accélérateur retardée
+      - respuesta retardada
+      - risposta ritardata
+      - vertraagde gasrespons
+    keywords:
+      - TPS
+      - throttle position
+      - throttle sensor
+      - poziție clapetă
+    possible_causes:
+      - failed throttle position sensor
+      - worn throttle potentiometer
+      - damaged wiring
+      - connector fault
+      - throttle body contamination
+    diagnostic_steps:
+      - Monitor throttle position while operating the accelerator.
+      - Check for smooth sensor voltage change.
+      - Inspect throttle body and connector.
+      - Check sensor reference and ground.
+      - Perform throttle adaptation where required.
+    related_dtcs: []
+    difficulty: intermediate
+
+  - id: dacia_electronic_throttle_actuator_fault
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - logan_mcv
+        - sandero
+        - sandero_stepway
+        - duster
+        - lodgy
+        - dokker
+      generations: all
+      engines: all
+    category: diagnostics
+    system: engine
+    title:
+      en: Electronic Throttle Actuator Fault
+      ro: Defecțiune actuator clapetă accelerație electronică
+      de: Fehler des elektronischen Drosselklappenstellers
+      fr: Défaut de l'actionneur de papillon électronique
+      es: Fallo del actuador electrónico de mariposa
+      it: Guasto dell'attuatore elettronico della farfalla
+      nl: Storing elektronische gasklepactuator
+    symptoms:
+      - no throttle response
+      - reduced engine power
+      - limp mode
+      - unstable idle
+      - engine stalls
+      - lipsă răspuns accelerație
+      - putere redusă
+      - mod avarie
+      - keine Gasannahme
+      - mode dégradé
+      - modo emergencia
+      - modalità recovery
+      - noodloop
+    keywords:
+      - electronic throttle
+      - throttle actuator
+      - electronic throttle body
+      - clapetă electronică
+    possible_causes:
+      - failed throttle motor
+      - throttle plate sticking
+      - internal position sensor fault
+      - damaged wiring
+      - ECU control fault
+    diagnostic_steps:
+      - Check throttle actuator operation.
+      - Monitor commanded and actual throttle position.
+      - Inspect throttle body for contamination or mechanical binding.
+      - Check power and ground circuits.
+      - Perform throttle adaptation where applicable.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: dacia_electronic_accelerator_pedal_correlation
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - logan_mcv
+        - sandero
+        - sandero_stepway
+        - duster
+        - lodgy
+        - dokker
+      generations: all
+      engines: all
+    category: diagnostics
+    system: engine
+    title:
+      en: Accelerator Pedal Position Sensor Correlation Fault
+      ro: Eroare corelare senzori poziție pedală accelerație
+      de: Plausibilitätsfehler der Gaspedalpositionssensoren
+      fr: Défaut de corrélation des capteurs de pédale d'accélérateur
+      es: Fallo de correlación de sensores del pedal del acelerador
+      it: Errore di correlazione sensori pedale acceleratore
+      nl: Correlatiefout gaspedaalpositiesensoren
+    symptoms:
+      - delayed throttle response
+      - reduced power
+      - limp mode
+      - accelerator pedal intermittently inactive
+      - răspuns întârziat accelerație
+      - putere redusă
+      - pedala accelerației nu răspunde
+      - verzögerte Gasannahme
+      - perte de puissance
+      - pérdida de potencia
+      - perdita di potenza
+      - vermogensverlies
+    keywords:
+      - accelerator pedal
+      - APP sensor
+      - pedal correlation
+      - pedală accelerație
+    possible_causes:
+      - failed accelerator pedal sensor
+      - wiring fault
+      - connector fault
+      - reference voltage problem
+      - ECU input fault
+    diagnostic_steps:
+      - Monitor both accelerator pedal position signals.
+      - Check signal correlation through the complete pedal range.
+      - Inspect connector and wiring.
+      - Check reference and ground circuits.
+      - Verify ECU data interpretation.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: dacia_electronic_upstream_oxygen_sensor_fault
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - logan_mcv
+        - sandero
+        - sandero_stepway
+        - duster
+        - lodgy
+        - dokker
+        - solenza
+        - supernova
+      generations: all
+      engines: all
+    category: diagnostics
+    system: emissions
+    title:
+      en: Upstream Oxygen Sensor Fault
+      ro: Defecțiune sondă lambda amonte
+      de: Fehler der vorderen Lambdasonde
+      fr: Défaut de la sonde lambda amont
+      es: Fallo de la sonda lambda anterior
+      it: Guasto della sonda lambda a monte
+      nl: Storing voorste lambdasonde
+    symptoms:
+      - poor fuel economy
+      - unstable idle
+      - hesitation
+      - emissions increase
+      - engine warning light
+      - consum crescut
+      - ralanti instabil
+      - ezitare
+      - hoher Kraftstoffverbrauch
+      - consommation élevée
+      - consumo elevado
+      - consumo elevato
+      - hoog brandstofverbruik
+    keywords:
+      - oxygen sensor
+      - lambda sensor
+      - upstream lambda
+      - sondă lambda
+    possible_causes:
+      - aged oxygen sensor
+      - contaminated sensor
+      - exhaust leak
+      - wiring fault
+      - heater circuit fault
+    diagnostic_steps:
+      - Monitor oxygen sensor response after warm-up.
+      - Check sensor switching or wideband data as applicable.
+      - Inspect wiring and connector.
+      - Check exhaust for leaks before the sensor.
+      - Check heater circuit operation.
+    related_dtcs: []
+    difficulty: intermediate
+
+  - id: dacia_electronic_oxygen_sensor_heater_fault
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - logan_mcv
+        - sandero
+        - sandero_stepway
+        - duster
+        - lodgy
+        - dokker
+      generations: all
+      engines: all
+    category: diagnostics
+    system: emissions
+    title:
+      en: Oxygen Sensor Heater Circuit Fault
+      ro: Defecțiune circuit încălzire sondă lambda
+      de: Fehler im Heizkreis der Lambdasonde
+      fr: Défaut du circuit de chauffage de la sonde lambda
+      es: Fallo del circuito calefactor de la sonda lambda
+      it: Guasto del circuito riscaldatore della sonda lambda
+      nl: Storing lambdasensorverwarming
+    symptoms:
+      - increased emissions
+      - poor cold running
+      - delayed closed loop operation
+      - engine warning light
+      - emisii crescute
+      - funcționare slabă la rece
+      - intrare întârziată în reglaj lambda
+      - erhöhte Emissionen
+      - émissions élevées
+      - emisiones elevadas
+      - emissioni elevate
+      - verhoogde emissies
+    keywords:
+      - lambda heater
+      - oxygen heater
+      - O2 heater
+      - încălzire lambda
+    possible_causes:
+      - failed sensor heater
+      - blown fuse
+      - damaged heater wiring
+      - poor connector contact
+      - ECU heater control fault
+    diagnostic_steps:
+      - Check heater power supply.
+      - Check heater resistance.
+      - Inspect fuse and wiring.
+      - Check connector condition.
+      - Verify ECU heater control.
+    related_dtcs: []
+    difficulty: intermediate
+
+  - id: dacia_electronic_downstream_oxygen_sensor_fault
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - logan_mcv
+        - sandero
+        - sandero_stepway
+        - duster
+        - lodgy
+        - dokker
+      generations: all
+      engines: all
+    category: diagnostics
+    system: emissions
+    title:
+      en: Downstream Oxygen Sensor Fault
+      ro: Defecțiune sondă lambda aval
+      de: Fehler der hinteren Lambdasonde
+      fr: Défaut de la sonde lambda aval
+      es: Fallo de la sonda lambda posterior
+      it: Guasto della sonda lambda a valle
+      nl: Storing achterste lambdasonde
+    symptoms:
+      - emissions fault
+      - catalyst monitoring fault
+      - engine warning light
+      - increased emissions
+      - eroare emisii
+      - martor motor aprins
+      - emisii crescute
+      - Abgasfehler
+      - défaut antipollution
+      - fallo de emisiones
+      - errore emissioni
+      - emissiestoring
+    keywords:
+      - downstream lambda
+      - rear oxygen sensor
+      - catalyst monitor
+      - sondă lambda aval
+    possible_causes:
+      - failed downstream oxygen sensor
+      - sensor wiring fault
+      - exhaust leak
+      - damaged connector
+      - catalyst efficiency problem
+    diagnostic_steps:
+      - Monitor downstream oxygen sensor data.
+      - Inspect wiring and connector.
+      - Check exhaust system for leaks.
+      - Compare upstream and downstream sensor behavior.
+      - Evaluate catalyst operation.
+    related_dtcs: []
+    difficulty: intermediate
+
+  - id: dacia_electronic_fuel_injector_circuit_open
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - logan_mcv
+        - sandero
+        - sandero_stepway
+        - duster
+        - lodgy
+        - dokker
+        - solenza
+        - supernova
+      generations: all
+      engines: all
+    category: diagnostics
+    system: engine
+    title:
+      en: Fuel Injector Circuit Open
+      ro: Circuit întrerupt injector combustibil
+      de: Unterbrechung im Einspritzventilkreis
+      fr: Circuit d'injecteur de carburant interrompu
+      es: Circuito abierto del inyector de combustible
+      it: Circuito aperto dell'iniettore carburante
+      nl: Onderbreking in injector circuit
+    symptoms:
+      - engine misfire
+      - rough idle
+      - loss of power
+      - difficult starting
+      - increased fuel consumption
+      - rateuri motor
+      - ralanti neregulat
+      - pierdere de putere
+      - Fehlzündungen
+      - ratés moteur
+      - fallos de encendido
+      - mancata accensione
+      - motor slaat over
+    keywords:
+      - injector circuit
+      - injector wiring
+      - injector open circuit
+      - circuit injector
+    possible_causes:
+      - disconnected injector
+      - broken injector wiring
+      - failed injector coil
+      - connector fault
+      - ECU injector driver fault
+    diagnostic_steps:
+      - Inspect injector connector.
+      - Measure injector coil resistance where applicable.
+      - Check injector power and control signals.
+      - Inspect wiring continuity.
+      - Compare injector operation between cylinders.
+    related_dtcs: []
+    difficulty: intermediate
+
+  - id: dacia_electronic_fuel_injector_leakage
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - logan_mcv
+        - sandero
+        - sandero_stepway
+        - duster
+        - lodgy
+        - dokker
+      generations: all
+      engines: all
+    category: diagnostics
+    system: fuel
+    title:
+      en: Fuel Injector Leakage
+      ro: Pierdere prin injector de combustibil
+      de: Kraftstoffinjektor undicht
+      fr: Fuite d'un injecteur de carburant
+      es: Fuga del inyector de combustible
+      it: Perdita dell'iniettore carburante
+      nl: Brandstofinjector lekt
+    symptoms:
+      - hard starting
+      - rough idle
+      - fuel smell
+      - excessive fuel consumption
+      - engine oil fuel dilution
+      - pornire dificilă
+      - ralanti neregulat
+      - miros de combustibil
+      - Kraftstoffgeruch
+      - odeur de carburant
+      - olor a combustible
+      - odore di carburante
+      - brandstofgeur
+    keywords:
+      - injector leak
+      - leaking injector
+      - fuel leakage
+      - injector care pierde
+    possible_causes:
+      - injector nozzle leakage
+      - damaged injector seal
+      - internal injector fault
+      - excessive fuel pressure
+    diagnostic_steps:
+      - Inspect fuel pressure after engine shutdown.
+      - Check injector leakage according to system procedure.
+      - Inspect spark plugs on petrol engines.
+      - Check engine oil for fuel dilution where relevant.
+      - Inspect injector seals.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: dacia_electronic_fuel_pressure_low
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - logan_mcv
+        - sandero
+        - sandero_stepway
+        - duster
+        - lodgy
+        - dokker
+      generations: all
+      engines: all
+    category: diagnostics
+    system: fuel
+    title:
+      en: Fuel Pressure Too Low
+      ro: Presiune combustibil prea mică
+      de: Kraftstoffdruck zu niedrig
+      fr: Pression de carburant trop basse
+      es: Presión de combustible demasiado baja
+      it: Pressione carburante troppo bassa
+      nl: Brandstofdruk te laag
+    symptoms:
+      - hard starting
+      - engine stalls
+      - lack of power
+      - hesitation under load
+      - poor acceleration
+      - pornire dificilă
+      - motorul se oprește
+      - lipsă de putere
+      - Leistungsverlust
+      - perte de puissance
+      - pérdida de potencia
+      - perdita di potenza
+      - vermogensverlies
+    keywords:
+      - low fuel pressure
+      - fuel pressure
+      - fuel supply
+      - presiune combustibil
+    possible_causes:
+      - weak fuel pump
+      - restricted fuel filter
+      - restricted fuel line
+      - fuel pressure regulator fault
+      - electrical supply fault
+    diagnostic_steps:
+      - Measure fuel pressure.
+      - Check pressure during cranking and acceleration.
+      - Inspect fuel filter and lines.
+      - Check fuel pump voltage and current.
+      - Verify pressure regulator operation.
+    related_dtcs: []
+    difficulty: intermediate
+
+  - id: dacia_electronic_fuel_pressure_high
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - logan_mcv
+        - sandero
+        - sandero_stepway
+        - duster
+        - lodgy
+        - dokker
+      generations: all
+      engines: all
+    category: diagnostics
+    system: fuel
+    title:
+      en: Fuel Pressure Too High
+      ro: Presiune combustibil prea mare
+      de: Kraftstoffdruck zu hoch
+      fr: Pression de carburant trop élevée
+      es: Presión de combustible demasiado alta
+      it: Pressione carburante troppo alta
+      nl: Brandstofdruk te hoog
+    symptoms:
+      - rich mixture
+      - black smoke
+      - poor fuel economy
+      - difficult starting
+      - unstable idle
+      - amestec prea bogat
+      - fum negru
+      - consum crescut
+      - fettes Gemisch
+      - fumée noire
+      - humo negro
+      - fumo nero
+      - zwarte rook
+    keywords:
+      - high fuel pressure
+      - fuel pressure regulator
+      - rich mixture
+      - presiune mare combustibil
+    possible_causes:
+      - failed pressure regulator
+      - restricted fuel return
+      - pressure control fault
+      - incorrect sensor reading
+    diagnostic_steps:
+      - Measure actual fuel pressure.
+      - Compare actual and commanded pressure where applicable.
+      - Inspect regulator operation.
+      - Check fuel return system where fitted.
+      - Verify fuel pressure sensor accuracy.
+    related_dtcs: []
+    difficulty: intermediate
+
+  - id: dacia_electronic_fuel_pump_control_fault
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - logan_mcv
+        - sandero
+        - sandero_stepway
+        - duster
+        - lodgy
+        - dokker
+      generations: all
+      engines: all
+    category: diagnostics
+    system: fuel
+    title:
+      en: Fuel Pump Control Circuit Fault
+      ro: Defecțiune circuit comandă pompă combustibil
+      de: Fehler im Kraftstoffpumpen-Steuerkreis
+      fr: Défaut du circuit de commande de pompe à carburant
+      es: Fallo del circuito de control de la bomba de combustible
+      it: Guasto del circuito di comando della pompa carburante
+      nl: Storing brandstofpompregelcircuit
+    symptoms:
+      - engine does not start
+      - intermittent no start
+      - fuel pressure missing
+      - engine stalls
+      - motorul nu pornește
+      - lipsă presiune combustibil
+      - motorul se oprește
+      - Motor startet nicht
+      - pression de carburant absente
+      - falta de presión de combustible
+      - pressione carburante assente
+      - geen brandstofdruk
+    keywords:
+      - fuel pump relay
+      - fuel pump control
+      - pump circuit
+      - pompă combustibil
+    possible_causes:
+      - failed fuel pump relay
+      - blown fuse
+      - failed fuel pump
+      - wiring fault
+      - ECU control fault
+    diagnostic_steps:
+      - Check fuel pump activation.
+      - Check fuse and relay.
+      - Measure voltage at the fuel pump.
+      - Check pump ground.
+      - Verify ECU control signal.
+    related_dtcs: []
+    difficulty: intermediate
+
+  - id: dacia_electronic_evap_purge_valve_stuck_open
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - logan_mcv
+        - sandero
+        - sandero_stepway
+        - duster
+        - lodgy
+        - dokker
+      generations: all
+      engines: all
+    category: diagnostics
+    system: emissions
+    title:
+      en: EVAP Purge Valve Stuck Open
+      ro: Supapă purjare EVAP blocată deschis
+      de: EVAP-Spülventil dauerhaft offen
+      fr: Électrovanne de purge EVAP bloquée ouverte
+      es: Válvula de purga EVAP atascada abierta
+      it: Valvola spurgo EVAP bloccata aperta
+      nl: EVAP-spoelklep blijft open staan
+    symptoms:
+      - rough idle
+      - hard starting after refueling
+      - engine hesitation
+      - fuel smell
+      - ralanti instabil
+      - pornire dificilă după alimentare
+      - ezitare
+      - unruhiger Leerlauf
+      - démarrage difficile après ravitaillement
+      - dificultad de arranque después de repostar
+      - difficoltà di avviamento dopo il rifornimento
+      - moeilijk starten na tanken
+    keywords:
+      - EVAP purge
+      - purge valve
+      - canister valve
+      - supapă purjare
+    possible_causes:
+      - stuck purge valve
+      - damaged valve diaphragm
+      - wiring fault
+      - control fault
+    diagnostic_steps:
+      - Check purge valve sealing when commanded closed.
+      - Apply appropriate control signal and verify operation.
+      - Inspect hoses for damage.
+      - Monitor fuel trim during purge operation.
+    related_dtcs: []
+    difficulty: intermediate
+
+  - id: dacia_electronic_evap_purge_valve_stuck_closed
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - logan_mcv
+        - sandero
+        - sandero_stepway
+        - duster
+        - lodgy
+        - dokker
+      generations: all
+      engines: all
+    category: diagnostics
+    system: emissions
+    title:
+      en: EVAP Purge Valve Stuck Closed
+      ro: Supapă purjare EVAP blocată închis
+      de: EVAP-Spülventil dauerhaft geschlossen
+      fr: Électrovanne de purge EVAP bloquée fermée
+      es: Válvula de purga EVAP atascada cerrada
+      it: Valvola spurgo EVAP bloccata chiusa
+      nl: EVAP-spoelklep blijft gesloten
+    symptoms:
+      - fuel vapor system fault
+      - increased tank pressure
+      - fuel smell
+      - emissions fault
+      - eroare sistem vapori combustibil
+      - miros de combustibil
+      - eroare emisii
+      - Kraftstoffdampf-Fehler
+      - défaut du système de vapeurs
+      - fallo del sistema de vapores
+      - guasto sistema vapori
+      - storing brandstofdampen
+    keywords:
+      - EVAP
+      - purge valve closed
+      - fuel vapor
+      - vapori combustibil
+    possible_causes:
+      - seized purge valve
+      - blocked valve
+      - wiring fault
+      - ECU control fault
+    diagnostic_steps:
+      - Test purge valve operation.
+      - Check electrical resistance.
+      - Inspect hoses and connections.
+      - Verify commanded versus actual purge flow.
+    related_dtcs: []
+    difficulty: intermediate
+
+  - id: dacia_electronic_evap_system_leak
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - logan_mcv
+        - sandero
+        - sandero_stepway
+        - duster
+        - lodgy
+        - dokker
+      generations: all
+      engines: all
+    category: diagnostics
+    system: emissions
+    title:
+      en: EVAP System Leak
+      ro: Pierdere de etanșeitate sistem EVAP
+      de: Leck im EVAP-System
+      fr: Fuite du système EVAP
+      es: Fuga del sistema EVAP
+      it: Perdita nel sistema EVAP
+      nl: Lek in EVAP-systeem
+    symptoms:
+      - fuel smell
+      - emissions warning
+      - pressure test failure
+      - fuel vapor leak
+      - miros de combustibil
+      - martor emisii
+      - pierdere vapori combustibil
+      - Kraftstoffgeruch
+      - odeur de carburant
+      - olor a combustible
+      - odore di carburante
+      - brandstofgeur
+    keywords:
+      - EVAP leak
+      - fuel vapor leak
+      - evaporative emissions
+      - scurgere EVAP
+    possible_causes:
+      - loose fuel cap
+      - cracked EVAP hose
+      - damaged charcoal canister
+      - leaking purge valve
+      - damaged fuel tank connection
+    diagnostic_steps:
+      - Inspect fuel filler cap and sealing.
+      - Perform EVAP leak test where available.
+      - Inspect hoses and canister.
+      - Check purge valve sealing.
+      - Inspect fuel tank connections.
+    related_dtcs: []
+    difficulty: intermediate
+
+  - id: dacia_electronic_intake_air_leak
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - logan_mcv
+        - sandero
+        - sandero_stepway
+        - duster
+        - lodgy
+        - dokker
+        - solenza
+        - supernova
+      generations: all
+      engines: all
+    category: diagnostics
+    system: engine
+    title:
+      en: Unmetered Intake Air Leak
+      ro: Pierdere de aer necontorizat pe admisie
+      de: Falschluft im Ansaugsystem
+      fr: Prise d'air sur le circuit d'admission
+      es: Entrada de aire no medido en la admisión
+      it: Aspirazione di aria non misurata
+      nl: Valse lucht in het inlaatsysteem
+    symptoms:
+      - high idle
+      - unstable idle
+      - lean mixture
+      - hesitation
+      - engine misfire
+      - ralanti ridicat
+      - ralanti instabil
+      - amestec sărac
+      - hoher Leerlauf
+      - mélange pauvre
+      - mezcla pobre
+      - miscela magra
+      - arm mengsel
+    keywords:
+      - vacuum leak
+      - intake leak
+      - unmetered air
+      - aer fals
+      - pierdere admisie
+    possible_causes:
+      - cracked intake hose
+      - leaking manifold gasket
+      - vacuum hose leak
+      - throttle body seal leak
+      - brake booster hose leak
+    diagnostic_steps:
+      - Inspect intake hoses and vacuum lines.
+      - Check manifold gasket sealing.
+      - Use smoke testing where available.
+      - Monitor fuel trims.
+      - Inspect throttle body and brake booster connections.
+    related_dtcs: []
+    difficulty: intermediate
+
+  - id: dacia_electronic_ignition_coil_circuit_fault
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - logan_mcv
+        - sandero
+        - sandero_stepway
+        - duster
+        - lodgy
+        - dokker
+        - solenza
+        - supernova
+      generations: all
+      engines: all
+    category: diagnostics
+    system: ignition
+    title:
+      en: Ignition Coil Circuit Fault
+      ro: Defecțiune circuit bobină de inducție
+      de: Fehler im Zündspulenkreis
+      fr: Défaut du circuit de bobine d'allumage
+      es: Fallo del circuito de la bobina de encendido
+      it: Guasto del circuito della bobina di accensione
+      nl: Storing ontstekingsspoelcircuit
+    symptoms:
+      - engine misfire
+      - rough idle
+      - difficult starting
+      - loss of power
+      - increased fuel consumption
+      - rateuri
+      - ralanti neregulat
+      - pornire dificilă
+      - Fehlzündungen
+      - ratés moteur
+      - fallos de encendido
+      - mancata accensione
+      - ontstekingsuitval
+    keywords:
+      - ignition coil
+      - coil circuit
+      - bobină
+      - bobină aprindere
+    possible_causes:
+      - failed ignition coil
+      - open circuit
+      - short circuit
+      - damaged connector
+      - ECU driver fault
+    diagnostic_steps:
+      - Check coil power supply.
+      - Check coil control signal.
+      - Inspect connector and wiring.
+      - Test coil resistance where applicable.
+      - Compare ignition performance between cylinders.
+    related_dtcs: []
+    difficulty: intermediate
+
+  - id: dacia_electronic_ignition_coil_weak
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - logan_mcv
+        - sandero
+        - sandero_stepway
+        - duster
+        - lodgy
+        - dokker
+        - solenza
+        - supernova
+      generations: all
+      engines: all
+    category: diagnostics
+    system: ignition
+    title:
+      en: Weak Ignition Coil
+      ro: Bobină de inducție cu scânteie slabă
+      de: Schwache Zündspule
+      fr: Bobine d'allumage faible
+      es: Bobina de encendido débil
+      it: Bobina di accensione debole
+      nl: Zwakke ontstekingsspoel
+    symptoms:
+      - misfire under load
+      - hesitation
+      - poor acceleration
+      - rough idle
+      - difficult starting
+      - rateuri la sarcină
+      - ezitare
+      - accelerație slabă
+      - Zündaussetzer unter Last
+      - ratés sous charge
+      - fallos bajo carga
+      - mancata accensione sotto carico
+      - ontstekingsuitval onder belasting
+    keywords:
+      - weak spark
+      - weak coil
+      - ignition failure
+      - scânteie slabă
+    possible_causes:
+      - internal coil breakdown
+      - insulation failure
+      - excessive plug gap
+      - low supply voltage
+      - overheating
+    diagnostic_steps:
+      - Check ignition coil output under load.
+      - Inspect spark plug condition and gap.
+      - Check coil supply voltage.
+      - Swap coil position where applicable to confirm the fault.
+      - Check for thermal-related failure.
+    related_dtcs: []
+    difficulty: intermediate
+
+  - id: dacia_electronic_knock_sensor_fault
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - logan_mcv
+        - sandero
+        - sandero_stepway
+        - duster
+        - lodgy
+        - dokker
+      generations: all
+      engines: all
+    category: diagnostics
+    system: engine
+    title:
+      en: Knock Sensor Fault
+      ro: Defecțiune senzor detonație
+      de: Fehler des Klopfsensors
+      fr: Défaut du capteur de cliquetis
+      es: Fallo del sensor de detonación
+      it: Guasto del sensore di detonazione
+      nl: Storing pingelsensor
+    symptoms:
+      - reduced engine performance
+      - ignition timing retard
+      - poor fuel economy
+      - engine knocking
+      - reduced power
+      - performanță redusă
+      - avans aprindere redus
+      - consum crescut
+      - Klopfgeräusche
+      - cognement moteur
+      - detonación
+      - battito in testa
+      - pingelen
+    keywords:
+      - knock sensor
+      - detonation sensor
+      - ping sensor
+      - senzor detonație
+    possible_causes:
+      - failed knock sensor
+      - damaged wiring
+      - incorrect sensor mounting
+      - connector fault
+      - engine mechanical noise
+    diagnostic_steps:
+      - Inspect sensor mounting and torque.
+      - Check wiring and connector.
+      - Monitor knock sensor data where supported.
+      - Verify ignition timing response.
+      - Rule out mechanical engine noise.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: dacia_electronic_cooling_fan_control_fault
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - logan_mcv
+        - sandero
+        - sandero_stepway
+        - duster
+        - lodgy
+        - dokker
+      generations: all
+      engines: all
+    category: diagnostics
+    system: cooling
+    title:
+      en: Engine Cooling Fan Control Fault
+      ro: Defecțiune comandă ventilator răcire motor
+      de: Fehler der Motorkühlgebläsesteuerung
+      fr: Défaut de commande du ventilateur de refroidissement
+      es: Fallo del control del ventilador de refrigeración
+      it: Guasto del comando della ventola di raffreddamento
+      nl: Storing koelventilatorregeling
+    symptoms:
+      - cooling fan does not run
+      - cooling fan runs continuously
+      - engine overheating
+      - fan starts at incorrect temperature
+      - ventilatorul nu pornește
+      - ventilatorul merge continuu
+      - motor supraîncălzit
+      - Lüfter läuft nicht
+      - ventilateur ne fonctionne pas
+      - ventilador no funciona
+      - ventola non funziona
+      - ventilator werkt niet
+    keywords:
+      - cooling fan
+      - radiator fan
+      - fan control
+      - ventilator răcire
+    possible_causes:
+      - failed fan motor
+      - relay fault
+      - fuse fault
+      - coolant temperature sensor fault
+      - wiring fault
+      - ECU control fault
+    diagnostic_steps:
+      - Command the cooling fan with a diagnostic tool where supported.
+      - Check fan fuse and relay.
+      - Measure fan motor supply voltage.
+      - Check fan ground.
+      - Verify coolant temperature input.
+    related_dtcs: []
+    difficulty: intermediate
+
+  - id: dacia_electronic_ecu_power_ground_fault
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - logan_mcv
+        - sandero
+        - sandero_stepway
+        - duster
+        - lodgy
+        - dokker
+        - solenza
+        - supernova
+      generations: all
+      engines: all
+    category: diagnostics
+    system: engine
+    title:
+      en: Engine ECU Power or Ground Fault
+      ro: Defecțiune alimentare sau masă ECU motor
+      de: Fehler der ECU-Versorgung oder Masse
+      fr: Défaut d'alimentation ou de masse du calculateur moteur
+      es: Fallo de alimentación o masa de la ECU del motor
+      it: Guasto alimentazione o massa ECU motore
+      nl: Storing voeding of massa motor-ECU
+    symptoms:
+      - no communication with ECU
+      - engine does not start
+      - intermittent stalling
+      - multiple unrelated faults
+      - loss of engine control
+      - lipsă comunicare ECU
+      - motorul nu pornește
+      - oprire intermitentă
+      - keine Kommunikation
+      - absence de communication
+      - sin comunicación
+      - assenza di comunicazione
+      - geen communicatie
+    keywords:
+      - ECU power
+      - ECU ground
+      - engine computer
+      - alimentare ECU
+      - masă ECU
+    possible_causes:
+      - blown ECU fuse
+      - faulty main relay
+      - poor ECU ground
+      - corroded power connection
+      - damaged wiring
+      - low battery voltage
+    diagnostic_steps:
+      - Check ECU supply voltages.
+      - Perform voltage drop tests on ECU grounds.
+      - Check ECU fuses and main relay.
+      - Inspect connectors for corrosion.
+      - Verify battery voltage during cranking.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: dacia_electronic_ecu_communication_fault
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - logan_mcv
+        - sandero
+        - sandero_stepway
+        - duster
+        - lodgy
+        - dokker
+      generations: all
+      engines: all
+    category: diagnostics
+    system: network
+    title:
+      en: Engine ECU Communication Fault
+      ro: Eroare comunicare ECU motor
+      de: Kommunikationsfehler des Motorsteuergeräts
+      fr: Défaut de communication du calculateur moteur
+      es: Fallo de comunicación de la ECU del motor
+      it: Errore di comunicazione ECU motore
+      nl: Communicatiestoring motor-ECU
+    symptoms:
+      - diagnostic tool cannot connect
+      - engine does not start
+      - multiple warning lights
+      - intermittent communication
+      - scan tool connection lost
+      - testerul nu comunică
+      - motorul nu pornește
+      - mai mulți martori aprinși
+      - Diagnosegerät kann nicht kommunizieren
+      - outil de diagnostic sans communication
+      - equipo de diagnosis sin comunicación
+      - strumento diagnostico senza comunicazione
+      - diagnosetester maakt geen verbinding
+    keywords:
+      - ECU communication
+      - diagnostic communication
+      - CAN communication
+      - comunicare ECU
+    possible_causes:
+      - ECU power supply fault
+      - CAN wiring fault
+      - network termination fault
+      - communication module fault
+      - damaged connector
+    diagnostic_steps:
+      - Check communication with other modules.
+      - Verify ECU power and grounds.
+      - Inspect CAN wiring where applicable.
+      - Check network resistance according to system specification.
+      - Inspect diagnostic connector.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: dacia_electronic_dci_rail_pressure_low_cranking
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - logan_mcv
+        - sandero
+        - sandero_stepway
+        - duster
+        - lodgy
+        - dokker
+      generations: all
+      engines:
+        - k9k
+      category: diagnostics
+    system: fuel
+    title:
+      en: dCi Rail Pressure Too Low During Cranking
+      ro: Presiune rampă prea mică la pornire dCi
+      de: Raildruck beim Starten zu niedrig
+      fr: Pression de rampe trop faible au démarrage dCi
+      es: Presión del rail demasiado baja durante el arranque dCi
+      it: Pressione rail troppo bassa durante l'avviamento dCi
+      nl: Raildruk te laag tijdens starten dCi
+    symptoms:
+      - engine cranks but does not start
+      - long cranking
+      - difficult starting
+      - engine stalls
+      - motorul învârte dar nu pornește
+      - pornire lungă
+      - pornire dificilă
+      - Motor dreht aber startet nicht
+      - démarrage prolongé
+      - arranque prolongado
+      - avviamento prolungato
+      - lang starten
+    keywords:
+      - dCi rail pressure
+      - common rail
+      - low rail pressure
+      - presiune rampă
+    possible_causes:
+      - excessive injector leak-off
+      - weak high-pressure pump
+      - fuel supply restriction
+      - faulty pressure regulator
+      - rail pressure sensor fault
+      - air entering fuel system
+    diagnostic_steps:
+      - Monitor rail pressure during cranking.
+      - Perform injector leak-off testing.
+      - Check low-pressure fuel supply.
+      - Inspect fuel filter and fuel lines.
+      - Check pressure regulator and rail pressure sensor.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: dacia_electronic_dci_rail_pressure_high
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - logan_mcv
+        - sandero
+        - sandero_stepway
+        - duster
+        - lodgy
+        - dokker
+      generations: all
+      engines:
+        - k9k
+      category: diagnostics
+      system: fuel
+      title:
+        en: dCi Rail Pressure Too High
+        ro: Presiune rampă prea mare dCi
+        de: Raildruck beim dCi zu hoch
+        fr: Pression de rampe trop élevée dCi
+        es: Presión del rail demasiado alta dCi
+        it: Pressione rail troppo alta dCi
+        nl: Raildruk te hoog dCi
+    symptoms:
+      - rough running
+      - engine warning light
+      - reduced power
+      - difficult starting
+      - unstable engine operation
+      - funcționare neregulată
+      - putere redusă
+      - pornire dificilă
+      - unruhiger Motorlauf
+      - fonctionnement irrégulier
+      - funcionamiento irregular
+      - funzionamento irregolare
+      - onregelmatige motorloop
+    keywords:
+      - high rail pressure
+      - common rail pressure
+      - dCi pressure
+      - presiune rail
+    possible_causes:
+      - fuel pressure regulator fault
+      - IMV fault
+      - rail pressure sensor error
+      - restricted return circuit
+      - high-pressure pump fault
+    diagnostic_steps:
+      - Compare commanded and actual rail pressure.
+      - Test pressure regulator operation.
+      - Check rail pressure sensor.
+      - Inspect fuel return system.
+      - Verify high-pressure pump operation.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: dacia_electronic_dci_rail_pressure_sensor_fault
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - logan_mcv
+        - sandero
+        - sandero_stepway
+        - duster
+        - lodgy
+        - dokker
+      generations: all
+      engines:
+        - k9k
+      category: diagnostics
+      system: fuel
+      title:
+        en: dCi Rail Pressure Sensor Fault
+        ro: Defecțiune senzor presiune rampă dCi
+        de: Fehler des dCi-Raildrucksensors
+        fr: Défaut du capteur de pression de rampe dCi
+        es: Fallo del sensor de presión del rail dCi
+        it: Guasto del sensore pressione rail dCi
+        nl: Storing dCi-raildruksensor
+    symptoms:
+      - hard starting
+      - engine stalls
+      - unstable idle
+      - reduced power
+      - incorrect rail pressure reading
+      - pornire dificilă
+      - motorul se oprește
+      - ralanti instabil
+      - Leistungsverlust
+      - perte de puissance
+      - pérdida de potencia
+      - perdita di potenza
+      - vermogensverlies
+    keywords:
+      - rail pressure sensor
+      - common rail sensor
+      - RPS
+      - senzor presiune rampă
+    possible_causes:
+      - failed rail pressure sensor
+      - wiring fault
+      - connector fault
+      - reference voltage problem
+      - pressure signal contamination
+    diagnostic_steps:
+      - Monitor rail pressure with ignition on and engine off.
+      - Compare actual pressure with commanded pressure.
+      - Inspect sensor connector and wiring.
+      - Check reference and ground circuits.
+      - Test sensor signal under cranking.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: dacia_electronic_dci_imv_regulator_fault
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - logan_mcv
+        - sandero
+        - sandero_stepway
+        - duster
+        - lodgy
+        - dokker
+      generations: all
+      engines:
+        - k9k
+      category: diagnostics
+      system: fuel
+      title:
+        en: dCi Fuel Metering Valve Fault
+        ro: Defecțiune supapă de dozare combustibil IMV dCi
+        de: Fehler des Kraftstoffmengenregelventils IMV
+        fr: Défaut de la vanne de dosage IMV dCi
+        es: Fallo de la válvula dosificadora IMV dCi
+        it: Guasto della valvola dosatrice IMV dCi
+        nl: Storing brandstofdoseerklep IMV dCi
+    symptoms:
+      - hard starting
+      - unstable rail pressure
+      - engine stalls
+      - reduced power
+      - difficult starting when hot
+      - pornire dificilă
+      - presiune rail instabilă
+      - motorul se oprește
+      - instabiler Raildruck
+      - pression de rampe instable
+      - presión de rail inestable
+      - pressione rail instabile
+      - instabiele raildruk
+    keywords:
+      - IMV
+      - fuel metering valve
+      - pressure regulator
+      - regulator pompă
+    possible_causes:
+      - sticking IMV
+      - electrical fault
+      - contaminated fuel
+      - high-pressure pump wear
+      - connector fault
+    diagnostic_steps:
+      - Monitor commanded and actual rail pressure.
+      - Check IMV electrical resistance where specified.
+      - Inspect connector and wiring.
+      - Check fuel contamination.
+      - Evaluate high-pressure pump performance.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: dacia_electronic_dci_injector_correction_excessive
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - logan_mcv
+        - sandero
+        - sandero_stepway
+        - duster
+        - lodgy
+        - dokker
+      generations: all
+      engines:
+        - k9k
+      category: diagnostics
+      system: fuel
+      title:
+        en: dCi Injector Correction Excessive
+        ro: Corecție excesivă injector dCi
+        de: Übermäßige Injektorkorrektur beim dCi
+        fr: Correction d'injecteur dCi excessive
+        es: Corrección excesiva del inyector dCi
+        it: Correzione eccessiva dell'iniettore dCi
+        nl: Overmatige injectorcorrectie dCi
+    symptoms:
+      - rough idle
+      - engine vibration
+      - difficult starting
+      - smoke
+      - uneven engine operation
+      - ralanti neregulat
+      - vibrații motor
+      - pornire dificilă
+      - unruhiger Leerlauf
+      - vibrations moteur
+      - vibraciones del motor
+      - vibrazioni motore
+      - motortrillingen
+    keywords:
+      - injector correction
+      - injector balance
+      - dCi injector
+      - corecție injector
+    possible_causes:
+      - injector wear
+      - injector contamination
+      - poor fuel quality
+      - compression problem
+      - excessive leak-off
+    diagnostic_steps:
+      - Read injector correction values.
+      - Compare corrections between cylinders.
+      - Perform injector leak-off testing.
+      - Check engine compression if corrections are abnormal.
+      - Inspect fuel quality.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: dacia_electronic_dci_injector_leakoff_excessive
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - logan_mcv
+        - sandero
+        - sandero_stepway
+        - duster
+        - lodgy
+        - dokker
+      generations: all
+      engines:
+        - k9k
+      category: diagnostics
+      system: fuel
+      title:
+        en: dCi Injector Leak-Off Excessive
+        ro: Retur excesiv injector dCi
+        de: Zu hoher Injektor-Rücklauf beim dCi
+        fr: Retour injecteur dCi excessif
+        es: Retorno excesivo del inyector dCi
+        it: Ritorno eccessivo dell'iniettore dCi
+        nl: Te hoge injectorretour dCi
+    symptoms:
+      - hard starting
+      - no start
+      - low rail pressure
+      - rough idle
+      - engine stalls
+      - pornire dificilă
+      - nu pornește
+      - presiune rail scăzută
+      - niedriger Raildruck
+      - pression de rampe faible
+      - baja presión de rail
+      - bassa pressione rail
+      - lage raildruk
+    keywords:
+      - injector leak-off
+      - injector return
+      - dCi return flow
+      - retur injector
+    possible_causes:
+      - worn injector
+      - damaged injector control valve
+      - injector internal leakage
+      - fuel contamination
+    diagnostic_steps:
+      - Perform injector leak-off test.
+      - Compare return quantities between cylinders.
+      - Check rail pressure during cranking.
+      - Inspect fuel for contamination.
+      - Replace or repair injectors according to test results.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: dacia_electronic_dci_glow_plug_circuit_fault
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - logan_mcv
+        - sandero
+        - sandero_stepway
+        - duster
+        - lodgy
+        - dokker
+      generations: all
+      engines:
+        - k9k
+      category: diagnostics
+      system: engine
+      title:
+        en: dCi Glow Plug Circuit Fault
+        ro: Defecțiune circuit bujii incandescente dCi
+        de: Fehler im Glühkerzenkreis dCi
+        fr: Défaut du circuit des bougies de préchauffage dCi
+        es: Fallo del circuito de calentadores dCi
+        it: Guasto del circuito delle candelette dCi
+        nl: Storing gloeibougiek circuit dCi
+    symptoms:
+      - difficult cold starting
+      - white smoke after startup
+      - rough cold idle
+      - glow plug warning
+      - pornire dificilă la rece
+      - fum alb după pornire
+      - ralanti neregulat la rece
+      - Kaltstartprobleme
+      - fumée blanche
+      - humo blanco
+      - fumo bianco
+      - witte rook
+    keywords:
+      - glow plugs
+      - preheating
+      - diesel glow plug
+      - bujii incandescente
+    possible_causes:
+      - failed glow plug
+      - open glow plug circuit
+      - glow plug relay fault
+      - wiring fault
+      - control module fault
+    diagnostic_steps:
+      - Check glow plug resistance.
+      - Measure voltage during preheating.
+      - Inspect glow plug wiring.
+      - Check glow plug control module or relay.
+      - Compare cold-start behavior.
+    related_dtcs: []
+    difficulty: intermediate
+
+  - id: dacia_electronic_dci_glow_plug_module_fault
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - logan_mcv
+        - sandero
+        - sandero_stepway
+        - duster
+        - lodgy
+        - dokker
+      generations: all
+      engines:
+        - k9k
+      category: diagnostics
+      system: engine
+      title:
+        en: dCi Glow Plug Control Module Fault
+        ro: Defecțiune modul comandă bujii incandescente dCi
+        de: Fehler des Glühkerzensteuergeräts dCi
+        fr: Défaut du module de commande des bougies dCi
+        es: Fallo del módulo de control de calentadores dCi
+        it: Guasto del modulo di comando candelette dCi
+        nl: Storing gloeibougiebesturingsmodule dCi
+    symptoms:
+      - hard cold starting
+      - glow plug warning
+      - white smoke
+      - preheating unavailable
+      - pornire grea la rece
+      - martor bujii aprins
+      - fum alb
+      - Kaltstartprobleme
+      - fumée blanche
+      - humo blanco
+      - fumo bianco
+      - witte rook
+    keywords:
+      - glow plug module
+      - preheat module
+      - glow controller
+      - modul bujii
+    possible_causes:
+      - failed glow plug control module
+      - power supply fault
+      - ground fault
+      - communication fault
+      - damaged wiring
+    diagnostic_steps:
+      - Check module power and ground.
+      - Check control outputs to glow plugs.
+      - Inspect connectors.
+      - Verify communication with engine ECU where applicable.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: dacia_electronic_dci_egr_stuck_open
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - logan_mcv
+        - sandero
+        - sandero_stepway
+        - duster
+        - lodgy
+        - dokker
+      generations: all
+      engines:
+        - k9k
+      category: diagnostics
+      system: emissions
+      title:
+        en: dCi EGR Valve Stuck Open
+        ro: Supapă EGR dCi blocată deschis
+        de: EGR-Ventil beim dCi offen blockiert
+        fr: Vanne EGR dCi bloquée ouverte
+        es: Válvula EGR dCi atascada abierta
+        it: Valvola EGR dCi bloccata aperta
+        nl: EGR-klep dCi blijft open staan
+    symptoms:
+      - rough idle
+      - stalling at idle
+      - poor acceleration
+      - black smoke
+      - reduced power
+      - ralanti neregulat
+      - motorul se oprește la ralanti
+      - fum negru
+      - Leistungsverlust
+      - fumée noire
+      - humo negro
+      - fumo nero
+      - zwarte rook
+    keywords:
+      - EGR stuck open
+      - EGR valve
+      - EGR diesel
+      - EGR blocat
+    possible_causes:
+      - carbon deposits
+      - seized EGR valve
+      - actuator fault
+      - position sensor fault
+      - wiring fault
+    diagnostic_steps:
+      - Monitor commanded and actual EGR position.
+      - Inspect EGR for carbon buildup.
+      - Check actuator operation.
+      - Inspect wiring and connector.
+      - Check intake contamination.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: dacia_electronic_dci_egr_stuck_closed
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - logan_mcv
+        - sandero
+        - sandero_stepway
+        - duster
+        - lodgy
+        - dokker
+      generations: all
+      engines:
+        - k9k
+      category: diagnostics
+      system: emissions
+      title:
+        en: dCi EGR Valve Stuck Closed
+        ro: Supapă EGR dCi blocată închis
+        de: EGR-Ventil beim dCi geschlossen blockiert
+        fr: Vanne EGR dCi bloquée fermée
+        es: Válvula EGR dCi atascada cerrada
+        it: Valvola EGR dCi bloccata chiusa
+        nl: EGR-klep dCi blijft gesloten
+    symptoms:
+      - increased NOx emissions
+      - engine warning light
+      - reduced performance
+      - abnormal combustion
+      - emisii crescute
+      - martor motor
+      - performanță redusă
+      - erhöhte Emissionen
+      - émissions élevées
+      - emisiones elevadas
+      - emissioni elevate
+      - verhoogde emissies
+    keywords:
+      - EGR closed
+      - EGR valve
+      - EGR flow
+      - EGR închis
+    possible_causes:
+      - carbon deposits
+      - seized EGR valve
+      - actuator failure
+      - position sensor fault
+      - wiring fault
+    diagnostic_steps:
+      - Compare commanded and actual EGR position.
+      - Inspect EGR valve.
+      - Check actuator operation.
+      - Inspect wiring and connector.
+      - Check intake and exhaust passages.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: dacia_electronic_dci_boost_pressure_low
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - logan_mcv
+        - sandero
+        - sandero_stepway
+        - duster
+        - lodgy
+        - dokker
+      generations: all
+      engines:
+        - k9k
+      category: diagnostics
+      system: turbocharger
+      title:
+        en: dCi Boost Pressure Too Low
+        ro: Presiune supraalimentare prea mică dCi
+        de: Ladedruck beim dCi zu niedrig
+        fr: Pression de suralimentation dCi trop faible
+        es: Presión de sobrealimentación dCi demasiado baja
+        it: Pressione di sovralimentazione dCi troppo bassa
+        nl: Laaddruk dCi te laag
+    symptoms:
+      - lack of power
+      - poor acceleration
+      - limp mode
+      - excessive smoke
+      - lipsă de putere
+      - accelerație slabă
+      - mod avarie
+      - Leistungsverlust
+      - perte de puissance
+      - pérdida de potencia
+      - perdita di potenza
+      - vermogensverlies
+    keywords:
+      - low boost
+      - turbo pressure low
+      - boost leak
+      - presiune turbo
+    possible_causes:
+      - boost hose leak
+      - turbo actuator fault
+      - variable geometry sticking where fitted
+      - MAP sensor fault
+      - EGR fault
+      - restricted intake or exhaust
+    diagnostic_steps:
+      - Compare commanded and actual boost pressure.
+      - Inspect boost hoses.
+      - Check turbo actuator movement.
+      - Inspect MAP sensor.
+      - Check intake and exhaust restrictions.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: dacia_electronic_dci_boost_pressure_high
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - logan_mcv
+        - sandero
+        - sandero_stepway
+        - duster
+        - lodgy
+        - dokker
+      generations: all
+      engines:
+        - k9k
+      category: diagnostics
+      system: turbocharger
+      title:
+        en: dCi Boost Pressure Too High
+        ro: Presiune supraalimentare prea mare dCi
+        de: Ladedruck beim dCi zu hoch
+        fr: Pression de suralimentation dCi trop élevée
+        es: Presión de sobrealimentación dCi demasiado alta
+        it: Pressione di sovralimentazione dCi troppo alta
+        nl: Laaddruk dCi te hoog
+    symptoms:
+      - limp mode
+      - power loss
+      - turbo surge
+      - excessive engine noise
+      - mod avarie
+      - pierdere de putere
+      - suprapresiune turbo
+      - Notlauf
+      - perte de puissance
+      - pérdida de potencia
+      - perdita di potenza
+      - vermogensverlies
+    keywords:
+      - overboost
+      - high boost
+      - turbo overpressure
+      - suprapresiune
+    possible_causes:
+      - turbo actuator sticking
+      - variable geometry mechanism sticking
+      - boost control fault
+      - MAP sensor fault
+      - vacuum control fault
+    diagnostic_steps:
+      - Compare commanded and actual boost pressure.
+      - Test turbo actuator.
+      - Inspect vacuum or control system.
+      - Check MAP sensor.
+      - Inspect turbocharger mechanism.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: dacia_electronic_dci_turbo_actuator_fault
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - logan_mcv
+        - sandero
+        - sandero_stepway
+        - duster
+        - lodgy
+        - dokker
+      generations: all
+      engines:
+        - k9k
+      category: diagnostics
+      system: turbocharger
+      title:
+        en: dCi Turbocharger Actuator Fault
+        ro: Defecțiune actuator turbocompresor dCi
+        de: Fehler des Turboladerstellers dCi
+        fr: Défaut de l'actionneur du turbocompresseur dCi
+        es: Fallo del actuador del turbocompresor dCi
+        it: Guasto dell'attuatore del turbocompressore dCi
+        nl: Storing turboactuator dCi
+    symptoms:
+      - reduced power
+      - overboost
+      - underboost
+      - limp mode
+      - inconsistent turbo response
+      - putere redusă
+      - suprapresiune
+      - presiune insuficientă
+      - mod avarie
+      - Leistungsverlust
+      - perte de puissance
+      - pérdida de potencia
+      - perdita di potenza
+      - vermogensverlies
+    keywords:
+      - turbo actuator
+      - turbo control
+      - VNT actuator
+      - actuator turbo
+    possible_causes:
+      - actuator motor fault
+      - sticking mechanism
+      - vacuum leak
+      - electrical wiring fault
+      - position sensor fault
+    diagnostic_steps:
+      - Test actuator movement.
+      - Compare commanded and actual actuator position.
+      - Inspect control lines.
+      - Check wiring and connector.
+      - Inspect turbo mechanism for sticking.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: dacia_electronic_dci_map_boost_sensor_fault
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - logan_mcv
+        - sandero
+        - sandero_stepway
+        - duster
+        - lodgy
+        - dokker
+      generations: all
+      engines:
+        - k9k
+      category: diagnostics
+      system: turbocharger
+      title:
+        en: dCi MAP and Boost Pressure Sensor Fault
+        ro: Defecțiune senzor MAP și presiune turbo dCi
+        de: Fehler des MAP- und Ladedrucksensors dCi
+        fr: Défaut du capteur MAP et de pression de suralimentation dCi
+        es: Fallo del sensor MAP y presión de sobrealimentación dCi
+        it: Guasto del sensore MAP e pressione sovralimentazione dCi
+        nl: Storing MAP- en laaddruksensor dCi
+    symptoms:
+      - reduced power
+      - incorrect boost control
+      - limp mode
+      - poor acceleration
+      - putere redusă
+      - control turbo incorect
+      - mod avarie
+      - Leistungsverlust
+      - contrôle turbo incorrect
+      - control turbo incorrecto
+      - controllo turbo errato
+      - verkeerde turbodrukregeling
+    keywords:
+      - MAP boost sensor
+      - boost sensor
+      - turbo pressure sensor
+      - senzor presiune turbo
+    possible_causes:
+      - sensor contamination
+      - failed MAP sensor
+      - wiring fault
+      - connector fault
+      - boost hose problem
+    diagnostic_steps:
+      - Compare sensor reading with atmospheric pressure.
+      - Monitor boost pressure during acceleration.
+      - Inspect sensor and pressure port.
+      - Check wiring and connector.
+      - Inspect boost hoses.
+    related_dtcs: []
+    difficulty: intermediate
+
+  - id: dacia_electronic_dci_dpf_differential_pressure_sensor_fault
+    vehicle:
+      manufacturer: dacia
+      models:
+        - duster
+        - logan
+        - logan_mcv
+        - sandero
+        - sandero_stepway
+        - lodgy
+        - dokker
+      generations: all
+      engines:
+        - k9k
+      category: diagnostics
+      system: emissions
+      title:
+        en: dCi DPF Differential Pressure Sensor Fault
+        ro: Defecțiune senzor presiune diferențială DPF dCi
+        de: Fehler des DPF-Differenzdrucksensors dCi
+        fr: Défaut du capteur de pression différentielle FAP dCi
+        es: Fallo del sensor de presión diferencial del DPF dCi
+        it: Guasto del sensore pressione differenziale DPF dCi
+        nl: Storing DPF-differentieeldruksensor dCi
+    symptoms:
+      - DPF warning
+      - regeneration problems
+      - reduced power
+      - increased fuel consumption
+      - martor DPF
+      - regenerare problematică
+      - putere redusă
+      - DPF-Warnung
+      - problèmes de régénération
+      - problemas de regeneración
+      - problemi di rigenerazione
+      - regeneratieproblemen
+    keywords:
+      - DPF pressure sensor
+      - differential pressure
+      - FAP pressure
+      - senzor DPF
+    possible_causes:
+      - failed pressure sensor
+      - blocked pressure hoses
+      - melted pressure hose
+      - wiring fault
+      - incorrect sensor calibration
+    diagnostic_steps:
+      - Compare pressure reading with engine off.
+      - Check both pressure hoses.
+      - Inspect sensor wiring.
+      - Monitor pressure during regeneration.
+      - Verify sensor plausibility.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: dacia_electronic_dci_dpf_regeneration_failure
+    vehicle:
+      manufacturer: dacia
+      models:
+        - duster
+        - logan
+        - logan_mcv
+        - sandero
+        - sandero_stepway
+        - lodgy
+        - dokker
+      generations: all
+      engines:
+        - k9k
+      category: diagnostics
+      system: emissions
+      title:
+        en: dCi DPF Regeneration Failure
+        ro: Eșec regenerare DPF dCi
+        de: Fehlgeschlagene DPF-Regeneration beim dCi
+        fr: Échec de régénération du FAP dCi
+        es: Fallo de regeneración del DPF dCi
+        it: Rigenerazione DPF dCi non riuscita
+        nl: Mislukte DPF-regeneratie dCi
+    symptoms:
+      - repeated regeneration attempts
+      - DPF warning
+      - reduced power
+      - increased fuel consumption
+      - frequent cooling fan operation
+      - regenerări repetate
+      - martor DPF
+      - putere redusă
+      - regenerări frecvente
+      - häufige Regeneration
+      - régénérations répétées
+      - regeneraciones repetidas
+      - rigenerazioni frequenti
+      - frequente regeneratie
+    keywords:
+      - DPF regeneration
+      - FAP regeneration
+      - failed regeneration
+      - regenerare DPF
+    possible_causes:
+      - excessive soot loading
+      - differential pressure sensor fault
+      - exhaust temperature sensor fault
+      - EGR fault
+      - unsuitable driving conditions
+      - engine fault preventing regeneration
+    diagnostic_steps:
+      - Read DPF soot and ash loading data.
+      - Check differential pressure.
+      - Verify exhaust temperature sensors.
+      - Check conditions required for regeneration.
+      - Diagnose engine faults preventing regeneration.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: dacia_electronic_dci_dpf_pressure_hose_blocked
+    vehicle:
+      manufacturer: dacia
+      models:
+        - duster
+        - logan
+        - logan_mcv
+        - sandero
+        - sandero_stepway
+        - lodgy
+        - dokker
+      generations: all
+      engines:
+        - k9k
+      category: diagnostics
+      system: emissions
+      title:
+        en: dCi DPF Pressure Hose Blockage
+        ro: Blocare furtun presiune DPF dCi
+        de: Verstopfter DPF-Druckschlauch beim dCi
+        fr: Durite de pression FAP dCi obstruée
+        es: Tubo de presión del DPF dCi obstruido
+        it: Tubo pressione DPF dCi ostruito
+        nl: Verstopte DPF-drukslang dCi
+    symptoms:
+      - incorrect DPF pressure reading
+      - false regeneration request
+      - DPF warning
+      - increased fuel consumption
+      - citire incorectă presiune DPF
+      - regenerări anormale
+      - martor DPF
+      - falsche DPF-Druckwerte
+      - lecture de pression incorrecte
+      - lectura incorrecta de presión
+      - lettura pressione errata
+      - verkeerde drukmeting
+    keywords:
+      - DPF pressure hose
+      - differential pressure hose
+      - FAP hose
+      - furtun DPF
+    possible_causes:
+      - soot blockage
+      - condensation
+      - damaged hose
+      - melted hose
+    diagnostic_steps:
+      - Disconnect and inspect pressure hoses.
+      - Check for soot or condensation blockage.
+      - Inspect hoses for melting or cracking.
+      - Verify pressure readings after repair.
+    related_dtcs: []
+    difficulty: intermediate
+
+  - id: dacia_electronic_dci_exhaust_temperature_sensor_fault
+    vehicle:
+      manufacturer: dacia
+      models:
+        - duster
+        - logan
+        - logan_mcv
+        - sandero
+        - sandero_stepway
+        - lodgy
+        - dokker
+      generations: all
+      engines:
+        - k9k
+      category: diagnostics
+      system: emissions
+      title:
+        en: dCi Exhaust Gas Temperature Sensor Fault
+        ro: Defecțiune senzor temperatură gaze evacuare dCi
+        de: Fehler des Abgastemperatursensors dCi
+        fr: Défaut du capteur de température des gaz d'échappement dCi
+        es: Fallo del sensor de temperatura de gases de escape dCi
+        it: Guasto del sensore temperatura gas di scarico dCi
+        nl: Storing uitlaatgastemperatuursensor dCi
+    symptoms:
+      - DPF regeneration failure
+      - emissions warning
+      - reduced power
+      - incorrect exhaust temperature reading
+      - eșec regenerare DPF
+      - martor emisii
+      - putere redusă
+      - DPF-Regeneration fehlgeschlagen
+      - échec de régénération
+      - fallo de regeneración
+      - rigenerazione fallita
+      - regeneratie mislukt
+    keywords:
+      - EGT sensor
+      - exhaust temperature
+      - DPF temperature
+      - senzor EGT
+    possible_causes:
+      - failed temperature sensor
+      - damaged wiring
+      - connector fault
+      - sensor contamination
+    diagnostic_steps:
+      - Compare temperature readings with engine cold.
+      - Monitor temperature during engine operation.
+      - Inspect wiring and connector.
+      - Verify temperature increase during regeneration.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: dacia_electronic_dci_intake_throttle_air_doser_fault
+    vehicle:
+      manufacturer: dacia
+      models:
+        - duster
+        - logan
+        - logan_mcv
+        - sandero
+        - sandero_stepway
+        - lodgy
+        - dokker
+      generations: all
+      engines:
+        - k9k
+      category: diagnostics
+      system: engine
+      title:
+        en: dCi Intake Throttle Air Doser Fault
+        ro: Defecțiune clapetă admisie motorină dCi
+        de: Fehler der Ansaugdrosselklappe beim dCi
+        fr: Défaut du boîtier papillon d'admission dCi
+        es: Fallo de la mariposa de admisión dCi
+        it: Guasto della farfalla di aspirazione dCi
+        nl: Storing inlaatklep dCi
+    symptoms:
+      - rough shutdown
+      - poor EGR operation
+      - reduced power
+      - unstable engine operation
+      - oprire bruscă a motorului
+      - funcționare EGR incorectă
+      - putere redusă
+      - unruhiges Abstellen
+      - fonctionnement EGR incorrect
+      - funcionamiento EGR incorrecto
+      - funzionamento EGR errato
+      - onrustige motorloop
+    keywords:
+      - intake throttle
+      - air doser
+      - diesel throttle
+      - clapetă admisie
+    possible_causes:
+      - carbon buildup
+      - actuator fault
+      - position sensor fault
+      - wiring fault
+    diagnostic_steps:
+      - Monitor commanded and actual position.
+      - Inspect throttle plate for carbon deposits.
+      - Test actuator.
+      - Check wiring and connector.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: dacia_electronic_dci_water_in_fuel
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - logan_mcv
+        - sandero
+        - sandero_stepway
+        - duster
+        - lodgy
+        - dokker
+      generations: all
+      engines:
+        - k9k
+      category: diagnostics
+      system: fuel
+      title:
+        en: Water Contamination in Diesel Fuel
+        ro: Apă în combustibilul diesel
+        de: Wasser im Dieselkraftstoff
+        fr: Présence d'eau dans le gazole
+        es: Agua en el combustible diésel
+        it: Acqua nel gasolio
+        nl: Water in dieselbrandstof
+    symptoms:
+      - hard starting
+      - rough running
+      - reduced power
+      - injector faults
+      - fuel system warning
+      - pornire dificilă
+      - funcționare neregulată
+      - putere redusă
+      - Wasser im Kraftstoff
+      - fonctionnement irrégulier
+      - funcionamiento irregular
+      - funzionamento irregolare
+      - onregelmatige motorloop
+    keywords:
+      - water in diesel
+      - fuel contamination
+      - diesel contamination
+      - apă combustibil
+    possible_causes:
+      - contaminated fuel
+      - condensation in fuel tank
+      - contaminated fuel filter
+      - poor fuel storage
+    diagnostic_steps:
+      - Inspect fuel filter for water.
+      - Drain a fuel sample where appropriate.
+      - Inspect fuel tank contamination.
+      - Replace contaminated fuel and filter as required.
+      - Check high-pressure system after contamination.
+    related_dtcs: []
+    difficulty: intermediate
+
+  - id: dacia_electronic_lpg_injector_imbalance
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - logan_mcv
+        - sandero
+        - sandero_stepway
+        - duster
+        - dokker
+        - lodgy
+      generations: all
+      engines: all
+    category: diagnostics
+    system: lpg
+    title:
+      en: LPG Injector Imbalance
+      ro: Dezechilibru injectoare GPL
+      de: LPG-Injektor-Ungleichgewicht
+      fr: Déséquilibre des injecteurs GPL
+      es: Desequilibrio de los inyectores de GLP
+      it: Squilibrio degli iniettori GPL
+      nl: Onbalans LPG-injectoren
+    symptoms:
+      - rough idle on LPG
+      - misfire on LPG
+      - loss of power on LPG
+      - increased LPG consumption
+      - ralanti neregulat pe GPL
+      - rateuri pe GPL
+      - putere redusă pe GPL
+      - unruhiger Leerlauf mit LPG
+      - ratés au GPL
+      - fallos con GLP
+      - mancata accensione GPL
+      - ontstekingsuitval op LPG
+    keywords:
+      - LPG injector
+      - GPL injector
+      - gas injector
+      - injector GPL
+    possible_causes:
+      - injector contamination
+      - injector wear
+      - incorrect injector calibration
+      - wiring fault
+      - gas pressure instability
+    diagnostic_steps:
+      - Compare injector correction or duty cycle where supported.
+      - Check LPG pressure.
+      - Inspect injector wiring.
+      - Perform injector balance testing.
+      - Check calibration.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: dacia_electronic_lpg_pressure_regulator_fault
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - logan_mcv
+        - sandero
+        - sandero_stepway
+        - duster
+        - dokker
+        - lodgy
+      generations: all
+      engines: all
+    category: diagnostics
+    system: lpg
+    title:
+      en: LPG Pressure Regulator Fault
+      ro: Defecțiune regulator presiune GPL
+      de: Fehler des LPG-Druckreglers
+      fr: Défaut du détendeur GPL
+      es: Fallo del regulador de presión de GLP
+      it: Guasto del riduttore di pressione GPL
+      nl: Storing LPG-drukregelaar
+    symptoms:
+      - unstable LPG operation
+      - LPG pressure fluctuation
+      - engine switches to petrol
+      - poor acceleration on LPG
+      - funcționare instabilă pe GPL
+      - presiune GPL fluctuantă
+      - trecere pe benzină
+      - instabiler LPG-Betrieb
+      - pression GPL instable
+      - presión GLP inestable
+      - pressione GPL instabile
+      - instabiele LPG-druk
+    keywords:
+      - LPG regulator
+      - gas reducer
+      - LPG pressure
+      - regulator GPL
+    possible_causes:
+      - regulator diaphragm wear
+      - coolant circulation problem
+      - clogged filter
+      - incorrect regulator pressure
+      - temperature sensor fault
+    diagnostic_steps:
+      - Monitor LPG pressure.
+      - Check regulator temperature.
+      - Verify coolant circulation.
+      - Inspect LPG filters.
+      - Check regulator pressure adjustment.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: dacia_electronic_lpg_pressure_sensor_fault
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - logan_mcv
+        - sandero
+        - sandero_stepway
+        - duster
+        - dokker
+        - lodgy
+      generations: all
+      engines: all
+    category: diagnostics
+    system: lpg
+    title:
+      en: LPG Pressure Sensor Fault
+      ro: Defecțiune senzor presiune GPL
+      de: Fehler des LPG-Drucksensors
+      fr: Défaut du capteur de pression GPL
+      es: Fallo del sensor de presión de GLP
+      it: Guasto del sensore pressione GPL
+      nl: Storing LPG-druksensor
+    symptoms:
+      - incorrect LPG pressure reading
+      - unexpected switch to petrol
+      - unstable LPG operation
+      - engine warning
+      - citire incorectă presiune GPL
+      - trecere neașteptată pe benzină
+      - funcționare instabilă
+      - falscher LPG-Druckwert
+      - passage inattendu à l'essence
+      - cambio inesperado a gasolina
+      - passaggio inatteso a benzina
+      - onverwachte omschakeling naar benzine
+    keywords:
+      - LPG pressure sensor
+      - gas pressure sensor
+      - MAP LPG
+      - senzor presiune GPL
+    possible_causes:
+      - failed pressure sensor
+      - wiring fault
+      - connector fault
+      - incorrect supply voltage
+    diagnostic_steps:
+      - Monitor LPG pressure sensor data.
+      - Compare pressure with a mechanical gauge where appropriate.
+      - Inspect wiring and connector.
+      - Check sensor supply and ground.
+    related_dtcs: []
+    difficulty: intermediate
+
+  - id: dacia_electronic_lpg_solenoid_valve_fault
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - logan_mcv
+        - sandero
+        - sandero_stepway
+        - duster
+        - dokker
+        - lodgy
+      generations: all
+      engines: all
+    category: diagnostics
+    system: lpg
+    title:
+      en: LPG Solenoid Valve Fault
+      ro: Defecțiune electrovalvă GPL
+      de: Fehler des LPG-Magnetventils
+      fr: Défaut de l'électrovanne GPL
+      es: Fallo de la electroválvula de GLP
+      it: Guasto dell'elettrovalvola GPL
+      nl: Storing LPG-magneetventiel
+    symptoms:
+      - LPG mode unavailable
+      - engine switches to petrol
+      - no LPG flow
+      - difficulty switching to LPG
+      - modul GPL indisponibil
+      - motorul trece pe benzină
+      - lipsă alimentare GPL
+      - LPG-Betrieb nicht verfügbar
+      - fonctionnement GPL indisponible
+      - modo GLP no disponible
+      - modalità GPL non disponibile
+      - LPG-modus niet beschikbaar
+    keywords:
+      - LPG solenoid
+      - gas solenoid
+      - LPG valve
+      - electrovalvă GPL
+    possible_causes:
+      - failed solenoid coil
+      - blocked valve
+      - wiring fault
+      - fuse fault
+      - LPG ECU control fault
+    diagnostic_steps:
+      - Check solenoid power supply.
+      - Measure coil resistance.
+      - Check valve operation.
+      - Inspect wiring and connectors.
+      - Verify LPG ECU command.
+    related_dtcs: []
+    difficulty: intermediate
+
+  - id: dacia_electronic_lpg_unexpected_petrol_switch
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - logan_mcv
+        - sandero
+        - sandero_stepway
+        - duster
+        - dokker
+        - lodgy
+      generations: all
+      engines: all
+    category: diagnostics
+    system: lpg
+    title:
+      en: LPG System Switches to Petrol Unexpectedly
+      ro: Sistemul GPL trece neașteptat pe benzină
+      de: LPG-System schaltet unerwartet auf Benzin
+      fr: Le système GPL passe inopinément à l'essence
+      es: El sistema GLP cambia inesperadamente a gasolina
+      it: Il sistema GPL passa inaspettatamente a benzina
+      nl: LPG-systeem schakelt onverwacht over op benzine
+    symptoms:
+      - switches to petrol under load
+      - switches to petrol when accelerating
+      - LPG warning
+      - unstable LPG operation
+      - trece pe benzină la accelerație
+      - trece pe benzină în sarcină
+      - avertizare GPL
+      - schaltet unter Last auf Benzin
+      - passage à l'essence sous charge
+      - cambio a gasolina bajo carga
+      - passaggio a benzina sotto carico
+      - omschakelen naar benzine onder belasting
+    keywords:
+      - LPG switches to petrol
+      - LPG dropout
+      - gas mode dropout
+      - trecere GPL benzină
+    possible_causes:
+      - low LPG pressure
+      - LPG pressure sensor fault
+      - regulator fault
+      - LPG filter restriction
+      - solenoid valve fault
+      - excessive LPG demand
+    diagnostic_steps:
+      - Monitor LPG pressure during acceleration.
+      - Check regulator operation.
+      - Inspect LPG filters.
+      - Check pressure sensor data.
+      - Read LPG ECU fault memory.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: dacia_electronic_uch_no_communication
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - logan_mcv
+        - sandero
+        - sandero_stepway
+        - duster
+        - lodgy
+        - dokker
+      generations: all
+      engines: all
+    category: diagnostics
+    system: body
+    title:
+      en: UCH No Communication
+      ro: Lipsă comunicare cu modulul UCH
+      de: Keine Kommunikation mit dem UCH
+      fr: Absence de communication avec le module UCH
+      es: Sin comunicación con el módulo UCH
+      it: Assenza di comunicazione con il modulo UCH
+      nl: Geen communicatie met UCH-module
+    symptoms:
+      - multiple body functions unavailable
+      - central locking inoperative
+      - lighting faults
+      - wiper faults
+      - no diagnostic communication
+      - mai multe funcții de caroserie indisponibile
+      - închidere centralizată inoperantă
+      - lumini defecte
+      - keine Kommunikation
+      - fonctions de carrosserie indisponibles
+      - funciones de carrocería no disponibles
+      - funzioni carrozzeria non disponibili
+      - carrosseriefuncties niet beschikbaar
+    keywords:
+      - UCH
+      - body control module
+      - body computer
+      - modul UCH
+    possible_causes:
+      - UCH power supply fault
+      - poor ground
+      - CAN communication fault
+      - connector corrosion
+      - internal UCH fault
+    diagnostic_steps:
+      - Check UCH power and ground.
+      - Check communication with other modules.
+      - Inspect UCH connectors.
+      - Check CAN network integrity where applicable.
+      - Scan for network-related faults.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: dacia_electronic_immobilizer_no_start
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - logan_mcv
+        - sandero
+        - sandero_stepway
+        - duster
+        - lodgy
+        - dokker
+        - solenza
+        - supernova
+      generations: all
+      engines: all
+    category: diagnostics
+    system: immobilizer
+    title:
+      en: Immobilizer Preventing Engine Start
+      ro: Imobilizatorul împiedică pornirea motorului
+      de: Wegfahrsperre verhindert Motorstart
+      fr: Antidémarrage empêchant le démarrage du moteur
+      es: Inmovilizador impide el arranque del motor
+      it: Immobilizer impedisce l'avviamento del motore
+      nl: Startblokkering verhindert motorstart
+    symptoms:
+      - engine cranks but does not start
+      - immobilizer warning
+      - key warning
+      - intermittent no start
+      - motorul învârte dar nu pornește
+      - martor imobilizator
+      - cheie nerecunoscută
+      - Wegfahrsperren-Warnung
+      - voyant antidémarrage
+      - testigo inmovilizador
+      - spia immobilizer
+      - startblokkeringslamp
+    keywords:
+      - immobilizer
+      - anti-start
+      - engine immobilizer
+      - imobilizator
+    possible_causes:
+      - key recognition fault
+      - immobilizer module fault
+      - ECU authorization fault
+      - low battery voltage
+      - communication fault
+    diagnostic_steps:
+      - Check immobilizer status with diagnostic equipment.
+      - Verify key recognition.
+      - Check ECU authorization status.
+      - Check vehicle battery voltage.
+      - Diagnose communication between immobilizer and ECU.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: dacia_electronic_key_transponder_not_recognized
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - logan_mcv
+        - sandero
+        - sandero_stepway
+        - duster
+        - lodgy
+        - dokker
+      generations: all
+      engines: all
+    category: diagnostics
+    system: immobilizer
+    title:
+      en: Key Transponder Not Recognized
+      ro: Transponder cheie nerecunoscut
+      de: Schlüsseltransponder wird nicht erkannt
+      fr: Transpondeur de clé non reconnu
+      es: Transpondedor de llave no reconocido
+      it: Transponder della chiave non riconosciuto
+      nl: Sleuteltransponder niet herkend
+    symptoms:
+      - engine does not start
+      - immobilizer warning
+      - key not recognized
+      - spare key works intermittently
+      - motorul nu pornește
+      - cheie nerecunoscută
+      - martor imobilizator
+      - Schlüssel nicht erkannt
+      - clé non reconnue
+      - llave no reconocida
+      - chiave non riconosciuta
+      - sleutel niet herkend
+    keywords:
+      - transponder
+      - key recognition
+      - immobilizer key
+      - transponder cheie
+    possible_causes:
+      - damaged key transponder
+      - faulty antenna ring
+      - key programming issue
+      - immobilizer module fault
+      - communication fault
+    diagnostic_steps:
+      - Test another programmed key.
+      - Check key recognition status.
+      - Inspect immobilizer antenna.
+      - Verify key programming.
+      - Check immobilizer communication.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: dacia_electronic_can_communication_fault
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - logan_mcv
+        - sandero
+        - sandero_stepway
+        - duster
+        - lodgy
+        - dokker
+      generations: all
+      engines: all
+    category: diagnostics
+    system: network
+    title:
+      en: CAN Communication Fault
+      ro: Defecțiune comunicație CAN
+      de: CAN-Kommunikationsfehler
+      fr: Défaut de communication CAN
+      es: Fallo de comunicación CAN
+      it: Guasto di comunicazione CAN
+      nl: CAN-communicatiestoring
+    symptoms:
+      - multiple module faults
+      - intermittent warning lights
+      - loss of diagnostic communication
+      - body functions unavailable
+      - mai multe module cu erori
+      - martori intermitenți
+      - lipsă comunicare diagnostic
+      - mehrere Steuergerätefehler
+      - défauts multiples
+      - fallos múltiples
+      - errori multipli
+      - meerdere modulefouten
+    keywords:
+      - CAN bus
+      - CAN communication
+      - network fault
+      - comunicație CAN
+    possible_causes:
+      - CAN wiring open circuit
+      - CAN wiring short circuit
+      - poor connector contact
+      - failed control module
+      - incorrect network termination
+    diagnostic_steps:
+      - Identify modules missing from network scan.
+      - Check CAN wiring.
+      - Measure network resistance according to system specification.
+      - Inspect connectors.
+      - Isolate faulty modules if necessary.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: dacia_electronic_central_locking_actuator_fault
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - logan_mcv
+        - sandero
+        - sandero_stepway
+        - duster
+        - lodgy
+        - dokker
+      generations: all
+      engines: all
+    category: diagnostics
+    system: body
+    title:
+      en: Central Locking Actuator Fault
+      ro: Defecțiune actuator închidere centralizată
+      de: Fehler des Zentralverriegelungsstellers
+      fr: Défaut de l'actionneur de verrouillage centralisé
+      es: Fallo del actuador del cierre centralizado
+      it: Guasto dell'attuatore della chiusura centralizzata
+      nl: Storing centrale vergrendelingsactuator
+    symptoms:
+      - one door does not lock
+      - one door does not unlock
+      - intermittent central locking
+      - door lock operates slowly
+      - o ușă nu se închide
+      - o ușă nu se deschide
+      - închidere centralizată intermitentă
+      - Tür verriegelt nicht
+      - porte ne se verrouille pas
+      - puerta no bloquea
+      - porta non si blocca
+      - deur vergrendelt niet
+    keywords:
+      - central locking
+      - door actuator
+      - lock motor
+      - închidere centralizată
+    possible_causes:
+      - failed door lock actuator
+      - seized mechanism
+      - wiring fault
+      - connector fault
+      - UCH output fault
+    diagnostic_steps:
+      - Test actuator command.
+      - Check actuator supply and ground.
+      - Inspect door wiring harness.
+      - Check mechanical lock operation.
+      - Verify UCH output.
+    related_dtcs: []
+    difficulty: intermediate
+
+  - id: dacia_electronic_power_window_fault
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - logan_mcv
+        - sandero
+        - sandero_stepway
+        - duster
+        - lodgy
+        - dokker
+      generations: all
+      engines: all
+    category: diagnostics
+    system: body
+    title:
+      en: Electric Window Fault
+      ro: Defecțiune geam electric
+      de: Fehler des elektrischen Fensterhebers
+      fr: Défaut de lève-vitre électrique
+      es: Fallo del elevalunas eléctrico
+      it: Guasto del finestrino elettrico
+      nl: Storing elektrische ruitbediening
+    symptoms:
+      - power window does not operate
+      - window moves slowly
+      - window reverses unexpectedly
+      - intermittent window operation
+      - geamul electric nu funcționează
+      - geamul se mișcă lent
+      - geamul revine singur
+      - Fensterheber funktioniert nicht
+      - lève-vitre inopérant
+      - elevalunas no funciona
+      - alzacristallo non funziona
+      - elektrische ruit werkt niet
+    keywords:
+      - power window
+      - electric window
+      - window regulator
+      - geam electric
+    possible_causes:
+      - failed window motor
+      - faulty switch
+      - wiring fault
+      - mechanical regulator resistance
+      - UCH control fault
+    diagnostic_steps:
+      - Check switch input.
+      - Check motor power supply.
+      - Inspect wiring through door hinge area.
+      - Check regulator mechanical resistance.
+      - Perform initialization where required.
+    related_dtcs: []
+    difficulty: intermediate
+
+  - id: dacia_electronic_exterior_lighting_control_fault
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - logan_mcv
+        - sandero
+        - sandero_stepway
+        - duster
+        - lodgy
+        - dokker
+      generations: all
+      engines: all
+    category: diagnostics
+    system: body
+    title:
+      en: Exterior Lighting Control Fault
+      ro: Defecțiune comandă iluminare exterioară
+      de: Fehler der Außenbeleuchtungssteuerung
+      fr: Défaut de commande de l'éclairage extérieur
+      es: Fallo del control de iluminación exterior
+      it: Guasto del comando illuminazione esterna
+      nl: Storing buitenverlichtingsregeling
+    symptoms:
+      - headlights not working
+      - tail lights not working
+      - intermittent lights
+      - multiple lamps affected
+      - farurile nu funcționează
+      - luminile spate nu funcționează
+      - lumini intermitente
+      - Scheinwerfer funktionieren nicht
+      - phares inopérants
+      - faros no funcionan
+      - fari non funzionano
+      - koplampen werken niet
+    keywords:
+      - exterior lights
+      - lighting control
+      - headlight control
+      - iluminare exterioară
+    possible_causes:
+      - bulb failure
+      - fuse fault
+      - UCH output fault
+      - wiring fault
+      - lighting switch fault
+    diagnostic_steps:
+      - Check affected lamp supply.
+      - Check fuses.
+      - Test lighting switch input.
+      - Inspect wiring and connectors.
+      - Check UCH output where applicable.
+    related_dtcs: []
+    difficulty: intermediate
+
+  - id: dacia_electronic_wiper_control_fault
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - logan_mcv
+        - sandero
+        - sandero_stepway
+        - duster
+        - lodgy
+        - dokker
+      generations: all
+      engines: all
+    category: diagnostics
+    system: body
+    title:
+      en: Electronic Wiper Control Fault
+      ro: Defecțiune comandă electronică ștergătoare
+      de: Fehler der elektronischen Scheibenwischersteuerung
+      fr: Défaut de commande électronique des essuie-glaces
+      es: Fallo del control electrónico del limpiaparabrisas
+      it: Guasto del comando elettronico dei tergicristalli
+      nl: Storing elektronische ruitenwisserregeling
+    symptoms:
+      - wipers do not operate
+      - intermittent wiping unavailable
+      - wipers operate at wrong speed
+      - wipers do not park
+      - ștergătoarele nu funcționează
+      - temporizarea nu funcționează
+      - viteza este incorectă
+      - Scheibenwischer funktionieren nicht
+      - essuie-glaces inopérants
+      - limpiaparabrisas no funciona
+      - tergicristalli non funzionano
+      - ruitenwissers werken niet
+    keywords:
+      - wiper control
+      - wiper module
+      - windshield wiper
+      - ștergătoare
+    possible_causes:
+      - wiper switch fault
+      - wiper motor fault
+      - UCH output fault
+      - wiring fault
+      - park switch fault
+    diagnostic_steps:
+      - Check wiper switch inputs.
+      - Test motor power supply.
+      - Check park signal.
+      - Inspect wiring and connectors.
+      - Verify UCH commands where applicable.
+    related_dtcs: []
+    difficulty: intermediate
+
+  - id: dacia_electronic_abs_wheel_speed_sensor_fault
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - logan_mcv
+        - sandero
+        - sandero_stepway
+        - duster
+        - lodgy
+        - dokker
+      generations: all
+      engines: all
+    category: diagnostics
+    system: abs
+    title:
+      en: ABS Wheel Speed Sensor Fault
+      ro: Defecțiune senzor viteză roată ABS
+      de: Fehler des ABS-Raddrehzahlsensors
+      fr: Défaut du capteur de vitesse de roue ABS
+      es: Fallo del sensor de velocidad de rueda ABS
+      it: Guasto del sensore velocità ruota ABS
+      nl: Storing ABS-wielsnelheidssensor
+    symptoms:
+      - ABS warning light
+      - traction control unavailable
+      - inconsistent wheel speed
+      - ABS activates incorrectly
+      - martor ABS
+      - control tracțiune indisponibil
+      - viteză roată incorectă
+      - ABS-Warnleuchte
+      - voyant ABS
+      - testigo ABS
+      - spia ABS
+      - ABS-waarschuwingslamp
+    keywords:
+      - wheel speed sensor
+      - ABS sensor
+      - wheel sensor
+      - senzor ABS
+    possible_causes:
+      - failed wheel speed sensor
+      - damaged sensor wiring
+      - damaged reluctor ring
+      - excessive sensor air gap
+      - wheel bearing play
+    diagnostic_steps:
+      - Compare all wheel speed signals.
+      - Inspect sensor and wiring.
+      - Check reluctor ring condition.
+      - Check wheel bearing play.
+      - Monitor sensor signal during driving.
+    related_dtcs: []
+    difficulty: intermediate
+
+  - id: dacia_electronic_abs_pump_motor_fault
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - logan_mcv
+        - sandero
+        - sandero_stepway
+        - duster
+        - lodgy
+        - dokker
+      generations: all
+      engines: all
+    category: diagnostics
+    system: abs
+    title:
+      en: ABS Hydraulic Pump Motor Fault
+      ro: Defecțiune motor pompă hidraulică ABS
+      de: Fehler des ABS-Hydraulikpumpenmotors
+      fr: Défaut du moteur de pompe hydraulique ABS
+      es: Fallo del motor de la bomba hidráulica ABS
+      it: Guasto del motore della pompa idraulica ABS
+      nl: Storing ABS-hydrauliekpomp
+    symptoms:
+      - ABS warning
+      - ABS unavailable
+      - brake system warning
+      - pump does not activate
+      - martor ABS
+      - ABS indisponibil
+      - avertizare sistem frânare
+      - ABS-Warnung
+      - ABS indisponible
+      - ABS no disponible
+      - ABS non disponibile
+      - ABS niet beschikbaar
+    keywords:
+      - ABS pump
+      - ABS motor
+      - hydraulic unit
+      - pompă ABS
+    possible_causes:
+      - failed pump motor
+      - seized pump
+      - power supply fault
+      - relay fault
+      - ABS module internal fault
+    diagnostic_steps:
+      - Command the ABS pump where supported.
+      - Check pump power supply.
+      - Check ground circuit.
+      - Inspect ABS hydraulic unit connector.
+      - Verify ABS module internal faults.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: dacia_electronic_abs_pressure_sensor_fault
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - logan_mcv
+        - sandero
+        - sandero_stepway
+        - duster
+        - lodgy
+        - dokker
+      generations: all
+      engines: all
+    category: diagnostics
+    system: abs
+    title:
+      en: ABS Brake Pressure Sensor Fault
+      ro: Defecțiune senzor presiune frână ABS
+      de: Fehler des ABS-Bremsdrucksensors
+      fr: Défaut du capteur de pression de freinage ABS
+      es: Fallo del sensor de presión de freno ABS
+      it: Guasto del sensore pressione freno ABS
+      nl: Storing ABS-remdruksensor
+    symptoms:
+      - ABS warning
+      - ESP unavailable
+      - incorrect brake pressure data
+      - braking assistance fault
+      - martor ABS
+      - ESP indisponibil
+      - date incorecte presiune frână
+      - ABS-Warnung
+      - ESP indisponible
+      - ESP no disponible
+      - ESP non disponibile
+      - ESP niet beschikbaar
+    keywords:
+      - brake pressure sensor
+      - ABS pressure
+      - brake pressure
+      - senzor presiune frână
+    possible_causes:
+      - failed pressure sensor
+      - hydraulic unit fault
+      - wiring fault
+      - connector fault
+      - sensor calibration issue
+    diagnostic_steps:
+      - Read brake pressure sensor data.
+      - Compare pressure reading with pedal condition.
+      - Inspect wiring and connector.
+      - Check ABS hydraulic unit.
+      - Perform calibration where required.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: dacia_electronic_steering_angle_sensor_fault
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - logan_mcv
+        - sandero
+        - sandero_stepway
+        - duster
+        - lodgy
+        - dokker
+      generations: all
+      engines: all
+    category: diagnostics
+    system: esp
+    title:
+      en: Steering Angle Sensor Fault
+      ro: Defecțiune senzor unghi volan
+      de: Fehler des Lenkwinkelsensors
+      fr: Défaut du capteur d'angle de volant
+      es: Fallo del sensor de ángulo de dirección
+      it: Guasto del sensore angolo sterzo
+      nl: Storing stuurhoeksensor
+    symptoms:
+      - ESP warning
+      - traction control unavailable
+      - steering angle implausible
+      - warning after alignment
+      - martor ESP
+      - control tracțiune indisponibil
+      - unghi volan neverosimil
+      - ESP-Warnung
+      - angle de volant incohérent
+      - ángulo de dirección incorrecto
+      - angolo sterzo errato
+      - onjuiste stuurhoek
+    keywords:
+      - steering angle
+      - SAS
+      - steering sensor
+      - senzor unghi volan
+    possible_causes:
+      - failed steering angle sensor
+      - incorrect calibration
+      - steering wheel misalignment
+      - wiring fault
+      - communication fault
+    diagnostic_steps:
+      - Check steering angle with wheels straight.
+      - Compare steering angle with mechanical alignment.
+      - Perform sensor calibration.
+      - Inspect wiring and connector.
+      - Check ESP module communication.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: dacia_electronic_yaw_rate_sensor_fault
+    vehicle:
+      manufacturer: dacia
+      models:
+        - duster
+        - logan
+        - logan_mcv
+        - sandero
+        - sandero_stepway
+        - lodgy
+        - dokker
+      generations: all
+      engines: all
+    category: diagnostics
+    system: esp
+    title:
+      en: Yaw Rate and Lateral Acceleration Sensor Fault
+      ro: Defecțiune senzor rotație în jurul axei verticale și accelerație laterală
+      de: Fehler des Gierraten- und Querbeschleunigungssensors
+      fr: Défaut du capteur de lacet et d'accélération latérale
+      es: Fallo del sensor de guiñada y aceleración lateral
+      it: Guasto del sensore di imbardata e accelerazione laterale
+      nl: Storing yaw- en dwarsversnellingssensor
+    symptoms:
+      - ESP warning
+      - traction control unavailable
+      - stability control disabled
+      - implausible vehicle dynamics data
+      - martor ESP
+      - control stabilitate indisponibil
+      - date dinamice neverosimile
+      - ESP-Warnung
+      - contrôle de stabilité indisponible
+      - control de estabilidad no disponible
+      - controllo stabilità non disponibile
+      - stabiliteitscontrole niet beschikbaar
+    keywords:
+      - yaw sensor
+      - lateral acceleration
+      - ESP sensor
+      - senzor girație
+    possible_causes:
+      - failed yaw sensor
+      - sensor calibration fault
+      - mounting position incorrect
+      - wiring fault
+      - communication fault
+    diagnostic_steps:
+      - Check sensor values with vehicle stationary.
+      - Verify sensor mounting position.
+      - Perform calibration where required.
+      - Inspect wiring and connector.
+      - Check ESP communication.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: dacia_electronic_srs_airbag_module_fault
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - logan_mcv
+        - sandero
+        - sandero_stepway
+        - duster
+        - lodgy
+        - dokker
+      generations: all
+      engines: all
+    category: diagnostics
+    system: srs
+    title:
+      en: SRS Airbag Module Fault
+      ro: Defecțiune modul airbag SRS
+      de: Fehler des SRS-Airbagsteuergeräts
+      fr: Défaut du calculateur d'airbag SRS
+      es: Fallo del módulo de airbag SRS
+      it: Guasto del modulo airbag SRS
+      nl: Storing SRS-airbagmodule
+    symptoms:
+      - airbag warning light
+      - SRS unavailable
+      - crash data fault
+      - no communication with airbag module
+      - martor airbag
+      - SRS indisponibil
+      - lipsă comunicare modul airbag
+      - Airbag-Warnleuchte
+      - voyant airbag
+      - testigo airbag
+      - spia airbag
+      - airbagwaarschuwingslamp
+    keywords:
+      - SRS
+      - airbag module
+      - airbag ECU
+      - modul airbag
+    possible_causes:
+      - internal airbag module fault
+      - power supply fault
+      - ground fault
+      - communication fault
+      - crash data stored
+    diagnostic_steps:
+      - Read SRS fault memory.
+      - Check module power and ground.
+      - Verify communication.
+      - Inspect connectors.
+      - Follow manufacturer procedures for crash data and module replacement.
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: dacia_electronic_srs_seatbelt_pretensioner_circuit
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - logan_mcv
+        - sandero
+        - sandero_stepway
+        - duster
+        - lodgy
+        - dokker
+      generations: all
+      engines: all
+    category: diagnostics
+    system: srs
+    title:
+      en: Seat Belt Pretensioner Circuit Fault
+      ro: Defecțiune circuit pretensionator centură
+      de: Fehler im Gurtstrafferkreis
+      fr: Défaut du circuit de prétensionneur de ceinture
+      es: Fallo del circuito del pretensor del cinturón
+      it: Guasto del circuito del pretensionatore cintura
+      nl: Storing gordelspanner circuit
+    symptoms:
+      - airbag warning light
+      - SRS fault
+      - pretensioner fault
+      - airbag system disabled
+      - martor airbag
+      - eroare SRS
+      - defecțiune pretensionator
+      - Airbag-Warnung
+      - défaut SRS
+      - fallo SRS
+      - guasto SRS
+      - SRS-storing
+    keywords:
+      - seat belt pretensioner
+      - pretensioner circuit
+      - SRS belt
+      - pretensionator centură
+    possible_causes:
+      - damaged pretensioner wiring
+      - connector resistance
+      - failed pretensioner
+      - seat wiring damage
+      - SRS module fault
+    diagnostic_steps:
+      - Read SRS fault memory.
+      - Inspect pretensioner connectors without disturbing safety circuits.
+      - Check wiring according to manufacturer procedure.
+      - Verify SRS module status.
+      - Follow required safety procedures for restraint system diagnosis.
+    related_dtcs: []
+    difficulty: advanced
+
   - id: dacia_pre_electronic_piston_ring_wear
     vehicle:
       manufacturer: dacia
