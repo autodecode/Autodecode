@@ -6,6 +6,2572 @@ manufacturer:
 
 technical_data:
 
+- id: dacia_abs_wheel_speed_signal_intermittent
+  vehicle:
+    manufacturer: dacia
+    models:
+      - supernova
+      - solenza
+      - logan
+      - logan_mcv
+      - sandero
+      - sandero_stepway
+      - duster
+      - lodgy
+      - dokker
+    generations:
+      - supernova
+      - solenza
+      - logan_i
+      - logan_ii
+      - logan_mcv_i
+      - logan_mcv_ii
+      - sandero_i
+      - sandero_ii
+      - sandero_stepway_i
+      - sandero_stepway_ii
+      - duster_i
+      - duster_ii
+      - lodgy_i
+      - dokker_i
+    engines: all
+  category: diagnostics
+  system: ABS
+  title:
+    en: ABS wheel speed signal intermittent
+    ro: Semnal intermitent senzor viteză roată ABS
+    de: Unterbrochenes Raddrehzahlsignal des ABS
+    fr: Signal intermittent du capteur de roue ABS
+    es: Señal intermitente del sensor de rueda ABS
+    it: Segnale intermittente sensore ruota ABS
+    nl: Intermitterend ABS-wielsnelheidssignaal
+  symptoms:
+    - ABS warning light
+    - ABS activates unexpectedly
+    - traction control warning
+    - intermittent ABS fault
+  keywords:
+    - wheel speed sensor
+    - abs sensor
+    - intermittent signal
+    - wheel speed
+    - abs fault
+  possible_causes:
+    - Damaged wheel speed sensor
+    - Damaged sensor wiring
+    - Corroded electrical connector
+    - Excessive wheel bearing play
+    - Damaged reluctor ring
+  diagnostic_steps:
+    - Read ABS fault codes and identify the affected wheel
+    - Monitor wheel speed signals while driving slowly
+    - Inspect sensor wiring and connector
+    - Check sensor mounting and air gap
+    - Inspect the wheel bearing and reluctor ring
+  related_dtcs: []
+  difficulty: medium
+
+- id: dacia_abs_wheel_speed_sensor_implausible
+  vehicle:
+    manufacturer: dacia
+    models:
+      - supernova
+      - solenza
+      - logan
+      - logan_mcv
+      - sandero
+      - sandero_stepway
+      - duster
+      - lodgy
+      - dokker
+    generations:
+      - supernova
+      - solenza
+      - logan_i
+      - logan_ii
+      - logan_mcv_i
+      - logan_mcv_ii
+      - sandero_i
+      - sandero_ii
+      - sandero_stepway_i
+      - sandero_stepway_ii
+      - duster_i
+      - duster_ii
+      - lodgy_i
+      - dokker_i
+    engines: all
+  category: diagnostics
+  system: ABS
+  title:
+    en: ABS wheel speed sensor implausible signal
+    ro: Semnal neverosimil senzor viteză roată ABS
+    de: Unplausibles Signal des ABS-Raddrehzahlsensors
+    fr: Signal incohérent du capteur de roue ABS
+    es: Señal no plausible del sensor de rueda ABS
+    it: Segnale non plausibile del sensore ruota ABS
+    nl: Ongeloofwaardig signaal ABS-wielsnelheidssensor
+  symptoms:
+    - ABS warning light
+    - ESP warning light
+    - traction control unavailable
+    - speedometer fluctuation
+  keywords:
+    - implausible wheel speed
+    - incorrect wheel speed
+    - abs sensor
+    - esp
+    - traction control
+  possible_causes:
+    - Incorrect sensor signal
+    - Damaged reluctor ring
+    - Incorrect tyre size
+    - Wheel bearing damage
+    - Wiring interference
+  diagnostic_steps:
+    - Compare all four wheel speed values
+    - Check tyre dimensions and inflation
+    - Inspect the affected sensor
+    - Inspect the reluctor ring
+    - Check wheel bearing condition
+  related_dtcs: []
+  difficulty: medium
+
+- id: dacia_abs_hydraulic_pressure_control_fault
+  vehicle:
+    manufacturer: dacia
+    models:
+      - logan
+      - logan_mcv
+      - sandero
+      - sandero_stepway
+      - duster
+      - lodgy
+      - dokker
+    generations:
+      - logan_i
+      - logan_ii
+      - logan_mcv_i
+      - logan_mcv_ii
+      - sandero_i
+      - sandero_ii
+      - sandero_stepway_i
+      - sandero_stepway_ii
+      - duster_i
+      - duster_ii
+      - lodgy_i
+      - dokker_i
+    engines: all
+  category: diagnostics
+  system: ABS
+  title:
+    en: ABS hydraulic pressure control fault
+    ro: Defecțiune control presiune hidraulică ABS
+    de: Fehler der hydraulischen ABS-Druckregelung
+    fr: Défaut de régulation hydraulique de pression ABS
+    es: Fallo de control de presión hidráulica ABS
+    it: Guasto controllo pressione idraulica ABS
+    nl: Storing hydraulische ABS-drukregeling
+  symptoms:
+    - ABS warning light
+    - ESP warning light
+    - ABS unavailable
+    - uneven braking intervention
+  keywords:
+    - abs pressure
+    - hydraulic unit
+    - pressure control
+    - abs valve
+  possible_causes:
+    - ABS hydraulic unit fault
+    - Solenoid valve malfunction
+    - Hydraulic circuit contamination
+    - Electrical supply fault
+    - Internal ABS module fault
+  diagnostic_steps:
+    - Read ABS module fault memory
+    - Check ABS module power supply
+    - Perform actuator tests
+    - Check hydraulic fluid condition
+    - Check hydraulic unit operation
+  related_dtcs: []
+  difficulty: hard
+
+- id: dacia_esp_yaw_rate_sensor_implausible
+  vehicle:
+    manufacturer: dacia
+    models:
+      - duster
+      - sandero
+      - sandero_stepway
+      - logan
+    generations:
+      - duster_i
+      - duster_ii
+      - sandero_ii
+      - sandero_stepway_ii
+      - logan_ii
+    engines: all
+  category: diagnostics
+  system: ESP
+  title:
+    en: ESP yaw rate sensor implausible signal
+    ro: Semnal neverosimil senzor rata de girație ESP
+    de: Unplausibles Signal des ESP-Gierratensensors
+    fr: Signal incohérent du capteur de lacet ESP
+    es: Señal no plausible del sensor de guiñada ESP
+    it: Segnale non plausibile del sensore imbardata ESP
+    nl: Ongeloofwaardig signaal ESP-yawsensor
+  symptoms:
+    - ESP warning light
+    - traction control unavailable
+    - ESP intervention incorrectly
+    - vehicle stability warning
+  keywords:
+    - yaw sensor
+    - yaw rate
+    - esp sensor
+    - stability control
+  possible_causes:
+    - Yaw rate sensor fault
+    - Sensor calibration lost
+    - Incorrect sensor mounting
+    - Wiring fault
+    - ESP module fault
+  diagnostic_steps:
+    - Read ESP fault memory
+    - Check live yaw rate with vehicle stationary
+    - Verify sensor mounting orientation
+    - Perform zero-point calibration
+    - Road test and compare live data
+  related_dtcs: []
+  difficulty: hard
+
+- id: dacia_esp_steering_angle_calibration_lost
+  vehicle:
+    manufacturer: dacia
+    models:
+      - logan
+      - sandero
+      - sandero_stepway
+      - duster
+    generations:
+      - logan_ii
+      - sandero_ii
+      - sandero_stepway_ii
+      - duster_i
+      - duster_ii
+    engines: all
+  category: diagnostics
+  system: ESP
+  title:
+    en: ESP steering angle calibration lost
+    ro: Calibrare pierdută senzor unghi volan ESP
+    de: Kalibrierung des ESP-Lenkwinkelsensors verloren
+    fr: Calibration perdue du capteur d'angle de volant ESP
+    es: Calibración perdida del sensor de ángulo de dirección ESP
+    it: Calibrazione persa del sensore angolo sterzo ESP
+    nl: Kalibratie stuurhoeksensor ESP verloren
+  symptoms:
+    - ESP warning light
+    - steering system warning
+    - traction control unavailable
+    - warning after wheel alignment
+  keywords:
+    - steering angle
+    - steering angle sensor
+    - esp calibration
+    - steering calibration
+  possible_causes:
+    - Battery disconnection
+    - Steering angle sensor replacement
+    - Wheel alignment performed without calibration
+    - Steering wheel installed off-centre
+    - Calibration data lost
+  diagnostic_steps:
+    - Centre the steering wheel
+    - Check front wheel alignment
+    - Read steering angle live data
+    - Perform steering angle calibration
+    - Clear faults and perform road test
+  related_dtcs: []
+  difficulty: medium
+
+- id: dacia_esp_lateral_acceleration_sensor_fault
+  vehicle:
+    manufacturer: dacia
+    models:
+      - duster
+      - sandero
+      - sandero_stepway
+      - logan
+    generations:
+      - duster_i
+      - duster_ii
+      - sandero_ii
+      - sandero_stepway_ii
+      - logan_ii
+    engines: all
+  category: diagnostics
+  system: ESP
+  title:
+    en: ESP lateral acceleration sensor fault
+    ro: Defecțiune senzor accelerație laterală ESP
+    de: Fehler des ESP-Querbeschleunigungssensors
+    fr: Défaut du capteur d'accélération latérale ESP
+    es: Fallo del sensor de aceleración lateral ESP
+    it: Guasto sensore accelerazione laterale ESP
+    nl: Storing ESP-laterale-versnellingssensor
+  symptoms:
+    - ESP warning light
+    - stability control unavailable
+    - incorrect ESP intervention
+  keywords:
+    - lateral acceleration
+    - g sensor
+    - esp sensor
+    - stability sensor
+  possible_causes:
+    - Sensor failure
+    - Sensor calibration error
+    - Wiring fault
+    - Water ingress
+    - ESP module fault
+  diagnostic_steps:
+    - Read ESP fault codes
+    - Check sensor live data
+    - Verify zero value with vehicle stationary
+    - Inspect connector and wiring
+    - Perform calibration if supported
+  related_dtcs: []
+  difficulty: hard
+
+- id: dacia_srs_airbag_warning_without_crash
+  vehicle:
+    manufacturer: dacia
+    models:
+      - supernova
+      - solenza
+      - logan
+      - logan_mcv
+      - sandero
+      - sandero_stepway
+      - duster
+      - lodgy
+      - dokker
+    generations:
+      - supernova
+      - solenza
+      - logan_i
+      - logan_ii
+      - logan_mcv_i
+      - logan_mcv_ii
+      - sandero_i
+      - sandero_ii
+      - sandero_stepway_i
+      - sandero_stepway_ii
+      - duster_i
+      - duster_ii
+      - lodgy_i
+      - dokker_i
+    engines: all
+  category: diagnostics
+  system: SRS
+  title:
+    en: SRS airbag warning without crash event
+    ro: Martor airbag aprins fără accident
+    de: SRS-Airbag-Warnleuchte ohne Unfallereignis
+    fr: Voyant airbag SRS allumé sans accident
+    es: Testigo de airbag SRS encendido sin accidente
+    it: Spia airbag SRS accesa senza incidente
+    nl: SRS-airbagwaarschuwing zonder ongeval
+  symptoms:
+    - airbag warning light
+    - SRS warning
+    - airbag system unavailable
+  keywords:
+    - airbag light
+    - srs
+    - airbag fault
+    - restraint system
+  possible_causes:
+    - Stored intermittent fault
+    - Connector resistance
+    - Low battery voltage
+    - Wiring fault
+    - SRS module fault
+  diagnostic_steps:
+    - Read SRS fault memory
+    - Identify the affected circuit
+    - Inspect connectors and wiring
+    - Check supply voltage
+    - Clear faults only after correcting the cause
+  related_dtcs: []
+  difficulty: medium
+
+- id: dacia_srs_driver_airbag_circuit_resistance_high
+  vehicle:
+    manufacturer: dacia
+    models:
+      - logan
+      - logan_mcv
+      - sandero
+      - sandero_stepway
+      - duster
+      - lodgy
+      - dokker
+    generations:
+      - logan_i
+      - logan_ii
+      - logan_mcv_i
+      - logan_mcv_ii
+      - sandero_i
+      - sandero_ii
+      - sandero_stepway_i
+      - sandero_stepway_ii
+      - duster_i
+      - duster_ii
+      - lodgy_i
+      - dokker_i
+    engines: all
+  category: diagnostics
+  system: SRS
+  title:
+    en: Driver airbag circuit resistance too high
+    ro: Rezistență prea mare circuit airbag șofer
+    de: Zu hoher Widerstand im Fahrerairbagkreis
+    fr: Résistance trop élevée du circuit airbag conducteur
+    es: Resistencia demasiado alta del circuito del airbag del conductor
+    it: Resistenza troppo alta circuito airbag conducente
+    nl: Te hoge weerstand in bestuurdersairbagcircuit
+  symptoms:
+    - airbag warning light
+    - SRS fault stored
+  keywords:
+    - driver airbag
+    - airbag resistance
+    - steering wheel connector
+    - clock spring
+  possible_causes:
+    - Poor steering wheel connector contact
+    - Damaged clock spring
+    - Wiring resistance
+    - Airbag module connector fault
+  diagnostic_steps:
+    - Disable the SRS system according to service procedure
+    - Inspect steering wheel airbag connector
+    - Inspect clock spring connections
+    - Check circuit continuity using the approved procedure
+    - Repair the circuit and clear the fault
+  related_dtcs: []
+  difficulty: hard
+
+- id: dacia_srs_passenger_airbag_circuit_fault
+  vehicle:
+    manufacturer: dacia
+    models:
+      - logan
+      - logan_mcv
+      - sandero
+      - sandero_stepway
+      - duster
+      - lodgy
+      - dokker
+    generations:
+      - logan_i
+      - logan_ii
+      - logan_mcv_i
+      - logan_mcv_ii
+      - sandero_i
+      - sandero_ii
+      - sandero_stepway_i
+      - sandero_stepway_ii
+      - duster_i
+      - duster_ii
+      - lodgy_i
+      - dokker_i
+    engines: all
+  category: diagnostics
+  system: SRS
+  title:
+    en: Passenger airbag circuit fault
+    ro: Defecțiune circuit airbag pasager
+    de: Fehler im Beifahrerairbagkreis
+    fr: Défaut du circuit airbag passager
+    es: Fallo del circuito del airbag del pasajero
+    it: Guasto circuito airbag passeggero
+    nl: Storing passagiersairbagcircuit
+  symptoms:
+    - airbag warning light
+    - passenger airbag fault
+  keywords:
+    - passenger airbag
+    - airbag circuit
+    - srs wiring
+  possible_causes:
+    - Loose connector
+    - Damaged wiring
+    - Airbag module fault
+    - High circuit resistance
+  diagnostic_steps:
+    - Read SRS fault memory
+    - Identify the passenger airbag circuit
+    - Inspect connectors
+    - Inspect wiring
+    - Repair the circuit and verify operation
+  related_dtcs: []
+  difficulty: hard
+
+- id: dacia_srs_seat_belt_buckle_switch_fault
+  vehicle:
+    manufacturer: dacia
+    models:
+      - logan
+      - logan_mcv
+      - sandero
+      - sandero_stepway
+      - duster
+      - lodgy
+      - dokker
+    generations:
+      - logan_i
+      - logan_ii
+      - logan_mcv_i
+      - logan_mcv_ii
+      - sandero_i
+      - sandero_ii
+      - sandero_stepway_i
+      - sandero_stepway_ii
+      - duster_i
+      - duster_ii
+      - lodgy_i
+      - dokker_i
+    engines: all
+  category: diagnostics
+  system: SRS
+  title:
+    en: Seat belt buckle switch fault
+    ro: Defecțiune contact cataramă centură
+    de: Fehler des Sicherheitsgurt-Schalters
+    fr: Défaut du contacteur de boucle de ceinture
+    es: Fallo del interruptor de la hebilla del cinturón
+    it: Guasto interruttore fibbia cintura
+    nl: Storing veiligheidsgordelslot-schakelaar
+  symptoms:
+    - seat belt warning remains active
+    - SRS warning
+    - incorrect seat belt status
+  keywords:
+    - seat belt switch
+    - buckle switch
+    - belt warning
+    - srs
+  possible_causes:
+    - Defective buckle switch
+    - Damaged wiring
+    - Connector fault
+    - Seat wiring damage
+  diagnostic_steps:
+    - Monitor buckle switch status with diagnostic equipment
+    - Inspect the buckle connector
+    - Inspect wiring under the seat
+    - Check switch operation
+    - Replace the defective component if required
+  related_dtcs: []
+  difficulty: medium
+
+- id: dacia_uch_central_locking_all_doors_inoperative
+  vehicle:
+    manufacturer: dacia
+    models:
+      - supernova
+      - solenza
+      - logan
+      - logan_mcv
+      - logan_van
+      - logan_pickup
+      - sandero
+      - sandero_stepway
+      - duster
+      - lodgy
+      - dokker
+    generations:
+      - supernova
+      - solenza
+      - logan_i
+      - logan_ii
+      - logan_mcv_i
+      - logan_mcv_ii
+      - logan_van_i
+      - logan_pickup_i
+      - sandero_i
+      - sandero_ii
+      - sandero_stepway_i
+      - sandero_stepway_ii
+      - duster_i
+      - duster_ii
+      - lodgy_i
+      - dokker_i
+    engines: all
+  category: diagnostics
+  system: UCH
+  title:
+    en: Central locking inoperative on all doors
+    ro: Închiderea centralizată nu funcționează la nicio ușă
+    de: Zentralverriegelung an allen Türen ohne Funktion
+    fr: Verrouillage centralisé inopérant sur toutes les portes
+    es: Cierre centralizado inoperativo en todas las puertas
+    it: Chiusura centralizzata non funzionante su tutte le porte
+    nl: Centrale vergrendeling werkt op geen enkele deur
+  symptoms:
+    - central locking does not work
+    - remote locking unavailable
+    - doors remain unlocked
+  keywords:
+    - central locking
+    - door locks
+    - uch
+    - remote locking
+  possible_causes:
+    - UCH power supply fault
+    - Blown fuse
+    - UCH communication fault
+    - Remote control synchronization problem
+    - UCH internal fault
+  diagnostic_steps:
+    - Check central locking fuses
+    - Check UCH power and ground
+    - Check remote control status
+    - Read UCH fault memory
+    - Test locking commands using diagnostic equipment
+  related_dtcs: []
+  difficulty: medium
+
+- id: dacia_uch_single_door_lock_actuator_fault
+  vehicle:
+    manufacturer: dacia
+    models:
+      - supernova
+      - solenza
+      - logan
+      - logan_mcv
+      - logan_van
+      - logan_pickup
+      - sandero
+      - sandero_stepway
+      - duster
+      - lodgy
+      - dokker
+    generations:
+      - supernova
+      - solenza
+      - logan_i
+      - logan_ii
+      - logan_mcv_i
+      - logan_mcv_ii
+      - logan_van_i
+      - logan_pickup_i
+      - sandero_i
+      - sandero_ii
+      - sandero_stepway_i
+      - sandero_stepway_ii
+      - duster_i
+      - duster_ii
+      - lodgy_i
+      - dokker_i
+    engines: all
+  category: diagnostics
+  system: UCH
+  title:
+    en: Single door locking actuator fault
+    ro: Defecțiune actuator închidere la o singură ușă
+    de: Fehler des Türverriegelungsaktuators an einer Tür
+    fr: Défaut de l'actionneur de verrouillage d'une porte
+    es: Fallo del actuador de cierre de una puerta
+    it: Guasto attuatore chiusura di una porta
+    nl: Storing deurslotactuator van één deur
+  symptoms:
+    - one door does not lock
+    - one door does not unlock
+    - central locking works on other doors
+  keywords:
+    - door lock actuator
+    - central locking
+    - door lock motor
+  possible_causes:
+    - Defective door lock actuator
+    - Broken door wiring
+    - Poor connector contact
+    - Mechanical lock seizure
+  diagnostic_steps:
+    - Operate the affected lock manually
+    - Activate the lock through diagnostic equipment
+    - Check voltage at the actuator
+    - Inspect door wiring
+    - Replace or repair the lock assembly if required
+  related_dtcs: []
+  difficulty: medium
+
+- id: dacia_uch_remote_key_button_not_detected
+  vehicle:
+    manufacturer: dacia
+    models:
+      - supernova
+      - solenza
+      - logan
+      - logan_mcv
+      - sandero
+      - sandero_stepway
+      - duster
+      - lodgy
+      - dokker
+    generations:
+      - supernova
+      - solenza
+      - logan_i
+      - logan_ii
+      - logan_mcv_i
+      - logan_mcv_ii
+      - sandero_i
+      - sandero_ii
+      - sandero_stepway_i
+      - sandero_stepway_ii
+      - duster_i
+      - duster_ii
+      - lodgy_i
+      - dokker_i
+    engines: all
+  category: diagnostics
+  system: UCH
+  title:
+    en: Remote key button not detected
+    ro: Buton telecomandă cheie nedetectat
+    de: Taster der Funkschlüssel-Fernbedienung nicht erkannt
+    fr: Bouton de télécommande de clé non détecté
+    es: Botón del mando a distancia no detectado
+    it: Pulsante telecomando chiave non rilevato
+    nl: Knop van afstandsbediening niet gedetecteerd
+  symptoms:
+    - remote control does not lock
+    - remote control does not unlock
+    - key works mechanically
+  keywords:
+    - remote key
+    - key fob
+    - remote control
+    - uch
+  possible_causes:
+    - Weak key battery
+    - Lost remote synchronization
+    - Damaged remote transmitter
+    - UCH receiver fault
+  diagnostic_steps:
+    - Replace the key battery
+    - Check whether the remote transmits
+    - Perform remote synchronization procedure
+    - Check UCH receiver status
+    - Test another programmed key if available
+  related_dtcs: []
+  difficulty: medium
+
+- id: dacia_uch_interior_lamp_stays_on
+  vehicle:
+    manufacturer: dacia
+    models:
+      - supernova
+      - solenza
+      - logan
+      - logan_mcv
+      - logan_van
+      - logan_pickup
+      - sandero
+      - sandero_stepway
+      - duster
+      - lodgy
+      - dokker
+    generations:
+      - supernova
+      - solenza
+      - logan_i
+      - logan_ii
+      - logan_mcv_i
+      - logan_mcv_ii
+      - logan_van_i
+      - logan_pickup_i
+      - sandero_i
+      - sandero_ii
+      - sandero_stepway_i
+      - sandero_stepway_ii
+      - duster_i
+      - duster_ii
+      - lodgy_i
+      - dokker_i
+    engines: all
+  category: diagnostics
+  system: UCH
+  title:
+    en: Interior lamp remains on after doors are closed
+    ro: Lampa interioară rămâne aprinsă după închiderea ușilor
+    de: Innenraumleuchte bleibt nach dem Schließen der Türen an
+    fr: Éclairage intérieur reste allumé après fermeture des portes
+    es: La luz interior permanece encendida con las puertas cerradas
+    it: Luce interna rimane accesa con le porte chiuse
+    nl: Interieurverlichting blijft branden na sluiten van de deuren
+  symptoms:
+    - interior light remains on
+    - battery discharge
+    - door open warning
+  keywords:
+    - interior light
+    - door switch
+    - door open
+    - uch
+  possible_causes:
+    - Defective door switch
+    - Door latch position sensor fault
+    - Damaged door wiring
+    - UCH input fault
+  diagnostic_steps:
+    - Check door status in diagnostic live data
+    - Identify the door reported as open
+    - Inspect the corresponding latch or switch
+    - Inspect wiring
+    - Verify UCH input status
+  related_dtcs: []
+  difficulty: medium
+
+- id: dacia_uch_electric_window_one_door_inoperative
+  vehicle:
+    manufacturer: dacia
+    models:
+      - logan
+      - logan_mcv
+      - sandero
+      - sandero_stepway
+      - duster
+      - lodgy
+      - dokker
+    generations:
+      - logan_i
+      - logan_ii
+      - logan_mcv_i
+      - logan_mcv_ii
+      - sandero_i
+      - sandero_ii
+      - sandero_stepway_i
+      - sandero_stepway_ii
+      - duster_i
+      - duster_ii
+      - lodgy_i
+      - dokker_i
+    engines: all
+  category: diagnostics
+  system: UCH
+  title:
+    en: One electric window inoperative
+    ro: Un geam electric nu funcționează
+    de: Ein elektrischer Fensterheber ohne Funktion
+    fr: Une vitre électrique est inopérante
+    es: Una ventanilla eléctrica no funciona
+    it: Un alzacristallo elettrico non funziona
+    nl: Eén elektrische ruitbediening werkt niet
+  symptoms:
+    - one window does not move
+    - window switch does not respond
+    - window works intermittently
+  keywords:
+    - electric window
+    - window regulator
+    - window motor
+    - window switch
+  possible_causes:
+    - Window motor fault
+    - Window switch fault
+    - Broken door wiring
+    - Fuse or power supply fault
+    - Mechanical regulator seizure
+  diagnostic_steps:
+    - Check the window fuse
+    - Test the switch input
+    - Check motor power supply
+    - Inspect door wiring
+    - Check mechanical operation of the regulator
+  related_dtcs: []
+  difficulty: medium
+
+- id: dacia_uch_wiper_low_speed_inoperative
+  vehicle:
+    manufacturer: dacia
+    models:
+      - supernova
+      - solenza
+      - logan
+      - logan_mcv
+      - sandero
+      - sandero_stepway
+      - duster
+      - lodgy
+      - dokker
+    generations:
+      - supernova
+      - solenza
+      - logan_i
+      - logan_ii
+      - logan_mcv_i
+      - logan_mcv_ii
+      - sandero_i
+      - sandero_ii
+      - sandero_stepway_i
+      - sandero_stepway_ii
+      - duster_i
+      - duster_ii
+      - lodgy_i
+      - dokker_i
+    engines: all
+  category: diagnostics
+  system: UCH
+  title:
+    en: Windscreen wiper low speed inoperative
+    ro: Treapta lentă a ștergătoarelor nu funcționează
+    de: Langsame Wischergeschwindigkeit ohne Funktion
+    fr: Vitesse lente des essuie-glaces inopérante
+    es: Velocidad lenta del limpiaparabrisas inoperativa
+    it: Velocità lenta tergicristalli non funzionante
+    nl: Lage ruitenwissersnelheid werkt niet
+  symptoms:
+    - low speed wiper does not work
+    - high speed still works
+    - intermittent wiper fault
+  keywords:
+    - wiper low speed
+    - wiper motor
+    - wiper relay
+    - uch
+  possible_causes:
+    - Wiper motor low-speed circuit fault
+    - Relay or UCH output fault
+    - Wiring fault
+    - Poor connector contact
+  diagnostic_steps:
+    - Test the wiper switch input
+    - Check UCH output command
+    - Measure voltage at the wiper motor
+    - Inspect wiring and connector
+    - Test the motor low-speed circuit
+  related_dtcs: []
+  difficulty: medium
+
+- id: dacia_uch_washer_pump_inoperative
+  vehicle:
+    manufacturer: dacia
+    models:
+      - supernova
+      - solenza
+      - logan
+      - logan_mcv
+      - logan_van
+      - logan_pickup
+      - sandero
+      - sandero_stepway
+      - duster
+      - lodgy
+      - dokker
+    generations:
+      - supernova
+      - solenza
+      - logan_i
+      - logan_ii
+      - logan_mcv_i
+      - logan_mcv_ii
+      - logan_van_i
+      - logan_pickup_i
+      - sandero_i
+      - sandero_ii
+      - sandero_stepway_i
+      - sandero_stepway_ii
+      - duster_i
+      - duster_ii
+      - lodgy_i
+      - dokker_i
+    engines: all
+  category: diagnostics
+  system: UCH
+  title:
+    en: Windscreen washer pump inoperative
+    ro: Pompa de spălare parbriz nu funcționează
+    de: Scheibenwaschpumpe ohne Funktion
+    fr: Pompe de lave-glace inopérante
+    es: Bomba del lavaparabrisas inoperativa
+    it: Pompa lavavetri non funzionante
+    nl: Ruitensproeierpomp werkt niet
+  symptoms:
+    - no washer fluid spray
+    - wipers may operate without fluid
+  keywords:
+    - washer pump
+    - windscreen washer
+    - washer motor
+  possible_causes:
+    - Defective washer pump
+    - Blown fuse
+    - Wiring fault
+    - Blocked washer nozzle
+    - UCH output fault
+  diagnostic_steps:
+    - Check washer fluid level
+    - Test the washer switch input
+    - Check pump voltage
+    - Inspect the pump and connector
+    - Check washer hoses and nozzles
+  related_dtcs: []
+  difficulty: easy
+
+- id: dacia_lighting_low_beam_one_side_inoperative
+  vehicle:
+    manufacturer: dacia
+    models:
+      - supernova
+      - solenza
+      - logan
+      - logan_mcv
+      - sandero
+      - sandero_stepway
+      - duster
+      - lodgy
+      - dokker
+    generations:
+      - supernova
+      - solenza
+      - logan_i
+      - logan_ii
+      - logan_mcv_i
+      - logan_mcv_ii
+      - sandero_i
+      - sandero_ii
+      - sandero_stepway_i
+      - sandero_stepway_ii
+      - duster_i
+      - duster_ii
+      - lodgy_i
+      - dokker_i
+    engines: all
+  category: diagnostics
+  system: UCH
+  title:
+    en: Low beam inoperative on one side
+    ro: Faza scurtă nu funcționează pe o singură parte
+    de: Abblendlicht auf einer Seite ohne Funktion
+    fr: Feu de croisement inopérant d'un côté
+    es: Luz de cruce inoperativa en un lado
+    it: Anabbagliante non funzionante su un lato
+    nl: Dimlicht werkt aan één zijde niet
+  symptoms:
+    - one low beam not working
+    - lighting warning
+  keywords:
+    - low beam
+    - headlight
+    - dipped beam
+    - lighting
+  possible_causes:
+    - Failed bulb or LED unit
+    - Fuse fault
+    - Connector corrosion
+    - Wiring fault
+    - UCH output fault
+  diagnostic_steps:
+    - Check the bulb or LED assembly
+    - Check the corresponding fuse
+    - Measure voltage at the headlamp
+    - Inspect connector and wiring
+    - Check UCH output command
+  related_dtcs: []
+  difficulty: easy
+
+- id: dacia_lighting_brake_lights_stuck_on
+  vehicle:
+    manufacturer: dacia
+    models:
+      - supernova
+      - solenza
+      - logan
+      - logan_mcv
+      - logan_van
+      - logan_pickup
+      - sandero
+      - sandero_stepway
+      - duster
+      - lodgy
+      - dokker
+    generations:
+      - supernova
+      - solenza
+      - logan_i
+      - logan_ii
+      - logan_mcv_i
+      - logan_mcv_ii
+      - logan_van_i
+      - logan_pickup_i
+      - sandero_i
+      - sandero_ii
+      - sandero_stepway_i
+      - sandero_stepway_ii
+      - duster_i
+      - duster_ii
+      - lodgy_i
+      - dokker_i
+    engines: all
+  category: diagnostics
+  system: UCH
+  title:
+    en: Brake lights remain on
+    ro: Luminile de frână rămân aprinse
+    de: Bremsleuchten bleiben eingeschaltet
+    fr: Feux stop restent allumés
+    es: Las luces de freno permanecen encendidas
+    it: Le luci stop rimangono accese
+    nl: Remlichten blijven branden
+  symptoms:
+    - brake lights remain on
+    - battery may discharge
+    - cruise control may be unavailable
+  keywords:
+    - brake light
+    - brake switch
+    - stop lamp
+    - brake pedal switch
+  possible_causes:
+    - Brake pedal switch stuck
+    - Incorrect switch adjustment
+    - Wiring short circuit
+    - UCH input fault
+  diagnostic_steps:
+    - Check brake pedal switch position
+    - Monitor brake switch status
+    - Inspect switch wiring
+    - Check UCH input state
+    - Replace or adjust the switch if required
+  related_dtcs: []
+  difficulty: easy
+
+- id: dacia_instrument_cluster_speedometer_inoperative
+  vehicle:
+    manufacturer: dacia
+    models:
+      - supernova
+      - solenza
+      - logan
+      - logan_mcv
+      - sandero
+      - sandero_stepway
+      - duster
+      - lodgy
+      - dokker
+    generations:
+      - supernova
+      - solenza
+      - logan_i
+      - logan_ii
+      - logan_mcv_i
+      - logan_mcv_ii
+      - sandero_i
+      - sandero_ii
+      - sandero_stepway_i
+      - sandero_stepway_ii
+      - duster_i
+      - duster_ii
+      - lodgy_i
+      - dokker_i
+    engines: all
+  category: diagnostics
+  system: Instrument cluster
+  title:
+    en: Speedometer inoperative
+    ro: Vitezometrul nu funcționează
+    de: Tachometer ohne Funktion
+    fr: Compteur de vitesse inopérant
+    es: Velocímetro inoperativo
+    it: Tachimetro non funzionante
+    nl: Snelheidsmeter werkt niet
+  symptoms:
+    - speedometer remains at zero
+    - ABS warning may appear
+    - cruise control unavailable
+  keywords:
+    - speedometer
+    - vehicle speed
+    - instrument cluster
+    - wheel speed
+  possible_causes:
+    - Missing vehicle speed signal
+    - ABS wheel speed fault
+    - CAN communication fault
+    - Instrument cluster fault
+  diagnostic_steps:
+    - Check vehicle speed live data
+    - Compare ABS wheel speed signals
+    - Check communication faults
+    - Inspect cluster power supply
+    - Check CAN communication if applicable
+  related_dtcs: []
+  difficulty: medium
+
+- id: dacia_instrument_cluster_fuel_gauge_inaccurate
+  vehicle:
+    manufacturer: dacia
+    models:
+      - supernova
+      - solenza
+      - logan
+      - logan_mcv
+      - sandero
+      - sandero_stepway
+      - duster
+      - lodgy
+      - dokker
+    generations:
+      - supernova
+      - solenza
+      - logan_i
+      - logan_ii
+      - logan_mcv_i
+      - logan_mcv_ii
+      - sandero_i
+      - sandero_ii
+      - sandero_stepway_i
+      - sandero_stepway_ii
+      - duster_i
+      - duster_ii
+      - lodgy_i
+      - dokker_i
+    engines: all
+  category: diagnostics
+  system: Instrument cluster
+  title:
+    en: Fuel gauge reads incorrectly
+    ro: Indicatorul de combustibil indică incorect
+    de: Kraftstoffanzeige zeigt falsch an
+    fr: Jauge de carburant indique incorrectement
+    es: Indicador de combustible muestra un valor incorrecto
+    it: Indicatore carburante non corretto
+    nl: Brandstofmeter geeft onjuist aan
+  symptoms:
+    - fuel gauge inaccurate
+    - gauge stuck
+    - fuel level changes incorrectly
+  keywords:
+    - fuel gauge
+    - fuel level
+    - tank sender
+    - instrument cluster
+  possible_causes:
+    - Fuel level sender fault
+    - Damaged sender wiring
+    - Poor connector contact
+    - Instrument cluster fault
+  diagnostic_steps:
+    - Compare displayed fuel level with live data
+    - Inspect fuel level sender
+    - Check sender resistance or signal
+    - Inspect wiring
+    - Check cluster operation
+  related_dtcs: []
+  difficulty: medium
+
+- id: dacia_instrument_cluster_engine_temperature_gauge_incorrect
+  vehicle:
+    manufacturer: dacia
+    models:
+      - supernova
+      - solenza
+      - logan
+      - logan_mcv
+      - sandero
+      - sandero_stepway
+      - duster
+      - lodgy
+      - dokker
+    generations:
+      - supernova
+      - solenza
+      - logan_i
+      - logan_ii
+      - logan_mcv_i
+      - logan_mcv_ii
+      - sandero_i
+      - sandero_ii
+      - sandero_stepway_i
+      - sandero_stepway_ii
+      - duster_i
+      - duster_ii
+      - lodgy_i
+      - dokker_i
+    engines: all
+  category: diagnostics
+  system: Instrument cluster
+  title:
+    en: Engine temperature gauge reads incorrectly
+    ro: Indicatorul temperaturii motorului indică incorect
+    de: Motortemperaturanzeige zeigt falsch an
+    fr: Jauge de température moteur incorrecte
+    es: Indicador de temperatura del motor incorrecto
+    it: Indicatore temperatura motore non corretto
+    nl: Motortemperatuurmeter geeft onjuist aan
+  symptoms:
+    - temperature gauge incorrect
+    - temperature gauge remains cold
+    - temperature gauge rises unexpectedly
+  keywords:
+    - coolant temperature gauge
+    - temperature gauge
+    - engine temperature
+  possible_causes:
+    - Temperature sensor signal fault
+    - Wiring fault
+    - Instrument cluster fault
+    - ECU communication fault
+  diagnostic_steps:
+    - Compare gauge reading with ECU coolant temperature
+    - Check sensor signal
+    - Inspect wiring
+    - Check communication faults
+    - Test the instrument cluster
+  related_dtcs: []
+  difficulty: medium
+
+- id: dacia_can_engine_ecu_cluster_communication_fault
+  vehicle:
+    manufacturer: dacia
+    models:
+      - logan
+      - logan_mcv
+      - sandero
+      - sandero_stepway
+      - duster
+      - lodgy
+      - dokker
+      - spring
+      - jogger
+      - bigster
+    generations:
+      - logan_i
+      - logan_ii
+      - logan_iii
+      - logan_mcv_i
+      - logan_mcv_ii
+      - sandero_i
+      - sandero_ii
+      - sandero_iii
+      - sandero_stepway_i
+      - sandero_stepway_ii
+      - sandero_stepway_iii
+      - duster_i
+      - duster_ii
+      - duster_iii
+      - lodgy_i
+      - dokker_i
+      - spring_i
+      - spring_ii
+      - jogger_i
+      - bigster_i
+    engines: all
+  category: diagnostics
+  system: CAN
+  title:
+    en: Engine ECU and instrument cluster CAN communication fault
+    ro: Defecțiune comunicație CAN între ECU motor și instrumentație
+    de: CAN-Kommunikationsfehler zwischen Motorsteuergerät und Kombiinstrument
+    fr: Défaut de communication CAN entre calculateur moteur et combiné
+    es: Fallo de comunicación CAN entre ECU del motor y cuadro
+    it: Guasto comunicazione CAN tra ECU motore e quadro strumenti
+    nl: CAN-communicatiestoring tussen motor-ECU en instrumentenpaneel
+  symptoms:
+    - multiple warning lights
+    - missing engine data
+    - instrument cluster faults
+    - diagnostic communication problems
+  keywords:
+    - can bus
+    - ecu communication
+    - instrument cluster
+    - can communication
+  possible_causes:
+    - CAN wiring open circuit
+    - CAN wiring short circuit
+    - Poor connector contact
+    - Module power supply fault
+    - Failed control module
+  diagnostic_steps:
+    - Scan all available control modules
+    - Identify modules missing from the network
+    - Check module power and grounds
+    - Inspect CAN wiring and connectors
+    - Check CAN bus resistance and signal integrity
+  related_dtcs: []
+  difficulty: hard
+
+- id: dacia_can_uch_abs_communication_fault
+  vehicle:
+    manufacturer: dacia
+    models:
+      - logan
+      - logan_mcv
+      - sandero
+      - sandero_stepway
+      - duster
+      - lodgy
+      - dokker
+    generations:
+      - logan_ii
+      - logan_mcv_ii
+      - sandero_ii
+      - sandero_stepway_ii
+      - duster_i
+      - duster_ii
+      - lodgy_i
+      - dokker_i
+    engines: all
+  category: diagnostics
+  system: CAN
+  title:
+    en: UCH and ABS communication fault
+    ro: Defecțiune comunicație CAN între UCH și ABS
+    de: CAN-Kommunikationsfehler zwischen UCH und ABS
+    fr: Défaut de communication CAN entre UCH et ABS
+    es: Fallo de comunicación CAN entre UCH y ABS
+    it: Guasto comunicazione CAN tra UCH e ABS
+    nl: CAN-communicatiestoring tussen UCH en ABS
+  symptoms:
+    - ABS warning
+    - central locking faults
+    - multiple communication faults
+    - ESP unavailable
+  keywords:
+    - uch abs communication
+    - can bus
+    - abs communication
+    - uch
+  possible_causes:
+    - CAN wiring fault
+    - ABS module power supply fault
+    - UCH power supply fault
+    - Connector corrosion
+    - Module internal fault
+  diagnostic_steps:
+    - Scan UCH and ABS modules
+    - Check which module is not communicating
+    - Check power and ground supplies
+    - Inspect CAN wiring
+    - Check CAN bus termination and continuity
+  related_dtcs: []
+  difficulty: hard
+
+- id: dacia_can_multiple_modules_offline
+  vehicle:
+    manufacturer: dacia
+    models:
+      - logan
+      - logan_mcv
+      - sandero
+      - sandero_stepway
+      - duster
+      - lodgy
+      - dokker
+      - spring
+      - jogger
+      - bigster
+    generations:
+      - logan_ii
+      - logan_iii
+      - logan_mcv_ii
+      - sandero_ii
+      - sandero_iii
+      - sandero_stepway_ii
+      - sandero_stepway_iii
+      - duster_ii
+      - duster_iii
+      - lodgy_i
+      - dokker_i
+      - spring_i
+      - spring_ii
+      - jogger_i
+      - bigster_i
+    engines: all
+  category: diagnostics
+  system: CAN
+  title:
+    en: Multiple control modules offline on CAN network
+    ro: Mai multe module de control lipsă de pe rețeaua CAN
+    de: Mehrere Steuergeräte im CAN-Netzwerk nicht erreichbar
+    fr: Plusieurs calculateurs absents du réseau CAN
+    es: Varios módulos de control fuera de la red CAN
+    it: Più centraline fuori dalla rete CAN
+    nl: Meerdere regeleenheden offline op CAN-netwerk
+  symptoms:
+    - multiple module communication faults
+    - several warning lights
+    - diagnostic scanner cannot access multiple modules
+    - vehicle electrical functions unavailable
+  keywords:
+    - multiple can faults
+    - modules offline
+    - can network
+    - communication failure
+  possible_causes:
+    - CAN bus short circuit
+    - Main power supply failure
+    - Main ground fault
+    - Failed network module
+    - Water ingress into wiring or module
+  diagnostic_steps:
+    - Perform a complete network scan
+    - Identify the modules that remain accessible
+    - Check common power and ground supplies
+    - Inspect CAN wiring
+    - Isolate the faulty network branch or module
+  related_dtcs: []
+  difficulty: hard
+
+- id: dacia_immobilizer_key_transponder_not_authorized
+  vehicle:
+    manufacturer: dacia
+    models:
+      - supernova
+      - solenza
+      - logan
+      - logan_mcv
+      - sandero
+      - sandero_stepway
+      - duster
+      - lodgy
+      - dokker
+    generations:
+      - supernova
+      - solenza
+      - logan_i
+      - logan_ii
+      - logan_mcv_i
+      - logan_mcv_ii
+      - sandero_i
+      - sandero_ii
+      - sandero_stepway_i
+      - sandero_stepway_ii
+      - duster_i
+      - duster_ii
+      - lodgy_i
+      - dokker_i
+    engines: all
+  category: diagnostics
+  system: Immobilizer
+  title:
+    en: Immobilizer key transponder not authorized
+    ro: Transponderul cheii nu este autorizat de imobilizator
+    de: Schlüssel-Transponder nicht für Wegfahrsperre autorisiert
+    fr: Transpondeur de clé non autorisé par l'antidémarrage
+    es: Transpondedor de llave no autorizado por el inmovilizador
+    it: Transponder chiave non autorizzato dall'immobilizer
+    nl: Sleuteltransponder niet geautoriseerd door startblokkering
+  symptoms:
+    - engine cranks but does not start
+    - immobilizer warning
+    - key not recognized
+  keywords:
+    - immobilizer
+    - transponder
+    - key authorization
+    - anti theft
+  possible_causes:
+    - Unprogrammed key
+    - Lost key synchronization
+    - Damaged transponder
+    - Immobilizer antenna fault
+    - UCH or immobilizer module fault
+  diagnostic_steps:
+    - Read immobilizer status
+    - Check whether the key is recognized
+    - Test the key antenna circuit
+    - Verify key programming status
+    - Check immobilizer and ECU synchronization
+  related_dtcs: []
+  difficulty: hard
+
+- id: dacia_immobilizer_antenna_ring_fault
+  vehicle:
+    manufacturer: dacia
+    models:
+      - supernova
+      - solenza
+      - logan
+      - logan_mcv
+      - sandero
+      - sandero_stepway
+      - duster
+    generations:
+      - supernova
+      - solenza
+      - logan_i
+      - logan_ii
+      - logan_mcv_i
+      - logan_mcv_ii
+      - sandero_i
+      - sandero_ii
+      - sandero_stepway_i
+      - sandero_stepway_ii
+      - duster_i
+      - duster_ii
+    engines: all
+  category: diagnostics
+  system: Immobilizer
+  title:
+    en: Immobilizer antenna ring fault
+    ro: Defecțiune antenă inelară imobilizator
+    de: Fehler des Wegfahrsperren-Antennenrings
+    fr: Défaut de l'antenne annulaire de l'antidémarrage
+    es: Fallo de la antena anular del inmovilizador
+    it: Guasto antenna anulare immobilizer
+    nl: Storing antennering startblokkering
+  symptoms:
+    - key not recognized
+    - intermittent no start
+    - immobilizer warning
+  keywords:
+    - immobilizer antenna
+    - transponder antenna
+    - key reader
+  possible_causes:
+    - Open antenna circuit
+    - Damaged antenna ring
+    - Connector fault
+    - Wiring fault
+  diagnostic_steps:
+    - Check immobilizer fault memory
+    - Inspect antenna ring and connector
+    - Check antenna circuit according to service specification
+    - Test with a known good key
+    - Replace the antenna if defective
+  related_dtcs: []
+  difficulty: medium
+
+- id: dacia_climate_blower_motor_only_high_speed
+  vehicle:
+    manufacturer: dacia
+    models:
+      - logan
+      - logan_mcv
+      - sandero
+      - sandero_stepway
+      - duster
+      - lodgy
+      - dokker
+    generations:
+      - logan_i
+      - logan_ii
+      - logan_mcv_i
+      - logan_mcv_ii
+      - sandero_i
+      - sandero_ii
+      - sandero_stepway_i
+      - sandero_stepway_ii
+      - duster_i
+      - duster_ii
+      - lodgy_i
+      - dokker_i
+    engines: all
+  category: diagnostics
+  system: HVAC
+  title:
+    en: Blower motor operates only at maximum speed
+    ro: Ventilatorul habitaclului funcționează doar la turație maximă
+    de: Gebläsemotor läuft nur auf höchster Stufe
+    fr: Ventilateur habitacle fonctionne uniquement à vitesse maximale
+    es: El ventilador del habitáculo funciona solo a máxima velocidad
+    it: Ventola abitacolo funziona solo alla massima velocità
+    nl: Interieurventilator werkt alleen op maximale snelheid
+  symptoms:
+    - blower only works on high speed
+    - lower blower speeds unavailable
+  keywords:
+    - blower resistor
+    - blower motor
+    - HVAC fan
+    - fan speed
+  possible_causes:
+    - Blower resistor failure
+    - Blower speed controller fault
+    - Wiring fault
+    - Connector overheating
+  diagnostic_steps:
+    - Test each blower speed
+    - Inspect blower resistor or controller
+    - Check connector condition
+    - Measure supply voltage
+    - Replace the defective speed control component
+  related_dtcs: []
+  difficulty: medium
+
+- id: dacia_climate_blower_motor_not_operating
+  vehicle:
+    manufacturer: dacia
+    models:
+      - logan
+      - logan_mcv
+      - sandero
+      - sandero_stepway
+      - duster
+      - lodgy
+      - dokker
+    generations:
+      - logan_i
+      - logan_ii
+      - logan_mcv_i
+      - logan_mcv_ii
+      - sandero_i
+      - sandero_ii
+      - sandero_stepway_i
+      - sandero_stepway_ii
+      - duster_i
+      - duster_ii
+      - lodgy_i
+      - dokker_i
+    engines: all
+  category: diagnostics
+  system: HVAC
+  title:
+    en: Cabin blower motor does not operate
+    ro: Ventilatorul habitaclului nu funcționează
+    de: Innenraumgebläse funktioniert nicht
+    fr: Ventilateur habitacle ne fonctionne pas
+    es: Ventilador del habitáculo no funciona
+    it: Ventola abitacolo non funziona
+    nl: Interieurventilator werkt niet
+  symptoms:
+    - no cabin airflow
+    - blower motor silent
+    - HVAC fan unavailable
+  keywords:
+    - blower motor
+    - cabin fan
+    - heater fan
+    - hvac
+  possible_causes:
+    - Blower motor failure
+    - Blown fuse
+    - Relay fault
+    - Speed controller fault
+    - Wiring fault
+  diagnostic_steps:
+    - Check the blower fuse
+    - Check relay operation
+    - Test blower motor power supply
+    - Check motor ground
+    - Inspect blower resistor or controller
+  related_dtcs: []
+  difficulty: medium
+
+- id: dacia_climate_ac_compressor_command_missing
+  vehicle:
+    manufacturer: dacia
+    models:
+      - logan
+      - logan_mcv
+      - sandero
+      - sandero_stepway
+      - duster
+      - lodgy
+      - dokker
+    generations:
+      - logan_i
+      - logan_ii
+      - logan_mcv_i
+      - logan_mcv_ii
+      - sandero_i
+      - sandero_ii
+      - sandero_stepway_i
+      - sandero_stepway_ii
+      - duster_i
+      - duster_ii
+      - lodgy_i
+      - dokker_i
+    engines: all
+  category: diagnostics
+  system: HVAC
+  title:
+    en: Air conditioning compressor command missing
+    ro: Comanda compresorului de aer condiționat lipsește
+    de: Ansteuerung des Klimakompressors fehlt
+    fr: Commande du compresseur de climatisation absente
+    es: Falta la orden del compresor del aire acondicionado
+    it: Comando compressore climatizzatore assente
+    nl: Aansturing aircocompressor ontbreekt
+  symptoms:
+    - air conditioning does not cool
+    - compressor does not engage
+    - AC button active but no cooling
+  keywords:
+    - ac compressor
+    - compressor command
+    - air conditioning
+    - ac clutch
+  possible_causes:
+    - Low refrigerant pressure
+    - Pressure sensor fault
+    - AC request inhibited
+    - Fuse or relay fault
+    - Compressor clutch circuit fault
+  diagnostic_steps:
+    - Check refrigerant pressure
+    - Check AC pressure sensor data
+    - Verify AC request status
+    - Check compressor command
+    - Inspect compressor clutch circuit where fitted
+  related_dtcs: []
+  difficulty: medium
+
+- id: dacia_tpms_sensor_not_detected
+  vehicle:
+    manufacturer: dacia
+    models:
+      - duster
+      - sandero
+      - sandero_stepway
+      - logan
+      - jogger
+      - bigster
+    generations:
+      - duster_ii
+      - duster_iii
+      - sandero_iii
+      - sandero_stepway_iii
+      - logan_iii
+      - jogger_i
+      - bigster_i
+    engines: all
+  category: diagnostics
+  system: TPMS
+  title:
+    en: Tyre pressure sensor not detected
+    ro: Senzor presiune pneu nedetectat
+    de: Reifendrucksensor nicht erkannt
+    fr: Capteur de pression de pneu non détecté
+    es: Sensor de presión de neumático no detectado
+    it: Sensore pressione pneumatico non rilevato
+    nl: Bandenspanningssensor niet gedetecteerd
+  symptoms:
+    - tyre pressure warning
+    - missing tyre pressure value
+    - TPMS warning
+  keywords:
+    - tpms
+    - tyre pressure sensor
+    - tire pressure sensor
+    - wheel sensor
+  possible_causes:
+    - Sensor battery depleted
+    - Sensor damaged
+    - Sensor not programmed
+    - Incorrect sensor fitted
+    - RF communication problem
+  diagnostic_steps:
+    - Identify the missing wheel sensor
+    - Check sensor identification
+    - Verify sensor activation
+    - Check sensor battery status if available
+    - Perform sensor relearn or registration
+  related_dtcs: []
+  difficulty: medium
+
+- id: dacia_tpms_pressure_sensor_implausible
+  vehicle:
+    manufacturer: dacia
+    models:
+      - duster
+      - sandero
+      - sandero_stepway
+      - logan
+      - jogger
+      - bigster
+    generations:
+      - duster_ii
+      - duster_iii
+      - sandero_iii
+      - sandero_stepway_iii
+      - logan_iii
+      - jogger_i
+      - bigster_i
+    engines: all
+  category: diagnostics
+  system: TPMS
+  title:
+    en: Tyre pressure sensor value implausible
+    ro: Valoare neverosimilă de la senzorul de presiune pneu
+    de: Unplausibler Wert des Reifendrucksensors
+    fr: Valeur incohérente du capteur de pression des pneus
+    es: Valor no plausible del sensor de presión
+    it: Valore non plausibile del sensore pressione pneumatico
+    nl: Ongeloofwaardige waarde van bandenspanningssensor
+  symptoms:
+    - incorrect tyre pressure displayed
+    - TPMS warning
+    - pressure value differs from measured pressure
+  keywords:
+    - tpms pressure
+    - tyre pressure
+    - tire pressure
+    - sensor reading
+  possible_causes:
+    - Faulty pressure sensor
+    - Incorrect sensor calibration
+    - Sensor damage
+    - Incorrect wheel position assignment
+  diagnostic_steps:
+    - Measure tyre pressure manually
+    - Compare with TPMS data
+    - Identify the affected sensor
+    - Check sensor status
+    - Relearn or replace the sensor if necessary
+  related_dtcs: []
+  difficulty: medium
+
+- id: dacia_parking_sensor_one_sensor_inoperative
+  vehicle:
+    manufacturer: dacia
+    models:
+      - duster
+      - sandero
+      - sandero_stepway
+      - logan
+      - jogger
+      - bigster
+    generations:
+      - duster_ii
+      - duster_iii
+      - sandero_iii
+      - sandero_stepway_iii
+      - logan_iii
+      - jogger_i
+      - bigster_i
+    engines: all
+  category: diagnostics
+  system: Parking assistance
+  title:
+    en: One parking sensor is inoperative
+    ro: Un senzor de parcare nu funcționează
+    de: Ein Parksensor ist ohne Funktion
+    fr: Un capteur de stationnement est inopérant
+    es: Un sensor de aparcamiento no funciona
+    it: Un sensore parcheggio non funziona
+    nl: Eén parkeersensor werkt niet
+  symptoms:
+    - parking sensor warning
+    - continuous parking sensor tone
+    - one sensor does not detect obstacles
+  keywords:
+    - parking sensor
+    - ultrasonic sensor
+    - parking assist
+    - pdc
+  possible_causes:
+    - Defective ultrasonic sensor
+    - Damaged sensor wiring
+    - Connector fault
+    - Parking module fault
+  diagnostic_steps:
+    - Read parking assistance fault memory
+    - Identify the affected sensor
+    - Inspect the sensor surface
+    - Check wiring and connector
+    - Test sensor operation using diagnostic equipment
+  related_dtcs: []
+  difficulty: medium
+
+- id: dacia_parking_assist_module_communication_fault
+  vehicle:
+    manufacturer: dacia
+    models:
+      - duster
+      - sandero
+      - sandero_stepway
+      - logan
+      - jogger
+      - bigster
+    generations:
+      - duster_ii
+      - duster_iii
+      - sandero_iii
+      - sandero_stepway_iii
+      - logan_iii
+      - jogger_i
+      - bigster_i
+    engines: all
+  category: diagnostics
+  system: Parking assistance
+  title:
+    en: Parking assistance module communication fault
+    ro: Defecțiune comunicație modul asistență parcare
+    de: Kommunikationsfehler des Parkassistenzmoduls
+    fr: Défaut de communication du module d'aide au stationnement
+    es: Fallo de comunicación del módulo de asistencia al aparcamiento
+    it: Guasto comunicazione modulo assistenza parcheggio
+    nl: Communicatiestoring parkeermodule
+  symptoms:
+    - parking assistance unavailable
+    - parking sensor warning
+    - multiple sensor faults
+  keywords:
+    - parking module
+    - pdc
+    - parking assistance
+    - communication fault
+  possible_causes:
+    - Module power supply fault
+    - CAN communication fault
+    - Water ingress
+    - Module internal failure
+  diagnostic_steps:
+    - Check whether the parking module communicates
+    - Check module power and ground
+    - Inspect CAN wiring
+    - Inspect connectors for moisture
+    - Clear faults and retest communication
+  related_dtcs: []
+  difficulty: hard
+
+- id: dacia_cruise_control_brake_switch_status_incorrect
+  vehicle:
+    manufacturer: dacia
+    models:
+      - logan
+      - logan_mcv
+      - sandero
+      - sandero_stepway
+      - duster
+      - lodgy
+      - dokker
+      - jogger
+    generations:
+      - logan_ii
+      - logan_mcv_ii
+      - sandero_ii
+      - sandero_stepway_ii
+      - duster_i
+      - duster_ii
+      - lodgy_i
+      - dokker_i
+      - jogger_i
+    engines: all
+  category: diagnostics
+  system: Cruise control
+  title:
+    en: Cruise control brake switch status incorrect
+    ro: Stare incorectă a contactului de frână pentru cruise control
+    de: Falscher Bremsschalterstatus für Geschwindigkeitsregelung
+    fr: État incorrect du contacteur de frein du régulateur
+    es: Estado incorrecto del interruptor de freno del control de crucero
+    it: Stato errato del comando freno per cruise control
+    nl: Onjuiste remschakelaarstatus voor cruisecontrol
+  symptoms:
+    - cruise control unavailable
+    - cruise control cancels unexpectedly
+    - brake lights may operate normally
+  keywords:
+    - cruise control
+    - brake switch
+    - cruise cancel
+    - brake pedal
+  possible_causes:
+    - Incorrect brake switch adjustment
+    - Dual-circuit brake switch disagreement
+    - Wiring fault
+    - ECU input fault
+  diagnostic_steps:
+    - Check brake switch live data
+    - Verify both switch states
+    - Inspect switch adjustment
+    - Check wiring
+    - Clear faults and perform cruise control test
+  related_dtcs: []
+  difficulty: medium
+
+- id: dacia_reverse_light_switch_signal_fault
+  vehicle:
+    manufacturer: dacia
+    models:
+      - supernova
+      - solenza
+      - logan
+      - logan_mcv
+      - logan_van
+      - logan_pickup
+      - sandero
+      - sandero_stepway
+      - duster
+      - lodgy
+      - dokker
+    generations:
+      - supernova
+      - solenza
+      - logan_i
+      - logan_ii
+      - logan_mcv_i
+      - logan_mcv_ii
+      - logan_van_i
+      - logan_pickup_i
+      - sandero_i
+      - sandero_ii
+      - sandero_stepway_i
+      - sandero_stepway_ii
+      - duster_i
+      - duster_ii
+      - lodgy_i
+      - dokker_i
+    engines: all
+  category: diagnostics
+  system: Body electronics
+  title:
+    en: Reverse light switch signal fault
+    ro: Defecțiune semnal contact marșarier
+    de: Fehler des Rückfahrlichtschaltersignals
+    fr: Défaut du signal du contacteur de marche arrière
+    es: Fallo de señal del interruptor de marcha atrás
+    it: Guasto segnale interruttore retromarcia
+    nl: Storing signaal achteruitrijlichtschakelaar
+  symptoms:
+    - reverse lights do not work
+    - reverse camera may not activate
+    - parking assistance may not activate
+  keywords:
+    - reverse switch
+    - reverse light
+    - reverse gear signal
+    - reverse camera
+  possible_causes:
+    - Defective reverse switch
+    - Wiring fault
+    - Fuse fault
+    - UCH input fault
+  diagnostic_steps:
+    - Check reverse gear status in live data where available
+    - Inspect the transmission switch
+    - Check switch voltage
+    - Inspect wiring and fuse
+    - Verify reverse light command
+  related_dtcs: []
+  difficulty: medium
+
+- id: dacia_battery_voltage_low_module_shutdown
+  vehicle:
+    manufacturer: dacia
+    models:
+      - supernova
+      - solenza
+      - logan
+      - logan_mcv
+      - logan_van
+      - logan_pickup
+      - sandero
+      - sandero_stepway
+      - duster
+      - lodgy
+      - dokker
+      - spring
+      - jogger
+      - bigster
+    generations:
+      - supernova
+      - solenza
+      - logan_i
+      - logan_ii
+      - logan_iii
+      - logan_mcv_i
+      - logan_mcv_ii
+      - logan_van_i
+      - logan_pickup_i
+      - sandero_i
+      - sandero_ii
+      - sandero_iii
+      - sandero_stepway_i
+      - sandero_stepway_ii
+      - sandero_stepway_iii
+      - duster_i
+      - duster_ii
+      - duster_iii
+      - lodgy_i
+      - dokker_i
+      - spring_i
+      - spring_ii
+      - jogger_i
+      - bigster_i
+    engines: all
+  category: diagnostics
+  system: Power supply
+  title:
+    en: Low battery voltage causing control module shutdown
+    ro: Tensiune scăzută a bateriei care provoacă oprirea modulelor
+    de: Niedrige Batteriespannung verursacht Abschaltung von Steuergeräten
+    fr: Basse tension de batterie provoquant l'arrêt des calculateurs
+    es: Baja tensión de batería provoca el apagado de módulos
+    it: Bassa tensione batteria provoca lo spegnimento delle centraline
+    nl: Lage accuspanning veroorzaakt uitschakeling van regeleenheden
+  symptoms:
+    - multiple warning lights
+    - intermittent electrical faults
+    - communication faults
+    - modules reset
+  keywords:
+    - low voltage
+    - battery voltage
+    - module reset
+    - electrical fault
+  possible_causes:
+    - Weak battery
+    - Poor battery terminal connection
+    - Charging system fault
+    - Excessive voltage drop
+    - Poor ground connection
+  diagnostic_steps:
+    - Measure battery voltage at rest
+    - Measure voltage during engine cranking
+    - Check charging voltage
+    - Inspect battery terminals and grounds
+    - Clear secondary communication faults after correcting the voltage problem
+  related_dtcs: []
+  difficulty: medium
+
+- id: dacia_ground_connection_multiple_electrical_faults
+  vehicle:
+    manufacturer: dacia
+    models:
+      - supernova
+      - solenza
+      - logan
+      - logan_mcv
+      - sandero
+      - sandero_stepway
+      - duster
+      - lodgy
+      - dokker
+      - spring
+      - jogger
+      - bigster
+    generations:
+      - supernova
+      - solenza
+      - logan_i
+      - logan_ii
+      - logan_iii
+      - logan_mcv_i
+      - logan_mcv_ii
+      - sandero_i
+      - sandero_ii
+      - sandero_iii
+      - sandero_stepway_i
+      - sandero_stepway_ii
+      - sandero_stepway_iii
+      - duster_i
+      - duster_ii
+      - duster_iii
+      - lodgy_i
+      - dokker_i
+      - spring_i
+      - spring_ii
+      - jogger_i
+      - bigster_i
+    engines: all
+  category: diagnostics
+  system: Electrical
+  title:
+    en: Multiple electrical faults caused by poor ground connection
+    ro: Mai multe defecțiuni electrice cauzate de o masă slabă
+    de: Mehrere elektrische Fehler durch schlechte Masseverbindung
+    fr: Plusieurs défauts électriques dus à une mauvaise masse
+    es: Múltiples fallos eléctricos causados por una mala masa
+    it: Più guasti elettrici causati da una massa difettosa
+    nl: Meerdere elektrische storingen door slechte massa
+  symptoms:
+    - multiple unrelated electrical faults
+    - intermittent module communication
+    - warning lights
+    - modules reset
+  keywords:
+    - ground fault
+    - earth connection
+    - voltage drop
+    - electrical faults
+  possible_causes:
+    - Corroded battery ground connection
+    - Poor engine ground strap
+    - Poor body ground
+    - Loose ground connection
+  diagnostic_steps:
+    - Perform voltage drop tests under load
+    - Inspect battery ground
+    - Inspect engine-to-body ground strap
+    - Inspect body ground points
+    - Repair and retest all affected systems
+  related_dtcs: []
+  difficulty: medium
+
+- id: dacia_ecu_power_supply_intermittent
+  vehicle:
+    manufacturer: dacia
+    models:
+      - supernova
+      - solenza
+      - logan
+      - logan_mcv
+      - sandero
+      - sandero_stepway
+      - duster
+      - lodgy
+      - dokker
+      - jogger
+      - bigster
+    generations:
+      - supernova
+      - solenza
+      - logan_i
+      - logan_ii
+      - logan_iii
+      - logan_mcv_i
+      - logan_mcv_ii
+      - sandero_i
+      - sandero_ii
+      - sandero_iii
+      - sandero_stepway_i
+      - sandero_stepway_ii
+      - sandero_stepway_iii
+      - duster_i
+      - duster_ii
+      - duster_iii
+      - lodgy_i
+      - dokker_i
+      - jogger_i
+      - bigster_i
+    engines: all
+  category: diagnostics
+  system: ECU
+  title:
+    en: Intermittent engine ECU power supply
+    ro: Alimentare intermitentă a ECU motor
+    de: Unterbrochene Stromversorgung des Motorsteuergeräts
+    fr: Alimentation intermittente du calculateur moteur
+    es: Alimentación intermitente de la ECU del motor
+    it: Alimentazione intermittente della ECU motore
+    nl: Onderbroken voeding van motor-ECU
+  symptoms:
+    - engine cuts out
+    - intermittent no start
+    - multiple ECU communication faults
+    - warning lights
+  keywords:
+    - ecu power
+    - ecu supply
+    - intermittent power
+    - engine ecu
+  possible_causes:
+    - Ignition relay fault
+    - Fuse connection problem
+    - ECU power wiring fault
+    - Poor ground
+    - Connector corrosion
+  diagnostic_steps:
+    - Check ECU power supply under load
+    - Check ignition relay operation
+    - Inspect ECU fuses
+    - Inspect ECU connectors
+    - Perform voltage drop testing on ECU grounds
+  related_dtcs: []
+  difficulty: hard
+
+- id: dacia_body_control_battery_drain_after_vehicle_locked
+  vehicle:
+    manufacturer: dacia
+    models:
+      - supernova
+      - solenza
+      - logan
+      - logan_mcv
+      - sandero
+      - sandero_stepway
+      - duster
+      - lodgy
+      - dokker
+    generations:
+      - supernova
+      - solenza
+      - logan_i
+      - logan_ii
+      - logan_mcv_i
+      - logan_mcv_ii
+      - sandero_i
+      - sandero_ii
+      - sandero_stepway_i
+      - sandero_stepway_ii
+      - duster_i
+      - duster_ii
+      - lodgy_i
+      - dokker_i
+    engines: all
+  category: diagnostics
+  system: Body electronics
+  title:
+    en: Battery drain after vehicle is locked
+    ro: Descărcarea bateriei după încuierea vehiculului
+    de: Batterientladung nach dem Verriegeln des Fahrzeugs
+    fr: Décharge de batterie après verrouillage du véhicule
+    es: Descarga de batería después de cerrar el vehículo
+    it: Scarica batteria dopo la chiusura del veicolo
+    nl: Accu ontladen nadat het voertuig is vergrendeld
+  symptoms:
+    - battery goes flat overnight
+    - excessive parasitic current
+    - vehicle does not enter sleep mode
+  keywords:
+    - battery drain
+    - parasitic draw
+    - sleep mode
+    - uch
+  possible_causes:
+    - UCH remains awake
+    - Door status incorrectly detected
+    - Interior light remains active
+    - Aftermarket electrical equipment
+    - Module communication prevents sleep
+  diagnostic_steps:
+    - Allow the vehicle to enter sleep mode
+    - Measure parasitic current
+    - Check door and boot status
+    - Monitor module activity
+    - Isolate the circuit causing excessive current draw
+  related_dtcs: []
+  difficulty: hard
+
+- id: dacia_rear_defogger_inoperative
+  vehicle:
+    manufacturer: dacia
+    models:
+      - supernova
+      - solenza
+      - logan
+      - logan_mcv
+      - sandero
+      - sandero_stepway
+      - duster
+      - lodgy
+      - dokker
+    generations:
+      - supernova
+      - solenza
+      - logan_i
+      - logan_ii
+      - logan_mcv_i
+      - logan_mcv_ii
+      - sandero_i
+      - sandero_ii
+      - sandero_stepway_i
+      - sandero_stepway_ii
+      - duster_i
+      - duster_ii
+      - lodgy_i
+      - dokker_i
+    engines: all
+  category: diagnostics
+  system: Body electronics
+  title:
+    en: Rear window defogger inoperative
+    ro: Încălzirea lunetei nu funcționează
+    de: Heckscheibenheizung ohne Funktion
+    fr: Dégivrage de lunette arrière inopérant
+    es: Luneta térmica trasera inoperativa
+    it: Lunotto termico non funzionante
+    nl: Achterruitverwarming werkt niet
+  symptoms:
+    - rear window does not defog
+    - defogger indicator may illuminate
+  keywords:
+    - rear defogger
+    - heated rear window
+    - rear window heater
+  possible_causes:
+    - Blown fuse
+    - Relay fault
+    - Broken heating elements
+    - Wiring fault
+    - UCH output fault
+  diagnostic_steps:
+    - Check defogger fuse
+    - Check relay or control output
+    - Measure voltage at the rear window
+    - Inspect heating element tracks
+    - Inspect rear window connectors
+  related_dtcs: []
+  difficulty: medium
+
+- id: dacia_horn_intermittent_uch_command
+  vehicle:
+    manufacturer: dacia
+    models:
+      - supernova
+      - solenza
+      - logan
+      - logan_mcv
+      - logan_van
+      - logan_pickup
+      - sandero
+      - sandero_stepway
+      - duster
+      - lodgy
+      - dokker
+    generations:
+      - supernova
+      - solenza
+      - logan_i
+      - logan_ii
+      - logan_mcv_i
+      - logan_mcv_ii
+      - logan_van_i
+      - logan_pickup_i
+      - sandero_i
+      - sandero_ii
+      - sandero_stepway_i
+      - sandero_stepway_ii
+      - duster_i
+      - duster_ii
+      - lodgy_i
+      - dokker_i
+    engines: all
+  category: diagnostics
+  system: Body electronics
+  title:
+    en: Intermittent horn operation
+    ro: Funcționare intermitentă a claxonului
+    de: Hupe funktioniert intermittierend
+    fr: Fonctionnement intermittent du klaxon
+    es: Funcionamiento intermitente del claxon
+    it: Funzionamento intermittente del clacson
+    nl: Claxon werkt intermitterend
+  symptoms:
+    - horn works intermittently
+    - horn sometimes fails
+  keywords:
+    - horn
+    - horn relay
+    - steering wheel switch
+    - body electronics
+  possible_causes:
+    - Horn switch contact fault
+    - Relay contact fault
+    - Wiring resistance
+    - Poor ground
+    - Horn unit internal fault
+  diagnostic_steps:
+    - Test horn switch input
+    - Check relay command
+    - Measure voltage at the horn
+    - Inspect ground connection
+    - Inspect steering wheel switch circuit where applicable
+  related_dtcs: []
+  difficulty: medium
+
   - id: dacia_electronic_oxygen_sensor_upstream_fault
     vehicle:
       manufacturer: dacia
