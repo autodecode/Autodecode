@@ -6,6 +6,4049 @@ manufacturer:
 
 technical_data:
 
+  - id: dacia_engine_ignition_coil_primary_circuit_fault
+    vehicle:
+      manufacturer: dacia
+      models:
+        - supernova
+        - solenza
+        - logan
+      generations:
+        - supernova
+        - solenza
+        - logan_i
+        - logan_ii
+      engines:
+        - dacia_supernova_1390
+        - dacia_solenza_1390
+        - dacia_logan_i_1390
+        - dacia_logan_i_1598
+        - dacia_logan_ii_1149
+    category: diagnostics
+    system: Ignition
+    title:
+      en: Ignition Coil Primary Circuit Fault
+      ro: Defecțiune circuit primar bobină de aprindere
+      de: Fehler im Primärkreis der Zündspule
+      fr: Défaut du circuit primaire de bobine d'allumage
+      es: Fallo del circuito primario de la bobina de encendido
+      it: Guasto del circuito primario della bobina di accensione
+      nl: Storing in het primaire circuit van de bobine
+    symptoms:
+      - Engine misfire
+      - Engine may stall
+      - Poor acceleration
+      - Engine warning light
+      - Difficult starting
+    keywords:
+      - ignition coil primary
+      - coil primary circuit
+      - ignition coil control
+      - bobina aprindere primar
+    possible_causes:
+      - Open ignition coil primary circuit
+      - Shorted coil winding
+      - Damaged ECU driver circuit
+      - Connector corrosion
+      - Wiring damage
+    diagnostic_steps:
+      - Read ignition-related fault codes.
+      - Inspect the ignition coil connector and wiring.
+      - Check coil primary resistance according to specification.
+      - Verify ECU command and power supply.
+      - Check for voltage drop in the coil supply circuit.
+      - Replace the coil only after confirming the circuit integrity.
+    related_dtcs:
+      - P0351
+      - P0352
+    difficulty: medium
+
+  - id: dacia_engine_ignition_coil_secondary_circuit_fault
+    vehicle:
+      manufacturer: dacia
+      models:
+        - supernova
+        - solenza
+        - logan
+      generations:
+        - supernova
+        - solenza
+        - logan_i
+        - logan_ii
+      engines:
+        - dacia_supernova_1390
+        - dacia_solenza_1390
+        - dacia_logan_i_1390
+        - dacia_logan_i_1598
+        - dacia_logan_ii_1149
+    category: diagnostics
+    system: Ignition
+    title:
+      en: Ignition Coil Secondary Circuit Fault
+      ro: Defecțiune circuit secundar bobină de aprindere
+      de: Fehler im Sekundärkreis der Zündspule
+      fr: Défaut du circuit secondaire de bobine d'allumage
+      es: Fallo del circuito secundario de la bobina
+      it: Guasto del circuito secondario della bobina
+      nl: Storing in het secundaire circuit van de bobine
+    symptoms:
+      - Misfire under load
+      - Poor engine performance
+      - Difficult starting
+      - Increased fuel consumption
+      - Engine warning light
+    keywords:
+      - ignition secondary
+      - coil secondary
+      - high voltage ignition
+      - bobina secundar
+    possible_causes:
+      - Cracked ignition coil insulation
+      - High voltage leakage
+      - Damaged ignition leads
+      - Excessive spark plug gap
+      - Internal coil failure
+    diagnostic_steps:
+      - Inspect the coil and high-voltage components for tracking.
+      - Check ignition lead resistance where applicable.
+      - Inspect spark plug condition and gap.
+      - Perform an ignition output test.
+      - Compare cylinder misfire counters.
+      - Replace defective ignition components and retest.
+    related_dtcs:
+      - P0351
+      - P0352
+    difficulty: medium
+
+  - id: dacia_engine_misfire_cylinder_1
+    vehicle:
+      manufacturer: dacia
+      models:
+        - supernova
+        - solenza
+        - logan
+      generations:
+        - supernova
+        - solenza
+        - logan_i
+        - logan_ii
+      engines:
+        - dacia_supernova_1390
+        - dacia_solenza_1390
+        - dacia_logan_i_1390
+        - dacia_logan_i_1598
+        - dacia_logan_ii_1149
+    category: diagnostics
+    system: Engine Management
+    title:
+      en: Cylinder 1 Misfire Detected
+      ro: Rateu detectat pe cilindrul 1
+      de: Fehlzündung Zylinder 1 erkannt
+      fr: Raté d'allumage détecté sur le cylindre 1
+      es: Fallo de encendido detectado en cilindro 1
+      it: Mancata accensione rilevata cilindro 1
+      nl: Misfire gedetecteerd op cilinder 1
+    symptoms:
+      - Rough running
+      - Engine vibration
+      - Loss of power
+      - Increased fuel consumption
+      - Engine warning light
+    keywords:
+      - cylinder 1 misfire
+      - P0301
+      - cylindre 1
+      - cilindru 1 rateu
+    possible_causes:
+      - Spark plug fault
+      - Ignition coil fault
+      - Injector fault
+      - Low compression
+      - Intake leak near cylinder
+    diagnostic_steps:
+      - Confirm the misfire counter with the diagnostic tool.
+      - Inspect the spark plug.
+      - Swap the ignition component with another cylinder where applicable.
+      - Check injector operation.
+      - Perform compression testing if ignition and fuel checks pass.
+      - Repair the confirmed cause and verify misfire counters.
+    related_dtcs:
+      - P0301
+    difficulty: medium
+
+  - id: dacia_engine_misfire_cylinder_2
+    vehicle:
+      manufacturer: dacia
+      models:
+        - supernova
+        - solenza
+        - logan
+      generations:
+        - supernova
+        - solenza
+        - logan_i
+        - logan_ii
+      engines:
+        - dacia_supernova_1390
+        - dacia_solenza_1390
+        - dacia_logan_i_1390
+        - dacia_logan_i_1598
+        - dacia_logan_ii_1149
+    category: diagnostics
+    system: Engine Management
+    title:
+      en: Cylinder 2 Misfire Detected
+      ro: Rateu detectat pe cilindrul 2
+      de: Fehlzündung Zylinder 2 erkannt
+      fr: Raté d'allumage détecté sur le cylindre 2
+      es: Fallo de encendido detectado en cilindro 2
+      it: Mancata accensione rilevata cilindro 2
+      nl: Misfire gedetecteerd op cilinder 2
+    symptoms:
+      - Rough running
+      - Engine vibration
+      - Loss of power
+      - Increased fuel consumption
+      - Engine warning light
+    keywords:
+      - cylinder 2 misfire
+      - P0302
+      - cylinder 2
+      - cilindru 2 rateu
+    possible_causes:
+      - Spark plug fault
+      - Ignition coil fault
+      - Injector fault
+      - Low compression
+      - Intake leak
+    diagnostic_steps:
+      - Confirm the cylinder 2 misfire counter.
+      - Inspect and test the ignition components.
+      - Check injector operation.
+      - Compare cylinder compression.
+      - Inspect for localized intake leaks.
+      - Verify the repair with a road test and live data.
+    related_dtcs:
+      - P0302
+    difficulty: medium
+
+  - id: dacia_engine_misfire_cylinder_3
+    vehicle:
+      manufacturer: dacia
+      models:
+        - supernova
+        - solenza
+        - logan
+      generations:
+        - supernova
+        - solenza
+        - logan_i
+        - logan_ii
+      engines:
+        - dacia_supernova_1390
+        - dacia_solenza_1390
+        - dacia_logan_i_1390
+        - dacia_logan_i_1598
+        - dacia_logan_ii_1149
+    category: diagnostics
+    system: Engine Management
+    title:
+      en: Cylinder 3 Misfire Detected
+      ro: Rateu detectat pe cilindrul 3
+      de: Fehlzündung Zylinder 3 erkannt
+      fr: Raté d'allumage détecté sur le cylindre 3
+      es: Fallo de encendido detectado en cilindro 3
+      it: Mancata accensione rilevata cilindro 3
+      nl: Misfire gedetecteerd op cilinder 3
+    symptoms:
+      - Rough running
+      - Engine vibration
+      - Loss of power
+      - Poor acceleration
+      - Engine warning light
+    keywords:
+      - cylinder 3 misfire
+      - P0303
+      - cylinder 3
+      - cilindru 3 rateu
+    possible_causes:
+      - Spark plug fault
+      - Ignition coil fault
+      - Injector fault
+      - Compression loss
+      - Intake leak
+    diagnostic_steps:
+      - Confirm the cylinder 3 misfire counter.
+      - Inspect ignition components.
+      - Test injector operation.
+      - Perform compression testing if required.
+      - Check intake sealing near the cylinder.
+      - Clear faults and verify cylinder balance.
+    related_dtcs:
+      - P0303
+    difficulty: medium
+
+  - id: dacia_engine_misfire_cylinder_4
+    vehicle:
+      manufacturer: dacia
+      models:
+        - supernova
+        - solenza
+        - logan
+      generations:
+        - supernova
+        - solenza
+        - logan_i
+        - logan_ii
+      engines:
+        - dacia_supernova_1390
+        - dacia_solenza_1390
+        - dacia_logan_i_1390
+        - dacia_logan_i_1598
+        - dacia_logan_ii_1149
+    category: diagnostics
+    system: Engine Management
+    title:
+      en: Cylinder 4 Misfire Detected
+      ro: Rateu detectat pe cilindrul 4
+      de: Fehlzündung Zylinder 4 erkannt
+      fr: Raté d'allumage détecté sur le cylindre 4
+      es: Fallo de encendido detectado en cilindro 4
+      it: Mancata accensione rilevata cilindro 4
+      nl: Misfire gedetecteerd op cilinder 4
+    symptoms:
+      - Rough running
+      - Engine vibration
+      - Loss of power
+      - Poor acceleration
+      - Engine warning light
+    keywords:
+      - cylinder 4 misfire
+      - P0304
+      - cylinder 4
+      - cilindru 4 rateu
+    possible_causes:
+      - Spark plug fault
+      - Ignition coil fault
+      - Injector fault
+      - Compression loss
+      - Intake leak
+    diagnostic_steps:
+      - Confirm the cylinder 4 misfire counter.
+      - Inspect ignition components.
+      - Test injector operation.
+      - Check compression.
+      - Inspect intake sealing.
+      - Verify cylinder balance after repair.
+    related_dtcs:
+      - P0304
+    difficulty: medium
+
+  - id: dacia_engine_random_multiple_cylinder_misfire
+    vehicle:
+      manufacturer: dacia
+      models:
+        - supernova
+        - solenza
+        - logan
+      generations:
+        - supernova
+        - solenza
+        - logan_i
+        - logan_ii
+      engines:
+        - dacia_supernova_1390
+        - dacia_solenza_1390
+        - dacia_logan_i_1390
+        - dacia_logan_i_1598
+        - dacia_logan_ii_1149
+    category: diagnostics
+    system: Engine Management
+    title:
+      en: Random or Multiple Cylinder Misfire
+      ro: Rateuri aleatorii sau pe mai mulți cilindri
+      de: Zufällige oder mehrere Zylinderfehlzündungen
+      fr: Ratés d'allumage aléatoires ou multiples
+      es: Fallos de encendido aleatorios o múltiples
+      it: Mancate accensioni casuali o multiple
+      nl: Willekeurige of meervoudige misfires
+    symptoms:
+      - Severe engine vibration
+      - Power loss
+      - Poor acceleration
+      - Engine warning light flashing
+      - Unstable idle
+    keywords:
+      - random misfire
+      - multiple misfire
+      - P0300
+      - rateuri multiple
+    possible_causes:
+      - Fuel pressure instability
+      - Ignition system fault
+      - Vacuum leak
+      - Low compression
+      - Incorrect engine timing
+      - Poor fuel quality
+    diagnostic_steps:
+      - Check misfire counters for all cylinders.
+      - Inspect ignition system condition.
+      - Check fuel pressure and injector operation.
+      - Inspect the intake system for leaks.
+      - Check compression if the fault persists.
+      - Verify crankshaft and camshaft timing.
+    related_dtcs:
+      - P0300
+    difficulty: hard
+
+  - id: dacia_engine_catalyst_efficiency_below_threshold
+    vehicle:
+      manufacturer: dacia
+      models:
+        - supernova
+        - solenza
+        - logan
+      generations:
+        - supernova
+        - solenza
+        - logan_i
+        - logan_ii
+      engines:
+        - dacia_supernova_1390
+        - dacia_solenza_1390
+        - dacia_logan_i_1390
+        - dacia_logan_i_1598
+        - dacia_logan_ii_1149
+    category: diagnostics
+    system: Emissions
+    title:
+      en: Catalyst Efficiency Below Threshold
+      ro: Eficiență catalizator sub limita admisă
+      de: Katalysatorwirkungsgrad unter Schwellenwert
+      fr: Efficacité du catalyseur sous le seuil
+      es: Eficiencia del catalizador por debajo del umbral
+      it: Efficienza catalizzatore sotto la soglia
+      nl: Katalysatorefficiëntie onder de drempel
+    symptoms:
+      - Engine warning light
+      - Failed emissions test
+      - Increased exhaust emissions
+      - Possible sulfur smell
+    keywords:
+      - catalyst efficiency
+      - catalytic converter
+      - catalyst below threshold
+      - P0420
+      - catalizator
+    possible_causes:
+      - Catalyst degradation
+      - Persistent engine misfire
+      - Rich mixture
+      - Oil contamination
+      - Exhaust leak
+      - Faulty oxygen sensor
+    diagnostic_steps:
+      - Check for other engine faults before condemning the catalyst.
+      - Inspect the exhaust for leaks.
+      - Compare upstream and downstream oxygen sensor behaviour.
+      - Check fuel-trim values.
+      - Verify that the engine is not consuming excessive oil.
+      - Replace the catalyst only after confirming low conversion efficiency.
+    related_dtcs:
+      - P0420
+    difficulty: hard
+
+  - id: dacia_engine_catalyst_temperature_insufficient
+    vehicle:
+      manufacturer: dacia
+      models:
+        - supernova
+        - solenza
+        - logan
+      generations:
+        - supernova
+        - solenza
+        - logan_i
+        - logan_ii
+      engines:
+        - dacia_supernova_1390
+        - dacia_solenza_1390
+        - dacia_logan_i_1390
+        - dacia_logan_i_1598
+        - dacia_logan_ii_1149
+    category: diagnostics
+    system: Emissions
+    title:
+      en: Catalyst Temperature Below Expected Level
+      ro: Temperatură catalizator sub nivelul așteptat
+      de: Katalysatortemperatur unter dem erwarteten Niveau
+      fr: Température du catalyseur insuffisante
+      es: Temperatura del catalizador inferior a la esperada
+      it: Temperatura catalizzatore insufficiente
+      nl: Katalysatortemperatuur lager dan verwacht
+    symptoms:
+      - Increased emissions
+      - Engine warning light
+      - Poor cold-start emissions performance
+      - Failed emissions inspection
+    keywords:
+      - catalyst temperature
+      - catalyst warm-up
+      - catalytic converter temperature
+      - temperatura catalizator
+    possible_causes:
+      - Engine running too cool
+      - Faulty coolant temperature signal
+      - Excessive exhaust heat loss
+      - Incorrect fuel mixture
+      - Catalyst degradation
+    diagnostic_steps:
+      - Monitor coolant temperature during warm-up.
+      - Check oxygen sensor operation.
+      - Verify fuel-trim values.
+      - Inspect exhaust system for leaks.
+      - Check catalyst temperature behaviour if supported by diagnostics.
+    related_dtcs:
+      - P0420
+    difficulty: medium
+
+  - id: dacia_engine_exhaust_gas_recirculation_flow_insufficient_petrol
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+      generations:
+        - logan_ii
+      engines:
+        - dacia_logan_ii_1149
+    category: diagnostics
+    system: Emissions
+    title:
+      en: EGR Flow Insufficient
+      ro: Debit insuficient al sistemului EGR
+      de: EGR-Durchfluss zu gering
+      fr: Débit EGR insuffisant
+      es: Flujo EGR insuficiente
+      it: Flusso EGR insufficiente
+      nl: EGR-doorstroming onvoldoende
+    symptoms:
+      - Engine warning light
+      - Increased NOx emissions
+      - Hesitation
+      - Rough running
+    keywords:
+      - EGR flow insufficient
+      - EGR flow
+      - exhaust gas recirculation
+      - debit EGR
+    possible_causes:
+      - Restricted EGR passage
+      - EGR valve sticking
+      - Faulty EGR actuator
+      - Blocked intake passage
+      - Wiring fault
+    diagnostic_steps:
+      - Read EGR-related fault codes.
+      - Command the EGR valve if supported.
+      - Compare commanded and actual position.
+      - Inspect EGR passages for carbon deposits.
+      - Verify actuator wiring and supply.
+    related_dtcs:
+      - P0401
+    difficulty: medium
+
+  - id: dacia_engine_egr_position_sensor_range_performance
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - sandero
+        - duster
+        - dokker
+        - lodgy
+      generations:
+        - logan_i
+        - logan_ii
+        - sandero_i
+        - sandero_ii
+        - duster_i
+        - duster_ii
+        - dokker_i
+        - lodgy_i
+      engines:
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: EGR
+    title:
+      en: EGR Position Sensor Range/Performance Fault
+      ro: Defecțiune domeniu/performanță senzor poziție EGR
+      de: Bereichs-/Leistungsfehler des EGR-Positionssensors
+      fr: Défaut de plage/performance du capteur de position EGR
+      es: Fallo de rango/rendimiento del sensor de posición EGR
+      it: Guasto di campo/prestazioni del sensore posizione EGR
+      nl: Bereik/prestatie fout van de EGR-positiesensor
+    symptoms:
+      - Reduced engine power
+      - Rough idle
+      - Increased smoke
+      - Poor acceleration
+      - Engine warning light
+    keywords:
+      - EGR position sensor
+      - EGR feedback
+      - EGR position
+      - senzor poziție EGR
+    possible_causes:
+      - EGR valve contamination
+      - Position sensor failure
+      - Actuator mechanical binding
+      - Wiring fault
+      - Connector fault
+    diagnostic_steps:
+      - Monitor EGR commanded and actual position.
+      - Check for position signal dropouts.
+      - Inspect EGR wiring and connector.
+      - Check valve movement.
+      - Clean or replace the EGR assembly according to test results.
+    related_dtcs:
+      - P0405
+      - P0406
+    difficulty: medium
+
+  - id: dacia_engine_fuel_temperature_sensor_implausible
+    vehicle:
+      manufacturer: dacia
+      models:
+        - solenza
+        - logan
+      generations:
+        - solenza
+        - logan_i
+        - logan_ii
+      engines:
+        - dacia_solenza_1461
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: Diesel Fuel System
+    title:
+      en: Fuel Temperature Sensor Implausible Signal
+      ro: Semnal neverosimil al senzorului de temperatură combustibil
+      de: Unplausibles Signal des Kraftstofftemperatursensors
+      fr: Signal incohérent du capteur de température carburant
+      es: Señal no plausible del sensor de temperatura del combustible
+      it: Segnale non plausibile del sensore temperatura carburante
+      nl: Ongeloofwaardig signaal van de brandstoftemperatuursensor
+    symptoms:
+      - Difficult starting
+      - Reduced power
+      - Incorrect fuel quantity control
+      - Engine warning light
+    keywords:
+      - fuel temperature sensor
+      - fuel temperature
+      - diesel fuel temperature
+      - temperatură combustibil
+    possible_causes:
+      - Sensor failure
+      - Wiring resistance
+      - Connector corrosion
+      - Short circuit
+      - Open circuit
+    diagnostic_steps:
+      - Compare fuel temperature with coolant and ambient temperature when cold.
+      - Monitor the sensor while the engine warms.
+      - Check reference and ground circuits.
+      - Inspect wiring and connector.
+      - Replace the sensor or affected fuel-system component if confirmed faulty.
+    related_dtcs:
+      - P0180
+    difficulty: medium
+
+  - id: dacia_engine_fuel_temperature_sensor_signal_low
+    vehicle:
+      manufacturer: dacia
+      models:
+        - solenza
+        - logan
+      generations:
+        - solenza
+        - logan_i
+        - logan_ii
+      engines:
+        - dacia_solenza_1461
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: Diesel Fuel System
+    title:
+      en: Fuel Temperature Sensor Signal Too Low
+      ro: Semnal prea scăzut al senzorului de temperatură combustibil
+      de: Signal des Kraftstofftemperatursensors zu niedrig
+      fr: Signal trop faible du capteur de température carburant
+      es: Señal demasiado baja del sensor de temperatura del combustible
+      it: Segnale troppo basso del sensore temperatura carburante
+      nl: Signaal brandstoftemperatuursensor te laag
+    symptoms:
+      - Poor starting
+      - Reduced engine performance
+      - Engine warning light
+      - Incorrect fuel control
+    keywords:
+      - fuel temperature low signal
+      - fuel temp sensor low
+      - P0181
+      - semnal temperatură combustibil scăzut
+    possible_causes:
+      - Short to ground
+      - Sensor internal failure
+      - Damaged signal wire
+      - Poor connector contact
+    diagnostic_steps:
+      - Measure sensor signal voltage.
+      - Check for a short to ground.
+      - Inspect connector terminals.
+      - Compare live data with actual fuel temperature.
+      - Repair the circuit and verify the reading.
+    related_dtcs:
+      - P0181
+    difficulty: medium
+
+  - id: dacia_engine_fuel_temperature_sensor_signal_high
+    vehicle:
+      manufacturer: dacia
+      models:
+        - solenza
+        - logan
+      generations:
+        - solenza
+        - logan_i
+        - logan_ii
+      engines:
+        - dacia_solenza_1461
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: Diesel Fuel System
+    title:
+      en: Fuel Temperature Sensor Signal Too High
+      ro: Semnal prea ridicat al senzorului de temperatură combustibil
+      de: Signal des Kraftstofftemperatursensors zu hoch
+      fr: Signal trop élevé du capteur de température carburant
+      es: Señal demasiado alta del sensor de temperatura del combustible
+      it: Segnale troppo alto del sensore temperatura carburante
+      nl: Signaal brandstoftemperatuursensor te hoog
+    symptoms:
+      - Reduced engine performance
+      - Difficult starting
+      - Incorrect fuel quantity calculation
+      - Engine warning light
+    keywords:
+      - fuel temperature high signal
+      - fuel temp sensor high
+      - P0182
+      - temperatură combustibil semnal ridicat
+    possible_causes:
+      - Short to voltage
+      - Sensor failure
+      - Damaged wiring
+      - Reference voltage fault
+    diagnostic_steps:
+      - Measure the sensor signal voltage.
+      - Check for a short to supply voltage.
+      - Inspect the connector.
+      - Compare live temperature data with actual conditions.
+      - Repair or replace the affected component.
+    related_dtcs:
+      - P0182
+    difficulty: medium
+
+  - id: dacia_engine_fuel_rail_pressure_control_deviation
+    vehicle:
+      manufacturer: dacia
+      models:
+        - solenza
+        - logan
+      generations:
+        - solenza
+        - logan_i
+        - logan_ii
+      engines:
+        - dacia_solenza_1461
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: Common Rail
+    title:
+      en: Fuel Rail Pressure Control Deviation
+      ro: Abatere a reglării presiunii în rampa de injecție
+      de: Abweichung der Raildruckregelung
+      fr: Écart de régulation de pression de rampe
+      es: Desviación del control de presión del rail
+      it: Deviazione del controllo pressione rail
+      nl: Afwijking in de raildrukregeling
+    symptoms:
+      - Difficult starting
+      - Loss of power
+      - Engine hesitation
+      - Engine may enter reduced power mode
+      - Engine warning light
+    keywords:
+      - rail pressure deviation
+      - fuel rail pressure control
+      - common rail regulation
+      - presiune rampă abatere
+    possible_causes:
+      - Fuel pressure regulator deviation
+      - Injector excessive return flow
+      - Fuel filter restriction
+      - High-pressure pump wear
+      - Air in fuel
+    diagnostic_steps:
+      - Compare commanded and measured rail pressure.
+      - Check pressure during cranking and under load.
+      - Test injector leak-off.
+      - Check fuel filter and supply pressure.
+      - Inspect the pressure regulator control.
+      - Evaluate the high-pressure pump if the fault remains.
+    related_dtcs:
+      - P0089
+    difficulty: hard
+
+  - id: dacia_engine_fuel_pressure_regulator_response_slow
+    vehicle:
+      manufacturer: dacia
+      models:
+        - solenza
+        - logan
+      generations:
+        - solenza
+        - logan_i
+        - logan_ii
+      engines:
+        - dacia_solenza_1461
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: Common Rail
+    title:
+      en: Fuel Pressure Regulator Response Too Slow
+      ro: Răspuns prea lent al regulatorului de presiune combustibil
+      de: Reaktion des Kraftstoffdruckreglers zu langsam
+      fr: Réponse trop lente du régulateur de pression carburant
+      es: Respuesta demasiado lenta del regulador de presión
+      it: Risposta troppo lenta del regolatore pressione carburante
+      nl: Reactie brandstofdrukregelaar te traag
+    symptoms:
+      - Hesitation
+      - Poor acceleration
+      - Difficult starting
+      - Rail pressure fluctuations
+    keywords:
+      - fuel pressure regulator slow
+      - pressure regulator response
+      - regulator response
+      - regulator presiune combustibil
+    possible_causes:
+      - Sticky pressure regulator
+      - Contaminated fuel
+      - Electrical control problem
+      - Pump wear
+      - Fuel restriction
+    diagnostic_steps:
+      - Monitor commanded and actual rail pressure.
+      - Check regulator current or duty cycle where supported.
+      - Inspect the fuel supply.
+      - Test the regulator response during rapid load changes.
+      - Check pump output if regulation remains unstable.
+    related_dtcs:
+      - P0089
+    difficulty: hard
+
+  - id: dacia_engine_injector_cylinder_1_quantity_correction_high
+    vehicle:
+      manufacturer: dacia
+      models:
+        - solenza
+        - logan
+      generations:
+        - solenza
+        - logan_i
+        - logan_ii
+      engines:
+        - dacia_solenza_1461
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: Diesel Injection
+    title:
+      en: Cylinder 1 Injector Quantity Correction Excessive
+      ro: Corecție excesivă cantitate injector cilindrul 1
+      de: Zu hohe Mengenabweichung Injektor Zylinder 1
+      fr: Correction excessive de débit injecteur cylindre 1
+      es: Corrección excesiva del inyector del cilindro 1
+      it: Correzione eccessiva iniettore cilindro 1
+      nl: Te grote correctie van injector cilinder 1
+    symptoms:
+      - Rough idle
+      - Engine vibration
+      - Difficult starting
+      - Increased smoke
+      - Uneven engine operation
+    keywords:
+      - injector correction cylinder 1
+      - injector quantity correction
+      - cylinder 1 injector
+      - corecție injector cilindrul 1
+    possible_causes:
+      - Injector wear
+      - Injector nozzle contamination
+      - Compression imbalance
+      - Fuel pressure instability
+      - Wiring fault
+    diagnostic_steps:
+      - Read injector correction values at operating temperature.
+      - Compare all cylinder corrections.
+      - Perform injector leak-off testing.
+      - Check compression if one cylinder remains abnormal.
+      - Verify injector coding where applicable.
+    related_dtcs:
+      - P0263
+    difficulty: hard
+
+  - id: dacia_engine_injector_cylinder_2_quantity_correction_high
+    vehicle:
+      manufacturer: dacia
+      models:
+        - solenza
+        - logan
+      generations:
+        - solenza
+        - logan_i
+        - logan_ii
+      engines:
+        - dacia_solenza_1461
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: Diesel Injection
+    title:
+      en: Cylinder 2 Injector Quantity Correction Excessive
+      ro: Corecție excesivă cantitate injector cilindrul 2
+      de: Zu hohe Mengenabweichung Injektor Zylinder 2
+      fr: Correction excessive de débit injecteur cylindre 2
+      es: Corrección excesiva del inyector del cilindro 2
+      it: Correzione eccessiva iniettore cilindro 2
+      nl: Te grote correctie van injector cilinder 2
+    symptoms:
+      - Rough idle
+      - Engine vibration
+      - Poor starting
+      - Smoke
+      - Uneven combustion
+    keywords:
+      - injector correction cylinder 2
+      - cylinder 2 injector
+      - injector quantity correction
+      - corecție injector cilindrul 2
+    possible_causes:
+      - Injector wear
+      - Nozzle contamination
+      - Compression imbalance
+      - Fuel pressure problem
+    diagnostic_steps:
+      - Compare cylinder 2 correction with the other cylinders.
+      - Perform injector leak-off testing.
+      - Check injector wiring.
+      - Check compression if necessary.
+      - Verify injector coding where applicable.
+    related_dtcs:
+      - P0266
+    difficulty: hard
+
+  - id: dacia_engine_injector_cylinder_3_quantity_correction_high
+    vehicle:
+      manufacturer: dacia
+      models:
+        - solenza
+        - logan
+      generations:
+        - solenza
+        - logan_i
+        - logan_ii
+      engines:
+        - dacia_solenza_1461
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: Diesel Injection
+    title:
+      en: Cylinder 3 Injector Quantity Correction Excessive
+      ro: Corecție excesivă cantitate injector cilindrul 3
+      de: Zu hohe Mengenabweichung Injektor Zylinder 3
+      fr: Correction excessive de débit injecteur cylindre 3
+      es: Corrección excesiva del inyector del cilindro 3
+      it: Correzione eccessiva iniettore cilindro 3
+      nl: Te grote correctie van injector cilinder 3
+    symptoms:
+      - Rough idle
+      - Engine vibration
+      - Difficult starting
+      - Increased smoke
+      - Uneven combustion
+    keywords:
+      - injector correction cylinder 3
+      - cylinder 3 injector
+      - injector quantity correction
+      - corecție injector cilindrul 3
+    possible_causes:
+      - Injector wear
+      - Nozzle contamination
+      - Compression imbalance
+      - Fuel pressure instability
+    diagnostic_steps:
+      - Read injector correction values.
+      - Compare all cylinders.
+      - Perform leak-off testing.
+      - Check compression where required.
+      - Verify injector coding.
+    related_dtcs:
+      - P0269
+    difficulty: hard
+
+  - id: dacia_engine_injector_cylinder_4_quantity_correction_high
+    vehicle:
+      manufacturer: dacia
+      models:
+        - solenza
+        - logan
+      generations:
+        - solenza
+        - logan_i
+        - logan_ii
+      engines:
+        - dacia_solenza_1461
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: Diesel Injection
+    title:
+      en: Cylinder 4 Injector Quantity Correction Excessive
+      ro: Corecție excesivă cantitate injector cilindrul 4
+      de: Zu hohe Mengenabweichung Injektor Zylinder 4
+      fr: Correction excessive de débit injecteur cylindre 4
+      es: Corrección excesiva del inyector del cilindro 4
+      it: Correzione eccessiva iniettore cilindro 4
+      nl: Te grote correctie van injector cilinder 4
+    symptoms:
+      - Rough idle
+      - Engine vibration
+      - Poor starting
+      - Smoke
+      - Uneven engine operation
+    keywords:
+      - injector correction cylinder 4
+      - cylinder 4 injector
+      - injector quantity correction
+      - corecție injector cilindrul 4
+    possible_causes:
+      - Injector wear
+      - Nozzle contamination
+      - Compression imbalance
+      - Fuel pressure problem
+    diagnostic_steps:
+      - Monitor injector correction values.
+      - Compare cylinder balance.
+      - Perform leak-off testing.
+      - Check compression where necessary.
+      - Verify injector coding.
+    related_dtcs:
+      - P0272
+    difficulty: hard
+
+  - id: dacia_engine_injector_cylinder_1_open_circuit
+    vehicle:
+      manufacturer: dacia
+      models:
+        - solenza
+        - logan
+      generations:
+        - solenza
+        - logan_i
+        - logan_ii
+      engines:
+        - dacia_solenza_1461
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: Diesel Injection
+    title:
+      en: Cylinder 1 Injector Circuit Open
+      ro: Circuit deschis injector cilindrul 1
+      de: Unterbrechung Injektorkreis Zylinder 1
+      fr: Circuit injecteur cylindre 1 ouvert
+      es: Circuito abierto del inyector del cilindro 1
+      it: Circuito iniettore cilindro 1 aperto
+      nl: Injectorcilinder 1 open circuit
+    symptoms:
+      - Engine misfire
+      - Strong vibration
+      - Power loss
+      - Difficult starting
+      - Engine warning light
+    keywords:
+      - injector circuit cylinder 1
+      - injector open
+      - P0201
+      - injector 1
+    possible_causes:
+      - Injector coil or piezo element fault
+      - Open wiring
+      - Connector fault
+      - ECU injector driver fault
+    diagnostic_steps:
+      - Inspect injector connector and harness.
+      - Check injector electrical characteristics.
+      - Verify continuity between injector and ECU.
+      - Check ECU driver supply and control.
+      - Replace the injector only after circuit testing.
+    related_dtcs:
+      - P0201
+    difficulty: hard
+
+  - id: dacia_engine_injector_cylinder_2_open_circuit
+    vehicle:
+      manufacturer: dacia
+      models:
+        - solenza
+        - logan
+      generations:
+        - solenza
+        - logan_i
+        - logan_ii
+      engines:
+        - dacia_solenza_1461
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: Diesel Injection
+    title:
+      en: Cylinder 2 Injector Circuit Open
+      ro: Circuit deschis injector cilindrul 2
+      de: Unterbrechung Injektorkreis Zylinder 2
+      fr: Circuit injecteur cylindre 2 ouvert
+      es: Circuito abierto del inyector del cilindro 2
+      it: Circuito iniettore cilindro 2 aperto
+      nl: Injectorcilinder 2 open circuit
+    symptoms:
+      - Misfire
+      - Power loss
+      - Engine vibration
+      - Difficult starting
+    keywords:
+      - injector circuit cylinder 2
+      - P0202
+      - injector 2
+      - injector open
+    possible_causes:
+      - Injector electrical failure
+      - Open wiring
+      - Connector damage
+      - ECU driver fault
+    diagnostic_steps:
+      - Inspect the injector connector.
+      - Check wiring continuity.
+      - Measure injector electrical characteristics.
+      - Verify ECU control.
+      - Repair the circuit and retest.
+    related_dtcs:
+      - P0202
+    difficulty: hard
+
+  - id: dacia_engine_injector_cylinder_3_open_circuit
+    vehicle:
+      manufacturer: dacia
+      models:
+        - solenza
+        - logan
+      generations:
+        - solenza
+        - logan_i
+        - logan_ii
+      engines:
+        - dacia_solenza_1461
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: Diesel Injection
+    title:
+      en: Cylinder 3 Injector Circuit Open
+      ro: Circuit deschis injector cilindrul 3
+      de: Unterbrechung Injektorkreis Zylinder 3
+      fr: Circuit injecteur cylindre 3 ouvert
+      es: Circuito abierto del inyector del cilindro 3
+      it: Circuito iniettore cilindro 3 aperto
+      nl: Injectorcilinder 3 open circuit
+    symptoms:
+      - Misfire
+      - Power loss
+      - Engine vibration
+      - Difficult starting
+    keywords:
+      - injector circuit cylinder 3
+      - P0203
+      - injector 3
+      - injector open
+    possible_causes:
+      - Injector electrical failure
+      - Open wiring
+      - Connector damage
+      - ECU driver fault
+    diagnostic_steps:
+      - Inspect injector wiring.
+      - Check injector electrical characteristics.
+      - Verify circuit continuity.
+      - Test ECU injector control.
+      - Repair and confirm correct operation.
+    related_dtcs:
+      - P0203
+    difficulty: hard
+
+  - id: dacia_engine_injector_cylinder_4_open_circuit
+    vehicle:
+      manufacturer: dacia
+      models:
+        - solenza
+        - logan
+      generations:
+        - solenza
+        - logan_i
+        - logan_ii
+      engines:
+        - dacia_solenza_1461
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: Diesel Injection
+    title:
+      en: Cylinder 4 Injector Circuit Open
+      ro: Circuit deschis injector cilindrul 4
+      de: Unterbrechung Injektorkreis Zylinder 4
+      fr: Circuit injecteur cylindre 4 ouvert
+      es: Circuito abierto del inyector del cilindro 4
+      it: Circuito iniettore cilindro 4 aperto
+      nl: Injectorcilinder 4 open circuit
+    symptoms:
+      - Misfire
+      - Power loss
+      - Engine vibration
+      - Difficult starting
+    keywords:
+      - injector circuit cylinder 4
+      - P0204
+      - injector 4
+      - injector open
+    possible_causes:
+      - Injector electrical failure
+      - Open wiring
+      - Connector damage
+      - ECU driver fault
+    diagnostic_steps:
+      - Inspect injector connector and wiring.
+      - Check injector electrical characteristics.
+      - Verify continuity.
+      - Test ECU control.
+      - Repair the confirmed fault.
+    related_dtcs:
+      - P0204
+    difficulty: hard
+
+  - id: dacia_engine_engine_coolant_temperature_sensor_signal_low
+    vehicle:
+      manufacturer: dacia
+      models:
+        - supernova
+        - solenza
+        - logan
+      generations:
+        - supernova
+        - solenza
+        - logan_i
+        - logan_ii
+      engines:
+        - dacia_supernova_1390
+        - dacia_solenza_1390
+        - dacia_logan_i_1390
+        - dacia_logan_i_1598
+        - dacia_logan_ii_1149
+    category: diagnostics
+    system: Engine Management
+    title:
+      en: Engine Coolant Temperature Sensor Signal Too Low
+      ro: Semnal prea scăzut al senzorului de temperatură lichid răcire
+      de: Signal des Kühlmitteltemperatursensors zu niedrig
+      fr: Signal trop faible du capteur de température du liquide de refroidissement
+      es: Señal demasiado baja del sensor de temperatura del refrigerante
+      it: Segnale troppo basso del sensore temperatura refrigerante
+      nl: Signaal koelvloeistoftemperatuursensor te laag
+    symptoms:
+      - Rich mixture
+      - Difficult starting
+      - Cooling fan behaviour abnormal
+      - Increased fuel consumption
+      - Engine warning light
+    keywords:
+      - ECT low signal
+      - coolant temperature low signal
+      - P0117
+      - senzor temperatură lichid răcire
+    possible_causes:
+      - Short to ground
+      - Sensor failure
+      - Wiring damage
+      - Connector contamination
+    diagnostic_steps:
+      - Compare ECT live data with actual coolant temperature.
+      - Check sensor signal voltage.
+      - Inspect wiring for a short to ground.
+      - Check sensor ground and connector.
+      - Replace the sensor if confirmed faulty.
+    related_dtcs:
+      - P0117
+    difficulty: medium
+
+  - id: dacia_engine_engine_coolant_temperature_sensor_signal_high
+    vehicle:
+      manufacturer: dacia
+      models:
+        - supernova
+        - solenza
+        - logan
+      generations:
+        - supernova
+        - solenza
+        - logan_i
+        - logan_ii
+      engines:
+        - dacia_supernova_1390
+        - dacia_solenza_1390
+        - dacia_logan_i_1390
+        - dacia_logan_i_1598
+        - dacia_logan_ii_1149
+    category: diagnostics
+    system: Engine Management
+    title:
+      en: Engine Coolant Temperature Sensor Signal Too High
+      ro: Semnal prea ridicat al senzorului de temperatură lichid răcire
+      de: Signal des Kühlmitteltemperatursensors zu hoch
+      fr: Signal trop élevé du capteur de température du liquide de refroidissement
+      es: Señal demasiado alta del sensor de temperatura del refrigerante
+      it: Segnale troppo alto del sensore temperatura refrigerante
+      nl: Signaal koelvloeistoftemperatuursensor te hoog
+    symptoms:
+      - Difficult cold starting
+      - Lean mixture
+      - Incorrect cooling fan operation
+      - Poor fuel economy
+      - Engine warning light
+    keywords:
+      - ECT high signal
+      - coolant temperature high signal
+      - P0118
+      - senzor ECT
+    possible_causes:
+      - Open sensor circuit
+      - Poor connector contact
+      - Sensor failure
+      - Wiring break
+    diagnostic_steps:
+      - Check ECT value with the engine cold.
+      - Compare the reading with ambient temperature.
+      - Inspect sensor connector.
+      - Test circuit continuity.
+      - Replace the sensor after confirming circuit integrity.
+    related_dtcs:
+      - P0118
+    difficulty: medium
+
+  - id: dacia_engine_intake_air_temperature_sensor_signal_low
+    vehicle:
+      manufacturer: dacia
+      models:
+        - supernova
+        - solenza
+        - logan
+      generations:
+        - supernova
+        - solenza
+        - logan_i
+        - logan_ii
+      engines:
+        - dacia_supernova_1390
+        - dacia_solenza_1390
+        - dacia_logan_i_1390
+        - dacia_logan_i_1598
+        - dacia_logan_ii_1149
+    category: diagnostics
+    system: Engine Management
+    title:
+      en: Intake Air Temperature Sensor Signal Too Low
+      ro: Semnal prea scăzut al senzorului temperatură aer admisie
+      de: Signal des Ansauglufttemperatursensors zu niedrig
+      fr: Signal trop faible du capteur de température d'air d'admission
+      es: Señal demasiado baja del sensor de temperatura del aire de admisión
+      it: Segnale troppo basso del sensore temperatura aria aspirata
+      nl: Signaal inlaatluchttemperatuursensor te laag
+    symptoms:
+      - Poor acceleration
+      - Incorrect mixture
+      - Increased fuel consumption
+      - Engine warning light
+    keywords:
+      - IAT low signal
+      - intake air temperature low
+      - P0112
+      - temperatură aer admisie
+    possible_causes:
+      - Short to ground
+      - Sensor failure
+      - Wiring fault
+      - Connector fault
+    diagnostic_steps:
+      - Compare IAT reading with ambient temperature.
+      - Measure sensor signal voltage.
+      - Check for a short to ground.
+      - Inspect connector and wiring.
+      - Replace the sensor if required.
+    related_dtcs:
+      - P0112
+    difficulty: medium
+
+  - id: dacia_engine_intake_air_temperature_sensor_signal_high
+    vehicle:
+      manufacturer: dacia
+      models:
+        - supernova
+        - solenza
+        - logan
+      generations:
+        - supernova
+        - solenza
+        - logan_i
+        - logan_ii
+      engines:
+        - dacia_supernova_1390
+        - dacia_solenza_1390
+        - dacia_logan_i_1390
+        - dacia_logan_i_1598
+        - dacia_logan_ii_1149
+    category: diagnostics
+    system: Engine Management
+    title:
+      en: Intake Air Temperature Sensor Signal Too High
+      ro: Semnal prea ridicat al senzorului temperatură aer admisie
+      de: Signal des Ansauglufttemperatursensors zu hoch
+      fr: Signal trop élevé du capteur de température d'air d'admission
+      es: Señal demasiado alta del sensor de temperatura del aire de admisión
+      it: Segnale troppo alto del sensore temperatura aria aspirata
+      nl: Signaal inlaatluchttemperatuursensor te hoog
+    symptoms:
+      - Poor acceleration
+      - Hesitation
+      - Incorrect fuel mixture
+      - Engine warning light
+    keywords:
+      - IAT high signal
+      - intake air temperature high
+      - P0113
+      - IAT sensor
+    possible_causes:
+      - Open circuit
+      - Sensor failure
+      - Connector fault
+      - Wiring break
+    diagnostic_steps:
+      - Compare IAT reading with ambient temperature.
+      - Inspect the sensor connector.
+      - Check circuit continuity.
+      - Measure signal voltage.
+      - Replace the sensor if the signal remains implausible.
+    related_dtcs:
+      - P0113
+    difficulty: medium
+
+  - id: dacia_engine_vehicle_speed_signal_missing_ecu
+    vehicle:
+      manufacturer: dacia
+      models:
+        - supernova
+        - solenza
+        - logan
+      generations:
+        - supernova
+        - solenza
+        - logan_i
+        - logan_ii
+      engines:
+        - dacia_supernova_1390
+        - dacia_solenza_1390
+        - dacia_logan_i_1390
+        - dacia_logan_i_1598
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1149
+        - dacia_logan_ii_898
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: Engine Management
+    title:
+      en: Vehicle Speed Signal Missing at Engine ECU
+      ro: Semnal viteză vehicul absent la ECU motor
+      de: Fahrzeuggeschwindigkeitssignal am Motorsteuergerät fehlt
+      fr: Signal de vitesse véhicule absent au calculateur moteur
+      es: Falta señal de velocidad del vehículo en la ECU
+      it: Segnale velocità veicolo assente alla ECU motore
+      nl: Voertuigsnelheidssignaal ontbreekt bij de ECU
+    symptoms:
+      - Idle control problems
+      - Cruise control unavailable
+      - Incorrect speed-dependent engine behaviour
+      - Engine warning light
+    keywords:
+      - vehicle speed signal
+      - VSS signal
+      - vehicle speed missing
+      - semnal viteză vehicul
+    possible_causes:
+      - ABS or wheel-speed information unavailable
+      - CAN communication fault
+      - Instrument cluster signal fault
+      - Wiring fault
+    diagnostic_steps:
+      - Compare vehicle speed in ECU and instrument cluster live data.
+      - Check wheel-speed information.
+      - Check CAN communication.
+      - Inspect related wiring and connectors.
+      - Verify the speed signal reaches the engine ECU.
+    related_dtcs:
+      - P0500
+    difficulty: medium
+
+  - id: dacia_engine_idle_speed_control_system_fault
+    vehicle:
+      manufacturer: dacia
+      models:
+        - supernova
+        - solenza
+        - logan
+      generations:
+        - supernova
+        - solenza
+        - logan_i
+        - logan_ii
+      engines:
+        - dacia_supernova_1390
+        - dacia_solenza_1390
+        - dacia_logan_i_1390
+        - dacia_logan_i_1598
+        - dacia_logan_ii_1149
+    category: diagnostics
+    system: Engine Management
+    title:
+      en: Idle Speed Control System Fault
+      ro: Defecțiune sistem control turație ralanti
+      de: Fehler der Leerlaufdrehzahlregelung
+      fr: Défaut du système de régulation du ralenti
+      es: Fallo del sistema de control del ralentí
+      it: Guasto del sistema di controllo del minimo
+      nl: Storing in de stationairregeling
+    symptoms:
+      - Unstable idle
+      - Engine stalls when coming to a stop
+      - High idle speed
+      - Low idle speed
+      - Engine hesitation
+    keywords:
+      - idle control
+      - idle speed
+      - unstable idle
+      - control ralanti
+    possible_causes:
+      - Throttle contamination
+      - Idle actuator fault where fitted
+      - Intake leak
+      - Incorrect throttle adaptation
+      - Engine temperature signal error
+    diagnostic_steps:
+      - Monitor commanded and actual idle speed.
+      - Check throttle position.
+      - Inspect intake system for leaks.
+      - Check coolant temperature data.
+      - Perform idle or throttle adaptation if supported.
+    related_dtcs:
+      - P0505
+    difficulty: medium
+
+  - id: dacia_engine_idle_speed_too_high
+    vehicle:
+      manufacturer: dacia
+      models:
+        - supernova
+        - solenza
+        - logan
+      generations:
+        - supernova
+        - solenza
+        - logan_i
+        - logan_ii
+      engines:
+        - dacia_supernova_1390
+        - dacia_solenza_1390
+        - dacia_logan_i_1390
+        - dacia_logan_i_1598
+        - dacia_logan_ii_1149
+    category: diagnostics
+    system: Engine Management
+    title:
+      en: Idle Speed Too High
+      ro: Turație de ralanti prea ridicată
+      de: Leerlaufdrehzahl zu hoch
+      fr: Régime de ralenti trop élevé
+      es: Régimen de ralentí demasiado alto
+      it: Regime minimo troppo alto
+      nl: Stationair toerental te hoog
+    symptoms:
+      - High idle
+      - Increased fuel consumption
+      - Engine braking reduced
+      - Engine warning light
+    keywords:
+      - high idle
+      - idle too high
+      - fast idle
+      - ralanti ridicat
+    possible_causes:
+      - Vacuum leak
+      - Throttle not closing
+      - Incorrect coolant temperature signal
+      - Purge valve leakage
+      - Idle adaptation fault
+    diagnostic_steps:
+      - Check actual idle speed against commanded speed.
+      - Inspect the intake system.
+      - Verify throttle closed position.
+      - Check coolant temperature.
+      - Test EVAP purge operation.
+      - Perform adaptation if applicable.
+    related_dtcs:
+      - P0507
+    difficulty: medium
+
+  - id: dacia_engine_throttle_closed_position_not_learned
+    vehicle:
+      manufacturer: dacia
+      models:
+        - supernova
+        - solenza
+        - logan
+      generations:
+        - supernova
+        - solenza
+        - logan_i
+        - logan_ii
+      engines:
+        - dacia_supernova_1390
+        - dacia_solenza_1390
+        - dacia_logan_i_1390
+        - dacia_logan_i_1598
+        - dacia_logan_ii_1149
+        - dacia_logan_ii_898
+    category: diagnostics
+    system: Engine Management
+    title:
+      en: Throttle Closed Position Adaptation Not Learned
+      ro: Poziția închisă a clapetei nu a fost învățată
+      de: Geschlossene Drosselklappenstellung nicht angelernt
+      fr: Position fermée du papillon non apprise
+      es: Posición cerrada de mariposa no aprendida
+      it: Posizione chiusa farfalla non appresa
+      nl: Gesloten gasklepstand niet aangeleerd
+    symptoms:
+      - Unstable idle
+      - High idle
+      - Poor throttle response
+      - Engine warning light
+    keywords:
+      - throttle adaptation
+      - closed throttle learning
+      - throttle relearn
+      - adaptare clapetă
+    possible_causes:
+      - Battery voltage interruption
+      - Throttle body replacement
+      - Carbon deposits
+      - Adaptation procedure interrupted
+      - Throttle sensor fault
+    diagnostic_steps:
+      - Check battery voltage.
+      - Verify throttle sensor values.
+      - Clean the throttle body if contaminated.
+      - Perform the specified throttle adaptation procedure.
+      - Confirm that the learned position is stored.
+    related_dtcs:
+      - P0638
+    difficulty: medium
+
+  - id: dacia_engine_engine_torque_signal_implausible
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - sandero
+        - duster
+        - dokker
+        - lodgy
+      generations:
+        - logan_ii
+        - sandero_ii
+        - duster_ii
+        - dokker_i
+        - lodgy_i
+      engines:
+        - dacia_logan_ii_1149
+        - dacia_logan_ii_898
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: Engine Management
+    title:
+      en: Engine Torque Signal Implausible
+      ro: Semnal neverosimil al cuplului motor
+      de: Unplausibles Motordrehmomentsignal
+      fr: Signal de couple moteur incohérent
+      es: Señal de par motor no plausible
+      it: Segnale di coppia motore non plausibile
+      nl: Ongeloofwaardig motorkoppelsignaal
+    symptoms:
+      - Reduced engine power
+      - Gearshift quality affected
+      - Cruise control unavailable
+      - Engine warning light
+    keywords:
+      - engine torque signal
+      - torque calculation
+      - torque implausible
+      - cuplu motor semnal
+    possible_causes:
+      - Accelerator pedal signal disagreement
+      - Throttle position error
+      - CAN communication problem
+      - ECU calculation fault
+    diagnostic_steps:
+      - Compare requested and calculated engine torque.
+      - Check accelerator pedal signals.
+      - Check throttle position.
+      - Inspect CAN communication with other modules.
+      - Resolve underlying sensor or communication faults.
+    related_dtcs:
+      - P061B
+    difficulty: hard
+
+  - id: dacia_engine_internal_ecu_memory_error
+    vehicle:
+      manufacturer: dacia
+      models:
+        - supernova
+        - solenza
+        - logan
+      generations:
+        - supernova
+        - solenza
+        - logan_i
+        - logan_ii
+      engines:
+        - dacia_supernova_1390
+        - dacia_solenza_1390
+        - dacia_logan_i_1390
+        - dacia_logan_i_1598
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1149
+        - dacia_logan_ii_898
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: Engine ECU
+    title:
+      en: Engine ECU Internal Memory Error
+      ro: Eroare internă de memorie ECU motor
+      de: Interner Speicherfehler des Motorsteuergeräts
+      fr: Défaut mémoire interne du calculateur moteur
+      es: Error interno de memoria de la ECU del motor
+      it: Errore memoria interna ECU motore
+      nl: Interne geheugenfout van de motor-ECU
+    symptoms:
+      - Engine warning light
+      - No-start condition
+      - Intermittent engine faults
+      - Loss of stored adaptations
+    keywords:
+      - ECU memory
+      - internal ECU error
+      - EEPROM error
+      - ECU memorie
+    possible_causes:
+      - ECU internal memory failure
+      - Voltage interruption during programming
+      - Corrupted calibration data
+      - Internal processor fault
+    diagnostic_steps:
+      - Check battery and ECU supply voltage.
+      - Read all ECU internal fault codes.
+      - Check whether the fault returns after clearing.
+      - Verify ECU software/calibration status.
+      - Replace or reprogram the ECU only after power supply faults are excluded.
+    related_dtcs:
+      - P0601
+    difficulty: hard
+
+  - id: dacia_engine_ecu_processor_fault
+    vehicle:
+      manufacturer: dacia
+      models:
+        - supernova
+        - solenza
+        - logan
+      generations:
+        - supernova
+        - solenza
+        - logan_i
+        - logan_ii
+      engines:
+        - dacia_supernova_1390
+        - dacia_solenza_1390
+        - dacia_logan_i_1390
+        - dacia_logan_i_1598
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1149
+        - dacia_logan_ii_898
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: Engine ECU
+    title:
+      en: Engine ECU Processor Fault
+      ro: Defecțiune procesor ECU motor
+      de: Prozessorfehler des Motorsteuergeräts
+      fr: Défaut processeur du calculateur moteur
+      es: Fallo del procesador de la ECU del motor
+      it: Guasto del processore ECU motore
+      nl: Processorstoring van de motor-ECU
+    symptoms:
+      - No-start condition
+      - Engine stalls
+      - Multiple unrelated engine faults
+      - Engine warning light
+    keywords:
+      - ECU processor
+      - processor fault
+      - internal ECU
+      - procesor ECU
+    possible_causes:
+      - Internal ECU hardware failure
+      - Supply voltage instability
+      - Internal communication failure
+      - Severe electrical damage
+    diagnostic_steps:
+      - Check ECU power and ground circuits.
+      - Check battery voltage during cranking.
+      - Scan all modules for related communication faults.
+      - Clear and recheck internal ECU faults.
+      - Test or replace the ECU after external causes are excluded.
+    related_dtcs:
+      - P0606
+    difficulty: hard
+
+  - id: dacia_engine_ecu_calibration_checksum_error
+    vehicle:
+      manufacturer: dacia
+      models:
+        - supernova
+        - solenza
+        - logan
+      generations:
+        - supernova
+        - solenza
+        - logan_i
+        - logan_ii
+      engines:
+        - dacia_supernova_1390
+        - dacia_solenza_1390
+        - dacia_logan_i_1390
+        - dacia_logan_i_1598
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1149
+        - dacia_logan_ii_898
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: Engine ECU
+    title:
+      en: Engine ECU Calibration Checksum Error
+      ro: Eroare checksum calibrare ECU motor
+      de: Prüfsummenfehler der ECU-Kalibrierung
+      fr: Erreur de somme de contrôle de calibration ECU
+      es: Error de checksum de calibración de la ECU
+      it: Errore checksum calibrazione ECU
+      nl: Checksumfout in ECU-kalibratie
+    symptoms:
+      - Engine warning light
+      - No-start condition
+      - Incorrect engine operation
+      - Diagnostic communication available but ECU faults remain
+    keywords:
+      - ECU checksum
+      - calibration checksum
+      - software checksum
+      - checksum ECU
+    possible_causes:
+      - Corrupted calibration
+      - Interrupted programming
+      - ECU memory fault
+      - Incorrect software file
+    diagnostic_steps:
+      - Verify ECU software identification.
+      - Check for programming-related faults.
+      - Confirm battery voltage during programming.
+      - Reprogram the ECU using the correct calibration if required.
+      - Verify operation after programming.
+    related_dtcs:
+      - P0602
+    difficulty: hard
+
+  - id: dacia_engine_ecu_configuration_mismatch
+    vehicle:
+      manufacturer: dacia
+      models:
+        - supernova
+        - solenza
+        - logan
+      generations:
+        - supernova
+        - solenza
+        - logan_i
+        - logan_ii
+      engines:
+        - dacia_supernova_1390
+        - dacia_solenza_1390
+        - dacia_logan_i_1390
+        - dacia_logan_i_1598
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1149
+        - dacia_logan_ii_898
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: Engine ECU
+    title:
+      en: Engine ECU Configuration Mismatch
+      ro: Configurație ECU motor incompatibilă
+      de: Konfigurationsabweichung des Motorsteuergeräts
+      fr: Incompatibilité de configuration du calculateur moteur
+      es: Incompatibilidad de configuración de la ECU
+      it: Incompatibilità configurazione ECU motore
+      nl: Configuratieverschil van de motor-ECU
+    symptoms:
+      - Engine warning light
+      - Incorrect module operation
+      - Missing vehicle functions
+      - Communication faults
+    keywords:
+      - ECU configuration
+      - configuration mismatch
+      - ECU coding
+      - configurare ECU
+    possible_causes:
+      - ECU replacement without configuration
+      - Incorrect vehicle coding
+      - Corrupted configuration
+      - Module mismatch
+    diagnostic_steps:
+      - Read ECU identification and configuration.
+      - Compare installed configuration with vehicle specification.
+      - Check immobilizer and UCH synchronization.
+      - Correct the ECU configuration using the appropriate diagnostic procedure.
+      - Verify all engine functions afterward.
+    related_dtcs:
+      - P0630
+    difficulty: hard
+
+  - id: dacia_engine_engine_speed_signal_intermittent
+    vehicle:
+      manufacturer: dacia
+      models:
+        - supernova
+        - solenza
+        - logan
+      generations:
+        - supernova
+        - solenza
+        - logan_i
+        - logan_ii
+      engines:
+        - dacia_supernova_1390
+        - dacia_solenza_1390
+        - dacia_logan_i_1390
+        - dacia_logan_i_1598
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1149
+        - dacia_logan_ii_898
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: Engine Management
+    title:
+      en: Engine Speed Signal Intermittent
+      ro: Semnal intermitent turație motor
+      de: Intermittierendes Motordrehzahlsignal
+      fr: Signal de régime moteur intermittent
+      es: Señal intermitente de régimen del motor
+      it: Segnale intermittente regime motore
+      nl: Intermitterend motortoerentalsignaal
+    symptoms:
+      - Intermittent stalling
+      - Difficult starting
+      - Sudden loss of power
+      - Tachometer drop
+    keywords:
+      - engine speed signal
+      - RPM signal intermittent
+      - crank signal dropout
+      - turație motor intermitent
+    possible_causes:
+      - Crankshaft sensor wiring fault
+      - Sensor air gap problem
+      - Damaged trigger wheel
+      - Electrical interference
+      - Connector contact loss
+    diagnostic_steps:
+      - Monitor engine RPM during cranking and operation.
+      - Inspect crankshaft sensor wiring.
+      - Check sensor mounting and air gap.
+      - Inspect the trigger wheel if accessible.
+      - Perform oscilloscope testing if required.
+    related_dtcs:
+      - P0335
+      - P0339
+    difficulty: hard
+
+  - id: dacia_engine_camshaft_signal_intermittent
+    vehicle:
+      manufacturer: dacia
+      models:
+        - supernova
+        - solenza
+        - logan
+      generations:
+        - supernova
+        - solenza
+        - logan_i
+        - logan_ii
+      engines:
+        - dacia_supernova_1390
+        - dacia_solenza_1390
+        - dacia_logan_i_1390
+        - dacia_logan_i_1598
+        - dacia_logan_ii_1149
+        - dacia_logan_ii_898
+    category: diagnostics
+    system: Engine Management
+    title:
+      en: Camshaft Position Signal Intermittent
+      ro: Semnal intermitent senzor poziție arbore cu came
+      de: Intermittierendes Nockenwellensignal
+      fr: Signal intermittent du capteur d'arbre à cames
+      es: Señal intermitente del sensor de posición del árbol de levas
+      it: Segnale intermittente del sensore albero a camme
+      nl: Intermitterend nokkenassignaal
+    symptoms:
+      - Intermittent starting problems
+      - Engine hesitation
+      - Stalling
+      - Misfire
+      - Engine warning light
+    keywords:
+      - camshaft intermittent
+      - cam sensor dropout
+      - CMP intermittent
+      - senzor ax came intermitent
+    possible_causes:
+      - Sensor internal failure
+      - Wiring interruption
+      - Connector contact loss
+      - Timing signal interference
+      - Damaged trigger target
+    diagnostic_steps:
+      - Monitor camshaft synchronization during operation.
+      - Inspect sensor wiring and connector.
+      - Check supply and ground.
+      - Compare camshaft and crankshaft signals.
+      - Use oscilloscope testing for intermittent faults.
+    related_dtcs:
+      - P0344
+    difficulty: hard
+
+  - id: dacia_engine_knock_sensor_signal_low
+    vehicle:
+      manufacturer: dacia
+      models:
+        - supernova
+        - solenza
+        - logan
+      generations:
+        - supernova
+        - solenza
+        - logan_i
+        - logan_ii
+      engines:
+        - dacia_supernova_1390
+        - dacia_solenza_1390
+        - dacia_logan_i_1390
+        - dacia_logan_i_1598
+        - dacia_logan_ii_1149
+        - dacia_logan_ii_898
+    category: diagnostics
+    system: Engine Management
+    title:
+      en: Knock Sensor Signal Too Low
+      ro: Semnal prea scăzut al senzorului de detonație
+      de: Klopfsensorsignal zu niedrig
+      fr: Signal trop faible du capteur de cliquetis
+      es: Señal demasiado baja del sensor de detonación
+      it: Segnale troppo basso del sensore di detonazione
+      nl: Klopsensorsignaal te laag
+    symptoms:
+      - Reduced engine performance
+      - Ignition timing retard
+      - Increased fuel consumption
+      - Engine warning light
+    keywords:
+      - knock sensor low
+      - knock signal low
+      - P0327
+      - senzor detonație
+    possible_causes:
+      - Sensor failure
+      - Wiring short to ground
+      - Poor sensor mounting
+      - Connector fault
+    diagnostic_steps:
+      - Inspect knock sensor mounting.
+      - Check wiring and connector.
+      - Measure sensor circuit resistance where specified.
+      - Monitor knock signal during controlled engine load.
+      - Replace the sensor if confirmed faulty.
+    related_dtcs:
+      - P0327
+    difficulty: medium
+
+  - id: dacia_engine_knock_sensor_signal_high
+    vehicle:
+      manufacturer: dacia
+      models:
+        - supernova
+        - solenza
+        - logan
+      generations:
+        - supernova
+        - solenza
+        - logan_i
+        - logan_ii
+      engines:
+        - dacia_supernova_1390
+        - dacia_solenza_1390
+        - dacia_logan_i_1390
+        - dacia_logan_i_1598
+        - dacia_logan_ii_1149
+        - dacia_logan_ii_898
+    category: diagnostics
+    system: Engine Management
+    title:
+      en: Knock Sensor Signal Too High
+      ro: Semnal prea ridicat al senzorului de detonație
+      de: Klopfsensorsignal zu hoch
+      fr: Signal trop élevé du capteur de cliquetis
+      es: Señal demasiado alta del sensor de detonación
+      it: Segnale troppo alto del sensore di detonazione
+      nl: Klopsensorsignaal te hoog
+    symptoms:
+      - Reduced engine performance
+      - Ignition timing retard
+      - Increased fuel consumption
+      - Engine warning light
+    keywords:
+      - knock sensor high
+      - knock signal high
+      - P0328
+      - knock sensor
+    possible_causes:
+      - Sensor fault
+      - Short to voltage
+      - Incorrect sensor mounting
+      - Electrical interference
+    diagnostic_steps:
+      - Inspect sensor mounting torque and condition.
+      - Check wiring for short to voltage.
+      - Inspect connector.
+      - Monitor knock signal under controlled conditions.
+      - Replace the sensor if confirmed faulty.
+    related_dtcs:
+      - P0328
+    difficulty: medium
+
+  - id: dacia_engine_camshaft_timing_over_advanced
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+      generations:
+        - logan_ii
+      engines:
+        - dacia_logan_ii_898
+    category: diagnostics
+    system: Engine Management
+    title:
+      en: Camshaft Timing Over-Advanced
+      ro: Distribuție arbore cu came prea avansată
+      de: Nockenwellensteuerung zu weit vorverstellt
+      fr: Calage d'arbre à cames trop avancé
+      es: Distribución del árbol de levas demasiado avanzada
+      it: Fasatura albero a camme troppo anticipata
+      nl: Nokkenastiming te ver vooruit
+    symptoms:
+      - Poor low-speed torque
+      - Rough idle
+      - Difficult starting
+      - Engine warning light
+    keywords:
+      - cam timing advanced
+      - valve timing advanced
+      - P0011
+      - timing avansat
+    possible_causes:
+      - Variable valve timing actuator sticking
+      - Oil pressure problem
+      - Contaminated oil control passage
+      - Timing chain stretch
+      - Incorrect mechanical timing
+    diagnostic_steps:
+      - Compare commanded and actual camshaft position.
+      - Check engine oil level and condition.
+      - Inspect timing control solenoid.
+      - Verify oil pressure.
+      - Check mechanical timing if electronic tests pass.
+    related_dtcs:
+      - P0011
+    difficulty: hard
+
+  - id: dacia_engine_camshaft_timing_over_retarded
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+      generations:
+        - logan_ii
+      engines:
+        - dacia_logan_ii_898
+    category: diagnostics
+    system: Engine Management
+    title:
+      en: Camshaft Timing Over-Retarded
+      ro: Distribuție arbore cu came prea întârziată
+      de: Nockenwellensteuerung zu weit zurückgestellt
+      fr: Calage d'arbre à cames trop retardé
+      es: Distribución del árbol de levas demasiado retrasada
+      it: Fasatura albero a camme troppo ritardata
+      nl: Nokkenastiming te ver vertraagd
+    symptoms:
+      - Poor engine performance
+      - Reduced low-speed torque
+      - Difficult starting
+      - Increased fuel consumption
+    keywords:
+      - cam timing retarded
+      - valve timing retarded
+      - P0012
+      - timing întârziat
+    possible_causes:
+      - Variable timing actuator fault
+      - Low oil pressure
+      - Blocked oil passage
+      - Timing chain wear
+      - Incorrect mechanical timing
+    diagnostic_steps:
+      - Monitor commanded and actual camshaft timing.
+      - Check oil level and viscosity.
+      - Test the timing actuator.
+      - Check oil pressure.
+      - Verify mechanical timing if required.
+    related_dtcs:
+      - P0012
+    difficulty: hard
+
+  - id: dacia_engine_variable_valve_timing_solenoid_stuck
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+      generations:
+        - logan_ii
+      engines:
+        - dacia_logan_ii_898
+    category: diagnostics
+    system: Engine Management
+    title:
+      en: Variable Valve Timing Solenoid Stuck
+      ro: Solenoid comandă distribuție variabilă blocat
+      de: Magnetventil der variablen Ventilsteuerung blockiert
+      fr: Solénoïde de distribution variable bloqué
+      es: Solenoide de distribución variable atascado
+      it: Solenoide fasatura variabile bloccato
+      nl: Solenoïde variabele kleptiming vastgelopen
+    symptoms:
+      - Poor acceleration
+      - Rough idle
+      - Reduced torque
+      - Engine warning light
+    keywords:
+      - VVT solenoid
+      - variable valve timing
+      - camshaft actuator
+      - solenoid distribuție variabilă
+    possible_causes:
+      - Oil contamination
+      - Solenoid sticking
+      - Electrical fault
+      - Blocked oil passage
+    diagnostic_steps:
+      - Check VVT-related fault codes.
+      - Inspect engine oil condition.
+      - Activate the solenoid with diagnostics if supported.
+      - Measure solenoid resistance.
+      - Inspect the oil control passage.
+    related_dtcs:
+      - P0010
+      - P0020
+    difficulty: hard
+
+  - id: dacia_engine_oxygen_sensor_slow_response_upstream
+    vehicle:
+      manufacturer: dacia
+      models:
+        - supernova
+        - solenza
+        - logan
+      generations:
+        - supernova
+        - solenza
+        - logan_i
+        - logan_ii
+      engines:
+        - dacia_supernova_1390
+        - dacia_solenza_1390
+        - dacia_logan_i_1390
+        - dacia_logan_i_1598
+        - dacia_logan_ii_1149
+        - dacia_logan_ii_898
+    category: diagnostics
+    system: Emissions
+    title:
+      en: Upstream Oxygen Sensor Slow Response
+      ro: Răspuns lent al sondei lambda din amonte
+      de: Langsame Reaktion der vorderen Lambdasonde
+      fr: Réponse lente de la sonde lambda amont
+      es: Respuesta lenta del sensor de oxígeno aguas arriba
+      it: Risposta lenta del sensore ossigeno a monte
+      nl: Trage reactie van de voorste lambdasonde
+    symptoms:
+      - Increased fuel consumption
+      - Poor acceleration
+      - Unstable fuel trims
+      - Engine warning light
+    keywords:
+      - oxygen sensor slow
+      - O2 slow response
+      - lambda slow
+      - sondă lambda lentă
+    possible_causes:
+      - Aging oxygen sensor
+      - Sensor contamination
+      - Exhaust leak
+      - Fuel mixture problem
+      - Wiring resistance
+    diagnostic_steps:
+      - Monitor upstream oxygen sensor switching behaviour.
+      - Check sensor heater operation.
+      - Inspect exhaust for leaks.
+      - Check fuel trims.
+      - Replace the sensor only after excluding mixture faults.
+    related_dtcs:
+      - P0133
+    difficulty: medium
+
+  - id: dacia_engine_oxygen_sensor_stuck_rich_upstream
+    vehicle:
+      manufacturer: dacia
+      models:
+        - supernova
+        - solenza
+        - logan
+      generations:
+        - supernova
+        - solenza
+        - logan_i
+        - logan_ii
+      engines:
+        - dacia_supernova_1390
+        - dacia_solenza_1390
+        - dacia_logan_i_1390
+        - dacia_logan_i_1598
+        - dacia_logan_ii_1149
+        - dacia_logan_ii_898
+    category: diagnostics
+    system: Emissions
+    title:
+      en: Upstream Oxygen Sensor Stuck Rich
+      ro: Sondă lambda din amonte blocată pe amestec bogat
+      de: Vordere Lambdasonde auf fett festgesetzt
+      fr: Sonde lambda amont bloquée sur mélange riche
+      es: Sensor de oxígeno aguas arriba bloqueado en rico
+      it: Sensore ossigeno a monte bloccato su ricco
+      nl: Voorste lambdasonde vast op rijk
+    symptoms:
+      - Increased fuel consumption
+      - Black exhaust smoke
+      - Poor acceleration
+      - Engine warning light
+    keywords:
+      - oxygen sensor stuck rich
+      - lambda rich
+      - P0132
+      - sondă lambda bogat
+    possible_causes:
+      - Excessive fuel delivery
+      - Leaking injector
+      - Oxygen sensor contamination
+      - Signal circuit short to voltage
+    diagnostic_steps:
+      - Verify oxygen sensor signal.
+      - Check fuel pressure.
+      - Check injector leakage.
+      - Inspect signal wiring.
+      - Compare fuel trims and oxygen sensor behaviour.
+    related_dtcs:
+      - P0132
+    difficulty: hard
+
+  - id: dacia_engine_oxygen_sensor_stuck_lean_upstream
+    vehicle:
+      manufacturer: dacia
+      models:
+        - supernova
+        - solenza
+        - logan
+      generations:
+        - supernova
+        - solenza
+        - logan_i
+        - logan_ii
+      engines:
+        - dacia_supernova_1390
+        - dacia_solenza_1390
+        - dacia_logan_i_1390
+        - dacia_logan_i_1598
+        - dacia_logan_ii_1149
+        - dacia_logan_ii_898
+    category: diagnostics
+    system: Emissions
+    title:
+      en: Upstream Oxygen Sensor Stuck Lean
+      ro: Sondă lambda din amonte blocată pe amestec sărac
+      de: Vordere Lambdasonde auf mager festgesetzt
+      fr: Sonde lambda amont bloquée sur mélange pauvre
+      es: Sensor de oxígeno aguas arriba bloqueado en pobre
+      it: Sensore ossigeno a monte bloccato su magro
+      nl: Voorste lambdasonde vast op arm
+    symptoms:
+      - Poor acceleration
+      - Rough idle
+      - Increased fuel consumption
+      - Engine warning light
+    keywords:
+      - oxygen sensor stuck lean
+      - lambda lean
+      - P0131
+      - sondă lambda sărac
+    possible_causes:
+      - Intake leak
+      - Low fuel pressure
+      - Exhaust leak
+      - Sensor failure
+      - Signal circuit fault
+    diagnostic_steps:
+      - Check oxygen sensor signal.
+      - Inspect intake for unmetered air.
+      - Measure fuel pressure.
+      - Check for exhaust leaks before the sensor.
+      - Verify sensor wiring and ground.
+    related_dtcs:
+      - P0131
+    difficulty: hard
+
+  - id: dacia_engine_evap_leak_small
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+      generations:
+        - logan_i
+        - logan_ii
+      engines:
+        - dacia_logan_i_1390
+        - dacia_logan_i_1598
+        - dacia_logan_ii_1149
+        - dacia_logan_ii_898
+    category: diagnostics
+    system: EVAP
+    title:
+      en: Small EVAP System Leak
+      ro: Pierdere mică în sistemul EVAP
+      de: Kleine Undichtigkeit im EVAP-System
+      fr: Petite fuite du système EVAP
+      es: Pequeña fuga en el sistema EVAP
+      it: Piccola perdita nel sistema EVAP
+      nl: Kleine lekkage in het EVAP-systeem
+    symptoms:
+      - Engine warning light
+      - Fuel vapour smell
+      - Emissions test failure
+      - Usually normal engine performance
+    keywords:
+      - EVAP small leak
+      - fuel vapor leak
+      - P0455
+      - P0456
+      - pierdere EVAP
+    possible_causes:
+      - Loose fuel cap
+      - Cracked EVAP hose
+      - Canister connection leak
+      - Purge valve sealing problem
+    diagnostic_steps:
+      - Inspect fuel cap and sealing surface.
+      - Inspect EVAP hoses.
+      - Perform an EVAP smoke test.
+      - Check purge valve sealing.
+      - Repair the leak and repeat the system test.
+    related_dtcs:
+      - P0456
+    difficulty: medium
+
+  - id: dacia_engine_evap_large_leak
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+      generations:
+        - logan_i
+        - logan_ii
+      engines:
+        - dacia_logan_i_1390
+        - dacia_logan_i_1598
+        - dacia_logan_ii_1149
+        - dacia_logan_ii_898
+    category: diagnostics
+    system: EVAP
+    title:
+      en: Large EVAP System Leak
+      ro: Pierdere mare în sistemul EVAP
+      de: Große Undichtigkeit im EVAP-System
+      fr: Fuite importante du système EVAP
+      es: Fuga grande del sistema EVAP
+      it: Perdita importante del sistema EVAP
+      nl: Grote lekkage in het EVAP-systeem
+    symptoms:
+      - Fuel vapour smell
+      - Engine warning light
+      - Emissions test failure
+    keywords:
+      - EVAP large leak
+      - fuel vapor leak large
+      - P0455
+      - scurgere EVAP mare
+    possible_causes:
+      - Disconnected EVAP hose
+      - Cracked canister line
+      - Missing fuel cap
+      - Damaged fuel tank connection
+    diagnostic_steps:
+      - Inspect all EVAP hoses.
+      - Verify fuel cap installation.
+      - Perform a smoke test.
+      - Check canister and tank connections.
+      - Repair the leak and repeat the EVAP test.
+    related_dtcs:
+      - P0455
+    difficulty: medium
+
+  - id: dacia_engine_fuel_cap_pressure_sealing_fault
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+      generations:
+        - logan_i
+        - logan_ii
+      engines:
+        - dacia_logan_i_1390
+        - dacia_logan_i_1598
+        - dacia_logan_ii_1149
+        - dacia_logan_ii_898
+    category: diagnostics
+    system: EVAP
+    title:
+      en: Fuel Cap Sealing Fault
+      ro: Defecțiune etanșare capac rezervor
+      de: Fehler der Tankdeckelabdichtung
+      fr: Défaut d'étanchéité du bouchon de réservoir
+      es: Fallo de estanqueidad del tapón del depósito
+      it: Difetto di tenuta del tappo carburante
+      nl: Probleem met afdichting van de tankdop
+    symptoms:
+      - Engine warning light
+      - EVAP leak code
+      - Fuel vapour smell
+    keywords:
+      - fuel cap leak
+      - fuel cap seal
+      - tank cap
+      - capac rezervor etanșare
+    possible_causes:
+      - Damaged cap seal
+      - Incorrect cap installation
+      - Cracked filler neck
+      - Contaminated sealing surface
+    diagnostic_steps:
+      - Inspect the fuel cap seal.
+      - Check the filler neck sealing surface.
+      - Verify cap locking engagement.
+      - Perform an EVAP leak test if required.
+      - Replace the cap if the seal cannot maintain pressure.
+    related_dtcs:
+      - P0455
+      - P0456
+    difficulty: easy
+
+  - id: dacia_engine_secondary_air_injection_flow_fault
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+      generations:
+        - logan_ii
+      engines:
+        - dacia_logan_ii_1149
+        - dacia_logan_ii_898
+    category: diagnostics
+    system: Emissions
+    title:
+      en: Secondary Air Injection Flow Fault
+      ro: Defecțiune debit sistem injecție aer secundar
+      de: Fehler des Sekundärluft-Einspritzstroms
+      fr: Défaut de débit d'injection d'air secondaire
+      es: Fallo del flujo de inyección de aire secundario
+      it: Guasto del flusso di aria secondaria
+      nl: Storing in de secundaire luchtinjectiestroom
+    symptoms:
+      - Engine warning light
+      - Increased cold-start emissions
+      - Poor emissions performance
+    keywords:
+      - secondary air injection
+      - secondary air flow
+      - air injection system
+      - aer secundar
+    possible_causes:
+      - Secondary air pump fault
+      - Valve stuck
+      - Hose leak
+      - Electrical control fault
+    diagnostic_steps:
+      - Check secondary air pump activation.
+      - Inspect hoses and valves.
+      - Verify pump power supply.
+      - Check air flow during cold start.
+      - Repair the system and repeat the emissions test.
+    related_dtcs:
+      - P0410
+    difficulty: medium
+
+  - id: dacia_engine_exhaust_gas_temperature_sensor_implausible
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - sandero
+        - duster
+        - dokker
+        - lodgy
+      generations:
+        - logan_i
+        - logan_ii
+        - sandero_i
+        - sandero_ii
+        - duster_i
+        - duster_ii
+        - dokker_i
+        - lodgy_i
+      engines:
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: Diesel Emissions
+    title:
+      en: Exhaust Gas Temperature Sensor Implausible Signal
+      ro: Semnal neverosimil senzor temperatură gaze evacuare
+      de: Unplausibles Signal des Abgastemperatursensors
+      fr: Signal incohérent du capteur de température des gaz d'échappement
+      es: Señal no plausible del sensor de temperatura de gases
+      it: Segnale non plausibile del sensore temperatura gas di scarico
+      nl: Ongeloofwaardig signaal van de uitlaatgastemperatuursensor
+    symptoms:
+      - Reduced engine power
+      - DPF regeneration problems
+      - Increased emissions
+      - Engine warning light
+    keywords:
+      - EGT sensor
+      - exhaust gas temperature
+      - EGT implausible
+      - temperatură gaze evacuare
+    possible_causes:
+      - Sensor failure
+      - Wiring fault
+      - Connector corrosion
+      - Sensor contamination
+    diagnostic_steps:
+      - Compare EGT readings between sensors where fitted.
+      - Check temperature behaviour during cold start.
+      - Inspect wiring and connectors.
+      - Check sensor resistance or signal according to system type.
+      - Replace the sensor if confirmed faulty.
+    related_dtcs:
+      - P0544
+    difficulty: medium
+
+  - id: dacia_engine_dpf_exhaust_temperature_regeneration_abort
+    vehicle:
+      manufacturer: dacia
+      models:
+        - solenza
+        - logan
+      generations:
+        - solenza
+        - logan_i
+        - logan_ii
+      engines:
+        - dacia_solenza_1461
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: Diesel DPF
+    title:
+      en: DPF Regeneration Aborted by Exhaust Temperature Condition
+      ro: Regenerare DPF întreruptă din cauza temperaturii gazelor
+      de: DPF-Regeneration wegen Abgastemperaturbedingung abgebrochen
+      fr: Régénération FAP interrompue par une condition de température
+      es: Regeneración DPF abortada por condición de temperatura
+      it: Rigenerazione DPF interrotta per condizione di temperatura
+      nl: DPF-regeneratie afgebroken door uitlaatgastemperatuur
+    symptoms:
+      - DPF warning
+      - Reduced power
+      - Increased fuel consumption
+      - Frequent regeneration attempts
+    keywords:
+      - DPF regeneration abort
+      - regeneration temperature
+      - DPF temperature
+      - regenerare DPF temperatură
+    possible_causes:
+      - Faulty EGT sensor
+      - Exhaust temperature too low
+      - Short driving cycles
+      - Fuel dosing problem
+      - Excessive soot load
+    diagnostic_steps:
+      - Check regeneration history.
+      - Monitor exhaust temperatures during commanded regeneration.
+      - Verify EGT sensors.
+      - Check fuel dosing conditions.
+      - Inspect DPF differential pressure.
+      - Perform forced regeneration only after underlying faults are resolved.
+    related_dtcs:
+      - P2458
+    difficulty: hard
+
+  - id: dacia_engine_dpf_soot_load_estimation_implausible
+    vehicle:
+      manufacturer: dacia
+      models:
+        - solenza
+        - logan
+      generations:
+        - solenza
+        - logan_i
+        - logan_ii
+      engines:
+        - dacia_solenza_1461
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: Diesel DPF
+    title:
+      en: DPF Soot Load Estimation Implausible
+      ro: Estimare neverosimilă a încărcării cu funingine a DPF
+      de: Unplausible DPF-Rußbeladung
+      fr: Estimation incohérente de charge en suie du FAP
+      es: Estimación no plausible de carga de hollín del DPF
+      it: Stima non plausibile del particolato DPF
+      nl: Ongeloofwaardige DPF-roetbeladingsschatting
+    symptoms:
+      - Frequent regeneration
+      - DPF warning
+      - Reduced power
+      - Increased fuel consumption
+    keywords:
+      - DPF soot estimation
+      - soot load
+      - DPF calculated soot
+      - încărcare funingine DPF
+    possible_causes:
+      - Differential pressure sensor error
+      - Incorrect regeneration history
+      - Exhaust temperature sensor error
+      - DPF replacement not initialized
+      - Software calculation fault
+    diagnostic_steps:
+      - Read calculated and measured DPF parameters.
+      - Check differential pressure.
+      - Verify exhaust temperature sensors.
+      - Check regeneration history.
+      - Confirm DPF replacement/reset procedure if applicable.
+    related_dtcs:
+      - P2463
+    difficulty: hard
+
+  - id: dacia_engine_dpf_pressure_sensor_signal_low
+    vehicle:
+      manufacturer: dacia
+      models:
+        - solenza
+        - logan
+      generations:
+        - solenza
+        - logan_i
+        - logan_ii
+      engines:
+        - dacia_solenza_1461
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: Diesel DPF
+    title:
+      en: DPF Differential Pressure Sensor Signal Too Low
+      ro: Semnal prea scăzut senzor presiune diferențială DPF
+      de: Signal des DPF-Differenzdrucksensors zu niedrig
+      fr: Signal trop faible du capteur de pression différentielle FAP
+      es: Señal demasiado baja del sensor de presión diferencial DPF
+      it: Segnale troppo basso del sensore pressione differenziale DPF
+      nl: Signaal DPF-drukverschilsensor te laag
+    symptoms:
+      - DPF regeneration problems
+      - Incorrect soot load calculation
+      - Reduced power
+      - Engine warning light
+    keywords:
+      - DPF pressure sensor low
+      - differential pressure low
+      - DPF sensor signal
+      - senzor presiune DPF scăzut
+    possible_causes:
+      - Sensor short to ground
+      - Blocked pressure hose
+      - Damaged wiring
+      - Sensor failure
+    diagnostic_steps:
+      - Compare sensor reading with engine-off pressure.
+      - Inspect both pressure hoses.
+      - Check signal voltage.
+      - Inspect connector and wiring.
+      - Verify sensor response to increasing exhaust flow.
+    related_dtcs:
+      - P2452
+    difficulty: medium
+
+  - id: dacia_engine_dpf_pressure_sensor_signal_high
+    vehicle:
+      manufacturer: dacia
+      models:
+        - solenza
+        - logan
+      generations:
+        - solenza
+        - logan_i
+        - logan_ii
+      engines:
+        - dacia_solenza_1461
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: Diesel DPF
+    title:
+      en: DPF Differential Pressure Sensor Signal Too High
+      ro: Semnal prea ridicat senzor presiune diferențială DPF
+      de: Signal des DPF-Differenzdrucksensors zu hoch
+      fr: Signal trop élevé du capteur de pression différentielle FAP
+      es: Señal demasiado alta del sensor de presión diferencial DPF
+      it: Segnale troppo alto del sensore pressione differenziale DPF
+      nl: Signaal DPF-drukverschilsensor te hoog
+    symptoms:
+      - Incorrect DPF load calculation
+      - Frequent regeneration
+      - Reduced power
+      - Engine warning light
+    keywords:
+      - DPF pressure sensor high
+      - differential pressure high signal
+      - DPF sensor high
+      - senzor presiune DPF ridicat
+    possible_causes:
+      - Short to voltage
+      - Sensor failure
+      - Blocked pressure line
+      - Wiring fault
+    diagnostic_steps:
+      - Check differential pressure with engine off.
+      - Inspect pressure hoses for blockage.
+      - Measure sensor signal voltage.
+      - Inspect wiring and connector.
+      - Verify sensor response under load.
+    related_dtcs:
+      - P2453
+    difficulty: medium
+
+  - id: dacia_engine_glow_plug_cylinder_1_open_circuit
+    vehicle:
+      manufacturer: dacia
+      models:
+        - solenza
+        - logan
+      generations:
+        - solenza
+        - logan_i
+        - logan_ii
+      engines:
+        - dacia_solenza_1461
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: Diesel Preheating
+    title:
+      en: Cylinder 1 Glow Plug Circuit Open
+      ro: Circuit deschis bujie incandescentă cilindrul 1
+      de: Unterbrechung Glühkerzenkreis Zylinder 1
+      fr: Circuit de bougie de préchauffage cylindre 1 ouvert
+      es: Circuito abierto de bujía incandescente cilindro 1
+      it: Circuito candela incandescente cilindro 1 aperto
+      nl: Gloeibougiekircuit cilinder 1 open
+    symptoms:
+      - Hard cold starting
+      - White smoke after startup
+      - Rough cold idle
+      - Glow plug warning
+    keywords:
+      - glow plug cylinder 1
+      - P0671
+      - glow plug open
+      - bujie incandescentă 1
+    possible_causes:
+      - Failed glow plug
+      - Open wiring
+      - Connector fault
+      - Glow plug control module output fault
+    diagnostic_steps:
+      - Measure glow plug resistance.
+      - Check voltage/current during preheating.
+      - Inspect wiring and connector.
+      - Check glow plug control module output.
+      - Replace the failed glow plug and verify current draw.
+    related_dtcs:
+      - P0671
+    difficulty: medium
+
+  - id: dacia_engine_glow_plug_cylinder_2_open_circuit
+    vehicle:
+      manufacturer: dacia
+      models:
+        - solenza
+        - logan
+      generations:
+        - solenza
+        - logan_i
+        - logan_ii
+      engines:
+        - dacia_solenza_1461
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: Diesel Preheating
+    title:
+      en: Cylinder 2 Glow Plug Circuit Open
+      ro: Circuit deschis bujie incandescentă cilindrul 2
+      de: Unterbrechung Glühkerzenkreis Zylinder 2
+      fr: Circuit de bougie de préchauffage cylindre 2 ouvert
+      es: Circuito abierto de bujía incandescente cilindro 2
+      it: Circuito candela incandescente cilindro 2 aperto
+      nl: Gloeibougiekircuit cilinder 2 open
+    symptoms:
+      - Hard cold starting
+      - White smoke
+      - Rough cold idle
+    keywords:
+      - glow plug cylinder 2
+      - P0672
+      - glow plug 2
+      - bujie incandescentă 2
+    possible_causes:
+      - Failed glow plug
+      - Open circuit
+      - Wiring damage
+      - Control module output fault
+    diagnostic_steps:
+      - Test glow plug resistance.
+      - Check current draw.
+      - Inspect wiring.
+      - Test control module output.
+      - Replace the defective component.
+    related_dtcs:
+      - P0672
+    difficulty: medium
+
+  - id: dacia_engine_glow_plug_cylinder_3_open_circuit
+    vehicle:
+      manufacturer: dacia
+      models:
+        - solenza
+        - logan
+      generations:
+        - solenza
+        - logan_i
+        - logan_ii
+      engines:
+        - dacia_solenza_1461
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: Diesel Preheating
+    title:
+      en: Cylinder 3 Glow Plug Circuit Open
+      ro: Circuit deschis bujie incandescentă cilindrul 3
+      de: Unterbrechung Glühkerzenkreis Zylinder 3
+      fr: Circuit de bougie de préchauffage cylindre 3 ouvert
+      es: Circuito abierto de bujía incandescente cilindro 3
+      it: Circuito candela incandescente cilindro 3 aperto
+      nl: Gloeibougiekircuit cilinder 3 open
+    symptoms:
+      - Hard cold starting
+      - White smoke after startup
+      - Rough cold idle
+    keywords:
+      - glow plug cylinder 3
+      - P0673
+      - glow plug 3
+      - bujie incandescentă 3
+    possible_causes:
+      - Failed glow plug
+      - Open wiring
+      - Connector fault
+      - Control module fault
+    diagnostic_steps:
+      - Measure glow plug resistance.
+      - Check preheating current.
+      - Inspect wiring and connector.
+      - Check control module output.
+      - Replace defective components.
+    related_dtcs:
+      - P0673
+    difficulty: medium
+
+  - id: dacia_engine_glow_plug_cylinder_4_open_circuit
+    vehicle:
+      manufacturer: dacia
+      models:
+        - solenza
+        - logan
+      generations:
+        - solenza
+        - logan_i
+        - logan_ii
+      engines:
+        - dacia_solenza_1461
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: Diesel Preheating
+    title:
+      en: Cylinder 4 Glow Plug Circuit Open
+      ro: Circuit deschis bujie incandescentă cilindrul 4
+      de: Unterbrechung Glühkerzenkreis Zylinder 4
+      fr: Circuit de bougie de préchauffage cylindre 4 ouvert
+      es: Circuito abierto de bujía incandescente cilindro 4
+      it: Circuito candela incandescente cilindro 4 aperto
+      nl: Gloeibougiekircuit cilinder 4 open
+    symptoms:
+      - Hard cold starting
+      - White smoke
+      - Rough cold idle
+    keywords:
+      - glow plug cylinder 4
+      - P0674
+      - glow plug 4
+      - bujie incandescentă 4
+    possible_causes:
+      - Failed glow plug
+      - Open wiring
+      - Connector fault
+      - Control module fault
+    diagnostic_steps:
+      - Test glow plug resistance.
+      - Check current during preheating.
+      - Inspect wiring.
+      - Verify control module output.
+      - Replace the failed component.
+    related_dtcs:
+      - P0674
+    difficulty: medium
+
+  - id: dacia_engine_glow_plug_afterglow_control_fault
+    vehicle:
+      manufacturer: dacia
+      models:
+        - solenza
+        - logan
+      generations:
+        - solenza
+        - logan_i
+        - logan_ii
+      engines:
+        - dacia_solenza_1461
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: Diesel Preheating
+    title:
+      en: Glow Plug Afterglow Control Fault
+      ro: Defecțiune comandă post-încălzire bujii incandescente
+      de: Fehler der Glühkerzen-Nachglühsteuerung
+      fr: Défaut de commande de post-chauffage des bougies
+      es: Fallo del control de postcalentamiento
+      it: Guasto del post-riscaldamento candelette
+      nl: Storing in nagloeiregeling
+    symptoms:
+      - Rough cold running
+      - White smoke after startup
+      - Increased cold-start emissions
+      - Glow plug warning
+    keywords:
+      - glow plug afterglow
+      - post glow
+      - afterglow control
+      - postîncălzire bujii
+    possible_causes:
+      - Glow plug module fault
+      - Incorrect coolant temperature input
+      - Power supply fault
+      - Control circuit fault
+    diagnostic_steps:
+      - Check coolant temperature input.
+      - Monitor glow plug activation after startup.
+      - Check module power and ground.
+      - Measure glow plug current.
+      - Replace the control module only after external causes are excluded.
+    related_dtcs:
+      - P0670
+    difficulty: medium
+
+  - id: dacia_engine_fuel_filter_restriction_electronic_detection
+    vehicle:
+      manufacturer: dacia
+      models:
+        - solenza
+        - logan
+      generations:
+        - solenza
+        - logan_i
+        - logan_ii
+      engines:
+        - dacia_solenza_1461
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: Diesel Fuel System
+    title:
+      en: Fuel Filter Restriction Detected
+      ro: Restricție filtru combustibil detectată
+      de: Kraftstofffilter-Verstopfung erkannt
+      fr: Restriction du filtre à carburant détectée
+      es: Restricción del filtro de combustible detectada
+      it: Restrizione filtro carburante rilevata
+      nl: Verstopping van brandstoffilter gedetecteerd
+    symptoms:
+      - Loss of power under load
+      - Difficult starting
+      - Rail pressure drop
+      - Engine hesitation
+    keywords:
+      - fuel filter restriction
+      - restricted diesel filter
+      - fuel starvation
+      - filtru combustibil înfundat
+    possible_causes:
+      - Clogged fuel filter
+      - Wax contamination
+      - Water contamination
+      - Collapsed fuel hose
+      - Tank contamination
+    diagnostic_steps:
+      - Measure fuel supply pressure.
+      - Compare pressure before and after the filter.
+      - Inspect the filter for contamination.
+      - Check fuel for water or debris.
+      - Replace the filter and verify rail pressure under load.
+    related_dtcs:
+      - P0087
+    difficulty: medium
+
+  - id: dacia_engine_fuel_supply_air_ingress
+    vehicle:
+      manufacturer: dacia
+      models:
+        - solenza
+        - logan
+      generations:
+        - solenza
+        - logan_i
+        - logan_ii
+      engines:
+        - dacia_solenza_1461
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: Diesel Fuel System
+    title:
+      en: Air Ingress into Diesel Fuel Supply
+      ro: Pătrundere de aer în alimentarea cu motorină
+      de: Lufteintritt in die Dieselkraftstoffversorgung
+      fr: Entrée d'air dans l'alimentation diesel
+      es: Entrada de aire en el circuito de combustible diésel
+      it: Ingresso aria nel circuito gasolio
+      nl: Luchtinlaat in het dieselsysteem
+    symptoms:
+      - Long cranking
+      - Difficult starting
+      - Engine stalls after sitting
+      - Rail pressure slow to build
+    keywords:
+      - air in fuel
+      - diesel fuel air ingress
+      - fuel supply air leak
+      - aer în motorină
+    possible_causes:
+      - Fuel line leak
+      - Filter housing seal failure
+      - Loose connection
+      - Cracked hose
+      - Fuel tank pickup leak
+    diagnostic_steps:
+      - Inspect transparent fuel lines where fitted.
+      - Check for bubbles during priming.
+      - Inspect filter housing seals.
+      - Pressure-test or vacuum-test the supply circuit.
+      - Repair the leak and verify starting pressure build-up.
+    related_dtcs:
+      - P0087
+    difficulty: medium
+
+  - id: dacia_engine_fuel_pressure_sensor_intermitent
+    vehicle:
+      manufacturer: dacia
+      models:
+        - solenza
+        - logan
+      generations:
+        - solenza
+        - logan_i
+        - logan_ii
+      engines:
+        - dacia_solenza_1461
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: Common Rail
+    title:
+      en: Fuel Rail Pressure Sensor Intermittent
+      ro: Semnal intermitent senzor presiune rampă
+      de: Intermittierendes Signal des Raildrucksensors
+      fr: Signal intermittent du capteur de pression de rampe
+      es: Señal intermitente del sensor de presión del rail
+      it: Segnale intermittente del sensore pressione rail
+      nl: Intermitterend signaal van de raildruksensor
+    symptoms:
+      - Sudden power loss
+      - Engine hesitation
+      - Stalling
+      - Difficult starting
+    keywords:
+      - rail pressure sensor intermittent
+      - fuel pressure sensor dropout
+      - rail sensor intermittent
+      - senzor rampă intermitent
+    possible_causes:
+      - Sensor internal failure
+      - Wiring break
+      - Connector contact loss
+      - Pressure pulsation
+    diagnostic_steps:
+      - Monitor rail pressure while driving.
+      - Look for sudden signal dropouts.
+      - Inspect sensor connector.
+      - Check wiring continuity while moving the harness.
+      - Compare measured pressure with commanded pressure.
+    related_dtcs:
+      - P0194
+    difficulty: hard
+
+  - id: dacia_engine_fuel_pressure_sensor_signal_low
+    vehicle:
+      manufacturer: dacia
+      models:
+        - solenza
+        - logan
+      generations:
+        - solenza
+        - logan_i
+        - logan_ii
+      engines:
+        - dacia_solenza_1461
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: Common Rail
+    title:
+      en: Fuel Rail Pressure Sensor Signal Too Low
+      ro: Semnal prea scăzut senzor presiune rampă
+      de: Signal des Raildrucksensors zu niedrig
+      fr: Signal trop faible du capteur de pression de rampe
+      es: Señal demasiado baja del sensor de presión del rail
+      it: Segnale troppo basso del sensore pressione rail
+      nl: Signaal raildruksensor te laag
+    symptoms:
+      - Difficult starting
+      - Reduced power
+      - Engine hesitation
+      - Engine warning light
+    keywords:
+      - rail pressure sensor low
+      - P0192
+      - fuel rail sensor low
+      - presiune rampă semnal scăzut
+    possible_causes:
+      - Short to ground
+      - Sensor failure
+      - Wiring fault
+      - Connector problem
+    diagnostic_steps:
+      - Measure sensor signal voltage.
+      - Check sensor supply and ground.
+      - Inspect wiring for short to ground.
+      - Compare live pressure with actual system behaviour.
+      - Replace the sensor if confirmed faulty.
+    related_dtcs:
+      - P0192
+    difficulty: medium
+
+  - id: dacia_engine_fuel_pressure_sensor_signal_high
+    vehicle:
+      manufacturer: dacia
+      models:
+        - solenza
+        - logan
+      generations:
+        - solenza
+        - logan_i
+        - logan_ii
+      engines:
+        - dacia_solenza_1461
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: Common Rail
+    title:
+      en: Fuel Rail Pressure Sensor Signal Too High
+      ro: Semnal prea ridicat senzor presiune rampă
+      de: Signal des Raildrucksensors zu hoch
+      fr: Signal trop élevé du capteur de pression de rampe
+      es: Señal demasiado alta del sensor de presión del rail
+      it: Segnale troppo alto del sensore pressione rail
+      nl: Signaal raildruksensor te hoog
+    symptoms:
+      - Reduced power
+      - Engine hesitation
+      - Difficult starting
+      - Engine warning light
+    keywords:
+      - rail pressure sensor high
+      - P0193
+      - fuel rail sensor high
+      - presiune rampă semnal ridicat
+    possible_causes:
+      - Short to supply voltage
+      - Sensor failure
+      - Wiring fault
+      - Connector fault
+    diagnostic_steps:
+      - Measure sensor signal voltage.
+      - Check for short to supply voltage.
+      - Verify sensor ground.
+      - Compare commanded and measured pressure.
+      - Replace the sensor if confirmed faulty.
+    related_dtcs:
+      - P0193
+    difficulty: medium
+
+  - id: dacia_engine_engine_overtemperature_protection_active
+    vehicle:
+      manufacturer: dacia
+      models:
+        - supernova
+        - solenza
+        - logan
+      generations:
+        - supernova
+        - solenza
+        - logan_i
+        - logan_ii
+      engines:
+        - dacia_supernova_1390
+        - dacia_solenza_1390
+        - dacia_logan_i_1390
+        - dacia_logan_i_1598
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1149
+        - dacia_logan_ii_898
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: Engine Cooling
+    title:
+      en: Engine Overtemperature Protection Active
+      ro: Protecție activă la supraîncălzirea motorului
+      de: Motorschutz vor Übertemperatur aktiv
+      fr: Protection contre la surchauffe moteur active
+      es: Protección contra sobretemperatura del motor activa
+      it: Protezione da sovratemperatura motore attiva
+      nl: Motorbeveiliging tegen oververhitting actief
+    symptoms:
+      - Reduced engine power
+      - Cooling fan running continuously
+      - Temperature warning
+      - Engine may enter protection mode
+    keywords:
+      - engine overtemperature
+      - thermal protection
+      - overheating protection
+      - protecție supraîncălzire
+    possible_causes:
+      - Cooling system fault
+      - Low coolant level
+      - Thermostat problem
+      - Cooling fan fault
+      - Water pump failure
+    diagnostic_steps:
+      - Read actual coolant temperature.
+      - Check coolant level and circulation.
+      - Verify cooling fan operation.
+      - Check thermostat operation.
+      - Inspect water pump and cooling system.
+    related_dtcs:
+      - P0217
+    difficulty: hard
+
+  - id: dacia_engine_cooling_fan_relay_control_fault
+    vehicle:
+      manufacturer: dacia
+      models:
+        - supernova
+        - solenza
+        - logan
+      generations:
+        - supernova
+        - solenza
+        - logan_i
+        - logan_ii
+      engines:
+        - dacia_supernova_1390
+        - dacia_solenza_1390
+        - dacia_logan_i_1390
+        - dacia_logan_i_1598
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1149
+        - dacia_logan_ii_898
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: Engine Cooling
+    title:
+      en: Cooling Fan Relay Control Fault
+      ro: Defecțiune comandă releu ventilator răcire
+      de: Fehler der Kühlerlüfterrelaissteuerung
+      fr: Défaut de commande du relais de ventilateur
+      es: Fallo del control del relé del ventilador
+      it: Guasto comando relè ventola raffreddamento
+      nl: Storing in de relaisregeling van de koelventilator
+    symptoms:
+      - Engine overheating
+      - Cooling fan does not start
+      - Cooling fan runs continuously
+      - Engine warning light
+    keywords:
+      - cooling fan relay
+      - fan relay control
+      - radiator fan relay
+      - releu ventilator
+    possible_causes:
+      - Failed relay
+      - Relay control wiring fault
+      - Fuse problem
+      - ECU command fault
+      - Fan motor overload
+    diagnostic_steps:
+      - Activate the cooling fan with diagnostics where supported.
+      - Check relay power supply.
+      - Test relay control signal.
+      - Inspect fuse and wiring.
+      - Check fan motor current draw.
+    related_dtcs:
+      - P0480
+    difficulty: medium
+
+  - id: dacia_engine_cooling_fan_control_high_speed_fault
+    vehicle:
+      manufacturer: dacia
+      models:
+        - supernova
+        - solenza
+        - logan
+      generations:
+        - supernova
+        - solenza
+        - logan_i
+        - logan_ii
+      engines:
+        - dacia_supernova_1390
+        - dacia_solenza_1390
+        - dacia_logan_i_1390
+        - dacia_logan_i_1598
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1149
+        - dacia_logan_ii_898
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: Engine Cooling
+    title:
+      en: Cooling Fan High-Speed Control Fault
+      ro: Defecțiune comandă treaptă mare ventilator răcire
+      de: Fehler der Hochgeschwindigkeitssteuerung des Kühlerlüfters
+      fr: Défaut de commande grande vitesse du ventilateur
+      es: Fallo del control de alta velocidad del ventilador
+      it: Guasto comando alta velocità ventola
+      nl: Storing in de hogesnelheidsregeling van de koelventilator
+    symptoms:
+      - Overheating in traffic
+      - Fan operates only at one speed
+      - Air conditioning performance affected
+      - Temperature warning
+    keywords:
+      - cooling fan high speed
+      - radiator fan high speed
+      - fan stage two
+      - treapta mare ventilator
+    possible_causes:
+      - High-speed relay fault
+      - Resistor/module fault
+      - Wiring fault
+      - Fan motor fault
+    diagnostic_steps:
+      - Test each available fan speed.
+      - Check relay and resistor/module circuits.
+      - Measure fan motor current.
+      - Inspect connectors for heat damage.
+      - Verify ECU fan commands.
+    related_dtcs:
+      - P0481
+    difficulty: medium
+
+  - id: dacia_engine_engine_oil_temperature_sensor_fault
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - sandero
+        - duster
+        - dokker
+        - lodgy
+      generations:
+        - logan_ii
+        - sandero_ii
+        - duster_ii
+        - dokker_i
+        - lodgy_i
+      engines:
+        - dacia_logan_ii_1149
+        - dacia_logan_ii_898
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: Engine Management
+    title:
+      en: Engine Oil Temperature Sensor Fault
+      ro: Defecțiune senzor temperatură ulei motor
+      de: Fehler des Motoröltemperatursensors
+      fr: Défaut du capteur de température d'huile moteur
+      es: Fallo del sensor de temperatura del aceite del motor
+      it: Guasto del sensore temperatura olio motore
+      nl: Storing van de motorolietemperatuursensor
+    symptoms:
+      - Incorrect engine temperature data
+      - Engine warning light
+      - Incorrect protection strategy
+      - Abnormal calculated service data
+    keywords:
+      - oil temperature sensor
+      - engine oil temperature
+      - oil temp sensor
+      - temperatură ulei motor
+    possible_causes:
+      - Sensor failure
+      - Wiring fault
+      - Connector fault
+      - Short or open circuit
+    diagnostic_steps:
+      - Compare oil temperature with coolant temperature when cold.
+      - Monitor sensor response during warm-up.
+      - Check sensor wiring and connector.
+      - Measure sensor resistance if specified.
+      - Replace the sensor if confirmed faulty.
+    related_dtcs:
+      - P0195
+    difficulty: medium
+
+  - id: dacia_engine_barometric_pressure_sensor_implausible
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - sandero
+        - duster
+        - dokker
+        - lodgy
+      generations:
+        - logan_ii
+        - sandero_ii
+        - duster_ii
+        - dokker_i
+        - lodgy_i
+      engines:
+        - dacia_logan_ii_1149
+        - dacia_logan_ii_898
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: Engine Management
+    title:
+      en: Barometric Pressure Signal Implausible
+      ro: Semnal neverosimil senzor presiune atmosferică
+      de: Unplausibles Signal des Barometersensors
+      fr: Signal incohérent du capteur de pression atmosphérique
+      es: Señal no plausible del sensor de presión barométrica
+      it: Segnale non plausibile del sensore pressione barometrica
+      nl: Ongeloofwaardig signaal van de barometersensor
+    symptoms:
+      - Reduced engine performance
+      - Incorrect boost calculation
+      - Poor fuel economy
+      - Engine warning light
+    keywords:
+      - barometric pressure
+      - BARO sensor
+      - atmospheric pressure sensor
+      - presiune atmosferică
+    possible_causes:
+      - Sensor failure
+      - MAP/BARO circuit fault
+      - Wiring issue
+      - Incorrect reference voltage
+    diagnostic_steps:
+      - Compare barometric pressure with local atmospheric pressure.
+      - Compare BARO and MAP readings with engine off.
+      - Check sensor supply and ground.
+      - Inspect wiring and connectors.
+      - Replace the sensor if the reading remains implausible.
+    related_dtcs:
+      - P0106
+    difficulty: medium
+
+  - id: dacia_engine_ecu_wake_sleep_control_fault
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - sandero
+        - duster
+        - dokker
+        - lodgy
+      generations:
+        - logan_ii
+        - sandero_ii
+        - duster_ii
+        - dokker_i
+        - lodgy_i
+      engines:
+        - dacia_logan_ii_1149
+        - dacia_logan_ii_898
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: Engine ECU
+    title:
+      en: Engine ECU Wake/Sleep Control Fault
+      ro: Defecțiune comandă trezire/adormire ECU motor
+      de: Fehler der Wake-/Sleep-Steuerung des Motorsteuergeräts
+      fr: Défaut de gestion réveil/veille du calculateur moteur
+      es: Fallo de gestión de activación/reposo de la ECU
+      it: Guasto gestione risveglio/sleep ECU motore
+      nl: Storing in de wake/sleep-regeling van de motor-ECU
+    symptoms:
+      - Intermittent no-start
+      - ECU communication unavailable
+      - Battery drain
+      - Engine starts after repeated attempts
+    keywords:
+      - ECU wake sleep
+      - ECU wake-up
+      - ECU sleep mode
+      - ECU trezire
+    possible_causes:
+      - Ignition wake-up signal fault
+      - CAN wake-up problem
+      - ECU power supply fault
+      - Body module communication problem
+    diagnostic_steps:
+      - Check ECU wake-up behaviour.
+      - Monitor ECU supply voltage.
+      - Check ignition and wake-up signals.
+      - Inspect CAN communication.
+      - Verify UCH/body module wake-up commands.
+    related_dtcs:
+      - U0100
+    difficulty: hard
+
+  - id: dacia_engine_fuel_pump_control_signal_intermittent
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - sandero
+        - duster
+        - dokker
+        - lodgy
+      generations:
+        - logan_i
+        - logan_ii
+        - sandero_i
+        - sandero_ii
+        - duster_i
+        - duster_ii
+        - dokker_i
+        - lodgy_i
+      engines:
+        - dacia_logan_i_1390
+        - dacia_logan_i_1598
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1149
+        - dacia_logan_ii_898
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: Fuel System
+    title:
+      en: Fuel Pump Control Signal Intermittent
+      ro: Semnal intermitent comandă pompă combustibil
+      de: Intermittierendes Signal der Kraftstoffpumpensteuerung
+      fr: Signal intermittent de commande de pompe à carburant
+      es: Señal intermitente de control de la bomba de combustible
+      it: Segnale intermittente comando pompa carburante
+      nl: Intermitterend brandstofpompregelsignaal
+    symptoms:
+      - Intermittent no-start
+      - Engine stalls
+      - Loss of power
+      - Fuel pressure drops
+    keywords:
+      - fuel pump intermittent
+      - fuel pump command
+      - pump control dropout
+      - pompă combustibil intermitent
+    possible_causes:
+      - Relay contact failure
+      - Wiring fault
+      - ECU command interruption
+      - Poor ground
+      - Pump overload
+    diagnostic_steps:
+      - Monitor pump command during the fault.
+      - Check relay output.
+      - Measure voltage at the pump under load.
+      - Inspect ground connection.
+      - Check pump current draw.
+    related_dtcs:
+      - P0230
+    difficulty: medium
+
+  - id: dacia_engine_fuel_pump_control_circuit_low
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - sandero
+        - duster
+        - dokker
+        - lodgy
+      generations:
+        - logan_i
+        - logan_ii
+        - sandero_i
+        - sandero_ii
+        - duster_i
+        - duster_ii
+        - dokker_i
+        - lodgy_i
+      engines:
+        - dacia_logan_i_1390
+        - dacia_logan_i_1598
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1149
+        - dacia_logan_ii_898
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: Fuel System
+    title:
+      en: Fuel Pump Control Circuit Low
+      ro: Nivel scăzut în circuitul de comandă al pompei de combustibil
+      de: Kraftstoffpumpen-Steuerkreis zu niedrig
+      fr: Circuit de commande de pompe à carburant trop faible
+      es: Circuito de control de la bomba de combustible bajo
+      it: Circuito comando pompa carburante basso
+      nl: Brandstofpompregelcircuit te laag
+    symptoms:
+      - No-start
+      - Engine stalls
+      - Low fuel pressure
+      - Intermittent engine operation
+    keywords:
+      - fuel pump control low
+      - pump circuit low
+      - P0230
+      - comandă pompă combustibil
+    possible_causes:
+      - High resistance wiring
+      - Poor ground
+      - Relay contact resistance
+      - Pump motor overload
+    diagnostic_steps:
+      - Measure voltage at the fuel pump.
+      - Perform voltage-drop testing.
+      - Check relay contacts.
+      - Inspect pump ground.
+      - Measure pump current draw.
+    related_dtcs:
+      - P0230
+    difficulty: medium
+
+  - id: dacia_engine_fuel_level_signal_implausible_ecu
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - sandero
+        - duster
+        - dokker
+        - lodgy
+      generations:
+        - logan_i
+        - logan_ii
+        - sandero_i
+        - sandero_ii
+        - duster_i
+        - duster_ii
+        - dokker_i
+        - lodgy_i
+      engines:
+        - dacia_logan_i_1390
+        - dacia_logan_i_1598
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1149
+        - dacia_logan_ii_898
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: Fuel System
+    title:
+      en: Fuel Level Signal Implausible to Engine ECU
+      ro: Semnal neverosimil nivel combustibil către ECU motor
+      de: Unplausibles Kraftstofffüllstandssignal am Motorsteuergerät
+      fr: Signal de niveau de carburant incohérent au calculateur
+      es: Señal de nivel de combustible no plausible en la ECU
+      it: Segnale livello carburante non plausibile alla ECU
+      nl: Ongeloofwaardig brandstofniveausignaal bij de ECU
+    symptoms:
+      - Incorrect fuel level
+      - Incorrect range calculation
+      - Engine warning light
+      - Fuel system diagnostics affected
+    keywords:
+      - fuel level signal
+      - fuel level implausible
+      - tank level
+      - nivel combustibil
+    possible_causes:
+      - Fuel level sender fault
+      - Wiring problem
+      - Instrument cluster communication fault
+      - CAN data error
+    diagnostic_steps:
+      - Compare ECU fuel-level data with instrument cluster data.
+      - Inspect fuel sender circuit.
+      - Check CAN communication.
+      - Inspect connector and wiring.
+      - Verify sender resistance or signal.
+    related_dtcs:
+      - P0461
+    difficulty: medium
+
+  - id: dacia_engine_engine_runtime_signal_invalid
+    vehicle:
+      manufacturer: dacia
+      models:
+        - logan
+        - sandero
+        - duster
+        - dokker
+        - lodgy
+      generations:
+        - logan_i
+        - logan_ii
+        - sandero_i
+        - sandero_ii
+        - duster_i
+        - duster_ii
+        - dokker_i
+        - lodgy_i
+      engines:
+        - dacia_logan_i_1390
+        - dacia_logan_i_1598
+        - dacia_logan_i_1461
+        - dacia_logan_ii_1149
+        - dacia_logan_ii_898
+        - dacia_logan_ii_1461
+        - dacia_logan_ii_1461_90
+    category: diagnostics
+    system: Engine Management
+    title:
+      en: Engine Runtime Signal Invalid
+      ro: Semnal invalid privind timpul de funcționare al motorului
+      de: Ungültiges Motorlaufzeitsignal
+      fr: Signal de durée de fonctionnement moteur invalide
+      es: Señal de tiempo de funcionamiento del motor no válida
+      it: Segnale tempo di funzionamento motore non valido
+      nl: Ongeldig motordraaitijdsignaal
+    symptoms:
+      - Incorrect maintenance data
+      - Diagnostic inconsistencies
+      - Engine warning light
+      - Start-stop strategy affected where equipped
+    keywords:
+      - engine runtime
+      - engine running time
+      - runtime signal
+      - timp funcționare motor
+    possible_causes:
+      - ECU internal calculation fault
+      - Clock/reference data corruption
+      - CAN communication error
+      - Module synchronization issue
+    diagnostic_steps:
+      - Compare engine runtime values across diagnostic modules.
+      - Check ECU date/time and stored parameters.
+      - Inspect CAN communication.
+      - Check for internal ECU faults.
+      - Reinitialize affected module data if supported.
+    related_dtcs:
+      - P1600
+    difficulty: hard
+
   - id: dacia_engine_throttle_position_sensor_range_performance
     vehicle:
       manufacturer: dacia
