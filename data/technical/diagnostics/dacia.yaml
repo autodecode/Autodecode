@@ -6,6 +6,842 @@ manufacturer:
 
 technical_data:
 
+  - id: dacia_pre_electronic_valve_sticking
+    vehicle:
+      manufacturer: dacia
+      models:
+        - "1100"
+        - "1300"
+        - "1300_break"
+        - "1301"
+        - "1302"
+        - "1310"
+        - "1310_break"
+        - "1310_sport"
+        - "1304"
+        - "1305"
+        - "1307"
+        - "1309"
+        - "1320"
+        - "1325"
+      generations: all
+      engines: all
+    category: diagnostics
+    system: engine
+    title:
+      en: Sticking Engine Valve
+      ro: Supapă de motor gripată
+      de: Festsitzendes Motorventil
+      fr: Soupape moteur grippée
+      es: Válvula del motor agarrotada
+      it: Valvola motore bloccata
+      nl: Vastzittende motorklep
+    symptoms:
+      - intermittent misfire
+      - rough idle
+      - loss of compression
+      - loss of power
+      - engine runs worse when hot
+      - valve train noise
+      - rateuri intermitente
+      - ralanti neregulat
+      - pierdere de compresie
+      - pierdere de putere
+      - funcționare mai proastă la cald
+      - zgomot în distribuție
+      - intermittierende Zündaussetzer
+      - unruhiger Leerlauf
+      - Kompressionsverlust
+      - Leistungsverlust
+      - schlechter Motorlauf bei warmem Motor
+      - soupapes bruyantes
+      - ratés intermittents
+      - perte de compression
+      - perte de puissance
+      - fonctionnement irrégulier à chaud
+      - fallos intermitentes
+      - pérdida de compresión
+      - pérdida de potencia
+      - válvula ruidosa
+      - mancate accensioni intermittenti
+      - perdita di compressione
+      - perdita di potenza
+      - valvola rumorosa
+      - onregelmatige ontsteking
+      - compressieverlies
+      - vermogensverlies
+      - kleppengeluid
+    keywords:
+      - sticking valve
+      - seized valve
+      - valve does not return
+      - supapă gripată
+      - supapă blocată
+      - festsitzendes Ventil
+      - soupape grippée
+      - válvula agarrotada
+      - valvola bloccata
+      - vastzittende klep
+    possible_causes:
+      - carbon deposits on valve stem
+      - insufficient valve lubrication
+      - overheated valve
+      - damaged valve guide
+      - bent valve stem
+      - incorrect valve clearance
+    diagnostic_steps:
+      - Check compression on the affected cylinder.
+      - Inspect valve movement with the valve cover removed where applicable.
+      - Check valve clearance.
+      - Compare cold and hot engine behavior.
+      - Inspect the valve train if sticking is confirmed.
+    repair_actions:
+      - Clean carbon deposits where appropriate.
+      - Repair or replace the affected valve.
+      - Repair damaged valve guides.
+      - Correct valve clearance.
+      - Inspect the cylinder head for overheating damage.
+    severity: high
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: dacia_pre_electronic_burned_exhaust_valve
+    vehicle:
+      manufacturer: dacia
+      models:
+        - "1300"
+        - "1300_break"
+        - "1301"
+        - "1302"
+        - "1310"
+        - "1310_break"
+        - "1310_sport"
+        - "1304"
+        - "1305"
+        - "1307"
+        - "1309"
+        - "1320"
+        - "1325"
+      generations: all
+      engines: all
+    category: diagnostics
+    system: engine
+    title:
+      en: Burned Exhaust Valve
+      ro: Supapă de evacuare arsă
+      de: Verbranntes Auslassventil
+      fr: Soupape d'échappement brûlée
+      es: Válvula de escape quemada
+      it: Valvola di scarico bruciata
+      nl: Verbrande uitlaatklep
+    symptoms:
+      - persistent misfire
+      - low compression on one cylinder
+      - loss of engine power
+      - rough idle
+      - exhaust popping
+      - difficult starting
+      - rateu permanent
+      - compresie mică pe un cilindru
+      - pierdere de putere
+      - ralanti neregulat
+      - pocnituri în evacuare
+      - pornire dificilă
+      - dauerhafte Zündaussetzer
+      - niedrige Kompression auf einem Zylinder
+      - Leistungsverlust
+      - Knallen im Auspuff
+      - soupape brûlée
+      - faible compression sur un cylindre
+      - perte de puissance
+      - pétarades à l'échappement
+      - démarrage difficile
+      - fallos de encendido constantes
+      - baja compresión en un cilindro
+      - petardeo en el escape
+      - mancata accensione persistente
+      - bassa compressione su un cilindro
+      - scoppi nello scarico
+      - aanhoudende ontstekingsuitval
+      - lage compressie op één cilinder
+      - ploffen in de uitlaat
+    keywords:
+      - burned exhaust valve
+      - burnt valve
+      - low compression cylinder
+      - supapă arsă
+      - supapă evacuare
+      - verbranntes Ventil
+      - soupape brûlée
+      - válvula quemada
+      - valvola bruciata
+      - verbrande klep
+    possible_causes:
+      - excessive valve temperature
+      - incorrect valve clearance
+      - valve seat damage
+      - prolonged lean operation
+      - ignition timing problem
+      - cooling system problem
+    diagnostic_steps:
+      - Perform a compression test.
+      - Perform a leak-down test where equipment is available.
+      - Listen for leakage at the exhaust during leak-down testing.
+      - Inspect valve clearance.
+      - Remove the cylinder head if internal valve damage is confirmed.
+    repair_actions:
+      - Replace the damaged exhaust valve.
+      - Repair the valve seat.
+      - Correct valve clearance.
+      - Correct the underlying mixture or ignition problem.
+      - Inspect the cylinder head for heat damage.
+    severity: high
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: dacia_pre_electronic_head_gasket_external_coolant_leak
+    vehicle:
+      manufacturer: dacia
+      models:
+        - "1100"
+        - "1300"
+        - "1300_break"
+        - "1301"
+        - "1302"
+        - "1310"
+        - "1310_break"
+        - "1310_sport"
+        - "1304"
+        - "1305"
+        - "1307"
+        - "1309"
+        - "1320"
+        - "1325"
+      generations: all
+      engines: all
+    category: diagnostics
+    system: engine
+    title:
+      en: External Cylinder Head Gasket Coolant Leak
+      ro: Pierdere externă de antigel prin garnitura de chiulasă
+      de: Äußeres Kühlmittelleck an der Zylinderkopfdichtung
+      fr: Fuite externe de liquide par le joint de culasse
+      es: Fuga externa de refrigerante por la junta de culata
+      it: Perdita esterna di refrigerante dalla guarnizione della testata
+      nl: Externe koelvloeistoflekkage via koppakking
+    symptoms:
+      - coolant leak near cylinder head
+      - coolant level drops
+      - coolant residue on engine
+      - overheating
+      - coolant smell
+      - visible steam after stopping
+      - pierdere de antigel lângă chiulasă
+      - nivelul antigelului scade
+      - urme de antigel pe motor
+      - supraîncălzire
+      - miros de antigel
+      - abur vizibil după oprire
+      - Kühlmittelleck am Zylinderkopf
+      - Kühlmittelstand sinkt
+      - Kühlmittelspuren am Motor
+      - Überhitzung
+      - fuite de liquide près de la culasse
+      - niveau de liquide en baisse
+      - odeur de liquide de refroidissement
+      - surchauffe
+      - fuga de refrigerante junto a la culata
+      - nivel de refrigerante bajo
+      - olor a refrigerante
+      - sobrecalentamiento
+      - perdita di refrigerante vicino alla testata
+      - livello basso
+      - odore di refrigerante
+      - surriscaldamento
+      - koelvloeistoflekkage bij cilinderkop
+      - dalend koelvloeistofniveau
+      - koelvloeistofgeur
+      - oververhitting
+    keywords:
+      - head gasket leak
+      - external coolant leak
+      - cylinder head gasket
+      - garnitură chiulasă
+      - pierdere antigel chiulasă
+      - Zylinderkopfdichtung
+      - joint de culasse
+      - junta de culata
+      - guarnizione testata
+      - koppakking
+    possible_causes:
+      - damaged cylinder head gasket
+      - warped cylinder head
+      - uneven cylinder head surface
+      - incorrect head bolt torque
+      - damaged coolant passage sealing area
+    diagnostic_steps:
+      - Inspect the cylinder head perimeter for coolant traces.
+      - Pressure-test the cooling system.
+      - Check cylinder head fastener condition.
+      - Inspect the cylinder head surface if the leak is confirmed.
+      - Check for signs of previous overheating.
+    repair_actions:
+      - Replace the cylinder head gasket.
+      - Check and machine the cylinder head surface where required.
+      - Correct cylinder head tightening procedure.
+      - Repair damaged sealing surfaces.
+    severity: high
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: dacia_pre_electronic_oil_filter_restriction
+    vehicle:
+      manufacturer: dacia
+      models:
+        - "1100"
+        - "1300"
+        - "1300_break"
+        - "1301"
+        - "1302"
+        - "1310"
+        - "1310_break"
+        - "1310_sport"
+        - "1304"
+        - "1305"
+        - "1307"
+        - "1309"
+        - "1320"
+        - "1325"
+      generations: all
+      engines: all
+    category: diagnostics
+    system: lubrication
+    title:
+      en: Restricted Engine Oil Filter
+      ro: Filtru de ulei al motorului înfundat
+      de: Verstopfter Motorölfilter
+      fr: Filtre à huile moteur obstrué
+      es: Filtro de aceite del motor obstruido
+      it: Filtro olio motore ostruito
+      nl: Verstopte motoroliefilter
+    symptoms:
+      - reduced oil pressure
+      - oil pressure warning
+      - engine noise
+      - restricted oil flow
+      - contaminated engine oil
+      - presiune redusă a uleiului
+      - martor presiune ulei
+      - zgomot motor
+      - debit redus de ulei
+      - ulei contaminat
+      - niedriger Öldruck
+      - Öldruckwarnung
+      - Motorgeräusche
+      - débit d'huile réduit
+      - voyant de pression d'huile
+      - bruit moteur
+      - flujo de aceite reducido
+      - testigo de presión de aceite
+      - ruido del motor
+      - flusso olio ridotto
+      - spia pressione olio
+      - rumore motore
+      - verminderde oliedoorstroming
+      - oliedrukwaarschuwing
+      - motorgeluid
+    keywords:
+      - blocked oil filter
+      - restricted oil filter
+      - oil flow restriction
+      - filtru ulei înfundat
+      - debit ulei
+      - verstopfter Ölfilter
+      - filtre à huile obstrué
+      - filtro de aceite obstruido
+      - filtro olio ostruito
+      - verstopte oliefilter
+    possible_causes:
+      - overdue oil service
+      - excessive sludge
+      - incorrect filter
+      - damaged filter media
+      - internal engine contamination
+    diagnostic_steps:
+      - Inspect oil filter condition.
+      - Verify filter specification.
+      - Check engine oil pressure with a mechanical gauge.
+      - Inspect drained oil for sludge or metallic contamination.
+      - Inspect the lubrication system if restriction is suspected.
+    repair_actions:
+      - Replace the oil filter.
+      - Replace contaminated engine oil.
+      - Clean the lubrication system where required.
+      - Investigate the source of excessive sludge or contamination.
+    severity: high
+    related_dtcs: []
+    difficulty: basic
+
+  - id: dacia_pre_electronic_oil_leak_crankshaft_seal
+    vehicle:
+      manufacturer: dacia
+      models:
+        - "1300"
+        - "1300_break"
+        - "1301"
+        - "1302"
+        - "1310"
+        - "1310_break"
+        - "1310_sport"
+        - "1304"
+        - "1305"
+        - "1307"
+        - "1309"
+        - "1320"
+        - "1325"
+      generations: all
+      engines: all
+    category: diagnostics
+    system: lubrication
+    title:
+      en: Crankshaft Oil Seal Leak
+      ro: Pierdere de ulei la simeringul arborelui cotit
+      de: Ölleck am Kurbelwellendichtring
+      fr: Fuite du joint spi de vilebrequin
+      es: Fuga del retén del cigüeñal
+      it: Perdita dal paraolio dell'albero motore
+      nl: Olielekkage bij de krukaskeerring
+    symptoms:
+      - oil leak between engine and gearbox
+      - oil dripping from bellhousing
+      - clutch contamination
+      - burning oil smell
+      - falling engine oil level
+      - pierdere de ulei între motor și cutie
+      - ulei în carcasa ambreiajului
+      - ambreiaj contaminat cu ulei
+      - miros de ulei ars
+      - nivel ulei în scădere
+      - Ölverlust zwischen Motor und Getriebe
+      - Öl in der Kupplungsglocke
+      - Kupplung verölt
+      - fuite d'huile entre moteur et boîte
+      - huile dans le carter d'embrayage
+      - embrayage contaminé
+      - fuga de aceite entre motor y caja
+      - aceite en la carcasa del embrague
+      - embrague contaminado
+      - perdita d'olio tra motore e cambio
+      - olio nella campana frizione
+      - frizione contaminata
+      - olielekkage tussen motor en versnellingsbak
+      - olie in koppelingshuis
+      - koppeling vervuild met olie
+    keywords:
+      - crankshaft seal
+      - rear main seal
+      - oil leak gearbox side
+      - simering arbore cotit
+      - simering palier spate
+      - Kurbelwellendichtring
+      - joint spi vilebrequin
+      - retén cigüeñal
+      - paraolio albero motore
+      - krukaskeerring
+    possible_causes:
+      - worn crankshaft rear seal
+      - damaged crankshaft sealing surface
+      - excessive crankcase pressure
+      - incorrect seal installation
+    diagnostic_steps:
+      - Clean the affected area and identify the leak source.
+      - Inspect the engine-to-gearbox junction.
+      - Check crankcase ventilation.
+      - Inspect the crankshaft sealing surface if the seal is removed.
+    repair_actions:
+      - Replace the crankshaft oil seal.
+      - Correct excessive crankcase pressure.
+      - Repair a damaged sealing surface where required.
+    severity: medium
+    related_dtcs: []
+    difficulty: advanced
+
+  - id: dacia_pre_electronic_fuel_line_restriction
+    vehicle:
+      manufacturer: dacia
+      models:
+        - "1100"
+        - "1300"
+        - "1300_break"
+        - "1301"
+        - "1302"
+        - "1310"
+        - "1310_break"
+        - "1310_sport"
+        - "1304"
+        - "1305"
+        - "1307"
+        - "1309"
+        - "1320"
+        - "1325"
+      generations: all
+      engines: all
+    category: diagnostics
+    system: fuel
+    title:
+      en: Restricted Fuel Supply Line
+      ro: Conductă de alimentare cu combustibil obturată
+      de: Eingeschränkte Kraftstoffleitung
+      fr: Conduite d'alimentation en carburant obstruée
+      es: Línea de alimentación de combustible obstruida
+      it: Tubazione di alimentazione carburante ostruita
+      nl: Verstopte brandstofaanvoerleiding
+    symptoms:
+      - engine loses power at high load
+      - hesitation during acceleration
+      - fuel starvation
+      - engine stalls after sustained driving
+      - engine runs normally at low load
+      - pierdere de putere la sarcină mare
+      - ezitare la accelerare
+      - lipsă de carburant
+      - motorul se oprește după mers prelungit
+      - funcționare normală la sarcină mică
+      - Leistungsverlust unter hoher Last
+      - Kraftstoffmangel
+      - Motor geht nach längerer Fahrt aus
+      - perte de puissance sous forte charge
+      - manque de carburant
+      - calage après une longue conduite
+      - pérdida de potencia con carga
+      - falta de combustible
+      - se cala después de conducir durante mucho tiempo
+      - perdita di potenza sotto carico
+      - mancanza di carburante
+      - si spegne dopo lunga marcia
+      - vermogensverlies bij hoge belasting
+      - brandstoftekort
+      - valt uit na langere rit
+    keywords:
+      - restricted fuel line
+      - blocked fuel pipe
+      - fuel starvation
+      - conductă benzină înfundată
+      - alimentare carburant
+      - verstopfte Kraftstoffleitung
+      - conduite carburant obstruée
+      - línea de combustible obstruida
+      - tubo carburante ostruito
+      - brandstofleiding verstopt
+    possible_causes:
+      - rust or debris inside fuel line
+      - collapsed flexible fuel hose
+      - contaminated fuel
+      - tank outlet restriction
+      - incorrectly routed fuel hose
+    diagnostic_steps:
+      - Inspect fuel lines from tank to carburetor or pump.
+      - Check fuel delivery volume.
+      - Inspect flexible hoses for collapse.
+      - Check the tank outlet for restriction.
+      - Compare fuel flow before and after the restriction.
+    repair_actions:
+      - Replace a restricted fuel hose.
+      - Clean or replace a blocked fuel line.
+      - Clean the tank outlet.
+      - Remove contamination from the fuel system.
+    severity: high
+    related_dtcs: []
+    difficulty: intermediate
+
+  - id: dacia_pre_electronic_spark_plug_fouling
+    vehicle:
+      manufacturer: dacia
+      models:
+        - "1100"
+        - "1300"
+        - "1300_break"
+        - "1301"
+        - "1302"
+        - "1310"
+        - "1310_break"
+        - "1310_sport"
+        - "1304"
+        - "1305"
+        - "1307"
+        - "1309"
+        - "1320"
+        - "1325"
+      generations: all
+      engines: all
+    category: diagnostics
+    system: ignition
+    title:
+      en: Spark Plug Fouling
+      ro: Îmbâcsirea bujiilor
+      de: Verschmutzte Zündkerzen
+      fr: Encrassement des bougies
+      es: Bujías contaminadas
+      it: Candele incrostate
+      nl: Vervuilde bougies
+    symptoms:
+      - misfire
+      - difficult starting
+      - rough idle
+      - reduced power
+      - poor fuel economy
+      - spark plugs covered with deposits
+      - rateuri
+      - pornire dificilă
+      - ralanti neregulat
+      - putere redusă
+      - consum crescut
+      - bujii cu depuneri
+      - Zündaussetzer
+      - schwieriger Start
+      - unruhiger Leerlauf
+      - Leistungsverlust
+      - ratés moteur
+      - démarrage difficile
+      - ralenti irrégulier
+      - perte de puissance
+      - consommation accrue
+      - fallos de encendido
+      - arranque difícil
+      - ralentí irregular
+      - pérdida de potencia
+      - consumo elevado
+      - mancate accensioni
+      - avviamento difficile
+      - minimo irregolare
+      - perdita di potenza
+      - ontstekingsuitval
+      - moeilijk starten
+      - onregelmatig stationair
+      - vermogensverlies
+    keywords:
+      - fouled spark plugs
+      - dirty spark plugs
+      - spark plug deposits
+      - bujii îmbâcsite
+      - bujii negre
+      - verrußte Zündkerzen
+      - bougies encrassées
+      - bujías sucias
+      - candele sporche
+      - vervuilde bougies
+    possible_causes:
+      - excessively rich mixture
+      - oil entering combustion chamber
+      - incorrect spark plug heat range
+      - weak ignition
+      - excessive idling
+      - worn engine
+    diagnostic_steps:
+      - Remove and inspect all spark plugs.
+      - Compare deposits between cylinders.
+      - Determine whether deposits are fuel-related or oil-related.
+      - Check ignition system output.
+      - Check mixture adjustment.
+      - Check engine oil consumption if oily deposits are present.
+    repair_actions:
+      - Replace or clean spark plugs where appropriate.
+      - Correct excessive fuel enrichment.
+      - Repair weak ignition components.
+      - Investigate oil entry into the combustion chamber.
+      - Install the correct spark plug specification.
+    severity: medium
+    related_dtcs: []
+    difficulty: basic
+
+  - id: dacia_pre_electronic_ignition_coil_weak
+    vehicle:
+      manufacturer: dacia
+      models:
+        - "1100"
+        - "1300"
+        - "1300_break"
+        - "1301"
+        - "1302"
+        - "1310"
+        - "1310_break"
+        - "1310_sport"
+        - "1304"
+        - "1305"
+        - "1307"
+        - "1309"
+        - "1320"
+        - "1325"
+      generations: all
+      engines: all
+    category: diagnostics
+    system: ignition
+    title:
+      en: Weak Ignition Coil
+      ro: Bobină de inducție cu scânteie slabă
+      de: Schwache Zündspule
+      fr: Bobine d'allumage faible
+      es: Bobina de encendido débil
+      it: Bobina di accensione debole
+      nl: Zwakke bobine
+    symptoms:
+      - weak spark
+      - difficult starting
+      - misfire under load
+      - engine stalls when hot
+      - poor acceleration
+      - spark weakens as coil heats
+      - scânteie slabă
+      - pornire dificilă
+      - rateuri la sarcină
+      - motorul se oprește la cald
+      - accelerație slabă
+      - scânteia slăbește când bobina se încălzește
+      - schwacher Zündfunke
+      - schwieriger Start
+      - Zündaussetzer unter Last
+      - Motor geht warm aus
+      - étincelle faible
+      - ratés sous charge
+      - moteur cale à chaud
+      - démarrage difficile
+      - chispa débil
+      - fallos bajo carga
+      - se cala en caliente
+      - scintilla debole
+      - mancate accensioni sotto carico
+      - si spegne a caldo
+      - zwakke vonk
+      - ontstekingsuitval onder belasting
+      - valt warm uit
+    keywords:
+      - weak ignition coil
+      - ignition coil
+      - weak spark
+      - bobină aprindere
+      - scânteie slabă
+      - Zündspule
+      - bobine allumage
+      - bobina encendido
+      - bobina accensione
+      - bobine
+    possible_causes:
+      - internal ignition coil winding failure
+      - insulation breakdown when hot
+      - incorrect coil resistance
+      - poor coil power connection
+      - poor coil ground
+      - excessive ignition load
+    diagnostic_steps:
+      - Check ignition coil primary and secondary circuits.
+      - Measure coil resistance according to specification.
+      - Check ignition spark strength.
+      - Repeat testing when the fault occurs hot.
+      - Inspect coil electrical connections.
+    repair_actions:
+      - Replace a defective ignition coil.
+      - Repair coil power and ground connections.
+      - Correct related ignition system faults.
+    severity: high
+    related_dtcs: []
+    difficulty: intermediate
+
+  - id: dacia_pre_electronic_generator_belt_slip
+    vehicle:
+      manufacturer: dacia
+      models:
+        - "1100"
+        - "1300"
+        - "1300_break"
+        - "1301"
+        - "1302"
+        - "1310"
+        - "1310_break"
+        - "1310_sport"
+        - "1304"
+        - "1305"
+        - "1307"
+        - "1309"
+        - "1320"
+        - "1325"
+      generations: all
+      engines: all
+    category: diagnostics
+    system: charging
+    title:
+      en: Alternator Drive Belt Slipping
+      ro: Patinarea curelei de antrenare a alternatorului
+      de: Rutschender Lichtmaschinenriemen
+      fr: Courroie d'alternateur qui patine
+      es: Correa del alternador patinando
+      it: Cinghia dell'alternatore che slitta
+      nl: Slippende dynamoriem
+    symptoms:
+      - charging voltage fluctuates
+      - alternator warning light
+      - belt squeal
+      - battery remains undercharged
+      - belt dust
+      - voltage changes with electrical load
+      - tensiune de încărcare fluctuantă
+      - martor alternator
+      - cureaua scârțâie
+      - bateria rămâne descărcată
+      - praf de curea
+      - tensiunea se schimbă cu sarcina electrică
+      - schwankende Ladespannung
+      - Lichtmaschinenwarnleuchte
+      - Riemen quietscht
+      - Batterie wird nicht ausreichend geladen
+      - tension de charge fluctuante
+      - voyant d'alternateur
+      - courroie qui siffle
+      - batterie sous-chargée
+      - tensión de carga fluctuante
+      - testigo del alternador
+      - correa chirría
+      - batería insuficientemente cargada
+      - tensione di carica variabile
+      - spia alternatore
+      - cinghia che slitta
+      - batteria scarica
+      - wisselende laadspanning
+      - dynamolampje
+      - riem piept
+    keywords:
+      - alternator belt slipping
+      - charging belt
+      - belt squeal
+      - curea alternator
+      - curea patinează
+      - Lichtmaschinenriemen
+      - courroie alternateur
+      - correa alternador
+      - cinghia alternatore
+      - dynamoriem
+    possible_causes:
+      - insufficient belt tension
+      - worn belt
+      - contaminated belt
+      - misaligned pulley
+      - seized alternator bearing
+      - damaged alternator pulley
+    diagnostic_steps:
+      - Inspect belt condition.
+      - Check belt tension.
+      - Inspect pulley alignment.
+      - Check alternator pulley rotation.
+      - Look for oil or coolant contamination.
+    repair_actions:
+      - Adjust belt tension.
+      - Replace a worn belt.
+      - Clean or correct pulley alignment.
+      - Repair a seized alternator bearing.
+      - Replace contaminated belts.
+    severity: medium
+    related_dtcs: []
+    difficulty: basic
+
   - id: dacia_pre_electronic_low_engine_compression
     vehicle:
       manufacturer: dacia
