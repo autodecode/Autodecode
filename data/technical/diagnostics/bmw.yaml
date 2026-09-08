@@ -6,6 +6,945 @@ manufacturer:
 
 technical_data:
 
+  - id: bmw_abs_wheel_speed_sensor_fault
+    title: Wheel Speed Sensor Fault
+    system: ABS / DSC
+    description: The ABS/DSC control unit detects an invalid, missing or intermittent wheel speed signal.
+    vehicle:
+      models:
+        - 1_series
+        - 2_series
+        - 3_series
+        - 4_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x4
+        - x5
+        - x6
+        - z4
+      generations:
+        - e36
+        - e46
+        - e53
+        - e60
+        - e61
+        - e63
+        - e64
+        - e65
+        - e66
+        - e81
+        - e82
+        - e87
+        - e88
+        - e84
+        - e83
+        - e85
+        - e86
+        - e89
+        - e90
+        - e91
+        - e92
+        - e93
+        - e70
+        - e71
+        - e72
+        - f20
+        - f21
+        - f22
+        - f23
+        - f30
+        - f31
+        - f32
+        - f33
+        - f34
+        - f35
+        - f36
+        - f10
+        - f11
+        - f12
+        - f13
+        - f01
+        - f02
+        - f04
+        - f06
+        - f07
+        - f15
+        - f16
+        - f25
+        - f26
+        - f48
+        - f49
+        - f45
+        - f46
+        - g20
+        - g21
+        - g22
+        - g23
+        - g26
+        - g30
+        - g31
+        - g32
+        - g05
+        - g06
+        - g07
+        - g11
+        - g12
+        - g14
+        - g15
+        - g16
+        - g29
+      engines:
+        - m43
+        - m44
+        - m52
+        - m52tu
+        - m54
+        - m56
+        - m57
+        - n42
+        - n43
+        - n46
+        - n47
+        - n52
+        - n53
+        - n54
+        - n55
+        - n57
+        - n20
+        - n26
+        - b47
+        - b48
+        - b57
+        - b58
+    symptoms:
+      - ABS warning light
+      - DSC warning light
+      - traction control unavailable
+      - speedometer malfunction
+      - cruise control unavailable
+      - wheel speed signal intermittent
+    keywords:
+      - wheel speed sensor
+      - abs sensor
+      - abs wheel sensor
+      - wheel speed
+      - dsc sensor
+    possible_causes:
+      - faulty wheel speed sensor
+      - damaged sensor wiring
+      - contaminated sensor
+      - damaged reluctor ring
+      - damaged wheel bearing encoder
+      - excessive sensor gap
+    diagnostic_steps:
+      - Read DSC fault memory and identify the affected wheel.
+      - Compare all four wheel speed signals during a road test.
+      - Inspect the sensor and wiring.
+      - Check the wheel bearing encoder or reluctor ring.
+      - Check sensor installation and air gap.
+      - Verify the signal after repair.
+    related_dtcs: []
+
+  - id: bmw_abs_hydraulic_pressure_sensor_fault
+    title: DSC Hydraulic Pressure Sensor Fault
+    system: ABS / DSC
+    description: The DSC system detects an implausible hydraulic brake pressure signal.
+    vehicle:
+      models:
+        - 3_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x3
+        - x5
+        - x6
+        - 1_series
+      generations:
+        - e46
+        - e53
+        - e60
+        - e61
+        - e63
+        - e64
+        - e65
+        - e66
+        - e81
+        - e82
+        - e87
+        - e88
+        - e83
+        - e90
+        - e91
+        - e92
+        - e93
+        - e70
+        - e71
+        - e72
+        - f20
+        - f21
+        - f25
+        - f30
+        - f31
+        - f32
+        - f33
+        - f34
+        - f35
+        - f10
+        - f11
+        - f15
+        - f16
+      engines:
+        - m54
+        - m57
+        - n42
+        - n43
+        - n46
+        - n47
+        - n52
+        - n53
+        - n54
+        - n55
+        - n57
+        - n20
+        - n26
+        - b47
+        - b48
+        - b57
+        - b58
+    symptoms:
+      - DSC warning
+      - ABS warning
+      - traction control unavailable
+      - brake system warning
+      - stability control intervention
+    keywords:
+      - brake pressure sensor
+      - hydraulic pressure sensor
+      - dsc pressure
+      - brake pressure
+    possible_causes:
+      - faulty pressure sensor
+      - hydraulic unit fault
+      - wiring fault
+      - connector fault
+      - incorrect brake pressure signal
+    diagnostic_steps:
+      - Read DSC live pressure data.
+      - Compare pressure reading with brake pedal application.
+      - Inspect sensor connector and wiring.
+      - Check brake fluid level and hydraulic condition.
+      - Perform DSC hydraulic tests where supported.
+    related_dtcs: []
+
+  - id: bmw_abs_pump_motor_fault
+    title: ABS/DSC Hydraulic Pump Motor Fault
+    system: ABS / DSC
+    description: The DSC control unit detects that the hydraulic pump motor cannot operate correctly.
+    vehicle:
+      models:
+        - 1_series
+        - 3_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+        - x6
+      generations:
+        - e46
+        - e53
+        - e60
+        - e61
+        - e63
+        - e64
+        - e65
+        - e66
+        - e81
+        - e82
+        - e87
+        - e88
+        - e83
+        - e84
+        - e70
+        - e71
+        - e72
+        - e90
+        - e91
+        - e92
+        - e93
+        - f20
+        - f21
+        - f25
+        - f30
+        - f31
+        - f32
+        - f33
+        - f34
+        - f35
+        - f10
+        - f11
+        - f15
+        - f16
+      engines:
+        - m43
+        - m44
+        - m52
+        - m52tu
+        - m54
+        - m57
+        - n42
+        - n43
+        - n46
+        - n47
+        - n52
+        - n53
+        - n54
+        - n55
+        - n57
+        - n20
+        - n26
+        - b47
+        - b48
+        - b57
+        - b58
+    symptoms:
+      - ABS warning
+      - DSC warning
+      - brake warning
+      - ABS intervention unavailable
+      - traction control unavailable
+    keywords:
+      - abs pump
+      - dsc pump
+      - hydraulic pump motor
+      - abs hydraulic unit
+    possible_causes:
+      - failed hydraulic pump motor
+      - worn pump
+      - electrical supply fault
+      - internal hydraulic unit fault
+      - corroded connector
+    diagnostic_steps:
+      - Read DSC fault memory.
+      - Activate the hydraulic pump using diagnostic equipment.
+      - Check pump power supply and ground.
+      - Measure pump motor current where applicable.
+      - Inspect the hydraulic unit connector.
+      - Check brake fluid condition and hydraulic system integrity.
+    related_dtcs: []
+
+  - id: bmw_abs_dsc_control_unit_fault
+    title: DSC Control Unit Fault
+    system: ABS / DSC
+    description: The DSC control unit reports an internal electronic or communication fault.
+    vehicle:
+      models:
+        - 1_series
+        - 3_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+        - x6
+      generations:
+        - e46
+        - e53
+        - e60
+        - e61
+        - e63
+        - e64
+        - e65
+        - e66
+        - e81
+        - e82
+        - e87
+        - e88
+        - e83
+        - e84
+        - e70
+        - e71
+        - e72
+        - e90
+        - e91
+        - e92
+        - e93
+        - f20
+        - f21
+        - f25
+        - f30
+        - f31
+        - f32
+        - f33
+        - f34
+        - f35
+        - f10
+        - f11
+        - f15
+        - f16
+      engines:
+        - m43
+        - m44
+        - m52
+        - m52tu
+        - m54
+        - m57
+        - n42
+        - n43
+        - n46
+        - n47
+        - n52
+        - n53
+        - n54
+        - n55
+        - n57
+        - n20
+        - n26
+        - b47
+        - b48
+        - b57
+        - b58
+    symptoms:
+      - ABS warning
+      - DSC warning
+      - traction control unavailable
+      - multiple chassis warnings
+      - communication fault
+    keywords:
+      - dsc control unit
+      - dsc module
+      - abs control unit
+      - abs module
+      - dsc fault
+    possible_causes:
+      - internal DSC control unit fault
+      - low system voltage
+      - water ingress
+      - connector corrosion
+      - communication fault
+      - hydraulic unit failure
+    diagnostic_steps:
+      - Scan the DSC module and all connected control units.
+      - Check DSC power and ground.
+      - Check system voltage.
+      - Inspect the DSC connector for moisture or corrosion.
+      - Check CAN communication.
+      - Verify hydraulic unit operation before replacing the control unit.
+    related_dtcs: []
+
+  - id: bmw_abs_yaw_rate_sensor_fault
+    title: Yaw Rate Sensor Fault
+    system: ABS / DSC
+    description: The DSC system receives an implausible or missing yaw rate signal.
+    vehicle:
+      models:
+        - 1_series
+        - 3_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+        - x6
+      generations:
+        - e46
+        - e53
+        - e60
+        - e61
+        - e63
+        - e64
+        - e65
+        - e66
+        - e81
+        - e82
+        - e87
+        - e88
+        - e83
+        - e84
+        - e70
+        - e71
+        - e72
+        - e90
+        - e91
+        - e92
+        - e93
+        - f20
+        - f21
+        - f25
+        - f30
+        - f31
+        - f32
+        - f33
+        - f34
+        - f35
+        - f10
+        - f11
+        - f15
+        - f16
+      engines:
+        - m54
+        - m57
+        - n42
+        - n43
+        - n46
+        - n47
+        - n52
+        - n53
+        - n54
+        - n55
+        - n57
+        - n20
+        - n26
+        - b47
+        - b48
+        - b57
+        - b58
+    symptoms:
+      - DSC warning
+      - traction control unavailable
+      - stability control malfunction
+      - unexpected DSC intervention
+      - steering stability warning
+    keywords:
+      - yaw rate sensor
+      - yaw sensor
+      - rotational acceleration
+      - dsc yaw
+    possible_causes:
+      - faulty yaw rate sensor
+      - sensor calibration lost
+      - wiring fault
+      - low system voltage
+      - internal sensor failure
+    diagnostic_steps:
+      - Read DSC live yaw rate with the vehicle stationary.
+      - Check whether the zero position is plausible.
+      - Inspect sensor wiring and connectors.
+      - Perform calibration where required.
+      - Verify the signal during a controlled road test.
+    related_dtcs: []
+
+  - id: bmw_abs_steering_angle_sensor_fault
+    title: Steering Angle Sensor Fault
+    system: ABS / DSC
+    description: The DSC system detects an invalid steering angle signal or lost steering angle calibration.
+    vehicle:
+      models:
+        - 1_series
+        - 3_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+        - x6
+        - z4
+      generations:
+        - e46
+        - e53
+        - e60
+        - e61
+        - e63
+        - e64
+        - e65
+        - e66
+        - e81
+        - e82
+        - e87
+        - e88
+        - e83
+        - e84
+        - e85
+        - e86
+        - e70
+        - e71
+        - e72
+        - e90
+        - e91
+        - e92
+        - e93
+        - f20
+        - f21
+        - f25
+        - f30
+        - f31
+        - f32
+        - f33
+        - f34
+        - f35
+        - f10
+        - f11
+        - f15
+        - f16
+        - g20
+        - g21
+        - g22
+        - g23
+        - g26
+        - g30
+        - g31
+        - g05
+        - g06
+        - g07
+        - g11
+        - g12
+        - g29
+      engines:
+        - m43
+        - m44
+        - m52
+        - m52tu
+        - m54
+        - m57
+        - n42
+        - n43
+        - n46
+        - n47
+        - n52
+        - n53
+        - n54
+        - n55
+        - n57
+        - n20
+        - n26
+        - b47
+        - b48
+        - b57
+        - b58
+    symptoms:
+      - DSC warning
+      - steering warning
+      - traction control unavailable
+      - stability control unavailable
+      - warning after battery replacement
+    keywords:
+      - steering angle sensor
+      - steering angle
+      - sas
+      - steering calibration
+      - dsc calibration
+    possible_causes:
+      - lost steering angle calibration
+      - faulty steering angle sensor
+      - clock spring or steering column module fault
+      - incorrect wheel alignment
+      - low system voltage
+      - communication fault
+    diagnostic_steps:
+      - Read DSC and steering control-unit fault memory.
+      - Check steering angle with wheels physically straight.
+      - Verify front wheel alignment.
+      - Perform steering angle calibration.
+      - Check sensor communication.
+      - Recheck DSC operation after calibration.
+    related_dtcs: []
+
+  - id: bmw_abs_longitudinal_acceleration_sensor_fault
+    title: Longitudinal Acceleration Sensor Fault
+    system: ABS / DSC
+    description: The DSC system detects an implausible longitudinal acceleration signal.
+    vehicle:
+      models:
+        - 1_series
+        - 3_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+        - x6
+      generations:
+        - e60
+        - e61
+        - e63
+        - e64
+        - e65
+        - e66
+        - e81
+        - e82
+        - e87
+        - e88
+        - e83
+        - e84
+        - e90
+        - e91
+        - e92
+        - e93
+        - e70
+        - e71
+        - e72
+        - f20
+        - f21
+        - f25
+        - f30
+        - f31
+        - f32
+        - f33
+        - f34
+        - f35
+        - f10
+        - f11
+        - f15
+        - f16
+      engines:
+        - m54
+        - m57
+        - n42
+        - n43
+        - n46
+        - n47
+        - n52
+        - n53
+        - n54
+        - n55
+        - n57
+        - n20
+        - n26
+        - b47
+        - b48
+        - b57
+        - b58
+    symptoms:
+      - DSC warning
+      - traction control unavailable
+      - stability control malfunction
+      - unexpected DSC intervention
+    keywords:
+      - longitudinal acceleration
+      - acceleration sensor
+      - dsc acceleration sensor
+      - longitudinal sensor
+    possible_causes:
+      - faulty acceleration sensor
+      - lost calibration
+      - wiring fault
+      - connector fault
+      - low system voltage
+    diagnostic_steps:
+      - Read DSC live acceleration data with the vehicle stationary.
+      - Check whether the sensor zero value is plausible.
+      - Inspect wiring and connectors.
+      - Perform calibration if supported.
+      - Verify sensor values during controlled vehicle movement.
+    related_dtcs: []
+
+  - id: bmw_abs_brake_pressure_sensor_fault
+    title: Brake Pressure Sensor Fault
+    system: ABS / DSC
+    description: The DSC system receives an invalid brake pressure signal.
+    vehicle:
+      models:
+        - 1_series
+        - 3_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+        - x6
+      generations:
+        - e81
+        - e82
+        - e87
+        - e88
+        - e90
+        - e91
+        - e92
+        - e93
+        - e60
+        - e61
+        - e63
+        - e64
+        - e65
+        - e66
+        - e70
+        - e71
+        - e72
+        - e83
+        - e84
+        - f20
+        - f21
+        - f25
+        - f30
+        - f31
+        - f32
+        - f33
+        - f34
+        - f35
+        - f10
+        - f11
+        - f15
+        - f16
+      engines:
+        - m54
+        - m57
+        - n42
+        - n43
+        - n46
+        - n47
+        - n52
+        - n53
+        - n54
+        - n55
+        - n57
+        - n20
+        - n26
+        - b47
+        - b48
+        - b57
+        - b58
+    symptoms:
+      - DSC warning
+      - ABS warning
+      - brake warning
+      - traction control unavailable
+      - abnormal DSC intervention
+    keywords:
+      - brake pressure
+      - brake pressure sensor
+      - pressure signal
+      - dsc brake pressure
+    possible_causes:
+      - faulty pressure sensor
+      - hydraulic unit fault
+      - wiring fault
+      - connector problem
+      - air in hydraulic system
+    diagnostic_steps:
+      - Read brake pressure live data.
+      - Check pressure signal with the brake pedal released.
+      - Compare pressure signal with pedal application.
+      - Inspect hydraulic unit wiring and connector.
+      - Bleed the brake system if air contamination is suspected.
+    related_dtcs: []
+
+  - id: bmw_abs_dsc_communication_fault
+    title: DSC Communication Fault
+    system: ABS / DSC / CAN
+    description: The DSC control unit loses communication with another vehicle control unit.
+    vehicle:
+      models:
+        - 1_series
+        - 3_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x4
+        - x5
+        - x6
+        - z4
+      generations:
+        - e60
+        - e61
+        - e63
+        - e64
+        - e65
+        - e66
+        - e81
+        - e82
+        - e87
+        - e88
+        - e83
+        - e84
+        - e85
+        - e86
+        - e90
+        - e91
+        - e92
+        - e93
+        - e70
+        - e71
+        - e72
+        - f20
+        - f21
+        - f22
+        - f23
+        - f25
+        - f26
+        - f30
+        - f31
+        - f32
+        - f33
+        - f34
+        - f35
+        - f36
+        - f10
+        - f11
+        - f12
+        - f13
+        - f15
+        - f16
+        - g20
+        - g21
+        - g22
+        - g23
+        - g26
+        - g30
+        - g31
+        - g05
+        - g06
+        - g07
+        - g11
+        - g12
+        - g29
+      engines:
+        - m54
+        - m57
+        - n42
+        - n43
+        - n46
+        - n47
+        - n52
+        - n53
+        - n54
+        - n55
+        - n57
+        - n20
+        - n26
+        - b47
+        - b48
+        - b57
+        - b58
+    symptoms:
+      - ABS warning
+      - DSC warning
+      - multiple warning lights
+      - cruise control unavailable
+      - traction control unavailable
+      - communication errors
+    keywords:
+      - dsc communication
+      - abs communication
+      - can communication
+      - dsc can bus
+      - chassis communication
+    possible_causes:
+      - CAN bus wiring fault
+      - failed DSC module
+      - failed connected control unit
+      - low system voltage
+      - poor ground connection
+      - connector corrosion
+    diagnostic_steps:
+      - Scan all control units for communication faults.
+      - Identify which modules are missing from the diagnostic network.
+      - Check DSC power and ground.
+      - Inspect CAN wiring and connectors.
+      - Check system voltage.
+      - Isolate a defective control unit only after verifying the CAN network.
+    related_dtcs: []
+
   - id: bmw_engine_fuel_pressure_sensor_fault
     title: Fuel Pressure Sensor Fault
     system: Engine / Fuel System
