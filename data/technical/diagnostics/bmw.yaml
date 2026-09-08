@@ -6,6 +6,3410 @@ manufacturer:
 
 technical_data:
 
+  - id: bmw_steering_eps_motor_fault
+    title: Electric Power Steering Motor Fault
+    system: EPS
+    description: Fault in the electric power steering motor or its electrical drive circuit.
+    vehicle:
+      models:
+        - 1_series
+        - 2_series
+        - 3_series
+        - 4_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x4
+        - x5
+        - x6
+        - x7
+      generations:
+        - f20_f21
+        - f22_f23
+        - f30_f31_f34
+        - f32_f33_f36
+        - f10_f11
+        - f12_f13
+        - f01_f02
+        - f48
+        - f25
+        - f26
+        - f15
+        - f16
+        - g07
+        - g20_g21
+        - g22_g23_g26
+        - g30_g31
+        - g11_g12
+        - u11
+        - g01
+        - g02
+        - g05
+        - g06
+    symptoms:
+      - heavy steering
+      - power steering warning
+      - steering assistance reduced
+      - steering wheel difficult to turn
+      - intermittent steering assistance
+    keywords:
+      - EPS
+      - electric power steering
+      - steering motor
+      - power steering motor
+    possible_causes:
+      - EPS motor failure
+      - motor position sensor fault
+      - excessive mechanical resistance
+      - low system voltage
+      - damaged steering wiring
+    diagnostic_steps:
+      - Read EPS fault memory.
+      - Check battery and charging voltage.
+      - Inspect EPS power and ground connections.
+      - Check steering motor current and position data.
+      - Perform steering initialization if required.
+    related_dtcs: []
+
+  - id: bmw_steering_eps_control_unit_fault
+    title: EPS Control Unit Fault
+    system: EPS
+    description: Internal fault of the electric power steering control unit.
+    vehicle:
+      models:
+        - 1_series
+        - 2_series
+        - 3_series
+        - 4_series
+        - 5_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+        - x7
+      generations:
+        - f20_f21
+        - f22_f23
+        - f30_f31_f34
+        - f32_f33_f36
+        - f10_f11
+        - f01_f02
+        - f48
+        - f25
+        - f15
+        - g07
+        - g20_g21
+        - g30_g31
+        - g11_g12
+        - u11
+        - g01
+        - g05
+    symptoms:
+      - power steering unavailable
+      - steering warning light
+      - heavy steering
+      - intermittent steering assistance
+      - EPS communication fault
+    keywords:
+      - EPS control unit
+      - steering ECU
+      - steering module
+      - electric steering module
+    possible_causes:
+      - internal EPS electronic failure
+      - corrupted control software
+      - voltage interruption
+      - water ingress
+      - communication failure
+    diagnostic_steps:
+      - Scan the EPS module.
+      - Check stored and current faults.
+      - Verify module power and ground.
+      - Check CAN communication.
+      - Program or replace the EPS module if an internal fault is confirmed.
+    related_dtcs: []
+
+  - id: bmw_steering_eps_torque_sensor_fault
+    title: EPS Steering Torque Sensor Fault
+    system: EPS
+    description: Fault in the steering torque sensor used by the electric steering system to determine driver steering effort.
+    vehicle:
+      models:
+        - 1_series
+        - 2_series
+        - 3_series
+        - 4_series
+        - 5_series
+        - x1
+        - x3
+      generations:
+        - f20_f21
+        - f22_f23
+        - f30_f31_f34
+        - f32_f33_f36
+        - f10_f11
+        - f48
+        - f25
+        - g20_g21
+        - g22_g23_g26
+        - u11
+        - g01
+    symptoms:
+      - steering assistance varies
+      - steering warning
+      - steering feels uneven
+      - steering assistance unavailable
+      - steering pulls unexpectedly
+    keywords:
+      - torque sensor
+      - steering torque sensor
+      - steering effort sensor
+      - EPS torque
+    possible_causes:
+      - torque sensor failure
+      - sensor calibration loss
+      - steering column fault
+      - wiring fault
+      - internal EPS fault
+    diagnostic_steps:
+      - Read EPS live data.
+      - Compare left and right steering torque values.
+      - Check sensor zero position.
+      - Inspect steering column wiring.
+      - Perform steering torque sensor calibration where supported.
+    related_dtcs: []
+
+  - id: bmw_steering_eps_position_sensor_fault
+    title: EPS Steering Position Sensor Fault
+    system: EPS
+    description: Fault in the steering position or rotor position sensing system inside the electric steering assembly.
+    vehicle:
+      models:
+        - 1_series
+        - 2_series
+        - 3_series
+        - 4_series
+        - x1
+        - x3
+      generations:
+        - f20_f21
+        - f22_f23
+        - f30_f31_f34
+        - f32_f33_f36
+        - f48
+        - f25
+        - g20_g21
+        - g22_g23_g26
+        - u11
+        - g01
+    symptoms:
+      - steering assistance failure
+      - steering warning
+      - steering angle inconsistent
+      - steering becomes heavy
+      - assistance cuts out intermittently
+    keywords:
+      - EPS position sensor
+      - rotor position
+      - steering position sensor
+    possible_causes:
+      - position sensor failure
+      - sensor calibration loss
+      - EPS internal fault
+      - wiring fault
+      - mechanical steering damage
+    diagnostic_steps:
+      - Read EPS position data.
+      - Compare steering position with DSC steering angle.
+      - Check sensor plausibility.
+      - Inspect EPS connectors.
+      - Perform steering initialization.
+    related_dtcs: []
+
+  - id: bmw_steering_eps_power_supply_fault
+    title: EPS Power Supply Fault
+    system: EPS
+    description: Insufficient or interrupted electrical supply to the electric power steering system.
+    vehicle:
+      models:
+        - 1_series
+        - 2_series
+        - 3_series
+        - 4_series
+        - 5_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+        - x7
+      generations:
+        - f20_f21
+        - f22_f23
+        - f30_f31_f34
+        - f32_f33_f36
+        - f10_f11
+        - f01_f02
+        - f48
+        - f25
+        - f15
+        - g07
+        - g20_g21
+        - g30_g31
+        - g11_g12
+        - u11
+        - g01
+        - g05
+    symptoms:
+      - steering assistance unavailable
+      - steering warning
+      - heavy steering
+      - multiple electrical warnings
+      - EPS resets
+    keywords:
+      - EPS power supply
+      - steering power
+      - steering voltage
+      - EPS supply
+    possible_causes:
+      - low battery voltage
+      - blown fuse
+      - damaged power cable
+      - poor ground
+      - power distribution fault
+    diagnostic_steps:
+      - Measure battery voltage.
+      - Check EPS supply voltage under load.
+      - Inspect fuses.
+      - Check power and ground cables.
+      - Check voltage drop during steering operation.
+    related_dtcs: []
+
+  - id: bmw_steering_eps_can_communication_fault
+    title: EPS CAN Communication Fault
+    system: EPS
+    description: Loss or corruption of communication between the electric power steering system and other vehicle control units.
+    vehicle:
+      models:
+        - 1_series
+        - 2_series
+        - 3_series
+        - 4_series
+        - 5_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+      generations:
+        - f20_f21
+        - f22_f23
+        - f30_f31_f34
+        - f32_f33_f36
+        - f10_f11
+        - f01_f02
+        - f48
+        - f25
+        - f15
+        - g20_g21
+        - g30_g31
+        - g11_g12
+        - u11
+        - g01
+        - g05
+    symptoms:
+      - steering warning
+      - power steering unavailable
+      - multiple communication faults
+      - heavy steering
+      - intermittent EPS operation
+    keywords:
+      - EPS CAN
+      - steering CAN
+      - steering communication
+      - CAN communication
+    possible_causes:
+      - CAN wiring fault
+      - connector corrosion
+      - low system voltage
+      - gateway fault
+      - EPS control unit failure
+    diagnostic_steps:
+      - Scan all control units for communication faults.
+      - Check CAN bus resistance.
+      - Inspect EPS connectors.
+      - Check CAN high and CAN low signals.
+      - Verify gateway communication.
+    related_dtcs: []
+
+  - id: bmw_steering_eps_initialization_required
+    title: EPS Initialization Required
+    system: EPS
+    description: The electric power steering system has lost its learned initialization or steering reference position.
+    vehicle:
+      models:
+        - 1_series
+        - 2_series
+        - 3_series
+        - 4_series
+        - 5_series
+        - x1
+        - x3
+        - x5
+      generations:
+        - f20_f21
+        - f22_f23
+        - f30_f31_f34
+        - f32_f33_f36
+        - f10_f11
+        - f48
+        - f25
+        - f15
+        - g20_g21
+        - g22_g23_g26
+        - u11
+        - g01
+        - g05
+    symptoms:
+      - steering warning after repair
+      - steering wheel not centered
+      - steering assistance warning
+      - DSC warning
+      - steering angle implausible
+    keywords:
+      - steering initialization
+      - EPS initialization
+      - steering calibration
+      - steering reference
+    possible_causes:
+      - battery disconnection
+      - steering rack replacement
+      - steering column replacement
+      - wheel alignment
+      - lost calibration data
+    diagnostic_steps:
+      - Check steering wheel mechanical center.
+      - Verify wheel alignment.
+      - Read steering angle data.
+      - Perform EPS initialization.
+      - Clear faults and road test.
+    related_dtcs: []
+
+  - id: bmw_airbag_srs_control_unit_fault
+    title: Airbag SRS Control Unit Fault
+    system: SRS
+    description: Internal or functional fault in the BMW supplemental restraint system control unit.
+    vehicle:
+      models:
+        - 1_series
+        - 2_series
+        - 3_series
+        - 4_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x4
+        - x5
+        - x6
+        - x7
+      generations:
+        - e81_e82_e87_e88
+        - e90_e91_e92_e93
+        - f20_f21
+        - f22_f23
+        - f30_f31_f34
+        - f32_f33_f36
+        - e60_e61
+        - f10_f11
+        - e63_e64
+        - f12_f13
+        - e65_e66
+        - f01_f02
+        - e84
+        - f48
+        - e83
+        - f25
+        - f26
+        - e70
+        - f15
+        - e71_e72
+        - f16
+        - g07
+        - g20_g21
+        - g30_g31
+        - g11_g12
+        - g01
+        - g05
+    symptoms:
+      - airbag warning light
+      - SRS warning
+      - restraint system malfunction
+      - multiple airbag faults
+    keywords:
+      - SRS control unit
+      - airbag module
+      - restraint control module
+      - airbag ECU
+    possible_causes:
+      - internal control unit failure
+      - crash data stored
+      - voltage interruption
+      - communication fault
+      - water damage
+    diagnostic_steps:
+      - Read SRS fault memory.
+      - Check control unit power and ground.
+      - Check communication with the module.
+      - Determine whether crash data is present.
+      - Replace or program the control unit when required.
+    related_dtcs: []
+
+  - id: bmw_airbag_occupancy_sensor_fault
+    title: Passenger Seat Occupancy Sensor Fault
+    system: SRS
+    description: Fault in the passenger seat occupancy detection system used to determine whether the seat is occupied.
+    vehicle:
+      models:
+        - 1_series
+        - 3_series
+        - 5_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+      generations:
+        - e81_e82_e87_e88
+        - e90_e91_e92_e93
+        - e60_e61
+        - e65_e66
+        - e84
+        - e83
+        - e70
+        - f20_f21
+        - f30_f31_f34
+        - f10_f11
+        - f01_f02
+        - f48
+        - f25
+        - f15
+        - g20_g21
+        - g30_g31
+        - g11_g12
+        - g01
+        - g05
+    symptoms:
+      - passenger airbag warning
+      - airbag warning light
+      - occupancy detection fault
+      - restraint system malfunction
+    keywords:
+      - occupancy sensor
+      - passenger seat sensor
+      - seat occupancy
+      - OC3
+    possible_causes:
+      - damaged occupancy mat
+      - seat wiring fault
+      - connector fault
+      - occupancy sensor failure
+      - moisture damage
+    diagnostic_steps:
+      - Read SRS fault memory.
+      - Inspect passenger seat wiring.
+      - Check occupancy sensor live data.
+      - Inspect connectors beneath the seat.
+      - Replace and initialize the occupancy sensor system if necessary.
+    related_dtcs: []
+
+  - id: bmw_airbag_seat_belt_tensioner_fault
+    title: Seat Belt Tensioner Fault
+    system: SRS
+    description: Fault in a pyrotechnic seat belt pretensioner or its electrical circuit.
+    vehicle:
+      models:
+        - 1_series
+        - 2_series
+        - 3_series
+        - 4_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+        - x6
+      generations:
+        - e81_e82_e87_e88
+        - e90_e91_e92_e93
+        - f20_f21
+        - f22_f23
+        - f30_f31_f34
+        - f32_f33_f36
+        - e60_e61
+        - f10_f11
+        - e63_e64
+        - f12_f13
+        - e65_e66
+        - f01_f02
+        - e84
+        - f48
+        - e83
+        - f25
+        - e70
+        - f15
+        - e71_e72
+        - f16
+        - g20_g21
+        - g30_g31
+        - g11_g12
+        - g01
+        - g05
+    symptoms:
+      - airbag warning light
+      - seat belt restraint warning
+      - SRS fault
+      - pretensioner fault
+    keywords:
+      - seat belt tensioner
+      - pretensioner
+      - pyrotechnic tensioner
+      - belt tensioner
+    possible_causes:
+      - open circuit
+      - short circuit
+      - damaged pretensioner
+      - connector fault
+      - previous crash activation
+    diagnostic_steps:
+      - Read SRS fault memory.
+      - Identify the affected seat.
+      - Inspect the seat belt connector and wiring.
+      - Check for crash activation history.
+      - Replace the pretensioner if electrically defective or activated.
+    related_dtcs: []
+
+  - id: bmw_airbag_crash_sensor_fault
+    title: Airbag Crash Sensor Fault
+    system: SRS
+    description: Fault in an impact sensor used by the restraint system to detect vehicle deceleration during a collision.
+    vehicle:
+      models:
+        - 1_series
+        - 2_series
+        - 3_series
+        - 4_series
+        - 5_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+      generations:
+        - e81_e82_e87_e88
+        - e90_e91_e92_e93
+        - f20_f21
+        - f22_f23
+        - f30_f31_f34
+        - f32_f33_f36
+        - e60_e61
+        - f10_f11
+        - e65_e66
+        - f01_f02
+        - e84
+        - f48
+        - e83
+        - f25
+        - e70
+        - f15
+        - g20_g21
+        - g30_g31
+        - g11_g12
+        - g01
+        - g05
+    symptoms:
+      - airbag warning
+      - SRS fault
+      - crash sensor fault
+      - restraint system warning
+    keywords:
+      - crash sensor
+      - impact sensor
+      - acceleration sensor
+      - airbag impact sensor
+    possible_causes:
+      - sensor failure
+      - wiring damage
+      - connector corrosion
+      - incorrect sensor installation
+      - crash event
+    diagnostic_steps:
+      - Read SRS fault memory.
+      - Identify the affected sensor.
+      - Inspect sensor mounting.
+      - Check sensor wiring and connectors.
+      - Replace the sensor if the electrical fault remains.
+    related_dtcs: []
+
+  - id: bmw_airbag_battery_safety_terminal_fault
+    title: Battery Safety Terminal Fault
+    system: SRS
+    description: Fault in the pyrotechnic battery safety terminal used to disconnect high-current electrical circuits during a severe collision.
+    vehicle:
+      models:
+        - 1_series
+        - 3_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+        - x6
+      generations:
+        - e81_e82_e87_e88
+        - e90_e91_e92_e93
+        - f20_f21
+        - f30_f31_f34
+        - e60_e61
+        - f10_f11
+        - e63_e64
+        - f12_f13
+        - e65_e66
+        - f01_f02
+        - e84
+        - f48
+        - e83
+        - f25
+        - e70
+        - f15
+        - e71_e72
+        - f16
+        - g20_g21
+        - g30_g31
+        - g11_g12
+        - g01
+        - g05
+    symptoms:
+      - battery disconnected
+      - no start
+      - multiple electrical faults
+      - airbag warning
+      - charging system malfunction
+    keywords:
+      - BST
+      - battery safety terminal
+      - pyrotechnic battery terminal
+      - battery disconnect
+    possible_causes:
+      - BST activation
+      - damaged terminal
+      - wiring fault
+      - crash event
+      - poor battery connection
+    diagnostic_steps:
+      - Inspect the battery safety terminal.
+      - Check battery voltage at the distribution point.
+      - Read SRS and power management faults.
+      - Inspect BST wiring.
+      - Replace the activated safety terminal.
+    related_dtcs: []
+
+  - id: bmw_airbag_driver_stage_one_fault
+    title: Driver Airbag Stage 1 Fault
+    system: SRS
+    description: Electrical fault in the first-stage driver airbag igniter circuit.
+    vehicle:
+      models:
+        - 1_series
+        - 3_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+      generations:
+        - e81_e82_e87_e88
+        - e90_e91_e92_e93
+        - f20_f21
+        - f30_f31_f34
+        - e60_e61
+        - f10_f11
+        - e63_e64
+        - f12_f13
+        - e65_e66
+        - f01_f02
+        - e84
+        - f48
+        - e83
+        - f25
+        - e70
+        - f15
+        - g20_g21
+        - g30_g31
+        - g11_g12
+        - g01
+        - g05
+    symptoms:
+      - airbag warning
+      - SRS warning
+      - driver airbag fault
+    keywords:
+      - driver airbag
+      - airbag stage 1
+      - driver igniter
+    possible_causes:
+      - open circuit
+      - short circuit
+      - clock spring wiring fault
+      - airbag connector fault
+      - damaged airbag module
+    diagnostic_steps:
+      - Read SRS fault memory.
+      - Identify the driver airbag stage.
+      - Inspect steering wheel connectors.
+      - Inspect clock spring wiring.
+      - Replace the airbag module if the igniter circuit is defective.
+    related_dtcs: []
+
+  - id: bmw_airbag_driver_stage_two_fault
+    title: Driver Airbag Stage 2 Fault
+    system: SRS
+    description: Electrical fault in the second-stage driver airbag igniter circuit.
+    vehicle:
+      models:
+        - 3_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x5
+      generations:
+        - e90_e91_e92_e93
+        - e60_e61
+        - e63_e64
+        - e65_e66
+        - f01_f02
+        - f10_f11
+        - f12_f13
+        - e70
+        - f15
+        - g30_g31
+        - g11_g12
+        - g05
+    symptoms:
+      - airbag warning
+      - driver airbag fault
+      - SRS warning
+    keywords:
+      - driver airbag stage 2
+      - second stage airbag
+      - stage two igniter
+    possible_causes:
+      - open circuit
+      - short circuit
+      - connector fault
+      - steering wheel wiring fault
+      - airbag module failure
+    diagnostic_steps:
+      - Read SRS fault memory.
+      - Verify the affected ignition stage.
+      - Inspect steering wheel connectors.
+      - Check clock spring circuits.
+      - Replace defective components if required.
+    related_dtcs: []
+
+  - id: bmw_airbag_passenger_stage_fault
+    title: Passenger Airbag Igniter Fault
+    system: SRS
+    description: Electrical fault in the passenger airbag deployment circuit.
+    vehicle:
+      models:
+        - 1_series
+        - 3_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+      generations:
+        - e81_e82_e87_e88
+        - e90_e91_e92_e93
+        - f20_f21
+        - f30_f31_f34
+        - e60_e61
+        - f10_f11
+        - e63_e64
+        - f12_f13
+        - e65_e66
+        - f01_f02
+        - e84
+        - f48
+        - e83
+        - f25
+        - e70
+        - f15
+        - g20_g21
+        - g30_g31
+        - g11_g12
+        - g01
+        - g05
+    symptoms:
+      - airbag warning
+      - passenger airbag fault
+      - SRS warning
+    keywords:
+      - passenger airbag
+      - passenger airbag igniter
+      - passenger deployment circuit
+    possible_causes:
+      - open circuit
+      - connector fault
+      - damaged airbag
+      - wiring damage
+      - previous crash activation
+    diagnostic_steps:
+      - Read SRS fault memory.
+      - Identify the passenger airbag circuit.
+      - Inspect dashboard and airbag connectors.
+      - Check wiring continuity using approved procedures.
+      - Replace the defective component.
+    related_dtcs: []
+
+  - id: bmw_airbag_knee_airbag_fault
+    title: Knee Airbag Circuit Fault
+    system: SRS
+    description: Electrical fault in a knee airbag deployment circuit where equipped.
+    vehicle:
+      models:
+        - 3_series
+        - 4_series
+        - 5_series
+        - 7_series
+        - x3
+        - x5
+      generations:
+        - f30_f31_f34
+        - f32_f33_f36
+        - f10_f11
+        - f01_f02
+        - f25
+        - f15
+        - g20_g21
+        - g22_g23_g26
+        - g30_g31
+        - g11_g12
+        - g01
+        - g05
+    symptoms:
+      - airbag warning
+      - SRS warning
+      - knee airbag fault
+    keywords:
+      - knee airbag
+      - knee protection airbag
+      - knee airbag igniter
+    possible_causes:
+      - open circuit
+      - short circuit
+      - connector damage
+      - damaged airbag
+      - crash activation
+    diagnostic_steps:
+      - Read SRS faults.
+      - Identify the affected circuit.
+      - Inspect the knee airbag connector.
+      - Check wiring according to BMW procedures.
+      - Replace the defective airbag or wiring.
+    related_dtcs: []
+
+  - id: bmw_airbag_side_airbag_fault
+    title: Side Airbag Circuit Fault
+    system: SRS
+    description: Fault in a side-impact airbag circuit located in a front or rear seat.
+    vehicle:
+      models:
+        - 1_series
+        - 2_series
+        - 3_series
+        - 4_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+        - x6
+      generations:
+        - e81_e82_e87_e88
+        - e90_e91_e92_e93
+        - f20_f21
+        - f22_f23
+        - f30_f31_f34
+        - f32_f33_f36
+        - e60_e61
+        - f10_f11
+        - e63_e64
+        - f12_f13
+        - e65_e66
+        - f01_f02
+        - e84
+        - f48
+        - e83
+        - f25
+        - e70
+        - f15
+        - e71_e72
+        - f16
+        - g20_g21
+        - g30_g31
+        - g11_g12
+        - g01
+        - g05
+    symptoms:
+      - airbag warning
+      - side airbag fault
+      - SRS warning
+    keywords:
+      - side airbag
+      - seat airbag
+      - lateral airbag
+    possible_causes:
+      - seat wiring damage
+      - connector fault
+      - open circuit
+      - short circuit
+      - deployed airbag
+    diagnostic_steps:
+      - Read SRS fault memory.
+      - Identify the affected seat and side.
+      - Inspect wiring beneath the seat.
+      - Check connectors.
+      - Replace defective components if necessary.
+    related_dtcs: []
+
+  - id: bmw_airbag_curtain_airbag_fault
+    title: Curtain Airbag Circuit Fault
+    system: SRS
+    description: Fault in the head protection curtain airbag deployment circuit.
+    vehicle:
+      models:
+        - 1_series
+        - 3_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+        - x6
+      generations:
+        - e81_e82_e87_e88
+        - e90_e91_e92_e93
+        - f20_f21
+        - f30_f31_f34
+        - e60_e61
+        - f10_f11
+        - e63_e64
+        - f12_f13
+        - e65_e66
+        - f01_f02
+        - e84
+        - f48
+        - e83
+        - f25
+        - e70
+        - f15
+        - e71_e72
+        - f16
+        - g20_g21
+        - g30_g31
+        - g11_g12
+        - g01
+        - g05
+    symptoms:
+      - airbag warning
+      - curtain airbag fault
+      - SRS warning
+    keywords:
+      - curtain airbag
+      - head airbag
+      - roof airbag
+    possible_causes:
+      - open circuit
+      - connector fault
+      - wiring damage
+      - deployed curtain airbag
+    diagnostic_steps:
+      - Read SRS fault memory.
+      - Identify the affected side.
+      - Inspect roof and pillar wiring.
+      - Check connectors.
+      - Replace the defective component where required.
+    related_dtcs: []
+
+  - id: bmw_body_cas_start_authorization_fault
+    title: CAS Start Authorization Fault
+    system: CAS
+    description: Fault in the Car Access System responsible for key recognition and engine start authorization.
+    vehicle:
+      models:
+        - 1_series
+        - 3_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+        - x6
+      generations:
+        - e81_e82_e87_e88
+        - e90_e91_e92_e93
+        - e60_e61
+        - e63_e64
+        - e65_e66
+        - e84
+        - e83
+        - e70
+        - e71_e72
+        - f20_f21
+        - f30_f31_f34
+        - f10_f11
+        - f12_f13
+        - f01_f02
+        - f48
+        - f25
+        - f15
+        - f16
+    symptoms:
+      - no start
+      - key not recognized
+      - start authorization denied
+      - immobilizer warning
+      - intermittent starting
+    keywords:
+      - CAS
+      - car access system
+      - start authorization
+      - immobilizer
+      - key recognition
+    possible_causes:
+      - CAS control unit fault
+      - key recognition fault
+      - low battery voltage
+      - synchronization loss
+      - communication fault
+    diagnostic_steps:
+      - Read CAS fault memory.
+      - Check key recognition status.
+      - Verify battery voltage.
+      - Check communication with DME.
+      - Perform key or CAS synchronization procedures if required.
+    related_dtcs: []
+
+  - id: bmw_body_cas_control_unit_internal_fault
+    title: CAS Control Unit Internal Fault
+    system: CAS
+    description: Internal electronic fault within the BMW Car Access System control unit.
+    vehicle:
+      models:
+        - 1_series
+        - 3_series
+        - 5_series
+        - x1
+        - x3
+      generations:
+        - e81_e82_e87_e88
+        - e90_e91_e92_e93
+        - e60_e61
+        - e84
+        - e83
+        - f20_f21
+        - f30_f31_f34
+        - f10_f11
+        - f25
+    symptoms:
+      - no start
+      - intermittent start
+      - key recognition failure
+      - central locking malfunction
+      - multiple CAS faults
+    keywords:
+      - CAS internal fault
+      - CAS ECU
+      - CAS module
+      - Car Access System
+    possible_causes:
+      - internal electronic failure
+      - corrupted memory
+      - voltage interruption
+      - water damage
+      - communication fault
+    diagnostic_steps:
+      - Scan the CAS module.
+      - Check power and ground.
+      - Check communication with connected modules.
+      - Verify key recognition.
+      - Repair, program or replace the CAS module as appropriate.
+    related_dtcs: []
+
+  - id: bmw_body_cas_dme_synchronization_fault
+    title: CAS-DME Synchronization Fault
+    system: CAS
+    description: Start authorization synchronization between the Car Access System and engine control unit is invalid or lost.
+    vehicle:
+      models:
+        - 1_series
+        - 3_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+      generations:
+        - e81_e82_e87_e88
+        - e90_e91_e92_e93
+        - f20_f21
+        - f30_f31_f34
+        - e60_e61
+        - f10_f11
+        - e63_e64
+        - f12_f13
+        - e65_e66
+        - f01_f02
+        - e84
+        - e83
+        - e70
+        - f48
+        - f25
+        - f15
+    symptoms:
+      - engine cranks but does not start
+      - no start
+      - immobilizer warning
+      - start authorization failure
+    keywords:
+      - CAS DME synchronization
+      - DME CAS sync
+      - immobilizer synchronization
+      - start enable
+    possible_causes:
+      - synchronization loss
+      - CAS replacement
+      - DME replacement
+      - low voltage during programming
+      - communication fault
+    diagnostic_steps:
+      - Read CAS and DME fault memories.
+      - Verify key authorization.
+      - Check DME-CAS communication.
+      - Perform synchronization procedure.
+      - Verify successful start authorization.
+    related_dtcs: []
+
+  - id: bmw_body_frm_control_unit_fault
+    title: FRM Footwell Module Fault
+    system: FRM
+    description: Fault in the Footwell Module controlling various lighting, window and body electrical functions.
+    vehicle:
+      models:
+        - 1_series
+        - 3_series
+        - 5_series
+        - x1
+      generations:
+        - e81_e82_e87_e88
+        - e90_e91_e92_e93
+        - f20_f21
+        - f30_f31_f34
+        - e84
+    symptoms:
+      - windows not working
+      - exterior lights malfunction
+      - interior lights malfunction
+      - mirrors not working
+      - multiple body electrical faults
+    keywords:
+      - FRM
+      - footwell module
+      - footwell control unit
+      - body module
+    possible_causes:
+      - FRM internal failure
+      - programming interruption
+      - low battery voltage
+      - water ingress
+      - communication fault
+    diagnostic_steps:
+      - Scan the FRM module.
+      - Check module power and ground.
+      - Check communication with the body network.
+      - Verify affected outputs.
+      - Repair, reprogram or replace the FRM where appropriate.
+    related_dtcs: []
+
+  - id: bmw_body_frm_window_control_fault
+    title: FRM Window Control Fault
+    system: FRM
+    description: Fault in the FRM-controlled electric window system.
+    vehicle:
+      models:
+        - 1_series
+        - 3_series
+        - x1
+      generations:
+        - e81_e82_e87_e88
+        - e90_e91_e92_e93
+        - f20_f21
+        - e84
+    symptoms:
+      - power window not working
+      - one window inoperative
+      - window operates intermittently
+      - window initialization lost
+    keywords:
+      - FRM window
+      - electric window
+      - power window
+      - window control
+    possible_causes:
+      - FRM output failure
+      - window motor failure
+      - damaged wiring
+      - switch fault
+      - lost window initialization
+    diagnostic_steps:
+      - Check the affected window switch.
+      - Scan the FRM module.
+      - Check motor power supply.
+      - Inspect door wiring.
+      - Initialize the window after repairs.
+    related_dtcs: []
+
+  - id: bmw_body_frm_light_control_fault
+    title: FRM Lighting Output Fault
+    system: FRM
+    description: Fault in an FRM-controlled exterior or interior lighting output.
+    vehicle:
+      models:
+        - 1_series
+        - 3_series
+        - x1
+      generations:
+        - e81_e82_e87_e88
+        - e90_e91_e92_e93
+        - f20_f21
+        - e84
+    symptoms:
+      - headlight not working
+      - tail light not working
+      - indicator fault
+      - interior light fault
+      - lighting warning
+    keywords:
+      - FRM lighting
+      - FRM light output
+      - light module
+      - lighting control
+    possible_causes:
+      - FRM output stage failure
+      - bulb failure
+      - LED module failure
+      - wiring fault
+      - water ingress
+    diagnostic_steps:
+      - Scan FRM fault memory.
+      - Check output activation status.
+      - Inspect the affected lamp.
+      - Check wiring and connectors.
+      - Repair or replace the affected output component.
+    related_dtcs: []
+
+  - id: bmw_body_fuse_box_power_supply_fault
+    title: Fuse Box Power Supply Fault
+    system: Body Electronics
+    description: Fault in the main electrical power distribution or fuse box supplying vehicle control modules and body consumers.
+    vehicle:
+      models:
+        - 1_series
+        - 2_series
+        - 3_series
+        - 4_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x4
+        - x5
+        - x6
+        - x7
+      generations:
+        - e81_e82_e87_e88
+        - e90_e91_e92_e93
+        - f20_f21
+        - f22_f23
+        - f30_f31_f34
+        - f32_f33_f36
+        - e60_e61
+        - f10_f11
+        - e63_e64
+        - f12_f13
+        - e65_e66
+        - f01_f02
+        - e84
+        - f48
+        - e83
+        - f25
+        - f26
+        - e70
+        - f15
+        - e71_e72
+        - f16
+        - g07
+        - g20_g21
+        - g30_g31
+        - g11_g12
+        - g01
+        - g02
+        - g05
+        - g06
+    symptoms:
+      - multiple electrical systems inoperative
+      - intermittent electrical faults
+      - no communication with modules
+      - lights not working
+      - windows not working
+    keywords:
+      - fuse box
+      - power distribution
+      - electrical distribution
+      - fuse panel
+    possible_causes:
+      - blown fuse
+      - damaged fuse carrier
+      - poor power connection
+      - corrosion
+      - overloaded circuit
+    diagnostic_steps:
+      - Check battery voltage.
+      - Inspect the relevant fuses.
+      - Measure supply voltage at the affected circuit.
+      - Check fuse box connectors.
+      - Inspect for heat or corrosion damage.
+    related_dtcs: []
+
+  - id: bmw_body_central_locking_fault
+    title: Central Locking System Fault
+    system: Body Electronics
+    description: Fault affecting the central locking system, door lock actuators or locking control circuit.
+    vehicle:
+      models:
+        - 1_series
+        - 2_series
+        - 3_series
+        - 4_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+        - x6
+      generations:
+        - e81_e82_e87_e88
+        - e90_e91_e92_e93
+        - f20_f21
+        - f22_f23
+        - f30_f31_f34
+        - f32_f33_f36
+        - e60_e61
+        - f10_f11
+        - e63_e64
+        - f12_f13
+        - e65_e66
+        - f01_f02
+        - e84
+        - f48
+        - e83
+        - f25
+        - e70
+        - f15
+        - e71_e72
+        - f16
+        - g20_g21
+        - g30_g31
+        - g11_g12
+        - g01
+        - g05
+    symptoms:
+      - door does not lock
+      - door does not unlock
+      - central locking intermittent
+      - remote locking failure
+      - one door remains unlocked
+    keywords:
+      - central locking
+      - door lock
+      - locking actuator
+      - unlock
+      - lock actuator
+    possible_causes:
+      - door lock actuator failure
+      - wiring fault
+      - body control module fault
+      - key fob issue
+      - low vehicle voltage
+    diagnostic_steps:
+      - Identify the affected door.
+      - Read body control fault memory.
+      - Test lock actuator operation.
+      - Inspect door harness wiring.
+      - Check remote key functionality.
+    related_dtcs: []
+
+  - id: bmw_body_door_lock_actuator_fault
+    title: Door Lock Actuator Fault
+    system: Body Electronics
+    description: Fault in an individual electric door locking actuator.
+    vehicle:
+      models:
+        - 1_series
+        - 2_series
+        - 3_series
+        - 4_series
+        - 5_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+      generations:
+        - e81_e82_e87_e88
+        - e90_e91_e92_e93
+        - f20_f21
+        - f22_f23
+        - f30_f31_f34
+        - f32_f33_f36
+        - e60_e61
+        - f10_f11
+        - e65_e66
+        - f01_f02
+        - e84
+        - f48
+        - e83
+        - f25
+        - e70
+        - f15
+        - g20_g21
+        - g30_g31
+        - g11_g12
+        - g01
+        - g05
+    symptoms:
+      - one door does not lock
+      - one door does not unlock
+      - door lock clicks
+      - intermittent locking
+    keywords:
+      - door actuator
+      - door lock actuator
+      - locking motor
+      - door lock motor
+    possible_causes:
+      - actuator motor failure
+      - mechanical lock binding
+      - wiring fault
+      - connector fault
+      - body control output fault
+    diagnostic_steps:
+      - Identify the affected door.
+      - Activate the lock actuator using diagnostic equipment.
+      - Check voltage at the actuator.
+      - Inspect door wiring.
+      - Replace the actuator if mechanically or electrically defective.
+    related_dtcs: []
+
+  - id: bmw_body_window_lifter_fault
+    title: Electric Window Lifter Fault
+    system: Body Electronics
+    description: Fault in an electric window regulator, motor or associated control circuit.
+    vehicle:
+      models:
+        - 1_series
+        - 2_series
+        - 3_series
+        - 4_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+        - x6
+      generations:
+        - e81_e82_e87_e88
+        - e90_e91_e92_e93
+        - f20_f21
+        - f22_f23
+        - f30_f31_f34
+        - f32_f33_f36
+        - e60_e61
+        - f10_f11
+        - e63_e64
+        - f12_f13
+        - e65_e66
+        - f01_f02
+        - e84
+        - f48
+        - e83
+        - f25
+        - e70
+        - f15
+        - e71_e72
+        - f16
+        - g20_g21
+        - g30_g31
+        - g11_g12
+        - g01
+        - g05
+    symptoms:
+      - window does not move
+      - window moves slowly
+      - window reverses direction
+      - window stuck
+      - window operates intermittently
+    keywords:
+      - window lifter
+      - window regulator
+      - power window motor
+      - electric window
+    possible_causes:
+      - window motor failure
+      - regulator mechanical failure
+      - jammed glass
+      - wiring fault
+      - control module fault
+    diagnostic_steps:
+      - Test window operation from all switches.
+      - Check motor supply voltage.
+      - Inspect regulator mechanics.
+      - Check door wiring.
+      - Initialize the window after repairs.
+    related_dtcs: []
+
+  - id: bmw_body_wiper_control_fault
+    title: Windshield Wiper Control Fault
+    system: Body Electronics
+    description: Fault in the electronic control of the windshield wiper system.
+    vehicle:
+      models:
+        - 1_series
+        - 2_series
+        - 3_series
+        - 4_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+        - x6
+      generations:
+        - e81_e82_e87_e88
+        - e90_e91_e92_e93
+        - f20_f21
+        - f22_f23
+        - f30_f31_f34
+        - f32_f33_f36
+        - e60_e61
+        - f10_f11
+        - e63_e64
+        - f12_f13
+        - e65_e66
+        - f01_f02
+        - e84
+        - f48
+        - e83
+        - f25
+        - e70
+        - f15
+        - e71_e72
+        - f16
+        - g20_g21
+        - g30_g31
+        - g11_g12
+        - g01
+        - g05
+    symptoms:
+      - windshield wipers not working
+      - wipers operate continuously
+      - intermittent wiper operation
+      - incorrect wiping speed
+      - rear wiper not working
+    keywords:
+      - windshield wiper
+      - wiper control
+      - wiper motor
+      - rain sensor
+    possible_causes:
+      - wiper motor failure
+      - wiper control module fault
+      - rain sensor fault
+      - wiring fault
+      - fuse failure
+    diagnostic_steps:
+      - Check the relevant fuse.
+      - Test wiper motor activation.
+      - Scan the body control module.
+      - Inspect wiper motor wiring.
+      - Check rain sensor communication where fitted.
+    related_dtcs: []
+
+  - id: bmw_body_wiper_motor_fault
+    title: Windshield Wiper Motor Fault
+    system: Body Electronics
+    description: Electrical or mechanical fault in the windshield wiper motor assembly.
+    vehicle:
+      models:
+        - 1_series
+        - 3_series
+        - 5_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+      generations:
+        - e81_e82_e87_e88
+        - e90_e91_e92_e93
+        - f20_f21
+        - f30_f31_f34
+        - e60_e61
+        - f10_f11
+        - e65_e66
+        - f01_f02
+        - e84
+        - f48
+        - e83
+        - f25
+        - e70
+        - f15
+        - g20_g21
+        - g30_g31
+        - g11_g12
+        - g01
+        - g05
+    symptoms:
+      - wipers not working
+      - wipers stop in wrong position
+      - wipers move slowly
+      - wiper motor noise
+    keywords:
+      - wiper motor
+      - windshield wiper motor
+      - wiper park position
+    possible_causes:
+      - motor failure
+      - seized linkage
+      - water ingress
+      - wiring fault
+      - control module failure
+    diagnostic_steps:
+      - Check wiper motor power supply.
+      - Test motor activation.
+      - Inspect linkage for mechanical binding.
+      - Check park position feedback.
+      - Replace the motor if defective.
+    related_dtcs: []
+
+  - id: bmw_body_rain_light_sensor_fault
+    title: Rain and Light Sensor Fault
+    system: Body Electronics
+    description: Fault in the combined rain and light sensor used for automatic wiper and lighting functions.
+    vehicle:
+      models:
+        - 1_series
+        - 2_series
+        - 3_series
+        - 4_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+        - x6
+      generations:
+        - e81_e82_e87_e88
+        - e90_e91_e92_e93
+        - f20_f21
+        - f22_f23
+        - f30_f31_f34
+        - f32_f33_f36
+        - e60_e61
+        - f10_f11
+        - e63_e64
+        - f12_f13
+        - e65_e66
+        - f01_f02
+        - e84
+        - f48
+        - e83
+        - f25
+        - e70
+        - f15
+        - e71_e72
+        - f16
+        - g20_g21
+        - g30_g31
+        - g11_g12
+        - g01
+        - g05
+    symptoms:
+      - automatic wipers not working
+      - automatic headlights not working
+      - wipers activate incorrectly
+      - rain sensor warning
+    keywords:
+      - rain sensor
+      - light sensor
+      - RLS
+      - rain light sensor
+    possible_causes:
+      - sensor failure
+      - damaged windshield mounting area
+      - incorrect sensor calibration
+      - optical coupling problem
+      - communication fault
+    diagnostic_steps:
+      - Scan the rain/light sensor.
+      - Check sensor mounting.
+      - Inspect the windshield optical interface.
+      - Verify sensor live data.
+      - Initialize or calibrate the sensor after windshield replacement.
+    related_dtcs: []
+
+  - id: bmw_body_light_control_module_fault
+    title: Light Control Module Fault
+    system: Lighting
+    description: Fault in the electronic lighting control module responsible for exterior lighting functions.
+    vehicle:
+      models:
+        - 1_series
+        - 2_series
+        - 3_series
+        - 4_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+        - x6
+        - x7
+      generations:
+        - e81_e82_e87_e88
+        - e90_e91_e92_e93
+        - f20_f21
+        - f22_f23
+        - f30_f31_f34
+        - f32_f33_f36
+        - e60_e61
+        - f10_f11
+        - e63_e64
+        - f12_f13
+        - e65_e66
+        - f01_f02
+        - e84
+        - f48
+        - e83
+        - f25
+        - e70
+        - f15
+        - e71_e72
+        - f16
+        - g07
+        - g20_g21
+        - g30_g31
+        - g11_g12
+        - g01
+        - g05
+    symptoms:
+      - headlights not working
+      - lighting warning
+      - multiple lighting faults
+      - indicators not working
+      - tail lights not working
+    keywords:
+      - light module
+      - lighting control module
+      - FRM
+      - footwell module
+      - FEM
+      - BDC
+    possible_causes:
+      - control module failure
+      - output stage failure
+      - communication fault
+      - power supply fault
+      - coding or programming issue
+    diagnostic_steps:
+      - Scan the lighting control module.
+      - Identify affected lighting outputs.
+      - Check module power and ground.
+      - Test output activation.
+      - Check coding and programming status.
+    related_dtcs: []
+
+  - id: bmw_body_interior_light_fault
+    title: Interior Lighting Fault
+    system: Body Electronics
+    description: Fault affecting one or more interior lighting circuits.
+    vehicle:
+      models:
+        - 1_series
+        - 2_series
+        - 3_series
+        - 4_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+      generations:
+        - e81_e82_e87_e88
+        - e90_e91_e92_e93
+        - f20_f21
+        - f22_f23
+        - f30_f31_f34
+        - f32_f33_f36
+        - e60_e61
+        - f10_f11
+        - e63_e64
+        - f12_f13
+        - e65_e66
+        - f01_f02
+        - e84
+        - f48
+        - e83
+        - f25
+        - e70
+        - f15
+        - g20_g21
+        - g30_g31
+        - g11_g12
+        - g01
+        - g05
+    symptoms:
+      - interior lights not working
+      - lights stay on
+      - courtesy lights intermittent
+      - footwell lights not working
+    keywords:
+      - interior lighting
+      - courtesy light
+      - footwell light
+      - cabin light
+    possible_causes:
+      - body module fault
+      - lamp failure
+      - door switch signal fault
+      - wiring fault
+      - battery protection activation
+    diagnostic_steps:
+      - Check affected lamps.
+      - Check door status signals.
+      - Scan the body control module.
+      - Test lighting outputs.
+      - Inspect wiring and connectors.
+    related_dtcs: []
+
+  - id: bmw_body_mirror_adjustment_fault
+    title: Exterior Mirror Adjustment Fault
+    system: Body Electronics
+    description: Fault affecting electric adjustment of an exterior mirror.
+    vehicle:
+      models:
+        - 1_series
+        - 2_series
+        - 3_series
+        - 4_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+        - x6
+      generations:
+        - e81_e82_e87_e88
+        - e90_e91_e92_e93
+        - f20_f21
+        - f22_f23
+        - f30_f31_f34
+        - f32_f33_f36
+        - e60_e61
+        - f10_f11
+        - e63_e64
+        - f12_f13
+        - e65_e66
+        - f01_f02
+        - e84
+        - f48
+        - e83
+        - f25
+        - e70
+        - f15
+        - e71_e72
+        - f16
+        - g20_g21
+        - g30_g31
+        - g11_g12
+        - g01
+        - g05
+    symptoms:
+      - mirror adjustment not working
+      - mirror moves only one direction
+      - mirror adjustment intermittent
+      - both mirrors not responding
+    keywords:
+      - mirror adjustment
+      - electric mirror
+      - door mirror
+      - mirror motor
+    possible_causes:
+      - mirror motor failure
+      - switch failure
+      - door module fault
+      - wiring fault
+      - connector fault
+    diagnostic_steps:
+      - Test mirror adjustment switch.
+      - Test mirror motor activation.
+      - Check power and ground.
+      - Inspect door harness.
+      - Scan the relevant door/body module.
+    related_dtcs: []
+
+  - id: bmw_body_mirror_heater_fault
+    title: Exterior Mirror Heating Fault
+    system: Body Electronics
+    description: Fault affecting the electrical heating element of an exterior mirror.
+    vehicle:
+      models:
+        - 1_series
+        - 2_series
+        - 3_series
+        - 4_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+        - x6
+      generations:
+        - e81_e82_e87_e88
+        - e90_e91_e92_e93
+        - f20_f21
+        - f22_f23
+        - f30_f31_f34
+        - f32_f33_f36
+        - e60_e61
+        - f10_f11
+        - e63_e64
+        - f12_f13
+        - e65_e66
+        - f01_f02
+        - e84
+        - f48
+        - e83
+        - f25
+        - e70
+        - f15
+        - e71_e72
+        - f16
+        - g20_g21
+        - g30_g31
+        - g11_g12
+        - g01
+        - g05
+    symptoms:
+      - mirror does not defrost
+      - mirror heating not working
+      - one mirror remains wet
+    keywords:
+      - mirror heater
+      - heated mirror
+      - mirror defrost
+    possible_causes:
+      - heating element failure
+      - wiring fault
+      - door module output fault
+      - connector corrosion
+    diagnostic_steps:
+      - Activate mirror heating.
+      - Measure voltage at the mirror heater.
+      - Check heater resistance.
+      - Inspect mirror wiring.
+      - Replace the mirror glass or heating element if defective.
+    related_dtcs: []
+
+  - id: bmw_body_horn_control_fault
+    title: Horn Control Fault
+    system: Body Electronics
+    description: Fault affecting the horn switch, relay, wiring or electronic horn control circuit.
+    vehicle:
+      models:
+        - 1_series
+        - 2_series
+        - 3_series
+        - 4_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+        - x6
+        - x7
+      generations:
+        - e81_e82_e87_e88
+        - e90_e91_e92_e93
+        - f20_f21
+        - f22_f23
+        - f30_f31_f34
+        - f32_f33_f36
+        - e60_e61
+        - f10_f11
+        - e63_e64
+        - f12_f13
+        - e65_e66
+        - f01_f02
+        - e84
+        - f48
+        - e83
+        - f25
+        - e70
+        - f15
+        - e71_e72
+        - f16
+        - g07
+        - g20_g21
+        - g30_g31
+        - g11_g12
+        - g01
+        - g05
+    symptoms:
+      - horn not working
+      - horn works intermittently
+      - horn stuck on
+    keywords:
+      - horn
+      - horn relay
+      - horn switch
+      - horn control
+    possible_causes:
+      - horn failure
+      - fuse failure
+      - relay failure
+      - steering wheel switch fault
+      - wiring fault
+    diagnostic_steps:
+      - Check horn fuse.
+      - Test horn activation.
+      - Measure voltage at the horn.
+      - Inspect steering wheel switch circuit.
+      - Check relay or body control output.
+    related_dtcs: []
+
+  - id: bmw_body_battery_monitor_sensor_fault
+    title: Intelligent Battery Sensor Fault
+    system: Power Management
+    description: Fault in the intelligent battery sensor measuring battery current, voltage and temperature.
+    vehicle:
+      models:
+        - 1_series
+        - 2_series
+        - 3_series
+        - 4_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x4
+        - x5
+        - x6
+        - x7
+      generations:
+        - e81_e82_e87_e88
+        - e90_e91_e92_e93
+        - f20_f21
+        - f22_f23
+        - f30_f31_f34
+        - f32_f33_f36
+        - e60_e61
+        - f10_f11
+        - e63_e64
+        - f12_f13
+        - e65_e66
+        - f01_f02
+        - e84
+        - f48
+        - e83
+        - f25
+        - f26
+        - e70
+        - f15
+        - e71_e72
+        - f16
+        - g07
+        - g20_g21
+        - g22_g23_g26
+        - g30_g31
+        - g11_g12
+        - g01
+        - g02
+        - g05
+        - g06
+    symptoms:
+      - battery warning
+      - charging system warning
+      - battery discharge
+      - start stop unavailable
+      - energy management fault
+    keywords:
+      - IBS
+      - intelligent battery sensor
+      - battery sensor
+      - battery current sensor
+    possible_causes:
+      - IBS sensor failure
+      - damaged sensor wiring
+      - poor battery connection
+      - battery replacement issue
+      - communication fault
+    diagnostic_steps:
+      - Read power management faults.
+      - Check IBS communication.
+      - Compare measured current and voltage with external measurements.
+      - Inspect the negative battery terminal.
+      - Replace the IBS if defective.
+    related_dtcs: []
+
+  - id: bmw_body_battery_registration_fault
+    title: Battery Registration Fault
+    system: Power Management
+    description: The replacement battery has not been correctly registered or battery replacement data is incorrect.
+    vehicle:
+      models:
+        - 1_series
+        - 2_series
+        - 3_series
+        - 4_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x4
+        - x5
+        - x6
+        - x7
+      generations:
+        - e81_e82_e87_e88
+        - e90_e91_e92_e93
+        - f20_f21
+        - f22_f23
+        - f30_f31_f34
+        - f32_f33_f36
+        - e60_e61
+        - f10_f11
+        - e63_e64
+        - f12_f13
+        - e65_e66
+        - f01_f02
+        - e84
+        - f48
+        - e83
+        - f25
+        - f26
+        - e70
+        - f15
+        - e71_e72
+        - f16
+        - g07
+        - g20_g21
+        - g30_g31
+        - g11_g12
+        - g01
+        - g02
+        - g05
+        - g06
+    symptoms:
+      - battery discharge
+      - start stop unavailable
+      - battery management warning
+      - charging irregularities
+    keywords:
+      - battery registration
+      - battery replacement
+      - IBS
+      - battery adaptation
+      - energy management
+    possible_causes:
+      - battery not registered
+      - incorrect battery capacity
+      - incorrect battery technology
+      - battery aging data incorrect
+      - coding mismatch
+    diagnostic_steps:
+      - Verify installed battery type and capacity.
+      - Check battery replacement history.
+      - Register the battery replacement.
+      - Code the battery capacity or technology if changed.
+      - Clear power management faults.
+    related_dtcs: []
+
+  - id: bmw_body_energy_management_quiescent_current_fault
+    title: Excessive Quiescent Current Fault
+    system: Power Management
+    description: The vehicle has excessive electrical consumption while in sleep mode.
+    vehicle:
+      models:
+        - 1_series
+        - 2_series
+        - 3_series
+        - 4_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x4
+        - x5
+        - x6
+        - x7
+      generations:
+        - e81_e82_e87_e88
+        - e90_e91_e92_e93
+        - f20_f21
+        - f22_f23
+        - f30_f31_f34
+        - f32_f33_f36
+        - e60_e61
+        - f10_f11
+        - e63_e64
+        - f12_f13
+        - e65_e66
+        - f01_f02
+        - e84
+        - f48
+        - e83
+        - f25
+        - f26
+        - e70
+        - f15
+        - e71_e72
+        - f16
+        - g07
+        - g20_g21
+        - g30_g31
+        - g11_g12
+        - g01
+        - g02
+        - g05
+        - g06
+    symptoms:
+      - battery goes flat
+      - battery discharge overnight
+      - electrical systems remain active
+      - repeated battery warnings
+    keywords:
+      - quiescent current
+      - parasitic draw
+      - battery drain
+      - sleep current
+      - energy management
+    possible_causes:
+      - control module not entering sleep
+      - aftermarket electrical equipment
+      - faulty door or trunk latch
+      - communication network remaining awake
+      - defective control module
+    diagnostic_steps:
+      - Fully charge and test the battery.
+      - Allow the vehicle to enter sleep mode.
+      - Measure quiescent current.
+      - Identify the module preventing sleep.
+      - Repair the source of excessive consumption.
+    related_dtcs: []
+
+  - id: bmw_body_terminal_30g_relay_fault
+    title: Terminal 30g Power Relay Fault
+    system: Power Management
+    description: Fault in a switched power supply relay or control circuit supplying vehicle modules after terminal 30g activation.
+    vehicle:
+      models:
+        - 1_series
+        - 3_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+      generations:
+        - e81_e82_e87_e88
+        - e90_e91_e92_e93
+        - e60_e61
+        - e63_e64
+        - e65_e66
+        - e84
+        - e83
+        - e70
+        - f20_f21
+        - f30_f31_f34
+        - f10_f11
+        - f12_f13
+        - f01_f02
+        - f48
+        - f25
+        - f15
+    symptoms:
+      - multiple electrical systems shut down
+      - intermittent no start
+      - control units reset
+      - battery discharge
+    keywords:
+      - terminal 30g
+      - 30g relay
+      - switched power
+      - power relay
+    possible_causes:
+      - relay failure
+      - power supply fault
+      - excessive current consumption
+      - wiring fault
+      - body control module fault
+    diagnostic_steps:
+      - Check terminal 30g activation.
+      - Measure relay input and output voltage.
+      - Check current draw.
+      - Inspect fuse and relay connections.
+      - Scan affected control units for undervoltage faults.
+    related_dtcs: []
+
+  - id: bmw_body_terminal_15_ignition_supply_fault
+    title: Terminal 15 Ignition Supply Fault
+    system: Power Management
+    description: Fault in the switched ignition supply used to activate vehicle control modules.
+    vehicle:
+      models:
+        - 1_series
+        - 2_series
+        - 3_series
+        - 4_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x4
+        - x5
+        - x6
+        - x7
+      generations:
+        - e81_e82_e87_e88
+        - e90_e91_e92_e93
+        - f20_f21
+        - f22_f23
+        - f30_f31_f34
+        - f32_f33_f36
+        - e60_e61
+        - f10_f11
+        - e63_e64
+        - f12_f13
+        - e65_e66
+        - f01_f02
+        - e84
+        - f48
+        - e83
+        - f25
+        - f26
+        - e70
+        - f15
+        - e71_e72
+        - f16
+        - g07
+        - g20_g21
+        - g30_g31
+        - g11_g12
+        - g01
+        - g02
+        - g05
+        - g06
+    symptoms:
+      - ignition does not activate correctly
+      - multiple modules offline
+      - no start
+      - intermittent electrical operation
+    keywords:
+      - terminal 15
+      - ignition supply
+      - ignition power
+      - switched supply
+    possible_causes:
+      - power relay fault
+      - body control module fault
+      - wiring fault
+      - low battery voltage
+      - fuse failure
+    diagnostic_steps:
+      - Check terminal 15 voltage.
+      - Compare ignition command with actual supply.
+      - Check relevant fuses and relays.
+      - Scan body and gateway modules.
+      - Inspect power distribution wiring.
+    related_dtcs: []
+
+  - id: bmw_body_trunk_latch_fault
+    title: Trunk Latch Fault
+    system: Body Electronics
+    description: Fault in the electric trunk or tailgate locking mechanism.
+    vehicle:
+      models:
+        - 1_series
+        - 2_series
+        - 3_series
+        - 4_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+        - x6
+        - x7
+      generations:
+        - e81_e82_e87_e88
+        - e90_e91_e92_e93
+        - f20_f21
+        - f22_f23
+        - f30_f31_f34
+        - f32_f33_f36
+        - e60_e61
+        - f10_f11
+        - e63_e64
+        - f12_f13
+        - e65_e66
+        - f01_f02
+        - e84
+        - f48
+        - e83
+        - f25
+        - e70
+        - f15
+        - e71_e72
+        - f16
+        - g07
+        - g20_g21
+        - g30_g31
+        - g11_g12
+        - g01
+        - g05
+    symptoms:
+      - trunk does not lock
+      - trunk does not open
+      - tailgate warning
+      - trunk opens intermittently
+    keywords:
+      - trunk latch
+      - tailgate latch
+      - boot lock
+      - trunk lock
+    possible_causes:
+      - latch actuator failure
+      - microswitch fault
+      - wiring damage
+      - body module fault
+      - mechanical binding
+    diagnostic_steps:
+      - Check latch status in live data.
+      - Test actuator activation.
+      - Inspect latch wiring.
+      - Check microswitch operation.
+      - Replace the latch assembly if defective.
+    related_dtcs: []
+
+  - id: bmw_body_door_contact_sensor_fault
+    title: Door Contact Sensor Fault
+    system: Body Electronics
+    description: Fault in a door contact or latch position sensor used to determine whether a door is open or closed.
+    vehicle:
+      models:
+        - 1_series
+        - 2_series
+        - 3_series
+        - 4_series
+        - 5_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+      generations:
+        - e81_e82_e87_e88
+        - e90_e91_e92_e93
+        - f20_f21
+        - f22_f23
+        - f30_f31_f34
+        - f32_f33_f36
+        - e60_e61
+        - f10_f11
+        - e65_e66
+        - f01_f02
+        - e84
+        - f48
+        - e83
+        - f25
+        - e70
+        - f15
+        - g20_g21
+        - g30_g31
+        - g11_g12
+        - g01
+        - g05
+    symptoms:
+      - door open warning remains on
+      - interior lights remain on
+      - central locking malfunction
+      - alarm activates unexpectedly
+      - vehicle does not enter sleep mode
+    keywords:
+      - door contact
+      - door switch
+      - door latch sensor
+      - door status
+    possible_causes:
+      - latch microswitch failure
+      - damaged door wiring
+      - connector fault
+      - body module input fault
+    diagnostic_steps:
+      - Check door status in live data.
+      - Operate the affected door.
+      - Compare physical and electronic door status.
+      - Inspect latch and wiring.
+      - Replace the defective latch or sensor.
+    related_dtcs: []
+
+  - id: bmw_body_alarm_system_fault
+    title: Anti-Theft Alarm System Fault
+    system: Body Electronics
+    description: Fault affecting the vehicle anti-theft alarm monitoring or control system.
+    vehicle:
+      models:
+        - 1_series
+        - 3_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+        - x6
+      generations:
+        - e81_e82_e87_e88
+        - e90_e91_e92_e93
+        - e60_e61
+        - e63_e64
+        - e65_e66
+        - e84
+        - e83
+        - e70
+        - e71_e72
+        - f20_f21
+        - f30_f31_f34
+        - f10_f11
+        - f12_f13
+        - f01_f02
+        - f48
+        - f25
+        - f15
+        - f16
+        - g20_g21
+        - g30_g31
+        - g11_g12
+        - g01
+        - g05
+    symptoms:
+      - alarm activates without reason
+      - anti-theft warning
+      - alarm does not arm
+      - central locking fault
+    keywords:
+      - alarm system
+      - anti theft
+      - DWA
+      - theft alarm
+      - security system
+    possible_causes:
+      - hood sensor fault
+      - door sensor fault
+      - interior motion sensor fault
+      - tilt sensor fault
+      - alarm siren battery failure
+    diagnostic_steps:
+      - Read alarm event memory.
+      - Identify the sensor that triggered the alarm.
+      - Check hood and door status.
+      - Test interior and tilt sensors.
+      - Inspect alarm siren and backup battery.
+    related_dtcs: []
+
+  - id: bmw_body_alarm_siren_fault
+    title: Alarm Siren Fault
+    system: Body Electronics
+    description: Fault in the anti-theft alarm siren or its integrated backup battery.
+    vehicle:
+      models:
+        - 1_series
+        - 3_series
+        - 5_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+      generations:
+        - e81_e82_e87_e88
+        - e90_e91_e92_e93
+        - e60_e61
+        - e65_e66
+        - e84
+        - e83
+        - e70
+        - f20_f21
+        - f30_f31_f34
+        - f10_f11
+        - f01_f02
+        - f48
+        - f25
+        - f15
+        - g20_g21
+        - g30_g31
+        - g11_g12
+        - g01
+        - g05
+    symptoms:
+      - alarm warning
+      - alarm does not sound
+      - alarm triggers incorrectly
+      - anti-theft fault stored
+    keywords:
+      - alarm siren
+      - DWA siren
+      - siren battery
+      - anti theft siren
+    possible_causes:
+      - depleted internal siren battery
+      - siren electronics failure
+      - wiring fault
+      - connector corrosion
+    diagnostic_steps:
+      - Read alarm system fault memory.
+      - Test siren activation.
+      - Check siren communication.
+      - Inspect wiring and connector.
+      - Replace the siren if its internal battery or electronics have failed.
+    related_dtcs: []
+
+  - id: bmw_body_tilt_sensor_fault
+    title: Anti-Theft Tilt Sensor Fault
+    system: Body Electronics
+    description: Fault in the vehicle tilt sensor used by the anti-theft alarm system.
+    vehicle:
+      models:
+        - 1_series
+        - 3_series
+        - 5_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+      generations:
+        - e81_e82_e87_e88
+        - e90_e91_e92_e93
+        - e60_e61
+        - e65_e66
+        - e84
+        - e83
+        - e70
+        - f20_f21
+        - f30_f31_f34
+        - f10_f11
+        - f01_f02
+        - f48
+        - f25
+        - f15
+        - g20_g21
+        - g30_g31
+        - g11_g12
+        - g01
+        - g05
+    symptoms:
+      - alarm activates unexpectedly
+      - anti-theft warning
+      - tilt sensor fault
+    keywords:
+      - tilt sensor
+      - anti theft tilt
+      - DWA tilt
+      - inclination sensor
+    possible_causes:
+      - sensor failure
+      - communication fault
+      - wiring fault
+      - incorrect installation
+    diagnostic_steps:
+      - Read DWA fault memory.
+      - Check tilt sensor status.
+      - Inspect sensor mounting.
+      - Check wiring and communication.
+      - Replace the sensor if defective.
+    related_dtcs: []
+
+  - id: bmw_body_interior_motion_sensor_fault
+    title: Interior Motion Sensor Fault
+    system: Body Electronics
+    description: Fault in the ultrasonic interior monitoring sensor used by the anti-theft alarm system.
+    vehicle:
+      models:
+        - 1_series
+        - 3_series
+        - 5_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+      generations:
+        - e81_e82_e87_e88
+        - e90_e91_e92_e93
+        - e60_e61
+        - e65_e66
+        - e84
+        - e83
+        - e70
+        - f20_f21
+        - f30_f31_f34
+        - f10_f11
+        - f01_f02
+        - f48
+        - f25
+        - f15
+        - g20_g21
+        - g30_g31
+        - g11_g12
+        - g01
+        - g05
+    symptoms:
+      - alarm activates unexpectedly
+      - interior monitoring fault
+      - anti-theft warning
+    keywords:
+      - interior motion sensor
+      - ultrasonic sensor
+      - interior monitoring
+      - DWA interior sensor
+    possible_causes:
+      - sensor failure
+      - communication fault
+      - wiring fault
+      - false detection caused by loose objects
+    diagnostic_steps:
+      - Read DWA fault memory.
+      - Check interior monitoring status.
+      - Inspect the sensor area.
+      - Test sensor activation.
+      - Replace the sensor if defective.
+    related_dtcs: []
+
+  - id: bmw_body_fuel_flap_lock_fault
+    title: Fuel Filler Flap Lock Fault
+    system: Body Electronics
+    description: Fault in the electric locking mechanism of the fuel filler flap.
+    vehicle:
+      models:
+        - 1_series
+        - 2_series
+        - 3_series
+        - 4_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+        - x6
+        - x7
+      generations:
+        - e81_e82_e87_e88
+        - e90_e91_e92_e93
+        - f20_f21
+        - f22_f23
+        - f30_f31_f34
+        - f32_f33_f36
+        - e60_e61
+        - f10_f11
+        - e63_e64
+        - f12_f13
+        - e65_e66
+        - f01_f02
+        - e84
+        - f48
+        - e83
+        - f25
+        - e70
+        - f15
+        - e71_e72
+        - f16
+        - g07
+        - g20_g21
+        - g30_g31
+        - g11_g12
+        - g01
+        - g05
+    symptoms:
+      - fuel flap does not open
+      - fuel flap remains unlocked
+      - central locking warning
+      - fuel flap actuator noise
+    keywords:
+      - fuel flap lock
+      - fuel filler flap
+      - tank flap actuator
+      - fuel door lock
+    possible_causes:
+      - locking actuator failure
+      - seized mechanism
+      - wiring fault
+      - central locking module fault
+    diagnostic_steps:
+      - Test fuel flap actuator operation.
+      - Check lock status in body module live data.
+      - Inspect actuator wiring.
+      - Check central locking output.
+      - Replace the actuator if defective.
+    related_dtcs: []
+
+  - id: bmw_body_parking_brake_switch_fault
+    title: Electric Parking Brake Switch Fault
+    system: Body Electronics
+    description: Fault in the electric parking brake operating switch or its signal circuit.
+    vehicle:
+      models:
+        - 5_series
+        - 6_series
+        - 7_series
+        - x5
+        - x6
+      generations:
+        - e60_e61
+        - e63_e64
+        - e65_e66
+        - f10_f11
+        - f12_f13
+        - f01_f02
+        - e70
+        - f15
+        - e71_e72
+        - f16
+        - g30_g31
+        - g11_g12
+        - g05
+        - g06
+    symptoms:
+      - parking brake warning
+      - parking brake does not apply
+      - parking brake does not release
+      - intermittent parking brake operation
+    keywords:
+      - electric parking brake
+      - parking brake switch
+      - EPB switch
+      - electronic handbrake
+    possible_causes:
+      - switch failure
+      - wiring fault
+      - parking brake control unit fault
+      - low system voltage
+      - communication fault
+    diagnostic_steps:
+      - Read parking brake fault memory.
+      - Check switch input status.
+      - Test switch continuity or signal.
+      - Inspect wiring and connectors.
+      - Check parking brake module communication.
+    related_dtcs: []
+
+  - id: bmw_body_trunk_power_liftgate_fault
+    title: Power Tailgate Lift System Fault
+    system: Body Electronics
+    description: Fault in the electrically operated trunk or tailgate opening and closing system.
+    vehicle:
+      models:
+        - x1
+        - x3
+        - x5
+        - x6
+        - x7
+        - 5_series
+        - 7_series
+      generations:
+        - e84
+        - f48
+        - e83
+        - f25
+        - g01
+        - g05
+        - g06
+        - g07
+        - e70
+        - f15
+        - e71_e72
+        - f16
+        - f10_f11
+        - g30_g31
+        - f01_f02
+        - g11_g12
+    symptoms:
+      - power tailgate does not open
+      - tailgate stops during movement
+      - tailgate closes unexpectedly
+      - tailgate operates slowly
+    keywords:
+      - power tailgate
+      - electric tailgate
+      - automatic trunk
+      - liftgate
+    possible_causes:
+      - lift motor failure
+      - spindle drive fault
+      - position sensor fault
+      - wiring fault
+      - control module fault
+    diagnostic_steps:
+      - Read tailgate control faults.
+      - Check motor activation.
+      - Inspect lift mechanisms.
+      - Check position feedback.
+      - Initialize the tailgate system after repair.
+    related_dtcs: []
+
+  - id: bmw_body_hood_contact_sensor_fault
+    title: Hood Contact Sensor Fault
+    system: Body Electronics
+    description: Fault in the hood contact switch used by the body and anti-theft systems.
+    vehicle:
+      models:
+        - 1_series
+        - 3_series
+        - 5_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+      generations:
+        - e81_e82_e87_e88
+        - e90_e91_e92_e93
+        - e60_e61
+        - e65_e66
+        - e84
+        - e83
+        - e70
+        - f20_f21
+        - f30_f31_f34
+        - f10_f11
+        - f01_f02
+        - f48
+        - f25
+        - f15
+        - g20_g21
+        - g30_g31
+        - g11_g12
+        - g01
+        - g05
+    symptoms:
+      - hood open warning
+      - alarm triggers unexpectedly
+      - anti-theft fault
+      - interior lights remain active
+    keywords:
+      - hood contact
+      - bonnet switch
+      - hood sensor
+      - hood latch sensor
+    possible_causes:
+      - microswitch failure
+      - latch sensor fault
+      - wiring damage
+      - connector corrosion
+    diagnostic_steps:
+      - Check hood status in live data.
+      - Open and close the hood.
+      - Inspect latch and contact switch.
+      - Check wiring continuity.
+      - Replace the defective sensor or latch assembly.
+    related_dtcs: []
+
+  - id: bmw_body_gateway_communication_fault
+    title: Body Gateway Communication Fault
+    system: Gateway
+    description: Fault in communication routing between vehicle networks and electronic control units.
+    vehicle:
+      models:
+        - 1_series
+        - 2_series
+        - 3_series
+        - 4_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x4
+        - x5
+        - x6
+        - x7
+      generations:
+        - e81_e82_e87_e88
+        - e90_e91_e92_e93
+        - f20_f21
+        - f22_f23
+        - f30_f31_f34
+        - f32_f33_f36
+        - e60_e61
+        - f10_f11
+        - e63_e64
+        - f12_f13
+        - e65_e66
+        - f01_f02
+        - e84
+        - f48
+        - e83
+        - f25
+        - f26
+        - e70
+        - f15
+        - e71_e72
+        - f16
+        - g07
+        - g20_g21
+        - g22_g23_g26
+        - g30_g31
+        - g11_g12
+        - g01
+        - g02
+        - g05
+        - g06
+    symptoms:
+      - multiple communication faults
+      - several modules offline
+      - intermittent electrical faults
+      - diagnostic communication failure
+    keywords:
+      - gateway
+      - communication gateway
+      - network gateway
+      - CAN gateway
+    possible_causes:
+      - gateway module fault
+      - CAN bus fault
+      - LIN bus fault
+      - power supply problem
+      - software or programming fault
+    diagnostic_steps:
+      - Perform a complete vehicle scan.
+      - Identify which networks are affected.
+      - Check gateway power and ground.
+      - Check CAN bus communication.
+      - Verify gateway software and configuration.
+    related_dtcs: []
+
+  - id: bmw_body_can_bus_communication_fault
+    title: CAN Bus Communication Fault
+    system: Communication
+    description: Fault affecting communication between BMW control units over the CAN network.
+    vehicle:
+      models:
+        - 1_series
+        - 2_series
+        - 3_series
+        - 4_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x4
+        - x5
+        - x6
+        - x7
+      generations:
+        - e81_e82_e87_e88
+        - e90_e91_e92_e93
+        - f20_f21
+        - f22_f23
+        - f30_f31_f34
+        - f32_f33_f36
+        - e60_e61
+        - f10_f11
+        - e63_e64
+        - f12_f13
+        - e65_e66
+        - f01_f02
+        - e84
+        - f48
+        - e83
+        - f25
+        - f26
+        - e70
+        - f15
+        - e71_e72
+        - f16
+        - g07
+        - g20_g21
+        - g22_g23_g26
+        - g30_g31
+        - g11_g12
+        - g01
+        - g02
+        - g05
+        - g06
+    symptoms:
+      - multiple control unit faults
+      - no communication with modules
+      - intermittent module dropouts
+      - warning lights across multiple systems
+    keywords:
+      - CAN bus
+      - CAN communication
+      - communication fault
+      - control unit communication
+    possible_causes:
+      - open CAN wire
+      - shorted CAN wire
+      - faulty control unit
+      - poor connector
+      - low system voltage
+    diagnostic_steps:
+      - Perform a complete vehicle scan.
+      - Identify missing control units.
+      - Measure CAN bus resistance.
+      - Check CAN high and CAN low signals.
+      - Disconnect suspected faulty nodes systematically.
+    related_dtcs: []
+
+  - id: bmw_body_lin_bus_communication_fault
+    title: LIN Bus Communication Fault
+    system: Communication
+    description: Fault affecting communication between a master control unit and LIN-connected components.
+    vehicle:
+      models:
+        - 1_series
+        - 2_series
+        - 3_series
+        - 4_series
+        - 5_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+      generations:
+        - e81_e82_e87_e88
+        - e90_e91_e92_e93
+        - f20_f21
+        - f22_f23
+        - f30_f31_f34
+        - f32_f33_f36
+        - e60_e61
+        - f10_f11
+        - e65_e66
+        - f01_f02
+        - e84
+        - f48
+        - e83
+        - f25
+        - e70
+        - f15
+        - g20_g21
+        - g30_g31
+        - g11_g12
+        - g01
+        - g05
+    symptoms:
+      - component unavailable
+      - intermittent body function
+      - communication fault
+      - multiple sensor errors
+    keywords:
+      - LIN bus
+      - LIN communication
+      - LIN slave
+      - LIN master
+    possible_causes:
+      - LIN wire open circuit
+      - short circuit
+      - faulty LIN slave
+      - master module fault
+      - power supply problem
+    diagnostic_steps:
+      - Identify the LIN master and affected slave.
+      - Check slave power supply.
+      - Inspect LIN wiring.
+      - Measure LIN communication signal.
+      - Disconnect suspected slave devices one at a time.
+    related_dtcs: []
+
+  - id: bmw_body_instrument_cluster_fault
+    title: Instrument Cluster Fault
+    system: Instrumentation
+    description: Fault in the BMW instrument cluster affecting display, warning indicators or vehicle information.
+    vehicle:
+      models:
+        - 1_series
+        - 2_series
+        - 3_series
+        - 4_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+        - x6
+      generations:
+        - e81_e82_e87_e88
+        - e90_e91_e92_e93
+        - f20_f21
+        - f22_f23
+        - f30_f31_f34
+        - f32_f33_f36
+        - e60_e61
+        - f10_f11
+        - e63_e64
+        - f12_f13
+        - e65_e66
+        - f01_f02
+        - e84
+        - f48
+        - e83
+        - f25
+        - e70
+        - f15
+        - e71_e72
+        - f16
+        - g20_g21
+        - g30_g31
+        - g11_g12
+        - g01
+        - g05
+    symptoms:
+      - instrument cluster blank
+      - gauges not working
+      - warning lights missing
+      - intermittent cluster reset
+      - incorrect displayed information
+    keywords:
+      - instrument cluster
+      - dashboard
+      - gauge cluster
+      - KOMBI
+    possible_causes:
+      - cluster internal fault
+      - power supply problem
+      - CAN communication fault
+      - software corruption
+      - low voltage
+    diagnostic_steps:
+      - Check cluster power and ground.
+      - Scan the instrument cluster.
+      - Check communication with gateway and DME.
+      - Verify software status.
+      - Repair or replace the cluster if necessary.
+    related_dtcs: []
+
+  - id: bmw_body_instrument_cluster_can_fault
+    title: Instrument Cluster Communication Fault
+    system: Instrumentation
+    description: Loss of communication between the instrument cluster and other vehicle control units.
+    vehicle:
+      models:
+        - 1_series
+        - 2_series
+        - 3_series
+        - 4_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+        - x6
+        - x7
+      generations:
+        - e81_e82_e87_e88
+        - e90_e91_e92_e93
+        - f20_f21
+        - f22_f23
+        - f30_f31_f34
+        - f32_f33_f36
+        - e60_e61
+        - f10_f11
+        - e63_e64
+        - f12_f13
+        - e65_e66
+        - f01_f02
+        - e84
+        - f48
+        - e83
+        - f25
+        - e70
+        - f15
+        - e71_e72
+        - f16
+        - g07
+        - g20_g21
+        - g30_g31
+        - g11_g12
+        - g01
+        - g05
+    symptoms:
+      - missing dashboard information
+      - cluster warning messages
+      - gauges unavailable
+      - multiple communication faults
+    keywords:
+      - KOMBI communication
+      - instrument cluster CAN
+      - dashboard communication
+      - cluster CAN
+    possible_causes:
+      - CAN bus fault
+      - gateway fault
+      - cluster power loss
+      - control unit failure
+    diagnostic_steps:
+      - Perform a complete network scan.
+      - Check whether KOMBI is visible to the diagnostic system.
+      - Check cluster power and ground.
+      - Inspect CAN wiring.
+      - Check gateway communication.
+    related_dtcs: []
+
   - id: bmw_abs_wheel_speed_sensor_fault
     title: Wheel Speed Sensor Fault
     system: ABS / DSC
