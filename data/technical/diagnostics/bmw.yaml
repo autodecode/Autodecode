@@ -1,1 +1,2305 @@
+schema_version: 1
 
+manufacturer:
+  id: bmw
+  name: BMW
+
+technical_data:
+
+  - id: bmw_engine_vanos_intake_position_fault
+    title: VANOS Intake Camshaft Position Fault
+    system: Engine / VANOS
+    description: Fault in intake camshaft variable valve timing position or control.
+    vehicle:
+      models:
+        - 3_series
+        - 5_series
+        - 7_series
+        - z3
+        - z4
+        - x3
+        - x5
+      generations:
+        - e36
+        - e39
+        - e46
+        - e53
+        - e60
+        - e61
+        - e65
+        - e66
+        - e83
+        - e85
+        - e86
+        - e90
+        - e91
+        - e92
+        - e93
+      engines:
+        - m52
+        - m52tu
+        - m54
+        - m56
+        - m62tu
+        - n42
+        - n46
+        - n52
+        - n53
+        - n54
+        - n55
+    symptoms:
+      - poor engine performance
+      - reduced power
+      - rough idle
+      - difficult starting
+      - increased fuel consumption
+      - engine warning light
+    keywords:
+      - vanos
+      - intake vanos
+      - intake camshaft
+      - camshaft timing
+      - variable valve timing
+    possible_causes:
+      - faulty intake VANOS solenoid
+      - contaminated VANOS oil passages
+      - worn VANOS seals
+      - incorrect engine oil condition
+      - camshaft position sensor fault
+      - mechanical timing problem
+    diagnostic_steps:
+      - Read DME fault memory and live camshaft timing values.
+      - Check intake VANOS solenoid operation.
+      - Inspect the solenoid connector and wiring.
+      - Verify engine oil level and condition.
+      - Check commanded versus actual intake camshaft position.
+      - Inspect VANOS seals and mechanical timing if commanded movement is incorrect.
+    related_dtcs:
+      - P0011
+      - P0012
+
+  - id: bmw_engine_vanos_exhaust_position_fault
+    title: VANOS Exhaust Camshaft Position Fault
+    system: Engine / VANOS
+    description: Fault in exhaust camshaft variable valve timing position or control.
+    vehicle:
+      models:
+        - 3_series
+        - 5_series
+        - 7_series
+        - z3
+        - z4
+        - x3
+        - x5
+      generations:
+        - e36
+        - e39
+        - e46
+        - e53
+        - e60
+        - e61
+        - e65
+        - e66
+        - e83
+        - e85
+        - e86
+        - e90
+        - e91
+        - e92
+        - e93
+      engines:
+        - m52
+        - m52tu
+        - m54
+        - m56
+        - m62tu
+        - n42
+        - n46
+        - n52
+        - n53
+        - n54
+        - n55
+    symptoms:
+      - reduced power
+      - rough idle
+      - poor acceleration
+      - difficult starting
+      - increased fuel consumption
+      - engine warning light
+    keywords:
+      - vanos
+      - exhaust vanos
+      - exhaust camshaft
+      - camshaft timing
+      - variable valve timing
+    possible_causes:
+      - faulty exhaust VANOS solenoid
+      - restricted oil passages
+      - worn VANOS seals
+      - camshaft position sensor fault
+      - incorrect oil pressure
+      - mechanical timing fault
+    diagnostic_steps:
+      - Read DME fault memory.
+      - Compare commanded and actual exhaust camshaft position.
+      - Test the exhaust VANOS solenoid.
+      - Inspect oil supply and solenoid passages.
+      - Check camshaft sensor signals.
+      - Verify mechanical timing if the camshaft cannot reach the commanded position.
+    related_dtcs:
+      - P0014
+      - P0015
+
+  - id: bmw_engine_vanos_solenoid_intake_fault
+    title: Intake VANOS Solenoid Fault
+    system: Engine / VANOS
+    description: Electrical or mechanical fault affecting the intake VANOS solenoid.
+    vehicle:
+      models:
+        - 3_series
+        - 5_series
+        - 7_series
+        - z3
+        - z4
+        - x3
+        - x5
+      generations:
+        - e36
+        - e39
+        - e46
+        - e53
+        - e60
+        - e61
+        - e65
+        - e66
+        - e83
+        - e85
+        - e86
+        - e90
+        - e91
+        - e92
+        - e93
+      engines:
+        - m52tu
+        - m54
+        - m56
+        - m62tu
+        - n42
+        - n46
+        - n52
+        - n53
+        - n54
+        - n55
+    symptoms:
+      - reduced low rpm torque
+      - rough idle
+      - hesitation
+      - poor acceleration
+      - engine warning light
+    keywords:
+      - intake vanos solenoid
+      - vanos solenoid
+      - intake timing
+      - camshaft actuator
+    possible_causes:
+      - failed solenoid
+      - contaminated solenoid
+      - wiring fault
+      - poor electrical connection
+      - restricted oil flow
+      - incorrect engine oil
+    diagnostic_steps:
+      - Check DME fault memory.
+      - Inspect the solenoid connector.
+      - Measure electrical supply and resistance.
+      - Activate the solenoid with a diagnostic tester.
+      - Remove and inspect the solenoid for contamination.
+      - Verify VANOS movement using live data.
+    related_dtcs: []
+
+  - id: bmw_engine_vanos_solenoid_exhaust_fault
+    title: Exhaust VANOS Solenoid Fault
+    system: Engine / VANOS
+    description: Electrical or mechanical fault affecting the exhaust VANOS solenoid.
+    vehicle:
+      models:
+        - 3_series
+        - 5_series
+        - 7_series
+        - z3
+        - z4
+        - x3
+        - x5
+      generations:
+        - e36
+        - e39
+        - e46
+        - e53
+        - e60
+        - e61
+        - e65
+        - e66
+        - e83
+        - e85
+        - e86
+        - e90
+        - e91
+        - e92
+        - e93
+      engines:
+        - m52tu
+        - m54
+        - m56
+        - m62tu
+        - n42
+        - n46
+        - n52
+        - n53
+        - n54
+        - n55
+    symptoms:
+      - poor acceleration
+      - rough idle
+      - reduced engine performance
+      - hesitation
+      - increased fuel consumption
+    keywords:
+      - exhaust vanos solenoid
+      - vanos solenoid
+      - exhaust timing
+      - camshaft actuator
+    possible_causes:
+      - failed solenoid
+      - contaminated solenoid
+      - wiring fault
+      - poor connector contact
+      - restricted oil passage
+      - mechanical VANOS fault
+    diagnostic_steps:
+      - Read DME fault memory.
+      - Inspect the exhaust VANOS solenoid connector.
+      - Check electrical supply and resistance.
+      - Perform actuator testing.
+      - Inspect the solenoid for oil contamination.
+      - Verify commanded and actual camshaft position.
+    related_dtcs: []
+
+  - id: bmw_engine_camshaft_crankshaft_correlation
+    title: Camshaft and Crankshaft Timing Correlation Fault
+    system: Engine / Timing
+    description: The DME detects an implausible relationship between crankshaft and camshaft position.
+    vehicle:
+      models:
+        - 1_series
+        - 3_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+        - z4
+      generations:
+        - e81
+        - e82
+        - e87
+        - e88
+        - e46
+        - e90
+        - e91
+        - e92
+        - e93
+        - e60
+        - e61
+        - e63
+        - e64
+        - e65
+        - e66
+        - e67
+        - e83
+        - e84
+        - e53
+        - e70
+        - e71
+        - e72
+        - e85
+        - e86
+        - f10
+        - f11
+        - f12
+        - f13
+        - f01
+        - f02
+        - f07
+        - f20
+        - f21
+        - f25
+        - f30
+        - f31
+        - f32
+        - f33
+        - f34
+        - f35
+      engines:
+        - n42
+        - n43
+        - n45
+        - n46
+        - n47
+        - n52
+        - n53
+        - n54
+        - n55
+        - n57
+        - n62
+        - n63
+        - m47
+        - m57
+    symptoms:
+      - difficult starting
+      - no start
+      - rough running
+      - engine stalls
+      - reduced power
+      - engine warning light
+    keywords:
+      - cam crank correlation
+      - crank cam correlation
+      - timing correlation
+      - camshaft timing
+      - crankshaft timing
+      - synchronization
+    possible_causes:
+      - stretched timing chain
+      - incorrect mechanical timing
+      - faulty camshaft sensor
+      - faulty crankshaft sensor
+      - VANOS actuator problem
+      - damaged timing components
+    diagnostic_steps:
+      - Read DME fault memory.
+      - Compare camshaft and crankshaft synchronization values.
+      - Check camshaft and crankshaft sensor signals.
+      - Inspect timing chain or belt timing where applicable.
+      - Check VANOS operation.
+      - Verify mechanical timing before replacing sensors.
+    related_dtcs:
+      - P0016
+      - P0017
+
+  - id: bmw_engine_crankshaft_position_sensor_fault
+    title: Crankshaft Position Sensor Fault
+    system: Engine / Engine Speed
+    description: The DME cannot reliably determine crankshaft position or engine speed.
+    vehicle:
+      models:
+        - 1_series
+        - 3_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+        - z3
+        - z4
+      generations:
+        - e36
+        - e39
+        - e46
+        - e53
+        - e60
+        - e61
+        - e63
+        - e64
+        - e65
+        - e66
+        - e81
+        - e82
+        - e87
+        - e88
+        - e83
+        - e84
+        - e85
+        - e86
+        - e90
+        - e91
+        - e92
+        - e93
+        - f20
+        - f21
+        - f25
+        - f30
+        - f31
+        - f32
+        - f33
+        - f34
+        - f35
+        - f10
+        - f11
+      engines:
+        - m43
+        - m44
+        - m50
+        - m52
+        - m52tu
+        - m54
+        - n42
+        - n43
+        - n45
+        - n46
+        - n47
+        - n52
+        - n53
+        - n54
+        - n55
+        - m47
+        - m57
+        - n57
+    symptoms:
+      - no start
+      - difficult starting
+      - engine stalls
+      - intermittent stalling
+      - tachometer drops to zero
+      - reduced power
+    keywords:
+      - crankshaft sensor
+      - crank sensor
+      - engine speed sensor
+      - rpm sensor
+      - crank position
+    possible_causes:
+      - failed crankshaft position sensor
+      - damaged sensor wiring
+      - poor connector contact
+      - contaminated sensor
+      - damaged trigger wheel
+    diagnostic_steps:
+      - Read DME fault memory.
+      - Check engine speed signal during cranking.
+      - Inspect sensor wiring and connector.
+      - Check sensor supply and signal.
+      - Inspect the crankshaft trigger wheel if signal remains incorrect.
+    related_dtcs:
+      - P0335
+      - P0336
+
+  - id: bmw_engine_camshaft_position_sensor_fault
+    title: Camshaft Position Sensor Fault
+    system: Engine / Engine Timing
+    description: The DME detects an invalid or missing camshaft position signal.
+    vehicle:
+      models:
+        - 1_series
+        - 3_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+        - z3
+        - z4
+      generations:
+        - e36
+        - e39
+        - e46
+        - e53
+        - e60
+        - e61
+        - e63
+        - e64
+        - e65
+        - e66
+        - e81
+        - e82
+        - e87
+        - e88
+        - e83
+        - e84
+        - e85
+        - e86
+        - e90
+        - e91
+        - e92
+        - e93
+        - f20
+        - f21
+        - f25
+        - f30
+        - f31
+        - f32
+        - f33
+        - f34
+        - f35
+        - f10
+        - f11
+      engines:
+        - m43
+        - m44
+        - m50
+        - m52
+        - m52tu
+        - m54
+        - n42
+        - n43
+        - n45
+        - n46
+        - n47
+        - n52
+        - n53
+        - n54
+        - n55
+        - m47
+        - m57
+        - n57
+    symptoms:
+      - difficult starting
+      - no start
+      - rough idle
+      - reduced power
+      - engine stalls
+      - increased fuel consumption
+    keywords:
+      - camshaft sensor
+      - cam sensor
+      - camshaft position
+      - cam position
+    possible_causes:
+      - faulty camshaft position sensor
+      - damaged wiring
+      - poor connector contact
+      - timing problem
+      - VANOS fault
+    diagnostic_steps:
+      - Read DME fault memory.
+      - Check camshaft signal during cranking.
+      - Inspect sensor connector and wiring.
+      - Compare camshaft signal with crankshaft signal.
+      - Verify mechanical timing if synchronization is incorrect.
+    related_dtcs:
+      - P0340
+      - P0341
+
+  - id: bmw_engine_mass_air_flow_signal_fault
+    title: Mass Air Flow Sensor Signal Fault
+    system: Engine / Air Intake
+    description: The DME detects an implausible or missing mass air flow measurement.
+    vehicle:
+      models:
+        - 1_series
+        - 3_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+        - z4
+      generations:
+        - e46
+        - e53
+        - e60
+        - e61
+        - e63
+        - e64
+        - e65
+        - e66
+        - e81
+        - e82
+        - e87
+        - e88
+        - e83
+        - e84
+        - e85
+        - e86
+        - e90
+        - e91
+        - e92
+        - e93
+        - f20
+        - f21
+        - f25
+        - f30
+        - f31
+        - f32
+        - f33
+        - f34
+        - f35
+        - f10
+        - f11
+      engines:
+        - m47
+        - m57
+        - n47
+        - n57
+        - m54
+        - n42
+        - n43
+        - n46
+        - n52
+        - n53
+        - n54
+        - n55
+    symptoms:
+      - loss of power
+      - poor acceleration
+      - rough idle
+      - increased fuel consumption
+      - black smoke
+      - limp mode
+    keywords:
+      - maf
+      - mass air flow
+      - mass airflow
+      - air flow meter
+      - debitmetru
+    possible_causes:
+      - contaminated MAF sensor
+      - faulty MAF sensor
+      - intake air leak
+      - damaged wiring
+      - incorrect air filter installation
+      - crankcase ventilation fault
+    diagnostic_steps:
+      - Read DME fault memory.
+      - Check measured air mass at idle and under load.
+      - Inspect the MAF connector and wiring.
+      - Check the intake system for unmetered air.
+      - Compare measured and expected air mass.
+      - Test the sensor before replacing it.
+    related_dtcs:
+      - P0101
+      - P0102
+      - P0103
+
+  - id: bmw_engine_map_sensor_fault
+    title: Intake Manifold Pressure Sensor Fault
+    system: Engine / Intake
+    description: The DME detects an implausible intake manifold pressure signal.
+    vehicle:
+      models:
+        - 1_series
+        - 3_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+        - z4
+      generations:
+        - e46
+        - e53
+        - e60
+        - e61
+        - e63
+        - e64
+        - e65
+        - e66
+        - e81
+        - e82
+        - e87
+        - e88
+        - e83
+        - e84
+        - e85
+        - e86
+        - e90
+        - e91
+        - e92
+        - e93
+        - f20
+        - f21
+        - f25
+        - f30
+        - f31
+        - f32
+        - f33
+        - f34
+        - f35
+        - f10
+        - f11
+      engines:
+        - m47
+        - m57
+        - n47
+        - n57
+        - n54
+        - n55
+        - b47
+        - b57
+        - b48
+        - b58
+    symptoms:
+      - reduced power
+      - poor acceleration
+      - limp mode
+      - unstable idle
+      - excessive smoke
+    keywords:
+      - map sensor
+      - manifold pressure
+      - boost pressure sensor
+      - intake pressure
+      - boost sensor
+    possible_causes:
+      - faulty MAP sensor
+      - blocked pressure port
+      - damaged wiring
+      - intake or boost leak
+      - incorrect turbocharger pressure
+    diagnostic_steps:
+      - Read DME/DDE fault memory.
+      - Compare manifold pressure with atmospheric pressure with engine off.
+      - Check sensor wiring and connector.
+      - Inspect the pressure port for contamination.
+      - Compare requested and measured boost under load.
+    related_dtcs:
+      - P0105
+      - P0106
+      - P0107
+      - P0108
+
+  - id: bmw_engine_throttle_position_sensor_fault
+    title: Throttle Position Sensor Fault
+    system: Engine / Throttle
+    description: Implausible throttle position feedback is detected by the engine control unit.
+    vehicle:
+      models:
+        - 1_series
+        - 3_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+        - z4
+      generations:
+        - e46
+        - e53
+        - e60
+        - e61
+        - e63
+        - e64
+        - e65
+        - e66
+        - e81
+        - e82
+        - e87
+        - e88
+        - e83
+        - e84
+        - e85
+        - e86
+        - e90
+        - e91
+        - e92
+        - e93
+        - f20
+        - f21
+        - f25
+        - f30
+        - f31
+        - f32
+        - f33
+        - f34
+        - f35
+        - f10
+        - f11
+      engines:
+        - m54
+        - n42
+        - n43
+        - n46
+        - n52
+        - n53
+        - n54
+        - n55
+        - b48
+        - b58
+    symptoms:
+      - poor acceleration
+      - reduced power
+      - limp mode
+      - unstable idle
+      - throttle response delay
+    keywords:
+      - throttle position
+      - throttle sensor
+      - throttle valve
+      - accelerator response
+    possible_causes:
+      - faulty throttle position sensor
+      - throttle actuator fault
+      - wiring fault
+      - contaminated throttle body
+      - accelerator pedal signal fault
+    diagnostic_steps:
+      - Read DME fault memory.
+      - Monitor throttle position signals.
+      - Check both redundant throttle position tracks.
+      - Inspect throttle body connector and wiring.
+      - Perform throttle adaptation if required.
+      - Replace the actuator only after confirming electrical and mechanical operation.
+    related_dtcs:
+      - P0120
+      - P0121
+      - P0122
+      - P0123
+
+  - id: bmw_engine_electronic_throttle_actuator_fault
+    title: Electronic Throttle Actuator Fault
+    system: Engine / Throttle
+    description: The DME detects an electrical or mechanical fault in the electronic throttle actuator.
+    vehicle:
+      models:
+        - 1_series
+        - 3_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+        - z4
+      generations:
+        - e46
+        - e53
+        - e60
+        - e61
+        - e63
+        - e64
+        - e65
+        - e66
+        - e81
+        - e82
+        - e87
+        - e88
+        - e83
+        - e84
+        - e85
+        - e86
+        - e90
+        - e91
+        - e92
+        - e93
+        - f20
+        - f21
+        - f25
+        - f30
+        - f31
+        - f32
+        - f33
+        - f34
+        - f35
+        - f10
+        - f11
+      engines:
+        - m54
+        - n42
+        - n43
+        - n46
+        - n52
+        - n53
+        - n54
+        - n55
+        - b48
+        - b58
+    symptoms:
+      - limp mode
+      - reduced engine power
+      - poor throttle response
+      - engine warning light
+      - unstable idle
+    keywords:
+      - throttle actuator
+      - electronic throttle
+      - throttle valve actuator
+      - throttle body
+      - emergency mode
+    possible_causes:
+      - failed throttle actuator
+      - internal gear wear
+      - actuator motor fault
+      - throttle position feedback fault
+      - wiring problem
+      - contaminated throttle body
+    diagnostic_steps:
+      - Read DME fault memory.
+      - Check throttle actuator activation.
+      - Monitor throttle position feedback.
+      - Inspect connector and wiring.
+      - Check for mechanical restriction of the throttle plate.
+      - Perform throttle adaptation after repair where required.
+    related_dtcs: []
+
+  - id: bmw_engine_intake_air_leak
+    title: Unmetered Intake Air Leak
+    system: Engine / Air Intake
+    description: Unmetered air enters the intake system and causes an air-fuel mixture deviation.
+    vehicle:
+      models:
+        - 1_series
+        - 3_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+        - z3
+        - z4
+      generations:
+        - e36
+        - e39
+        - e46
+        - e53
+        - e60
+        - e61
+        - e63
+        - e64
+        - e65
+        - e66
+        - e81
+        - e82
+        - e87
+        - e88
+        - e83
+        - e84
+        - e85
+        - e86
+        - e90
+        - e91
+        - e92
+        - e93
+        - f20
+        - f21
+        - f25
+        - f30
+        - f31
+        - f32
+        - f33
+        - f34
+        - f35
+        - f10
+        - f11
+      engines:
+        - m43
+        - m44
+        - m50
+        - m52
+        - m52tu
+        - m54
+        - n42
+        - n43
+        - n45
+        - n46
+        - n52
+        - n53
+        - n54
+        - n55
+        - b48
+        - b58
+    symptoms:
+      - rough idle
+      - lean mixture
+      - unstable idle
+      - hesitation
+      - poor acceleration
+      - high fuel consumption
+    keywords:
+      - vacuum leak
+      - intake leak
+      - air leak
+      - unmetered air
+      - false air
+      - vacuum hose
+    possible_causes:
+      - cracked intake hose
+      - leaking intake manifold gasket
+      - failed crankcase ventilation hose
+      - vacuum hose leak
+      - throttle body seal leak
+      - brake booster vacuum leak
+    diagnostic_steps:
+      - Inspect all intake hoses and vacuum lines.
+      - Perform a smoke test of the intake system.
+      - Check crankcase ventilation connections.
+      - Inspect intake manifold and throttle body seals.
+      - Compare fuel trims before and after repairing the leak.
+    related_dtcs:
+      - P0171
+      - P0174
+
+  - id: bmw_engine_pcw_ccv_crankcase_ventilation_fault
+    title: Crankcase Ventilation System Fault
+    system: Engine / Crankcase Ventilation
+    description: The crankcase ventilation system produces incorrect crankcase pressure or allows unmetered air into the intake.
+    vehicle:
+      models:
+        - 3_series
+        - 5_series
+        - 7_series
+        - x3
+        - x5
+        - z4
+      generations:
+        - e39
+        - e46
+        - e53
+        - e60
+        - e61
+        - e65
+        - e66
+        - e83
+        - e85
+        - e86
+        - e90
+        - e91
+        - e92
+        - e93
+        - f10
+        - f11
+        - f25
+        - f30
+        - f31
+      engines:
+        - m52
+        - m52tu
+        - m54
+        - n42
+        - n46
+        - n52
+        - n53
+        - n54
+        - n55
+        - n47
+        - n57
+    symptoms:
+      - rough idle
+      - oil consumption
+      - whistling noise
+      - lean mixture
+      - smoke from exhaust
+      - oil leaks
+    keywords:
+      - ccv
+      - pcv
+      - crankcase ventilation
+      - breather
+      - crankcase pressure
+      - oil separator
+    possible_causes:
+      - failed crankcase ventilation diaphragm
+      - blocked breather hose
+      - cracked ventilation hose
+      - failed oil separator
+      - excessive crankcase pressure
+      - excessive crankcase vacuum
+    diagnostic_steps:
+      - Measure crankcase pressure or vacuum according to engine specification.
+      - Inspect ventilation hoses.
+      - Check the oil separator or diaphragm.
+      - Inspect the intake for oil contamination.
+      - Check for secondary air leaks caused by damaged ventilation components.
+    related_dtcs:
+      - P0171
+      - P0174
+
+  - id: bmw_engine_coolant_temperature_sensor_fault
+    title: Engine Coolant Temperature Sensor Fault
+    system: Engine / Cooling
+    description: The engine control unit receives an implausible coolant temperature signal.
+    vehicle:
+      models:
+        - 1_series
+        - 3_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+        - z3
+        - z4
+      generations:
+        - e36
+        - e39
+        - e46
+        - e53
+        - e60
+        - e61
+        - e63
+        - e64
+        - e65
+        - e66
+        - e81
+        - e82
+        - e87
+        - e88
+        - e83
+        - e84
+        - e85
+        - e86
+        - e90
+        - e91
+        - e92
+        - e93
+        - f20
+        - f21
+        - f25
+        - f30
+        - f31
+        - f32
+        - f33
+        - f34
+        - f35
+        - f10
+        - f11
+      engines:
+        - m43
+        - m44
+        - m50
+        - m52
+        - m52tu
+        - m54
+        - m57
+        - m47
+        - n42
+        - n43
+        - n45
+        - n46
+        - n47
+        - n52
+        - n53
+        - n54
+        - n55
+        - n57
+        - b47
+        - b48
+        - b57
+        - b58
+    symptoms:
+      - difficult starting
+      - unstable idle
+      - high fuel consumption
+      - cooling fan runs continuously
+      - incorrect temperature reading
+      - overheating indication
+    keywords:
+      - coolant temperature sensor
+      - engine temperature sensor
+      - ect sensor
+      - coolant sensor
+      - temperature signal
+    possible_causes:
+      - faulty coolant temperature sensor
+      - damaged wiring
+      - poor connector contact
+      - coolant contamination
+      - incorrect sensor resistance
+    diagnostic_steps:
+      - Read coolant temperature with a diagnostic tester.
+      - Compare the reading with actual engine temperature.
+      - Check sensor resistance according to temperature.
+      - Inspect wiring and connector.
+      - Check for implausible temperature changes.
+    related_dtcs:
+      - P0115
+      - P0116
+      - P0117
+      - P0118
+
+  - id: bmw_engine_thermostat_stuck_open
+    title: Thermostat Stuck Open
+    system: Engine / Cooling
+    description: Engine coolant temperature remains below the expected operating range because the thermostat does not close correctly.
+    vehicle:
+      models:
+        - 3_series
+        - 5_series
+        - 7_series
+        - x3
+        - x5
+        - 1_series
+      generations:
+        - e46
+        - e60
+        - e61
+        - e65
+        - e66
+        - e83
+        - e53
+        - e87
+        - e90
+        - e91
+        - e92
+        - e93
+        - e81
+        - e82
+        - e88
+        - f20
+        - f21
+        - f25
+        - f30
+        - f31
+        - f10
+        - f11
+      engines:
+        - m47
+        - m57
+        - n47
+        - n57
+        - m54
+        - n42
+        - n46
+        - n52
+        - n53
+        - n55
+        - b47
+        - b48
+        - b57
+        - b58
+    symptoms:
+      - engine runs too cool
+      - low coolant temperature
+      - increased fuel consumption
+      - poor cabin heating
+      - long warm-up time
+    keywords:
+      - thermostat
+      - thermostat stuck open
+      - engine too cold
+      - low coolant temperature
+      - slow warm up
+    possible_causes:
+      - thermostat stuck open
+      - incorrect thermostat
+      - thermostat housing leak
+      - coolant temperature sensor fault
+    diagnostic_steps:
+      - Monitor coolant temperature during a cold start.
+      - Check warm-up time under normal driving.
+      - Compare coolant temperature with diagnostic data.
+      - Verify thermostat opening temperature.
+      - Check the temperature sensor before replacing the thermostat.
+    related_dtcs:
+      - P0128
+
+  - id: bmw_engine_thermostat_stuck_closed
+    title: Thermostat Stuck Closed
+    system: Engine / Cooling
+    description: Coolant circulation is restricted because the thermostat remains closed after the engine reaches operating temperature.
+    vehicle:
+      models:
+        - 3_series
+        - 5_series
+        - 7_series
+        - x3
+        - x5
+        - 1_series
+      generations:
+        - e46
+        - e60
+        - e61
+        - e65
+        - e66
+        - e83
+        - e53
+        - e87
+        - e90
+        - e91
+        - e92
+        - e93
+        - e81
+        - e82
+        - e88
+        - f20
+        - f21
+        - f25
+        - f30
+        - f31
+        - f10
+        - f11
+      engines:
+        - m47
+        - m57
+        - n47
+        - n57
+        - m54
+        - n42
+        - n46
+        - n52
+        - n53
+        - n55
+        - b47
+        - b48
+        - b57
+        - b58
+    symptoms:
+      - overheating
+      - rapid temperature increase
+      - coolant boiling
+      - poor cooling
+      - cooling fan operation
+    keywords:
+      - thermostat stuck closed
+      - thermostat failure
+      - overheating
+      - coolant circulation
+    possible_causes:
+      - thermostat mechanically stuck
+      - thermostat housing failure
+      - incorrect thermostat
+      - coolant circulation problem
+      - air trapped in cooling system
+    diagnostic_steps:
+      - Monitor coolant temperature continuously.
+      - Check radiator hose temperature during warm-up.
+      - Verify thermostat opening.
+      - Check coolant level and system bleeding.
+      - Inspect water pump operation if circulation remains inadequate.
+    related_dtcs: []
+
+  - id: bmw_engine_electric_water_pump_fault
+    title: Electric Water Pump Fault
+    system: Engine / Cooling
+    description: The electric coolant pump does not provide the required coolant circulation.
+    vehicle:
+      models:
+        - 1_series
+        - 3_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+        - z4
+      generations:
+        - e81
+        - e82
+        - e87
+        - e88
+        - e90
+        - e91
+        - e92
+        - e93
+        - e60
+        - e61
+        - e63
+        - e64
+        - e65
+        - e66
+        - e84
+        - e83
+        - e85
+        - e86
+        - f20
+        - f21
+        - f25
+        - f30
+        - f31
+        - f32
+        - f33
+        - f34
+        - f35
+        - f10
+        - f11
+      engines:
+        - n42
+        - n43
+        - n46
+        - n52
+        - n53
+        - n54
+        - n55
+        - n20
+        - n26
+        - b48
+        - b58
+    symptoms:
+      - overheating
+      - coolant circulation fault
+      - cooling fan runs at high speed
+      - reduced engine power
+      - coolant temperature warning
+    keywords:
+      - electric water pump
+      - coolant pump
+      - water pump
+      - overheating
+      - coolant circulation
+    possible_causes:
+      - failed electric water pump
+      - pump electronics failure
+      - power supply fault
+      - communication fault
+      - air in cooling system
+    diagnostic_steps:
+      - Read DME fault memory.
+      - Check coolant pump activation with a diagnostic tester.
+      - Verify pump power supply and ground.
+      - Check pump communication where applicable.
+      - Inspect coolant level and bleed the cooling system.
+      - Replace the pump only after confirming the electrical supply.
+    related_dtcs: []
+
+  - id: bmw_engine_turbocharger_underboost
+    title: Turbocharger Underboost
+    system: Engine / Turbocharging
+    description: Actual boost pressure remains below the requested pressure under operating conditions.
+    vehicle:
+      models:
+        - 1_series
+        - 3_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+        - x6
+      generations:
+        - e81
+        - e82
+        - e87
+        - e88
+        - e90
+        - e91
+        - e92
+        - e93
+        - e60
+        - e61
+        - e63
+        - e64
+        - e65
+        - e66
+        - e84
+        - e83
+        - e70
+        - e71
+        - e72
+        - f20
+        - f21
+        - f25
+        - f30
+        - f31
+        - f32
+        - f33
+        - f34
+        - f35
+        - f10
+        - f11
+        - f15
+        - f16
+      engines:
+        - m47
+        - m57
+        - n47
+        - n57
+        - n20
+        - n26
+        - n54
+        - n55
+        - b47
+        - b48
+        - b57
+        - b58
+    symptoms:
+      - low rpm power loss
+      - loss of power
+      - poor acceleration
+      - limp mode
+      - excessive smoke
+    keywords:
+      - turbo
+      - underboost
+      - low boost
+      - boost pressure low
+      - turbocharger
+      - limp mode
+    possible_causes:
+      - boost hose leak
+      - intercooler leak
+      - turbocharger actuator fault
+      - wastegate problem
+      - variable geometry mechanism sticking
+      - boost pressure sensor fault
+      - exhaust restriction
+    diagnostic_steps:
+      - Compare requested and actual boost pressure during a road test.
+      - Inspect all charge-air hoses and intercooler connections.
+      - Check turbocharger actuator operation.
+      - Check boost pressure sensor readings.
+      - Inspect the turbocharger for mechanical damage.
+      - Check exhaust and DPF restriction on diesel engines.
+    related_dtcs:
+      - P0299
+
+  - id: bmw_engine_turbocharger_overboost
+    title: Turbocharger Overboost
+    system: Engine / Turbocharging
+    description: Actual boost pressure exceeds the requested pressure.
+    vehicle:
+      models:
+        - 1_series
+        - 3_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+        - x6
+      generations:
+        - e81
+        - e82
+        - e87
+        - e88
+        - e90
+        - e91
+        - e92
+        - e93
+        - e60
+        - e61
+        - e63
+        - e64
+        - e65
+        - e66
+        - e84
+        - e83
+        - e70
+        - e71
+        - e72
+        - f20
+        - f21
+        - f25
+        - f30
+        - f31
+        - f32
+        - f33
+        - f34
+        - f35
+        - f10
+        - f11
+        - f15
+        - f16
+      engines:
+        - m47
+        - m57
+        - n47
+        - n57
+        - n20
+        - n26
+        - n54
+        - n55
+        - b47
+        - b48
+        - b57
+        - b58
+    symptoms:
+      - sudden loss of power
+      - limp mode
+      - inconsistent acceleration
+      - boost pressure fluctuation
+      - engine warning light
+    keywords:
+      - turbo
+      - overboost
+      - excessive boost
+      - high boost
+      - turbocharger
+      - boost control
+    possible_causes:
+      - sticking turbocharger vanes
+      - wastegate actuator fault
+      - boost control solenoid fault
+      - incorrect actuator calibration
+      - faulty boost pressure sensor
+      - restricted control line
+    diagnostic_steps:
+      - Compare requested and actual boost pressure.
+      - Check turbocharger actuator movement.
+      - Inspect vacuum or electronic boost control.
+      - Check boost sensor accuracy.
+      - Inspect variable geometry mechanism where fitted.
+      - Perform actuator calibration where required.
+    related_dtcs: []
+
+  - id: bmw_engine_egr_valve_position_fault
+    title: EGR Valve Position Fault
+    system: Engine / EGR
+    description: The DDE detects an incorrect EGR valve position or actuator response.
+    vehicle:
+      models:
+        - 1_series
+        - 3_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+        - x6
+      generations:
+        - e81
+        - e82
+        - e87
+        - e88
+        - e90
+        - e91
+        - e92
+        - e93
+        - e60
+        - e61
+        - e63
+        - e64
+        - e65
+        - e66
+        - e84
+        - e83
+        - e70
+        - e71
+        - e72
+        - f20
+        - f21
+        - f25
+        - f30
+        - f31
+        - f32
+        - f33
+        - f34
+        - f35
+        - f10
+        - f11
+        - f15
+        - f16
+      engines:
+        - m47
+        - m57
+        - n47
+        - n57
+        - b47
+        - b57
+    symptoms:
+      - reduced power
+      - rough idle
+      - hesitation
+      - black smoke
+      - limp mode
+      - increased fuel consumption
+    keywords:
+      - egr
+      - egr valve
+      - exhaust gas recirculation
+      - egr position
+      - egr actuator
+    possible_causes:
+      - carbon deposits
+      - seized EGR valve
+      - faulty EGR actuator
+      - position sensor fault
+      - wiring problem
+      - EGR cooler restriction
+    diagnostic_steps:
+      - Read DDE fault memory.
+      - Compare commanded and actual EGR position.
+      - Activate the EGR valve with a diagnostic tester.
+      - Inspect the valve for carbon buildup.
+      - Check electrical connections and wiring.
+      - Verify EGR cooler and associated passages where applicable.
+    related_dtcs: []
+
+  - id: bmw_engine_egr_flow_insufficient
+    title: Insufficient EGR Flow
+    system: Engine / EGR
+    description: The measured EGR flow is lower than the DDE expects.
+    vehicle:
+      models:
+        - 1_series
+        - 3_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+        - x6
+      generations:
+        - e81
+        - e82
+        - e87
+        - e88
+        - e90
+        - e91
+        - e92
+        - e93
+        - e60
+        - e61
+        - e63
+        - e64
+        - e65
+        - e66
+        - e84
+        - e83
+        - e70
+        - e71
+        - e72
+        - f20
+        - f21
+        - f25
+        - f30
+        - f31
+        - f32
+        - f33
+        - f34
+        - f35
+        - f10
+        - f11
+        - f15
+        - f16
+      engines:
+        - m47
+        - m57
+        - n47
+        - n57
+        - b47
+        - b57
+    symptoms:
+      - poor low rpm performance
+      - increased emissions
+      - rough running
+      - black smoke
+      - engine warning light
+    keywords:
+      - egr flow
+      - insufficient egr
+      - egr restriction
+      - egr cooler
+      - exhaust gas recirculation
+    possible_causes:
+      - carbon buildup
+      - blocked EGR passages
+      - faulty EGR valve
+      - intake manifold deposits
+      - faulty air mass measurement
+      - EGR cooler restriction
+    diagnostic_steps:
+      - Check EGR commanded and actual values.
+      - Check air mass change during EGR activation.
+      - Inspect the EGR valve.
+      - Inspect intake and EGR passages for carbon deposits.
+      - Check the MAF sensor before condemning the EGR system.
+    related_dtcs:
+      - P0401
+
+  - id: bmw_diesel_dpf_soot_load_high
+    title: Diesel Particulate Filter Soot Load Too High
+    system: Diesel / DPF
+    description: Calculated or measured particulate loading has exceeded the permitted regeneration threshold.
+    vehicle:
+      models:
+        - 1_series
+        - 3_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+        - x6
+      generations:
+        - e81
+        - e82
+        - e87
+        - e88
+        - e90
+        - e91
+        - e92
+        - e93
+        - e60
+        - e61
+        - e63
+        - e64
+        - e65
+        - e66
+        - e84
+        - e83
+        - e70
+        - e71
+        - e72
+        - f20
+        - f21
+        - f25
+        - f30
+        - f31
+        - f32
+        - f33
+        - f34
+        - f35
+        - f10
+        - f11
+        - f15
+        - f16
+      engines:
+        - m47
+        - m57
+        - n47
+        - n57
+        - b47
+        - b57
+    symptoms:
+      - reduced power
+      - limp mode
+      - high fuel consumption
+      - frequent regeneration
+      - DPF warning
+      - excessive exhaust back pressure
+    keywords:
+      - dpf
+      - particulate filter
+      - soot load
+      - regeneration
+      - blocked dpf
+      - diesel particulate filter
+    possible_causes:
+      - excessive soot accumulation
+      - failed regeneration
+      - short-distance driving
+      - faulty glow plugs
+      - EGR fault
+      - injector fault
+      - differential pressure sensor fault
+    diagnostic_steps:
+      - Read calculated soot mass and ash load.
+      - Check DPF differential pressure at idle and under load.
+      - Check exhaust temperature sensors.
+      - Determine why previous regenerations failed.
+      - Verify EGR, injection and glow plug operation.
+      - Perform forced regeneration only if loading is within the permitted range.
+    related_dtcs:
+      - P2463
+
+  - id: bmw_diesel_dpf_differential_pressure_sensor_fault
+    title: DPF Differential Pressure Sensor Fault
+    system: Diesel / DPF
+    description: The DDE detects an implausible differential pressure measurement across the particulate filter.
+    vehicle:
+      models:
+        - 1_series
+        - 3_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+        - x6
+      generations:
+        - e81
+        - e82
+        - e87
+        - e88
+        - e90
+        - e91
+        - e92
+        - e93
+        - e60
+        - e61
+        - e63
+        - e64
+        - e65
+        - e66
+        - e84
+        - e83
+        - e70
+        - e71
+        - e72
+        - f20
+        - f21
+        - f25
+        - f30
+        - f31
+        - f32
+        - f33
+        - f34
+        - f35
+        - f10
+        - f11
+        - f15
+        - f16
+      engines:
+        - m47
+        - m57
+        - n47
+        - n57
+        - b47
+        - b57
+    symptoms:
+      - DPF warning
+      - reduced power
+      - failed regeneration
+      - excessive smoke
+      - increased fuel consumption
+    keywords:
+      - dpf pressure sensor
+      - differential pressure
+      - exhaust pressure sensor
+      - dpf sensor
+      - pressure hoses
+    possible_causes:
+      - faulty pressure sensor
+      - blocked pressure hose
+      - cracked pressure hose
+      - electrical wiring fault
+      - restricted DPF
+    diagnostic_steps:
+      - Check differential pressure with the engine off.
+      - Inspect both pressure hoses.
+      - Check sensor electrical supply.
+      - Compare live pressure with expected values.
+      - Check actual DPF restriction before replacing the sensor.
+    related_dtcs:
+      - P2452
+      - P2453
+
+  - id: bmw_diesel_glow_plug_cylinder_fault
+    title: Diesel Glow Plug Cylinder Fault
+    system: Diesel / Glow Plug
+    description: The DDE detects an electrical or performance fault affecting an individual glow plug circuit.
+    vehicle:
+      models:
+        - 1_series
+        - 3_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+        - x6
+      generations:
+        - e81
+        - e82
+        - e87
+        - e88
+        - e90
+        - e91
+        - e92
+        - e93
+        - e60
+        - e61
+        - e63
+        - e64
+        - e65
+        - e66
+        - e84
+        - e83
+        - e70
+        - e71
+        - e72
+        - f20
+        - f21
+        - f25
+        - f30
+        - f31
+        - f32
+        - f33
+        - f34
+        - f35
+        - f10
+        - f11
+        - f15
+        - f16
+      engines:
+        - m47
+        - m57
+        - n47
+        - n57
+        - b47
+        - b57
+    symptoms:
+      - difficult cold starting
+      - rough cold idle
+      - white smoke on startup
+      - increased emissions
+      - glow plug warning
+    keywords:
+      - glow plug
+      - glow plug cylinder
+      - preheating
+      - diesel starting
+      - glow plug fault
+    possible_causes:
+      - failed glow plug
+      - glow plug control module fault
+      - wiring fault
+      - poor electrical connection
+      - excessive resistance
+    diagnostic_steps:
+      - Read DDE fault memory and identify the affected cylinder.
+      - Measure glow plug resistance.
+      - Check voltage or current during preheating.
+      - Inspect wiring and connectors.
+      - Test the glow plug control module if multiple cylinders are affected.
+    related_dtcs:
+      - P0671
+      - P0672
+      - P0673
+      - P0674
+      - P0675
+      - P0676
+
+  - id: bmw_diesel_rail_pressure_too_low
+    title: Common Rail Pressure Too Low
+    system: Diesel / Fuel Injection
+    description: Actual common rail pressure is below the pressure requested by the DDE.
+    vehicle:
+      models:
+        - 1_series
+        - 3_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+        - x6
+      generations:
+        - e81
+        - e82
+        - e87
+        - e88
+        - e90
+        - e91
+        - e92
+        - e93
+        - e60
+        - e61
+        - e63
+        - e64
+        - e65
+        - e66
+        - e84
+        - e83
+        - e70
+        - e71
+        - e72
+        - f20
+        - f21
+        - f25
+        - f30
+        - f31
+        - f32
+        - f33
+        - f34
+        - f35
+        - f10
+        - f11
+        - f15
+        - f16
+      engines:
+        - m47
+        - m57
+        - n47
+        - n57
+        - b47
+        - b57
+    symptoms:
+      - low power
+      - difficult starting
+      - no start
+      - engine stalls
+      - limp mode
+      - rough running
+    keywords:
+      - rail pressure
+      - fuel rail pressure
+      - common rail
+      - low fuel pressure
+      - diesel fuel pressure
+    possible_causes:
+      - low pressure fuel supply problem
+      - restricted fuel filter
+      - high pressure fuel pump fault
+      - excessive injector return flow
+      - rail pressure regulator fault
+      - rail pressure sensor fault
+    diagnostic_steps:
+      - Compare requested and actual rail pressure during cranking and under load.
+      - Check low-pressure fuel supply.
+      - Replace a restricted fuel filter if required.
+      - Check injector return flow.
+      - Check high-pressure pump operation.
+      - Verify rail pressure sensor readings.
+    related_dtcs:
+      - P0087
+
+  - id: bmw_diesel_rail_pressure_too_high
+    title: Common Rail Pressure Too High
+    system: Diesel / Fuel Injection
+    description: Actual common rail pressure exceeds the pressure requested by the DDE.
+    vehicle:
+      models:
+        - 1_series
+        - 3_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+        - x6
+      generations:
+        - e81
+        - e82
+        - e87
+        - e88
+        - e90
+        - e91
+        - e92
+        - e93
+        - e60
+        - e61
+        - e63
+        - e64
+        - e65
+        - e66
+        - e84
+        - e83
+        - e70
+        - e71
+        - e72
+        - f20
+        - f21
+        - f25
+        - f30
+        - f31
+        - f32
+        - f33
+        - f34
+        - f35
+        - f10
+        - f11
+        - f15
+        - f16
+      engines:
+        - m47
+        - m57
+        - n47
+        - n57
+        - b47
+        - b57
+    symptoms:
+      - rough running
+      - reduced power
+      - limp mode
+      - difficult starting
+      - engine warning light
+    keywords:
+      - high rail pressure
+      - excessive rail pressure
+      - fuel pressure high
+      - common rail pressure
+    possible_causes:
+      - pressure regulator fault
+      - fuel metering valve fault
+      - rail pressure sensor fault
+      - high pressure pump control problem
+      - wiring fault
+    diagnostic_steps:
+      - Compare commanded and measured rail pressure.
+      - Check fuel metering and pressure control valves.
+      - Verify rail pressure sensor plausibility.
+      - Inspect wiring and connectors.
+      - Check high-pressure pump control.
+    related_dtcs:
+      - P0088
+
+  - id: bmw_diesel_injector_cylinder_fault
+    title: Diesel Injector Cylinder Fault
+    system: Diesel / Fuel Injection
+    description: The DDE detects abnormal injector electrical operation or fuel delivery on an individual cylinder.
+    vehicle:
+      models:
+        - 1_series
+        - 3_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+        - x6
+      generations:
+        - e81
+        - e82
+        - e87
+        - e88
+        - e90
+        - e91
+        - e92
+        - e93
+        - e60
+        - e61
+        - e63
+        - e64
+        - e65
+        - e66
+        - e84
+        - e83
+        - e70
+        - e71
+        - e72
+        - f20
+        - f21
+        - f25
+        - f30
+        - f31
+        - f32
+        - f33
+        - f34
+        - f35
+        - f10
+        - f11
+        - f15
+        - f16
+      engines:
+        - m47
+        - m57
+        - n47
+        - n57
+        - b47
+        - b57
+    symptoms:
+      - rough running
+      - misfire
+      - low power
+      - excessive smoke
+      - difficult starting
+      - increased fuel consumption
+    keywords:
+      - diesel injector
+      - injector fault
+      - injector cylinder
+      - injector correction
+      - fuel injector
+    possible_causes:
+      - faulty injector
+      - excessive injector return flow
+      - injector wiring fault
+      - poor connector contact
+      - fuel contamination
+      - incorrect injector coding
+    diagnostic_steps:
+      - Identify the affected cylinder from DDE fault memory.
+      - Check injector correction values.
+      - Perform injector return-flow testing.
+      - Inspect injector wiring and connectors.
+      - Check rail pressure during operation.
+      - Verify injector coding after replacement.
+    related_dtcs: []
