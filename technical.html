@@ -70,6 +70,7 @@ header{padding:12px 14px;gap:10px}
 </style>
 </head>
 <body>
+
 <header>
 <div class="logo">Auto<span>Decode</span></div>
 <a class="home" href="index.html" id="home"></a>
@@ -95,30 +96,37 @@ header{padding:12px 14px;gap:10px}
 
 <section class="panel">
 <div class="grid">
+
 <div class="field">
 <label id="lm"></label>
 <select id="make"><option value=""></option></select>
 </div>
+
 <div class="field">
 <label id="lmodel"></label>
 <select id="model" disabled><option value=""></option></select>
 </div>
+
 <div class="field">
 <label id="lg"></label>
 <select id="generation" disabled><option value=""></option></select>
 </div>
+
 <div class="field">
 <label id="ly"></label>
 <select id="year" disabled><option value=""></option></select>
 </div>
+
 <div class="field">
 <label id="le"></label>
 <select id="engine" disabled><option value=""></option></select>
 </div>
+
 <div class="field full">
 <label id="lp"></label>
 <textarea id="problem"></textarea>
 </div>
+
 </div>
 
 <div class="vehicle" id="vehicle" hidden></div>
@@ -135,6 +143,7 @@ header{padding:12px 14px;gap:10px}
 </div>
 <div id="list"></div>
 </section>
+
 </section>
 </main>
 
@@ -143,176 +152,1008 @@ header{padding:12px 14px;gap:10px}
 <script>
 const I={
 en:{
-home:'← Home',intro:'Select your vehicle and describe the problem. AutoDecode will translate your description into English for diagnostic search and rank the most relevant technical information.',
+home:'← Home',
+intro:'Select your vehicle and describe the problem in your own words. AutoDecode understands natural language in English, German, Romanian, French, Spanish, Italian and Dutch and ranks the most relevant technical information.',
 make:'Make',model:'Model',generation:'Generation / Platform',year:'Year',engine:'Engine',problem:'Describe the problem',
 sm:'Select make',smod:'Select model',sg:'Select generation',sy:'Select year',se:'Select engine',
-ph:'Example: The engine has very little power at low RPM and sometimes enters limp mode.',
+ph:'Example: The car feels very weak below 2000 rpm, hesitates when accelerating and sometimes goes into limp mode.',
 find:'FIND SOLUTION',rh:'Diagnostic Results',loading:'Loading...',ready:'Technical database ready.',
 error:'Technical database could not be loaded.',complete:'Please complete the vehicle selection.',
-describe:'Please describe the problem.',search:'Translating problem description...',
+describe:'Please describe the problem.',search:'Analyzing symptoms and searching technical data...',
 none:'No sufficiently relevant diagnostic information was found.',one:'1 relevant result',
 many:'{n} relevant results',vehicle:'Vehicle',causes:'Possible causes',steps:'Diagnostic procedure',
 dtcs:'Related DTCs',difficulty:'Difficulty',rel:'Relevance'
 },
 de:{
-home:'← Startseite',intro:'Wählen Sie Ihr Fahrzeug und beschreiben Sie das Problem. AutoDecode übersetzt Ihre Beschreibung für die diagnostische Suche ins Englische.',
+home:'← Startseite',
+intro:'Wählen Sie Ihr Fahrzeug und beschreiben Sie das Problem in Ihren eigenen Worten. AutoDecode versteht natürliche Sprache auf Deutsch, Englisch, Rumänisch, Französisch, Spanisch, Italienisch und Niederländisch.',
 make:'Marke',model:'Modell',generation:'Generation / Plattform',year:'Jahr',engine:'Motor',
 problem:'Problem beschreiben',sm:'Marke auswählen',smod:'Modell auswählen',sg:'Generation auswählen',
-sy:'Jahr auswählen',se:'Motor auswählen',ph:'Beispiel: Der Motor hat bei niedrigen Drehzahlen kaum Leistung und geht manchmal in den Notlauf.',
+sy:'Jahr auswählen',se:'Motor auswählen',
+ph:'Beispiel: Das Auto hat unter 2000 U/min kaum Leistung, ruckelt beim Beschleunigen und geht manchmal in den Notlauf.',
 find:'LÖSUNG FINDEN',rh:'Diagnoseergebnisse',loading:'Wird geladen...',ready:'Technische Datenbank bereit.',
 error:'Technische Datenbank konnte nicht geladen werden.',complete:'Bitte wählen Sie das Fahrzeug vollständig aus.',
-describe:'Bitte beschreiben Sie das Problem.',search:'Problembeschreibung wird übersetzt...',
+describe:'Bitte beschreiben Sie das Problem.',search:'Symptome werden analysiert und technische Daten durchsucht...',
 none:'Keine ausreichend relevanten Diagnoseinformationen gefunden.',one:'1 relevantes Ergebnis',
 many:'{n} relevante Ergebnisse',vehicle:'Fahrzeug',causes:'Mögliche Ursachen',steps:'Diagnoseverfahren',
 dtcs:'Verwandte DTCs',difficulty:'Schwierigkeit',rel:'Relevanz'
 },
 ro:{
-home:'← Acasă',intro:'Selectează vehiculul și descrie problema. AutoDecode va traduce descrierea în engleză pentru căutarea diagnostică și va ordona rezultatele după relevanță.',
+home:'← Acasă',
+intro:'Selectează vehiculul și descrie problema în cuvintele tale. AutoDecode înțelege limbaj natural în română, engleză, germană, franceză, spaniolă, italiană și neerlandeză și ordonează informațiile tehnice după relevanță.',
 make:'Marcă',model:'Model',generation:'Generație / Platformă',year:'An',engine:'Motor',
 problem:'Descrie problema',sm:'Selectează marca',smod:'Selectează modelul',sg:'Selectează generația',
-sy:'Selectează anul',se:'Selectează motorul',ph:'Exemplu: Motorul nu mai trage la turații mici și uneori intră în limp mode.',
+sy:'Selectează anul',se:'Selectează motorul',
+ph:'Exemplu: Mașina nu mai trage sub 2000 rpm, dă în nas când accelerez și uneori intră în limp mode.',
 find:'GĂSEȘTE SOLUȚIA',rh:'Rezultate diagnostic',loading:'Se încarcă...',
 ready:'Baza tehnică este pregătită.',error:'Baza tehnică nu a putut fi încărcată.',
 complete:'Completează selecția vehiculului.',describe:'Descrie problema.',
-search:'Se traduce descrierea problemei...',none:'Nu au fost găsite informații suficient de relevante.',
+search:'Se analizează simptomele și se caută în baza tehnică...',none:'Nu au fost găsite informații suficient de relevante.',
 one:'1 rezultat relevant',many:'{n} rezultate relevante',vehicle:'Vehicul',causes:'Cauze posibile',
 steps:'Procedură de diagnostic',dtcs:'DTC-uri asociate',difficulty:'Dificultate',rel:'Relevanță'
 },
 fr:{
-home:'← Accueil',intro:'Sélectionnez votre véhicule et décrivez le problème. AutoDecode traduira votre description en anglais pour la recherche diagnostique.',
+home:'← Accueil',
+intro:'Sélectionnez votre véhicule et décrivez le problème avec vos propres mots. AutoDecode comprend le langage naturel en français, anglais, allemand, roumain, espagnol, italien et néerlandais.',
 make:'Marque',model:'Modèle',generation:'Génération / Plateforme',year:'Année',engine:'Moteur',
 problem:'Décrire le problème',sm:'Sélectionner la marque',smod:'Sélectionner le modèle',
 sg:'Sélectionner la génération',sy:"Sélectionner l'année",se:'Sélectionner le moteur',
-ph:'Exemple : Le moteur manque fortement de puissance à bas régime et passe parfois en mode dégradé.',
+ph:'Exemple : La voiture manque de puissance sous 2000 tr/min, broute à l’accélération et passe parfois en mode dégradé.',
 find:'TROUVER LA SOLUTION',rh:'Résultats du diagnostic',loading:'Chargement...',
 ready:'Base technique prête.',error:'La base technique n’a pas pu être chargée.',
 complete:'Veuillez sélectionner complètement le véhicule.',describe:'Veuillez décrire le problème.',
-search:'Traduction de la description...',none:'Aucune information de diagnostic suffisamment pertinente trouvée.',
+search:'Analyse des symptômes et recherche dans la base technique...',none:'Aucune information de diagnostic suffisamment pertinente trouvée.',
 one:'1 résultat pertinent',many:'{n} résultats pertinents',vehicle:'Véhicule',causes:'Causes possibles',
 steps:'Procédure de diagnostic',dtcs:'DTC associés',difficulty:'Difficulté',rel:'Pertinence'
 },
 es:{
-home:'← Inicio',intro:'Selecciona tu vehículo y describe el problema. AutoDecode traducirá la descripción al inglés para la búsqueda de diagnóstico.',
+home:'← Inicio',
+intro:'Selecciona tu vehículo y describe el problema con tus propias palabras. AutoDecode entiende lenguaje natural en español, inglés, alemán, rumano, francés, italiano y neerlandés.',
 make:'Marca',model:'Modelo',generation:'Generación / Plataforma',year:'Año',engine:'Motor',
 problem:'Describe el problema',sm:'Seleccionar marca',smod:'Seleccionar modelo',
 sg:'Seleccionar generación',sy:'Seleccionar año',se:'Seleccionar motor',
-ph:'Ejemplo: El motor tiene muy poca potencia a bajas revoluciones y a veces entra en modo de emergencia.',
+ph:'Ejemplo: El coche tiene muy poca fuerza por debajo de 2000 rpm, da tirones al acelerar y a veces entra en modo de emergencia.',
 find:'ENCONTRAR SOLUCIÓN',rh:'Resultados del diagnóstico',loading:'Cargando...',
 ready:'Base de datos técnica lista.',error:'No se pudo cargar la base de datos técnica.',
 complete:'Completa la selección del vehículo.',describe:'Describe el problema.',
-search:'Traduciendo la descripción...',none:'No se encontró información de diagnóstico suficientemente relevante.',
+search:'Analizando síntomas y buscando en la base técnica...',none:'No se encontró información de diagnóstico suficientemente relevante.',
 one:'1 resultado relevante',many:'{n} resultados relevantes',vehicle:'Vehículo',causes:'Posibles causas',
 steps:'Procedimiento de diagnóstico',dtcs:'DTC relacionados',difficulty:'Dificultad',rel:'Relevancia'
 },
 it:{
-home:'← Home',intro:'Seleziona il veicolo e descrivi il problema. AutoDecode tradurrà la descrizione in inglese per la ricerca diagnostica.',
+home:'← Home',
+intro:'Seleziona il veicolo e descrivi il problema con parole tue. AutoDecode comprende il linguaggio naturale in italiano, inglese, tedesco, rumeno, francese, spagnolo e olandese.',
 make:'Marca',model:'Modello',generation:'Generazione / Piattaforma',year:'Anno',engine:'Motore',
 problem:'Descrivi il problema',sm:'Seleziona marca',smod:'Seleziona modello',sg:'Seleziona generazione',
-sy:'Seleziona anno',se:'Seleziona il motore',ph:'Esempio: Il motore ha pochissima potenza ai bassi regimi e a volte entra in modalità emergenza.',
+sy:'Seleziona anno',se:'Seleziona il motore',
+ph:'Esempio: L’auto ha poca potenza sotto i 2000 giri, strattona in accelerazione e a volte entra in modalità emergenza.',
 find:'TROVA SOLUZIONE',rh:'Risultati diagnostici',loading:'Caricamento...',
 ready:'Database tecnico pronto.',error:'Impossibile caricare il database tecnico.',
 complete:'Completa la selezione del veicolo.',describe:'Descrivi il problema.',
-search:'Traduzione della descrizione...',none:'Non sono state trovate informazioni diagnostiche sufficientemente rilevanti.',
+search:'Analisi dei sintomi e ricerca nel database tecnico...',none:'Non sono state trovate informazioni diagnostiche sufficientemente rilevanti.',
 one:'1 risultato rilevante',many:'{n} risultati rilevanti',vehicle:'Veicolo',causes:'Possibili cause',
 steps:'Procedura diagnostica',dtcs:'DTC correlati',difficulty:'Difficoltà',rel:'Rilevanza'
 },
 nl:{
-home:'← Home',intro:'Selecteer je voertuig en beschrijf het probleem. AutoDecode vertaalt de beschrijving naar het Engels voor de diagnosezoekopdracht.',
+home:'← Home',
+intro:'Selecteer je voertuig en beschrijf het probleem in je eigen woorden. AutoDecode begrijpt natuurlijke taal in Nederlands, Engels, Duits, Roemeens, Frans, Spaans en Italiaans.',
 make:'Merk',model:'Model',generation:'Generatie / Platform',year:'Jaar',engine:'Motor',
 problem:'Beschrijf het probleem',sm:'Selecteer merk',smod:'Selecteer model',
 sg:'Selecteer generatie',sy:'Selecteer jaar',se:'Selecteer motor',
-ph:'Voorbeeld: De motor heeft bij lage toerentallen zeer weinig vermogen en gaat soms in noodloop.',
+ph:'Voorbeeld: De auto heeft onder 2000 tpm bijna geen vermogen, houdt in bij het accelereren en gaat soms in noodloop.',
 find:'OPLOSSING VINDEN',rh:'Diagnoseresultaten',loading:'Laden...',ready:'Technische database gereed.',
 error:'De technische database kon niet worden geladen.',complete:'Voltooi de voertuigselectie.',
-describe:'Beschrijf het probleem.',search:'Probleembeschrijving wordt vertaald...',
+describe:'Beschrijf het probleem.',search:'Symptomen worden geanalyseerd en de technische database wordt doorzocht...',
 none:'Geen voldoende relevante diagnose-informatie gevonden.',one:'1 relevant resultaat',
 many:'{n} relevante resultaten',vehicle:'Voertuig',causes:'Mogelijke oorzaken',
 steps:'Diagnoseprocedure',dtcs:'Gerelateerde DTC’s',difficulty:'Moeilijkheid',rel:'Relevantie'
 }
 };
 
-let L=localStorage.getItem('autodecode_lang')||'en',makers=[],vdb=null,tdb=[],loaded='';
+let L=localStorage.getItem('autodecode_lang')||'en';
+let makers=[],vdb=null,tdb=[],loaded='';
+
+const $=x=>document.getElementById(x);
+
+const N=s=>String(s??'')
+.toLowerCase()
+.normalize('NFD')
+.replace(/[\u0300-\u036f]/g,'')
+.replace(/[^\p{L}\p{N} ]+/gu,' ')
+.replace(/\s+/g,' ')
+.trim();
+
+const C=s=>N(s).replace(/ /g,'_');
+
+const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({
+'&':'&amp;',
+'<':'&lt;',
+'>':'&gt;',
+'"':'&quot;',
+"'":'&#39;'
+}[m]));
+
+function localizedValue(value){
+if(value==null)return '';
+if(typeof value==='string')return value.trim();
+if(Array.isArray(value))return value.filter(x=>x!=null).map(textValue).filter(Boolean).join(', ');
+if(typeof value==='object'){
+let v=value[L]??value.en??value.ro;
+if(v!=null){
+let s=textValue(v).trim();
+if(s)return s;
+}
+for(const v of Object.values(value)){
+let s=textValue(v).trim();
+if(s)return s;
+}
+}
+return String(value).trim();
+}
+
+function localizedArray(value){
+if(value==null)return [];
+if(Array.isArray(value))return value.filter(x=>x!=null).map(textValue).filter(Boolean);
+if(typeof value==='object'){
+let selected=value[L]??value.en??value.ro;
+if(Array.isArray(selected))return selected.filter(x=>x!=null).map(textValue).filter(Boolean);
+if(selected!=null)return [textValue(selected)];
+return Object.values(value)
+.flatMap(x=>Array.isArray(x)?x:[x])
+.filter(x=>x!=null)
+.map(textValue)
+.filter(Boolean);
+}
+return [String(value)];
+}
+
+function valueArray(value){
+if(value==null)return [];
+return Array.isArray(value)?value:[value];
+}
+
+function textValue(value){
+if(value==null)return '';
+if(typeof value==='string'||typeof value==='number'||typeof value==='boolean')return String(value);
+if(Array.isArray(value))return value.map(textValue).filter(Boolean).join(' ');
+if(typeof value==='object')return Object.values(value).map(textValue).filter(Boolean).join(' ');
+return String(value);
+}
+
+function txt(x){
+return N([
+x.id,x.title,x.name,x.description,x.system,x.category,x.subcategory,x.symptoms,
+x.keywords,x.possible_causes,x.diagnostic_steps,x.related_dtcs
+].map(textValue).filter(Boolean).join(' '));
+}
+
+function has(t,a){
+return a.some(x=>t.includes(N(x)));
+}
+
+function tokens(s){
+return N(s).split(' ').filter(Boolean);
+}
+
+function editDistance(a,b){
+a=N(a);
+b=N(b);
+if(a===b)return 0;
+if(!a)return b.length;
+if(!b)return a.length;
+let prev=Array.from({length:b.length+1},(_,i)=>i);
+for(let i=1;i<=a.length;i++){
+let cur=[i];
+for(let j=1;j<=b.length;j++){
+cur[j]=Math.min(
+cur[j-1]+1,
+prev[j]+1,
+prev[j-1]+(a[i-1]===b[j-1]?0:1)
+);
+}
+prev=cur;
+}
+return prev[b.length];
+}
+
+function similarity(a,b){
+a=N(a);
+b=N(b);
+if(!a||!b)return 0;
+if(a===b)return 1;
+if(a.includes(b)||b.includes(a))return Math.min(a.length,b.length)/Math.max(a.length,b.length);
+let d=editDistance(a,b);
+return 1-d/Math.max(a.length,b.length);
+}
+
+function fuzzyPhrase(text,phrase){
+let t=tokens(text);
+let p=tokens(phrase);
+if(!p.length)return 0;
+if(p.length===1){
+let best=0;
+for(const x of t){
+let s=similarity(x,p[0]);
+if(s>best)best=s;
+}
+return best;
+}
+let best=0;
+for(let i=0;i<=t.length-p.length;i++){
+let sum=0;
+for(let j=0;j<p.length;j++)sum+=similarity(t[i+j],p[j]);
+best=Math.max(best,sum/p.length);
+}
+return best;
+}
+
+function phrasePresent(text,phrase){
+let n=N(text),p=N(phrase);
+if(!p)return false;
+if(n.includes(p))return true;
+let s=fuzzyPhrase(n,p);
+return p.length<=4?s>=.84:s>=.80;
+}
+
+function negated(text,phrase){
+let n=N(text);
+let p=N(phrase);
+let i=n.indexOf(p);
+if(i<0)return false;
+let before=n.slice(Math.max(0,i-45),i);
+return has(before,[
+'not','no','without','never',
+'kein','keine','nicht','ohne',
+'nu','nu am','fara','fără','niciun','nici o',
+'pas','sans','aucun','aucune',
+'no','sin',
+'non','senza',
+'geen','niet','zonder'
+]);
+}
 
 const A={
-poor_power:['little power','low power','loss of power','power loss','no power','weak engine','lacks power','poor performance','poor acceleration','lack of performance','pierdere de putere','pierdere putere','nu mai trage','nu trage','lipsa de putere','keine leistung','wenig leistung','perte de puissance','falta de potencia','perdita di potenza','weinig vermogen'],
-low_rpm_power_loss:['low rpm','low rev','low revs','low engine speed','low rpm power','power at low rpm','turații mici','turatii mici','turații joase','turatii joase','niedrige drehzahl','bas régime','bajas revoluciones','bassi regimi','lage toerentallen'],
-limp_mode:['limp mode','limp-home','limp home','reduced power mode','safe mode','emergency mode','notlauf','modo de emergencia','mode dégradé','modalità emergenza','noodloop','mod protecție','mod protectie'],
-engine_stall:['engine stalls','engine stall','stalls','cuts out','engine cuts out','engine stopped','engine shuts off','motor stops','se oprește','se opreste','calează','caleaza','motorul se opreste','motor stopped'],
-no_start:["won't start",'will not start','does not start','no start','not starting','fails to start','engine wont start','nu pornește','nu porneste','nu mai porneste','springt nicht an','ne démarre pas','no arranca','non parte','start niet'],
-hard_start:['hard starting','hard start','difficult to start','starting difficulty','cranks for long','long crank','pornire dificilă','pornire dificila','porneste greu','schwer zu starten','démarrage difficile','arranque difícil','avviamento difficile','moeilijk starten'],
-rough_idle:['rough idle','unstable idle','erratic idle','uneven idle','idle fluctuates','ralanti instabil','ralanti neregulat','unruhiger leerlauf','ralenti instable','ralentí inestable','minimo irregolare','onrustig stationair'],
-misfire:['misfire','misfiring','engine misfire','rateu','rateuri','rateu motor','zündaussetzer','raté moteur','fallo de encendido','mancata accensione','misfire motor'],
-turbo:['turbo','turbocharger','turbocharger fault','boost','boost pressure','underboost','overboost','turbocompresor','turbolader','suralimentation','turboalimentazione'],
-egr:['egr','exhaust gas recirculation','recirculare gaze','agr','recirculation des gaz','abgasrückführung','recirculación de gases'],
-dpf:['dpf','diesel particulate filter','particulate filter','filtru de particule','dieselpartikelfilter','filtre à particules','filtro de partículas','filtro antiparticolato'],
-maf:['maf','mass air flow','mass airflow','air flow meter','air mass meter','debitmetru','luftmassenmesser','débitmètre','caudalimetro','misuratore massa aria','luchtmassameter'],
-map:['map sensor','boost pressure sensor','manifold pressure sensor','manifold absolute pressure','pressure sensor','senzor map','ladedrucksensor','capteur map','sensor map','sensore map','luchtdruksensor'],
-injector:['injector','injectors','fuel injector','injektor','inyector','injecteur','iniettore','injector combustibil','brandstofinjector'],
-fuel_pressure:['fuel pressure','rail pressure','fuel rail','common rail pressure','low fuel pressure','high fuel pressure','presiune combustibil','presiune rampă','presiune rampa','kraftstoffdruck','pression carburant','presión de combustible','pressione carburante','brandstofdruk'],
-crankshaft:['crankshaft','crank sensor','crankshaft sensor','engine speed sensor','arbore cotit','senzor arbore cotit','kurbelwellensensor','capteur vilebrequin','sensor cigüeñal','sensore albero motore','krukassensor'],
-camshaft:['camshaft','cam sensor','camshaft sensor','arbore cu came','senzor ax came','nockenwellensensor','capteur arbre à cames','sensor árbol de levas','sensore albero a camme','nokkenassensor'],
-synchronization:['crank cam correlation','cam crank correlation','timing correlation','synchronization','synchronisation','cam timing','engine timing','sincronizare','steuerzeiten','synchronisation moteur','sincronización','sincronizzazione','motortiming'],
-coolant:['coolant','coolant temperature','engine temperature','temperature sensor','antifreeze','cooling system','lichid de răcire','temperatura motorului','senzor temperatură','kühlmittel','motortemperatur','liquide de refroidissement','refrigerante','liquido refrigerante','koelvloeistof'],
-overheating:['overheating','runs hot','too hot','engine overheating','temperature too high','supraîncălzire','se încinge','überhitzung','surchauffe','sobrecalentamiento','surriscaldamento','oververhitting'],
-oil_pressure:['oil pressure','low oil pressure','oil pressure warning','presiune ulei','presiune scăzută ulei','öldruck','pression huile','presión de aceite','pressione olio','oliedruk'],
-oil_leak:['oil leak','engine oil leak','oil leakage','leaking oil','pierdere ulei','scurgere ulei','ölleck','fuite d huile','fuga de aceite','perdita olio','olielek'],
-oil_consumption:['oil consumption','burning oil','uses oil','consumes oil','consum ulei','arde ulei','ölverbrauch','consommation d huile','consumo de aceite','consumo olio','olieverbruik'],
-ignition:['ignition','ignition system','ignition coil','spark plug','spark plugs','no spark','weak spark','aprindere','bobină de inducție','bujie','bujii','zündung','zündspule','bougie','allumage','encendido','bobina de encendido','accensione','bobina','ontsteking'],
-throttle:['throttle','throttle body','electronic throttle','accelerator pedal','throttle valve','clapetă accelerație','clapeta de accelerație','drosselklappe','papillon','cuerpo de aceleración','corpo farfallato','gasklep'],
-intake:['intake','air intake','intake manifold','air leak','vacuum leak','vacuum hose','admission','admisie','galerie admisie','priză falsă de aer','ansaugsystem','ansaugkrümmer','prise d air','colector de admisión','aspirazione','inlaatspruitstuk'],
-exhaust:['exhaust','exhaust system','exhaust leak','exhaust manifold','tailpipe','evacuare','sistem evacuare','galerie evacuare','abgasanlage','échappement','escape','scarico','uitlaat'],
-catalyst:['catalyst','catalytic converter','catalytic converter fault','catalizator','katalysator','catalyseur','catalizador','catalizzatore'],
-smoke_black:['black smoke','black exhaust smoke','sooty exhaust','black exhaust','fum negru','fum negru pe evacuare','schwarzer rauch','fumée noire','humo negro','fumo nero','zwarte rook'],
-smoke_white:['white smoke','white exhaust smoke','steam from exhaust','vapour from exhaust','coolant smoke','fum alb','fum alb pe evacuare','abur pe evacuare','weißer rauch','fumée blanche','humo blanco','fumo bianco','witte rook'],
-smoke_blue:['blue smoke','blue exhaust smoke','oil smoke','fum albastru','fum albastru pe evacuare','blauer rauch','fumée bleue','humo azul','fumo blu','blauwe rook'],
-transmission:['transmission','gearbox','gear shifting','shifting problem','won’t shift','will not shift','stuck in gear','automatic transmission','manual transmission','cutie de viteze','schimbare viteze','nu schimbă vitezele','getriebe','gangwechsel','boîte de vitesses','cambio','versnellingsbak'],
-clutch:['clutch','clutch pedal','clutch slipping','clutch bite','clutch engagement','ambreiaj','pedala ambreiaj','patinare ambreiaj','kupplung','embrayage','embrague','frizione','koppeling'],
-driveshaft:['driveshaft','drive shaft','propeller shaft','cv axle','cv joint','axle shaft','planetary shaft','cardan','planetară','planetara','antriebswelle','cardanwelle','arbre de transmission','semieje','albero di trasmissione','aandrijfas'],
-differential:['differential','diff','final drive','rear differential','front differential','diferențial','differential','différentiel','diferencial','differenziale','differentieel'],
-brakes:['brake','brakes','braking','brake pedal','brake pads','brake discs','brake rotor','brake caliper','brake fluid','frână','frane','frânare','plăcuțe de frână','discuri de frână','bremsen','bremse','frein','frenos','freno','remmen'],
-abs:['abs','anti-lock braking','antilock','abs warning','abs light','sistem abs','martor abs','abs leuchte','voyant abs','luz abs','spia abs','abs lamp'],
-esp:['esp','esc','traction control','stability control','electronic stability','stability warning','traction warning','control tracțiune','control stabilitate','martor esp','esp leuchte','contrôle de stabilité','control de estabilidad','controllo stabilità','stabiliteitscontrole'],
-brake_pressure:['brake pressure','brake hydraulic pressure','master cylinder','brake booster','servo brake','presiune frână','pompa de frână','servofrână','bremsdruck','hauptbremszylinder','pression de freinage','maître-cylindre','presión de freno','pressione freni','remdruk'],
-parking_brake:['parking brake','handbrake','electronic parking brake','epb','parking brake fault','frână de mână','frână electrică','frana de mana','handbremse','elektrische parkbremse','frein de stationnement','freno de mano','freno di stazionamento','parkeerrem'],
-steering:['steering','steering wheel','steering problem','steering fault','steering heavy','hard steering','power steering','electric power steering','eps','direcție','volan','direcție grea','servo direcție','lenkung','servolenkung','direction','direction assistée','dirección','direzione','stuurinrichting'],
-suspension:['suspension','shock absorber','shocks','strut','spring','coil spring','suspension arm','control arm','ball joint','bushing','suspensie','amortizor','amortizoare','arc','braț suspensie','silentblock','aufhängung','stoßdämpfer','suspension','amortisseur','suspensión','ammortizzatore','ophanging'],
-wheel_bearing:['wheel bearing','wheel hub bearing','hub bearing','bearing noise','wheel bearing noise','rulment roată','rulment roata','zgomot rulment','radlager','roulement de roue','rodamiento','cuscinetto ruota','wiellager'],
-wheel_alignment:['wheel alignment','alignment','tracking','toe','camber','caster','car pulls','pulls left','pulls right','uneven tyre wear','uneven tire wear','geometrie roți','geometrie roti','trage stânga','trage dreapta','uzură anvelope','achsvermessung','géométrie','alineación','allineamento','uitlijning'],
-tyres:['tyre','tyres','tire','tires','tyre pressure','tire pressure','flat tyre','puncture','low tyre pressure','anvelopă','anvelope','presiune pneu','pană','reifendruck','reifen','pneu','neumático','pneumatico','bandenspanning'],
-battery:['battery','weak battery','dead battery','battery voltage','baterie','baterie slabă','batterie','batterie faible','batería','batteria','accu'],
-alternator:['alternator','generator','alternator fault','charging system','alternator not charging','alternatorul','alternator','lichtmaschine','alternateur','alternador','alternatore','dynamo'],
-voltage:['system voltage','voltage high','voltage low','low voltage','high voltage','voltage drop','tensiune','tensiune scăzută','tensiune mare','spannung','tension','tensión','tensione','spanning'],
-wiring:['wiring','wire','wires','electrical wiring','broken wire','open circuit','short circuit','ground fault','poor ground','cablaj','fir','fire electrice','scurtcircuit','masă electrică','kabelbaum','câblage','cableado','cablaggio','bedrading'],
-fuse:['fuse','fuses','blown fuse','fuse box','siguranță','siguranta','siguranță arsă','siguranta arsa','sicherung','fusible','fusible fundido','fusibile','zekering'],
-relay:['relay','relays','relay fault','releu','releu defect','relais','relé','relè','relais defect'],
-wiper:['wiper','wipers','windshield wiper','windshield wipers','windscreen wiper','windscreen wipers','front wiper','rear wiper','wiper motor','ștergător','stergator','ștergătoare','stergatoare','ștergător parbriz','stergator parbriz','scheibenwischer','essuie glace','limpiaparabrisas','tergicristallo','ruitenwisser'],
-wiper_stopped:['wipers stopped working','wiper stopped working','wipers not working','wiper not working','wipers do not work','wiper does not work','wipers will not work','wiper will not work','wipers stopped','wiper stopped','ștergătoarele nu funcționează','stergatoarele nu functioneaza','ștergătoarele s-au oprit','stergatoarele s-au oprit','scheibenwischer funktionieren nicht','essuie glace ne fonctionne pas','limpiaparabrisas no funciona','tergicristalli non funzionano','ruitenwissers werken niet'],
-wiper_intermittent:['intermittent wiper','intermittent wipers','wipers intermittent','wiper intermittent','intermittent operation','intermittent wipe','intermittent wipe not working','works intermittently','working intermittently','works sometimes','only works sometimes','ștergător intermitent','stergator intermitent','funcționează intermitent','functioneaza intermitent','merge intermitent','funcționează uneori','functioneaza uneori','intervallwischer','essuie glace intermittent','limpiaparabrisas intermitente','tergicristallo intermittente','ruitenwisser interval'],
-washer:['washer','windshield washer','windscreen washer','washer fluid','washer pump','washer jet','washer nozzle','parbriz spălare','lichid parbriz','pompa de parbriz','duză parbriz','scheibenwaschanlage','lave glace','lavaparabrisas','lavavetri','ruitensproeier'],
-lighting:['light','lights','headlight','headlights','rear light','tail light','brake light','fog light','indicator','turn signal','blinker','daytime running light','driving light','far','faruri','stop','lampă','lumini','proiector ceață','semnalizare','scheinwerfer','beleuchtung','phare','éclairage','faro','luces','luci','koplamp'],
-door_lock:['door lock','door locks','central locking','central lock','door latch','door actuator','keyless entry','ușă nu se încuie','închidere centralizată','broască ușă','türschloss','zentralverriegelung','serrure porte','verrouillage centralisé','cerradura','chiusura centralizzata','deurslot'],
-window:['window','windows','power window','electric window','window regulator','window motor','geam','geamuri','macara geam','motor geam','fensterheber','vitre électrique','elevalunas','alzacristalli','raammechanisme'],
-mirror:['mirror','side mirror','door mirror','power mirror','folding mirror','heated mirror','oglindă','oglinzi','oglindă electrică','außenspiegel','rétroviseur','espejo','specchietto','buitenspiegel'],
-body_control:['body control module','bcm','body module','gem','generic electronic module','body electronics','module body','modul confort','modul caroserie','modul gem','karosseriesteuergerät','module carrosserie','módulo bcm','modulo carrozzeria','carrosseriemodule'],
-horn:['horn','horn not working','claxon','claxon nu funcționează','hupe','klaxon','bocina','clacson'],
-cluster:['instrument cluster','dashboard','dash','instrument panel','speedometer','tachometer','gauge','warning light','cluster fault','bord','ceasuri bord','panou instrumente','instrumententafel','tableau de bord','cuadro de instrumentos','quadro strumenti','instrumentenpaneel'],
-airbag:['airbag','srs','airbag warning','airbag light','restraint system','srs light','airbag fault','martor airbag','airbag leuchte','voyant airbag','luz airbag','spia airbag','airbag lamp'],
-parking_sensors:['parking sensor','parking sensors','park assist','pdc','parking aid','senzor parcare','senzori parcare','asistență parcare','parksensor','parkhilfe','capteur de stationnement','sensor de aparcamiento','sensore parcheggio','parkeersensor'],
-camera:['rear camera','reverse camera','backup camera','parking camera','front camera','camera fault','cameră marșarier','camera marsarier','cameră parcare','rückfahrkamera','caméra de recul','cámara trasera','telecamera posteriore','achteruitrijcamera'],
-radar:['radar','front radar','adaptive cruise radar','radar sensor','radar fault','radar frontal','radarsensor','capteur radar','sensor radar','sensore radar'],
-lane_assist:['lane assist','lane departure','lane keeping','lane warning','lane departure warning','lane keep assist','asistență bandă','asistenta banda','ieșire de pe bandă','fahrspurassistent','alerte de franchissement','asistente de carril','assistente di corsia','rijstrookassistent'],
-cruise_control:['cruise control','adaptive cruise','acc','speed limiter','tempomat','régulateur de vitesse','control de crucero','controllo velocità'],
-hvac:['hvac','climate control','climate','heater','heating','blower','blower motor','fan','cabin fan','ventilation','climă','aer condiționat','încălzire','ventilator habitaclu','climaanlage','chauffage','ventilation','climatización','riscaldamento','klimaatregeling'],
-ac:['ac','a/c','air conditioning','aircon','compressor','ac compressor','ac not cold','air conditioning not cold','refrigerant','freon','evaporator','condenser','aer condiționat','compresor ac','freon','klimaanlage','kompressor','climatisation','compresseur','aire acondicionado','aria condizionata','airconditioning'],
-infotainment:['infotainment','radio','audio','stereo','speakers','sound system','radio not working','radio fault','sistem audio','radio','lautsprecher','autoradio','audio','sistema de sonido','impianto audio','audiosysteem'],
-navigation:['navigation','gps','sat nav','satellite navigation','navigation system','gps not working','navigație','navigatie','navigationssystem','navigation','navegación','navigazione','navigatie'],
-bluetooth:['bluetooth','bluetooth connection','phone connection','handsfree','hands-free','telefon bluetooth','bluetooth verbindung','connexion bluetooth','conexión bluetooth','connessione bluetooth','bluetooth verbinding'],
-carplay:['carplay','apple carplay','carplay not working','carplay connection','carplay funktioniert nicht','carplay ne fonctionne pas','carplay no funciona','carplay non funziona','carplay werkt niet'],
-android_auto:['android auto','android auto connection','android auto not working','android auto verbindet nicht','android auto ne fonctionne pas','android auto no funciona','android auto non funziona','android auto werkt niet'],
-usb:['usb','usb port','usb connection','usb not working','usb port fault','usb funktioniert nicht','usb ne fonctionne pas','usb no funciona','usb non funziona','usb werkt niet'],
-display:['display','screen','touchscreen','infotainment screen','display fault','screen blank','touch screen','ecran','écran','pantalla','schermo','display defect','scherm'],
-fuse_box:['fuse box','junction box','power distribution box','fuse panel','cutie siguranțe','cutie sigurante','sicherungskasten','boîte à fusibles','caja de fusibles','scatola fusibili','zekeringkast'],
-immobilizer:['immobilizer','immobiliser','anti theft','security system','key not recognized','key recognition','imobilizator','cheie nerecunoscută','wegfahrsperre','antidémarrage','inmovilizador','immobilizzatore','startonderbreker']
+poor_power:[
+'little power','low power','loss of power','power loss','no power','weak engine',
+'lacks power','poor performance','poor acceleration','lack of performance',
+'underpowered','feels weak','feels sluggish','engine feels weak',
+'nu mai trage','nu trage','pierdere de putere','pierdere putere','lipsa de putere',
+'putere scazuta','motor slab','masina nu mai trage','e lenesa','este lenesa',
+'keine leistung','wenig leistung','keine kraft','leistungsverlust','kraftverlust',
+'motor hat keine leistung','schlechte leistung','zu wenig leistung',
+'perte de puissance','manque de puissance','perte puissance','moteur manque de puissance',
+'faible puissance','pas de puissance','manque de performance',
+'falta de potencia','perdida de potencia','poca potencia','sin potencia',
+'le falta fuerza','motor sin fuerza','baja potencia',
+'perdita di potenza','mancanza di potenza','poca potenza','senza potenza',
+'motore fiacco','scarsa potenza',
+'weinig vermogen','vermogenverlies','geen vermogen','te weinig vermogen',
+'motor heeft weinig vermogen','weinig kracht'
+],
+
+low_rpm_power_loss:[
+'low rpm','low rev','low revs','low engine speed','low rpm power',
+'power at low rpm','below 2000 rpm','below 1500 rpm','at low revs',
+'turatii mici','turații mici','turatii joase','turații joase','sub 2000 rpm',
+'sub 1500 rpm','la turatii mici','jos in ture','nu trage jos',
+'niedrige drehzahl','niedrigen drehzahlen','bei niedrigen drehzahlen',
+'unter 2000 umin','unter 1500 umin','untenrum keine leistung',
+'bas regime','bas régimes','à bas régime','sous 2000 tr min',
+'bajas revoluciones','bajo regimen','a bajas revoluciones','por debajo de 2000 rpm',
+'bassi regimi','a bassi regimi','sotto 2000 giri','a bassi giri',
+'lage toerentallen','bij lage toerentallen','onder 2000 tpm','lage toeren'
+],
+
+limp_mode:[
+'limp mode','limp-home','limp home','reduced power mode','safe mode',
+'emergency mode','power reduced','notlauf','notlaufprogramm','schutzbetrieb',
+'notbetrieb','mod protectie','mod protecție','mod avarie','intra in avarie',
+'intra in limp mode','putere redusa',
+'mode dégradé','mode degrade','mode de secours','puissance réduite',
+'modo de emergencia','modo emergencia','potencia reducida','modo protección',
+'modalità emergenza','modalita emergenza','potenza ridotta','modalità protezione',
+'noodloop','noodmodus','verminderd vermogen','veiligheidsmodus'
+],
+
+engine_stall:[
+'engine stalls','engine stall','stalls','cuts out','engine cuts out',
+'engine stopped','engine shuts off','motor stops','motor stalls',
+'se opreste','se oprește','motorul se opreste','motorul se oprește',
+'moare motorul','motorul moare','se opreste in mers','se opreste la semafor',
+'geht aus','motor geht aus','geht während der fahrt aus','motor stirbt ab',
+'calage moteur','moteur cale','moteur s arrete','s arrête en roulant',
+'se cala','motor se cala','motor se para','se apaga el motor',
+'motore si spegne','motore si arresta','si spegne in marcia',
+'motor slaat af','motor valt uit','valt uit tijdens rijden'
+],
+
+no_start:[
+'wont start','will not start','does not start','no start','not starting',
+'fails to start','engine wont start','doesnt start',
+'nu porneste','nu pornește','nu mai porneste','nu mai pornește',
+'nu porneste deloc','motorul nu porneste','nu ia la automat',
+'springt nicht an','startet nicht','motor startet nicht','springt nicht mehr an',
+'ne démarre pas','ne demarre pas','moteur ne démarre pas',
+'no arranca','no arranca el motor','motor no arranca',
+'non parte','non si avvia','motore non parte',
+'start niet','motor start niet','start niet meer'
+],
+
+hard_start:[
+'hard starting','hard start','difficult to start','starting difficulty',
+'cranks for long','long crank','takes long to start','starts after long cranking',
+'porneste greu','pornire dificila','pornire dificilă','porneste dupa mult timp',
+'invarte mult pana porneste','invarteste mult',
+'schwer zu starten','schlechter start','startet schwer','langes starten',
+'démarrage difficile','démarre difficilement','long à démarrer',
+'arranque difícil','arranque dificil','tarda en arrancar','le cuesta arrancar',
+'avviamento difficile','parte con difficoltà','parte con difficolta',
+'moeilijk starten','start moeilijk','lange starttijd'
+],
+
+rough_idle:[
+'rough idle','unstable idle','erratic idle','uneven idle','idle fluctuates',
+'idle shaking','engine shakes at idle','shakes at idle',
+'ralanti instabil','ralanti neregulat','motor tremura la ralanti',
+'tremura la relanti','ralanti oscileaza','ralanti oscilează',
+'unruhiger leerlauf','unruhiger motor im leerlauf','motor ruckelt im stand',
+'ralenti instable','moteur tremble au ralenti','ralenti irrégulier',
+'ralentí inestable','motor tiembla al ralentí','ralenti irregular',
+'minimo irregolare','motore trema al minimo','minimo instabile',
+'onrustig stationair','motor trilt stationair','stationair onrustig'
+],
+
+misfire:[
+'misfire','misfiring','engine misfire','engine skips','skipping',
+'rateu','rateuri','rateu motor','motor da rateuri','motor intrerupe',
+'zündaussetzer','motor setzt aus','fehlzündung',
+'rate moteur','raté moteur','ratés moteur','moteur broute',
+'fallo de encendido','fallos de encendido','motor da tirones',
+'mancata accensione','mancate accensioni','motore strattona',
+'misfire motor','motor slaat over','overslaan motor'
+],
+
+turbo:[
+'turbo','turbocharger','turbocharger fault','boost','boost pressure',
+'underboost','overboost','turbo lag','turbo lagging',
+'turbina','turbocompresor','turbolader','ladedruck','turbo problema',
+'turbocompresseur','suralimentation','pression turbo',
+'turbocompresor','presion de turbo','sobrealimentacion',
+'turbocompressore','sovralimentazione','pressione turbo',
+'turbocompressor','turbodruk','laaddruk'
+],
+
+egr:[
+'egr','exhaust gas recirculation','recirculare gaze','supapa egr',
+'valva egr','agr','abgasrückführung','egr ventil',
+'recirculation des gaz','vanne egr','recirculación de gases',
+'valvula egr','ricircolo dei gas','valvola egr','egr klep'
+],
+
+dpf:[
+'dpf','diesel particulate filter','particulate filter','filtru de particule',
+'filtru particule','filtre particules','dieselpartikelfilter',
+'partikelfilter','filtre à particules','filtro de partículas',
+'filtro antiparticolato','roetfilter'
+],
+
+maf:[
+'maf','mass air flow','mass airflow','air flow meter','air mass meter',
+'debitmetru','senzor maf','luftmassenmesser','luftmengenmesser',
+'débitmètre','capteur maf','caudalimetro','sensor maf',
+'misuratore massa aria','sensore maf','luchtmassameter'
+],
+
+map:[
+'map sensor','boost pressure sensor','manifold pressure sensor',
+'manifold absolute pressure','pressure sensor','senzor map',
+'senzor presiune admisie','ladedrucksensor','saugrohrdrucksensor',
+'capteur map','capteur pression admission','sensor map',
+'sensor presion colector','sensore map','sensore pressione collettore',
+'luchtdruksensor','inlaaddruksensor'
+],
+
+injector:[
+'injector','injectors','fuel injector','injector problem',
+'injektor','einspritzdüse','einspritzventil',
+'injecteur','injecteur carburant','inyector','inyectores',
+'iniettore','iniettori','injector combustibil','injector diesel',
+'brandstofinjector','injector brandstof'
+],
+
+fuel_pressure:[
+'fuel pressure','rail pressure','fuel rail','common rail pressure',
+'low fuel pressure','high fuel pressure','fuel pressure low',
+'presiune combustibil','presiune rampa','presiune rampă',
+'presiune rail','presiune joasa combustibil','presiune mare combustibil',
+'kraftstoffdruck','rail druck','common rail druck',
+'pression carburant','pression rail','pression de carburant',
+'presión de combustible','presion rail','presión rail',
+'pressione carburante','pressione rail','pressione gasolio',
+'brandstofdruk','raildruk','brandstofdruk te laag'
+],
+
+crankshaft:[
+'crankshaft','crank sensor','crankshaft sensor','engine speed sensor',
+'arbore cotit','senzor arbore cotit','senzor turatie',
+'kurbelwelle','kurbelwellensensor','motordrehzahlsensor',
+'vilebrequin','capteur vilebrequin',
+'cigüeñal','sensor cigüeñal',
+'albero motore','sensore albero motore',
+'krukas','krukassensor'
+],
+
+camshaft:[
+'camshaft','cam sensor','camshaft sensor','arbore cu came','senzor ax came',
+'nockenwelle','nockenwellensensor',
+'arbre à cames','capteur arbre à cames',
+'arbol de levas','sensor árbol de levas',
+'albero a camme','sensore albero a camme',
+'nokkenas','nokkenassensor'
+],
+
+synchronization:[
+'crank cam correlation','cam crank correlation','timing correlation',
+'synchronization','synchronisation','cam timing','engine timing',
+'timing mismatch','timing out','sincronizare','corelare axe',
+'distributie decalata','distribuție decalată',
+'steuerzeiten','kurbelwelle nockenwelle korrelation',
+'synchronisation moteur','calage distribution',
+'sincronización','correlación cigüeñal árbol de levas',
+'sincronizzazione','fasatura','correlazione alberi',
+'synchronisatie','motortiming','timing nokkenas'
+],
+
+coolant:[
+'coolant','coolant temperature','engine temperature','temperature sensor',
+'antifreeze','cooling system','lichid de racire','lichid de răcire',
+'temperatura motorului','senzor temperatura','senzor temperatură',
+'antigel','sistem racire','sistem răcire',
+'kühlmittel','motortemperatur','kühlmitteltemperatur','temperatursensor',
+'liquide de refroidissement','température moteur','capteur température',
+'refrigerante','temperatura del motor','sensor temperatura',
+'liquido refrigerante','temperatura motore','sensore temperatura',
+'koelvloeistof','motortemperatuur','temperatuursensor'
+],
+
+overheating:[
+'overheating','runs hot','too hot','engine overheating',
+'temperature too high','overheat',
+'supraincalzire','supraîncălzire','se incinge','se încinge',
+'temperatura prea mare','fierbe apa','fierbe antigelul',
+'überhitzung','motor wird zu heiß','zu hohe temperatur',
+'surchauffe','moteur chauffe','température trop élevée',
+'sobrecalentamiento','motor se calienta demasiado',
+'surriscaldamento','motore si surriscalda',
+'oververhitting','motor wordt te warm'
+],
+
+oil_pressure:[
+'oil pressure','low oil pressure','oil pressure warning',
+'presiune ulei','presiune scazuta ulei','presiune scăzută ulei',
+'ulei pressure','öldruck','niedriger öldruck',
+'pression huile','basse pression huile',
+'presión de aceite','baja presión de aceite',
+'pressione olio','bassa pressione olio',
+'oliedruk','lage oliedruk'
+],
+
+oil_leak:[
+'oil leak','engine oil leak','oil leakage','leaking oil',
+'pierdere ulei','scurgere ulei','pierde ulei','curge ulei',
+'ölleck','motorölverlust','öl tritt aus',
+'fuite huile','fuite d huile','huile fuit',
+'fuga de aceite','pierde aceite','aceite fuga',
+'perdita olio','perdita di olio','olio perde',
+'olielek','olie lekt','olieverlies'
+],
+
+oil_consumption:[
+'oil consumption','burning oil','uses oil','consumes oil',
+'pierde ulei','consum ulei','arde ulei','mananca ulei',
+'ölverbrauch','verbraucht öl','verbrennt öl',
+'consommation huile','brûle de l huile',
+'consumo de aceite','quema aceite',
+'consumo olio','brucia olio',
+'olieverbruik','verbruikt olie'
+],
+
+ignition:[
+'ignition','ignition system','ignition coil','spark plug','spark plugs',
+'no spark','weak spark','aprindere','bobina de inductie','bobină de inducție',
+'bujie','bujii','sistem aprindere',
+'zündung','zündspule','zündkerze','kein zündfunke',
+'allumage','bobine','bougie','pas d étincelle',
+'encendido','bobina de encendido','bujía','sin chispa',
+'accensione','bobina','candela','nessuna scintilla',
+'ontsteking','bobine','bougie','geen vonk'
+],
+
+throttle:[
+'throttle','throttle body','electronic throttle','accelerator pedal',
+'throttle valve','clapeta acceleratie','clapetă accelerație',
+'pedala acceleratie','drosselklappe','gasdrosselklappe',
+'papillon','boîtier papillon','pédale accélérateur',
+'cuerpo de aceleración','mariposa','pedal acelerador',
+'corpo farfallato','valvola a farfalla','pedale acceleratore',
+'gasklep','gasklephuis','gaspedaal'
+],
+
+intake:[
+'intake','air intake','intake manifold','air leak','vacuum leak',
+'vacuum hose','admission','admisie','galerie admisie',
+'priza falsa de aer','priză falsă de aer','fals aer',
+'ansaugsystem','ansaugkrümmer','falschluft',
+'admission air','prise d air','collecteur admission',
+'colector admisión','fuga de aire','entrada de aire',
+'aspirazione','collettore aspirazione','aria falsa',
+'inlaatspruitstuk','valse lucht','luchtinlaat'
+],
+
+exhaust:[
+'exhaust','exhaust system','exhaust leak','exhaust manifold','tailpipe',
+'evacuare','sistem evacuare','galerie evacuare','pierdere evacuare',
+'abgasanlage','abgaskrümmer','auspuffleck',
+'échappement','fuite échappement','collecteur échappement',
+'escape','sistema escape','fuga escape',
+'scarico','sistema scarico','perdita scarico',
+'uitlaat','uitlaatsysteem','uitlaatlek'
+],
+
+catalyst:[
+'catalyst','catalytic converter','catalytic converter fault',
+'catalizator','katalizator','katalysator','katalysator fehler',
+'catalyseur','pot catalytique','catalizador','convertidor catalítico',
+'catalizzatore','catalizzatore guasto','katalysator'
+],
+
+smoke_black:[
+'black smoke','black exhaust smoke','sooty exhaust','black exhaust',
+'fum negru','fum negru pe evacuare','scoate fum negru',
+'schwarzer rauch','schwarzer abgasrauch','rußt stark',
+'fumée noire','fumée noire échappement',
+'humo negro','humo negro escape',
+'fumo nero','fumo nero scarico',
+'zwarte rook','zwarte uitlaatrook'
+],
+
+smoke_white:[
+'white smoke','white exhaust smoke','steam from exhaust',
+'vapour from exhaust','coolant smoke','fum alb','fum alb pe evacuare',
+'abur pe evacuare','iese abur','scoate fum alb',
+'weißer rauch','weißer abgasrauch','dampf aus auspuff',
+'fumée blanche','vapeur échappement',
+'humo blanco','vapor del escape',
+'fumo bianco','vapore dallo scarico',
+'witte rook','witte uitlaatrook','stoom uit uitlaat'
+],
+
+smoke_blue:[
+'blue smoke','blue exhaust smoke','oil smoke',
+'fum albastru','fum albastru pe evacuare','arde ulei',
+'blauer rauch','blauer abgasrauch','ölrauch',
+'fumée bleue','fumée huile',
+'humo azul','humo de aceite',
+'fumo blu','fumo di olio',
+'blauwe rook','blauwe uitlaatrook','olierook'
+],
+
+transmission:[
+'transmission','gearbox','gear shifting','shifting problem',
+'wont shift','will not shift','stuck in gear','automatic transmission',
+'manual transmission','gear change problem','cutie de viteze',
+'schimbare viteze','nu schimba vitezele','nu schimbă vitezele',
+'cutia schimba greu','getriebe','gangwechsel','schaltet nicht',
+'boîte de vitesses','changement de vitesse','boîte ne change pas',
+'cambio','cambio marce','no cambia','cambio automatico',
+'versnellingsbak','schakelen','schakelt niet'
+],
+
+clutch:[
+'clutch','clutch pedal','clutch slipping','clutch bite','clutch engagement',
+'ambreiaj','pedala ambreiaj','patinare ambreiaj','ambreiaj patineaza',
+'kupplung','kupplung rutscht','kupplungspedal',
+'embrayage','embrayage patine',
+'embrague','embrague patina',
+'frizione','frizione slitta','pedale frizione',
+'koppeling','koppeling slipt','koppelingspedaal'
+],
+
+driveshaft:[
+'driveshaft','drive shaft','propeller shaft','cv axle','cv joint',
+'axle shaft','cardan','planetara','planetară','planetara fata',
+'planetara spate','antriebswelle','kardanwelle','gelenkwelle',
+'arbre de transmission','cardan','semieje','junta homocinética',
+'albero di trasmissione','semiasse','giunto omocinetico',
+'aandrijfas','cardanas'
+],
+
+differential:[
+'differential','diff','final drive','rear differential','front differential',
+'diferential','diferențial','diferential spate','differential',
+'achsgetriebe','differenzial','différentiel',
+'diferencial','diferencial trasero','differenziale',
+'differentieel','achterdifferentieel'
+],
+
+brakes:[
+'brake','brakes','braking','brake pedal','brake pads','brake discs',
+'brake rotor','brake caliper','brake fluid',
+'frana','frână','frane','frâne','franare','frânare','placute frana',
+'plăcuțe de frână','discuri de frână','etrier',
+'bremsen','bremse','bremsbeläge','bremsscheiben',
+'frein','freins','plaquettes','disques de frein',
+'frenos','freno','pastillas','discos de freno',
+'freno','freni','pastiglie','dischi freno',
+'remmen','rem','remblokken','remschijven'
+],
+
+abs:[
+'abs','anti-lock braking','antilock','abs warning','abs light',
+'sistem abs','martor abs','abs leuchte','abs lampe',
+'voyant abs','luz abs','spia abs','abs lamp'
+],
+
+esp:[
+'esp','esc','traction control','stability control','electronic stability',
+'stability warning','traction warning','control tractiune',
+'control stabilitate','martor esp','esp leuchte',
+'contrôle stabilité','voyant esp','control de estabilidad',
+'control de tracción','controllo stabilità','controllo trazione',
+'stabiliteitscontrole','tractiecontrole'
+],
+
+brake_pressure:[
+'brake pressure','brake hydraulic pressure','master cylinder',
+'brake booster','servo brake','presiune frana','presiune frână',
+'pompă de frână','pompa de frână','servofrana','servofrână',
+'bremsdruck','hauptbremszylinder','bremskraftverstärker',
+'pression de freinage','maître cylindre','servofrein',
+'presión de freno','cilindro maestro','servofreno',
+'pressione freni','pompa freni','servofreno',
+'remdruk','hoofdremcilinder','rembekrachtiger'
+],
+
+parking_brake:[
+'parking brake','handbrake','electronic parking brake','epb',
+'parking brake fault','frana de mana','frână de mână',
+'frana electrica','frână electrică','frana de parcare',
+'handbremse','elektrische parkbremse',
+'frein de stationnement','frein électrique',
+'freno de mano','freno eléctrico',
+'freno di stazionamento','freno elettrico',
+'handrem','elektrische parkeerrem'
+],
+
+steering:[
+'steering','steering wheel','steering problem','steering fault',
+'steering heavy','hard steering','power steering','electric power steering',
+'eps','directie','direcție','volan','direcție grea','servo directie',
+'servo direcție','lenkung','lenkrad','schwere lenkung','servolenkung',
+'direction','direction assistée','volant','direction dure',
+'dirección','volante','dirección dura','dirección asistida',
+'sterzo','volante','sterzo duro','servosterzo',
+'stuurinrichting','stuur','zware besturing','stuurbekrachtiging'
+],
+
+suspension:[
+'suspension','shock absorber','shocks','strut','spring','coil spring',
+'suspension arm','control arm','ball joint','bushing',
+'suspensie','amortizor','amortizoare','arc','brat suspensie',
+'braț suspensie','silentblock','aufhängung','stoßdämpfer','querlenker',
+'kugelgelenk','buchse','suspension','amortisseur','ressort',
+'bras suspension','rotule','silentbloc',
+'suspensión','amortiguador','muelle','brazo suspensión','rótula',
+'sospensione','ammortizzatore','molla','braccio sospensione',
+'ophanging','schokdemper','veer','draagarm'
+],
+
+wheel_bearing:[
+'wheel bearing','wheel hub bearing','hub bearing','bearing noise',
+'wheel bearing noise','rulment roata','rulment roată','zgomot rulment',
+'radlager','radlager geräusch','roulement de roue','bruit roulement',
+'rodamiento rueda','ruido rodamiento','cuscinetto ruota','rumore cuscinetto',
+'wiellager','wiellager geluid'
+],
+
+wheel_alignment:[
+'wheel alignment','alignment','tracking','toe','camber','caster',
+'car pulls','pulls left','pulls right','uneven tyre wear','uneven tire wear',
+'geometrie roti','geometrie roți','trage stanga','trage stânga',
+'trage dreapta','uzura anvelope','uzură anvelope',
+'achsvermessung','spur','sturz','zieht nach links','zieht nach rechts',
+'géométrie','parallélisme','carrossage','tire à gauche','tire à droite',
+'alineación','convergencia','caída','tira a la izquierda','tira a la derecha',
+'allineamento','convergenza','campanatura','tira a sinistra','tira a destra',
+'uitlijning','sporing','trekt naar links','trekt naar rechts'
+],
+
+tyres:[
+'tyre','tyres','tire','tires','tyre pressure','tire pressure',
+'flat tyre','puncture','low tyre pressure',
+'anvelopa','anvelope','presiune pneu','pană','pana','roata dezumflata',
+'reifen','reifendruck','platten','reifenpanne',
+'pneu','pneus','pression pneu','crevaison',
+'neumático','neumáticos','presión neumáticos','pinchazo',
+'pneumatico','pneumatici','pressione pneumatici','gomma bucata',
+'band','banden','bandenspanning','lekke band'
+],
+
+battery:[
+'battery','weak battery','dead battery','battery voltage',
+'baterie','baterie slaba','baterie slabă','acumulator',
+'batterie','schwache batterie','batterie leer',
+'batterie faible','batterie déchargée',
+'batería','batería débil','batteria','batteria scarica',
+'accu','zwakke accu','lege accu'
+],
+
+alternator:[
+'alternator','generator','alternator fault','charging system',
+'alternator not charging','alternatorul','alternator nu incarca',
+'lichtmaschine','generator','lichtmaschine lädt nicht',
+'alternateur','alternateur ne charge pas',
+'alternador','alternador no carga',
+'alternatore','alternatore non carica',
+'dynamo','alternator laadt niet','laadsysteem'
+],
+
+voltage:[
+'system voltage','voltage high','voltage low','low voltage','high voltage',
+'voltage drop','tensiune','tensiune scazuta','tensiune mare',
+'cadere de tensiune','spannung','unterspannung','überspannung',
+'tension','basse tension','haute tension','chute de tension',
+'tensión','baja tensión','alta tensión','caída de tensión',
+'tensione','bassa tensione','alta tensione','caduta di tensione',
+'spanning','lage spanning','hoge spanning','spanningsval'
+],
+
+wiring:[
+'wiring','wire','wires','electrical wiring','broken wire','open circuit',
+'short circuit','ground fault','poor ground','cablaj','fir','fire electrice',
+'scurtcircuit','masa electrica','masă electrică','kabelbaum','kabelbruch',
+'kurzschluss','massefehler','câblage','fil coupé','court circuit',
+'massa','cableado','cable roto','cortocircuito','masa',
+'cablaggio','filo rotto','cortocircuito','massa',
+'bedrading','draadbreuk','kortsluiting','massa'
+],
+
+fuse:[
+'fuse','fuses','blown fuse','fuse box','siguranta','siguranță',
+'siguranta arsa','siguranță arsă','sicherung','sicherungskasten',
+'fusible','fusible fundido','fusibile','fusibile bruciato',
+'zekering','zekeringkast','doorgebrande zekering'
+],
+
+relay:[
+'relay','relays','relay fault','releu','releu defect','relais',
+'relais fehler','relais defect','relé','relé defectuoso',
+'relé','relè','relè guasto','relais defect'
+],
+
+wiper:[
+'wiper','wipers','windshield wiper','windshield wipers',
+'windscreen wiper','windscreen wipers','front wiper','rear wiper',
+'wiper motor','stergator','ștergător','stergatoare','ștergătoare',
+'stergator parbriz','ștergător parbriz','scheibenwischer',
+'wischt','essuie glace','essuie glaces','limpiaparabrisas',
+'tergicristallo','ruitenwisser'
+],
+
+wiper_stopped:[
+'wipers stopped working','wiper stopped working','wipers not working',
+'wiper not working','wipers do not work','wiper does not work',
+'wipers will not work','wiper will not work','wipers stopped',
+'wiper stopped','stergatoarele nu functioneaza','ștergătoarele nu funcționează',
+'ștergătoarele s au oprit','stergatoarele s au oprit',
+'scheibenwischer funktionieren nicht','essuie glace ne fonctionne pas',
+'limpiaparabrisas no funciona','tergicristalli non funzionano',
+'ruitenwissers werken niet'
+],
+
+wiper_intermittent:[
+'intermittent wiper','intermittent wipers','wipers intermittent',
+'wiper intermittent','intermittent operation','intermittent wipe',
+'intermittent wipe not working','works intermittently',
+'working intermittently','works sometimes','only works sometimes',
+'stergator intermitent','ștergător intermitent','functioneaza intermitent',
+'funcționează intermitent','merge intermitent','funcționează uneori',
+'intervallwischer','essuie glace intermittent',
+'limpiaparabrisas intermitente','tergicristallo intermittente',
+'ruitenwisser interval'
+],
+
+washer:[
+'washer','windshield washer','windscreen washer','washer fluid',
+'washer pump','washer jet','washer nozzle','lichid parbriz',
+'pompa de parbriz','duza parbriz','duză parbriz',
+'scheibenwaschanlage','lave glace','lavaparabrisas','lavavetri',
+'ruitensproeier'
+],
+
+lighting:[
+'light','lights','headlight','headlights','rear light','tail light',
+'brake light','fog light','indicator','turn signal','blinker',
+'daytime running light','driving light','far','faruri','stop','lampa',
+'lumină','lumini','proiector ceata','proiector ceață','semnalizare',
+'scheinwerfer','beleuchtung','bremslicht','blinker',
+'phare','éclairage','clignotant',
+'faro','luces','intermitente',
+'luci','faro','freccia',
+'koplamp','verlichting','richtingaanwijzer'
+],
+
+door_lock:[
+'door lock','door locks','central locking','central lock','door latch',
+'door actuator','keyless entry','usa nu se incuie','ușă nu se încuie',
+'închidere centralizată','inchidere centralizata','broasca usa','broască ușă',
+'türschloss','zentralverriegelung','türverriegelung',
+'serrure porte','verrouillage centralisé',
+'cerradura','cierre centralizado',
+'chiusura centralizzata','serratura porta',
+'deurslot','centrale vergrendeling'
+],
+
+window:[
+'window','windows','power window','electric window','window regulator',
+'window motor','geam','geamuri','macara geam','motor geam',
+'fensterheber','elektrische fenster','vitre électrique',
+'elevalunas','alzacristalli','raammechanisme','elektrisch raam'
+],
+
+mirror:[
+'mirror','side mirror','door mirror','power mirror','folding mirror',
+'heated mirror','oglinda','oglindă','oglinzi','oglinda electrica',
+'außenspiegel','elektrischer außenspiegel',
+'rétroviseur','rétroviseur électrique',
+'espejo','espejo eléctrico',
+'specchietto','specchietto elettrico',
+'buitenspiegel','elektrische spiegel'
+],
+
+body_control:[
+'body control module','bcm','body module','gem','generic electronic module',
+'body electronics','module body','modul confort','modul caroserie','modul gem',
+'karosseriesteuergerät','karosserieelektronik',
+'module carrosserie','módulo carrocería',
+'modulo carrozzeria','carrosseriemodule'
+],
+
+horn:[
+'horn','horn not working','claxon','claxon nu functioneaza',
+'claxon nu funcționează','hupe','klaxon','bocina','clacson','toeter'
+],
+
+cluster:[
+'instrument cluster','dashboard','dash','instrument panel','speedometer',
+'tachometer','gauge','warning light','cluster fault',
+'bord','ceasuri bord','panou instrumente','instrumententafel',
+'kombiinstrument','tableau de bord','compteur',
+'cuadro de instrumentos','velocímetro',
+'quadro strumenti','contachilometri',
+'instrumentenpaneel','dashboard'
+],
+
+airbag:[
+'airbag','srs','airbag warning','airbag light','restraint system',
+'srs light','airbag fault','martor airbag','airbag leuchte',
+'voyant airbag','luz airbag','spia airbag','airbag lamp'
+],
+
+parking_sensors:[
+'parking sensor','parking sensors','park assist','pdc','parking aid',
+'senzor parcare','senzori parcare','asistenta parcare','asistență parcare',
+'parksensor','parkhilfe','capteur stationnement',
+'sensor aparcamiento','sensore parcheggio','parkeersensor'
+],
+
+camera:[
+'rear camera','reverse camera','backup camera','parking camera',
+'front camera','camera fault','camera marsarier','cameră marșarier',
+'cameră parcare','rückfahrkamera','caméra de recul',
+'cámara trasera','telecamera posteriore','achteruitrijcamera'
+],
+
+radar:[
+'radar','front radar','adaptive cruise radar','radar sensor','radar fault',
+'radar frontal','radarsensor','capteur radar','sensor radar',
+'sensore radar'
+],
+
+lane_assist:[
+'lane assist','lane departure','lane keeping','lane warning',
+'lane departure warning','lane keep assist','asistenta banda',
+'asistență bandă','iesire de pe banda','ieșire de pe bandă',
+'fahrspurassistent','spurhalteassistent',
+'alerte franchissement','asistente de carril',
+'assistente di corsia','rijstrookassistent'
+],
+
+cruise_control:[
+'cruise control','adaptive cruise','acc','speed limiter','tempomat',
+'régulateur de vitesse','control de crucero','controllo velocità',
+'cruise control','snelheidsregelaar'
+],
+
+hvac:[
+'hvac','climate control','climate','heater','heating','blower',
+'blower motor','fan','cabin fan','ventilation','clima','climă',
+'aer conditionat','aer condiționat','incalzire','încălzire',
+'ventilator habitaclu','climaanlage','heizung','geblaese',
+'climatisation','chauffage','ventilation',
+'climatización','calefacción','ventilación',
+'climatizzazione','riscaldamento','ventilazione',
+'klimaatregeling','verwarming','ventilatie'
+],
+
+ac:[
+'ac','a c','air conditioning','aircon','compressor','ac compressor',
+'ac not cold','air conditioning not cold','refrigerant','freon',
+'evaporator','condenser','aer conditionat','aer condiționat',
+'compresor ac','freon','klimaanlage','kompressor',
+'klimakompressor','climatisation','compresseur',
+'aire acondicionado','compresor','refrigerante',
+'aria condizionata','compressore','refrigerante',
+'airconditioning','compressor','koudemiddel'
+],
+
+infotainment:[
+'infotainment','radio','audio','stereo','speakers','sound system',
+'radio not working','radio fault','sistem audio','radio',
+'lautsprecher','autoradio','audio','système audio',
+'sistema de sonido','impianto audio','audiosysteem'
+],
+
+navigation:[
+'navigation','gps','sat nav','satellite navigation','navigation system',
+'gps not working','navigatie','navigație','navigationssystem',
+'navigation','navegación','navigazione'
+],
+
+bluetooth:[
+'bluetooth','bluetooth connection','phone connection','handsfree',
+'hands free','telefon bluetooth','bluetooth verbindung',
+'connexion bluetooth','conexión bluetooth','connessione bluetooth',
+'bluetooth verbinding'
+],
+
+carplay:[
+'carplay','apple carplay','carplay not working','carplay connection',
+'carplay funktioniert nicht','carplay ne fonctionne pas',
+'carplay no funciona','carplay non funziona','carplay werkt niet'
+],
+
+android_auto:[
+'android auto','android auto connection','android auto not working',
+'android auto verbindet nicht','android auto ne fonctionne pas',
+'android auto no funciona','android auto non funziona',
+'android auto werkt niet'
+],
+
+usb:[
+'usb','usb port','usb connection','usb not working','usb port fault',
+'usb funktioniert nicht','usb ne fonctionne pas','usb no funciona',
+'usb non funziona','usb werkt niet'
+],
+
+display:[
+'display','screen','touchscreen','infotainment screen','display fault',
+'screen blank','touch screen','ecran','écran','pantalla','schermo',
+'display defect','scherm'
+],
+
+fuse_box:[
+'fuse box','junction box','power distribution box','fuse panel',
+'cutie sigurante','cutie siguranțe','sicherungskasten',
+'boîte à fusibles','caja de fusibles','scatola fusibili','zekeringkast'
+],
+
+immobilizer:[
+'immobilizer','immobiliser','anti theft','security system','key not recognized',
+'key recognition','imobilizator','cheie nerecunoscuta','cheie nerecunoscută',
+'wegfahrsperre','antidémarrage','inmovilizador','immobilizzatore',
+'startonderbreker'
+]
 };
 
 const E={
@@ -374,111 +1215,99 @@ immobilizer:['battery','voltage','body_control','wiring']
 };
 
 const W={
-poor_power:25,low_rpm_power_loss:28,limp_mode:30,engine_stall:40,no_start:34,hard_start:25,
-rough_idle:24,misfire:26,turbo:28,egr:24,dpf:24,maf:24,map:24,injector:23,fuel_pressure:31,
-crankshaft:31,camshaft:29,synchronization:30,coolant:20,overheating:30,oil_pressure:30,
-oil_leak:22,oil_consumption:25,ignition:27,throttle:25,intake:22,exhaust:20,catalyst:22,
-smoke_black:34,smoke_white:34,smoke_blue:34,transmission:32,clutch:30,driveshaft:27,
-differential:27,brakes:34,abs:34,esp:32,brake_pressure:31,parking_brake:28,steering:32,
-suspension:30,wheel_bearing:30,wheel_alignment:27,tyres:25,battery:20,alternator:20,voltage:20,
-wiring:25,fuse:23,relay:23,wiper:30,wiper_stopped:36,wiper_intermittent:34,washer:28,
-lighting:28,door_lock:27,window:27,mirror:25,body_control:30,horn:24,cluster:27,airbag:32,
-parking_sensors:27,camera:27,radar:30,lane_assist:28,cruise_control:27,hvac:27,ac:30,
-infotainment:24,navigation:23,bluetooth:20,carplay:22,android_auto:22,usb:20,display:24,
-fuse_box:24,immobilizer:32,wiper_motor:30,wiper_switch:27,washer_pump:27,blower:25,gps:20,
-wheel_speed:30,fan:25
+poor_power:25,low_rpm_power_loss:32,limp_mode:34,engine_stall:45,no_start:38,
+hard_start:28,rough_idle:28,misfire:31,turbo:30,egr:25,dpf:26,maf:26,map:26,
+injector:28,fuel_pressure:34,crankshaft:34,camshaft:32,synchronization:34,
+coolant:22,overheating:34,oil_pressure:34,oil_leak:24,oil_consumption:28,
+ignition:30,throttle:28,intake:24,exhaust:21,catalyst:24,smoke_black:38,
+smoke_white:38,smoke_blue:38,transmission:36,clutch:34,driveshaft:30,
+differential:30,brakes:38,abs:38,esp:36,brake_pressure:34,parking_brake:31,
+steering:36,suspension:33,wheel_bearing:33,wheel_alignment:29,tyres:27,
+battery:23,alternator:23,voltage:23,wiring:28,fuse:25,relay:25,wiper:34,
+wiper_stopped:42,wiper_intermittent:39,washer:31,lighting:31,door_lock:30,
+window:30,mirror:28,body_control:34,horn:27,cluster:31,airbag:37,
+parking_sensors:30,camera:30,radar:34,lane_assist:31,cruise_control:30,
+hvac:30,ac:34,infotainment:27,navigation:25,bluetooth:22,carplay:25,
+android_auto:25,usb:22,display:27,fuse_box:27,immobilizer:37,wiper_motor:34,
+wiper_switch:30,washer_pump:30,blower:29,gps:22,wheel_speed:34,fan:29
 };
 
-const $=x=>document.getElementById(x);
+const CONCEPT_RULES=[
+{c:'low_rpm_power_loss',phrases:['does not pull at low rpm','doesnt pull low down','no pull down low','weak below','weak at low revs','no power down low','nu trage jos','nu trage la turatii mici','nu mai trage la turatii mici','nu are putere jos','niedrigen drehzahlen keine leistung','untenrum keine kraft','pas de puissance a bas regime','manque de puissance a bas regime','no tiene fuerza abajo','poca fuerza abajo','non ha potenza ai bassi','poca potenza ai bassi','geen vermogen onderin']},
+{c:'poor_power',phrases:['sluggish','lazy engine','engine feels lazy','car feels lazy','feels flat','flat acceleration','nu mai are vlaga','e lenesa','motor lenes','motorul e lenes','nu are vlaga','masina e lenesa','motor schwach','träge beschleunigung','moteur mou','voiture molle','motor perezoso','falta de fuerza','motore fiacco','motore pigro','motor voelt lui']},
+{c:'rough_idle',phrases:['shakes at idle','vibrates at idle','runs rough at idle','tremura la ralanti','tremura la relanti','vibreaza la ralanti','vibrează la ralanti','motor tremura pe loc','ruckelt im leerlauf','vibriert im leerlauf','tremble au ralenti','broute au ralenti','tiembla al ralenti','vibra al minimo','trilt stationair']},
+{c:'engine_stall',phrases:['dies while driving','dies at idle','dies when stopping','engine dies','moare in mers','moare cand opresc','se opreste in mers','se opreste cand franez','geht während der fahrt aus','geht beim anhalten aus','cale en roulant','cale a l arret','se apaga en marcha','se apaga al parar','si spegne in marcia','si spegne quando mi fermo','valt uit tijdens rijden']},
+{c:'hard_start',phrases:['takes a long time to start','cranks a lot before starting','needs several attempts to start','invarte mult pana porneste','trebuie sa dau mult la automat','porneste dupa multe incercari','braucht lange zum starten','lange orgeln','difficile a demarrer','met longtemps a demarrer','tarda mucho en arrancar','necesita varios intentos','ci mette molto ad avviarsi','lang starten']},
+{c:'no_start',phrases:['cranks but does not start','cranks but wont start','invarte dar nu porneste','da la automat dar nu porneste','se invarte dar nu porneste','dreht aber springt nicht an','tourne mais ne demarre pas','gira pero no arranca','gira ma non parte','draait maar start niet']},
+{c:'limp_mode',phrases:['loses power and warning light','power suddenly reduced','suddenly has no power','suddenly loses power','pierde puterea brusc','ramane fara putere','intra in avarie','ramane in avarie','plötzlich keine leistung','geht in den notlauf','perte soudainement la puissance','mode degrade','pierde potencia de repente','entra en emergencia','perde potenza improvvisamente','gaat plots in noodloop']},
+{c:'misfire',phrases:['jerks under acceleration','jerking under acceleration','hesitates and jerks','engine jerks','dă în nas','da in nas','da rateuri','merge in suturi','merge in trei','motorul merge neregulat','ruckelt beim beschleunigen','ruckelt beim gasgeben','broute a l acceleration','donne des a coups','da tirones','da tirones al acelerar','strattona in accelerazione','houdt in bij accelereren']},
+{c:'smoke_black',phrases:['black smoke from exhaust','smokes black','scoate fum negru','fum negru la acceleratie','schwarzer rauch aus auspuff','raucht schwarz','fumee noire echappement','humo negro del escape','fumo nero dallo scarico','zwarte rook uit uitlaat']},
+{c:'smoke_white',phrases:['white smoke from exhaust','smokes white','scoate fum alb','abur alb pe evacuare','weißer rauch aus auspuff','raucht weiß','fumee blanche echappement','humo blanco del escape','fumo bianco dallo scarico','witte rook uit uitlaat']},
+{c:'smoke_blue',phrases:['blue smoke from exhaust','smokes blue','scoate fum albastru','fum albastru la evacuare','blauer rauch aus auspuff','raucht blau','fumee bleue echappement','humo azul del escape','fumo blu dallo scarico','blauwe rook uit uitlaat']},
+{c:'overheating',phrases:['temperature keeps rising','temperature goes into red','overheats in traffic','gets hot in traffic','urca temperatura','temperatura urca','se incinge in trafic','intra pe rosu temperatura','temperatur steigt','wird im stau heiß','chauffe dans les embouteillages','temperatura sube en trafico','si surriscalda nel traffico','wordt warm in file']},
+{c:'wheel_alignment',phrases:['car pulls to one side','pulls to the left','pulls to the right','trage intr o parte','trage intr-o parte','trage intr o parte','trage stanga','trage dreapta','zieht zu einer seite','zieht nach links','zieht nach rechts','tire d un cote','tire a gauche','tire a droite','tira hacia un lado','tira a la izquierda','tira a la derecha','tira da una parte','trekt naar een kant']},
+{c:'battery',phrases:['battery is weak','battery keeps dying','battery goes flat','bateria moare','bateria e slaba','bateria slabeste','batterie ist schwach','batterie leer','batterie se decharge','bateria se descarga','batteria scarica','accu loopt leeg']},
+{c:'alternator',phrases:['battery is not charging','alternator not charging','does not charge','nu incarca','alternatorul nu incarca','nu incarca bateria','laedt die batterie nicht','batterie wird nicht geladen','ne charge pas','no carga la bateria','non carica la batteria','accu wordt niet geladen']}
+];
 
-const N=s=>String(s??'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^\p{L}\p{N} ]+/gu,' ').replace(/\s+/g,' ').trim();
-const C=s=>N(s).replace(/ /g,'_');
-const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
-
-function localizedValue(value){
-if(value==null)return '';
-if(typeof value==='string')return value.trim();
-if(Array.isArray(value))return value.filter(x=>x!=null).map(textValue).filter(Boolean).join(', ');
-if(typeof value==='object'){
-let v=value[L]??value.en??value.ro;
-if(v!=null){
-let s=textValue(v).trim();
-if(s)return s;
-}
-for(const v of Object.values(value)){
-let s=textValue(v).trim();
-if(s)return s;
+function conceptEvidence(q,c){
+let aliases=A[c]||[];
+let best=0;
+let exact=0;
+for(const phrase of aliases){
+let p=N(phrase);
+if(!p)continue;
+if(q.includes(p)){
+exact=Math.max(exact,p.length);
+best=Math.max(best,1);
+}else{
+let f=fuzzyPhrase(q,p);
+let threshold=p.split(' ').length>2?.79:.84;
+if(f>=threshold)best=Math.max(best,f);
 }
 }
-return String(value).trim();
+for(const rule of CONCEPT_RULES){
+if(rule.c!==c)continue;
+for(const phrase of rule.phrases){
+let p=N(phrase);
+if(q.includes(p)){
+best=Math.max(best,1);
+}else{
+let f=fuzzyPhrase(q,p);
+if(f>=.82)best=Math.max(best,f);
 }
-
-function localizedArray(value){
-if(value==null)return [];
-if(Array.isArray(value))return value.filter(x=>x!=null).map(textValue).filter(Boolean);
-if(typeof value==='object'){
-let selected=value[L]??value.en??value.ro;
-if(Array.isArray(selected))return selected.filter(x=>x!=null).map(textValue).filter(Boolean);
-if(selected!=null)return [textValue(selected)];
-return Object.values(value).flatMap(x=>Array.isArray(x)?x:[x]).filter(x=>x!=null).map(textValue).filter(Boolean);
 }
-return [String(value)];
 }
-
-function valueArray(value){
-if(value==null)return [];
-return Array.isArray(value)?value:[value];
-}
-
-function textValue(value){
-if(value==null)return '';
-if(typeof value==='string'||typeof value==='number'||typeof value==='boolean')return String(value);
-if(Array.isArray(value))return value.map(textValue).filter(Boolean).join(' ');
-if(typeof value==='object')return Object.values(value).map(textValue).filter(Boolean).join(' ');
-return String(value);
-}
-
-function txt(x){
-return N([
-x.id,x.title,x.name,x.description,x.system,x.category,x.subcategory,x.symptoms,x.keywords,
-x.possible_causes,x.diagnostic_steps,x.related_dtcs
-].map(textValue).filter(Boolean).join(' '));
-}
-
-function has(t,a){
-return a.some(x=>t.includes(N(x)));
+return{best,exact};
 }
 
 function concepts(q){
-let n=N(q),p=[];
-for(let [c,a] of Object.entries(A))if(has(n,a))p.push(c);
-return [...new Set(p)];
+let n=N(q);
+let found=[];
+for(const c of Object.keys(A)){
+let e=conceptEvidence(n,c);
+if(e.best>=.84){
+let negative=A[c].some(p=>negated(n,N(p)));
+if(!negative)found.push({c,s:e.best});
 }
-
-function translatedQuery(q){
-let n=N(q),matches=[];
-for(const [c,a] of Object.entries(A)){
-for(const phrase of a){
+}
+for(const rule of CONCEPT_RULES){
+if(found.some(x=>x.c===rule.c))continue;
+for(const phrase of rule.phrases){
 let p=N(phrase);
-if(p&&n.includes(p)){
-matches.push({c,p,len:p.length});
+if(n.includes(p)){
+if(!negated(n,p))found.push({c:rule.c,s:1});
+break;
+}
+let f=fuzzyPhrase(n,p);
+if(f>=.84&&!negated(n,p)){
+found.push({c:rule.c,s:f});
 break;
 }
 }
 }
-matches.sort((a,b)=>b.len-a.len);
-let covered='',out=[];
-for(const x of matches){
-if(!out.includes(x.c)){
-out.push(x.c);
-covered+=` ${x.p}`;
-}
-}
-let english=out.map(c=>c.replaceAll('_',' '));
-let raw=N(q);
-let englishTokens=english.join(' ');
-if(!englishTokens)return raw;
-return englishTokens;
+found.sort((a,b)=>b.s-a.s);
+return found.map(x=>x.c);
 }
 
 function expanded(p){
@@ -496,7 +1325,22 @@ return s;
 function humanizeId(id){
 let s=N(String(id??'').replace(/[-_]+/g,' '));
 if(!s)return 'Diagnostic information';
-s=s.replace(/\babs\b/g,'ABS').replace(/\besp\b/g,'ESP').replace(/\besc\b/g,'ESC').replace(/\bdpf\b/g,'DPF').replace(/\begr\b/g,'EGR').replace(/\bmaf\b/g,'MAF').replace(/\bmap\b/g,'MAP').replace(/\bacc\b/g,'ACC').replace(/\bcan\b/g,'CAN').replace(/\blin\b/g,'LIN').replace(/\bbcm\b/g,'BCM').replace(/\bgem\b/g,'GEM').replace(/\bsrs\b/g,'SRS').replace(/\bepb\b/g,'EPB').replace(/\beps\b/g,'EPS').replace(/\bgps\b/g,'GPS').replace(/\bmk(\d+)\b/gi,'Mk$1');
+s=s.replace(/\babs\b/g,'ABS')
+.replace(/\besp\b/g,'ESP')
+.replace(/\besc\b/g,'ESC')
+.replace(/\bdpf\b/g,'DPF')
+.replace(/\begr\b/g,'EGR')
+.replace(/\bmaf\b/g,'MAF')
+.replace(/\bmap\b/g,'MAP')
+.replace(/\bacc\b/g,'ACC')
+.replace(/\bcan\b/g,'CAN')
+.replace(/\blin\b/g,'LIN')
+.replace(/\bbcm\b/g,'BCM')
+.replace(/\bgem\b/g,'GEM')
+.replace(/\bsrs\b/g,'SRS')
+.replace(/\bepb\b/g,'EPB')
+.replace(/\beps\b/g,'EPS')
+.replace(/\bgps\b/g,'GPS');
 return s.replace(/\b\p{L}/gu,c=>c.toUpperCase());
 }
 
@@ -526,32 +1370,165 @@ let x=r.vehicle||r.applicable||{};
 let models=x.models??x.model;
 let generations=x.generations??x.generation;
 let engines=x.engines??x.engine;
-return (models==null||matchesValue(v.m.id,models))&&(generations==null||matchesValue(v.g.id,generations))&&(engines==null||matchesValue(v.e.id,engines));
+return(
+(models==null||matchesValue(v.m.id,models))&&
+(generations==null||matchesValue(v.g.id,generations))&&
+(engines==null||matchesValue(v.e.id,engines))
+);
+}
+
+function fieldConceptStrength(r,c){
+let aliases=A[c]||[];
+let fields=[
+...localizedArray(r.symptoms),
+...localizedArray(r.keywords),
+localizedValue(r.title),
+localizedValue(r.name),
+localizedValue(r.description),
+localizedValue(r.system),
+localizedValue(r.category),
+...localizedArray(r.possible_causes),
+...localizedArray(r.diagnostic_steps)
+].filter(Boolean);
+
+let best=0;
+let direct=false;
+for(const field of fields){
+let n=N(field);
+for(const a of aliases){
+let p=N(a);
+if(!p)continue;
+if(n===p){
+direct=true;
+best=Math.max(best,1);
+continue;
+}
+if(n.includes(p)||p.includes(n)){
+best=Math.max(best,.92);
+continue;
+}
+let f=fuzzyPhrase(n,p);
+if(f>=.84)best=Math.max(best,f);
+}
+}
+return{best,direct};
 }
 
 function score(r,p,q){
-let t=txt(r),symptoms=localizedArray(r.symptoms).map(C),s=new Set(symptoms),keywords=localizedArray(r.keywords).map(N),z=0,m=[];
+let z=0;
+let matched=[];
+let t=txt(r);
+
 for(const c of p){
-let a=A[c]||[c.replaceAll('_',' ')],direct=s.has(c),key=keywords.some(x=>a.some(y=>x===N(y)||x.includes(N(y))||N(y).includes(x))),phrase=has(t,a);
-if(direct){z+=W[c]||20;m.push(c)}
-else if(key){z+=(W[c]||20)*.72;m.push(c)}
-else if(phrase){z+=(W[c]||20)*.42;m.push(c)}
+let w=W[c]||20;
+let ev=fieldConceptStrength(r,c);
+
+if(ev.direct){
+z+=w*1.15;
+matched.push(c);
+}else if(ev.best>=.92){
+z+=w*.92;
+matched.push(c);
+}else if(ev.best>=.84){
+z+=w*.68;
+matched.push(c);
+}else if(has(t,A[c]||[])){
+z+=w*.42;
+matched.push(c);
 }
-for(const c of expanded(p).filter(x=>!p.includes(x)))if(has(t,A[c]||[c.replaceAll('_',' ')]))z+=4;
+}
+
+let derived=expanded(p).filter(c=>!p.includes(c));
+
+for(const c of derived){
+let ev=fieldConceptStrength(r,c);
+if(ev.best>=.92)z+=(W[c]||20)*.22;
+else if(ev.best>=.84)z+=(W[c]||20)*.12;
+else if(has(t,A[c]||[]))z+=3;
+}
+
 let dtcs=localizedArray(r.related_dtcs);
-if(dtcs.some(x=>N(q).includes(N(x))))z+=35;
-if(p.length>=2&&p.every(c=>has(t,A[c]||[c.replaceAll('_',' ')])))z+=18;
-let spec=N([r.id,r.system,r.keywords,r.related_dtcs].map(textValue).join(' '));
-if(p.includes('low_rpm_power_loss')&&has(spec,['p0299','underboost','turbo','boost']))z+=24;
-if(p.includes('limp_mode')&&has(spec,['underboost','overboost','turbo','egr','dpf','fuel pressure']))z+=16;
-if(p.includes('poor_power')&&p.includes('limp_mode')&&has(spec,['injector circuit','coolant','coolant temperature','system voltage']))z-=20;
-return{r,s:Math.max(0,Math.min(100,z)),m:[...new Set(m)]};
+let nq=N(q);
+
+for(const d of dtcs){
+let nd=N(d);
+if(!nd)continue;
+if(nq.includes(nd))z+=45;
+else if(nd.length>=3&&fuzzyPhrase(nq,nd)>=.9)z+=28;
+}
+
+let titleText=N([
+localizedValue(r.title),
+localizedValue(r.name),
+localizedValue(r.system),
+localizedValue(r.category)
+].join(' '));
+
+if(p.includes('low_rpm_power_loss')&&has(titleText,['underboost','turbo','boost','low rpm'])){
+z+=28;
+}
+
+if(p.includes('limp_mode')&&has(titleText,['underboost','overboost','turbo','egr','dpf','fuel pressure','reduced power'])){
+z+=22;
+}
+
+if(p.includes('poor_power')&&p.includes('limp_mode')){
+if(has(titleText,['turbo','boost','underboost','egr','dpf','fuel pressure','throttle'])){
+z+=18;
+}
+}
+
+if(p.includes('smoke_black')&&has(t,['injector','maf','map','egr','dpf','turbo','fuel'])){
+z+=16;
+}
+
+if(p.includes('smoke_white')&&has(t,['coolant','coolant temperature','head gasket','injector','turbo'])){
+z+=16;
+}
+
+if(p.includes('smoke_blue')&&has(t,['oil','turbo','oil consumption','oil leak'])){
+z+=16;
+}
+
+if(p.includes('no_start')&&has(t,['crankshaft','camshaft','synchronization','fuel pressure','injector','immobilizer'])){
+z+=15;
+}
+
+if(p.includes('rough_idle')&&has(t,['injector','maf','egr','fuel pressure','ignition','intake'])){
+z+=12;
+}
+
+if(p.length>=2){
+let matchedPrimary=p.filter(c=>matched.includes(c)).length;
+if(matchedPrimary>=2)z+=18;
+if(matchedPrimary>=3)z+=12;
+if(matchedPrimary===p.length)z+=14;
+}
+
+let symptomCount=localizedArray(r.symptoms).length;
+let keywordCount=localizedArray(r.keywords).length;
+
+if(symptomCount&&p.some(c=>localizedArray(r.symptoms).some(x=>C(x)===c))){
+z+=10;
+}
+
+if(keywordCount&&p.some(c=>localizedArray(r.keywords).some(x=>N(x).includes(N(c.replaceAll('_',' ')))))){
+z+=5;
+}
+
+return{
+r,
+s:Math.max(0,Math.min(100,z)),
+m:[...new Set(matched)]
+};
 }
 
 function dedupe(rows){
 let out=new Map();
+
 for(const x of rows){
 let r=x.r;
+
 let core=[
 N(localizedValue(r.title)||localizedValue(r.name)||humanizeId(r.id)),
 N(systemName(r)),
@@ -560,19 +1537,48 @@ localizedArray(r.possible_causes).map(N).sort().join('|'),
 localizedArray(r.diagnostic_steps).map(N).sort().join('|'),
 localizedArray(r.related_dtcs).map(N).sort().join('|')
 ].join('||');
+
 let id=N(r.id);
 let key=core||id;
+
 if(!out.has(key)||x.s>out.get(key).s)out.set(key,x);
 }
-return [...out.values()].sort((a,b)=>b.s-a.s);
+
+return[...out.values()].sort((a,b)=>b.s-a.s);
 }
 
 function setLang(){
 let x=I[L]||I.en;
-[['home','home'],['intro','intro'],['lm','make'],['lmodel','model'],['lg','generation'],['ly','year'],['le','engine'],['lp','problem'],['find','find'],['rh','rh']].forEach(([id,k])=>$(id).textContent=x[k]);
+
+[
+['home','home'],
+['intro','intro'],
+['lm','make'],
+['lmodel','model'],
+['lg','generation'],
+['ly','year'],
+['le','engine'],
+['lp','problem'],
+['find','find'],
+['rh','rh']
+].forEach(([id,k])=>$(id).textContent=x[k]);
+
 $('problem').placeholder=x.ph;
-$('langbtn').textContent={en:'🇬🇧 EN',de:'🇩🇪 DE',ro:'🇷🇴 RO',fr:'🇫🇷 FR',es:'🇪🇸 ES',it:'🇮🇹 IT',nl:'🇳🇱 NL'}[L]+' ▾';
-['make','model','generation','year','engine'].forEach((id,i)=>$(id).options[0].textContent=x[['sm','smod','sg','sy','se'][i]]);
+
+$('langbtn').textContent={
+en:'🇬🇧 EN',
+de:'🇩🇪 DE',
+ro:'🇷🇴 RO',
+fr:'🇫🇷 FR',
+es:'🇪🇸 ES',
+it:'🇮🇹 IT',
+nl:'🇳🇱 NL'
+}[L]+' ▾';
+
+['make','model','generation','year','engine']
+.forEach((id,i)=>{
+$(id).options[0].textContent=x[['sm','smod','sg','sy','se'][i]];
+});
 }
 
 function reset(id,k,off=true){
@@ -582,13 +1588,17 @@ $(id).disabled=off;
 
 function fill(id,a,k){
 reset(id,k,false);
+
 valueArray(a).forEach(x=>{
 if(x==null)return;
+
 if(typeof x==='object'){
 let name=localizedValue(x.name)||localizedValue(x.title)||localizedValue(x.description)||x.id;
 if(id==='engine'&&x.power_hp!=null)name+=' — '+x.power_hp+' HP';
 $(id).add(new Option(name,x.id??name));
-}else $(id).add(new Option(x,x));
+}else{
+$(id).add(new Option(x,x));
+}
 });
 }
 
@@ -597,123 +1607,255 @@ let m=vdb?.models?.find(x=>String(x.id)===$('model').value);
 let g=m?.generations?.find(x=>String(x.id)===$('generation').value);
 let e=g?.engines?.find(x=>String(x.id)===$('engine').value);
 let mk=makers.find(x=>String(x.id)===$('make').value);
+
 return{mk,m,g,e,y:$('year').value};
 }
 
 async function yaml(u){
-let r=await fetch(u+(u.includes('?')?'&':'?')+'v='+Date.now(),{cache:'no-store',headers:{Accept:'text/yaml,text/plain,application/x-yaml,*/*'}});
+let r=await fetch(
+u+(u.includes('?')?'&':'?')+'v='+Date.now(),
+{
+cache:'no-store',
+headers:{
+Accept:'text/yaml,text/plain,application/x-yaml,*/*'
+}
+}
+);
+
 if(!r.ok)throw Error('HTTP '+r.status+' — '+u);
+
 let text=await r.text();
+
 if(!text.trim())throw Error('Empty response — '+u);
-try{return jsyaml.load(text)}catch(e){throw Error('YAML parse error in '+u+': '+e.message)}
+
+try{
+return jsyaml.load(text);
+}catch(e){
+throw Error('YAML parse error in '+u+': '+e.message);
+}
 }
 
 function years(g){
-let a=Number(g?.production?.from)||0,b=Number(g?.production?.to)||new Date().getFullYear();
-if(!a||b<a)return [];
-return Array.from({length:Math.max(0,b-a+1)},(_,i)=>String(a+i));
+let a=Number(g?.production?.from)||0;
+let b=Number(g?.production?.to)||new Date().getFullYear();
+
+if(!a||b<a)return[];
+
+return Array.from(
+{length:Math.max(0,b-a+1)},
+(_,i)=>String(a+i)
+);
 }
 
 function showVehicle(){
 let v=current();
+
 if(!v.mk||!v.m||!v.g||!v.e||!v.y){
 $('vehicle').hidden=true;
 $('find').disabled=true;
 return;
 }
+
 $('vehicle').hidden=false;
+
 let codes=Array.isArray(v.e.engine_codes)?v.e.engine_codes:[];
-$('vehicle').innerHTML='<strong>'+esc((I[L]||I.en).vehicle)+':</strong> '+esc(localizedValue(v.mk.name))+' '+esc(localizedValue(v.m.name))+' '+esc(localizedValue(v.g.name))+' · '+esc(v.y)+' · '+esc(localizedValue(v.e.name))+(codes.length?' · '+esc(codes.join(', ')):'');
+
+$('vehicle').innerHTML=
+'<strong>'+
+esc((I[L]||I.en).vehicle)+
+':</strong> '+
+esc(localizedValue(v.mk.name))+' '+
+esc(localizedValue(v.m.name))+' '+
+esc(localizedValue(v.g.name))+
+' · '+
+esc(v.y)+
+' · '+
+esc(localizedValue(v.e.name))+
+(codes.length?' · '+esc(codes.join(', ')):'');
 $('find').disabled=false;
 }
 
 async function loadTech(id){
 if(loaded===id&&Array.isArray(tdb)&&tdb.length)return;
+
 let url='data/technical/diagnostics/'+encodeURIComponent(id)+'.yaml';
+
 $('status').textContent=(I[L]||I.en).loading;
 $('status').className='status';
+
 try{
-let r=await fetch(url+'?v='+Date.now(),{cache:'no-store',headers:{Accept:'text/yaml,text/plain,application/x-yaml,*/*'}});
+
+let r=await fetch(
+url+'?v='+Date.now(),
+{
+cache:'no-store',
+headers:{
+Accept:'text/yaml,text/plain,application/x-yaml,*/*'
+}
+}
+);
+
 if(!r.ok)throw Error('HTTP '+r.status+' while loading '+url);
+
 let text=await r.text();
+
 if(!text.trim())throw Error('Empty technical database: '+url);
+
 let d;
-try{d=jsyaml.load(text)}catch(e){throw Error('YAML parse error in '+url+': '+e.message)}
-if(!d||!Array.isArray(d.technical_data))throw Error('Invalid technical_data structure in '+url);
+
+try{
+d=jsyaml.load(text);
+}catch(e){
+throw Error('YAML parse error in '+url+': '+e.message);
+}
+
+if(!d||!Array.isArray(d.technical_data)){
+throw Error('Invalid technical_data structure in '+url);
+}
+
 tdb=d.technical_data.filter(x=>x&&typeof x==='object');
 loaded=id;
+
 $('status').textContent=(I[L]||I.en).ready;
 $('status').className='status success';
+
 }catch(e){
-console.error('TECH DATABASE ERROR:',{manufacturer:id,url,error:e});
-tdb=[];loaded='';
+
+console.error('TECH DATABASE ERROR:',{
+manufacturer:id,
+url,
+error:e
+});
+
+tdb=[];
+loaded='';
+
 $('status').textContent=(I[L]||I.en).error;
 $('status').className='status error';
+
 let debug=document.getElementById('debug-status');
 if(debug)debug.textContent=e.message;
+
 throw e;
 }
 }
 
 $('make').onchange=async()=>{
+
 let id=$('make').value;
+
 reset('model','smod');
 reset('generation','sg');
 reset('year','sy');
 reset('engine','se');
+
 $('vehicle').hidden=true;
 $('find').disabled=true;
 $('results').hidden=true;
+
 vdb=null;
+
 if(!id){
-loaded='';tdb=[];$('status').textContent='';
+loaded='';
+tdb=[];
+$('status').textContent='';
 return;
 }
+
 try{
+
 $('status').textContent=(I[L]||I.en).loading;
 $('status').className='status';
-vdb=await yaml('data/vehicles/'+encodeURIComponent(id)+'.yaml');
-if(!vdb||!Array.isArray(vdb.models))throw Error('Invalid vehicle database structure for '+id);
+
+vdb=await yaml(
+'data/vehicles/'+
+encodeURIComponent(id)+
+'.yaml'
+);
+
+if(!vdb||!Array.isArray(vdb.models)){
+throw Error('Invalid vehicle database structure for '+id);
+}
+
 fill('model',vdb.models,'smod');
+
 await loadTech(id);
+
 $('status').textContent=(I[L]||I.en).ready;
 $('status').className='status success';
+
 }catch(e){
+
 console.error('MAKE LOAD ERROR:',id,e);
+
 $('status').textContent=(I[L]||I.en).error;
 $('status').className='status error';
+
 let debug=document.getElementById('debug-status');
 if(debug)debug.textContent=e.message;
 }
 };
 
 $('model').onchange=()=>{
-let m=vdb?.models?.find(x=>String(x.id)===$('model').value);
+
+let m=vdb?.models?.find(
+x=>String(x.id)===$('model').value
+);
+
 reset('generation','sg');
 reset('year','sy');
 reset('engine','se');
+
 $('vehicle').hidden=true;
 $('find').disabled=true;
-if(m)fill('generation',m.generations||[],'sg');
+$('results').hidden=true;
+
+if(m){
+fill(
+'generation',
+m.generations||[],
+'sg'
+);
+}
 };
 
 $('generation').onchange=()=>{
+
 let v=current();
+
 reset('year','sy');
 reset('engine','se');
+
 $('vehicle').hidden=true;
 $('find').disabled=true;
+$('results').hidden=true;
+
 if(v.g){
+
 let ys=years(v.g);
-if(ys.length)fill('year',ys.map(x=>({id:x,name:x})),'sy');
-fill('engine',v.g.engines||[],'se');
+
+if(ys.length){
+fill(
+'year',
+ys.map(x=>({id:x,name:x})),
+'sy'
+);
+}
+
+fill(
+'engine',
+v.g.engines||[],
+'se'
+);
 }
 };
 
 $('year').onchange=showVehicle;
 $('engine').onchange=showVehicle;
 
-$('langbtn').onclick=()=>$('langmenu').classList.toggle('open');
+$('langbtn').onclick=()=>{
+$('langmenu').classList.toggle('open');
+};
 
 document.querySelectorAll('[data-l]').forEach(x=>{
 x.onclick=()=>{
@@ -726,23 +1868,34 @@ showVehicle();
 });
 
 document.addEventListener('click',e=>{
-if(!e.target.closest('.langs'))$('langmenu').classList.remove('open');
+if(!e.target.closest('.langs')){
+$('langmenu').classList.remove('open');
+}
 });
 
-$('problem').oninput=()=>{$('results').hidden=true};
+$('problem').oninput=()=>{
+$('results').hidden=true;
+};
 
 $('find').onclick=async()=>{
-let v=current(),q=$('problem').value.trim(),u=I[L]||I.en;
+
+let v=current();
+let q=$('problem').value.trim();
+let u=I[L]||I.en;
 
 if(!v.mk||!v.m||!v.g||!v.e||!v.y){
+
 $('status').textContent=u.complete;
 $('status').className='status error';
+
 return;
 }
 
 if(!q){
+
 $('status').textContent=u.describe;
 $('status').className='status error';
+
 return;
 }
 
@@ -751,80 +1904,255 @@ $('status').textContent=u.search;
 $('status').className='status';
 
 try{
+
 await loadTech(v.mk.id);
 
-let translated=translatedQuery(q);
-let p=concepts(translated);
-let vehicleRows=tdb.filter(r=>vehicleMatch(r,v));
-let rows=vehicleRows.map(r=>score(r,p,translated)).filter(x=>x.s>=8);
+let normalized=N(q);
+let p=concepts(normalized);
+
+let vehicleRows=tdb.filter(
+r=>vehicleMatch(r,v)
+);
+
+let rows=vehicleRows
+.map(r=>score(r,p,normalized))
+.filter(x=>x.s>=7);
+
 rows=dedupe(rows).slice(0,20);
 
 $('results').hidden=false;
-$('count').textContent=rows.length===1?u.one:u.many.replace('{n}',rows.length);
 
-$('list').innerHTML=rows.length?rows.map(x=>{
-let r=x.r,causes=localizedArray(r.possible_causes),steps=localizedArray(r.diagnostic_steps),dtcs=localizedArray(r.related_dtcs);
-return `<article class="card">
+$('count').textContent=
+rows.length===1
+?u.one
+:u.many.replace(
+'{n}',
+rows.length
+);
+
+$('list').innerHTML=rows.length
+?
+rows.map(x=>{
+
+let r=x.r;
+
+let causes=
+localizedArray(r.possible_causes);
+
+let steps=
+localizedArray(r.diagnostic_steps);
+
+let dtcs=
+localizedArray(r.related_dtcs);
+
+return`
+<article class="card">
+
 <div class="top">
+
 <div>
-<h3 class="title">${esc(title(r))}</h3>
-<div class="system">${esc(systemName(r))}</div>
-${r.description?`<p class="desc">${esc(localizedValue(r.description))}</p>`:''}
+
+<h3 class="title">
+${esc(title(r))}
+</h3>
+
+<div class="system">
+${esc(systemName(r))}
+</div>
+
+${
+r.description
+?
+`<p class="desc">
+${esc(localizedValue(r.description))}
+</p>`
+:''
+}
+
 <div class="tags">
-${x.m.map(a=>`<span class="tag">${esc(a.replaceAll('_',' '))}</span>`).join('')}
-${dtcs.map(a=>`<span class="tag">${esc(a)}</span>`).join('')}
+
+${
+x.m.map(a=>
+`<span class="tag">
+${esc(a.replaceAll('_',' '))}
+</span>`
+).join('')
+}
+
+${
+dtcs.map(a=>
+`<span class="tag">
+${esc(a)}
+</span>`
+).join('')
+}
+
 </div>
+
 </div>
-<div class="score">${esc(u.rel)}: ${Math.round(x.s)}</div>
+
+<div class="score">
+${esc(u.rel)}: ${Math.round(x.s)}
 </div>
-${causes.length?`<div class="section"><h4>${esc(u.causes)}</h4><ul>${causes.map(a=>`<li>${esc(a)}</li>`).join('')}</ul></div>`:''}
-${steps.length?`<div class="section"><h4>${esc(u.steps)}</h4><ul>${steps.map(a=>`<li>${esc(a)}</li>`).join('')}</ul></div>`:''}
-${dtcs.length?`<div class="section"><h4>${esc(u.dtcs)}</h4><ul>${dtcs.map(a=>`<li>${esc(a)}</li>`).join('')}</ul></div>`:''}
-${r.difficulty?`<div class="section"><h4>${esc(u.difficulty)}</h4><div class="desc">${esc(localizedValue(r.difficulty))}</div></div>`:''}
-</article>`;
-}).join(''):`<div class="empty">${esc(u.none)}</div>`;
+
+</div>
+
+${
+causes.length
+?
+`<div class="section">
+<h4>${esc(u.causes)}</h4>
+<ul>
+${causes.map(a=>`<li>${esc(a)}</li>`).join('')}
+</ul>
+</div>`
+:''
+}
+
+${
+steps.length
+?
+`<div class="section">
+<h4>${esc(u.steps)}</h4>
+<ul>
+${steps.map(a=>`<li>${esc(a)}</li>`).join('')}
+</ul>
+</div>`
+:''
+}
+
+${
+dtcs.length
+?
+`<div class="section">
+<h4>${esc(u.dtcs)}</h4>
+<ul>
+${dtcs.map(a=>`<li>${esc(a)}</li>`).join('')}
+</ul>
+</div>`
+:''
+}
+
+${
+r.difficulty
+?
+`<div class="section">
+<h4>${esc(u.difficulty)}</h4>
+<div class="desc">
+${esc(localizedValue(r.difficulty))}
+</div>
+</div>`
+:''
+}
+
+</article>
+`;
+
+}).join('')
+:
+`<div class="empty">
+${esc(u.none)}
+</div>`;
 
 $('status').textContent=u.ready;
 $('status').className='status success';
 
 let debug=document.getElementById('debug-status');
-if(debug)debug.textContent=`${tdb.length} technical entries loaded · ${vehicleRows.length} compatible · ${rows.length} unique relevant`;
+
+if(debug){
+
+debug.textContent=
+`${tdb.length} technical entries loaded · `+
+`${vehicleRows.length} compatible · `+
+`${p.length} concepts detected · `+
+`${rows.length} unique relevant`;
+
+}
 
 }catch(e){
-console.error('Diagnostic search error:',e);
+
+console.error(
+'Diagnostic search error:',
+e
+);
+
 $('status').textContent=u.error;
 $('status').className='status error';
+
 let debug=document.getElementById('debug-status');
+
 if(debug)debug.textContent=e.message;
+
 }
 
 $('find').disabled=false;
 showVehicle();
 };
 
-$('fy').textContent=new Date().getFullYear();
-setLang();
-$('status').textContent=I[L].loading;
+$('fy').textContent=
+new Date().getFullYear();
 
-let debugStatus=document.createElement('div');
+setLang();
+
+$('status').textContent=
+I[L].loading;
+
+let debugStatus=
+document.createElement('div');
+
 debugStatus.id='debug-status';
 debugStatus.className='debug';
-$('status').parentElement.appendChild(debugStatus);
+
+$('status').parentElement.appendChild(
+debugStatus
+);
 
 (async()=>{
+
 try{
-let d=await yaml('data/vehicles/manufacturers.yaml');
-if(!d||!Array.isArray(d.manufacturers))throw Error('Invalid manufacturers database structure');
+
+let d=await yaml(
+'data/vehicles/manufacturers.yaml'
+);
+
+if(
+!d||
+!Array.isArray(d.manufacturers)
+){
+throw Error(
+'Invalid manufacturers database structure'
+);
+}
+
 makers=d.manufacturers;
-fill('make',makers,'sm');
+
+fill(
+'make',
+makers,
+'sm'
+);
+
 $('status').textContent='';
 $('status').className='status';
+
 }catch(e){
-console.error('MANUFACTURERS DATABASE ERROR:',e);
-$('status').textContent=I[L].error;
-$('status').className='status error';
-debugStatus.textContent=e.message;
+
+console.error(
+'MANUFACTURERS DATABASE ERROR:',
+e
+);
+
+$('status').textContent=
+I[L].error;
+
+$('status').className=
+'status error';
+
+debugStatus.textContent=
+e.message;
+
 }
+
 })();
 </script>
 </body>
