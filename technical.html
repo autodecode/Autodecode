@@ -770,7 +770,7 @@ driveshaft:[
 
 differential:[
 'differential','diff','final drive','rear differential','front differential',
-'diferential','diferențial','diferential spate','differential',
+'diferential','diferențial','diferential spate',
 'achsgetriebe','differenzial','différentiel',
 'diferencial','diferencial trasero','differenziale',
 'differentieel','achterdifferentieel'
@@ -784,7 +784,7 @@ brakes:[
 'bremsen','bremse','bremsbeläge','bremsscheiben',
 'frein','freins','plaquettes','disques de frein',
 'frenos','freno','pastillas','discos de freno',
-'freno','freni','pastiglie','dischi freno',
+'freni','pastiglie','dischi freno',
 'remmen','rem','remblokken','remschijven'
 ],
 
@@ -827,13 +827,30 @@ parking_brake:[
 
 steering:[
 'steering','steering wheel','steering problem','steering fault',
-'steering heavy','hard steering','power steering','electric power steering',
-'eps','directie','direcție','volan','direcție grea','servo directie',
-'servo direcție','lenkung','lenkrad','schwere lenkung','servolenkung',
+'steering heavy','heavy steering','hard steering','heavy steering wheel',
+'hard to steer','hard to turn','hard to turn the wheel',
+'difficult steering','difficult to steer','difficult to turn the steering wheel',
+'steering wheel difficult to turn','steering wheel is hard to turn',
+'wheel difficult to turn','wheel is hard to turn','power steering',
+'electric power steering','eps','directie','direcție','volan','volan greu',
+'direcție grea','directie grea','volanul este greu','volanul se invarte greu',
+'volanul se învârte greu','greu de virat','greu la viraj','se vireaza greu',
+'se virează greu','servo directie','servo direcție',
+'lenkung','lenkrad','schwere lenkung','schweres lenkrad','lenkrad schwer',
+'lenkrad lässt sich schwer drehen','lenkrad dreht schwer','schwer zu lenken',
+'schweres lenken','servolenkung',
 'direction','direction assistée','volant','direction dure',
-'dirección','volante','dirección dura','dirección asistida',
-'sterzo','volante','sterzo duro','servosterzo',
-'stuurinrichting','stuur','zware besturing','stuurbekrachtiging'
+'volant dur','volant difficile à tourner','volant tourne difficilement',
+'direction difficile','difficile à tourner','difficile de tourner le volant',
+'dirección','volante','dirección dura','volante duro',
+'volante difícil de girar','volante gira con dificultad','difícil girar el volante',
+'dirección difícil','dirección asistida',
+'sterzo','volante','sterzo duro','volante duro',
+'volante difficile da girare','volante gira con difficoltà','difficile girare il volante',
+'sterzo pesante','sterzo duro','servosterzo',
+'stuurinrichting','stuur','zware besturing','zwaar stuur',
+'stuur draait zwaar','moeilijk sturen','moeilijk om het stuur te draaien',
+'stuurbekrachtiging'
 ],
 
 suspension:[
@@ -978,7 +995,7 @@ lighting:[
 'lumină','lumini','proiector ceata','proiector ceață','semnalizare',
 'scheinwerfer','beleuchtung','bremslicht','blinker',
 'phare','éclairage','clignotant',
-'faro','luces','intermitente',
+'faro','luces','intermitentes',
 'luci','faro','freccia',
 'koplamp','verlichting','richtingaanwijzer'
 ],
@@ -1222,7 +1239,7 @@ coolant:22,overheating:34,oil_pressure:34,oil_leak:24,oil_consumption:28,
 ignition:30,throttle:28,intake:24,exhaust:21,catalyst:24,smoke_black:38,
 smoke_white:38,smoke_blue:38,transmission:36,clutch:34,driveshaft:30,
 differential:30,brakes:38,abs:38,esp:36,brake_pressure:34,parking_brake:31,
-steering:36,suspension:33,wheel_bearing:33,wheel_alignment:29,tyres:27,
+steering:42,suspension:33,wheel_bearing:33,wheel_alignment:29,tyres:27,
 battery:23,alternator:23,voltage:23,wiring:28,fuse:25,relay:25,wiper:34,
 wiper_stopped:42,wiper_intermittent:39,washer:31,lighting:31,door_lock:30,
 window:30,mirror:28,body_control:34,horn:27,cluster:31,airbag:37,
@@ -1245,7 +1262,8 @@ const CONCEPT_RULES=[
 {c:'smoke_white',phrases:['white smoke from exhaust','smokes white','scoate fum alb','abur alb pe evacuare','weißer rauch aus auspuff','raucht weiß','fumee blanche echappement','humo blanco del escape','fumo bianco dallo scarico','witte rook uit uitlaat']},
 {c:'smoke_blue',phrases:['blue smoke from exhaust','smokes blue','scoate fum albastru','fum albastru la evacuare','blauer rauch aus auspuff','raucht blau','fumee bleue echappement','humo azul del escape','fumo blu dallo scarico','blauwe rook uit uitlaat']},
 {c:'overheating',phrases:['temperature keeps rising','temperature goes into red','overheats in traffic','gets hot in traffic','urca temperatura','temperatura urca','se incinge in trafic','intra pe rosu temperatura','temperatur steigt','wird im stau heiß','chauffe dans les embouteillages','temperatura sube en trafico','si surriscalda nel traffico','wordt warm in file']},
-{c:'wheel_alignment',phrases:['car pulls to one side','pulls to the left','pulls to the right','trage intr o parte','trage intr-o parte','trage intr o parte','trage stanga','trage dreapta','zieht zu einer seite','zieht nach links','zieht nach rechts','tire d un cote','tire a gauche','tire a droite','tira hacia un lado','tira a la izquierda','tira a la derecha','tira da una parte','trekt naar een kant']},
+{c:'wheel_alignment',phrases:['car pulls to one side','pulls to the left','pulls to the right','trage intr o parte','trage intr-o parte','trage stanga','trage dreapta','zieht zu einer seite','zieht nach links','zieht nach rechts','tire d un cote','tire a gauche','tire a droite','tira hacia un lado','tira a la izquierda','tira a la derecha','tira da una parte','trekt naar een kant']},
+{c:'steering',phrases:['steering wheel difficult to turn','steering wheel is difficult to turn','steering wheel hard to turn','hard to turn the steering wheel','difficult to turn the steering wheel','hard to turn the wheel','difficult to steer','hard to steer','steering is heavy','heavy steering','heavy steering wheel','steering wheel is heavy','volan greu','volanul este greu','volanul se invarte greu','volanul se învârte greu','greu de virat','se vireaza greu','se virează greu','directie grea','direcție grea','lenkrad lässt sich schwer drehen','lenkrad dreht schwer','schwer zu lenken','schwere lenkung','schweres lenkrad','volant difficile à tourner','volant tourne difficilement','direction dure','difficile de tourner le volant','volante difícil de girar','volante gira con dificultad','dirección dura','difícil girar el volante','volante difficile da girare','volante gira con difficoltà','sterzo duro','sterzo pesante','moeilijk sturen','zwaar stuur','stuur draait zwaar']},
 {c:'battery',phrases:['battery is weak','battery keeps dying','battery goes flat','bateria moare','bateria e slaba','bateria slabeste','batterie ist schwach','batterie leer','batterie se decharge','bateria se descarga','batteria scarica','accu loopt leeg']},
 {c:'alternator',phrases:['battery is not charging','alternator not charging','does not charge','nu incarca','alternatorul nu incarca','nu incarca bateria','laedt die batterie nicht','batterie wird nicht geladen','ne charge pas','no carga la bateria','non carica la batteria','accu wordt niet geladen']}
 ];
@@ -1339,8 +1357,7 @@ s=s.replace(/\babs\b/g,'ABS')
 .replace(/\bgem\b/g,'GEM')
 .replace(/\bsrs\b/g,'SRS')
 .replace(/\bepb\b/g,'EPB')
-.replace(/\beps\b/g,'EPS')
-.replace(/\bgps\b/g,'GPS');
+.replace(/\beps\b/g,'EPS');
 return s.replace(/\b\p{L}/gu,c=>c.toUpperCase());
 }
 
@@ -1360,9 +1377,23 @@ return localizedValue(r.system)||localizedValue(r.subcategory)||localizedValue(r
 }
 
 function matchesValue(selected,value){
-if(value==null||value==='all')return true;
-if(Array.isArray(value))return value.some(x=>N(x)===N(selected));
+if(value==null)return true;
+if(value==='all')return true;
+if(Array.isArray(value)){
+return value.some(x=>N(x)===N(selected));
+}
 return N(value)===N(selected);
+}
+
+function matchesGeneration(selected,value){
+if(value==null||value==='all')return true;
+let list=Array.isArray(value)?value:[value];
+let n=N(selected);
+return list.some(x=>{
+let v=N(x);
+if(v===n)return true;
+return v.split('_').includes(n);
+});
 }
 
 function vehicleMatch(r,v){
@@ -1370,10 +1401,11 @@ let x=r.vehicle||r.applicable||{};
 let models=x.models??x.model;
 let generations=x.generations??x.generation;
 let engines=x.engines??x.engine;
+
 return(
-(models==null||matchesValue(v.m.id,models))&&
-(generations==null||matchesValue(v.g.id,generations))&&
-(engines==null||matchesValue(v.e.id,engines))
+(models==null||matchesValue(v.m?.id,models))&&
+(generations==null||matchesGeneration(v.g?.id,generations))&&
+(engines==null||matchesValue(v.e?.id,engines))
 );
 }
 
@@ -1393,24 +1425,30 @@ localizedValue(r.category),
 
 let best=0;
 let direct=false;
+
 for(const field of fields){
 let n=N(field);
+
 for(const a of aliases){
 let p=N(a);
 if(!p)continue;
+
 if(n===p){
 direct=true;
 best=Math.max(best,1);
 continue;
 }
+
 if(n.includes(p)||p.includes(n)){
 best=Math.max(best,.92);
 continue;
 }
+
 let f=fuzzyPhrase(n,p);
 if(f>=.84)best=Math.max(best,f);
 }
 }
+
 return{best,direct};
 }
 
@@ -1453,8 +1491,12 @@ let nq=N(q);
 for(const d of dtcs){
 let nd=N(d);
 if(!nd)continue;
-if(nq.includes(nd))z+=45;
-else if(nd.length>=3&&fuzzyPhrase(nq,nd)>=.9)z+=28;
+
+if(nq.includes(nd)){
+z+=45;
+}else if(nd.length>=3&&fuzzyPhrase(nq,nd)>=.9){
+z+=28;
+}
 }
 
 let titleText=N([
@@ -1464,42 +1506,74 @@ localizedValue(r.system),
 localizedValue(r.category)
 ].join(' '));
 
-if(p.includes('low_rpm_power_loss')&&has(titleText,['underboost','turbo','boost','low rpm'])){
+if(
+p.includes('low_rpm_power_loss')&&
+has(titleText,['underboost','turbo','boost','low rpm'])
+){
 z+=28;
 }
 
-if(p.includes('limp_mode')&&has(titleText,['underboost','overboost','turbo','egr','dpf','fuel pressure','reduced power'])){
+if(
+p.includes('limp_mode')&&
+has(titleText,['underboost','overboost','turbo','egr','dpf','fuel pressure','reduced power'])
+){
 z+=22;
 }
 
-if(p.includes('poor_power')&&p.includes('limp_mode')){
+if(
+p.includes('poor_power')&&
+p.includes('limp_mode')
+){
 if(has(titleText,['turbo','boost','underboost','egr','dpf','fuel pressure','throttle'])){
 z+=18;
 }
 }
 
-if(p.includes('smoke_black')&&has(t,['injector','maf','map','egr','dpf','turbo','fuel'])){
+if(
+p.includes('smoke_black')&&
+has(t,['injector','maf','map','egr','dpf','turbo','fuel'])
+){
 z+=16;
 }
 
-if(p.includes('smoke_white')&&has(t,['coolant','coolant temperature','head gasket','injector','turbo'])){
+if(
+p.includes('smoke_white')&&
+has(t,['coolant','coolant temperature','head gasket','injector','turbo'])
+){
 z+=16;
 }
 
-if(p.includes('smoke_blue')&&has(t,['oil','turbo','oil consumption','oil leak'])){
+if(
+p.includes('smoke_blue')&&
+has(t,['oil','turbo','oil consumption','oil leak'])
+){
 z+=16;
 }
 
-if(p.includes('no_start')&&has(t,['crankshaft','camshaft','synchronization','fuel pressure','injector','immobilizer'])){
+if(
+p.includes('no_start')&&
+has(t,['crankshaft','camshaft','synchronization','fuel pressure','injector','immobilizer'])
+){
 z+=15;
 }
 
-if(p.includes('rough_idle')&&has(t,['injector','maf','egr','fuel pressure','ignition','intake'])){
+if(
+p.includes('rough_idle')&&
+has(t,['injector','maf','egr','fuel pressure','ignition','intake'])
+){
 z+=12;
+}
+
+if(
+p.includes('steering')&&
+has(t,['steering','eps','power steering','torque sensor','position sensor'])
+){
+z+=20;
 }
 
 if(p.length>=2){
 let matchedPrimary=p.filter(c=>matched.includes(c)).length;
+
 if(matchedPrimary>=2)z+=18;
 if(matchedPrimary>=3)z+=12;
 if(matchedPrimary===p.length)z+=14;
@@ -1508,11 +1582,17 @@ if(matchedPrimary===p.length)z+=14;
 let symptomCount=localizedArray(r.symptoms).length;
 let keywordCount=localizedArray(r.keywords).length;
 
-if(symptomCount&&p.some(c=>localizedArray(r.symptoms).some(x=>C(x)===c))){
+if(
+symptomCount&&
+p.some(c=>localizedArray(r.symptoms).some(x=>C(x)===c))
+){
 z+=10;
 }
 
-if(keywordCount&&p.some(c=>localizedArray(r.keywords).some(x=>N(x).includes(N(c.replaceAll('_',' ')))))){
+if(
+keywordCount&&
+p.some(c=>localizedArray(r.keywords).some(x=>N(x).includes(N(c.replaceAll('_',' ')))))
+){
 z+=5;
 }
 
@@ -1541,7 +1621,9 @@ localizedArray(r.related_dtcs).map(N).sort().join('|')
 let id=N(r.id);
 let key=core||id;
 
-if(!out.has(key)||x.s>out.get(key).s)out.set(key,x);
+if(!out.has(key)||x.s>out.get(key).s){
+out.set(key,x);
+}
 }
 
 return[...out.values()].sort((a,b)=>b.s-a.s);
@@ -1594,7 +1676,11 @@ if(x==null)return;
 
 if(typeof x==='object'){
 let name=localizedValue(x.name)||localizedValue(x.title)||localizedValue(x.description)||x.id;
-if(id==='engine'&&x.power_hp!=null)name+=' — '+x.power_hp+' HP';
+
+if(id==='engine'&&x.power_hp!=null){
+name+=' — '+x.power_hp+' HP';
+}
+
 $(id).add(new Option(name,x.id??name));
 }else{
 $(id).add(new Option(x,x));
@@ -1672,6 +1758,7 @@ esc(v.y)+
 ' · '+
 esc(localizedValue(v.e.name))+
 (codes.length?' · '+esc(codes.join(', ')):'');
+
 $('find').disabled=false;
 }
 
