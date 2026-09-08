@@ -6,6 +6,1885 @@ manufacturer:
 
 technical_data:
 
+  - id: bmw_engine_fuel_pressure_sensor_fault
+    title: Fuel Pressure Sensor Fault
+    system: Engine / Fuel System
+    description: The engine control unit detects an implausible fuel pressure sensor signal.
+    vehicle:
+      models:
+        - 1_series
+        - 3_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+        - z4
+      generations:
+        - e81
+        - e82
+        - e87
+        - e88
+        - e90
+        - e91
+        - e92
+        - e93
+        - e60
+        - e61
+        - e63
+        - e64
+        - e65
+        - e66
+        - e84
+        - e83
+        - e70
+        - e71
+        - e72
+        - e85
+        - e86
+        - f20
+        - f21
+        - f25
+        - f30
+        - f31
+        - f32
+        - f33
+        - f34
+        - f10
+        - f11
+        - f15
+        - f16
+      engines:
+        - n43
+        - n53
+        - n54
+        - n55
+        - n20
+        - n26
+        - n47
+        - n57
+        - b47
+        - b48
+        - b57
+        - b58
+    symptoms:
+      - difficult starting
+      - loss of power
+      - rough running
+      - engine stalls
+      - limp mode
+      - increased fuel consumption
+    keywords:
+      - fuel pressure sensor
+      - rail pressure sensor
+      - fuel pressure signal
+      - fuel pressure sensor fault
+    possible_causes:
+      - faulty pressure sensor
+      - damaged wiring
+      - poor connector contact
+      - unstable fuel pressure
+      - reference voltage fault
+    diagnostic_steps:
+      - Read DME or DDE fault memory.
+      - Compare measured fuel pressure with the specified value.
+      - Check sensor reference voltage and ground.
+      - Inspect the connector and wiring.
+      - Verify actual fuel pressure with an independent measurement where applicable.
+    related_dtcs:
+      - P0190
+      - P0191
+      - P0192
+      - P0193
+
+  - id: bmw_engine_fuel_pump_control_fault
+    title: Fuel Pump Control Fault
+    system: Engine / Fuel System
+    description: The engine control unit detects incorrect operation of the electric fuel pump or its control circuit.
+    vehicle:
+      models:
+        - 1_series
+        - 3_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+        - z4
+      generations:
+        - e81
+        - e82
+        - e87
+        - e88
+        - e90
+        - e91
+        - e92
+        - e93
+        - e60
+        - e61
+        - e63
+        - e64
+        - e65
+        - e66
+        - e84
+        - e83
+        - e70
+        - e71
+        - e72
+        - e85
+        - e86
+        - f20
+        - f21
+        - f25
+        - f30
+        - f31
+        - f32
+        - f33
+        - f34
+        - f10
+        - f11
+        - f15
+        - f16
+      engines:
+        - m54
+        - n42
+        - n43
+        - n46
+        - n52
+        - n53
+        - n54
+        - n55
+        - n20
+        - n26
+        - m47
+        - m57
+        - n47
+        - n57
+        - b47
+        - b48
+        - b57
+        - b58
+    symptoms:
+      - no start
+      - difficult starting
+      - engine stalls
+      - loss of power
+      - hesitation
+    keywords:
+      - fuel pump
+      - electric fuel pump
+      - fuel pump control
+      - fuel pump module
+      - fuel supply
+    possible_causes:
+      - failed fuel pump
+      - fuel pump controller fault
+      - blown fuse
+      - wiring fault
+      - poor electrical connection
+      - restricted fuel filter
+    diagnostic_steps:
+      - Check fuel pump activation with a diagnostic tester.
+      - Measure pump voltage and ground.
+      - Measure fuel pressure during cranking and operation.
+      - Inspect the pump electrical connector.
+      - Check the fuel pump controller where fitted.
+      - Check the fuel filter and fuel supply line.
+    related_dtcs: []
+
+  - id: bmw_engine_low_pressure_fuel_supply_fault
+    title: Low-Pressure Fuel Supply Fault
+    system: Engine / Fuel System
+    description: Fuel pressure supplied to the high-pressure system is below the required level.
+    vehicle:
+      models:
+        - 1_series
+        - 3_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+        - z4
+      generations:
+        - e81
+        - e82
+        - e87
+        - e88
+        - e90
+        - e91
+        - e92
+        - e93
+        - e60
+        - e61
+        - e63
+        - e64
+        - e65
+        - e66
+        - e84
+        - e83
+        - e70
+        - e71
+        - e72
+        - e85
+        - e86
+        - f20
+        - f21
+        - f25
+        - f30
+        - f31
+        - f32
+        - f33
+        - f34
+        - f10
+        - f11
+        - f15
+        - f16
+      engines:
+        - n43
+        - n53
+        - n54
+        - n55
+        - n20
+        - n26
+        - m47
+        - m57
+        - n47
+        - n57
+        - b47
+        - b48
+        - b57
+        - b58
+    symptoms:
+      - loss of power
+      - difficult starting
+      - engine stalls
+      - hesitation
+      - limp mode
+    keywords:
+      - low fuel pressure
+      - low pressure fuel
+      - fuel supply pressure
+      - fuel feed pressure
+      - fuel delivery
+    possible_causes:
+      - weak fuel pump
+      - restricted fuel filter
+      - fuel line restriction
+      - fuel pump controller fault
+      - electrical supply problem
+      - contaminated fuel
+    diagnostic_steps:
+      - Measure low-pressure fuel supply.
+      - Compare pressure with the engine manufacturer's specification.
+      - Check fuel pump current consumption.
+      - Inspect the fuel filter and supply lines.
+      - Check fuel pump power supply and ground.
+      - Verify pressure under load.
+    related_dtcs:
+      - P0087
+
+  - id: bmw_engine_high_pressure_fuel_pump_fault
+    title: High-Pressure Fuel Pump Fault
+    system: Engine / High-Pressure Fuel Injection
+    description: The high-pressure fuel pump cannot generate or maintain the required injection pressure.
+    vehicle:
+      models:
+        - 1_series
+        - 3_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+        - z4
+      generations:
+        - e81
+        - e82
+        - e87
+        - e88
+        - e90
+        - e91
+        - e92
+        - e93
+        - e60
+        - e61
+        - e63
+        - e64
+        - e65
+        - e66
+        - e84
+        - e83
+        - e70
+        - e71
+        - e72
+        - e85
+        - e86
+        - f20
+        - f21
+        - f25
+        - f30
+        - f31
+        - f32
+        - f33
+        - f34
+        - f10
+        - f11
+        - f15
+        - f16
+      engines:
+        - n43
+        - n53
+        - n54
+        - n55
+        - n20
+        - n26
+        - b48
+        - b58
+        - n47
+        - n57
+        - b47
+        - b57
+    symptoms:
+      - difficult starting
+      - no start
+      - loss of power
+      - hesitation
+      - engine stalls
+      - limp mode
+    keywords:
+      - high pressure fuel pump
+      - hpfp
+      - high pressure pump
+      - fuel rail pressure
+      - direct injection pressure
+    possible_causes:
+      - worn high-pressure pump
+      - fuel metering valve fault
+      - insufficient low-pressure supply
+      - contaminated fuel
+      - mechanical pump failure
+    diagnostic_steps:
+      - Compare commanded and actual rail pressure.
+      - Check low-pressure fuel supply first.
+      - Monitor rail pressure during cranking.
+      - Monitor rail pressure during acceleration.
+      - Check the pump control signal.
+      - Replace the high-pressure pump only after eliminating low-pressure and sensor faults.
+    related_dtcs:
+      - P0087
+      - P0088
+
+  - id: bmw_engine_fuel_injector_adaptation_limit
+    title: Fuel Injector Adaptation Limit Reached
+    system: Engine / Fuel Injection
+    description: Injector correction or adaptation has reached a permitted limit.
+    vehicle:
+      models:
+        - 1_series
+        - 3_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+        - z4
+      generations:
+        - e81
+        - e82
+        - e87
+        - e88
+        - e90
+        - e91
+        - e92
+        - e93
+        - e60
+        - e61
+        - e63
+        - e64
+        - e65
+        - e66
+        - e84
+        - e83
+        - e70
+        - e71
+        - e72
+        - e85
+        - e86
+        - f20
+        - f21
+        - f25
+        - f30
+        - f31
+        - f32
+        - f33
+        - f34
+        - f10
+        - f11
+        - f15
+        - f16
+      engines:
+        - m47
+        - m57
+        - n47
+        - n57
+        - b47
+        - b57
+        - n43
+        - n53
+        - n54
+        - n55
+        - n20
+        - n26
+        - b48
+        - b58
+    symptoms:
+      - rough running
+      - misfire
+      - unstable idle
+      - increased fuel consumption
+      - smoke
+      - reduced power
+    keywords:
+      - injector adaptation
+      - injector correction
+      - injector deviation
+      - fuel correction
+      - injection adaptation
+    possible_causes:
+      - worn injector
+      - injector contamination
+      - fuel pressure problem
+      - compression imbalance
+      - incorrect injector coding
+      - fuel quality problem
+    diagnostic_steps:
+      - Check injector correction values.
+      - Compare cylinder balance values.
+      - Check fuel pressure.
+      - Perform injector leak-off testing on diesel engines.
+      - Check compression if one cylinder remains abnormal.
+      - Verify injector coding where applicable.
+    related_dtcs: []
+
+  - id: bmw_engine_air_fuel_mixture_too_lean
+    title: Air-Fuel Mixture Too Lean
+    system: Engine / Fuel Mixture
+    description: The DME detects an excessively lean air-fuel mixture.
+    vehicle:
+      models:
+        - 1_series
+        - 3_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+        - z4
+      generations:
+        - e36
+        - e39
+        - e46
+        - e53
+        - e60
+        - e61
+        - e63
+        - e64
+        - e65
+        - e66
+        - e81
+        - e82
+        - e87
+        - e88
+        - e83
+        - e84
+        - e85
+        - e86
+        - e90
+        - e91
+        - e92
+        - e93
+        - f20
+        - f21
+        - f25
+        - f30
+        - f31
+        - f32
+        - f33
+        - f34
+        - f10
+        - f11
+      engines:
+        - m43
+        - m44
+        - m50
+        - m52
+        - m52tu
+        - m54
+        - m56
+        - n42
+        - n43
+        - n45
+        - n46
+        - n52
+        - n53
+        - n54
+        - n55
+        - n20
+        - n26
+        - b48
+        - b58
+    symptoms:
+      - rough idle
+      - hesitation
+      - poor acceleration
+      - engine misfire
+      - increased fuel consumption
+      - engine warning light
+    keywords:
+      - lean mixture
+      - mixture too lean
+      - air fuel mixture lean
+      - fuel trim positive
+      - lean condition
+    possible_causes:
+      - intake air leak
+      - vacuum leak
+      - weak fuel pressure
+      - faulty MAF sensor
+      - faulty oxygen sensor
+      - crankcase ventilation leak
+      - injector restriction
+    diagnostic_steps:
+      - Check short-term and long-term fuel trims.
+      - Inspect the intake system for air leaks.
+      - Perform a smoke test.
+      - Check fuel pressure.
+      - Verify MAF sensor readings.
+      - Check oxygen sensor operation.
+      - Inspect injectors if the mixture remains lean after air and fuel checks.
+    related_dtcs:
+      - P0171
+      - P0174
+
+  - id: bmw_engine_air_fuel_mixture_too_rich
+    title: Air-Fuel Mixture Too Rich
+    system: Engine / Fuel Mixture
+    description: The DME detects an excessively rich air-fuel mixture.
+    vehicle:
+      models:
+        - 1_series
+        - 3_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+        - z4
+      generations:
+        - e36
+        - e39
+        - e46
+        - e53
+        - e60
+        - e61
+        - e63
+        - e64
+        - e65
+        - e66
+        - e81
+        - e82
+        - e87
+        - e88
+        - e83
+        - e84
+        - e85
+        - e86
+        - e90
+        - e91
+        - e92
+        - e93
+        - f20
+        - f21
+        - f25
+        - f30
+        - f31
+        - f32
+        - f33
+        - f34
+        - f10
+        - f11
+      engines:
+        - m43
+        - m44
+        - m50
+        - m52
+        - m52tu
+        - m54
+        - m56
+        - n42
+        - n43
+        - n45
+        - n46
+        - n52
+        - n53
+        - n54
+        - n55
+        - n20
+        - n26
+        - b48
+        - b58
+    symptoms:
+      - black smoke
+      - rough idle
+      - misfire
+      - poor acceleration
+      - high fuel consumption
+      - fuel smell
+    keywords:
+      - rich mixture
+      - mixture too rich
+      - air fuel mixture rich
+      - fuel trim negative
+      - rich condition
+    possible_causes:
+      - leaking injector
+      - excessive fuel pressure
+      - faulty MAF sensor
+      - faulty oxygen sensor
+      - excessive fuel vapor
+      - incorrect engine temperature signal
+      - restricted intake air flow
+    diagnostic_steps:
+      - Check fuel trims.
+      - Verify coolant temperature data.
+      - Check MAF readings.
+      - Inspect injectors for leakage.
+      - Check fuel pressure.
+      - Check oxygen sensor operation.
+      - Inspect the EVAP system for excessive fuel vapor entering the intake.
+    related_dtcs:
+      - P0172
+      - P0175
+
+  - id: bmw_engine_secondary_air_injection_fault
+    title: Secondary Air Injection Fault
+    system: Engine / Emissions
+    description: The secondary air injection system does not provide the expected airflow during cold start.
+    vehicle:
+      models:
+        - 1_series
+        - 3_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+        - z4
+      generations:
+        - e46
+        - e53
+        - e60
+        - e61
+        - e63
+        - e64
+        - e65
+        - e66
+        - e81
+        - e82
+        - e87
+        - e88
+        - e83
+        - e84
+        - e85
+        - e86
+        - e90
+        - e91
+        - e92
+        - e93
+        - f20
+        - f21
+        - f25
+        - f30
+        - f31
+        - f32
+        - f33
+        - f34
+      engines:
+        - m52tu
+        - m54
+        - n42
+        - n43
+        - n46
+        - n52
+        - n53
+        - n54
+        - n55
+        - n20
+        - b48
+        - b58
+    symptoms:
+      - engine warning light
+      - cold start emissions fault
+      - rough cold idle
+      - increased emissions
+    keywords:
+      - secondary air
+      - secondary air injection
+      - air pump
+      - secondary air pump
+      - cold start emissions
+    possible_causes:
+      - failed secondary air pump
+      - blocked secondary air passages
+      - faulty secondary air valve
+      - vacuum control fault
+      - damaged hoses
+      - electrical supply fault
+    diagnostic_steps:
+      - Activate the secondary air pump with a diagnostic tester.
+      - Check pump operation and current draw.
+      - Inspect air hoses and valves.
+      - Check secondary air valve control.
+      - Inspect the cylinder head air passages for carbon deposits.
+    related_dtcs:
+      - P0410
+      - P0411
+
+  - id: bmw_engine_evap_leak_detected
+    title: EVAP System Leak Detected
+    system: Engine / EVAP
+    description: The fuel vapor recovery system fails its leak detection test.
+    vehicle:
+      models:
+        - 1_series
+        - 3_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+        - z3
+        - z4
+      generations:
+        - e36
+        - e39
+        - e46
+        - e53
+        - e60
+        - e61
+        - e63
+        - e64
+        - e65
+        - e66
+        - e81
+        - e82
+        - e87
+        - e88
+        - e83
+        - e84
+        - e85
+        - e86
+        - e90
+        - e91
+        - e92
+        - e93
+        - f20
+        - f21
+        - f25
+        - f30
+        - f31
+        - f32
+        - f33
+        - f34
+        - f10
+        - f11
+      engines:
+        - m43
+        - m44
+        - m50
+        - m52
+        - m52tu
+        - m54
+        - m56
+        - n42
+        - n43
+        - n46
+        - n52
+        - n53
+        - n54
+        - n55
+        - n20
+        - n26
+        - b48
+        - b58
+    symptoms:
+      - engine warning light
+      - fuel smell
+      - difficult refueling
+      - rough idle
+      - no noticeable symptoms
+    keywords:
+      - evap leak
+      - fuel vapor leak
+      - evaporative emission leak
+      - fuel tank leak
+      - vapor system leak
+    possible_causes:
+      - loose fuel filler cap
+      - cracked EVAP hose
+      - leaking fuel tank ventilation valve
+      - damaged charcoal canister
+      - fuel tank leak
+      - leak detection pump fault
+    diagnostic_steps:
+      - Read the stored EVAP fault and leak size information.
+      - Inspect the fuel filler cap and sealing surface.
+      - Inspect EVAP hoses and connections.
+      - Perform an EVAP smoke test.
+      - Test the tank ventilation and leak detection system.
+    related_dtcs:
+      - P0442
+      - P0455
+      - P0456
+
+  - id: bmw_engine_fuel_tank_ventilation_fault
+    title: Fuel Tank Ventilation Fault
+    system: Engine / EVAP
+    description: The fuel tank ventilation system does not regulate fuel vapor flow correctly.
+    vehicle:
+      models:
+        - 1_series
+        - 3_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+        - z3
+        - z4
+      generations:
+        - e36
+        - e39
+        - e46
+        - e53
+        - e60
+        - e61
+        - e63
+        - e64
+        - e65
+        - e66
+        - e81
+        - e82
+        - e87
+        - e88
+        - e83
+        - e84
+        - e85
+        - e86
+        - e90
+        - e91
+        - e92
+        - e93
+        - f20
+        - f21
+        - f25
+        - f30
+        - f31
+        - f32
+        - f33
+        - f34
+        - f10
+        - f11
+      engines:
+        - m43
+        - m44
+        - m50
+        - m52
+        - m52tu
+        - m54
+        - m56
+        - n42
+        - n43
+        - n46
+        - n52
+        - n53
+        - n54
+        - n55
+        - n20
+        - n26
+        - b48
+        - b58
+    symptoms:
+      - rough idle
+      - fuel smell
+      - difficult refueling
+      - hard starting after refueling
+      - engine warning light
+    keywords:
+      - fuel tank ventilation
+      - tank vent
+      - evap ventilation
+      - purge valve
+      - charcoal canister
+    possible_causes:
+      - faulty tank ventilation valve
+      - blocked ventilation line
+      - saturated charcoal canister
+      - damaged EVAP hose
+      - electrical fault
+    diagnostic_steps:
+      - Check tank pressure or vacuum values.
+      - Inspect ventilation lines.
+      - Test the tank ventilation valve.
+      - Inspect the charcoal canister.
+      - Check the EVAP system for blockage or leaks.
+    related_dtcs: []
+
+  - id: bmw_engine_oil_temperature_sensor_fault
+    title: Engine Oil Temperature Sensor Fault
+    system: Engine / Lubrication
+    description: The engine control unit receives an implausible oil temperature signal.
+    vehicle:
+      models:
+        - 1_series
+        - 3_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+        - z4
+      generations:
+        - e81
+        - e82
+        - e87
+        - e88
+        - e90
+        - e91
+        - e92
+        - e93
+        - e60
+        - e61
+        - e63
+        - e64
+        - e65
+        - e66
+        - e84
+        - e83
+        - e70
+        - e71
+        - e72
+        - e85
+        - e86
+        - f20
+        - f21
+        - f25
+        - f30
+        - f31
+        - f32
+        - f33
+        - f34
+        - f10
+        - f11
+        - f15
+        - f16
+      engines:
+        - m54
+        - n42
+        - n43
+        - n46
+        - n52
+        - n53
+        - n54
+        - n55
+        - n20
+        - n26
+        - n47
+        - n57
+        - b47
+        - b48
+        - b57
+        - b58
+    symptoms:
+      - incorrect oil temperature reading
+      - cooling fan operation
+      - altered engine operation
+      - increased fuel consumption
+      - engine warning light
+    keywords:
+      - oil temperature sensor
+      - engine oil temperature
+      - oil temp sensor
+      - oil temperature signal
+    possible_causes:
+      - faulty sensor
+      - wiring fault
+      - connector corrosion
+      - incorrect sensor resistance
+      - oil level or oil condition problem
+    diagnostic_steps:
+      - Read oil temperature using diagnostic live data.
+      - Compare the reading with coolant and ambient temperature when cold.
+      - Check sensor wiring and connector.
+      - Measure sensor resistance where applicable.
+      - Check for implausible temperature changes.
+    related_dtcs:
+      - P0196
+      - P0197
+      - P0198
+
+  - id: bmw_engine_intake_air_temperature_sensor_fault
+    title: Intake Air Temperature Sensor Fault
+    system: Engine / Air Intake
+    description: The engine control unit detects an implausible intake air temperature signal.
+    vehicle:
+      models:
+        - 1_series
+        - 3_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+        - z4
+      generations:
+        - e46
+        - e53
+        - e60
+        - e61
+        - e63
+        - e64
+        - e65
+        - e66
+        - e81
+        - e82
+        - e87
+        - e88
+        - e83
+        - e84
+        - e85
+        - e86
+        - e90
+        - e91
+        - e92
+        - e93
+        - f20
+        - f21
+        - f25
+        - f30
+        - f31
+        - f32
+        - f33
+        - f34
+        - f10
+        - f11
+        - f15
+        - f16
+      engines:
+        - m47
+        - m57
+        - n47
+        - n57
+        - n42
+        - n43
+        - n46
+        - n52
+        - n53
+        - n54
+        - n55
+        - n20
+        - n26
+        - b47
+        - b48
+        - b57
+        - b58
+    symptoms:
+      - reduced power
+      - poor acceleration
+      - increased fuel consumption
+      - rough running
+      - boost regulation fault
+    keywords:
+      - intake air temperature
+      - iat sensor
+      - charge air temperature
+      - air temperature sensor
+    possible_causes:
+      - faulty temperature sensor
+      - damaged wiring
+      - connector fault
+      - sensor contamination
+      - implausible charge-air temperature
+    diagnostic_steps:
+      - Compare intake air temperature with ambient temperature before starting.
+      - Monitor temperature during acceleration.
+      - Inspect the sensor connector.
+      - Check wiring and reference voltage.
+      - Compare temperature before and after the intercooler where applicable.
+    related_dtcs:
+      - P0110
+      - P0111
+      - P0112
+      - P0113
+
+  - id: bmw_engine_barometric_pressure_sensor_fault
+    title: Barometric Pressure Sensor Fault
+    system: Engine / Air Management
+    description: The engine control unit receives an implausible atmospheric pressure signal.
+    vehicle:
+      models:
+        - 1_series
+        - 3_series
+        - 5_series
+        - x1
+        - x3
+        - x5
+      generations:
+        - e81
+        - e82
+        - e87
+        - e88
+        - e90
+        - e91
+        - e92
+        - e93
+        - e60
+        - e61
+        - e84
+        - e83
+        - e70
+        - f20
+        - f21
+        - f25
+        - f30
+        - f31
+        - f32
+        - f33
+        - f34
+        - f10
+        - f11
+        - f15
+        - f16
+      engines:
+        - m47
+        - m57
+        - n47
+        - n57
+        - n20
+        - n26
+        - n54
+        - n55
+        - b47
+        - b48
+        - b57
+        - b58
+    symptoms:
+      - reduced power
+      - incorrect boost control
+      - poor acceleration
+      - limp mode
+      - increased fuel consumption
+    keywords:
+      - barometric pressure
+      - atmospheric pressure
+      - ambient pressure sensor
+      - baro sensor
+    possible_causes:
+      - faulty pressure sensor
+      - wiring fault
+      - incorrect reference voltage
+      - pressure passage blockage
+    diagnostic_steps:
+      - Compare barometric pressure with local atmospheric pressure.
+      - Check the sensor signal at ignition on.
+      - Inspect wiring and connector.
+      - Compare atmospheric pressure with MAP readings with the engine off.
+    related_dtcs:
+      - P0106
+      - P0107
+      - P0108
+
+  - id: bmw_engine_knock_sensor_fault
+    title: Knock Sensor Fault
+    system: Engine / Ignition
+    description: The DME detects an implausible knock sensor signal or an electrical fault in the knock detection circuit.
+    vehicle:
+      models:
+        - 1_series
+        - 3_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+        - z3
+        - z4
+      generations:
+        - e36
+        - e39
+        - e46
+        - e53
+        - e60
+        - e61
+        - e63
+        - e64
+        - e65
+        - e66
+        - e81
+        - e82
+        - e87
+        - e88
+        - e83
+        - e84
+        - e85
+        - e86
+        - e90
+        - e91
+        - e92
+        - e93
+        - f20
+        - f21
+        - f25
+        - f30
+        - f31
+        - f32
+        - f33
+        - f34
+        - f10
+        - f11
+      engines:
+        - m43
+        - m44
+        - m50
+        - m52
+        - m52tu
+        - m54
+        - m56
+        - n42
+        - n43
+        - n45
+        - n46
+        - n52
+        - n53
+        - n54
+        - n55
+        - n20
+        - n26
+        - b48
+        - b58
+    symptoms:
+      - reduced power
+      - poor acceleration
+      - increased fuel consumption
+      - engine warning light
+      - ignition timing retard
+    keywords:
+      - knock sensor
+      - detonation sensor
+      - engine knock
+      - knock detection
+    possible_causes:
+      - failed knock sensor
+      - damaged sensor wiring
+      - poor connector contact
+      - incorrect sensor mounting
+      - abnormal engine vibration
+    diagnostic_steps:
+      - Read DME fault memory.
+      - Check knock sensor signal and live data.
+      - Inspect sensor mounting and torque.
+      - Inspect wiring and connectors.
+      - Check for abnormal mechanical engine noise before replacing the sensor.
+    related_dtcs:
+      - P0325
+      - P0326
+      - P0327
+      - P0328
+
+  - id: bmw_engine_accelerator_pedal_sensor_fault
+    title: Accelerator Pedal Position Sensor Fault
+    system: Engine / Throttle
+    description: The DME detects an implausible or inconsistent accelerator pedal position signal.
+    vehicle:
+      models:
+        - 1_series
+        - 3_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+        - z4
+      generations:
+        - e46
+        - e53
+        - e60
+        - e61
+        - e63
+        - e64
+        - e65
+        - e66
+        - e81
+        - e82
+        - e87
+        - e88
+        - e83
+        - e84
+        - e85
+        - e86
+        - e90
+        - e91
+        - e92
+        - e93
+        - f20
+        - f21
+        - f25
+        - f30
+        - f31
+        - f32
+        - f33
+        - f34
+        - f10
+        - f11
+      engines:
+        - m43
+        - m44
+        - m52
+        - m52tu
+        - m54
+        - n42
+        - n43
+        - n46
+        - n52
+        - n53
+        - n54
+        - n55
+        - n20
+        - n26
+        - n47
+        - n57
+        - b47
+        - b48
+        - b57
+        - b58
+    symptoms:
+      - poor throttle response
+      - reduced power
+      - limp mode
+      - intermittent acceleration
+      - engine warning light
+    keywords:
+      - accelerator pedal sensor
+      - accelerator position
+      - pedal position sensor
+      - throttle pedal
+      - pedal signal
+    possible_causes:
+      - faulty accelerator pedal sensor
+      - inconsistent redundant sensor tracks
+      - damaged wiring
+      - poor connector contact
+      - power supply fault
+    diagnostic_steps:
+      - Monitor both accelerator pedal position signals.
+      - Check signal correlation throughout pedal travel.
+      - Inspect connector and wiring.
+      - Check sensor supply voltage.
+      - Verify that the DME receives a stable signal at idle and full pedal travel.
+    related_dtcs:
+      - P2120
+      - P2121
+      - P2122
+      - P2123
+      - P2124
+
+  - id: bmw_engine_brake_pedal_signal_fault
+    title: Brake Pedal Signal Fault
+    system: Engine / Vehicle Signals
+    description: The DME receives an implausible or missing brake pedal signal.
+    vehicle:
+      models:
+        - 1_series
+        - 3_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+        - z4
+      generations:
+        - e46
+        - e53
+        - e60
+        - e61
+        - e63
+        - e64
+        - e65
+        - e66
+        - e81
+        - e82
+        - e87
+        - e88
+        - e83
+        - e84
+        - e85
+        - e86
+        - e90
+        - e91
+        - e92
+        - e93
+        - f20
+        - f21
+        - f25
+        - f30
+        - f31
+        - f32
+        - f33
+        - f34
+        - f10
+        - f11
+      engines:
+        - m43
+        - m44
+        - m52
+        - m52tu
+        - m54
+        - n42
+        - n43
+        - n46
+        - n52
+        - n53
+        - n54
+        - n55
+        - n20
+        - n26
+        - n47
+        - n57
+        - b47
+        - b48
+        - b57
+        - b58
+    symptoms:
+      - cruise control unavailable
+      - start authorization problem
+      - throttle limitation
+      - inconsistent brake light operation
+      - warning message
+    keywords:
+      - brake pedal signal
+      - brake switch
+      - brake light switch
+      - brake signal
+    possible_causes:
+      - faulty brake light switch
+      - switch adjustment problem
+      - wiring fault
+      - communication fault
+      - inconsistent redundant brake signals
+    diagnostic_steps:
+      - Monitor brake pedal status in live data.
+      - Check brake light operation.
+      - Verify both brake switch signals where applicable.
+      - Inspect switch wiring and connector.
+      - Check communication between DSC and DME.
+    related_dtcs: []
+
+  - id: bmw_engine_start_stop_system_fault
+    title: Engine Start-Stop System Fault
+    system: Engine / Start-Stop
+    description: The automatic engine start-stop function is disabled because a required operating condition or component is faulty.
+    vehicle:
+      models:
+        - 1_series
+        - 3_series
+        - 5_series
+        - x1
+        - x3
+        - x5
+      generations:
+        - e81
+        - e82
+        - e87
+        - e88
+        - e90
+        - e91
+        - e92
+        - e93
+        - e84
+        - e83
+        - e70
+        - f20
+        - f21
+        - f25
+        - f30
+        - f31
+        - f32
+        - f33
+        - f34
+        - f10
+        - f11
+        - f15
+      engines:
+        - n43
+        - n46
+        - n47
+        - n52
+        - n53
+        - n54
+        - n55
+        - n20
+        - n26
+        - n57
+        - b47
+        - b48
+        - b57
+        - b58
+    symptoms:
+      - auto start stop unavailable
+      - engine does not restart automatically
+      - start stop warning
+      - battery warning
+      - electrical system warning
+    keywords:
+      - start stop
+      - auto start stop
+      - automatic engine start
+      - engine restart
+      - start stop fault
+    possible_causes:
+      - weak battery
+      - incorrect battery registration
+      - battery sensor fault
+      - excessive electrical load
+      - engine temperature outside permitted range
+      - engine management fault
+    diagnostic_steps:
+      - Read DME and body-control fault memory.
+      - Check battery state of charge and health.
+      - Verify battery registration.
+      - Check battery monitoring sensor operation.
+      - Check engine temperature and other start-stop enable conditions.
+    related_dtcs: []
+
+  - id: bmw_engine_dme_internal_fault
+    title: DME Internal Control Unit Fault
+    system: Engine / DME
+    description: The engine control unit detects an internal processor, memory or self-diagnostic fault.
+    vehicle:
+      models:
+        - 1_series
+        - 3_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+        - x6
+        - z4
+      generations:
+        - e81
+        - e82
+        - e87
+        - e88
+        - e90
+        - e91
+        - e92
+        - e93
+        - e60
+        - e61
+        - e63
+        - e64
+        - e65
+        - e66
+        - e84
+        - e83
+        - e70
+        - e71
+        - e72
+        - e85
+        - e86
+        - f20
+        - f21
+        - f25
+        - f30
+        - f31
+        - f32
+        - f33
+        - f34
+        - f10
+        - f11
+        - f15
+        - f16
+      engines:
+        - m43
+        - m44
+        - m52
+        - m52tu
+        - m54
+        - m56
+        - m57
+        - n42
+        - n43
+        - n45
+        - n46
+        - n47
+        - n52
+        - n53
+        - n54
+        - n55
+        - n57
+        - n20
+        - n26
+        - b47
+        - b48
+        - b57
+        - b58
+    symptoms:
+      - engine warning light
+      - intermittent engine shutdown
+      - no start
+      - communication loss
+      - multiple engine faults
+      - reduced power
+    keywords:
+      - dme internal fault
+      - ecu internal fault
+      - engine control module
+      - control unit internal
+      - processor fault
+    possible_causes:
+      - internal DME failure
+      - corrupted memory
+      - low system voltage
+      - water ingress
+      - connector corrosion
+      - software fault
+    diagnostic_steps:
+      - Check system voltage before condemning the DME.
+      - Read all control-unit fault memories.
+      - Check DME power and ground supplies.
+      - Inspect DME connectors for corrosion or moisture.
+      - Check software and programming status.
+      - Replace or program the DME only after external causes have been eliminated.
+    related_dtcs: []
+
+  - id: bmw_engine_dme_power_supply_fault
+    title: DME Power Supply Fault
+    system: Engine / Electrical
+    description: The DME detects an unstable or missing electrical supply.
+    vehicle:
+      models:
+        - 1_series
+        - 3_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+        - x6
+        - z4
+      generations:
+        - e46
+        - e53
+        - e60
+        - e61
+        - e63
+        - e64
+        - e65
+        - e66
+        - e81
+        - e82
+        - e87
+        - e88
+        - e83
+        - e84
+        - e85
+        - e86
+        - e90
+        - e91
+        - e92
+        - e93
+        - f20
+        - f21
+        - f25
+        - f30
+        - f31
+        - f32
+        - f33
+        - f34
+        - f10
+        - f11
+        - f15
+        - f16
+      engines:
+        - m43
+        - m44
+        - m52
+        - m52tu
+        - m54
+        - m56
+        - m57
+        - n42
+        - n43
+        - n45
+        - n46
+        - n47
+        - n52
+        - n53
+        - n54
+        - n55
+        - n57
+        - n20
+        - n26
+        - b47
+        - b48
+        - b57
+        - b58
+    symptoms:
+      - no start
+      - intermittent engine shutdown
+      - multiple fault codes
+      - communication loss
+      - battery warning
+      - reduced power
+    keywords:
+      - dme power supply
+      - ecu power supply
+      - engine ecu voltage
+      - control unit supply
+      - dme voltage
+    possible_causes:
+      - weak battery
+      - alternator fault
+      - blown fuse
+      - main relay fault
+      - poor ground connection
+      - damaged power wiring
+      - water ingress
+    diagnostic_steps:
+      - Measure battery voltage at rest and during cranking.
+      - Check DME supply voltage under load.
+      - Inspect relevant fuses and relays.
+      - Check DME grounds.
+      - Inspect power connectors for corrosion.
+      - Check charging voltage with the engine running.
+    related_dtcs:
+      - P0560
+      - P0562
+      - P0563
+
+  - id: bmw_engine_can_communication_dme_fault
+    title: DME CAN Communication Fault
+    system: Engine / CAN Bus
+    description: Communication between the DME and another vehicle control unit is interrupted or implausible.
+    vehicle:
+      models:
+        - 1_series
+        - 3_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+        - x6
+        - z4
+      generations:
+        - e60
+        - e61
+        - e63
+        - e64
+        - e65
+        - e66
+        - e81
+        - e82
+        - e87
+        - e88
+        - e83
+        - e84
+        - e85
+        - e86
+        - e90
+        - e91
+        - e92
+        - e93
+        - f20
+        - f21
+        - f25
+        - f30
+        - f31
+        - f32
+        - f33
+        - f34
+        - f10
+        - f11
+        - f15
+        - f16
+      engines:
+        - m54
+        - m57
+        - n42
+        - n43
+        - n46
+        - n47
+        - n52
+        - n53
+        - n54
+        - n55
+        - n57
+        - n20
+        - n26
+        - b47
+        - b48
+        - b57
+        - b58
+    symptoms:
+      - multiple warning lights
+      - loss of engine functions
+      - transmission communication fault
+      - DSC warning
+      - intermittent no start
+      - diagnostic communication problems
+    keywords:
+      - can communication
+      - dme communication
+      - ecu communication
+      - can bus
+      - communication fault
+    possible_causes:
+      - CAN wiring fault
+      - short circuit on CAN bus
+      - failed control unit
+      - low system voltage
+      - poor ground
+      - water ingress
+    diagnostic_steps:
+      - Scan all control units and identify missing modules.
+      - Check CAN communication faults across the vehicle.
+      - Measure CAN bus resistance with the system powered down where appropriate.
+      - Inspect CAN wiring and connectors.
+      - Check power and ground supplies to affected modules.
+      - Isolate a defective module only after verifying the bus wiring.
+    related_dtcs: []
+
   - id: bmw_engine_vanos_intake_position_fault
     title: VANOS Intake Camshaft Position Fault
     system: Engine / VANOS
