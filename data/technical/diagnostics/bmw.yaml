@@ -6,6 +6,2114 @@ manufacturer:
 
 technical_data:
 
+  - id: bmw_transmission_mechatronic_fault
+    title: Automatic Transmission Mechatronic Fault
+    system: Automatic Transmission
+    description: Fault affecting the electro-hydraulic mechatronic assembly responsible for automatic transmission control.
+    vehicle:
+      models:
+        - 3_series
+        - 4_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x4
+        - x5
+        - x6
+      generations:
+        - e90_e91_e92_e93
+        - f30_f31_f34
+        - f32_f33_f36
+        - e60_e61
+        - f10_f11
+        - e63_e64
+        - f12_f13
+        - e65_e66
+        - f01_f02
+        - e84
+        - f48
+        - f25
+        - f26
+        - e70
+        - f15
+        - e71_e72
+        - f16
+        - g20_g21
+        - g22_g23_g26
+        - g30_g31
+        - g11_g12
+        - g01
+        - g02
+        - g05
+        - g06
+    symptoms:
+      - transmission malfunction
+      - harsh shifting
+      - delayed engagement
+      - transmission stuck in one gear
+      - failsafe mode
+    keywords:
+      - mechatronic
+      - transmission mechatronics
+      - valve body
+      - automatic gearbox control
+    possible_causes:
+      - mechatronic valve body fault
+      - solenoid failure
+      - hydraulic pressure problem
+      - internal wiring fault
+      - contaminated transmission fluid
+    diagnostic_steps:
+      - Read transmission control unit fault memory.
+      - Check transmission fluid condition.
+      - Monitor hydraulic pressure and solenoid operation.
+      - Inspect mechatronic electrical connections.
+      - Perform adaptation reset only after correcting the underlying fault.
+    related_dtcs: []
+
+  - id: bmw_transmission_gear_ratio_monitoring_fault
+    title: Automatic Transmission Gear Ratio Monitoring Fault
+    system: Automatic Transmission
+    description: The transmission control system detects an incorrect ratio between commanded and actual transmission speeds.
+    vehicle:
+      models:
+        - 1_series
+        - 2_series
+        - 3_series
+        - 4_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x4
+        - x5
+        - x6
+        - x7
+      generations:
+        - e81_e82_e87_e88
+        - e90_e91_e92_e93
+        - f20_f21
+        - f22_f23
+        - f30_f31_f34
+        - f32_f33_f36
+        - e60_e61
+        - f10_f11
+        - e63_e64
+        - f12_f13
+        - e65_e66
+        - f01_f02
+        - e84
+        - f48
+        - e83
+        - f25
+        - f26
+        - e70
+        - f15
+        - e71_e72
+        - f16
+        - g07
+        - g20_g21
+        - g22_g23_g26
+        - g30_g31
+        - g11_g12
+        - g01
+        - g02
+        - g05
+        - g06
+    symptoms:
+      - transmission slipping
+      - incorrect gear
+      - harsh shifting
+      - delayed shifting
+      - transmission warning
+    keywords:
+      - gear ratio
+      - incorrect ratio
+      - transmission slip
+      - ratio monitoring
+    possible_causes:
+      - clutch pack wear
+      - internal transmission slip
+      - speed sensor fault
+      - hydraulic pressure problem
+      - mechatronic fault
+    diagnostic_steps:
+      - Read transmission faults.
+      - Compare input and output speeds.
+      - Check transmission adaptation values.
+      - Inspect fluid level and condition.
+      - Perform mechanical transmission testing if ratio error persists.
+    related_dtcs: []
+
+  - id: bmw_transmission_shift_solenoid_fault
+    title: Transmission Shift Solenoid Fault
+    system: Automatic Transmission
+    description: Electrical or functional fault affecting an automatic transmission shift solenoid.
+    vehicle:
+      models:
+        - 3_series
+        - 4_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x4
+        - x5
+        - x6
+      generations:
+        - e90_e91_e92_e93
+        - f30_f31_f34
+        - f32_f33_f36
+        - e60_e61
+        - f10_f11
+        - e63_e64
+        - f12_f13
+        - e65_e66
+        - f01_f02
+        - e84
+        - f48
+        - f25
+        - f26
+        - e70
+        - f15
+        - e71_e72
+        - f16
+        - g20_g21
+        - g22_g23_g26
+        - g30_g31
+        - g11_g12
+        - g01
+        - g02
+        - g05
+        - g06
+    symptoms:
+      - harsh shifting
+      - missing gear
+      - delayed gear engagement
+      - transmission failsafe
+      - gear changes at incorrect RPM
+    keywords:
+      - shift solenoid
+      - transmission solenoid
+      - valve solenoid
+      - shift valve
+    possible_causes:
+      - solenoid electrical failure
+      - sticking valve
+      - contaminated fluid
+      - mechatronic fault
+      - wiring fault
+    diagnostic_steps:
+      - Read transmission control faults.
+      - Identify the affected solenoid.
+      - Check solenoid resistance where applicable.
+      - Monitor commanded and actual solenoid operation.
+      - Inspect the mechatronic assembly.
+    related_dtcs: []
+
+  - id: bmw_transmission_input_speed_sensor_fault
+    title: Transmission Input Speed Sensor Fault
+    system: Automatic Transmission
+    description: Fault affecting the transmission input speed sensor used to calculate turbine or input shaft speed.
+    vehicle:
+      models:
+        - 3_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x3
+        - x5
+      generations:
+        - e90_e91_e92_e93
+        - e60_e61
+        - e63_e64
+        - e65_e66
+        - f10_f11
+        - f12_f13
+        - f01_f02
+        - f25
+        - e70
+        - f15
+        - g20_g21
+        - g30_g31
+        - g11_g12
+        - g01
+        - g05
+    symptoms:
+      - transmission shifting fault
+      - harsh shifting
+      - transmission failsafe
+      - incorrect gear selection
+      - torque converter malfunction
+    keywords:
+      - input speed sensor
+      - turbine speed sensor
+      - transmission input speed
+    possible_causes:
+      - sensor failure
+      - internal transmission wiring fault
+      - mechatronic fault
+      - contamination
+      - connector fault
+    diagnostic_steps:
+      - Read transmission live data.
+      - Compare input speed with engine speed.
+      - Check sensor plausibility.
+      - Inspect mechatronic wiring.
+      - Replace the sensor or mechatronic component where applicable.
+    related_dtcs: []
+
+  - id: bmw_transmission_output_speed_sensor_fault
+    title: Transmission Output Speed Sensor Fault
+    system: Automatic Transmission
+    description: Fault affecting the transmission output speed signal used for gear control and vehicle speed calculation.
+    vehicle:
+      models:
+        - 3_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+      generations:
+        - e90_e91_e92_e93
+        - f30_f31_f34
+        - e60_e61
+        - f10_f11
+        - e63_e64
+        - f12_f13
+        - e65_e66
+        - f01_f02
+        - e84
+        - f48
+        - f25
+        - e70
+        - f15
+        - g20_g21
+        - g30_g31
+        - g11_g12
+        - g01
+        - g05
+    symptoms:
+      - transmission warning
+      - incorrect shifting
+      - transmission failsafe
+      - speed signal errors
+      - harsh shifting
+    keywords:
+      - output speed sensor
+      - transmission output speed
+      - gearbox speed sensor
+    possible_causes:
+      - sensor failure
+      - wiring fault
+      - mechatronic fault
+      - damaged connector
+      - internal transmission fault
+    diagnostic_steps:
+      - Read transmission speed data.
+      - Compare output speed with wheel speed.
+      - Check sensor signal plausibility.
+      - Inspect transmission wiring.
+      - Repair the sensor circuit or transmission component.
+    related_dtcs: []
+
+  - id: bmw_transmission_temperature_sensor_fault
+    title: Transmission Temperature Sensor Fault
+    system: Automatic Transmission
+    description: Fault affecting the transmission fluid temperature measurement used for shift and pressure control.
+    vehicle:
+      models:
+        - 3_series
+        - 4_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x4
+        - x5
+        - x6
+      generations:
+        - e90_e91_e92_e93
+        - f30_f31_f34
+        - f32_f33_f36
+        - e60_e61
+        - f10_f11
+        - e63_e64
+        - f12_f13
+        - e65_e66
+        - f01_f02
+        - e84
+        - f48
+        - f25
+        - f26
+        - e70
+        - f15
+        - e71_e72
+        - f16
+        - g20_g21
+        - g22_g23_g26
+        - g30_g31
+        - g11_g12
+        - g01
+        - g02
+        - g05
+        - g06
+    symptoms:
+      - transmission warning
+      - harsh shifting
+      - incorrect shift timing
+      - transmission overheating warning
+    keywords:
+      - transmission temperature sensor
+      - gearbox temperature
+      - transmission oil temperature
+    possible_causes:
+      - integrated temperature sensor failure
+      - mechatronic fault
+      - wiring fault
+      - implausible temperature signal
+    diagnostic_steps:
+      - Compare transmission temperature with ambient temperature when cold.
+      - Monitor temperature during operation.
+      - Check sensor plausibility.
+      - Inspect mechatronic wiring.
+      - Replace the affected component if necessary.
+    related_dtcs: []
+
+  - id: bmw_transmission_oil_pressure_fault
+    title: Automatic Transmission Oil Pressure Fault
+    system: Automatic Transmission
+    description: Transmission hydraulic pressure is outside the expected range or does not respond correctly to control commands.
+    vehicle:
+      models:
+        - 3_series
+        - 4_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x3
+        - x4
+        - x5
+        - x6
+      generations:
+        - e90_e91_e92_e93
+        - f30_f31_f34
+        - f32_f33_f36
+        - e60_e61
+        - f10_f11
+        - e63_e64
+        - f12_f13
+        - e65_e66
+        - f01_f02
+        - f25
+        - f26
+        - e70
+        - f15
+        - e71_e72
+        - f16
+        - g20_g21
+        - g22_g23_g26
+        - g30_g31
+        - g11_g12
+        - g01
+        - g02
+        - g05
+        - g06
+    symptoms:
+      - harsh shifting
+      - transmission slipping
+      - delayed engagement
+      - transmission failsafe
+      - missing gears
+    keywords:
+      - transmission oil pressure
+      - hydraulic pressure
+      - gearbox pressure
+      - line pressure
+    possible_causes:
+      - low transmission fluid
+      - hydraulic leak
+      - worn valve body
+      - pressure regulator fault
+      - transmission pump wear
+    diagnostic_steps:
+      - Check fluid level and condition.
+      - Read hydraulic pressure values where available.
+      - Check transmission adaptation values.
+      - Inspect mechatronic pressure control.
+      - Perform mechanical pressure testing when required.
+    related_dtcs: []
+
+  - id: bmw_transmission_torque_converter_clutch_fault
+    title: Torque Converter Clutch Fault
+    system: Automatic Transmission
+    description: Fault affecting torque converter lock-up clutch operation.
+    vehicle:
+      models:
+        - 3_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x3
+        - x5
+      generations:
+        - e90_e91_e92_e93
+        - e60_e61
+        - e63_e64
+        - e65_e66
+        - f10_f11
+        - f12_f13
+        - f01_f02
+        - f25
+        - e70
+        - f15
+        - g20_g21
+        - g30_g31
+        - g11_g12
+        - g01
+        - g05
+    symptoms:
+      - transmission shudder
+      - engine RPM fluctuates
+      - vibration during cruising
+      - torque converter slipping
+      - fuel consumption increased
+    keywords:
+      - torque converter
+      - TCC
+      - lockup clutch
+      - torque converter lockup
+    possible_causes:
+      - torque converter clutch wear
+      - contaminated transmission fluid
+      - hydraulic pressure problem
+      - solenoid fault
+      - transmission adaptation problem
+    diagnostic_steps:
+      - Monitor converter slip speed.
+      - Check transmission fluid condition.
+      - Check lock-up clutch command.
+      - Inspect pressure control.
+      - Evaluate torque converter condition.
+    related_dtcs: []
+
+  - id: bmw_transmission_adaptation_limit_reached
+    title: Transmission Adaptation Limit Reached
+    system: Automatic Transmission
+    description: Transmission control adaptations have reached their permitted correction range.
+    vehicle:
+      models:
+        - 1_series
+        - 2_series
+        - 3_series
+        - 4_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x4
+        - x5
+        - x6
+      generations:
+        - e81_e82_e87_e88
+        - e90_e91_e92_e93
+        - f20_f21
+        - f22_f23
+        - f30_f31_f34
+        - f32_f33_f36
+        - e60_e61
+        - f10_f11
+        - e63_e64
+        - f12_f13
+        - e65_e66
+        - f01_f02
+        - e84
+        - f48
+        - f25
+        - f26
+        - e70
+        - f15
+        - e71_e72
+        - f16
+        - g20_g21
+        - g22_g23_g26
+        - g30_g31
+        - g11_g12
+        - g01
+        - g02
+        - g05
+        - g06
+    symptoms:
+      - harsh shifting
+      - delayed gear engagement
+      - transmission slipping
+      - inconsistent shift quality
+      - transmission warning
+    keywords:
+      - transmission adaptation
+      - adaptation limit
+      - shift adaptation
+      - clutch adaptation
+    possible_causes:
+      - internal clutch wear
+      - hydraulic pressure loss
+      - valve body wear
+      - incorrect fluid level
+      - transmission mechanical wear
+    diagnostic_steps:
+      - Read adaptation values.
+      - Check transmission fluid level and condition.
+      - Evaluate clutch fill times.
+      - Inspect hydraulic pressure.
+      - Perform adaptation reset only after the cause is corrected.
+    related_dtcs: []
+
+  - id: bmw_transmission_park_lock_fault
+    title: Transmission Park Lock Fault
+    system: Automatic Transmission
+    description: Fault affecting the mechanism that mechanically locks the transmission in Park.
+    vehicle:
+      models:
+        - 3_series
+        - 4_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x3
+        - x4
+        - x5
+        - x6
+      generations:
+        - f30_f31_f34
+        - f32_f33_f36
+        - f10_f11
+        - f12_f13
+        - f01_f02
+        - f25
+        - f26
+        - f15
+        - e71_e72
+        - f16
+        - g20_g21
+        - g22_g23_g26
+        - g30_g31
+        - g11_g12
+        - g01
+        - g02
+        - g05
+        - g06
+    symptoms:
+      - transmission cannot select Park
+      - vehicle does not recognize Park
+      - parking brake warning
+      - transmission warning
+      - vehicle rolls after Park selection
+    keywords:
+      - park lock
+      - parking lock
+      - transmission park
+      - gearbox park mechanism
+    possible_causes:
+      - park lock actuator failure
+      - mechanical locking mechanism fault
+      - position sensor fault
+      - transmission control fault
+      - wiring or communication problem
+    diagnostic_steps:
+      - Confirm actual transmission position.
+      - Read transmission control faults.
+      - Check Park position feedback.
+      - Inspect actuator operation.
+      - Do not rely on Park to secure the vehicle if the lock is malfunctioning.
+    related_dtcs: []
+
+  - id: bmw_transmission_selector_position_fault
+    title: Transmission Selector Position Sensor Fault
+    system: Automatic Transmission
+    description: The transmission control system receives an invalid or implausible gear selector position.
+    vehicle:
+      models:
+        - 1_series
+        - 2_series
+        - 3_series
+        - 4_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+      generations:
+        - e81_e82_e87_e88
+        - e90_e91_e92_e93
+        - f20_f21
+        - f22_f23
+        - f30_f31_f34
+        - f32_f33_f36
+        - e60_e61
+        - f10_f11
+        - e63_e64
+        - f12_f13
+        - e65_e66
+        - f01_f02
+        - e84
+        - f48
+        - f25
+        - g20_g21
+        - g22_g23_g26
+        - g30_g31
+        - g11_g12
+        - g01
+        - g05
+    symptoms:
+      - gear selector warning
+      - incorrect gear indication
+      - transmission will not engage
+      - no reverse
+      - no drive
+    keywords:
+      - gear selector
+      - selector position
+      - transmission range
+      - selector sensor
+    possible_causes:
+      - selector sensor failure
+      - wiring fault
+      - selector module failure
+      - transmission control fault
+      - communication fault
+    diagnostic_steps:
+      - Check displayed and actual selector position.
+      - Read transmission live data.
+      - Inspect selector wiring.
+      - Check communication with transmission control unit.
+      - Replace or repair the selector assembly if defective.
+    related_dtcs: []
+
+  - id: bmw_transmission_reverse_gear_fault
+    title: Reverse Gear Engagement Fault
+    system: Automatic Transmission
+    description: The automatic transmission fails to engage or maintain reverse gear correctly.
+    vehicle:
+      models:
+        - 1_series
+        - 3_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+      generations:
+        - e81_e82_e87_e88
+        - e90_e91_e92_e93
+        - f20_f21
+        - f30_f31_f34
+        - e60_e61
+        - f10_f11
+        - e63_e64
+        - f12_f13
+        - e65_e66
+        - f01_f02
+        - e84
+        - f48
+        - f25
+        - e70
+        - f15
+        - g20_g21
+        - g30_g31
+        - g11_g12
+        - g01
+        - g05
+    symptoms:
+      - no reverse
+      - delayed reverse engagement
+      - reverse slips
+      - harsh reverse engagement
+      - transmission warning
+    keywords:
+      - reverse gear
+      - no reverse
+      - reverse engagement
+      - reverse clutch
+    possible_causes:
+      - reverse clutch wear
+      - hydraulic pressure loss
+      - solenoid fault
+      - valve body fault
+      - internal transmission damage
+    diagnostic_steps:
+      - Check transmission fluid level.
+      - Read transmission adaptation values.
+      - Monitor reverse engagement pressure.
+      - Check solenoid operation.
+      - Perform internal transmission inspection if hydraulic and electronic checks pass.
+    related_dtcs: []
+
+  - id: bmw_transmission_drive_engagement_fault
+    title: Drive Engagement Fault
+    system: Automatic Transmission
+    description: The automatic transmission has a delayed, missing or abnormal engagement of Drive.
+    vehicle:
+      models:
+        - 1_series
+        - 2_series
+        - 3_series
+        - 4_series
+        - 5_series
+        - x1
+        - x3
+        - x5
+      generations:
+        - e81_e82_e87_e88
+        - e90_e91_e92_e93
+        - f20_f21
+        - f22_f23
+        - f30_f31_f34
+        - f32_f33_f36
+        - e60_e61
+        - f10_f11
+        - f01_f02
+        - e84
+        - f48
+        - f25
+        - e70
+        - f15
+        - g20_g21
+        - g30_g31
+        - g11_g12
+        - g01
+        - g05
+    symptoms:
+      - delayed Drive engagement
+      - no forward movement
+      - transmission slipping
+      - harsh engagement
+    keywords:
+      - Drive engagement
+      - delayed engagement
+      - no drive
+      - transmission engagement
+    possible_causes:
+      - low fluid level
+      - hydraulic pressure loss
+      - clutch wear
+      - valve body fault
+      - mechatronic fault
+    diagnostic_steps:
+      - Check transmission fluid.
+      - Read adaptation values.
+      - Monitor engagement pressure.
+      - Check mechatronic operation.
+      - Inspect internal clutch packs if required.
+    related_dtcs: []
+
+  - id: bmw_transmission_fluid_leak
+    title: Automatic Transmission Fluid Leak
+    system: Automatic Transmission
+    description: Leakage of automatic transmission fluid from the transmission, oil pan, seals, cooler lines or mechatronic area.
+    vehicle:
+      models:
+        - 1_series
+        - 2_series
+        - 3_series
+        - 4_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x4
+        - x5
+        - x6
+      generations:
+        - e81_e82_e87_e88
+        - e90_e91_e92_e93
+        - f20_f21
+        - f22_f23
+        - f30_f31_f34
+        - f32_f33_f36
+        - e60_e61
+        - f10_f11
+        - e63_e64
+        - f12_f13
+        - e65_e66
+        - f01_f02
+        - e84
+        - f48
+        - f25
+        - f26
+        - e70
+        - f15
+        - e71_e72
+        - f16
+        - g20_g21
+        - g22_g23_g26
+        - g30_g31
+        - g11_g12
+        - g01
+        - g02
+        - g05
+        - g06
+    symptoms:
+      - transmission fluid leak
+      - transmission slipping
+      - delayed engagement
+      - low transmission fluid
+      - oil spots under vehicle
+    keywords:
+      - transmission oil leak
+      - ATF leak
+      - gearbox oil leak
+      - transmission fluid
+    possible_causes:
+      - oil pan seal leak
+      - mechatronic sleeve leak
+      - shaft seal leak
+      - cooler line leak
+      - transmission housing leak
+    diagnostic_steps:
+      - Identify the transmission fluid type.
+      - Clean the transmission exterior.
+      - Inspect for fresh leakage.
+      - Check fluid level using the correct procedure.
+      - Repair the leaking seal, pan or line.
+    related_dtcs: []
+
+  - id: bmw_xdrive_transfer_case_actuator_fault
+    title: xDrive Transfer Case Actuator Fault
+    system: xDrive
+    description: Fault affecting the electric actuator that controls the transfer case clutch.
+    vehicle:
+      models:
+        - 3_series
+        - 5_series
+        - 7_series
+        - x1
+        - x3
+        - x4
+        - x5
+        - x6
+        - x7
+      generations:
+        - e90_e91_e92_e93
+        - e60_e61
+        - f10_f11
+        - f01_f02
+        - e84
+        - f48
+        - f25
+        - f26
+        - e70
+        - f15
+        - e71_e72
+        - f16
+        - g07
+        - g20_g21
+        - g30_g31
+        - g11_g12
+        - g01
+        - g02
+        - g05
+        - g06
+    symptoms:
+      - xDrive warning
+      - drivetrain malfunction
+      - transfer case noise
+      - shudder during acceleration
+      - four wheel drive unavailable
+    keywords:
+      - transfer case actuator
+      - xDrive actuator
+      - VTG actuator
+      - transfer case motor
+    possible_causes:
+      - actuator motor failure
+      - worn actuator gear
+      - transfer case clutch wear
+      - wiring fault
+      - position sensor fault
+    diagnostic_steps:
+      - Read VTG control unit faults.
+      - Check actuator position data.
+      - Inspect actuator wiring.
+      - Check transfer case oil condition.
+      - Perform actuator calibration after repair.
+    related_dtcs: []
+
+  - id: bmw_xdrive_transfer_case_position_fault
+    title: Transfer Case Position Sensor Fault
+    system: xDrive
+    description: The transfer case control system receives an invalid clutch or actuator position signal.
+    vehicle:
+      models:
+        - 3_series
+        - 5_series
+        - 7_series
+        - x1
+        - x3
+        - x4
+        - x5
+        - x6
+        - x7
+      generations:
+        - e90_e91_e92_e93
+        - e60_e61
+        - f10_f11
+        - f01_f02
+        - e84
+        - f48
+        - f25
+        - f26
+        - e70
+        - f15
+        - e71_e72
+        - f16
+        - g07
+        - g20_g21
+        - g30_g31
+        - g11_g12
+        - g01
+        - g02
+        - g05
+        - g06
+    symptoms:
+      - xDrive warning
+      - drivetrain warning
+      - four wheel drive unavailable
+      - driveline vibration
+      - transfer case adaptation fault
+    keywords:
+      - transfer case position
+      - VTG position
+      - clutch position
+      - transfer case sensor
+    possible_causes:
+      - position sensor failure
+      - actuator fault
+      - calibration loss
+      - mechanical wear
+      - wiring fault
+    diagnostic_steps:
+      - Read VTG live data.
+      - Check commanded and actual actuator position.
+      - Perform calibration where supported.
+      - Inspect actuator and wiring.
+      - Check transfer case mechanical condition.
+    related_dtcs: []
+
+  - id: bmw_xdrive_transfer_case_clutch_wear
+    title: Transfer Case Clutch Wear
+    system: xDrive
+    description: Excessive wear of the transfer case clutch causes incorrect torque distribution between front and rear axles.
+    vehicle:
+      models:
+        - 3_series
+        - 5_series
+        - x1
+        - x3
+        - x4
+        - x5
+        - x6
+        - x7
+      generations:
+        - e90_e91_e92_e93
+        - e60_e61
+        - f10_f11
+        - e84
+        - f48
+        - f25
+        - f26
+        - e70
+        - f15
+        - e71_e72
+        - f16
+        - g07
+        - g20_g21
+        - g30_g31
+        - g01
+        - g02
+        - g05
+        - g06
+    symptoms:
+      - shudder during tight turns
+      - drivetrain vibration
+      - xDrive warning
+      - binding sensation
+      - uneven driveline operation
+    keywords:
+      - transfer case clutch
+      - VTG clutch wear
+      - xDrive clutch
+      - transfer case wear
+    possible_causes:
+      - worn clutch plates
+      - incorrect transfer case oil
+      - actuator adaptation error
+      - mismatched tire circumferences
+      - mechanical damage
+    diagnostic_steps:
+      - Check tire sizes and tread differences.
+      - Read VTG adaptation values.
+      - Inspect transfer case oil.
+      - Check actuator operation.
+      - Evaluate clutch wear using diagnostic data.
+    related_dtcs: []
+
+  - id: bmw_xdrive_transfer_case_oil_condition_fault
+    title: Transfer Case Oil Condition Fault
+    system: xDrive
+    description: Transfer case operation is affected by degraded, contaminated or incorrect transfer case fluid.
+    vehicle:
+      models:
+        - 3_series
+        - 5_series
+        - x1
+        - x3
+        - x4
+        - x5
+        - x6
+      generations:
+        - e90_e91_e92_e93
+        - e60_e61
+        - f10_f11
+        - e84
+        - f48
+        - f25
+        - f26
+        - e70
+        - f15
+        - e71_e72
+        - f16
+        - g20_g21
+        - g30_g31
+        - g01
+        - g02
+        - g05
+        - g06
+    symptoms:
+      - transfer case shudder
+      - xDrive warning
+      - driveline vibration
+      - tight-turn binding
+    keywords:
+      - transfer case oil
+      - VTG oil
+      - xDrive fluid
+      - transfer case service
+    possible_causes:
+      - degraded oil
+      - incorrect fluid
+      - clutch contamination
+      - excessive clutch wear
+    diagnostic_steps:
+      - Inspect transfer case oil condition.
+      - Verify the correct fluid specification.
+      - Replace fluid according to the correct service procedure.
+      - Reset transfer case oil adaptation where required.
+      - Road test for remaining shudder.
+    related_dtcs: []
+
+  - id: bmw_xdrive_tire_circumference_mismatch
+    title: xDrive Tire Circumference Mismatch
+    system: xDrive
+    description: Significant difference in rolling circumference between tires can cause transfer case clutch loading and xDrive faults.
+    vehicle:
+      models:
+        - 3_series
+        - 5_series
+        - x1
+        - x3
+        - x4
+        - x5
+        - x6
+        - x7
+      generations:
+        - e90_e91_e92_e93
+        - e60_e61
+        - f10_f11
+        - e84
+        - f48
+        - f25
+        - f26
+        - e70
+        - f15
+        - e71_e72
+        - f16
+        - g07
+        - g20_g21
+        - g30_g31
+        - g01
+        - g02
+        - g05
+        - g06
+    symptoms:
+      - xDrive warning
+      - drivetrain vibration
+      - shudder on turns
+      - transfer case overheating
+    keywords:
+      - tire circumference
+      - tyre circumference
+      - xDrive tires
+      - mismatched tires
+      - rolling circumference
+    possible_causes:
+      - uneven tire wear
+      - different tire sizes
+      - incorrect tire pressure
+      - mixed tire specifications
+    diagnostic_steps:
+      - Verify all tire dimensions.
+      - Measure tread depth on all four wheels.
+      - Check tire pressures.
+      - Compare rolling circumferences.
+      - Correct tire mismatch before diagnosing the transfer case.
+    related_dtcs: []
+
+  - id: bmw_hvac_blower_motor_fault
+    title: HVAC Blower Motor Fault
+    system: IHKA
+    description: Fault affecting the electric blower motor responsible for cabin air circulation.
+    vehicle:
+      models:
+        - 1_series
+        - 2_series
+        - 3_series
+        - 4_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x4
+        - x5
+        - x6
+        - x7
+      generations:
+        - e81_e82_e87_e88
+        - e90_e91_e92_e93
+        - f20_f21
+        - f22_f23
+        - f30_f31_f34
+        - f32_f33_f36
+        - e60_e61
+        - f10_f11
+        - e63_e64
+        - f12_f13
+        - e65_e66
+        - f01_f02
+        - e84
+        - f48
+        - e83
+        - f25
+        - f26
+        - e70
+        - f15
+        - e71_e72
+        - f16
+        - g07
+        - g20_g21
+        - g22_g23_g26
+        - g30_g31
+        - g11_g12
+        - g01
+        - g02
+        - g05
+        - g06
+    symptoms:
+      - blower not working
+      - weak airflow
+      - blower works intermittently
+      - blower runs at maximum speed
+    keywords:
+      - blower motor
+      - HVAC blower
+      - cabin fan
+      - heater blower
+    possible_causes:
+      - blower motor failure
+      - seized bearings
+      - electrical supply fault
+      - blower control module fault
+      - debris in blower housing
+    diagnostic_steps:
+      - Check blower fuse and power supply.
+      - Command the blower using diagnostic equipment.
+      - Check blower motor current.
+      - Inspect the blower wheel for obstruction.
+      - Replace the motor if defective.
+    related_dtcs: []
+
+  - id: bmw_hvac_blower_final_stage_fault
+    title: Blower Final Stage Fault
+    system: IHKA
+    description: Fault in the electronic blower final stage controlling cabin blower motor speed.
+    vehicle:
+      models:
+        - 1_series
+        - 3_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+        - x6
+      generations:
+        - e81_e82_e87_e88
+        - e90_e91_e92_e93
+        - f20_f21
+        - f30_f31_f34
+        - e60_e61
+        - f10_f11
+        - e63_e64
+        - f12_f13
+        - e65_e66
+        - f01_f02
+        - e84
+        - f48
+        - e83
+        - f25
+        - e70
+        - f15
+        - e71_e72
+        - f16
+        - g20_g21
+        - g30_g31
+        - g11_g12
+        - g01
+        - g05
+        - g06
+    symptoms:
+      - blower stuck at maximum
+      - blower does not respond to speed control
+      - blower operates intermittently
+      - blower continues after ignition off
+    keywords:
+      - final stage unit
+      - blower resistor
+      - blower controller
+      - FSU
+      - blower final stage
+    possible_causes:
+      - final stage failure
+      - blower motor excessive current
+      - wiring fault
+      - IHKA control fault
+      - water ingress
+    diagnostic_steps:
+      - Check blower motor current.
+      - Check final stage power supply.
+      - Verify blower command from IHKA.
+      - Inspect connectors.
+      - Replace the final stage if defective.
+    related_dtcs: []
+
+  - id: bmw_hvac_ihka_control_unit_fault
+    title: IHKA Climate Control Unit Fault
+    system: IHKA
+    description: Internal or communication fault in the BMW integrated automatic heating and air conditioning control unit.
+    vehicle:
+      models:
+        - 1_series
+        - 2_series
+        - 3_series
+        - 4_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x4
+        - x5
+        - x6
+        - x7
+      generations:
+        - e81_e82_e87_e88
+        - e90_e91_e92_e93
+        - f20_f21
+        - f22_f23
+        - f30_f31_f34
+        - f32_f33_f36
+        - e60_e61
+        - f10_f11
+        - e63_e64
+        - f12_f13
+        - e65_e66
+        - f01_f02
+        - e84
+        - f48
+        - e83
+        - f25
+        - f26
+        - e70
+        - f15
+        - e71_e72
+        - f16
+        - g07
+        - g20_g21
+        - g22_g23_g26
+        - g30_g31
+        - g11_g12
+        - g01
+        - g02
+        - g05
+        - g06
+    symptoms:
+      - climate control not working
+      - incorrect cabin temperature
+      - blower control failure
+      - AC unavailable
+      - HVAC communication fault
+    keywords:
+      - IHKA
+      - climate control module
+      - HVAC ECU
+      - automatic climate control
+    possible_causes:
+      - IHKA internal fault
+      - power supply problem
+      - communication fault
+      - software fault
+      - sensor input fault
+    diagnostic_steps:
+      - Scan IHKA fault memory.
+      - Check module power and ground.
+      - Check communication with body and engine modules.
+      - Review sensor live data.
+      - Program or replace the module if an internal fault is confirmed.
+    related_dtcs: []
+
+  - id: bmw_hvac_ac_pressure_sensor_fault
+    title: Air Conditioning Pressure Sensor Fault
+    system: Air Conditioning
+    description: Fault in the refrigerant pressure sensor used to control compressor operation and protect the AC system.
+    vehicle:
+      models:
+        - 1_series
+        - 2_series
+        - 3_series
+        - 4_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x4
+        - x5
+        - x6
+      generations:
+        - e81_e82_e87_e88
+        - e90_e91_e92_e93
+        - f20_f21
+        - f22_f23
+        - f30_f31_f34
+        - f32_f33_f36
+        - e60_e61
+        - f10_f11
+        - e63_e64
+        - f12_f13
+        - e65_e66
+        - f01_f02
+        - e84
+        - f48
+        - e83
+        - f25
+        - f26
+        - e70
+        - f15
+        - e71_e72
+        - f16
+        - g07
+        - g20_g21
+        - g22_g23_g26
+        - g30_g31
+        - g11_g12
+        - g01
+        - g02
+        - g05
+        - g06
+    symptoms:
+      - AC not cooling
+      - compressor does not engage
+      - intermittent AC
+      - high or low refrigerant pressure warning
+    keywords:
+      - AC pressure sensor
+      - refrigerant pressure
+      - A/C pressure sensor
+      - refrigerant pressure switch
+    possible_causes:
+      - pressure sensor failure
+      - refrigerant leak
+      - wiring fault
+      - connector fault
+      - incorrect refrigerant charge
+    diagnostic_steps:
+      - Read refrigerant pressure data.
+      - Compare pressure with ambient conditions.
+      - Inspect sensor wiring.
+      - Check refrigerant charge using proper equipment.
+      - Replace the sensor if the signal is implausible.
+    related_dtcs: []
+
+  - id: bmw_hvac_ac_compressor_control_fault
+    title: Air Conditioning Compressor Control Fault
+    system: Air Conditioning
+    description: Fault affecting electronic control of the air conditioning compressor.
+    vehicle:
+      models:
+        - 1_series
+        - 2_series
+        - 3_series
+        - 4_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x4
+        - x5
+        - x6
+      generations:
+        - e81_e82_e87_e88
+        - e90_e91_e92_e93
+        - f20_f21
+        - f22_f23
+        - f30_f31_f34
+        - f32_f33_f36
+        - e60_e61
+        - f10_f11
+        - e63_e64
+        - f12_f13
+        - e65_e66
+        - f01_f02
+        - e84
+        - f48
+        - e83
+        - f25
+        - f26
+        - e70
+        - f15
+        - e71_e72
+        - f16
+        - g07
+        - g20_g21
+        - g22_g23_g26
+        - g30_g31
+        - g11_g12
+        - g01
+        - g02
+        - g05
+        - g06
+    symptoms:
+      - AC not cooling
+      - compressor does not activate
+      - intermittent cooling
+      - abnormal compressor operation
+    keywords:
+      - AC compressor
+      - A/C compressor control
+      - compressor clutch
+      - compressor valve
+    possible_causes:
+      - compressor control valve failure
+      - compressor electrical fault
+      - pressure sensor fault
+      - low refrigerant charge
+      - control module fault
+    diagnostic_steps:
+      - Check AC pressure.
+      - Verify compressor command.
+      - Check compressor electrical supply and control signal.
+      - Inspect refrigerant charge.
+      - Test the compressor control valve where applicable.
+    related_dtcs: []
+
+  - id: bmw_hvac_heater_valve_fault
+    title: Heater Valve Fault
+    system: HVAC
+    description: Fault in the electrically controlled heater valve regulating engine coolant flow through the heater core.
+    vehicle:
+      models:
+        - 1_series
+        - 3_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+      generations:
+        - e81_e82_e87_e88
+        - e90_e91_e92_e93
+        - f20_f21
+        - f30_f31_f34
+        - e60_e61
+        - f10_f11
+        - e63_e64
+        - f12_f13
+        - e65_e66
+        - f01_f02
+        - e84
+        - f48
+        - e83
+        - f25
+        - e70
+        - f15
+        - g20_g21
+        - g30_g31
+        - g11_g12
+        - g01
+        - g05
+    symptoms:
+      - heater not working
+      - heater remains hot
+      - temperature cannot be regulated
+      - one side remains hot
+      - intermittent cabin heating
+    keywords:
+      - heater valve
+      - water valve
+      - coolant valve
+      - heating valve
+    possible_causes:
+      - valve stuck
+      - solenoid failure
+      - coolant contamination
+      - wiring fault
+      - IHKA control fault
+    diagnostic_steps:
+      - Check coolant level and temperature.
+      - Command heater valve operation.
+      - Measure valve electrical signals.
+      - Inspect coolant flow.
+      - Replace the valve if mechanically or electrically defective.
+    related_dtcs: []
+
+  - id: bmw_hvac_auxiliary_water_pump_fault
+    title: Auxiliary Water Pump Fault
+    system: HVAC
+    description: Fault affecting the auxiliary coolant pump used to maintain heater coolant circulation.
+    vehicle:
+      models:
+        - 3_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x3
+        - x5
+      generations:
+        - e90_e91_e92_e93
+        - e60_e61
+        - e63_e64
+        - e65_e66
+        - f10_f11
+        - f12_f13
+        - f01_f02
+        - f25
+        - e70
+        - f15
+        - g20_g21
+        - g30_g31
+        - g11_g12
+        - g01
+        - g05
+    symptoms:
+      - poor cabin heating at idle
+      - heater output varies with engine RPM
+      - auxiliary heating malfunction
+      - heater circulation fault
+    keywords:
+      - auxiliary water pump
+      - auxiliary coolant pump
+      - heater pump
+      - coolant circulation pump
+    possible_causes:
+      - pump motor failure
+      - seized pump
+      - air in cooling system
+      - wiring fault
+      - control signal failure
+    diagnostic_steps:
+      - Check coolant level.
+      - Activate the auxiliary pump.
+      - Listen for pump operation.
+      - Check pump supply voltage and current.
+      - Bleed the cooling system if required.
+    related_dtcs: []
+
+  - id: bmw_hvac_interior_temperature_sensor_fault
+    title: Interior Temperature Sensor Fault
+    system: HVAC
+    description: Fault in the cabin temperature sensor used by the climate control system to regulate heating and cooling.
+    vehicle:
+      models:
+        - 1_series
+        - 2_series
+        - 3_series
+        - 4_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x4
+        - x5
+        - x6
+      generations:
+        - e81_e82_e87_e88
+        - e90_e91_e92_e93
+        - f20_f21
+        - f22_f23
+        - f30_f31_f34
+        - f32_f33_f36
+        - e60_e61
+        - f10_f11
+        - e63_e64
+        - f12_f13
+        - e65_e66
+        - f01_f02
+        - e84
+        - f48
+        - e83
+        - f25
+        - f26
+        - e70
+        - f15
+        - e71_e72
+        - f16
+        - g07
+        - g20_g21
+        - g22_g23_g26
+        - g30_g31
+        - g11_g12
+        - g01
+        - g02
+        - g05
+        - g06
+    symptoms:
+      - incorrect cabin temperature
+      - HVAC cycles incorrectly
+      - heating or cooling output unstable
+      - climate control reacts slowly
+    keywords:
+      - interior temperature sensor
+      - cabin temperature sensor
+      - IHKA temperature sensor
+      - passenger compartment temperature
+    possible_causes:
+      - sensor failure
+      - blocked sensor intake
+      - wiring fault
+      - IHKA input fault
+    diagnostic_steps:
+      - Read cabin temperature in live data.
+      - Compare with actual cabin temperature.
+      - Inspect sensor intake for obstruction.
+      - Check sensor wiring.
+      - Replace the sensor if readings are implausible.
+    related_dtcs: []
+
+  - id: bmw_hvac_sunlight_sensor_fault
+    title: Solar Sensor Fault
+    system: HVAC
+    description: Fault in the solar radiation sensor used to compensate climate control operation for sunlight intensity.
+    vehicle:
+      models:
+        - 1_series
+        - 3_series
+        - 4_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+      generations:
+        - e81_e82_e87_e88
+        - e90_e91_e92_e93
+        - f20_f21
+        - f30_f31_f34
+        - f32_f33_f36
+        - e60_e61
+        - f10_f11
+        - e63_e64
+        - f12_f13
+        - e65_e66
+        - f01_f02
+        - e84
+        - f48
+        - f25
+        - e70
+        - f15
+        - g20_g21
+        - g30_g31
+        - g11_g12
+        - g01
+        - g05
+    symptoms:
+      - automatic climate control inaccurate
+      - cabin temperature varies in sunlight
+      - HVAC regulation inconsistent
+    keywords:
+      - solar sensor
+      - sunlight sensor
+      - solar radiation sensor
+      - IHKA solar sensor
+    possible_causes:
+      - sensor failure
+      - wiring fault
+      - windshield replacement issue
+      - blocked sensor
+      - IHKA input fault
+    diagnostic_steps:
+      - Read solar sensor values.
+      - Compare sensor response with actual sunlight.
+      - Inspect sensor mounting.
+      - Check wiring and connector.
+      - Replace the sensor if response is implausible.
+    related_dtcs: []
+
+  - id: bmw_hvac_evaporator_temperature_sensor_fault
+    title: Evaporator Temperature Sensor Fault
+    system: Air Conditioning
+    description: Fault in the evaporator temperature sensor used to prevent evaporator icing and regulate cooling.
+    vehicle:
+      models:
+        - 1_series
+        - 2_series
+        - 3_series
+        - 4_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+      generations:
+        - e81_e82_e87_e88
+        - e90_e91_e92_e93
+        - f20_f21
+        - f22_f23
+        - f30_f31_f34
+        - f32_f33_f36
+        - e60_e61
+        - f10_f11
+        - e63_e64
+        - f12_f13
+        - e65_e66
+        - f01_f02
+        - e84
+        - f48
+        - e83
+        - f25
+        - e70
+        - f15
+        - g20_g21
+        - g30_g31
+        - g11_g12
+        - g01
+        - g05
+    symptoms:
+      - AC cooling inconsistent
+      - evaporator icing
+      - AC shuts off intermittently
+      - poor cooling
+    keywords:
+      - evaporator temperature sensor
+      - evaporator sensor
+      - AC evaporator
+    possible_causes:
+      - sensor failure
+      - wiring fault
+      - incorrect sensor placement
+      - evaporator icing
+    diagnostic_steps:
+      - Read evaporator temperature.
+      - Compare sensor value with actual evaporator conditions.
+      - Inspect sensor wiring.
+      - Check for evaporator icing.
+      - Replace the sensor if defective.
+    related_dtcs: []
+
+  - id: bmw_hvac_air_distribution_actuator_fault
+    title: Air Distribution Actuator Fault
+    system: HVAC
+    description: Fault in an electrically controlled flap actuator that directs cabin air to different ventilation outlets.
+    vehicle:
+      models:
+        - 1_series
+        - 2_series
+        - 3_series
+        - 4_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+        - x6
+      generations:
+        - e81_e82_e87_e88
+        - e90_e91_e92_e93
+        - f20_f21
+        - f22_f23
+        - f30_f31_f34
+        - f32_f33_f36
+        - e60_e61
+        - f10_f11
+        - e63_e64
+        - f12_f13
+        - e65_e66
+        - f01_f02
+        - e84
+        - f48
+        - e83
+        - f25
+        - f26
+        - e70
+        - f15
+        - e71_e72
+        - f16
+        - g20_g21
+        - g30_g31
+        - g11_g12
+        - g01
+        - g05
+        - g06
+    symptoms:
+      - air comes from wrong vents
+      - defrost mode does not work correctly
+      - airflow direction cannot be selected
+      - clicking behind dashboard
+    keywords:
+      - air distribution flap
+      - HVAC flap actuator
+      - vent actuator
+      - air flap motor
+    possible_causes:
+      - actuator motor failure
+      - broken flap mechanism
+      - position sensor fault
+      - calibration loss
+      - wiring fault
+    diagnostic_steps:
+      - Run HVAC actuator calibration.
+      - Monitor actuator position.
+      - Listen for abnormal actuator noise.
+      - Inspect accessible mechanisms.
+      - Replace the defective actuator if required.
+    related_dtcs: []
+
+  - id: bmw_hvac_temperature_mixing_actuator_fault
+    title: Temperature Mixing Flap Actuator Fault
+    system: HVAC
+    description: Fault in an HVAC temperature mixing flap actuator responsible for regulating hot and cold air.
+    vehicle:
+      models:
+        - 1_series
+        - 2_series
+        - 3_series
+        - 4_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x4
+        - x5
+        - x6
+      generations:
+        - e81_e82_e87_e88
+        - e90_e91_e92_e93
+        - f20_f21
+        - f22_f23
+        - f30_f31_f34
+        - f32_f33_f36
+        - e60_e61
+        - f10_f11
+        - e63_e64
+        - f12_f13
+        - e65_e66
+        - f01_f02
+        - e84
+        - f48
+        - e83
+        - f25
+        - f26
+        - e70
+        - f15
+        - e71_e72
+        - f16
+        - g07
+        - g20_g21
+        - g22_g23_g26
+        - g30_g31
+        - g11_g12
+        - g01
+        - g02
+        - g05
+        - g06
+    symptoms:
+      - one side hot and one side cold
+      - temperature cannot be regulated
+      - incorrect cabin temperature
+      - clicking behind dashboard
+    keywords:
+      - temperature flap
+      - mixing flap
+      - blend door actuator
+      - temperature actuator
+    possible_causes:
+      - actuator failure
+      - broken flap
+      - position sensor failure
+      - calibration loss
+      - wiring fault
+    diagnostic_steps:
+      - Read IHKA actuator faults.
+      - Command the affected flap.
+      - Compare commanded and actual positions.
+      - Perform actuator calibration.
+      - Inspect or replace the actuator if required.
+    related_dtcs: []
+
+  - id: bmw_hvac_fresh_air_recirculation_actuator_fault
+    title: Fresh Air and Recirculation Flap Fault
+    system: HVAC
+    description: Fault affecting the actuator controlling fresh-air intake and cabin recirculation.
+    vehicle:
+      models:
+        - 1_series
+        - 2_series
+        - 3_series
+        - 4_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+      generations:
+        - e81_e82_e87_e88
+        - e90_e91_e92_e93
+        - f20_f21
+        - f22_f23
+        - f30_f31_f34
+        - f32_f33_f36
+        - e60_e61
+        - f10_f11
+        - e63_e64
+        - f12_f13
+        - e65_e66
+        - f01_f02
+        - e84
+        - f48
+        - f25
+        - e70
+        - f15
+        - g20_g21
+        - g30_g31
+        - g11_g12
+        - g01
+        - g05
+    symptoms:
+      - recirculation does not work
+      - outside air enters continuously
+      - windshield fogging
+      - airflow changes unexpectedly
+    keywords:
+      - recirculation flap
+      - fresh air flap
+      - recirculation actuator
+      - intake flap
+    possible_causes:
+      - actuator failure
+      - flap obstruction
+      - position sensor fault
+      - calibration loss
+      - wiring fault
+    diagnostic_steps:
+      - Activate fresh-air and recirculation modes.
+      - Monitor flap position.
+      - Perform actuator calibration.
+      - Inspect flap mechanism.
+      - Repair or replace the actuator.
+    related_dtcs: []
+
+  - id: bmw_hvac_ac_condenser_fan_fault
+    title: Air Conditioning Condenser Fan Fault
+    system: Air Conditioning
+    description: Fault affecting the electric fan responsible for cooling the AC condenser and managing refrigerant pressure.
+    vehicle:
+      models:
+        - 1_series
+        - 3_series
+        - 5_series
+        - 6_series
+        - 7_series
+        - x1
+        - x3
+        - x5
+        - x6
+      generations:
+        - e81_e82_e87_e88
+        - e90_e91_e92_e93
+        - f20_f21
+        - f30_f31_f34
+        - e60_e61
+        - f10_f11
+        - e63_e64
+        - f12_f13
+        - e65_e66
+        - f01_f02
+        - e84
+        - f48
+        - e83
+        - f25
+        - e70
+        - f15
+        - e71_e72
+        - f16
+        - g20_g21
+        - g30_g31
+        - g11_g12
+        - g01
+        - g05
+    symptoms:
+      - AC works poorly at idle
+      - refrigerant pressure rises
+      - AC compressor shuts off
+      - cooling fan does not operate
+    keywords:
+      - condenser fan
+      - AC fan
+      - electric cooling fan
+      - refrigerant fan
+    possible_causes:
+      - fan motor failure
+      - fan control module failure
+      - wiring fault
+      - pressure sensor fault
+      - blocked condenser
+    diagnostic_steps:
+      - Activate the condenser fan using diagnostic equipment.
+      - Check fan power supply.
+      - Monitor refrigerant pressure.
+      - Inspect fan wiring and connectors.
+      - Replace the fan assembly if defective.
+    related_dtcs: []
+
   - id: bmw_steering_eps_motor_fault
     title: Electric Power Steering Motor Fault
     system: EPS
