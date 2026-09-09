@@ -150,14 +150,13 @@ return typeof x==='object'&&x!==null?(x[L]??x.en??Object.values(x)[0]??''):x;
 function localizedArray(x){return flat(x).map(localizedValue).filter(Boolean)}
 function textValue(x){return localizedArray(x).join(' ')}
 
+/* ENGINE POWER: reads power_hp directly from vehicle YAML */
 function engineLabel(e){
 let name=localizedValue(e?.name??e);
-let hp=e?.power_hp??e?.horsepower??e?.hp??e?.power;
-let kw=e?.power_kw??e?.kw;
-let power='';
-if(hp!==undefined&&hp!==null&&hp!=='')power=`${hp} hp`;
-else if(kw!==undefined&&kw!==null&&kw!=='')power=`${kw} kW`;
-return power?`${name} · ${power}`:name;
+let hp=e?.power_hp;
+return hp!==undefined&&hp!==null&&hp!==''
+    ?`${name} · ${hp} hp`
+    :name;
 }
 
 function txt(r){
