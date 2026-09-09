@@ -145,12 +145,33 @@ return String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','
 }
 function flat(x){return Array.isArray(x)?x.flat(Infinity):[x]}
 function localizedValue(x){
-return typeof x==='object'&&x!==null?(x[L]??x.en??Object.values(x)[0]??''):x;
+if(typeof x==='object'&&x!==null)
+return x[L]??x.en??x.name??x.code??x.id??Object.values(x)[0]??'';
+return x;
 }
-function localizedArray(x){return flat(x).map(localizedValue).filter(Boolean)}
+function localizedArray(x){return flat(x).map(localizedValue).filter(x=>x!==null&&x!==undefined&&x!=='')}
 function textValue(x){return localizedArray(x).join(' ')}
 
-/* ENGINE POWER: reads power_hp directly from vehicle YAML */
+/* DTC NORMALIZER: accepts strings, arrays and structured DTC objects */
+function dtcValues(x){
+if(x==null)return[];
+if(Array.isArray(x))return x.flatMap(dtcValues);
+if(typeof x==='object'){
+return [
+x.code,x.dtc,x.id,x.name,
+x.description?.[L],x.description?.en
+].filter(x=>typeof x==='string'&&x.trim()).map(x=>x.trim());
+}
+return typeof x==='string'?[x.trim()]:[];
+}
+function dtcCodes(x){
+return [...new Set(
+dtcValues(x)
+.map(x=>String(x).toUpperCase())
+.filter(x=>/^[PBCU]\d{4}$/.test(x))
+)];
+}
+
 function engineLabel(e){
 let name=localizedValue(e?.name??e);
 let hp=e?.power_hp;
@@ -222,58 +243,76 @@ for(const [c,a] of Object.entries(A))if(has(n,a))p.push(c);
 return [...new Set(p)];
 }
 function expanded(p){return [...new Set([...p,...p.flatMap(c=>E[c]||[])])]}
+
 function analyzeQuery(q){
 let n=N(q),p=concepts(q),dtcs=[];
 const re=/\b(?:P|B|C|U)\d{4}\b/gi;
-dtcs=[...new Set((n.match(re)||[]).map(x=>x.toUpperCase()))];
+dtcs=[...new Set((n.match(re)||[]).map(x=>String(x).toUpperCase()))];
 return{n,concepts:p,dtcs};
 }
+
 function similarity(a,b){
 const A=new Set(N(a).split(' ').filter(Boolean)),B=new Set(N(b).split(' ').filter(Boolean));
 if(!A.size||!B.size)return 0;
 let n=0;for(const x of A)if(B.has(x))n++;
 return n/Math.max(A.size,B.size);
 }
+
 function fuzzyFieldScore(q,v){
 const a=N(q),b=N(v);if(!a||!b)return 0;
 if(a===b)return 1;if(b.includes(a)||a.includes(b))return .85;
 return similarity(a,b);
 }
 
-function title(r){let x=localizedValue(r.title);return typeof x==='string'?x:r.id}
-function systemName(r){return localizedValue(r.system||r.category||'diagnostics')}
+function title(r){
+let x=localizedValue(r.title);
+return typeof x==='string'?x:r.id;
+}
+function systemName(r){
+return localizedValue(r.system||r.category||'diagnostics');
+}
 
 function valueForms(x){
 if(x==null)return[];
 if(Array.isArray(x))return x.flatMap(valueForms);
-if(typeof x==='object')return [...new Set([
+if(typeof x==='object')
+return [...new Set([
 x.id,x.name,...(x.engine_codes||[]),...(x.codes||[])
 ].filter(Boolean).flatMap(valueForms))];
 return[String(x)];
 }
+
 function tokens(x){
 return new Set(N(x).replace(/[_\/-]+/g,' ').split(' ').filter(Boolean));
 }
+
 function oneValueMatch(selected,value){
 const s=valueForms(selected),v=valueForms(value);
 if(!v.length)return true;
+
 for(const a of s)for(const b of v){
 const na=N(a),nb=N(b);
+
 if(!na||!nb||na==='all'||nb==='all'||na==='*'||nb==='*')return true;
 if(na===nb)return true;
+
 const A=tokens(a),B=tokens(b);
+
 if(A.size&&B.size){
-let common=0;for(const x of A)if(B.has(x))common++;
+let common=0;
+for(const x of A)if(B.has(x))common++;
 if(common===Math.min(A.size,B.size))return true;
 }
 }
 return false;
 }
+
 function matchesValue(selected,value){
 if(value==null)return true;
 const arr=Array.isArray(value)?value:[value];
 return !arr.length||arr.some(v=>oneValueMatch(selected,v));
 }
+
 function vehicleMatch(r,v){
 const x=r.vehicle||r.applicable||r.applicable_vehicle||r.vehicle_compatibility||{};
 return matchesValue(v.mk,x.manufacturers??x.manufacturer)&&
@@ -283,8 +322,13 @@ matchesValue(v.e,x.engines??x.engine);
 }
 
 function score(r,a,q){
-const t=txt(r),spec=N([r.id,r.system,r.keywords,r.related_dtcs].flat(Infinity).map(localizedValue).join(' '));
+const t=txt(r);
+const spec=N([
+r.id,r.system,r.keywords,r.related_dtcs
+].flat(Infinity).map(localizedValue).join(' '));
+
 let z=0,m=[];
+
 for(const c of a.concepts){
 const aliases=A[c]||[c.replaceAll('_',' ')];
 const symptoms=localizedArray(r.symptoms).map(C);
@@ -292,69 +336,128 @@ const keys=localizedArray(r.keywords).map(N);
 const direct=symptoms.includes(c);
 const key=keys.some(k=>aliases.some(y=>k===N(y)||k.includes(N(y))||N(y).includes(k)));
 const phrase=has(t,aliases);
+
 if(direct){z+=W[c]||20;m.push(c)}
 else if(key){z+=(W[c]||20)*.72;m.push(c)}
 else if(phrase){z+=(W[c]||20)*.42;m.push(c)}
 }
+
 for(const c of expanded(a.concepts).filter(x=>!a.concepts.includes(x)))
 if(has(t,A[c]||[c.replaceAll('_',' ')]))z+=4;
 
-const dtcs=localizedArray(r.related_dtcs).map(x=>x.toUpperCase());
-for(const d of a.dtcs)if(dtcs.includes(d)||spec.includes(d.toLowerCase()))z+=35;
+/* DTC matching is now type-safe */
+const dtcs=dtcCodes(r.related_dtcs);
+
+for(const d of a.dtcs)
+if(dtcs.includes(d)||spec.includes(d.toLowerCase()))z+=35;
+
 if(a.concepts.length>=2&&a.concepts.every(c=>has(t,A[c]||[c.replaceAll('_',' ')])))z+=18;
 
 if(a.concepts.includes('low_rpm_power_loss')&&has(spec,['p0299','underboost','turbo','boost']))z+=24;
 if(a.concepts.includes('limp_mode')&&has(spec,['underboost','overboost','turbo','egr','dpf','fuel pressure']))z+=16;
-if(a.concepts.includes('poor_power')&&a.concepts.includes('limp_mode')&&has(spec,['injector circuit','coolant','coolant temperature','system voltage']))z-=20;
+
+if(
+a.concepts.includes('poor_power')&&
+a.concepts.includes('limp_mode')&&
+has(spec,['injector circuit','coolant','coolant temperature','system voltage'])
+)z-=20;
 
 const qWords=N(q).split(' ').filter(Boolean);
 z+=Math.min(12,similarity(q,t)*12);
+
 if(qWords.length&&qWords.some(w=>t.includes(w)&&w.length>3))
 z+=Math.min(8,qWords.filter(w=>t.includes(w)&&w.length>3).length*2);
 
-return{r,s:Math.max(0,Math.min(100,z)),m:[...new Set(m)]};
+return{
+r,
+s:Math.max(0,Math.min(100,z)),
+m:[...new Set(m)]
+};
 }
 
 function dedupe(rows){
 const seen=new Set();
+
 return rows.filter(x=>{
-const k=N(title(x.r))+'|'+N(systemName(x.r))+'|'+N(localizedArray(x.r.related_dtcs).join(' '));
+const k=
+N(title(x.r))+
+'|'+
+N(systemName(x.r))+
+'|'+
+dtcCodes(x.r.related_dtcs).join(' ');
+
 if(seen.has(k))return false;
-seen.add(k);return true;
+seen.add(k);
+return true;
 });
 }
 
 function setLang(){
 const x=I[L]||I.en;
+
 document.documentElement.lang=L;
 document.title='AutoDecode – '+x.title;
 
-[['pageTitle','title'],['home','home'],['intro','intro'],['lm','make'],['lmodel','model'],
-['lg','generation'],['ly','year'],['le','engine'],['lp','problem'],['find','find'],['rh','rh']]
-.forEach(([id,k])=>$(id).textContent=x[k]);
+[
+['pageTitle','title'],
+['home','home'],
+['intro','intro'],
+['lm','make'],
+['lmodel','model'],
+['lg','generation'],
+['ly','year'],
+['le','engine'],
+['lp','problem'],
+['find','find'],
+['rh','rh']
+].forEach(([id,k])=>$(id).textContent=x[k]);
 
 $('problem').placeholder=x.ph;
-$('langbtn').textContent={en:'🇬🇧 EN',de:'🇩🇪 DE',ro:'🇷🇴 RO',fr:'🇫🇷 FR',es:'🇪🇸 ES',it:'🇮🇹 IT',nl:'🇳🇱 NL'}[L]+' ▾';
 
-['make','model','generation','year','engine'].forEach((id,i)=>
-$(id).options[0].textContent=[x.sm,x.smod,x.sg,x.sy,x.se][i]
+$('langbtn').textContent={
+en:'🇬🇧 EN',
+de:'🇩🇪 DE',
+ro:'🇷🇴 RO',
+fr:'🇫🇷 FR',
+es:'🇪🇸 ES',
+it:'🇮🇹 IT',
+nl:'🇳🇱 NL'
+}[L]+' ▾';
+
+[
+'make',
+'model',
+'generation',
+'year',
+'engine'
+].forEach((id,i)=>
+$(id).options[0].textContent=
+[x.sm,x.smod,x.sg,x.sy,x.se][i]
 );
 
 localStorage.setItem('autodecode_lang',L);
 }
 
 function reset(id,k,off=true){
-$(id).innerHTML='<option value="">'+(I[L]||I.en)[k]+'</option>';
+$(id).innerHTML=
+'<option value="">'+
+(I[L]||I.en)[k]+
+'</option>';
+
 $(id).disabled=off;
 }
 
 function fill(id,a,k){
 reset(id,k,false);
+
 a.forEach(x=>{
 const option=new Option(
-id==='engine'?engineLabel(x):localizedValue(x.name??x),
+id==='engine'
+?engineLabel(x)
+:localizedValue(x.name??x),
 x.id??x
 );
+
 $(id).add(option);
 });
 }
@@ -364,60 +467,97 @@ const mk=makers.find(x=>x.id===$('make').value);
 const m=vdb?.models?.find(x=>x.id===$('model').value);
 const g=m?.generations?.find(x=>x.id===$('generation').value);
 const e=g?.engines?.find(x=>x.id===$('engine').value);
+
 return{mk,m,g,e,y:$('year').value};
 }
 
 async function yaml(u){
 const r=await fetch(
 u+(u.includes('?')?'&':'?')+'v='+Date.now(),
-{cache:'no-store',headers:{Accept:'text/yaml,text/plain,application/x-yaml,*/*'}}
+{
+cache:'no-store',
+headers:{
+Accept:'text/yaml,text/plain,application/x-yaml,*/*'
+}
+}
 );
+
 if(!r.ok)throw Error('HTTP '+r.status);
+
 return jsyaml.load(await r.text());
 }
 
 function years(g){
 const a=Number(g?.production?.from)||0;
 const b=Number(g?.production?.to)||new Date().getFullYear();
-return Array.from({length:Math.max(0,b-a+1)},(_,i)=>String(a+i));
+
+return Array.from(
+{length:Math.max(0,b-a+1)},
+(_,i)=>String(a+i)
+);
 }
 
 function showVehicle(){
 const v=current(),u=I[L]||I.en;
+
 if(!v.mk||!v.m||!v.g||!v.e||!v.y){
 $('vehicle').hidden=true;
 $('find').disabled=true;
 return;
 }
+
 $('vehicle').hidden=false;
+
 $('vehicle').innerHTML=
 '<strong>'+u.vehicle+':</strong> '+
 esc(localizedValue(v.mk.name))+' '+
 esc(localizedValue(v.m.name))+' '+
-esc(localizedValue(v.g.name))+' · '+
-esc(v.y)+' · '+
+esc(localizedValue(v.g.name))+
+' · '+
+esc(v.y)+
+' · '+
 esc(engineLabel(v.e));
+
 $('find').disabled=false;
 }
 
 async function loadTech(id){
 if(loaded===id&&tdb.length)return;
-const url='data/technical/diagnostics/'+encodeURIComponent(id)+'.yaml';
+
+const url=
+'data/technical/diagnostics/'+
+encodeURIComponent(id)+
+'.yaml';
 
 try{
+
 const r=await fetch(
 url+'?v='+Date.now(),
-{cache:'no-store',headers:{Accept:'text/yaml,text/plain,application/x-yaml,*/*'}}
+{
+cache:'no-store',
+headers:{
+Accept:'text/yaml,text/plain,application/x-yaml,*/*'
+}
+}
 );
-if(!r.ok)throw Error('HTTP '+r.status+' while loading '+url);
+
+if(!r.ok)
+throw Error(
+'HTTP '+r.status+
+' while loading '+url
+);
 
 const text=await r.text();
 let d;
 
 try{
 d=jsyaml.load(text);
+
 }catch(e){
-console.error('TECH YAML PARSE ERROR:',{
+
+console.error(
+'TECH YAML PARSE ERROR:',
+{
 url,
 message:e?.message,
 reason:e?.reason,
@@ -425,18 +565,25 @@ line:e?.mark?.line!=null?e.mark.line+1:null,
 column:e?.mark?.column!=null?e.mark.column+1:null,
 snippet:e?.mark?.snippet||null,
 mark:e?.mark
-});
+}
+);
+
 throw e;
 }
 
 if(!Array.isArray(d?.technical_data))
-throw Error('Invalid technical_data structure in '+url);
+throw Error(
+'Invalid technical_data structure in '+url
+);
 
 tdb=d.technical_data;
 loaded=id;
 
 }catch(e){
-console.error('TECH DATABASE ERROR:',{
+
+console.error(
+'TECH DATABASE ERROR:',
+{
 url,
 message:e?.message,
 reason:e?.reason,
@@ -444,170 +591,334 @@ line:e?.mark?.line!=null?e.mark.line+1:null,
 column:e?.mark?.column!=null?e.mark.column+1:null,
 snippet:e?.mark?.snippet||null,
 error:e
-});
+}
+);
+
 throw e;
 }
 }
 
 $('make').onchange=async()=>{
 const id=$('make').value;
+
 reset('model','smod');
 reset('generation','sg');
 reset('year','sy');
 reset('engine','se');
+
 $('vehicle').hidden=true;
 $('find').disabled=true;
+
 if(!id)return;
 
 try{
-vdb=await yaml('data/vehicles/'+encodeURIComponent(id)+'.yaml');
-fill('model',vdb.models||[],'smod');
+
+vdb=await yaml(
+'data/vehicles/'+
+encodeURIComponent(id)+
+'.yaml'
+);
+
+fill(
+'model',
+vdb.models||[],
+'smod'
+);
+
 }catch(e){
-console.error('VEHICLE DATABASE ERROR:',e);
-$('status').textContent=(I[L]||I.en).error;
-$('status').className='status error';
+
+console.error(
+'VEHICLE DATABASE ERROR:',
+e
+);
+
+$('status').textContent=
+(I[L]||I.en).error;
+
+$('status').className=
+'status error';
 }
 };
 
 $('model').onchange=()=>{
-const m=vdb?.models?.find(x=>x.id===$('model').value);
+const m=vdb?.models?.find(
+x=>x.id===$('model').value
+);
+
 reset('generation','sg');
 reset('year','sy');
 reset('engine','se');
-if(m)fill('generation',m.generations||[],'sg');
+
+if(m)
+fill(
+'generation',
+m.generations||[],
+'sg'
+);
 };
 
 $('generation').onchange=()=>{
 const v=current();
+
 reset('year','sy');
 reset('engine','se');
+
 if(v.g){
-fill('year',years(v.g).map(x=>({id:x,name:x})),'sy');
-fill('engine',v.g.engines||[],'se');
+
+fill(
+'year',
+years(v.g).map(
+x=>({id:x,name:x})
+),
+'sy'
+);
+
+fill(
+'engine',
+v.g.engines||[],
+'se'
+);
 }
 };
 
 $('year').onchange=showVehicle;
 $('engine').onchange=showVehicle;
 
-$('langbtn').onclick=()=>$('langmenu').classList.toggle('open');
+$('langbtn').onclick=()=>
+$('langmenu').classList.toggle('open');
 
-document.querySelectorAll('[data-l]').forEach(x=>{
+document
+.querySelectorAll('[data-l]')
+.forEach(x=>{
+
 x.onclick=()=>{
 L=x.dataset.l;
+
 $('langmenu').classList.remove('open');
+
 setLang();
 showVehicle();
 };
 });
 
-document.addEventListener('click',e=>{
-if(!e.target.closest('.langs'))$('langmenu').classList.remove('open');
-});
+document.addEventListener(
+'click',
+e=>{
+if(!e.target.closest('.langs'))
+$('langmenu').classList.remove('open');
+}
+);
 
 $('problem').oninput=()=>{
 $('results').hidden=true;
 };
 
 $('find').onclick=async()=>{
-const v=current(),q=$('problem').value.trim(),u=I[L]||I.en;
+const v=current();
+const q=$('problem').value.trim();
+const u=I[L]||I.en;
 
 if(!v.mk||!v.m||!v.g||!v.e||!v.y){
+
 $('status').textContent=u.complete;
 $('status').className='status error';
+
 return;
 }
 
 if(!q){
+
 $('status').textContent=u.describe;
 $('status').className='status error';
+
 return;
 }
 
 $('find').disabled=true;
+
 $('status').textContent=u.search;
 $('status').className='status';
 
 try{
+
 await loadTech(v.mk.id);
 
 const analysis=analyzeQuery(q);
-const vehicleRows=tdb.filter(r=>vehicleMatch(r,v));
 
-let rows=vehicleRows
+const vehicleRows=
+tdb.filter(r=>vehicleMatch(r,v));
+
+let rows=
+vehicleRows
 .map(r=>score(r,analysis,q))
 .filter(x=>x.s>=8)
 .sort((a,b)=>b.s-a.s)
 .slice(0,30);
 
-rows=dedupe(rows).slice(0,20);
+rows=
+dedupe(rows)
+.slice(0,20);
 
 $('results').hidden=false;
 
 $('count').textContent=
 rows.length===1
 ?u.one
-:u.many.replace('{n}',rows.length);
+:u.many.replace(
+'{n}',
+rows.length
+);
 
-$('list').innerHTML=rows.length
+$('list').innerHTML=
+
+rows.length
+
 ?rows.map(x=>{
+
 const r=x.r;
-const causes=localizedArray(r.possible_causes);
-const steps=localizedArray(r.diagnostic_steps);
-const dtcs=localizedArray(r.related_dtcs);
+const causes=
+localizedArray(r.possible_causes);
+const steps=
+localizedArray(r.diagnostic_steps);
 
-return `<article class="card">
+/* SAFE DTC DISPLAY */
+const dtcs=
+dtcCodes(r.related_dtcs);
+
+return `
+<article class="card">
+
 <div class="top">
+
 <div>
-<h3 class="title">${esc(title(r))}</h3>
-<div class="system">${esc(systemName(r))}</div>
-${r.description?`<p class="desc">${esc(localizedValue(r.description))}</p>`:''}
-<div class="tags">
-${x.m.map(a=>`<span class="tag">${esc(a.replaceAll('_',' '))}</span>`).join('')}
-${dtcs.map(a=>`<span class="tag">${esc(a)}</span>`).join('')}
-</div>
-</div>
-<div class="score">${u.rel}: ${Math.round(x.s)}</div>
+
+<h3 class="title">
+${esc(title(r))}
+</h3>
+
+<div class="system">
+${esc(systemName(r))}
 </div>
 
-${causes.length?`
+${
+r.description
+?`<p class="desc">
+${esc(localizedValue(r.description))}
+</p>`
+:''
+}
+
+<div class="tags">
+
+${
+x.m.map(a=>
+`<span class="tag">
+${esc(a.replaceAll('_',' '))}
+</span>`
+).join('')
+}
+
+${
+dtcs.map(a=>
+`<span class="tag">
+${esc(a)}
+</span>`
+).join('')
+}
+
+</div>
+
+</div>
+
+<div class="score">
+${u.rel}: ${Math.round(x.s)}
+</div>
+
+</div>
+
+${
+causes.length
+?`
 <div class="section">
 <h4>${u.causes}</h4>
-<ul>${causes.map(a=>`<li>${esc(a)}</li>`).join('')}</ul>
-</div>`:''}
+<ul>
+${causes.map(a=>
+`<li>${esc(a)}</li>`
+).join('')}
+</ul>
+</div>
+`
+:''
+}
 
-${steps.length?`
+${
+steps.length
+?`
 <div class="section">
 <h4>${u.steps}</h4>
-<ul>${steps.map(a=>`<li>${esc(a)}</li>`).join('')}</ul>
-</div>`:''}
+<ul>
+${steps.map(a=>
+`<li>${esc(a)}</li>`
+).join('')}
+</ul>
+</div>
+`
+:''
+}
 
-${dtcs.length?`
+${
+dtcs.length
+?`
 <div class="section">
 <h4>${u.dtcs}</h4>
-<ul>${dtcs.map(a=>`<li>${esc(a)}</li>`).join('')}</ul>
-</div>`:''}
+<ul>
+${dtcs.map(a=>
+`<li>${esc(a)}</li>`
+).join('')}
+</ul>
+</div>
+`
+:''
+}
 
-</article>`;
+</article>
+`;
+
 }).join('')
-:`<div class="empty">${u.none}</div>`;
+
+:`<div class="empty">
+${u.none}
+</div>`;
 
 $('status').textContent=u.ready;
 $('status').className='status success';
 
-console.log('AutoDecode diagnostic search',{
+console.log(
+'AutoDecode diagnostic search',
+{
 loaded:tdb.length,
 compatible:vehicleRows.length,
 concepts:analysis.concepts,
 dtcs:analysis.dtcs,
 results:rows.length
-});
+}
+);
 
 }catch(e){
-console.error('Diagnostic search error:',e);
+
+console.error(
+'Diagnostic search error:',
+e
+);
 
 const detail=e?.mark
-?`YAML parse error at line ${e.mark.line+1}, column ${e.mark.column+1}: ${e.reason||e.message}`
+?`YAML parse error at line ${
+e.mark.line+1
+}, column ${
+e.mark.column+1
+}: ${
+e.reason||e.message
+}`
 :(e?.message||String(e));
 
 $('status').textContent=detail;
@@ -618,21 +929,48 @@ $('find').disabled=false;
 showVehicle();
 };
 
-$('fy').textContent=new Date().getFullYear();
+$('fy').textContent=
+new Date().getFullYear();
+
 setLang();
-$('status').textContent=I[L].loading;
+
+$('status').textContent=
+I[L].loading;
 
 (async()=>{
+
 try{
-const d=await yaml('data/vehicles/manufacturers.yaml');
-makers=d.manufacturers||[];
-fill('make',makers,'sm');
+
+const d=
+await yaml(
+'data/vehicles/manufacturers.yaml'
+);
+
+makers=
+d.manufacturers||[];
+
+fill(
+'make',
+makers,
+'sm'
+);
+
 $('status').textContent='';
+
 }catch(e){
-console.error('MANUFACTURERS DATABASE ERROR:',e);
-$('status').textContent=I[L].error;
-$('status').className='status error';
+
+console.error(
+'MANUFACTURERS DATABASE ERROR:',
+e
+);
+
+$('status').textContent=
+I[L].error;
+
+$('status').className=
+'status error';
 }
+
 })();
 </script>
 </body>
