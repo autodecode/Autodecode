@@ -6,6 +6,543 @@ manufacturer:
 
 technical_data:
 
+- id: vw_mechanical_diesel_low_compression
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_passat
+      - volkswagen_golf
+      - volkswagen_jetta
+      - volkswagen_santana
+      - volkswagen_polo
+      - volkswagen_caddy
+      - volkswagen_vento
+    generations:
+      - volkswagen_passat_b1
+      - volkswagen_passat_b2
+      - volkswagen_golf_mk1
+      - volkswagen_golf_mk2
+      - volkswagen_golf_mk3
+      - volkswagen_jetta_mk1
+      - volkswagen_jetta_mk2
+      - volkswagen_santana_b2
+      - volkswagen_polo_mk2
+      - volkswagen_polo_mk3
+      - volkswagen_caddy_9k
+      - volkswagen_vento_mk3
+    engines:
+      - "15_d"
+      - "16_d"
+      - "16_td"
+      - "19_d"
+      - "19_td"
+      - "14_d"
+  category: diagnostics
+  system: engine
+  title:
+    en: Low Compression on a Mechanical Diesel Engine
+    ro: Compresie scăzută la un motor diesel cu injecție mecanică
+    de: Niedrige Kompression bei einem mechanischen Dieselmotor
+    fr: Faible compression sur un moteur diesel à injection mécanique
+    es: Compresión baja en un motor diésel de inyección mecánica
+    it: Bassa compressione su un motore diesel a iniezione meccanica
+    nl: Lage compressie bij een mechanische dieselmotor
+  symptoms:
+    - en: Difficult starting, especially when cold.
+      ro: Pornire dificilă, în special la rece.
+      de: Schwieriger Start, besonders bei kaltem Motor.
+      fr: Démarrage difficile, surtout à froid.
+      es: Arranque difícil, especialmente en frío.
+      it: Avviamento difficile, soprattutto a freddo.
+      nl: Moeilijk starten, vooral bij koude motor.
+    - en: Uneven idle and reduced engine power.
+      ro: Relanti neregulat și putere redusă.
+      de: Unruhiger Leerlauf und reduzierte Motorleistung.
+      fr: Ralenti irrégulier et puissance réduite.
+      es: Ralentí irregular y potencia reducida.
+      it: Minimo irregolare e potenza ridotta.
+      nl: Onrustig stationair draaien en verminderd vermogen.
+    - en: Increased crankcase pressure or visible blow-by.
+      ro: Presiune crescută în carter sau blow-by vizibil.
+      de: Erhöhter Kurbelgehäusedruck oder sichtbarer Blow-by.
+      fr: Pression élevée dans le carter ou blow-by important.
+      es: Presión elevada en el cárter o blow-by visible.
+      it: Pressione elevata nel basamento o blow-by evidente.
+      nl: Verhoogde carterdruk of duidelijke blow-by.
+  possible_causes:
+    - en: Worn piston rings.
+      ro: Segmenți de piston uzați.
+      de: Verschlissene Kolbenringe.
+      fr: Segments de piston usés.
+      es: Segmentos de pistón desgastados.
+      it: Fasce elastiche usurate.
+      nl: Versleten zuigerveren.
+    - en: Worn cylinder bores.
+      ro: Uzura cilindrilor.
+      de: Verschlissene Zylinderlaufbahnen.
+      fr: Usure des cylindres.
+      es: Desgaste de los cilindros.
+      it: Usura delle canne cilindro.
+      nl: Versleten cilinderwanden.
+    - en: Valve sealing problems.
+      ro: Probleme de etanșare ale supapelor.
+      de: Probleme mit der Ventilabdichtung.
+      fr: Problèmes d'étanchéité des soupapes.
+      es: Problemas de estanqueidad de las válvulas.
+      it: Problemi di tenuta delle valvole.
+      nl: Problemen met klepafdichting.
+  diagnostic_steps:
+    - en: Check cranking speed and battery condition before compression testing.
+      ro: Verifică viteza de antrenare și bateria înaintea testului de compresie.
+      de: Vor der Kompressionsprüfung Anlasserdrehzahl und Batterie prüfen.
+      fr: Vérifier la vitesse de lancement et la batterie avant le test de compression.
+      es: Comprobar la velocidad de arranque y la batería antes de medir la compresión.
+      it: Controllare la velocità di avviamento e la batteria prima del test di compressione.
+      nl: Controleer startsnelheid en accu vóór de compressietest.
+    - en: Measure compression in all cylinders using a suitable diesel compression tester.
+      ro: Măsoară compresia în toți cilindrii cu un tester adecvat pentru diesel.
+      de: Kompression in allen Zylindern mit einem geeigneten Diesel-Kompressionstester messen.
+      fr: Mesurer la compression de tous les cylindres avec un compressiomètre diesel adapté.
+      es: Medir la compresión en todos los cilindros con un comprobador diésel adecuado.
+      it: Misurare la compressione di tutti i cilindri con un tester diesel adatto.
+      nl: Meet de compressie in alle cilinders met een geschikte dieselcompressietester.
+    - en: Compare cylinder-to-cylinder variation.
+      ro: Compară diferențele de compresie dintre cilindri.
+      de: Kompressionsunterschiede zwischen den Zylindern vergleichen.
+      fr: Comparer les écarts de compression entre les cylindres.
+      es: Comparar las diferencias de compresión entre cilindros.
+      it: Confrontare le differenze di compressione tra i cilindri.
+      nl: Vergelijk de compressiewaarden tussen de cilinders.
+  keywords:
+    - low compression
+    - diesel compression
+    - blow-by
+    - compresie scazuta
+  related_dtcs: []
+  difficulty: intermediate
+
+
+- id: vw_mechanical_diesel_injection_timing_incorrect
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_passat
+      - volkswagen_golf
+      - volkswagen_jetta
+      - volkswagen_santana
+      - volkswagen_polo
+      - volkswagen_caddy
+      - volkswagen_vento
+    generations:
+      - volkswagen_passat_b1
+      - volkswagen_passat_b2
+      - volkswagen_golf_mk1
+      - volkswagen_golf_mk2
+      - volkswagen_golf_mk3
+      - volkswagen_jetta_mk1
+      - volkswagen_jetta_mk2
+      - volkswagen_santana_b2
+      - volkswagen_polo_mk2
+      - volkswagen_polo_mk3
+      - volkswagen_caddy_9k
+      - volkswagen_vento_mk3
+    engines:
+      - "15_d"
+      - "16_d"
+      - "16_td"
+      - "19_d"
+      - "19_td"
+      - "14_d"
+  category: diagnostics
+  system: fuel
+  title:
+    en: Incorrect Injection Timing on a Mechanical Diesel
+    ro: Avans incorect al injecției la un diesel mecanic
+    de: Falscher Einspritzzeitpunkt bei einem mechanischen Diesel
+    fr: Calage d'injection incorrect sur un diesel mécanique
+    es: Reglaje incorrecto del avance de inyección en un diésel mecánico
+    it: Fasatura errata dell'iniezione su un diesel meccanico
+    nl: Verkeerd inspuittijdstip bij een mechanische diesel
+  symptoms:
+    - en: Difficult starting.
+      ro: Pornire dificilă.
+      de: Schwieriger Start.
+      fr: Démarrage difficile.
+      es: Arranque difícil.
+      it: Avviamento difficoltoso.
+      nl: Moeilijk starten.
+    - en: Poor low-speed response.
+      ro: Răspuns slab la turații joase.
+      de: Schwache Reaktion bei niedrigen Drehzahlen.
+      fr: Mauvaise réponse à bas régime.
+      es: Mala respuesta a bajo régimen.
+      it: Risposta debole ai bassi regimi.
+      nl: Zwakke respons bij lage toerentallen.
+    - en: Excessive smoke or combustion noise.
+      ro: Fum excesiv sau zgomot anormal de combustie.
+      de: Starke Rauchentwicklung oder hartes Verbrennungsgeräusch.
+      fr: Fumée excessive ou bruit de combustion anormal.
+      es: Humo excesivo o ruido anormal de combustión.
+      it: Fumo eccessivo o rumore anomalo di combustione.
+      nl: Overmatige rook of abnormaal verbrandingsgeluid.
+  possible_causes:
+    - en: Injection pump timing incorrectly adjusted.
+      ro: Avansul pompei de injecție este reglat incorect.
+      de: Einspritzpumpenzeitpunkt falsch eingestellt.
+      fr: Calage de la pompe d'injection incorrect.
+      es: Reglaje incorrecto de la bomba de inyección.
+      it: Fasatura errata della pompa d'iniezione.
+      nl: Verkeerd afgesteld inspuittijdstip van de pomp.
+    - en: Timing belt or pump timing shifted.
+      ro: Distribuția sau sincronizarea pompei s-a deplasat.
+      de: Zahnriemen- oder Pumpensteuerung verstellt.
+      fr: Décalage de la distribution ou de la pompe.
+      es: Desfase de la distribución o de la bomba.
+      it: Fasatura della distribuzione o della pompa spostata.
+      nl: Versprongen distributie- of pomptiming.
+  diagnostic_steps:
+    - en: Verify mechanical engine timing.
+      ro: Verifică sincronizarea mecanică a motorului.
+      de: Mechanische Motorsteuerung prüfen.
+      fr: Vérifier le calage mécanique du moteur.
+      es: Comprobar la distribución mecánica del motor.
+      it: Verificare la fasatura meccanica del motore.
+      nl: Controleer de mechanische motortiming.
+    - en: Verify injection pump timing according to the engine procedure.
+      ro: Verifică avansul pompei de injecție conform procedurii motorului.
+      de: Einspritzpumpenzeitpunkt gemäß Motorspezifikation prüfen.
+      fr: Contrôler le calage de la pompe selon la procédure moteur.
+      es: Comprobar el avance de la bomba según el procedimiento del motor.
+      it: Controllare la fasatura della pompa secondo la procedura del motore.
+      nl: Controleer de pomptiming volgens de motorprocedure.
+  keywords:
+    - injection timing
+    - pump timing
+    - diesel advance
+    - avans injectie
+  related_dtcs: []
+  difficulty: advanced
+
+
+- id: vw_mechanical_diesel_injector_sticking
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_passat
+      - volkswagen_golf
+      - volkswagen_jetta
+      - volkswagen_santana
+      - volkswagen_polo
+      - volkswagen_caddy
+      - volkswagen_vento
+    generations:
+      - volkswagen_passat_b1
+      - volkswagen_passat_b2
+      - volkswagen_golf_mk1
+      - volkswagen_golf_mk2
+      - volkswagen_golf_mk3
+      - volkswagen_jetta_mk1
+      - volkswagen_jetta_mk2
+      - volkswagen_santana_b2
+      - volkswagen_polo_mk2
+      - volkswagen_polo_mk3
+      - volkswagen_caddy_9k
+      - volkswagen_vento_mk3
+    engines:
+      - "15_d"
+      - "16_d"
+      - "16_td"
+      - "19_d"
+      - "19_td"
+      - "14_d"
+  category: diagnostics
+  system: fuel
+  title:
+    en: Sticking Mechanical Diesel Injector
+    ro: Injector diesel mecanic gripat
+    de: Schwergängige Einspritzdüse bei einem mechanischen Diesel
+    fr: Injecteur diesel mécanique grippé
+    es: Inyector diésel mecánico agarrotado
+    it: Iniettore diesel meccanico bloccato
+    nl: Vastzittende mechanische dieselinjector
+  symptoms:
+    - en: Rough or uneven idle.
+      ro: Relanti neregulat sau instabil.
+      de: Unruhiger oder ungleichmäßiger Leerlauf.
+      fr: Ralenti irrégulier ou instable.
+      es: Ralentí irregular o inestable.
+      it: Minimo irregolare o instabile.
+      nl: Onrustig of ongelijk stationair draaien.
+    - en: Misfire-like combustion noise.
+      ro: Zgomot de combustie asemănător unei rateuri.
+      de: Verbrennungsgeräusch ähnlich einem Fehlzünden.
+      fr: Bruit de combustion ressemblant à un raté.
+      es: Ruido de combustión parecido a un fallo.
+      it: Rumore di combustione simile a una mancata accensione.
+      nl: Verbrandingsgeluid dat op een misfire lijkt.
+    - en: Increased smoke from the exhaust.
+      ro: Fum crescut la evacuare.
+      de: Erhöhte Rauchentwicklung.
+      fr: Fumée accrue à l'échappement.
+      es: Mayor cantidad de humo.
+      it: Aumento del fumo allo scarico.
+      nl: Meer rook uit de uitlaat.
+  possible_causes:
+    - en: Contaminated fuel.
+      ro: Combustibil contaminat.
+      de: Verunreinigter Kraftstoff.
+      fr: Carburant contaminé.
+      es: Combustible contaminado.
+      it: Carburante contaminato.
+      nl: Vervuilde brandstof.
+    - en: Internal injector wear.
+      ro: Uzură internă a injectorului.
+      de: Interner Verschleiß der Einspritzdüse.
+      fr: Usure interne de l'injecteur.
+      es: Desgaste interno del inyector.
+      it: Usura interna dell'iniettore.
+      nl: Interne slijtage van de injector.
+  diagnostic_steps:
+    - en: Compare engine behavior with individual injector tests where applicable.
+      ro: Compară comportamentul motorului prin testarea individuală a injectoarelor, unde este posibil.
+      de: Motorverhalten durch Einzelprüfung der Einspritzdüsen vergleichen, sofern möglich.
+      fr: Comparer le comportement du moteur par test individuel des injecteurs lorsque possible.
+      es: Comparar el comportamiento mediante pruebas individuales cuando sea posible.
+      it: Confrontare il comportamento tramite test individuali quando possibile.
+      nl: Vergelijk het motorgedrag via individuele injectortests indien mogelijk.
+    - en: Remove and test suspect injectors on a calibrated test bench.
+      ro: Demontează și testează injectoarele suspecte pe un banc calibrat.
+      de: Verdächtige Einspritzdüsen ausbauen und auf einem Prüfstand prüfen.
+      fr: Déposer et tester les injecteurs suspects sur banc calibré.
+      es: Desmontar y probar los inyectores sospechosos en banco calibrado.
+      it: Smontare e testare gli iniettori sospetti su banco calibrato.
+      nl: Verwijder verdachte injectoren en test ze op een gekalibreerde testbank.
+  keywords:
+    - sticking injector
+    - diesel injector
+    - injector fault
+    - injector gripat
+  related_dtcs: []
+  difficulty: intermediate
+
+
+- id: vw_mechanical_diesel_excessive_crankcase_pressure
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_passat
+      - volkswagen_golf
+      - volkswagen_jetta
+      - volkswagen_santana
+      - volkswagen_polo
+      - volkswagen_caddy
+      - volkswagen_vento
+    generations:
+      - volkswagen_passat_b1
+      - volkswagen_passat_b2
+      - volkswagen_golf_mk1
+      - volkswagen_golf_mk2
+      - volkswagen_golf_mk3
+      - volkswagen_jetta_mk1
+      - volkswagen_jetta_mk2
+      - volkswagen_santana_b2
+      - volkswagen_polo_mk2
+      - volkswagen_polo_mk3
+      - volkswagen_caddy_9k
+      - volkswagen_vento_mk3
+    engines:
+      - "15_d"
+      - "16_d"
+      - "16_td"
+      - "19_d"
+      - "19_td"
+      - "14_d"
+  category: diagnostics
+  system: engine
+  title:
+    en: Excessive Crankcase Pressure on a Mechanical Diesel
+    ro: Presiune excesivă în carter la un diesel mecanic
+    de: Überhöhter Kurbelgehäusedruck bei einem mechanischen Diesel
+    fr: Pression excessive dans le carter d'un diesel mécanique
+    es: Presión excesiva en el cárter de un diésel mecánico
+    it: Pressione eccessiva nel basamento di un diesel meccanico
+    nl: Overmatige carterdruk bij een mechanische diesel
+  symptoms:
+    - en: Strong blow-by from the crankcase ventilation system.
+      ro: Blow-by puternic prin sistemul de ventilare al carterului.
+      de: Starker Blow-by aus der Kurbelgehäuseentlüftung.
+      fr: Blow-by important par le système de ventilation du carter.
+      es: Blow-by elevado a través de la ventilación del cárter.
+      it: Blow-by elevato attraverso la ventilazione del basamento.
+      nl: Sterke blow-by via de carterventilatie.
+    - en: Oil mist around the engine.
+      ro: Vapori sau ceață de ulei în jurul motorului.
+      de: Ölnebel im Motorbereich.
+      fr: Brouillard d'huile autour du moteur.
+      es: Niebla de aceite alrededor del motor.
+      it: Nebbia d'olio intorno al motore.
+      nl: Olienevel rond de motor.
+    - en: Oil leaks from seals or gaskets.
+      ro: Pierderi de ulei pe la simeringuri sau garnituri.
+      de: Ölleckagen an Dichtungen oder Wellendichtringen.
+      fr: Fuites d'huile au niveau des joints.
+      es: Fugas de aceite por juntas o retenes.
+      it: Perdite d'olio da guarnizioni o paraoli.
+      nl: Olielekkage langs afdichtingen.
+  possible_causes:
+    - en: Excessive piston-ring blow-by.
+      ro: Blow-by excesiv pe lângă segmenții de piston.
+      de: Übermäßiger Blow-by an den Kolbenringen.
+      fr: Blow-by excessif au niveau des segments.
+      es: Blow-by excesivo por los segmentos.
+      it: Blow-by eccessivo attraverso le fasce.
+      nl: Overmatige blow-by langs de zuigerveren.
+    - en: Worn cylinder bores.
+      ro: Uzura cilindrilor.
+      de: Verschlissene Zylinderlaufbahnen.
+      fr: Usure des cylindres.
+      es: Desgaste de los cilindros.
+      it: Usura delle canne cilindro.
+      nl: Versleten cilinderwanden.
+  diagnostic_steps:
+    - en: Inspect the crankcase ventilation system.
+      ro: Inspectează sistemul de ventilare al carterului.
+      de: Kurbelgehäuseentlüftung prüfen.
+      fr: Contrôler la ventilation du carter.
+      es: Revisar la ventilación del cárter.
+      it: Controllare la ventilazione del basamento.
+      nl: Controleer de carterventilatie.
+    - en: Check for abnormal crankcase pressure.
+      ro: Verifică dacă presiunea în carter este anormală.
+      de: Kurbelgehäusedruck auf Auffälligkeiten prüfen.
+      fr: Vérifier si la pression du carter est anormale.
+      es: Comprobar si la presión del cárter es anormal.
+      it: Verificare eventuale pressione anomala nel basamento.
+      nl: Controleer op abnormale carterdruk.
+    - en: Perform a compression test if excessive blow-by is confirmed.
+      ro: Efectuează un test de compresie dacă blow-by-ul este excesiv.
+      de: Bei starkem Blow-by einen Kompressionstest durchführen.
+      fr: Effectuer un test de compression si le blow-by est important.
+      es: Realizar una prueba de compresión si se confirma un blow-by elevado.
+      it: Eseguire un test di compressione se il blow-by è eccessivo.
+      nl: Voer een compressietest uit bij overmatige blow-by.
+  keywords:
+    - crankcase pressure
+    - blow-by
+    - piston rings
+    - carter pressure
+  related_dtcs: []
+  difficulty: intermediate
+
+
+- id: vw_mechanical_diesel_engine_oil_consumption
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_passat
+      - volkswagen_golf
+      - volkswagen_jetta
+      - volkswagen_santana
+      - volkswagen_polo
+      - volkswagen_caddy
+      - volkswagen_vento
+    generations:
+      - volkswagen_passat_b1
+      - volkswagen_passat_b2
+      - volkswagen_golf_mk1
+      - volkswagen_golf_mk2
+      - volkswagen_golf_mk3
+      - volkswagen_jetta_mk1
+      - volkswagen_jetta_mk2
+      - volkswagen_santana_b2
+      - volkswagen_polo_mk2
+      - volkswagen_polo_mk3
+      - volkswagen_caddy_9k
+      - volkswagen_vento_mk3
+    engines:
+      - "15_d"
+      - "16_d"
+      - "16_td"
+      - "19_d"
+      - "19_td"
+      - "14_d"
+  category: diagnostics
+  system: lubrication
+  title:
+    en: Excessive Engine Oil Consumption on a Mechanical Diesel
+    ro: Consum excesiv de ulei la un diesel mecanic
+    de: Erhöhter Ölverbrauch bei einem mechanischen Diesel
+    fr: Consommation excessive d'huile sur un diesel mécanique
+    es: Consumo excesivo de aceite en un diésel mecánico
+    it: Consumo eccessivo di olio su un diesel meccanico
+    nl: Overmatig olieverbruik bij een mechanische diesel
+  symptoms:
+    - en: Oil level drops noticeably between service intervals.
+      ro: Nivelul uleiului scade vizibil între schimburile de ulei.
+      de: Der Ölstand sinkt zwischen den Wartungsintervallen deutlich.
+      fr: Le niveau d'huile baisse nettement entre les vidanges.
+      es: El nivel de aceite baja notablemente entre servicios.
+      it: Il livello dell'olio diminuisce sensibilmente tra i tagliandi.
+      nl: Het oliepeil daalt merkbaar tussen onderhoudsbeurten.
+    - en: Blue or blue-grey exhaust smoke.
+      ro: Fum albastru sau albastru-gri la evacuare.
+      de: Blauer oder blau-grauer Abgasrauch.
+      fr: Fumée d'échappement bleue ou bleu-gris.
+      es: Humo azul o azul grisáceo por el escape.
+      it: Fumo blu o grigio-bluastro allo scarico.
+      nl: Blauwe of blauwgrijze uitlaatrook.
+  possible_causes:
+    - en: Worn piston rings or cylinder bores.
+      ro: Segmenți uzați sau cilindri uzați.
+      de: Verschlissene Kolbenringe oder Zylinderlaufbahnen.
+      fr: Segments ou cylindres usés.
+      es: Segmentos o cilindros desgastados.
+      it: Fasce o cilindri usurati.
+      nl: Versleten zuigerveren of cilinderwanden.
+    - en: Valve guide or valve seal wear.
+      ro: Uzura ghidurilor sau simeringurilor supapelor.
+      de: Verschleiß von Ventilführungen oder Ventilschaftdichtungen.
+      fr: Usure des guides ou joints de soupape.
+      es: Desgaste de guías o retenes de válvula.
+      it: Usura delle guide o dei paraoli valvola.
+      nl: Slijtage van klepgeleiders of klepsteelafdichtingen.
+    - en: Turbocharger oil leakage on turbocharged engines.
+      ro: Pierdere de ulei prin turbocompresor la motoarele turbo.
+      de: Ölleckage am Turbolader bei Turbomotoren.
+      fr: Fuite d'huile du turbocompresseur sur les moteurs turbo.
+      es: Fuga de aceite del turbocompresor en motores turbo.
+      it: Perdita d'olio dal turbocompressore sui motori turbo.
+      nl: Olielekkage via de turbo bij turbomotoren.
+  diagnostic_steps:
+    - en: Check for external oil leaks first.
+      ro: Verifică mai întâi pierderile externe de ulei.
+      de: Zuerst auf äußere Ölleckagen prüfen.
+      fr: Vérifier d'abord les fuites d'huile externes.
+      es: Comprobar primero las fugas externas de aceite.
+      it: Controllare prima le perdite esterne di olio.
+      nl: Controleer eerst op externe olielekkages.
+    - en: Inspect intake and exhaust systems for oil contamination on turbocharged engines.
+      ro: Inspectează admisia și evacuarea pentru urme de ulei la motoarele turbo.
+      de: Ansaug- und Abgassystem bei Turbomotoren auf Ölspuren prüfen.
+      fr: Contrôler l'admission et l'échappement pour détecter des traces d'huile sur les moteurs turbo.
+      es: Revisar admisión y escape en busca de aceite en motores turbo.
+      it: Controllare aspirazione e scarico per tracce d'olio sui motori turbo.
+      nl: Controleer inlaat en uitlaat op oliesporen bij turbomotoren.
+    - en: Perform compression testing if internal engine wear is suspected.
+      ro: Efectuează un test de compresie dacă suspectezi uzură internă.
+      de: Bei Verdacht auf inneren Verschleiß einen Kompressionstest durchführen.
+      fr: Effectuer un test de compression en cas de suspicion d'usure interne.
+      es: Realizar una prueba de compresión si se sospecha desgaste interno.
+      it: Eseguire un test di compressione se si sospetta usura interna.
+      nl: Voer een compressietest uit bij vermoedelijke interne slijtage.
+  keywords:
+    - oil consumption
+    - blue smoke
+    - piston rings
+    - consum ulei
+  related_dtcs: []
+  difficulty: intermediate
+
 - id: vw_jetta_old_diesel_hard_start
   vehicle:
     manufacturer: volkswagen
