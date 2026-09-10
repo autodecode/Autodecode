@@ -455,18 +455,22 @@ const option=new Option(
 id==='engine'
 ?engineLabel(x)
 :localizedValue(x.name??x),
-x.id??x
+String(x.id??x)
 );
 
 $(id).add(option);
 });
 }
 
+function sameId(a,b){
+return String(a??'')===String(b??'');
+}
+
 function current(){
-const mk=makers.find(x=>x.id===$('make').value);
-const m=vdb?.models?.find(x=>x.id===$('model').value);
-const g=m?.generations?.find(x=>x.id===$('generation').value);
-const e=g?.engines?.find(x=>x.id===$('engine').value);
+const mk=makers.find(x=>sameId(x.id,$('make').value));
+const m=vdb?.models?.find(x=>sameId(x.id,$('model').value));
+const g=m?.generations?.find(x=>sameId(x.id,$('generation').value));
+const e=g?.engines?.find(x=>sameId(x.id,$('engine').value));
 
 return{mk,m,g,e,y:$('year').value};
 }
@@ -642,7 +646,7 @@ $('status').className=
 
 $('model').onchange=()=>{
 const m=vdb?.models?.find(
-x=>x.id===$('model').value
+x=>sameId(x.id,$('model').value)
 );
 
 reset('generation','sg');
