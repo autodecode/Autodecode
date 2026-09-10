@@ -6,6 +6,1240 @@ manufacturer:
 
 technical_data:
 
+- id: vw_classic_petrol_carburetor_fuel_level
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_type_1
+      - volkswagen_type_2
+      - volkswagen_type_3
+      - volkswagen_karmann_ghia
+      - volkswagen_type_4
+      - volkswagen_k70
+      - volkswagen_passat
+      - volkswagen_golf
+      - volkswagen_polo
+      - volkswagen_scirocco
+      - volkswagen_jetta
+      - volkswagen_santana
+    generations:
+      - volkswagen_type_1
+      - volkswagen_type_2_t1
+      - volkswagen_type_2_t2
+      - volkswagen_type_3
+      - volkswagen_karmann_ghia_type_14
+      - volkswagen_karmann_ghia_type_34
+      - volkswagen_type_4_411
+      - volkswagen_type_4_412
+      - volkswagen_k70
+      - volkswagen_passat_b1
+      - volkswagen_passat_b2
+      - volkswagen_golf_mk1
+      - volkswagen_golf_mk2
+      - volkswagen_polo_mk1
+      - volkswagen_polo_mk2
+      - volkswagen_scirocco_mk1
+      - volkswagen_scirocco_mk2
+      - volkswagen_jetta_mk1
+      - volkswagen_jetta_mk2
+      - volkswagen_santana_b2
+    engines:
+      - "09"
+      - "10"
+      - "11"
+      - "12"
+      - "12_34"
+      - "13"
+      - "15"
+      - "16"
+      - "17"
+      - "18"
+      - "18_100"
+      - "20"
+    category: diagnostics
+    system: fuel
+    title:
+      en: Incorrect carburetor fuel level
+      ro: Nivel incorect al combustibilului în carburator
+      de: Falscher Kraftstoffstand im Vergaser
+      fr: Niveau de carburant incorrect dans le carburateur
+      es: Nivel incorrect de combustible en el carburador
+      it: Livello carburante errato nel carburatore
+      nl: Onjuist brandstofniveau in de carburateur
+
+    symptoms:
+      - en: Hard starting or unstable idle
+        ro: Pornire dificilă sau ralanti instabil
+        de: Schwieriger Start oder unruhiger Leerlauf
+        fr: Démarrage difficile ou ralenti instable
+        es: Arranque difícil o ralentí inestable
+        it: Avviamento difficile o minimo instabile
+        nl: Moeilijk starten of onrustig stationair
+      - en: Excessive fuel consumption
+        ro: Consum excesiv de combustibil
+        de: Erhöhter Kraftstoffverbrauch
+        fr: Consommation excessive de carburant
+        es: Consumo excesivo de combustible
+        it: Consumo eccessivo di carburante
+        nl: Overmatig brandstofverbruik
+
+    possible_causes:
+      - en: Incorrect float adjustment
+        ro: Reglaj incorect al plutitorului
+        de: Falsche Schwimmereinstellung
+        fr: Réglage incorrect du flotteur
+        es: Ajuste incorrecto del flotador
+        it: Regolazione errata del galleggiante
+        nl: Onjuiste afstelling van de vlotter
+      - en: Sticking float
+        ro: Plutitor blocat
+        de: Schwimmer klemmt
+        fr: Flotteur bloqué
+        es: Flotador atascado
+        it: Galleggiante bloccato
+        nl: Vastzittende vlotter
+      - en: Fuel inlet needle valve leaking
+        ro: Supapa cu ac de alimentare nu etanșează
+        de: Schwimmernadelventil schließt nicht dicht
+        fr: Pointeau d'arrivée de carburant non étanche
+        es: Válvula de aguja de entrada de combustible con fugas
+        it: Valvola a spillo di ingresso carburante non a tenuta
+        nl: Brandstofnaaldklep sluit niet goed
+
+    diagnostic_steps:
+      - en: Check the specified carburetor fuel level
+        ro: Verifică nivelul de combustibil specificat pentru carburator
+        de: Vorgeschriebenen Kraftstoffstand des Vergasers prüfen
+        fr: Vérifier le niveau de carburant spécifié du carburateur
+        es: Comprobar el nivel de combustible especificado del carburador
+        it: Controllare il livello carburante previsto dal carburatore
+        nl: Controleer het voorgeschreven brandstofniveau
+      - en: Inspect the float for fuel contamination or damage
+        ro: Inspectează plutitorul pentru contaminare cu combustibil sau deteriorare
+        de: Schwimmer auf Kraftstoffeintritt oder Beschädigung prüfen
+        fr: Vérifier le flotteur pour présence de carburant ou dommage
+        es: Inspeccionar el flotador por contaminación o daños
+        it: Controllare il galleggiante per presenza di carburante o danni
+        nl: Controleer de vlotter op brandstofopname of schade
+      - en: Inspect the needle valve and valve seat
+        ro: Inspectează supapa cu ac și scaunul acesteia
+        de: Schwimmernadelventil und Ventilsitz prüfen
+        fr: Inspecter le pointeau et son siège
+        es: Inspeccionar la válvula de aguja y su asiento
+        it: Ispezionare la valvola a spillo e la sua sede
+        nl: Controleer de naaldklep en klepzitting
+
+    keywords:
+      - carburetor fuel level
+      - float level
+      - float adjustment
+      - needle valve
+      - nivel carburator
+      - niveau carburateur
+      - Vergaserkraftstoffstand
+      - nivel carburador
+      - livello carburatore
+
+    related_dtcs: []
+    difficulty: intermediate
+
+
+- id: vw_classic_petrol_carburetor_needle_valve
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_type_1
+      - volkswagen_type_2
+      - volkswagen_type_3
+      - volkswagen_karmann_ghia
+      - volkswagen_type_4
+      - volkswagen_passat
+      - volkswagen_golf
+      - volkswagen_polo
+      - volkswagen_scirocco
+      - volkswagen_jetta
+    generations:
+      - volkswagen_type_1
+      - volkswagen_type_2_t1
+      - volkswagen_type_2_t2
+      - volkswagen_type_3
+      - volkswagen_karmann_ghia_type_14
+      - volkswagen_karmann_ghia_type_34
+      - volkswagen_type_4_411
+      - volkswagen_type_4_412
+      - volkswagen_passat_b1
+      - volkswagen_passat_b2
+      - volkswagen_golf_mk1
+      - volkswagen_golf_mk2
+      - volkswagen_polo_mk1
+      - volkswagen_polo_mk2
+      - volkswagen_scirocco_mk1
+      - volkswagen_scirocco_mk2
+      - volkswagen_jetta_mk1
+      - volkswagen_jetta_mk2
+    engines:
+      - "09"
+      - "10"
+      - "11"
+      - "12"
+      - "12_34"
+      - "13"
+      - "15"
+      - "16"
+      - "17"
+      - "18"
+      - "20"
+    category: diagnostics
+    system: fuel
+    title:
+      en: Carburetor needle valve leaking or stuck
+      ro: Supapă cu ac a carburatorului blocată sau neetanșă
+      de: Vergasernadelventil klemmt oder ist undicht
+      fr: Pointeau du carburateur bloqué ou non étanche
+      es: Válvula de aguja del carburador atascada o con fugas
+      it: Valvola a spillo del carburatore bloccata o non a tenuta
+      nl: Vastzittende of lekkende carburateurnaaldklep
+
+    symptoms:
+      - en: Fuel leaks or overflows from the carburetor
+        ro: Combustibilul curge sau se revarsă din carburator
+        de: Kraftstoff tritt aus oder läuft aus dem Vergaser über
+        fr: Le carburant fuit ou déborde du carburateur
+        es: El combustible fuga o rebosa del carburador
+        it: Il carburante perde o trabocca dal carburatore
+        nl: Brandstof lekt of stroomt over uit de carburateur
+      - en: Rich mixture and difficult starting
+        ro: Amestec bogat și pornire dificilă
+        de: Zu fettes Gemisch und schwieriger Start
+        fr: Mélange riche et démarrage difficile
+        es: Mezcla rica y arranque difícil
+        it: Miscela ricca e avviamento difficile
+        nl: Te rijk mengsel en moeilijk starten
+
+    possible_causes:
+      - en: Dirt inside the needle valve
+        ro: Murdărie în interiorul supapei cu ac
+        de: Schmutz im Schwimmernadelventil
+        fr: Saleté dans le pointeau
+        es: Suciedad en la válvula de aguja
+        it: Sporco nella valvola a spillo
+        nl: Vuil in de naaldklep
+      - en: Worn needle valve or valve seat
+        ro: Supapă cu ac sau scaun uzat
+        de: Verschlissenes Nadelventil oder Ventilsitz
+        fr: Pointeau ou siège usé
+        es: Válvula de aguja o asiento desgastado
+        it: Valvola a spillo o sede usurata
+        nl: Versleten naaldklep of klepzitting
+      - en: Incorrect float adjustment
+        ro: Reglaj incorect al plutitorului
+        de: Falsche Schwimmereinstellung
+        fr: Mauvais réglage du flotteur
+        es: Ajuste incorrecto del flotador
+        it: Regolazione errata del galleggiante
+        nl: Onjuiste vlotterafstelling
+
+    diagnostic_steps:
+      - en: Remove and inspect the needle valve
+        ro: Demontează și inspectează supapa cu ac
+        de: Nadelventil ausbauen und prüfen
+        fr: Déposer et inspecter le pointeau
+        es: Desmontar e inspeccionar la válvula de aguja
+        it: Smontare e controllare la valvola a spillo
+        nl: Demonteer en controleer de naaldklep
+      - en: Check the valve seat for contamination and wear
+        ro: Verifică scaunul supapei pentru murdărie și uzură
+        de: Ventilsitz auf Verschmutzung und Verschleiß prüfen
+        fr: Vérifier le siège pour contamination et usure
+        es: Comprobar el asiento por suciedad y desgaste
+        it: Controllare la sede per sporco e usura
+        nl: Controleer de klepzitting op vuil en slijtage
+      - en: Verify float movement and fuel level
+        ro: Verifică mișcarea plutitorului și nivelul combustibilului
+        de: Schwimmerbewegung und Kraftstoffstand prüfen
+        fr: Vérifier le mouvement du flotteur et le niveau de carburant
+        es: Comprobar el movimiento del flotador y el nivel de combustible
+        it: Controllare il movimento del galleggiante e il livello carburante
+        nl: Controleer de vlotterbeweging en het brandstofniveau
+
+    keywords:
+      - needle valve
+      - float valve
+      - carburetor overflow
+      - fuel overflow
+      - supapă cu ac
+      - pointeau
+      - Schwimmernadelventil
+      - válvula de aguja
+      - valvola a spillo
+
+    related_dtcs: []
+    difficulty: basic
+
+
+- id: vw_classic_petrol_carburetor_idle_circuit
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_type_1
+      - volkswagen_type_2
+      - volkswagen_type_3
+      - volkswagen_karmann_ghia
+      - volkswagen_type_4
+      - volkswagen_k70
+      - volkswagen_passat
+      - volkswagen_golf
+      - volkswagen_polo
+      - volkswagen_scirocco
+      - volkswagen_jetta
+      - volkswagen_santana
+    generations:
+      - volkswagen_type_1
+      - volkswagen_type_2_t1
+      - volkswagen_type_2_t2
+      - volkswagen_type_3
+      - volkswagen_karmann_ghia_type_14
+      - volkswagen_karmann_ghia_type_34
+      - volkswagen_type_4_411
+      - volkswagen_type_4_412
+      - volkswagen_k70
+      - volkswagen_passat_b1
+      - volkswagen_passat_b2
+      - volkswagen_golf_mk1
+      - volkswagen_golf_mk2
+      - volkswagen_polo_mk1
+      - volkswagen_polo_mk2
+      - volkswagen_scirocco_mk1
+      - volkswagen_scirocco_mk2
+      - volkswagen_jetta_mk1
+      - volkswagen_jetta_mk2
+      - volkswagen_santana_b2
+    engines:
+      - "09"
+      - "10"
+      - "11"
+      - "12"
+      - "12_34"
+      - "13"
+      - "15"
+      - "16"
+      - "17"
+      - "18"
+      - "18_100"
+      - "20"
+    category: diagnostics
+    system: fuel
+    title:
+      en: Carburetor idle circuit restricted
+      ro: Circuitul de ralanti al carburatorului este obturat
+      de: Leerlaufkreis des Vergasers verstopft
+      fr: Circuit de ralenti du carburateur obstrué
+      es: Circuito de ralentí del carburador obstruido
+      it: Circuito del minimo del carburatore ostruito
+      nl: Stationaircircuit van carburateur verstopt
+
+    symptoms:
+      - en: Engine stalls when the throttle is released
+        ro: Motorul se oprește când accelerația este eliberată
+        de: Der Motor geht beim Loslassen des Gaspedals aus
+        fr: Le moteur cale lorsque l'accélérateur est relâché
+        es: El motor se cala al soltar el acelerador
+        it: Il motore si spegne quando si rilascia l'acceleratore
+        nl: De motor slaat af wanneer het gaspedaal wordt losgelaten
+      - en: Engine will run only with throttle applied
+        ro: Motorul funcționează doar cu accelerația apăsată
+        de: Der Motor läuft nur bei betätigtem Gaspedal
+        fr: Le moteur ne tourne qu'avec l'accélérateur enfoncé
+        es: El motor solo funciona con el acelerador accionado
+        it: Il motore funziona solo con l'acceleratore premuto
+        nl: De motor loopt alleen met ingedrukt gaspedaal
+
+    possible_causes:
+      - en: Blocked idle jet
+        ro: Jiclor de ralanti înfundat
+        de: Verstopfte Leerlaufdüse
+        fr: Gicleur de ralenti bouché
+        es: Chiclé de ralentí obstruido
+        it: Getto del minimo ostruito
+        nl: Verstopte stationairsproeier
+      - en: Dirt in the idle passage
+        ro: Murdărie în canalul circuitului de ralanti
+        de: Schmutz im Leerlaufkanal
+        fr: Salzteile im Leerlaufkanal
+        es: Suciedad en el conducto de ralentí
+        it: Sporco nel passaggio del minimo
+        nl: Vuil in het stationairkanaal
+      - en: Incorrect idle mixture adjustment
+        ro: Reglaj incorect al amestecului de ralanti
+        de: Falsche Leerlaufgemischeinstellung
+        fr: Mauvais réglage du mélange de ralenti
+        es: Ajuste incorrecto de la mezcla de ralentí
+        it: Regolazione errata della miscela del minimo
+        nl: Onjuiste afstelling van het stationairmengsel
+
+    diagnostic_steps:
+      - en: Check whether the engine continues running when the throttle is released
+        ro: Verifică dacă motorul rămâne pornit când accelerația este eliberată
+        de: Prüfen, ob der Motor beim Loslassen des Gaspedals weiterläuft
+        fr: Vérifier si le moteur continue à tourner lorsque l'accélérateur est relâché
+        es: Comprobar si el motor sigue funcionando al soltar el acelerador
+        it: Verificare se il motore continua a funzionare rilasciando l'acceleratore
+        nl: Controleer of de motor blijft draaien wanneer het gaspedaal wordt losgelaten
+      - en: Remove and inspect the idle jet
+        ro: Demontează și inspectează jiclorul de ralanti
+        de: Leerlaufdüse ausbauen und prüfen
+        fr: Déposer et inspecter le gicleur de ralenti
+        es: Desmontar e inspeccionar el chiclé de ralentí
+        it: Smontare e controllare il getto del minimo
+        nl: Demonteer en controleer de stationairsproeier
+      - en: Clean the idle passages using approved carburetor cleaner and compressed air
+        ro: Curăță canalele de ralanti cu soluție pentru carburator și aer comprimat
+        de: Leerlaufkanäle mit geeignetem Vergaserreiniger und Druckluft reinigen
+        fr: Nettoyer les conduits de ralenti avec un nettoyant carburateur et de l'air comprimé
+        es: Limpiar los conductos de ralentí con limpiador de carburador y aire comprimido
+        it: Pulire i passaggi del minimo con detergente per carburatori e aria compressa
+        nl: Reinig de stationairkanalen met carburateurreiniger en perslucht
+
+    keywords:
+      - idle jet
+      - idle circuit
+      - blocked carburetor
+      - carburetor cleaning
+      - jiclor ralanti
+      - circuit ralenti
+      - Leerlaufdüse
+      - chiclé ralentí
+      - getto minimo
+
+    related_dtcs: []
+    difficulty: basic
+
+
+- id: vw_classic_petrol_carburetor_accelerator_pump
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_type_1
+      - volkswagen_type_2
+      - volkswagen_type_3
+      - volkswagen_karmann_ghia
+      - volkswagen_type_4
+      - volkswagen_passat
+      - volkswagen_golf
+      - volkswagen_polo
+      - volkswagen_scirocco
+      - volkswagen_jetta
+      - volkswagen_santana
+    generations:
+      - volkswagen_type_1
+      - volkswagen_type_2_t1
+      - volkswagen_type_2_t2
+      - volkswagen_type_3
+      - volkswagen_karmann_ghia_type_14
+      - volkswagen_karmann_ghia_type_34
+      - volkswagen_type_4_411
+      - volkswagen_type_4_412
+      - volkswagen_passat_b1
+      - volkswagen_passat_b2
+      - volkswagen_golf_mk1
+      - volkswagen_golf_mk2
+      - volkswagen_polo_mk1
+      - volkswagen_polo_mk2
+      - volkswagen_scirocco_mk1
+      - volkswagen_scirocco_mk2
+      - volkswagen_jetta_mk1
+      - volkswagen_jetta_mk2
+      - volkswagen_santana_b2
+    engines:
+      - "09"
+      - "10"
+      - "11"
+      - "12"
+      - "12_34"
+      - "13"
+      - "15"
+      - "16"
+      - "17"
+      - "18"
+      - "18_100"
+      - "20"
+    category: diagnostics
+    system: fuel
+    title:
+      en: Carburetor accelerator pump fault
+      ro: Defecțiune a pompei de accelerație a carburatorului
+      de: Fehler der Beschleunigerpumpe des Vergasers
+      fr: Défaut de pompe de reprise du carburateur
+      es: Fallo de la bomba de aceleración del carburador
+      it: Guasto della pompa di ripresa del carburatore
+      nl: Storing van de acceleratiepomp van de carburateur
+
+    symptoms:
+      - en: Engine hesitates when the throttle is opened quickly
+        ro: Motorul ezită când accelerația este deschisă rapid
+        de: Der Motor verschluckt sich beim schnellen Gasgeben
+        fr: Le moteur hésite lors d'une ouverture rapide de l'accélérateur
+        es: El motor vacila al abrir rápidamente el acelerador
+        it: Il motore esita quando si apre rapidamente l'acceleratore
+        nl: De motor hapert bij snel gas geven
+      - en: Flat spot during acceleration
+        ro: Există o zonă de lipsă de răspuns la accelerație
+        de: Es entsteht ein Leistungsloch beim Beschleunigen
+        fr: Trou à l'accélération
+        es: Existe un bache al acelerar
+        it: Si verifica un vuoto durante l'accelerazione
+        nl: Er ontstaat een dip tijdens acceleratie
+
+    possible_causes:
+      - en: Damaged accelerator pump diaphragm
+        ro: Diafragmă deteriorată a pompei de accelerație
+        de: Beschädigte Membran der Beschleunigerpumpe
+        fr: Membrane de pompe de reprise endommagée
+        es: Diafragma dañada de la bomba de aceleración
+        it: Membrana danneggiata della pompa di ripresa
+        nl: Beschadigd membraan van de acceleratiepomp
+      - en: Blocked accelerator pump nozzle
+        ro: Duză înfundată a pompei de accelerație
+        de: Verstopfte Einspritzdüse der Beschleunigerpumpe
+        fr: Gicleur de pompe de reprise bouché
+        es: Boquilla de la bomba de aceleración obstruida
+        it: Ugello della pompa di ripresa ostruito
+        nl: Verstopte sproeier van de acceleratiepomp
+      - en: Incorrect pump adjustment
+        ro: Reglaj incorect al pompei
+        de: Falsche Einstellung der Beschleunigerpumpe
+        fr: Mauvais réglage de la pompe de reprise
+        es: Ajuste incorrecto de la bomba de aceleración
+        it: Regolazione errata della pompa di ripresa
+        nl: Onjuiste afstelling van de acceleratiepomp
+
+    diagnostic_steps:
+      - en: Observe the accelerator pump discharge while operating the throttle
+        ro: Observă jetul pompei de accelerație în timp ce acționezi clapeta
+        de: Einspritzstrahl der Beschleunigerpumpe beim Betätigen der Drosselklappe prüfen
+        fr: Observer le jet de la pompe de reprise en actionnant l'accélérateur
+        es: Observar el chorro de la bomba al accionar el acelerador
+        it: Osservare il getto della pompa di ripresa azionando l'acceleratore
+        nl: Controleer de straal van de acceleratiepomp bij bediening van de gasklep
+      - en: Inspect the accelerator pump diaphragm
+        ro: Inspectează diafragma pompei de accelerație
+        de: Membran der Beschleunigerpumpe prüfen
+        fr: Inspecter la membrane de la pompe de reprise
+        es: Inspeccionar el diafragma de la bomba de aceleración
+        it: Ispezionare la membrana della pompa di ripresa
+        nl: Controleer het membraan van de acceleratiepomp
+      - en: Check the pump nozzle for blockage
+        ro: Verifică duza pompei pentru obturare
+        de: Einspritzdüse der Pumpe auf Verstopfung prüfen
+        fr: Vérifier si le gicleur de pompe est bouché
+        es: Comprobar si la boquilla está obstruida
+        it: Controllare l'ugello della pompa per eventuali ostruzioni
+        nl: Controleer de pompsproeier op verstopping
+
+    keywords:
+      - accelerator pump
+      - acceleration hesitation
+      - flat spot
+      - carburetor hesitation
+      - pompă accelerație
+      - pompe de reprise
+      - Beschleunigerpumpe
+      - bomba de aceleración
+      - pompa di ripresa
+
+    related_dtcs: []
+    difficulty: intermediate
+
+
+- id: vw_classic_petrol_carburetor_choke_fault
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_type_1
+      - volkswagen_type_2
+      - volkswagen_type_3
+      - volkswagen_karmann_ghia
+      - volkswagen_type_4
+      - volkswagen_passat
+      - volkswagen_golf
+      - volkswagen_polo
+      - volkswagen_scirocco
+      - volkswagen_jetta
+      - volkswagen_santana
+    generations:
+      - volkswagen_type_1
+      - volkswagen_type_2_t1
+      - volkswagen_type_2_t2
+      - volkswagen_type_3
+      - volkswagen_karmann_ghia_type_14
+      - volkswagen_karmann_ghia_type_34
+      - volkswagen_type_4_411
+      - volkswagen_type_4_412
+      - volkswagen_passat_b1
+      - volkswagen_passat_b2
+      - volkswagen_golf_mk1
+      - volkswagen_golf_mk2
+      - volkswagen_polo_mk1
+      - volkswagen_polo_mk2
+      - volkswagen_scirocco_mk1
+      - volkswagen_scirocco_mk2
+      - volkswagen_jetta_mk1
+      - volkswagen_jetta_mk2
+      - volkswagen_santana_b2
+    engines:
+      - "09"
+      - "10"
+      - "11"
+      - "12"
+      - "12_34"
+      - "13"
+      - "15"
+      - "16"
+      - "17"
+      - "18"
+      - "18_100"
+      - "20"
+    category: diagnostics
+    system: fuel
+    title:
+      en: Carburetor choke or cold-start enrichment fault
+      ro: Defecțiune a șocului sau a îmbogățirii la rece a carburatorului
+      de: Fehler des Vergaser-Chokes oder der Kaltstarteinrichtung
+      fr: Défaut du starter ou de l'enrichissement à froid du carburateur
+      es: Fallo del estárter o enriquecimiento en frío del carburador
+      it: Guasto dello starter o dell'arricchimento a freddo del carburatore
+      nl: Storing van choke of koudstartverrijking van carburateur
+
+    symptoms:
+      - en: Difficult cold starting
+        ro: Pornire dificilă la rece
+        de: Schwieriger Kaltstart
+        fr: Démarrage difficile à froid
+        es: Arranque difícil en frío
+        it: Avviamento difficile a freddo
+        nl: Moeilijk koud starten
+      - en: Engine runs excessively rich during warm-up
+        ro: Motorul funcționează excesiv de bogat în timpul încălzirii
+        de: Der Motor läuft während des Warmlaufs zu fett
+        fr: Le moteur tourne trop riche pendant la montée en température
+        es: El motor funciona demasiado rico durante el calentamiento
+        it: Il motore funziona troppo ricco durante il riscaldamento
+        nl: De motor loopt te rijk tijdens het opwarmen
+
+    possible_causes:
+      - en: Choke plate stuck closed
+        ro: Clapeta de șoc blocată închis
+        de: Chokeklappe klemmt geschlossen
+        fr: Volet de starter bloqué en position fermée
+        es: Mariposa del estárter atascada cerrada
+        it: Farfalla dello starter bloccata chiusa
+        nl: Chokeklep blijft gesloten
+      - en: Choke mechanism incorrectly adjusted
+        ro: Mecanismul șocului reglat incorect
+        de: Chokemechanismus falsch eingestellt
+        fr: Mécanisme de starter mal réglé
+        es: Mecanismo del estárter mal ajustado
+        it: Meccanismo dello starter regolato male
+        nl: Chokemechanisme verkeerd afgesteld
+      - en: Faulty automatic choke heating element where fitted
+        ro: Element de încălzire al șocului automat defect, unde există
+        de: Defektes Heizelement der Startautomatik, sofern vorhanden
+        fr: Élément chauffant du starter automatique défectueux si présent
+        es: Elemento calefactor del estárter automático defectuoso cuando está equipado
+        it: Elemento riscaldante dello starter automatico guasto, se presente
+        nl: Defect verwarmingselement van de automatische choke indien aanwezig
+
+    diagnostic_steps:
+      - en: Check choke plate movement from cold to warm
+        ro: Verifică mișcarea clapetei de șoc de la rece la cald
+        de: Bewegung der Chokeklappe von kalt bis warm prüfen
+        fr: Vérifier le mouvement du volet de starter du froid au chaud
+        es: Comprobar el movimiento de la mariposa del estárter de frío a caliente
+        it: Controllare il movimento della farfalla dello starter da freddo a caldo
+        nl: Controleer de beweging van de chokeklep van koud naar warm
+      - en: Check fast-idle mechanism operation
+        ro: Verifică funcționarea mecanismului de ralanti accelerat
+        de: Funktion des Schnellleerlaufmechanismus prüfen
+        fr: Vérifier le fonctionnement du ralenti accéléré
+        es: Comprobar el funcionamiento del ralentí rápido
+        it: Controllare il funzionamento del minimo accelerato
+        nl: Controleer de werking van het snelstationairmechanisme
+      - en: Check automatic choke heating supply where fitted
+        ro: Verifică alimentarea încălzirii șocului automat, unde există
+        de: Stromversorgung der Startautomatik-Heizung prüfen, sofern vorhanden
+        fr: Vérifier l'alimentation du chauffage du starter automatique si présent
+        es: Comprobar la alimentación del calentador del estárter automático cuando corresponda
+        it: Controllare l'alimentazione del riscaldatore dello starter automatico, se presente
+        nl: Controleer de voeding van de automatische chokeverwarming indien aanwezig
+
+    keywords:
+      - choke
+      - cold start
+      - fast idle
+      - automatic choke
+      - șoc carburator
+      - starter carburateur
+      - Choke
+      - estárter
+      - starter automatico
+
+    related_dtcs: []
+    difficulty: basic
+
+
+- id: vw_classic_petrol_mechanical_fuel_pump_low_delivery
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_type_1
+      - volkswagen_type_2
+      - volkswagen_type_3
+      - volkswagen_karmann_ghia
+      - volkswagen_type_4
+      - volkswagen_passat
+      - volkswagen_golf
+      - volkswagen_polo
+      - volkswagen_scirocco
+      - volkswagen_jetta
+    generations:
+      - volkswagen_type_1
+      - volkswagen_type_2_t1
+      - volkswagen_type_2_t2
+      - volkswagen_type_3
+      - volkswagen_karmann_ghia_type_14
+      - volkswagen_karmann_ghia_type_34
+      - volkswagen_type_4_411
+      - volkswagen_type_4_412
+      - volkswagen_passat_b1
+      - volkswagen_passat_b2
+      - volkswagen_golf_mk1
+      - volkswagen_golf_mk2
+      - volkswagen_polo_mk1
+      - volkswagen_polo_mk2
+      - volkswagen_scirocco_mk1
+      - volkswagen_scirocco_mk2
+      - volkswagen_jetta_mk1
+      - volkswagen_jetta_mk2
+    engines:
+      - "09"
+      - "10"
+      - "11"
+      - "12"
+      - "12_34"
+      - "13"
+      - "15"
+      - "16"
+      - "17"
+      - "18"
+      - "20"
+    category: diagnostics
+    system: fuel
+    title:
+      en: Mechanical fuel pump low delivery
+      ro: Debitul pompei mecanice de combustibil este prea mic
+      de: Zu geringe Förderleistung der mechanischen Kraftstoffpumpe
+      fr: Débit insuffisant de la pompe à carburant mécanique
+      es: Caudal insuficiente de la bomba de combustible mecánica
+      it: Portata insufficiente della pompa carburante meccanica
+      nl: Te lage opbrengst van de mechanische brandstofpomp
+
+    symptoms:
+      - en: Engine loses power at higher load or speed
+        ro: Motorul pierde putere la sarcină sau turație ridicată
+        de: Der Motor verliert bei hoher Last oder Drehzahl Leistung
+        fr: Le moteur perd de la puissance à forte charge ou à haut régime
+        es: El motor pierde potencia con alta carga o régimen
+        it: Il motore perde potenza ad alto carico o regime
+        nl: De motor verliest vermogen bij hoge belasting of toerental
+      - en: Engine may stall after prolonged driving
+        ro: Motorul se poate opri după rulare îndelungată
+        de: Der Motor kann nach längerer Fahrt ausgehen
+        fr: Le moteur peut caler après une longue conduite
+        es: El motor puede calarse después de conducir durante mucho tiempo
+        it: Il motore può spegnersi dopo una lunga percorrenza
+        nl: De motor kan na langdurig rijden afslaan
+
+    possible_causes:
+      - en: Worn mechanical fuel pump diaphragm
+        ro: Diafragmă uzată a pompei mecanice
+        de: Verschlissene Membran der mechanischen Kraftstoffpumpe
+        fr: Membrane usée de la pompe mécanique
+        es: Diafragma desgastada de la bomba mecánica
+        it: Membrana usurata della pompa meccanica
+        nl: Versleten membraan van de mechanische brandstofpomp
+      - en: Restricted fuel supply
+        ro: Alimentare cu combustibil restricționată
+        de: Eingeschränkte Kraftstoffversorgung
+        fr: Alimentation en carburant limitée
+        es: Suministro de combustible restringido
+        it: Alimentazione carburante limitata
+        nl: Beperkte brandstoftoevoer
+      - en: Damaged pump valves
+        ro: Supape deteriorate ale pompei
+        de: Beschädigte Pumpenventile
+        fr: Clapets de pompe endommagés
+        es: Válvulas de la bomba dañadas
+        it: Valvole della pompa danneggiate
+        nl: Beschadigde pompventielen
+
+    diagnostic_steps:
+      - en: Check fuel delivery volume at the carburetor inlet
+        ro: Verifică debitul de combustibil la intrarea în carburator
+        de: Kraftstofffördermenge am Vergasereingang prüfen
+        fr: Vérifier le débit de carburant à l'entrée du carburateur
+        es: Comprobar el caudal de combustible en la entrada del carburador
+        it: Controllare la portata carburante all'ingresso del carburatore
+        nl: Controleer de brandstofopbrengst bij de carburateurinlaat
+      - en: Inspect fuel hoses and filter for restriction
+        ro: Inspectează furtunurile și filtrul de combustibil pentru restricții
+        de: Kraftstoffleitungen und Filter auf Verstopfung prüfen
+        fr: Vérifier les durites et le filtre à carburant
+        es: Inspeccionar manguitos y filtro de combustible
+        it: Controllare tubi e filtro del carburante
+        nl: Controleer brandstofslangen en filter op verstopping
+      - en: Inspect the mechanical pump diaphragm and valves
+        ro: Inspectează diafragma și supapele pompei mecanice
+        de: Membran und Ventile der mechanischen Pumpe prüfen
+        fr: Inspecter la membrane et les clapets de la pompe mécanique
+        es: Inspeccionar el diafragma y las válvulas de la bomba mecánica
+        it: Ispezionare membrana e valvole della pompa meccanica
+        nl: Controleer membraan en ventielen van de mechanische pomp
+
+    keywords:
+      - mechanical fuel pump
+      - low fuel delivery
+      - fuel starvation
+      - fuel pump diaphragm
+      - pompă mecanică benzină
+      - pompe mécanique
+      - mechanische Kraftstoffpumpe
+      - bomba mecánica
+      - pompa meccanica
+
+    related_dtcs: []
+    difficulty: intermediate
+
+
+- id: vw_classic_petrol_fuel_filter_restriction
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_type_1
+      - volkswagen_type_2
+      - volkswagen_type_3
+      - volkswagen_karmann_ghia
+      - volkswagen_type_4
+      - volkswagen_k70
+      - volkswagen_passat
+      - volkswagen_golf
+      - volkswagen_polo
+      - volkswagen_scirocco
+      - volkswagen_jetta
+      - volkswagen_santana
+    generations:
+      - volkswagen_type_1
+      - volkswagen_type_2_t1
+      - volkswagen_type_2_t2
+      - volkswagen_type_3
+      - volkswagen_karmann_ghia_type_14
+      - volkswagen_karmann_ghia_type_34
+      - volkswagen_type_4_411
+      - volkswagen_type_4_412
+      - volkswagen_k70
+      - volkswagen_passat_b1
+      - volkswagen_passat_b2
+      - volkswagen_golf_mk1
+      - volkswagen_golf_mk2
+      - volkswagen_polo_mk1
+      - volkswagen_polo_mk2
+      - volkswagen_scirocco_mk1
+      - volkswagen_scirocco_mk2
+      - volkswagen_jetta_mk1
+      - volkswagen_jetta_mk2
+      - volkswagen_santana_b2
+    engines:
+      - "09"
+      - "10"
+      - "11"
+      - "12"
+      - "12_34"
+      - "13"
+      - "15"
+      - "16"
+      - "17"
+      - "18"
+      - "18_100"
+      - "20"
+    category: diagnostics
+    system: fuel
+    title:
+      en: Restricted petrol fuel filter or fuel supply
+      ro: Filtru de benzină sau alimentare cu combustibil obturată
+      de: Verstopfter Benzinfilter oder eingeschränkte Kraftstoffversorgung
+      fr: Filtre à essence ou alimentation en carburant obstrué
+      es: Filtro de gasolina o suministro de combustible obstruido
+      it: Filtro benzina o alimentazione carburante ostruiti
+      nl: Verstopt benzinefilter of beperkte brandstoftoevoer
+
+    symptoms:
+      - en: Engine lacks power under load
+        ro: Motorul nu are putere sub sarcină
+        de: Der Motor hat unter Last keine Leistung
+        fr: Le moteur manque de puissance sous charge
+        es: El motor pierde potencia bajo carga
+        it: Il motore perde potenza sotto carico
+        nl: De motor heeft onvoldoende vermogen onder belasting
+      - en: Engine may hesitate or stall during acceleration
+        ro: Motorul poate ezita sau se poate opri la accelerare
+        de: Der Motor kann beim Beschleunigen ruckeln oder ausgehen
+        fr: Le moteur peut hésiter ou caler à l'accélération
+        es: El motor puede vacilar o calarse al acelerar
+        it: Il motore può esitare o spegnersi durante l'accelerazione
+        nl: De motor kan haperen of afslaan bij acceleratie
+
+    possible_causes:
+      - en: Clogged fuel filter
+        ro: Filtru de combustibil înfundat
+        de: Verstopfter Kraftstofffilter
+        fr: Filtre à carburant colmaté
+        es: Filtro de combustible obstruido
+        it: Filtro carburante intasato
+        nl: Verstopt brandstoffilter
+      - en: Contaminated fuel
+        ro: Combustibil contaminat
+        de: Verunreinigter Kraftstoff
+        fr: Carburant contaminé
+        es: Combustible contaminado
+        it: Carburante contaminato
+        nl: Verontreinigde brandstof
+      - en: Restricted fuel line or tank outlet
+        ro: Conductă de combustibil sau ieșire din rezervor obturată
+        de: Kraftstoffleitung oder Tankauslass eingeschränkt
+        fr: Conduite de carburant ou sortie de réservoir obstruée
+        es: Línea de combustible o salida del depósito obstruida
+        it: Tubazione carburante o uscita serbatoio ostruita
+        nl: Brandstofleiding of tankuitlaat verstopt
+
+    diagnostic_steps:
+      - en: Inspect the fuel filter for contamination
+        ro: Inspectează filtrul de combustibil pentru contaminare
+        de: Kraftstofffilter auf Verschmutzung prüfen
+        fr: Vérifier l'état du filtre à carburant
+        es: Inspeccionar el filtro de combustible
+        it: Controllare il filtro carburante
+        nl: Controleer het brandstoffilter op vervuiling
+      - en: Check fuel flow from the tank before the pump
+        ro: Verifică debitul combustibilului din rezervor înainte de pompă
+        de: Kraftstoffdurchfluss vom Tank zur Pumpe prüfen
+        fr: Vérifier le débit de carburant du réservoir vers la pompe
+        es: Comprobar el flujo de combustible desde el depósito hacia la bomba
+        it: Controllare il flusso carburante dal serbatoio alla pompa
+        nl: Controleer de brandstofstroom van de tank naar de pomp
+      - en: Inspect fuel lines for kinks, corrosion or internal collapse
+        ro: Inspectează conductele pentru îndoituri, coroziune sau colaps intern
+        de: Kraftstoffleitungen auf Knicke, Korrosion oder inneres Zusammenfallen prüfen
+        fr: Vérifier les conduites pour pliures, corrosion ou écrasement interne
+        es: Inspeccionar las líneas por dobleces, corrosión o colapso interno
+        it: Controllare le tubazioni per pieghe, corrosione o collasso interno
+        nl: Controleer brandstofleidingen op knikken, corrosie of interne instorting
+
+    keywords:
+      - fuel filter
+      - fuel restriction
+      - fuel starvation
+      - restricted fuel line
+      - filtru benzină
+      - filtre essence
+      - Kraftstofffilter
+      - filtro gasolina
+      - filtro benzina
+
+    related_dtcs: []
+    difficulty: basic
+
+
+- id: vw_classic_petrol_carburetor_lean_mixture
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_type_1
+      - volkswagen_type_2
+      - volkswagen_type_3
+      - volkswagen_karmann_ghia
+      - volkswagen_type_4
+      - volkswagen_k70
+      - volkswagen_passat
+      - volkswagen_golf
+      - volkswagen_polo
+      - volkswagen_scirocco
+      - volkswagen_jetta
+      - volkswagen_santana
+    generations:
+      - volkswagen_type_1
+      - volkswagen_type_2_t1
+      - volkswagen_type_2_t2
+      - volkswagen_type_3
+      - volkswagen_karmann_ghia_type_14
+      - volkswagen_karmann_ghia_type_34
+      - volkswagen_type_4_411
+      - volkswagen_type_4_412
+      - volkswagen_k70
+      - volkswagen_passat_b1
+      - volkswagen_passat_b2
+      - volkswagen_golf_mk1
+      - volkswagen_golf_mk2
+      - volkswagen_polo_mk1
+      - volkswagen_polo_mk2
+      - volkswagen_scirocco_mk1
+      - volkswagen_scirocco_mk2
+      - volkswagen_jetta_mk1
+      - volkswagen_jetta_mk2
+      - volkswagen_santana_b2
+    engines:
+      - "09"
+      - "10"
+      - "11"
+      - "12"
+      - "12_34"
+      - "13"
+      - "15"
+      - "16"
+      - "17"
+      - "18"
+      - "18_100"
+      - "20"
+    category: diagnostics
+    system: fuel
+    title:
+      en: Carburetor mixture too lean
+      ro: Amestec carburator prea sărac
+      de: Vergasergemisch zu mager
+      fr: Mélange du carburateur trop pauvre
+      es: Mezcla del carburador demasiado pobre
+      it: Miscela del carburatore troppo magra
+      nl: Carburateurmengsel te arm
+
+    symptoms:
+      - en: Engine hesitates when accelerating
+        ro: Motorul ezită la accelerare
+        de: Der Motor ruckelt beim Beschleunigen
+        fr: Le moteur hésite à l'accélération
+        es: El motor vacila al acelerar
+        it: Il motore esita durante l'accelerazione
+        nl: De motor hapert bij acceleratie
+      - en: Engine runs hot or develops backfire during deceleration
+        ro: Motorul funcționează fierbinte sau pocnește pe evacuare la decelerare
+        de: Der Motor läuft heiß oder knallt beim Schubbetrieb
+        fr: Le moteur chauffe ou pétarade à la décélération
+        es: El motor funciona caliente o produce petardeo al desacelerar
+        it: Il motore funziona caldo o scoppietta in rilascio
+        nl: De motor loopt heet of knalt bij gas loslaten
+
+    possible_causes:
+      - en: Restricted fuel jet
+        ro: Jiclor de combustibil obturat
+        de: Verstopfte Kraftstoffdüse
+        fr: Gicleur de carburant obstrué
+        es: Chiclé de combustible obstruido
+        it: Getto carburante ostruito
+        nl: Verstopte brandstofsproeier
+      - en: Low carburetor fuel level
+        ro: Nivel prea mic al combustibilului în carburator
+        de: Zu niedriger Kraftstoffstand im Vergaser
+        fr: Niveau de carburant trop bas dans le carburateur
+        es: Nivel de combustible demasiado bajo en el carburador
+        it: Livello carburante troppo basso nel carburatore
+        nl: Te laag brandstofniveau in de carburateur
+      - en: Vacuum leak
+        ro: Pierdere de vacuum
+        de: Falschluft
+        fr: Prise d'air
+        es: Fuga de vacío
+        it: Aria falsa
+        nl: Vacuümlek
+
+    diagnostic_steps:
+      - en: Check carburetor fuel level
+        ro: Verifică nivelul combustibilului din carburator
+        de: Kraftstoffstand im Vergaser prüfen
+        fr: Vérifier le niveau de carburant du carburateur
+        es: Comprobar el nivel de combustible del carburador
+        it: Controllare il livello carburante del carburatore
+        nl: Controleer het brandstofniveau in de carburateur
+      - en: Inspect fuel jets and passages for blockage
+        ro: Inspectează jicloarele și canalele de combustibil pentru obturări
+        de: Kraftstoffdüsen und Kanäle auf Verstopfung prüfen
+        fr: Vérifier les gicleurs et conduits de carburant
+        es: Comprobar los chiclés y conductos de combustible
+        it: Controllare getti e passaggi carburante
+        nl: Controleer brandstofsproeiers en kanalen op verstopping
+      - en: Check intake system for unmetered air
+        ro: Verifică admisia pentru aer fals
+        de: Ansaugsystem auf Falschluft prüfen
+        fr: Vérifier l'admission pour prise d'air
+        es: Comprobar la admisión por entrada de aire no medido
+        it: Controllare l'aspirazione per aria falsa
+        nl: Controleer het inlaatsysteem op valse lucht
+
+    keywords:
+      - lean mixture
+      - lean carburetor
+      - carburetor tuning
+      - fuel jet
+      - amestec sărac
+      - mélange pauvre
+      - mageres Gemisch
+      - mezcla pobre
+      - miscela magra
+
+    related_dtcs: []
+    difficulty: intermediate
+
+
+- id: vw_classic_petrol_carburetor_rich_mixture
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_type_1
+      - volkswagen_type_2
+      - volkswagen_type_3
+      - volkswagen_karmann_ghia
+      - volkswagen_type_4
+      - volkswagen_k70
+      - volkswagen_passat
+      - volkswagen_golf
+      - volkswagen_polo
+      - volkswagen_scirocco
+      - volkswagen_jetta
+      - volkswagen_santana
+    generations:
+      - volkswagen_type_1
+      - volkswagen_type_2_t1
+      - volkswagen_type_2_t2
+      - volkswagen_type_3
+      - volkswagen_karmann_ghia_type_14
+      - volkswagen_karmann_ghia_type_34
+      - volkswagen_type_4_411
+      - volkswagen_type_4_412
+      - volkswagen_k70
+      - volkswagen_passat_b1
+      - volkswagen_passat_b2
+      - volkswagen_golf_mk1
+      - volkswagen_golf_mk2
+      - volkswagen_polo_mk1
+      - volkswagen_polo_mk2
+      - volkswagen_scirocco_mk1
+      - volkswagen_scirocco_mk2
+      - volkswagen_jetta_mk1
+      - volkswagen_jetta_mk2
+      - volkswagen_santana_b2
+    engines:
+      - "09"
+      - "10"
+      - "11"
+      - "12"
+      - "12_34"
+      - "13"
+      - "15"
+      - "16"
+      - "17"
+      - "18"
+      - "18_100"
+      - "20"
+    category: diagnostics
+    system: fuel
+    title:
+      en: Carburetor mixture too rich
+      ro: Amestec carburator prea bogat
+      de: Vergasergemisch zu fett
+      fr: Mélange du carburateur trop riche
+      es: Mezcla del carburador demasiado rica
+      it: Miscela del carburatore troppo ricca
+      nl: Carburateurmengsel te rijk
+
+    symptoms:
+      - en: Excessive fuel consumption
+        ro: Consum excesiv de combustibil
+        de: Erhöhter Kraftstoffverbrauch
+        fr: Consommation excessive de carburant
+        es: Consumo excesivo de combustible
+        it: Consumo eccessivo di carburante
+        nl: Overmatig brandstofverbruik
+      - en: Black exhaust smoke
+        ro: Fum negru la evacuare
+        de: Schwarzer Abgasrauch
+        fr: Fumée noire à l'échappement
+        es: Humo negro por el escape
+        it: Fumo nero allo scarico
+        nl: Zwarte rook uit de uitlaat
+      - en: Spark plugs become dark or sooty
+        ro: Bujiile se înnegresc sau se acoperă cu funingine
+        de: Zündkerzen werden dunkel oder verrußen
+        fr: Les bougies deviennent noires ou couvertes de suie
+        es: Las bujías se ennegrecen o se llenan de hollín
+        it: Le candele diventano nere o fuligginose
+        nl: Bougies worden donker of roetig
+
+    possible_causes:
+      - en: Excessive carburetor fuel level
+        ro: Nivel prea mare al combustibilului în carburator
+        de: Zu hoher Kraftstoffstand im Vergaser
+        fr: Niveau de carburant trop élevé dans le carburateur
+        es: Nivel de combustible excesivo en el carburador
+        it: Livello carburante eccessivo nel carburatore
+        nl: Te hoog brandstofniveau in de carburateur
+      - en: Choke remains partially closed
+        ro: Șocul rămâne parțial închis
+        de: Choke bleibt teilweise geschlossen
+        fr: Le starter reste partiellement fermé
+        es: El estárter permanece parcialmente cerrado
+        it: Lo starter rimane parzialmente chiuso
+        nl: De choke blijft gedeeltelijk gesloten
+      - en: Incorrect jetting or mixture adjustment
+        ro: Jicloare sau reglaj al amestecului incorecte
+        de: Falsche Bedüsung oder Gemischeinstellung
+        fr: Gicleurs ou réglage du mélange incorrects
+        es: Chiclé o ajuste de mezcla incorrectos
+        it: Getti o regolazione miscela errati
+        nl: Verkeerde sproeierbezetting of mengselafstelling
+
+    diagnostic_steps:
+      - en: Inspect spark plugs for rich-mixture deposits
+        ro: Inspectează bujiile pentru depuneri specifice amestecului bogat
+        de: Zündkerzen auf Ablagerungen eines fetten Gemischs prüfen
+        fr: Vérifier les bougies pour dépôts liés à un mélange riche
+        es: Comprobar las bujías por depósitos de mezcla rica
+        it: Controllare le candele per depositi da miscela ricca
+        nl: Controleer bougies op afzettingen door een rijk mengsel
+      - en: Check carburetor fuel level and choke operation
+        ro: Verifică nivelul combustibilului și funcționarea șocului
+        de: Kraftstoffstand und Chokefunktion prüfen
+        fr: Vérifier le niveau de carburant et le starter
+        es: Comprobar el nivel de combustible y el estárter
+        it: Controllare il livello carburante e lo starter
+        nl: Controleer brandstofniveau en choke
+      - en: Verify jet sizes and mixture adjustment against specification
+        ro: Verifică dimensiunile jicloarelor și reglajul amestecului conform specificației
+        de: Düsenbestückung und Gemischeinstellung gemäß Spezifikation prüfen
+        fr: Vérifier les dimensions des gicleurs et le réglage selon les spécifications
+        es: Comprobar los tamaños de los chiclés y el ajuste según especificaciones
+        it: Verificare dimensione dei getti e regolazione della miscela secondo specifica
+        nl: Controleer sproeiermaten en mengselafstelling volgens specificatie
+
+    keywords:
+      - rich mixture
+      - rich carburetor
+      - black smoke
+      - high fuel consumption
+      - amestec bogat
+      - mélange riche
+      - fettes Gemisch
+      - mezcla rica
+      - miscela ricca
+
+    related_dtcs: []
+    difficulty: intermediate
+
 - id: vw_classic_petrol_engine_no_start
   vehicle:
     manufacturer: volkswagen
