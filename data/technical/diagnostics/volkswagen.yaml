@@ -6,6 +6,1344 @@ manufacturer:
 
 technical_data:
 
+- id: vw_classic_petrol_engine_no_start
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_type_1
+      - volkswagen_type_2
+      - volkswagen_type_3
+      - volkswagen_karmann_ghia
+      - volkswagen_type_4
+      - volkswagen_k70
+      - volkswagen_passat
+      - volkswagen_golf
+      - volkswagen_polo
+      - volkswagen_scirocco
+      - volkswagen_jetta
+      - volkswagen_santana
+    generations:
+      - volkswagen_type_1
+      - volkswagen_type_2_t1
+      - volkswagen_type_2_t2
+      - volkswagen_type_3
+      - volkswagen_karmann_ghia_type_14
+      - volkswagen_karmann_ghia_type_34
+      - volkswagen_type_4_411
+      - volkswagen_type_4_412
+      - volkswagen_k70
+      - volkswagen_passat_b1
+      - volkswagen_passat_b2
+      - volkswagen_golf_mk1
+      - volkswagen_golf_mk2
+      - volkswagen_polo_mk1
+      - volkswagen_polo_mk2
+      - volkswagen_scirocco_mk1
+      - volkswagen_scirocco_mk2
+      - volkswagen_jetta_mk1
+      - volkswagen_jetta_mk2
+      - volkswagen_santana_b2
+    engines:
+      - "09"
+      - "10"
+      - "11"
+      - "12"
+      - "12_34"
+      - "13"
+      - "15"
+      - "16"
+      - "17"
+      - "18"
+      - "18_100"
+      - "20"
+      - "16_gti"
+      - "17_gti"
+      - "18_gt"
+      - "18_gti"
+      - "13_g40"
+    category: diagnostics
+    system: engine
+    title:
+      en: Engine cranks but does not start
+      ro: Motorul învârte dar nu pornește
+      de: Motor dreht durch, startet aber nicht
+      fr: Le moteur entraîne mais ne démarre pas
+      es: El motor gira pero no arranca
+      it: Il motore gira ma non si avvia
+      nl: De motor draait rond maar start niet
+
+    symptoms:
+      - en: Starter cranks the engine normally but the engine does not start
+        ro: Demarorul învârte normal motorul dar acesta nu pornește
+        de: Der Anlasser dreht den Motor normal durch, aber der Motor startet nicht
+        fr: Le démarreur entraîne normalement le moteur mais celui-ci ne démarre pas
+        es: El motor de arranque gira normalmente pero el motor no arranca
+        it: Il motorino d'avviamento fa girare normalmente il motore ma il motore non si avvia
+        nl: De startmotor draait de motor normaal rond maar de motor start niet
+      - en: Engine may briefly fire and then stall
+        ro: Motorul poate porni pentru scurt timp și apoi se poate opri
+        de: Der Motor kann kurz anspringen und anschließend wieder ausgehen
+        fr: Le moteur peut démarrer brièvement puis caler
+        es: El motor puede arrancar brevemente y después calarse
+        it: Il motore può avviarsi brevemente e poi spegnersi
+        nl: De motor kan kort aanslaan en daarna weer afslaan
+
+    possible_causes:
+      - en: No ignition spark
+        ro: Lipsă scânteie de aprindere
+        de: Kein Zündfunke
+        fr: Absence d'étincelle d'allumage
+        es: Falta de chispa de encendido
+        it: Assenza di scintilla di accensione
+        nl: Geen ontstekingsvonk
+      - en: Incorrect ignition timing
+        ro: Avansul aprinderii este incorect
+        de: Falscher Zündzeitpunkt
+        fr: Calage de l'allumage incorrect
+        es: Reglaje incorrecto del encendido
+        it: Fasatura dell'accensione errata
+        nl: Onjuist ontstekingstijdstip
+      - en: Insufficient fuel delivery
+        ro: Alimentare insuficientă cu combustibil
+        de: Unzureichende Kraftstoffversorgung
+        fr: Alimentation en carburant insuffisante
+        es: Suministro insuficiente de combustible
+        it: Alimentazione insufficiente di carburante
+        nl: Onvoldoende brandstoftoevoer
+      - en: Flooded engine or excessively rich mixture
+        ro: Motor înecat sau amestec excesiv de bogat
+        de: Abgesoffener Motor oder zu fettes Gemisch
+        fr: Moteur noyé ou mélange trop riche
+        es: Motor ahogado o mezcla demasiado rica
+        it: Motore ingolfato o miscela troppo ricca
+        nl: Verzopen motor of te rijk mengsel
+      - en: Low compression
+        ro: Compresie scăzută
+        de: Zu niedrige Kompression
+        fr: Compression insuffisante
+        es: Compresión baja
+        it: Compressione insufficiente
+        nl: Te lage compressie
+
+    diagnostic_steps:
+      - en: Check for a strong ignition spark at the spark plugs
+        ro: Verifică existența unei scântei puternice la bujii
+        de: Zündfunken an den Zündkerzen auf ausreichende Stärke prüfen
+        fr: Vérifier la présence d'une étincelle forte aux bougies
+        es: Comprobar que exista una chispa fuerte en las bujías
+        it: Controllare la presenza di una scintilla forte alle candele
+        nl: Controleer op een sterke ontstekingsvonk bij de bougies
+      - en: Check whether fuel reaches the carburetor or injection system
+        ro: Verifică dacă combustibilul ajunge la carburator sau la sistemul de injecție
+        de: Prüfen, ob Kraftstoff den Vergaser oder die Einspritzanlage erreicht
+        fr: Vérifier si le carburant arrive au carburateur ou au système d'injection
+        es: Comprobar si el combustible llega al carburador o al sistema de inyección
+        it: Controllare se il carburante raggiunge il carburatore o il sistema di iniezione
+        nl: Controleer of brandstof de carburateur of het injectiesysteem bereikt
+      - en: Verify ignition timing and distributor position where applicable
+        ro: Verifică avansul aprinderii și poziția distribuitorului, unde este cazul
+        de: Zündzeitpunkt und Stellung des Verteilers prüfen, sofern vorhanden
+        fr: Vérifier le calage de l'allumage et la position du distributeur si présent
+        es: Comprobar el avance de encendido y la posición del distribuidor cuando corresponda
+        it: Controllare la fasatura dell'accensione e la posizione dello spinterogeno, se presente
+        nl: Controleer het ontstekingstijdstip en de positie van de verdeler indien aanwezig
+      - en: Perform a compression test if ignition and fuel supply are present
+        ro: Efectuează un test de compresie dacă aprinderea și alimentarea cu combustibil sunt prezente
+        de: Kompression prüfen, wenn Zündung und Kraftstoffversorgung vorhanden sind
+        fr: Effectuer un test de compression si l'allumage et l'alimentation sont présents
+        es: Realizar una prueba de compresión si hay encendido y suministro de combustible
+        it: Eseguire una prova di compressione se accensione e alimentazione sono presenti
+        nl: Voer een compressietest uit als ontsteking en brandstoftoevoer aanwezig zijn
+
+    keywords:
+      - no start
+      - hard starting
+      - crank no start
+      - engine will not start
+      - classic petrol
+      - motor nu porneste
+      - moteur ne démarre pas
+      - Motor startet nicht
+      - motor no arranca
+
+    related_dtcs: []
+    difficulty: basic
+
+
+- id: vw_classic_petrol_hard_cold_start
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_type_1
+      - volkswagen_type_2
+      - volkswagen_type_3
+      - volkswagen_karmann_ghia
+      - volkswagen_type_4
+      - volkswagen_k70
+      - volkswagen_passat
+      - volkswagen_golf
+      - volkswagen_polo
+      - volkswagen_scirocco
+      - volkswagen_jetta
+      - volkswagen_santana
+    generations:
+      - volkswagen_type_1
+      - volkswagen_type_2_t1
+      - volkswagen_type_2_t2
+      - volkswagen_type_3
+      - volkswagen_karmann_ghia_type_14
+      - volkswagen_karmann_ghia_type_34
+      - volkswagen_type_4_411
+      - volkswagen_type_4_412
+      - volkswagen_k70
+      - volkswagen_passat_b1
+      - volkswagen_passat_b2
+      - volkswagen_golf_mk1
+      - volkswagen_golf_mk2
+      - volkswagen_polo_mk1
+      - volkswagen_polo_mk2
+      - volkswagen_scirocco_mk1
+      - volkswagen_scirocco_mk2
+      - volkswagen_jetta_mk1
+      - volkswagen_jetta_mk2
+      - volkswagen_santana_b2
+    engines:
+      - "09"
+      - "10"
+      - "11"
+      - "12"
+      - "12_34"
+      - "13"
+      - "15"
+      - "16"
+      - "17"
+      - "18"
+      - "18_100"
+      - "20"
+      - "16_gti"
+      - "17_gti"
+      - "18_gt"
+      - "18_gti"
+      - "13_g40"
+    category: diagnostics
+    system: engine
+    title:
+      en: Hard cold starting
+      ro: Pornire dificilă la rece
+      de: Schwieriger Kaltstart
+      fr: Démarrage difficile à froid
+      es: Arranque difícil en frío
+      it: Avviamento difficile a freddo
+      nl: Moeilijk koud starten
+
+    symptoms:
+      - en: Engine requires extended cranking when cold
+        ro: Motorul necesită acționarea îndelungată a demarorului când este rece
+        de: Der Motor benötigt bei Kälte längeres Durchdrehen
+        fr: Le moteur nécessite un long entraînement à froid
+        es: El motor necesita mucho tiempo de arranque en frío
+        it: Il motore richiede un avviamento prolungato a freddo
+        nl: De motor heeft bij koude toestand lang starten nodig
+      - en: Engine starts only after several attempts
+        ro: Motorul pornește numai după mai multe încercări
+        de: Der Motor startet erst nach mehreren Versuchen
+        fr: Le moteur ne démarre qu'après plusieurs tentatives
+        es: El motor solo arranca después de varios intentos
+        it: Il motore si avvia solo dopo diversi tentativi
+        nl: De motor start pas na meerdere pogingen
+
+    possible_causes:
+      - en: Choke or cold-start enrichment system not operating correctly
+        ro: Șocul sau sistemul de îmbogățire la rece nu funcționează corect
+        de: Kaltstarteinrichtung oder Choke arbeitet nicht korrekt
+        fr: Le starter ou le système d'enrichissement à froid fonctionne mal
+        es: El estárter o sistema de enriquecimiento en frío no funciona correctamente
+        it: Lo starter o il sistema di arricchimento a freddo non funziona correttamente
+        nl: De choke of koudstartverrijking werkt niet correct
+      - en: Weak ignition spark
+        ro: Scânteie de aprindere slabă
+        de: Schwacher Zündfunke
+        fr: Étincelle d'allumage faible
+        es: Chispa de encendido débil
+        it: Scintilla di accensione debole
+        nl: Zwakke ontstekingsvonk
+      - en: Fuel supply restriction
+        ro: Restricție în alimentarea cu combustibil
+        de: Einschränkung der Kraftstoffversorgung
+        fr: Restriction de l'alimentation en carburant
+        es: Restricción en el suministro de combustible
+        it: Restrizione nell'alimentazione del carburante
+        nl: Beperking van de brandstoftoevoer
+      - en: Vacuum leak affecting mixture during cold operation
+        ro: Pierdere de vacuum care afectează amestecul la rece
+        de: Falschluft beeinflusst das Gemisch im Kaltbetrieb
+        fr: Prise d'air perturbant le mélange à froid
+        es: Entrada de aire que altera la mezcla en frío
+        it: Aspirazione di aria falsa che altera la miscela a freddo
+        nl: Vacuümlek dat het mengsel bij koude werking beïnvloedt
+
+    diagnostic_steps:
+      - en: Inspect the cold-start enrichment or choke mechanism
+        ro: Inspectează mecanismul de îmbogățire la rece sau șocul
+        de: Kaltstarteinrichtung bzw. Choke prüfen
+        fr: Inspecter le système d'enrichissement à froid ou le starter
+        es: Inspeccionar el sistema de enriquecimiento en frío o el estárter
+        it: Ispezionare il sistema di arricchimento a freddo o lo starter
+        nl: Controleer de koudstartverrijking of choke
+      - en: Check ignition spark quality while the engine is cold
+        ro: Verifică intensitatea scânteii când motorul este rece
+        de: Zündfunkenqualität bei kaltem Motor prüfen
+        fr: Vérifier la qualité de l'étincelle moteur froid
+        es: Comprobar la calidad de la chispa con el motor frío
+        it: Controllare la qualità della scintilla a motore freddo
+        nl: Controleer de vonksterkte bij koude motor
+      - en: Check fuel delivery and fuel filter condition
+        ro: Verifică alimentarea cu combustibil și starea filtrului de combustibil
+        de: Kraftstoffversorgung und Kraftstofffilter prüfen
+        fr: Vérifier l'alimentation et le filtre à carburant
+        es: Comprobar el suministro y el filtro de combustible
+        it: Controllare l'alimentazione e il filtro del carburante
+        nl: Controleer de brandstoftoevoer en het brandstoffilter
+
+    keywords:
+      - cold start
+      - hard cold start
+      - choke
+      - cold enrichment
+      - pornire la rece
+      - démarrage à froid
+      - Kaltstart
+      - arranque en frío
+      - avviamento a freddo
+
+    related_dtcs: []
+    difficulty: basic
+
+
+- id: vw_classic_petrol_hard_hot_start
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_type_1
+      - volkswagen_type_2
+      - volkswagen_type_3
+      - volkswagen_karmann_ghia
+      - volkswagen_type_4
+      - volkswagen_k70
+      - volkswagen_passat
+      - volkswagen_golf
+      - volkswagen_polo
+      - volkswagen_scirocco
+      - volkswagen_jetta
+      - volkswagen_santana
+    generations:
+      - volkswagen_type_1
+      - volkswagen_type_2_t1
+      - volkswagen_type_2_t2
+      - volkswagen_type_3
+      - volkswagen_karmann_ghia_type_14
+      - volkswagen_karmann_ghia_type_34
+      - volkswagen_type_4_411
+      - volkswagen_type_4_412
+      - volkswagen_k70
+      - volkswagen_passat_b1
+      - volkswagen_passat_b2
+      - volkswagen_golf_mk1
+      - volkswagen_golf_mk2
+      - volkswagen_polo_mk1
+      - volkswagen_polo_mk2
+      - volkswagen_scirocco_mk1
+      - volkswagen_scirocco_mk2
+      - volkswagen_jetta_mk1
+      - volkswagen_jetta_mk2
+      - volkswagen_santana_b2
+    engines:
+      - "09"
+      - "10"
+      - "11"
+      - "12"
+      - "12_34"
+      - "13"
+      - "15"
+      - "16"
+      - "17"
+      - "18"
+      - "18_100"
+      - "20"
+      - "16_gti"
+      - "17_gti"
+      - "18_gt"
+      - "18_gti"
+      - "13_g40"
+    category: diagnostics
+    system: engine
+    title:
+      en: Hard hot starting
+      ro: Pornire dificilă la cald
+      de: Schwieriger Warmstart
+      fr: Démarrage difficile à chaud
+      es: Arranque difícil en caliente
+      it: Avviamento difficile a caldo
+      nl: Moeilijk warm starten
+
+    symptoms:
+      - en: Engine is difficult to restart after reaching operating temperature
+        ro: Motorul pornește greu după ce ajunge la temperatura de funcționare
+        de: Der Motor lässt sich nach Erreichen der Betriebstemperatur schwer wieder starten
+        fr: Le moteur redémarre difficilement à chaud
+        es: El motor vuelve a arrancar con dificultad cuando está caliente
+        it: Il motore si riavvia con difficoltà quando è caldo
+        nl: De motor start moeilijk opnieuw wanneer hij warm is
+      - en: Starter cranks normally but the engine takes a long time to fire
+        ro: Demarorul învârte normal dar motorul pornește după mult timp
+        de: Der Anlasser dreht normal, aber der Motor braucht lange zum Anspringen
+        fr: Le démarreur entraîne normalement mais le moteur met du temps à démarrer
+        es: El motor de arranque gira normalmente pero el motor tarda en arrancar
+        it: Il motorino gira normalmente ma il motore impiega molto ad avviarsi
+        nl: De startmotor draait normaal maar de motor slaat pas laat aan
+
+    possible_causes:
+      - en: Fuel vaporization or fuel boiling after shutdown
+        ro: Vaporizarea sau fierberea combustibilului după oprire
+        de: Kraftstoffverdampfung oder Kraftstoffsieden nach dem Abstellen
+        fr: Vaporisation ou ébullition du carburant après l'arrêt
+        es: Vaporización o ebullición del combustible después de apagar el motor
+        it: Vaporizzazione o ebollizione del carburante dopo lo spegnimento
+        nl: Brandstofverdamping of koken van brandstof na uitschakelen
+      - en: Excessively rich mixture
+        ro: Amestec excesiv de bogat
+        de: Zu fettes Gemisch
+        fr: Mélange trop riche
+        es: Mezcla demasiado rica
+        it: Miscela troppo ricca
+        nl: Te rijk mengsel
+      - en: Weak ignition when components are hot
+        ro: Aprindere slabă când componentele sunt fierbinți
+        de: Schwache Zündung bei warmen Bauteilen
+        fr: Allumage faible lorsque les composants sont chauds
+        es: Encendido débil cuando los componentes están calientes
+        it: Accensione debole a caldo
+        nl: Zwakke ontsteking wanneer componenten warm zijn
+
+    diagnostic_steps:
+      - en: Check whether fuel is present at the carburetor or injection system immediately after the hot-start failure
+        ro: Verifică dacă există combustibil la carburator sau sistemul de injecție imediat după apariția problemei
+        de: Prüfen, ob unmittelbar nach dem Warmstartfehler Kraftstoff am Vergaser oder der Einspritzanlage vorhanden ist
+        fr: Vérifier la présence de carburant au carburateur ou au système d'injection après la panne à chaud
+        es: Comprobar la presencia de combustible en el carburador o sistema de inyección después del fallo en caliente
+        it: Controllare la presenza di carburante al carburatore o al sistema di iniezione dopo il mancato avviamento a caldo
+        nl: Controleer of er direct na de warme startstoring brandstof aanwezig is bij de carburateur of injectie
+      - en: Test ignition spark with the engine hot
+        ro: Testează scânteia de aprindere cu motorul cald
+        de: Zündfunken bei warmem Motor prüfen
+        fr: Tester l'étincelle moteur chaud
+        es: Probar la chispa con el motor caliente
+        it: Provare la scintilla a motore caldo
+        nl: Test de ontstekingsvonk met warme motor
+      - en: Inspect fuel lines for excessive heat exposure
+        ro: Inspectează conductele de combustibil pentru expunere excesivă la căldură
+        de: Kraftstoffleitungen auf übermäßige Hitzeeinwirkung prüfen
+        fr: Inspecter les conduites de carburant exposées à une chaleur excessive
+        es: Inspeccionar las líneas de combustible expuestas a calor excesivo
+        it: Controllare le tubazioni del carburante esposte a calore eccessivo
+        nl: Controleer brandstofleidingen op overmatige hitte
+
+    keywords:
+      - hot start
+      - hard hot start
+      - vapor lock
+      - heat soak
+      - pornire la cald
+      - vapor lock
+      - Warmstart
+      - arranque en caliente
+      - avviamento a caldo
+
+    related_dtcs: []
+    difficulty: intermediate
+
+
+- id: vw_classic_petrol_rough_idle
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_type_1
+      - volkswagen_type_2
+      - volkswagen_type_3
+      - volkswagen_karmann_ghia
+      - volkswagen_type_4
+      - volkswagen_k70
+      - volkswagen_passat
+      - volkswagen_golf
+      - volkswagen_polo
+      - volkswagen_scirocco
+      - volkswagen_jetta
+      - volkswagen_santana
+    generations:
+      - volkswagen_type_1
+      - volkswagen_type_2_t1
+      - volkswagen_type_2_t2
+      - volkswagen_type_3
+      - volkswagen_karmann_ghia_type_14
+      - volkswagen_karmann_ghia_type_34
+      - volkswagen_type_4_411
+      - volkswagen_type_4_412
+      - volkswagen_k70
+      - volkswagen_passat_b1
+      - volkswagen_passat_b2
+      - volkswagen_golf_mk1
+      - volkswagen_golf_mk2
+      - volkswagen_polo_mk1
+      - volkswagen_polo_mk2
+      - volkswagen_scirocco_mk1
+      - volkswagen_scirocco_mk2
+      - volkswagen_jetta_mk1
+      - volkswagen_jetta_mk2
+      - volkswagen_santana_b2
+    engines:
+      - "09"
+      - "10"
+      - "11"
+      - "12"
+      - "12_34"
+      - "13"
+      - "15"
+      - "16"
+      - "17"
+      - "18"
+      - "18_100"
+      - "20"
+      - "16_gti"
+      - "17_gti"
+      - "18_gt"
+      - "18_gti"
+      - "13_g40"
+    category: diagnostics
+    system: engine
+    title:
+      en: Rough or unstable engine idle
+      ro: Ralanti instabil sau neregulat
+      de: Unruhiger oder instabiler Motorleerlauf
+      fr: Ralenti irrégulier ou instable
+      es: Ralentí irregular o inestable
+      it: Minimo irregolare o instabile
+      nl: Onrustig of instabiel stationair toerental
+
+    symptoms:
+      - en: Engine shakes or runs unevenly at idle
+        ro: Motorul vibrează sau funcționează neregulat la ralanti
+        de: Der Motor läuft im Leerlauf unrund oder vibriert
+        fr: Le moteur tourne irrégulièrement ou vibre au ralenti
+        es: El motor vibra o funciona de forma irregular al ralentí
+        it: Il motore vibra o gira irregolarmente al minimo
+        nl: De motor trilt of loopt onregelmatig stationair
+      - en: Idle speed fluctuates
+        ro: Turația de ralanti variază
+        de: Die Leerlaufdrehzahl schwankt
+        fr: Le régime de ralenti fluctue
+        es: El régimen de ralentí fluctúa
+        it: Il regime minimo oscilla
+        nl: Het stationaire toerental schommelt
+
+    possible_causes:
+      - en: Vacuum leak
+        ro: Pierdere de vacuum
+        de: Falschluft oder Unterdruckleck
+        fr: Prise d'air ou fuite de dépression
+        es: Fuga de vacío
+        it: Perdita di vuoto
+        nl: Vacuümlek
+      - en: Incorrect mixture adjustment
+        ro: Reglaj incorect al amestecului
+        de: Falsche Gemischeinstellung
+        fr: Réglage incorrect du mélange
+        es: Ajuste incorrecto de la mezcla
+        it: Regolazione errata della miscela
+        nl: Onjuiste mengselafstelling
+      - en: Ignition misfire
+        ro: Rateu de aprindere
+        de: Zündaussetzer
+        fr: Raté d'allumage
+        es: Fallo de encendido
+        it: Mancata accensione
+        nl: Ontstekingsmisfire
+      - en: Unequal cylinder compression
+        ro: Compresie neuniformă între cilindri
+        de: Ungleichmäßige Zylinderkompression
+        fr: Compression inégale entre les cylindres
+        es: Compresión desigual entre cilindros
+        it: Compressione non uniforme tra i cilindri
+        nl: Ongelijke cilindercompressie
+
+    diagnostic_steps:
+      - en: Inspect intake hoses, gaskets and vacuum connections for leaks
+        ro: Inspectează furtunurile de admisie, garniturile și conexiunile de vacuum pentru pierderi
+        de: Ansaugschläuche, Dichtungen und Unterdruckanschlüsse auf Lecks prüfen
+        fr: Inspecter les durites d'admission, joints et raccords de dépression
+        es: Inspeccionar manguitos de admisión, juntas y conexiones de vacío
+        it: Ispezionare manicotti di aspirazione, guarnizioni e raccordi del vuoto
+        nl: Controleer inlaatslangen, pakkingen en vacuümaansluitingen op lekkage
+      - en: Check spark plugs, ignition leads and distributor components
+        ro: Verifică bujiile, cablurile de aprindere și componentele distribuitorului
+        de: Zündkerzen, Zündleitungen und Verteilerbauteile prüfen
+        fr: Vérifier les bougies, câbles d'allumage et éléments du distributeur
+        es: Comprobar bujías, cables de encendido y componentes del distribuidor
+        it: Controllare candele, cavi di accensione e componenti dello spinterogeno
+        nl: Controleer bougies, ontstekingskabels en verdelercomponenten
+      - en: Check idle mixture and idle-speed adjustment
+        ro: Verifică reglajul amestecului și al turației de ralanti
+        de: Leerlaufgemisch und Leerlaufdrehzahl prüfen
+        fr: Vérifier le réglage du mélange et du régime de ralenti
+        es: Comprobar el ajuste de mezcla y ralentí
+        it: Controllare la regolazione della miscela e del minimo
+        nl: Controleer de afstelling van mengsel en stationair toerental
+
+    keywords:
+      - rough idle
+      - unstable idle
+      - fluctuating idle
+      - ralanti instabil
+      - ralenti instable
+      - unruhiger Leerlauf
+      - ralentí irregular
+      - minimo irregolare
+      - onrustig stationair
+
+    related_dtcs: []
+    difficulty: basic
+
+
+- id: vw_classic_petrol_high_idle
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_type_1
+      - volkswagen_type_2
+      - volkswagen_type_3
+      - volkswagen_karmann_ghia
+      - volkswagen_type_4
+      - volkswagen_k70
+      - volkswagen_passat
+      - volkswagen_golf
+      - volkswagen_polo
+      - volkswagen_scirocco
+      - volkswagen_jetta
+      - volkswagen_santana
+    generations:
+      - volkswagen_type_1
+      - volkswagen_type_2_t1
+      - volkswagen_type_2_t2
+      - volkswagen_type_3
+      - volkswagen_karmann_ghia_type_14
+      - volkswagen_karmann_ghia_type_34
+      - volkswagen_type_4_411
+      - volkswagen_type_4_412
+      - volkswagen_k70
+      - volkswagen_passat_b1
+      - volkswagen_passat_b2
+      - volkswagen_golf_mk1
+      - volkswagen_golf_mk2
+      - volkswagen_polo_mk1
+      - volkswagen_polo_mk2
+      - volkswagen_scirocco_mk1
+      - volkswagen_scirocco_mk2
+      - volkswagen_jetta_mk1
+      - volkswagen_jetta_mk2
+      - volkswagen_santana_b2
+    engines:
+      - "09"
+      - "10"
+      - "11"
+      - "12"
+      - "12_34"
+      - "13"
+      - "15"
+      - "16"
+      - "17"
+      - "18"
+      - "18_100"
+      - "20"
+      - "16_gti"
+      - "17_gti"
+      - "18_gt"
+      - "18_gti"
+      - "13_g40"
+    category: diagnostics
+    system: engine
+    title:
+      en: Engine idle speed too high
+      ro: Turație de ralanti prea mare
+      de: Motorleerlaufdrehzahl zu hoch
+      fr: Régime de ralenti trop élevé
+      es: Régimen de ralentí demasiado alto
+      it: Regime minimo troppo alto
+      nl: Stationair toerental te hoog
+
+    symptoms:
+      - en: Engine maintains an abnormally high idle speed
+        ro: Motorul menține o turație de ralanti anormal de mare
+        de: Der Motor hält eine ungewöhnlich hohe Leerlaufdrehzahl
+        fr: Le moteur maintient un régime de ralenti anormalement élevé
+        es: El motor mantiene un régimen de ralentí anormalmente alto
+        it: Il motore mantiene un regime minimo anormalmente alto
+        nl: De motor houdt een abnormaal hoog stationair toerental
+      - en: Idle remains high after the engine warms up
+        ro: Turația rămâne mare după încălzirea motorului
+        de: Die Leerlaufdrehzahl bleibt nach dem Warmlaufen zu hoch
+        fr: Le ralenti reste trop élevé après la montée en température
+        es: El ralentí permanece alto después de calentarse el motor
+        it: Il minimo rimane alto dopo il riscaldamento del motore
+        nl: Het stationaire toerental blijft hoog nadat de motor warm is
+
+    possible_causes:
+      - en: Vacuum leak
+        ro: Pierdere de vacuum
+        de: Unterdruckleck oder Falschluft
+        fr: Fuite de dépression ou prise d'air
+        es: Fuga de vacío o entrada de aire
+        it: Perdita di vuoto o aria falsa
+        nl: Vacuümlek of valse lucht
+      - en: Throttle plate not fully closing
+        ro: Clapeta de accelerație nu se închide complet
+        de: Drosselklappe schließt nicht vollständig
+        fr: Le papillon ne ferme pas complètement
+        es: La mariposa no cierra completamente
+        it: La farfalla non chiude completamente
+        nl: De gasklep sluit niet volledig
+      - en: Choke or fast-idle mechanism remains engaged
+        ro: Șocul sau mecanismul de ralanti accelerat rămâne activ
+        de: Choke oder Schnellleerlauf bleibt aktiviert
+        fr: Le starter ou le dispositif de ralenti accéléré reste activé
+        es: El estárter o mecanismo de ralentí rápido permanece activado
+        it: Lo starter o il dispositivo del minimo accelerato rimane inserito
+        nl: De choke of snelstationairmechanisme blijft actief
+
+    diagnostic_steps:
+      - en: Check throttle linkage and throttle plate movement
+        ro: Verifică mecanismul clapetei și cursa clapetei de accelerație
+        de: Drosselklappenbetätigung und Klappenbewegung prüfen
+        fr: Vérifier la commande et le mouvement du papillon
+        es: Comprobar el accionamiento y movimiento de la mariposa
+        it: Controllare il comando e il movimento della farfalla
+        nl: Controleer de gasklepbediening en beweging
+      - en: Inspect vacuum hoses and intake gaskets
+        ro: Inspectează furtunurile de vacuum și garniturile admisiei
+        de: Unterdruckschläuche und Ansaugdichtungen prüfen
+        fr: Inspecter les durites de dépression et joints d'admission
+        es: Inspeccionar manguitos de vacío y juntas de admisión
+        it: Ispezionare tubi del vuoto e guarnizioni di aspirazione
+        nl: Controleer vacuümslangen en inlaatpakkingen
+      - en: Verify choke or fast-idle mechanism disengages when warm
+        ro: Verifică dacă șocul sau mecanismul de ralanti accelerat se dezactivează la cald
+        de: Prüfen, ob Choke bzw. Schnellleerlauf bei warmem Motor abschaltet
+        fr: Vérifier que le starter ou le ralenti accéléré se désactive à chaud
+        es: Comprobar que el estárter o ralentí rápido se desactive en caliente
+        it: Verificare che lo starter o il minimo accelerato si disinserisca a caldo
+        nl: Controleer of choke of snelstationair bij warme motor uitschakelt
+
+    keywords:
+      - high idle
+      - fast idle
+      - idle too high
+      - ralanti mare
+      - ralenti élevé
+      - hoher Leerlauf
+      - ralentí alto
+      - minimo alto
+      - hoog stationair toerental
+
+    related_dtcs: []
+    difficulty: basic
+
+
+- id: vw_classic_petrol_engine_flooding
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_type_1
+      - volkswagen_type_2
+      - volkswagen_type_3
+      - volkswagen_karmann_ghia
+      - volkswagen_type_4
+      - volkswagen_k70
+      - volkswagen_passat
+      - volkswagen_golf
+      - volkswagen_polo
+      - volkswagen_scirocco
+      - volkswagen_jetta
+      - volkswagen_santana
+    generations:
+      - volkswagen_type_1
+      - volkswagen_type_2_t1
+      - volkswagen_type_2_t2
+      - volkswagen_type_3
+      - volkswagen_karmann_ghia_type_14
+      - volkswagen_karmann_ghia_type_34
+      - volkswagen_type_4_411
+      - volkswagen_type_4_412
+      - volkswagen_k70
+      - volkswagen_passat_b1
+      - volkswagen_passat_b2
+      - volkswagen_golf_mk1
+      - volkswagen_golf_mk2
+      - volkswagen_polo_mk1
+      - volkswagen_polo_mk2
+      - volkswagen_scirocco_mk1
+      - volkswagen_scirocco_mk2
+      - volkswagen_jetta_mk1
+      - volkswagen_jetta_mk2
+      - volkswagen_santana_b2
+    engines:
+      - "09"
+      - "10"
+      - "11"
+      - "12"
+      - "12_34"
+      - "13"
+      - "15"
+      - "16"
+      - "17"
+      - "18"
+      - "18_100"
+      - "20"
+      - "16_gti"
+      - "17_gti"
+      - "18_gt"
+      - "18_gti"
+      - "13_g40"
+    category: diagnostics
+    system: engine
+    title:
+      en: Engine flooding or excessively rich mixture
+      ro: Motor înecat sau amestec excesiv de bogat
+      de: Motor abgesoffen oder Gemisch zu fett
+      fr: Moteur noyé ou mélange excessivement riche
+      es: Motor ahogado o mezcla excesivamente rica
+      it: Motore ingolfato o miscela eccessivamente ricca
+      nl: Verzopen motor of te rijk mengsel
+
+    symptoms:
+      - en: Strong fuel smell from the exhaust or engine bay
+        ro: Miros puternic de combustibil din evacuare sau compartimentul motor
+        de: Starker Kraftstoffgeruch aus Abgas oder Motorraum
+        fr: Forte odeur de carburant à l'échappement ou dans le compartiment moteur
+        es: Fuerte olor a combustible en el escape o compartimento del motor
+        it: Forte odore di carburante allo scarico o nel vano motore
+        nl: Sterke brandstofgeur uit uitlaat of motorruimte
+      - en: Engine is difficult to start after repeated cranking
+        ro: Motorul pornește greu după acționări repetate ale demarorului
+        de: Der Motor startet nach wiederholtem Durchdrehen nur schwer
+        fr: Le moteur démarre difficilement après plusieurs tentatives
+        es: El motor arranca con dificultad después de varios intentos
+        it: Il motore si avvia con difficoltà dopo ripetuti tentativi
+        nl: De motor start moeilijk na herhaald starten
+
+    possible_causes:
+      - en: Choke remains closed or over-enriches the mixture
+        ro: Șocul rămâne închis sau îmbogățește excesiv amestecul
+        de: Choke bleibt geschlossen oder reichert das Gemisch zu stark an
+        fr: Le starter reste fermé ou enrichit excessivement le mélange
+        es: El estárter permanece cerrado o enriquece demasiado la mezcla
+        it: Lo starter rimane chiuso o arricchisce eccessivamente la miscela
+        nl: De choke blijft gesloten of verrijkt het mengsel te sterk
+      - en: Carburetor float or needle valve fault where fitted
+        ro: Defecțiune a plutitorului sau supapei cu acolo unde sunt utilizate
+        de: Fehler an Schwimmer oder Schwimmernadelventil, sofern vorhanden
+        fr: Défaut du flotteur ou du pointeau si équipé
+        es: Fallo del flotador o de la válvula de aguja cuando corresponda
+        it: Guasto al galleggiante o alla valvola a spillo, se presente
+        nl: Defecte vlotter of vlotternaald indien aanwezig
+      - en: Excessive fuel delivery
+        ro: Alimentare excesivă cu combustibil
+        de: Übermäßige Kraftstoffzufuhr
+        fr: Alimentation excessive en carburant
+        es: Suministro excesivo de combustible
+        it: Alimentazione eccessiva di carburante
+        nl: Overmatige brandstoftoevoer
+      - en: Weak ignition causing unburned fuel accumulation
+        ro: Aprindere slabă care duce la acumularea combustibilului near
+        de: Schwache Zündung führt zu unverbranntem Kraftstoff
+        fr: Allumage faible provoquant une accumulation de carburant imbrûlé
+        es: Encendido débil que provoca acumulación de combustible sin quemar
+        it: Accensione debole che provoca accumulo di carburante incombusto
+        nl: Zwakke ontsteking waardoor onverbrande brandstof zich ophoopt
+
+    diagnostic_steps:
+      - en: Inspect spark plugs for wet fuel fouling
+        ro: Inspectează bujiile pentru umezire și depuneri de combustibil
+        de: Zündkerzen auf Kraftstoffnässe und Verrußung prüfen
+        fr: Vérifier si les bougies sont humides et encrassées par le carburant
+        es: Comprobar si las bujías están mojadas y contaminadas por combustible
+        it: Controllare le candele per bagnamento e imbrattamento di carburante
+        nl: Controleer bougies op natte brandstofafzetting
+      - en: Check choke position and operation
+        ro: Verifică poziția și funcționarea șocului
+        de: Chokestellung und Funktion prüfen
+        fr: Vérifier la position et le fonctionnement du starter
+        es: Comprobar la posición y funcionamiento del estárter
+        it: Controllare posizione e funzionamento dello starter
+        nl: Controleer de choke-positie en werking
+      - en: Check carburetor fuel level and needle valve operation where applicable
+        ro: Verifică nivelul combustibilului din carburator și funcționarea supapei cu ac, unde este cazul
+        de: Kraftstoffstand im Vergaser und Schwimmernadelventil prüfen, sofern vorhanden
+        fr: Vérifier le niveau de carburant du carburateur et le pointeau si présent
+        es: Comprobar el nivel de combustible del carburador y la válvula de aguja cuando corresponda
+        it: Controllare il livello carburante del carburatore e la valvola a spillo, se presente
+        nl: Controleer het brandstofniveau in de carburateur en de vlotternaald indien aanwezig
+
+    keywords:
+      - flooded engine
+      - rich mixture
+      - fuel fouled spark plugs
+      - engine flooding
+      - motor înecat
+      - mélange riche
+      - Motor abgesoffen
+      - motor ahogado
+      - motore ingolfato
+      - verzopen motor
+
+    related_dtcs: []
+    difficulty: intermediate
+
+
+- id: vw_classic_petrol_vacuum_leak
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_type_1
+      - volkswagen_type_2
+      - volkswagen_type_3
+      - volkswagen_karmann_ghia
+      - volkswagen_type_4
+      - volkswagen_k70
+      - volkswagen_passat
+      - volkswagen_golf
+      - volkswagen_polo
+      - volkswagen_scirocco
+      - volkswagen_jetta
+      - volkswagen_santana
+    generations:
+      - volkswagen_type_1
+      - volkswagen_type_2_t1
+      - volkswagen_type_2_t2
+      - volkswagen_type_3
+      - volkswagen_karmann_ghia_type_14
+      - volkswagen_karmann_ghia_type_34
+      - volkswagen_type_4_411
+      - volkswagen_type_4_412
+      - volkswagen_k70
+      - volkswagen_passat_b1
+      - volkswagen_passat_b2
+      - volkswagen_golf_mk1
+      - volkswagen_golf_mk2
+      - volkswagen_polo_mk1
+      - volkswagen_polo_mk2
+      - volkswagen_scirocco_mk1
+      - volkswagen_scirocco_mk2
+      - volkswagen_jetta_mk1
+      - volkswagen_jetta_mk2
+      - volkswagen_santana_b2
+    engines:
+      - "09"
+      - "10"
+      - "11"
+      - "12"
+      - "12_34"
+      - "13"
+      - "15"
+      - "16"
+      - "17"
+      - "18"
+      - "18_100"
+      - "20"
+      - "16_gti"
+      - "17_gti"
+      - "18_gt"
+      - "18_gti"
+      - "13_g40"
+    category: diagnostics
+    system: intake
+    title:
+      en: Engine vacuum leak or unmetered air
+      ro: Pierdere de vacuum sau aer fals în admisie
+      de: Unterdruckleck oder Falschluft im Ansaugsystem
+      fr: Fuite de dépression ou prise d'air à l'admission
+      es: Fuga de vacío o entrada de aire no medido
+      it: Perdita di vuoto o aria falsa nell'aspirazione
+      nl: Vacuümlek of valse lucht in het inlaatsysteem
+
+    symptoms:
+      - en: Unstable or high idle
+        ro: Ralanti instabil sau prea mare
+        de: Unruhiger oder zu hoher Leerlauf
+        fr: Ralenti instable ou trop élevé
+        es: Ralentí inestable o demasiado alto
+        it: Minimo instabile o troppo alto
+        nl: Onrustig of te hoog stationair toerental
+      - en: Hesitation during throttle application
+        ro: Ezitare la apăsarea accelerației
+        de: Ruckeln oder Verzögerung beim Gasgeben
+        fr: Hésitation lors de l'accélération
+        es: Vacilación al acelerar
+        it: Esitazione durante l'accelerazione
+        nl: Hapering bij gas geven
+
+    possible_causes:
+      - en: Cracked vacuum hose
+        ro: Furtun de vacuum fisurat
+        de: Rissiger Unterdruckschlauch
+        fr: Durite de dépression fissurée
+        es: Manguito de vacío agrietado
+        it: Tubo del vuoto crepato
+        nl: Gescheurde vacuümslang
+      - en: Intake manifold gasket leak
+        ro: Garnitură de admisie neetanșă
+        de: Undichte Ansaugkrümmerdichtung
+        fr: Joint de collecteur d'admission non étanche
+        es: Junta del colector de admisión con fugas
+        it: Guarnizione del collettore di aspirazione che perde
+        nl: Lekkende pakking van het inlaatspruitstuk
+      - en: Carburetor mounting gasket leak
+        ro: Pierdere prin garnitura de montaj a carburatorului
+        de: Undichte Vergaserflanschdichtung
+        fr: Fuite au joint de montage du carburateur
+        es: Fuga en la junta de montaje del carburador
+        it: Perdita dalla guarnizione di montaggio del carburatore
+        nl: Lekkage bij de carburateurmontagepakking
+
+    diagnostic_steps:
+      - en: Visually inspect every vacuum and breather hose
+        ro: Inspectează vizual toate furtunurile de vacuum și ventilație
+        de: Alle Unterdruck- und Entlüftungsschläuche visuell prüfen
+        fr: Inspecter visuellement toutes les durites de dépression et de ventilation
+        es: Inspeccionar visualmente todos los manguitos de vacío y respiración
+        it: Ispezionare visivamente tutti i tubi del vuoto e di sfiato
+        nl: Controleer visueel alle vacuüm- en ontluchtingsslangen
+      - en: Inspect intake and carburetor mounting surfaces
+        ro: Inspectează suprafețele de etanșare ale admisiei și carburatorului
+        de: Dichtflächen von Ansaugung und Vergaser prüfen
+        fr: Inspecter les surfaces d'étanchéité de l'admission et du carburateur
+        es: Inspeccionar las superficies de montaje de admisión y carburador
+        it: Ispezionare le superfici di tenuta dell'aspirazione e del carburatore
+        nl: Controleer de afdichtvlakken van inlaat en carburateur
+      - en: Perform a controlled vacuum or smoke test where practical
+        ro: Efectuează un test controlat de vacuum sau fum, unde este practic
+        de: Einen kontrollierten Unterdruck- oder Rauchtest durchführen, sofern möglich
+        fr: Effectuer un test contrôlé de dépression ou de fumée si possible
+        es: Realizar una prueba controlada de vacío o humo cuando sea posible
+        it: Eseguire un test controllato del vuoto o del fumo quando pratico
+        nl: Voer indien mogelijk een gecontroleerde vacuüm- of rooktest uit
+
+    keywords:
+      - vacuum leak
+      - unmetered air
+      - false air
+      - intake leak
+      - vacuum hose
+      - pierdere vacuum
+      - prise d'air
+      - Falschluft
+      - fuga de vacío
+      - aria falsa
+
+    related_dtcs: []
+    difficulty: basic
+
+
+- id: vw_classic_petrol_ignition_misfire
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_type_1
+      - volkswagen_type_2
+      - volkswagen_type_3
+      - volkswagen_karmann_ghia
+      - volkswagen_type_4
+      - volkswagen_k70
+      - volkswagen_passat
+      - volkswagen_golf
+      - volkswagen_polo
+      - volkswagen_scirocco
+      - volkswagen_jetta
+      - volkswagen_santana
+    generations:
+      - volkswagen_type_1
+      - volkswagen_type_2_t1
+      - volkswagen_type_2_t2
+      - volkswagen_type_3
+      - volkswagen_karmann_ghia_type_14
+      - volkswagen_karmann_ghia_type_34
+      - volkswagen_type_4_411
+      - volkswagen_type_4_412
+      - volkswagen_k70
+      - volkswagen_passat_b1
+      - volkswagen_passat_b2
+      - volkswagen_golf_mk1
+      - volkswagen_golf_mk2
+      - volkswagen_polo_mk1
+      - volkswagen_polo_mk2
+      - volkswagen_scirocco_mk1
+      - volkswagen_scirocco_mk2
+      - volkswagen_jetta_mk1
+      - volkswagen_jetta_mk2
+      - volkswagen_santana_b2
+    engines:
+      - "09"
+      - "10"
+      - "11"
+      - "12"
+      - "12_34"
+      - "13"
+      - "15"
+      - "16"
+      - "17"
+      - "18"
+      - "18_100"
+      - "20"
+      - "16_gti"
+      - "17_gti"
+      - "18_gt"
+      - "18_gti"
+      - "13_g40"
+    category: diagnostics
+    system: ignition
+    title:
+      en: Engine misfire or weak ignition
+      ro: Rateu de aprindere sau aprindere slabă
+      de: Zündaussetzer oder schwache Zündung
+      fr: Ratés d'allumage ou allumage faible
+      es: Fallos de encendido o encendido débil
+      it: Mancate accensioni o accensione debole
+      nl: Ontstekingsmisfire of zwakke ontsteking
+
+    symptoms:
+      - en: Engine runs unevenly or shakes under load
+        ro: Motorul funcționează neregulat sau vibrează sub sarcină
+        de: Der Motor läuft unter Last unrund oder ruckelt
+        fr: Le moteur tourne irrégulièrement ou broute sous charge
+        es: El motor funciona irregularmente o vibra bajo carga
+        it: Il motore gira irregolarmente o strattona sotto carico
+        nl: De motor loopt onregelmatig of schokt onder belasting
+      - en: Loss of power and poor throttle response
+        ro: Pierdere de putere și răspuns slab la accelerație
+        de: Leistungsverlust und schlechte Gasannahme
+        fr: Perte de puissance et mauvaise réponse à l'accélérateur
+        es: Pérdida de potencia y mala respuesta al acelerador
+        it: Perdita di potenza e risposta scarsa all'acceleratore
+        nl: Vermogensverlies en slechte gasrespons
+
+    possible_causes:
+      - en: Worn or fouled spark plugs
+        ro: Bujii uzate sau murdare
+        de: Verschlissene oder verschmutzte Zündkerzen
+        fr: Bougies usées ou encrassées
+        es: Bujías desgastadas o sucias
+        it: Candele usurate o sporche
+        nl: Versleten of vervuilde bougies
+      - en: Damaged ignition leads
+        ro: Cabluri de aprindere deteriorate
+        de: Beschädigte Zündkabel
+        fr: Fils d'allumage endommagés
+        es: Cables de encendido dañados
+        it: Cavi di accensione danneggiati
+        nl: Beschadigde ontstekingskabels
+      - en: Distributor cap or rotor fault
+        ro: Defecțiune a capacului sau rotorului distribuitorului
+        de: Fehler an Verteilerkappe oder Verteilerfinger
+        fr: Défaut de la tête ou du doigt d'allumeur
+        es: Fallo de la tapa o rotor del distribuidor
+        it: Guasto alla calotta o al rotore dello spinterogeno
+        nl: Defecte verdelerkap of rotor
+      - en: Weak ignition coil
+        ro: Bobină de aprindere slabă
+        de: Schwache Zündspule
+        fr: Bobine d'allumage faible
+        es: Bobina de encendido débil
+        it: Bobina di accensione debole
+        nl: Zwakke ontstekingsbobine
+
+    diagnostic_steps:
+      - en: Inspect spark plugs and compare their condition between cylinders
+        ro: Inspectează bujiile și compară starea lor între cilindri
+        de: Zündkerzen prüfen und Zustand zwischen den Zylindern vergleichen
+        fr: Inspecter les bougies et comparer leur état entre les cylindres
+        es: Inspeccionar las bujías y comparar su estado entre cilindros
+        it: Ispezionare le candele e confrontarne lo stato tra i cilindri
+        nl: Controleer de bougies en vergelijk hun toestand tussen cilinders
+      - en: Inspect ignition leads for cracks, corrosion and poor connections
+        ro: Inspectează cablurile pentru fisuri, coroziune și conexiuni slabe
+        de: Zündkabel auf Risse, Korrosion und schlechte Verbindungen prüfen
+        fr: Vérifier les fils d'allumage pour fissures, corrosion et mauvais contacts
+        es: Inspeccionar los cables por grietas, corrosión y malas conexiones
+        it: Controllare i cavi per crepe, corrosione e collegamenti difettosi
+        nl: Controleer ontstekingskabels op scheuren, corrosie en slechte verbindingen
+      - en: Inspect distributor cap, rotor and ignition coil
+        ro: Inspectează capacul distribuitorului, rotorul și bobina de aprindere
+        de: Verteilerkappe, Verteilerfinger und Zündspule prüfen
+        fr: Inspecter la tête d'allumeur, le doigt et la bobine
+        es: Inspeccionar tapa, rotor y bobina de encendido
+        it: Ispezionare calotta, rotore e bobina di accensione
+        nl: Controleer verdelerkap, rotor en ontstekingsbobine
+
+    keywords:
+      - misfire
+      - weak spark
+      - ignition fault
+      - spark plug
+      - distributor
+      - rateu
+      - raté d'allumage
+      - Zündaussetzer
+      - fallo de encendido
+      - mancata accensione
+
+    related_dtcs: []
+    difficulty: basic
+
+
+- id: vw_classic_petrol_ignition_timing_incorrect
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_type_1
+      - volkswagen_type_2
+      - volkswagen_type_3
+      - volkswagen_karmann_ghia
+      - volkswagen_type_4
+      - volkswagen_k70
+      - volkswagen_passat
+      - volkswagen_golf
+      - volkswagen_polo
+      - volkswagen_scirocco
+      - volkswagen_jetta
+      - volkswagen_santana
+    generations:
+      - volkswagen_type_1
+      - volkswagen_type_2_t1
+      - volkswagen_type_2_t2
+      - volkswagen_type_3
+      - volkswagen_karmann_ghia_type_14
+      - volkswagen_karmann_ghia_type_34
+      - volkswagen_type_4_411
+      - volkswagen_type_4_412
+      - volkswagen_k70
+      - volkswagen_passat_b1
+      - volkswagen_passat_b2
+      - volkswagen_golf_mk1
+      - volkswagen_golf_mk2
+      - volkswagen_polo_mk1
+      - volkswagen_polo_mk2
+      - volkswagen_scirocco_mk1
+      - volkswagen_scirocco_mk2
+      - volkswagen_jetta_mk1
+      - volkswagen_jetta_mk2
+      - volkswagen_santana_b2
+    engines:
+      - "09"
+      - "10"
+      - "11"
+      - "12"
+      - "12_34"
+      - "13"
+      - "15"
+      - "16"
+      - "17"
+      - "18"
+      - "18_100"
+      - "20"
+      - "16_gti"
+      - "17_gti"
+      - "18_gt"
+      - "18_gti"
+      - "13_g40"
+    category: diagnostics
+    system: ignition
+    title:
+      en: Incorrect ignition timing
+      ro: Avans al aprinderii incorect
+      de: Falscher Zündzeitpunkt
+      fr: Calage de l'allumage incorrect
+      es: Reglaje incorrecto del encendido
+      it: Fasatura dell'accensione errata
+      nl: Onjuist ontstekingstijdstip
+
+    symptoms:
+      - en: Poor engine performance and hesitation
+        ro: Performanță slabă și ezitare a motorului
+        de: Schlechte Motorleistung und Ruckeln
+        fr: Performances réduites et hésitations
+        es: Rendimiento bajo y vacilaciones
+        it: Prestazioni ridotte ed esitazioni
+        nl: Slechte motorprestaties en haperingen
+      - en: Engine may knock under load or become difficult to start
+        ro: Motorul poate detona sub sarcină sau poate porni greu
+        de: Der Motor kann unter Last klingeln oder schlecht starten
+        fr: Le moteur peut cliqueter sous charge ou démarrer difficilement
+        es: El motor puede picar bajo carga o arrancar con dificultad
+        it: Il motore può detonare sotto carico o avviarsi con difficoltà
+        nl: De motor kan onder belasting pingelen of moeilijk starten
+
+    possible_causes:
+      - en: Distributor installed in the wrong position
+        ro: Distribuitor montat într-o poziție greșită
+        de: Verteiler falsch eingebaut
+        fr: Allumeur monté dans une mauvaise position
+        es: Distribuidor instalado en una posición incorrecta
+        it: Spinterogeno montato nella posizione errata
+        nl: Verdeler verkeerd gemonteerd
+      - en: Incorrect static ignition timing
+        ro: Avans static incorect
+        de: Falscher statischer Zündzeitpunkt
+        fr: Calage statique incorrect
+        es: Reglaje estático incorrecto
+        it: Fasatura statica errata
+        nl: Onjuist statisch ontstekingstijdstip
+      - en: Faulty centrifugal or vacuum advance mechanism
+        ro: Mecanism centrifugal sau vacuumatic de avans defect
+        de: Defekter Fliehkraft- oder Unterdruckversteller
+        fr: Mécanisme d'avance centrifuge ou à dépression défectueux
+        es: Mecanismo de avance centrífugo o por vacío defectuoso
+        it: Meccanismo di anticipo centrifugo o a depressione difettoso
+        nl: Defect centrifugaal of vacuüm-vervroegingsmechanisme
+
+    diagnostic_steps:
+      - en: Verify distributor position and firing order
+        ro: Verifică poziția distribuitorului și ordinea de aprindere
+        de: Verteilerstellung und Zündfolge prüfen
+        fr: Vérifier la position de l'allumeur et l'ordre d'allumage
+        es: Comprobar la posición del distribuidor y el orden de encendido
+        it: Controllare posizione dello spinterogeno e ordine di accensione
+        nl: Controleer de positie van de verdeler en ontstekingsvolgorde
+      - en: Check static ignition timing according to engine specification
+        ro: Verifică avansul static conform specificației motorului
+        de: Statischen Zündzeitpunkt gemäß Motorspezifikation prüfen
+        fr: Vérifier le calage statique selon les spécifications du moteur
+        es: Comprobar el avance estático según las especificaciones del motor
+        it: Controllare la fasatura statica secondo le specifiche del motore
+        nl: Controleer het statische ontstekingstijdstip volgens de motorspecificatie
+      - en: Check centrifugal and vacuum advance operation
+        ro: Verifică funcționarea avansului centrifugal și vacuumatic
+        de: Fliehkraft- und Unterdruckverstellung prüfen
+        fr: Vérifier le fonctionnement des avances centrifuge et à dépression
+        es: Comprobar el funcionamiento del avance centrífugo y por vacío
+        it: Controllare il funzionamento dell'anticipo centrifugo e a depressione
+        nl: Controleer de werking van centrifugaal en vacuümvervroeging
+
+    keywords:
+      - ignition timing
+      - ignition advance
+      - distributor timing
+      - ignition advance mechanism
+      - avans aprindere
+      - calage allumage
+      - Zündzeitpunkt
+      - avance encendido
+      - fasatura accensione
+
+    related_dtcs: []
+    difficulty: intermediate
+
 - id: vw_mechanical_diesel_low_compression
   vehicle:
     manufacturer: volkswagen
