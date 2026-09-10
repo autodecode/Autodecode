@@ -6,1254 +6,1019 @@ manufacturer:
 
 technical_data:
 
-  # ============================================================
-  # 1. OLD CARBURETED PETROL ENGINE - NO ECU ASSUMPTION
-  # ============================================================
-
-  - id: vw_carbureted_petrol_engine_hard_start
-    vehicle:
-      manufacturer: volkswagen
-      models:
-        - volkswagen_beetle
-        - volkswagen_golf
-        - volkswagen_passat
-      generations:
-        - volkswagen_beetle_classic
-        - volkswagen_golf_i
-        - volkswagen_golf_ii
-        - volkswagen_passat_b1
-        - volkswagen_passat_b2
-      engines: all
-    category: diagnostics
-    system: engine
-    title:
-      en: Carbureted Petrol Engine Hard Starting
-      ro: Pornire grea la motorul pe benzină cu carburator
-      de: Schlechter Kalt- oder Warmstart bei Vergasermotor
-      fr: Démarrage difficile sur moteur essence à carburateur
-      es: Arranque difícil en motor de gasolina con carburador
-      it: Avviamento difficoltoso su motore a benzina con carburatore
-      nl: Moeilijk starten van een benzinemotor met carburateur
-
-    symptoms:
-      - en: Engine requires repeated cranking before starting
-        ro: Motorul necesită acționări repetate ale demarorului înainte de pornire
-        de: Der Motor benötigt mehrere Startversuche
-        fr: Le moteur nécessite plusieurs tentatives de démarrage
-        es: El motor necesita varios intentos para arrancar
-        it: Il motore richiede diversi tentativi di avviamento
-        nl: De motor heeft meerdere startpogingen nodig
-
-      - en: Engine starts and stalls shortly afterward
-        ro: Motorul pornește și se oprește imediat sau după scurt timp
-        de: Der Motor startet und geht kurz danach aus
-        fr: Le moteur démarre puis cale peu après
-        es: El motor arranca y se cala poco después
-        it: Il motore si avvia e si spegne poco dopo
-        nl: De motor start en valt kort daarna uit
-
-      - en: Difficult cold starting
-        ro: Pornire dificilă la rece
-        de: Schwieriger Kaltstart
-        fr: Démarrage difficile à froid
-        es: Arranque difícil en frío
-        it: Avviamento difficoltoso a freddo
-        nl: Moeilijk starten bij koude motor
-
-      - en: Difficult hot starting
-        ro: Pornire dificilă la cald
-        de: Schwieriger Warmstart
-        fr: Démarrage difficile à chaud
-        es: Arranque difícil en caliente
-        it: Avviamento difficoltoso a caldo
-        nl: Moeilijk starten bij warme motor
-
-    possible_causes:
-      - en: Incorrect choke operation
-        ro: Funcționare incorectă a șocului
-        de: Fehlerhafte Funktion der Kaltstarteinrichtung
-        fr: Fonctionnement incorrect du starter
-        es: Funcionamiento incorrecto del estárter
-        it: Funzionamento errato dello starter
-        nl: Onjuiste werking van de choke
-
-      - en: Carburetor adjustment out of specification
-        ro: Reglaj incorect al carburatorului
-        de: Vergasereinstellung außerhalb der Vorgaben
-        fr: Réglage du carburateur incorrect
-        es: Ajuste incorrecto del carburador
-        it: Regolazione errata del carburatore
-        nl: Verkeerde afstelling van de carburateur
-
-      - en: Fuel delivery restriction
-        ro: Restricție în alimentarea cu combustibil
-        de: Einschränkung der Kraftstoffversorgung
-        fr: Restriction de l'alimentation en carburant
-        es: Restricción del suministro de combustible
-        it: Limitazione dell'alimentazione del carburante
-        nl: Beperking van de brandstoftoevoer
-
-      - en: Ignition system fault
-        ro: Defecțiune a sistemului de aprindere
-        de: Fehler im Zündsystem
-        fr: Défaut du système d'allumage
-        es: Fallo del sistema de encendido
-        it: Guasto del sistema di accensione
-        nl: Storing in het ontstekingssysteem
-
-      - en: Vacuum leak
-        ro: Pierdere de vacuum
-        de: Unterdruckleck
-        fr: Fuite de dépression
-        es: Fuga de vacío
-        it: Perdita di depressione
-        nl: Vacuümlek
-
-    diagnostic_steps:
-      - en: Check fuel supply to the carburetor
-        ro: Verifică alimentarea cu combustibil a carburatorului
-        de: Kraftstoffversorgung des Vergasers prüfen
-        fr: Vérifier l'alimentation en carburant du carburateur
-        es: Comprobar el suministro de combustible al carburador
-        it: Controllare l'alimentazione del carburatore
-        nl: Controleer de brandstoftoevoer naar de carburateur
-
-      - en: Inspect choke operation and adjustment
-        ro: Verifică funcționarea și reglajul șocului
-        de: Funktion und Einstellung der Kaltstarteinrichtung prüfen
-        fr: Vérifier le fonctionnement et le réglage du starter
-        es: Comprobar el funcionamiento y ajuste del estárter
-        it: Controllare il funzionamento e la regolazione dello starter
-        nl: Controleer de werking en afstelling van de choke
-
-      - en: Check ignition spark and ignition timing
-        ro: Verifică scânteia și momentul aprinderii
-        de: Zündfunken und Zündzeitpunkt prüfen
-        fr: Vérifier l'étincelle et le calage de l'allumage
-        es: Comprobar la chispa y el avance de encendido
-        it: Controllare la scintilla e l'anticipo di accensione
-        nl: Controleer de vonk en het ontstekingstijdstip
-
-      - en: Inspect the intake system for vacuum leaks
-        ro: Verifică sistemul de admisie pentru pierderi de vacuum
-        de: Ansaugsystem auf Unterdrucklecks prüfen
-        fr: Vérifier le système d'admission à la recherche de fuites de dépression
-        es: Comprobar el sistema de admisión en busca de fugas de vacío
-        it: Controllare il sistema di aspirazione per perdite di depressione
-        nl: Controleer het inlaatsysteem op vacuümlekken
-
-    keywords:
-      - carburetor
-      - carburator
-      - Vergaser
-      - carburateur
-      - carburador
-      - carburatore
-      - carburateur
-      - hard starting
-      - pornire grea
-    related_dtcs: []
-    difficulty: basic
-
-
-  # ============================================================
-  # 2. OLD DIESEL - MECHANICAL FUEL SYSTEM
-  # ============================================================
-
-  - id: vw_old_diesel_engine_hard_start
-    vehicle:
-      manufacturer: volkswagen
-      models:
-        - volkswagen_golf
-        - volkswagen_passat
-      generations:
-        - volkswagen_golf_i
-        - volkswagen_golf_ii
-        - volkswagen_golf_iii
-        - volkswagen_passat_b1
-        - volkswagen_passat_b2
-      engines:
-        - 16d
-        - 16td
-        - 19d
-        - 19td
-    category: diagnostics
-    system: engine
-    title:
-      en: Hard Starting on Older Mechanical Diesel Engine
-      ro: Pornire grea la motor diesel mecanic mai vechi
-      de: Schwieriger Start bei älterem mechanischem Dieselmotor
-      fr: Démarrage difficile sur ancien moteur diesel mécanique
-      es: Arranque difícil en motor diésel mecánico antiguo
-      it: Avviamento difficoltoso su vecchio motore diesel meccanico
-      nl: Moeilijk starten van oudere mechanische dieselmotor
-
-    symptoms:
-      - en: Extended cranking before the engine starts
-        ro: Acționare îndelungată a demarorului înainte de pornire
-        de: Langes Betätigen des Anlassers vor dem Start
-        fr: Long entraînement du démarreur avant le démarrage
-        es: Accionamiento prolongado del motor de arranque
-        it: Azionamento prolungato del motorino di avviamento
-        nl: Lang starten voordat de motor aanslaat
-
-      - en: Poor cold starting
-        ro: Pornire dificilă la rece
-        de: Schlechter Kaltstart
-        fr: Démarrage difficile à froid
-        es: Arranque difícil en frío
-        it: Avviamento difficoltoso a freddo
-        nl: Moeilijk starten bij koude motor
-
-      - en: White or grey smoke during starting
-        ro: Fum alb sau gri în timpul pornirii
-        de: Weißer oder grauer Rauch beim Start
-        fr: Fumée blanche ou grise au démarrage
-        es: Humo blanco o gris durante el arranque
-        it: Fumo bianco o grigio durante l'avviamento
-        nl: Witte of grijze rook tijdens het starten
-
-    possible_causes:
-      - en: Glow plug system fault
-        ro: Defecțiune a sistemului de bujii incandescente
-        de: Fehler im Glühsystem
-        fr: Défaut du système de préchauffage
-        es: Fallo del sistema de precalentamiento
-        it: Guasto del sistema di preriscaldamento
-        nl: Storing in het voorgloeisysteem
-
-      - en: Fuel entering the system slowly after shutdown
-        ro: Combustibilul intră lent în sistem după oprirea motorului
-        de: Kraftstoffversorgung baut sich nach dem Abstellen langsam ab
-        fr: L'alimentation en carburant se rétablit lentement après l'arrêt
-        es: La alimentación de combustible se recupera lentamente después de apagar
-        it: L'alimentazione del carburante si ripristina lentamente dopo lo spegnimento
-        nl: De brandstoftoevoer herstelt langzaam na het uitschakelen
-
-      - en: Air entering the fuel system
-        ro: Aer care pătrunde în sistemul de combustibil
-        de: Lufteintritt in das Kraftstoffsystem
-        fr: Entrée d'air dans le circuit de carburant
-        es: Entrada de aire en el sistema de combustible
-        it: Ingresso di aria nel circuito del carburante
-        nl: Lucht in het brandstofsysteem
-
-      - en: Weak battery or starter speed
-        ro: Baterie slabă sau turație insuficientă a demarorului
-        de: Schwache Batterie oder zu niedrige Anlasserdrehzahl
-        fr: Batterie faible ou vitesse de lancement insuffisante
-        es: Batería débil o velocidad de arranque insuficiente
-        it: Batteria debole o velocità di avviamento insufficiente
-        nl: Zwakke accu of te lage startsnelheid
-
-      - en: Injection timing incorrect
-        ro: Moment de injecție incorect
-        de: Falscher Einspritzzeitpunkt
-        fr: Calage de l'injection incorrect
-        es: Reglaje incorrecto del momento de inyección
-        it: Fasatura dell'iniezione errata
-        nl: Onjuist inspuittijdstip
-
-    diagnostic_steps:
-      - en: Check battery voltage and cranking speed
-        ro: Verifică tensiunea bateriei și turația în timpul pornirii
-        de: Batteriespannung und Anlasserdrehzahl prüfen
-        fr: Vérifier la tension de batterie et la vitesse de lancement
-        es: Comprobar la tensión de batería y la velocidad de arranque
-        it: Controllare la tensione della batteria e la velocità di avviamento
-        nl: Controleer accuspanning en startsnelheid
-
-      - en: Test the glow plug system where fitted
-        ro: Testează sistemul de preîncălzire acolo unde este prevăzut
-        de: Glühsystem prüfen, sofern vorhanden
-        fr: Tester le système de préchauffage lorsqu'il est présent
-        es: Comprobar el sistema de precalentamiento cuando esté equipado
-        it: Testare il sistema di preriscaldamento quando presente
-        nl: Controleer het voorgloeisysteem indien aanwezig
-
-      - en: Inspect fuel lines and connections for air ingress
-        ro: Verifică conductele și conexiunile de combustibil pentru pătrunderea aerului
-        de: Kraftstoffleitungen und Anschlüsse auf Lufteintritt prüfen
-        fr: Vérifier les conduites et raccords de carburant pour détecter une entrée d'air
-        es: Comprobar las líneas y conexiones de combustible en busca de entrada de aire
-        it: Controllare tubazioni e raccordi del carburante per infiltrazioni d'aria
-        nl: Controleer brandstofleidingen en aansluitingen op luchtinlaat
-
-      - en: Verify injection timing according to the engine specification
-        ro: Verifică momentul injecției conform specificației motorului
-        de: Einspritzzeitpunkt gemäß Motorspezifikation prüfen
-        fr: Vérifier le calage de l'injection selon les spécifications du moteur
-        es: Verificar el momento de inyección según las especificaciones del motor
-        it: Verificare la fasatura dell'iniezione secondo le specifiche del motore
-        nl: Controleer het inspuittijdstip volgens de motorspecificatie
-
-    keywords:
-      - old diesel
-      - diesel mecanic
-      - mechanical diesel
-      - hard start
-      - glow plugs
-      - bujii incandescente
-    related_dtcs: []
-    difficulty: intermediate
-
-
-  # ============================================================
-  # 3. GOLF VI 1.2 TSI - COLD START TIMING CHAIN NOISE
-  # ============================================================
-
-  - id: vw_golf_vi_12tsi_cold_start_chain_noise
-    vehicle:
-      manufacturer: volkswagen
-      models:
-        - volkswagen_golf
-      generations:
-        - volkswagen_golf_vi
-      engines:
-        - 12tsi
-    category: diagnostics
-    system: engine
-    title:
-      en: 1.2 TSI Cold Start Timing Chain Noise
-      ro: Zgomot al lanțului de distribuție la pornirea la rece la 1.2 TSI
-      de: Steuerkettengeräusch beim Kaltstart des 1.2 TSI
-      fr: Bruit de chaîne de distribution au démarrage à froid du 1.2 TSI
-      es: Ruido de cadena de distribución en arranque en frío del 1.2 TSI
-      it: Rumore della catena di distribuzione all'avviamento a freddo del 1.2 TSI
-      nl: Distributiekettinggeluid bij koude start van de 1.2 TSI
-
-    symptoms:
-      - en: Brief rattling noise immediately after cold start
-        ro: Zgomot scurt de zdrăngănit imediat după pornirea la rece
-        de: Kurzes Rasseln direkt nach dem Kaltstart
-        fr: Bref bruit de cliquetis immédiatement après le démarrage à froid
-        es: Ruido breve de traqueteo justo después del arranque en frío
-        it: Breve rumore di sferragliamento subito dopo l'avviamento a freddo
-        nl: Kort ratelend geluid direct na koude start
-
-      - en: Noise is strongest after the vehicle has been parked
-        ro: Zgomotul este mai pronunțat după ce mașina a stat parcată
-        de: Das Geräusch ist nach längerer Standzeit stärker
-        fr: Le bruit est plus important après une longue immobilisation
-        es: El ruido es más fuerte después de permanecer estacionado
-        it: Il rumore è più forte dopo una lunga sosta
-        nl: Het geluid is sterker na langere stilstand
-
-      - en: Engine may run normally after starting
-        ro: Motorul poate funcționa normal după pornire
-        de: Der Motor kann nach dem Start normal laufen
-        fr: Le moteur peut fonctionner normalement après le démarrage
-        es: El motor puede funcionar normalmente después del arranque
-        it: Il motore può funzionare normalmente dopo l'avviamento
-        nl: De motor kan na het starten normaal lopen
-
-    possible_causes:
-      - en: Timing chain tensioning problem
-        ro: Problemă la tensionarea lanțului de distribuție
-        de: Problem mit der Steuerkettenspannung
-        fr: Problème de tension de la chaîne de distribution
-        es: Problema de tensión de la cadena de distribución
-        it: Problema di tensionamento della catena di distribuzione
-        nl: Probleem met de spanning van de distributieketting
-
-      - en: Chain or guide wear
-        ro: Uzura lanțului sau a ghidajelor
-        de: Verschleiß der Kette oder Führungsschienen
-        fr: Usure de la chaîne ou des guides
-        es: Desgaste de la cadena o de las guías
-        it: Usura della catena o delle guide
-        nl: Slijtage van ketting of geleiders
-
-      - en: Oil pressure or oil supply problem affecting the tensioner
-        ro: Problemă de presiune sau alimentare cu ulei care afectează întinzătorul
-        de: Ölversorgungs- oder Öldruckproblem am Kettenspanner
-        fr: Problème de pression ou d'alimentation en huile du tendeur
-        es: Problema de presión o suministro de aceite al tensor
-        it: Problema di pressione o alimentazione dell'olio al tenditore
-        nl: Probleem met oliedruk of olietoevoer naar de spanner
-
-    diagnostic_steps:
-      - en: Confirm that the noise occurs specifically during cold starting
-        ro: Confirmă că zgomotul apare în special la pornirea la rece
-        de: Prüfen, ob das Geräusch speziell beim Kaltstart auftritt
-        fr: Confirmer que le bruit apparaît spécifiquement au démarrage à froid
-        es: Confirmar que el ruido aparece específicamente en el arranque en frío
-        it: Verificare che il rumore compaia specificamente a freddo
-        nl: Controleer of het geluid specifiek bij koude start optreedt
-
-      - en: Check engine oil level and correct specification
-        ro: Verifică nivelul și specificația uleiului de motor
-        de: Motorölstand und Ölspezifikation prüfen
-        fr: Vérifier le niveau et la spécification de l'huile moteur
-        es: Comprobar el nivel y la especificación del aceite
-        it: Controllare il livello e la specifica dell'olio motore
-        nl: Controleer oliepeil en oliespecificatie
-
-      - en: Inspect the timing drive and tensioning system if noise is confirmed
-        ro: Inspectează distribuția și sistemul de tensionare dacă zgomotul este confirmat
-        de: Steuertrieb und Spannsystem prüfen, wenn das Geräusch bestätigt wird
-        fr: Inspecter la distribution et le système de tension si le bruit est confirmé
-        es: Inspeccionar la distribución y el sistema tensor si se confirma el ruido
-        it: Ispezionare la distribuzione e il sistema di tensionamento se il rumore è confermato
-        nl: Inspecteer de distributie en het spansysteem als het geluid bevestigd is
-
-    keywords:
-      - 1.2 TSI
-      - timing chain
-      - lanț distribuție
-      - Steuerkette
-      - chaîne de distribution
-    related_dtcs: []
-    difficulty: advanced
-
-
-  # ============================================================
-  # 4. GOLF VI 1.6 TDI - EGR / AIRFLOW ISSUE
-  # ============================================================
-
-  - id: vw_golf_vi_16tdi_rough_idle_egr
-    vehicle:
-      manufacturer: volkswagen
-      models:
-        - volkswagen_golf
-      generations:
-        - volkswagen_golf_vi
-      engines:
-        - 16tdi
-    category: diagnostics
-    system: engine
-    title:
-      en: 1.6 TDI Rough Idle and Unstable Airflow
-      ro: Relanti instabil și debit de aer neregulat la 1.6 TDI
-      de: Unruhiger Leerlauf und instabiler Luftstrom beim 1.6 TDI
-      fr: Ralenti instable et débit d'air irrégulier sur 1.6 TDI
-      es: Ralentí inestable y flujo de aire irregular en 1.6 TDI
-      it: Minimo irregolare e flusso d'aria instabile sul 1.6 TDI
-      nl: Onrustig stationair draaien en onstabiele luchtstroom bij 1.6 TDI
-
-    symptoms:
-      - en: Uneven idle
-        ro: Relanti neregulat
-        de: Unruhiger Leerlauf
-        fr: Ralenti irrégulier
-        es: Ralentí irregular
-        it: Minimo irregolare
-        nl: Onrustig stationair toerental
-
-      - en: Hesitation during low-load operation
-        ro: Ezitare la sarcină redusă
-        de: Ruckeln bei geringer Last
-        fr: Hésitation à faible charge
-        es: Vacilación con poca carga
-        it: Esitazione a basso carico
-        nl: Aarzeling bij lage belasting
-
-      - en: Possible increased smoke or exhaust odor
-        ro: Posibil fum crescut sau miros accentuat al gazelor
-        de: Möglicherweise erhöhte Rauchentwicklung oder Abgasgeruch
-        fr: Fumée ou odeur d'échappement éventuellement augmentée
-        es: Posible aumento del humo u olor de escape
-        it: Possibile aumento del fumo o dell'odore di scarico
-        nl: Mogelijk meer rook of uitlaatgeur
-
-    possible_causes:
-      - en: EGR valve contamination or sticking
-        ro: Supapă EGR murdară sau blocată
-        de: Verschmutztes oder schwergängiges AGR-Ventil
-        fr: Vanne EGR encrassée ou grippée
-        es: Válvula EGR sucia o atascada
-        it: Valvola EGR sporca o bloccata
-        nl: Vervuilde of vastzittende EGR-klep
-
-      - en: Intake contamination
-        ro: Depuneri în admisie
-        de: Verschmutzung im Ansaugsystem
-        fr: Encrassement de l'admission
-        es: Suciedad en la admisión
-        it: Depositi nell'aspirazione
-        nl: Vervuiling in het inlaatsysteem
-
-      - en: Airflow measurement problem
-        ro: Problemă de măsurare a debitului de aer
-        de: Problem bei der Luftmengenmessung
-        fr: Problème de mesure du débit d'air
-        es: Problema de medición del flujo de aire
-        it: Problema nella misurazione del flusso d'aria
-        nl: Probleem met de luchtmassameting
-
-    diagnostic_steps:
-      - en: Read engine control unit fault memory
-        ro: Citește memoria de erori a calculatorului motor
-        de: Fehlerspeicher des Motorsteuergeräts auslesen
-        fr: Lire la mémoire des défauts du calculateur moteur
-        es: Leer la memoria de averías de la unidad de motor
-        it: Leggere la memoria guasti della centralina motore
-        nl: Lees het foutgeheugen van de motorregelunit
-
-      - en: Compare commanded and measured EGR operation
-        ro: Compară funcționarea comandată și măsurată a EGR
-        de: Soll- und Istwerte der AGR-Funktion vergleichen
-        fr: Comparer la commande EGR avec la valeur mesurée
-        es: Comparar el funcionamiento EGR solicitado y medido
-        it: Confrontare il funzionamento EGR richiesto e misurato
-        nl: Vergelijk gewenste en gemeten EGR-werking
-
-      - en: Inspect the intake tract for excessive deposits
-        ro: Verifică admisia pentru depuneri excesive
-        de: Ansaugtrakt auf starke Ablagerungen prüfen
-        fr: Vérifier l'admission pour détecter des dépôts importants
-        es: Inspeccionar la admisión en busca de depósitos excesivos
-        it: Ispezionare l'aspirazione per depositi eccessivi
-        nl: Controleer het inlaatsysteem op overmatige vervuiling
-
-    keywords:
-      - 1.6 TDI
-      - EGR
-      - rough idle
-      - relanti instabil
-      - AGR
-      - débit d'air
-    related_dtcs: []
-    difficulty: intermediate
-
-
-  # ============================================================
-  # 5. MODERN 2.0 TDI - DPF REGENERATION
-  # ============================================================
-
-  - id: vw_20tdi_frequent_dpf_regeneration
-    vehicle:
-      manufacturer: volkswagen
-      models:
-        - volkswagen_golf
-        - volkswagen_passat
-        - volkswagen_tiguan
-      generations: all
-      engines:
-        - 20tdi
-    category: diagnostics
-    system: exhaust
-    title:
-      en: Frequent DPF Regeneration on 2.0 TDI
-      ro: Regenerări DPF frecvente la 2.0 TDI
-      de: Häufige DPF-Regeneration beim 2.0 TDI
-      fr: Régénérations fréquentes du FAP sur 2.0 TDI
-      es: Regeneraciones frecuentes del DPF en 2.0 TDI
-      it: Rigenerazioni frequenti del DPF sul 2.0 TDI
-      nl: Frequente DPF-regeneraties bij 2.0 TDI
-
-    symptoms:
-      - en: DPF regeneration occurs unusually often
-        ro: Regenerarea DPF apare neobișnuit de des
-        de: DPF-Regenerationen treten ungewöhnlich häufig auf
-        fr: Les régénérations du FAP sont anormalement fréquentes
-        es: Las regeneraciones del DPF son demasiado frecuentes
-        it: Le rigenerazioni del DPF sono insolitamente frequenti
-        nl: DPF-regeneraties vinden ongewoon vaak plaats
-
-      - en: Increased fuel consumption
-        ro: Consum crescut de combustibil
-        de: Erhöhter Kraftstoffverbrauch
-        fr: Consommation de carburant accrue
-        es: Aumento del consumo de combustible
-        it: Aumento del consumo di carburante
-        nl: Verhoogd brandstofverbruik
-
-      - en: Cooling fan may continue running after shutdown
-        ro: Ventilatorul poate continua să funcționeze după oprirea motorului
-        de: Der Kühlerlüfter kann nach dem Abstellen weiterlaufen
-        fr: Le ventilateur peut continuer à fonctionner après l'arrêt
-        es: El ventilador puede seguir funcionando después de apagar el motor
-        it: La ventola può continuare a funzionare dopo lo spegnimento
-        nl: De koelventilator kan na uitschakelen blijven draaien
-
-    possible_causes:
-      - en: High soot loading
-        ro: Încărcare mare cu funingine
-        de: Hohe Rußbeladung
-        fr: Forte charge en suie
-        es: Alta carga de hollín
-        it: Elevato carico di fuliggine
-        nl: Hoge roetbelasting
-
-      - en: DPF differential pressure measurement problem
-        ro: Problemă la măsurarea presiunii diferențiale DPF
-        de: Problem bei der Differenzdruckmessung des DPF
-        fr: Problème de mesure de pression différentielle du FAP
-        es: Problema en la medición de presión diferencial del DPF
-        it: Problema nella misurazione della pressione differenziale del DPF
-        nl: Probleem met de differentieeldrukmeting van het DPF
-
-      - en: Exhaust temperature measurement problem
-        ro: Problemă la măsurarea temperaturii gazelor de evacuare
-        de: Problem bei der Abgastemperaturmessung
-        fr: Problème de mesure de température des gaz d'échappement
-        es: Problema de medición de temperatura de gases de escape
-        it: Problema nella misurazione della temperatura dei gas di scarico
-        nl: Probleem met de uitlaatgastemperatuurmeting
-
-      - en: EGR or combustion problem increasing soot production
-        ro: Problemă EGR sau de ardere care crește producția de funingine
-        de: AGR- oder Verbrennungsproblem mit erhöhter Rußbildung
-        fr: Problème EGR ou de combustion augmentant la production de suie
-        es: Problema EGR o de combustión que aumenta la producción de hollín
-        it: Problema EGR o di combustione che aumenta la produzione di fuliggine
-        nl: EGR- of verbrandingsprobleem dat de roetproductie verhoogt
-
-    diagnostic_steps:
-      - en: Check calculated soot load and regeneration history
-        ro: Verifică încărcarea calculată cu funingine și istoricul regenerărilor
-        de: Berechnete Rußbeladung und Regenerationshistorie prüfen
-        fr: Vérifier la charge de suie calculée et l'historique des régénérations
-        es: Comprobar la carga de hollín calculada y el historial de regeneraciones
-        it: Controllare il carico di fuliggine calcolato e lo storico delle rigenerazioni
-        nl: Controleer berekende roetbelasting en regeneratiehistorie
-
-      - en: Compare differential pressure values at idle and under load
-        ro: Compară valorile presiunii diferențiale la relanti și sub sarcină
-        de: Differenzdruckwerte im Leerlauf und unter Last vergleichen
-        fr: Comparer les valeurs de pression différentielle au ralenti et en charge
-        es: Comparar la presión diferencial al ralentí y bajo carga
-        it: Confrontare la pressione differenziale al minimo e sotto carico
-        nl: Vergelijk differentieeldrukwaarden stationair en onder belasting
-
-      - en: Verify exhaust temperature sensor readings
-        ro: Verifică valorile senzorilor de temperatură ai evacuării
-        de: Messwerte der Abgastemperatursensoren prüfen
-        fr: Vérifier les valeurs des capteurs de température d'échappement
-        es: Comprobar los valores de los sensores de temperatura de escape
-        it: Verificare i valori dei sensori di temperatura dei gas di scarico
-        nl: Controleer de waarden van de uitlaatgastemperatuursensoren
-
-      - en: Investigate the underlying cause before forcing regeneration
-        ro: Identifică cauza de bază înainte de a forța regenerarea
-        de: Ursache vor einer Zwangsregeneration ermitteln
-        fr: Rechercher la cause avant de forcer une régénération
-        es: Investigar la causa antes de forzar una regeneración
-        it: Individuare la causa prima di forzare una rigenerazione
-        nl: Zoek de oorzaak voordat een geforceerde regeneratie wordt uitgevoerd
-
-    keywords:
-      - 2.0 TDI
-      - DPF
-      - FAP
-      - regeneration
-      - regenerare
-      - Ruß
-      - suie
-    related_dtcs: []
-    difficulty: advanced
-
-
-  # ============================================================
-  # 6. GOLF VII 1.4 TSI - MISFIRE
-  # ============================================================
-
-  - id: vw_golf_vii_14tsi_cold_start_misfire
-    vehicle:
-      manufacturer: volkswagen
-      models:
-        - volkswagen_golf
-      generations:
-        - volkswagen_golf_vii
-      engines:
-        - 14tsi
-    category: diagnostics
-    system: ignition
-    title:
-      en: 1.4 TSI Cold Start Misfire
-      ro: Rateu la pornire la rece la 1.4 TSI
-      de: Fehlzündungen beim Kaltstart des 1.4 TSI
-      fr: Ratés d'allumage au démarrage à froid du 1.4 TSI
-      es: Fallos de encendido en frío en el 1.4 TSI
-      it: Mancate accensioni a freddo sul 1.4 TSI
-      nl: Ontstekingsuitval bij koude start van de 1.4 TSI
-
-    symptoms:
-      - en: Rough running immediately after cold start
-        ro: Funcționare neregulată imediat după pornirea la rece
-        de: Unruhiger Motorlauf direkt nach dem Kaltstart
-        fr: Fonctionnement irrégulier juste après le démarrage à froid
-        es: Funcionamiento irregular inmediatamente después del arranque en frío
-        it: Funzionamento irregolare subito dopo l'avviamento a freddo
-        nl: Onrustige motorloop direct na koude start
-
-      - en: Engine misfire
-        ro: Rateuri ale motorului
-        de: Fehlzündungen
-        fr: Ratés d'allumage
-        es: Fallos de encendido
-        it: Mancate accensioni
-        nl: Ontstekingsuitval
-
-      - en: Engine warning lamp may illuminate
-        ro: Martorul motor se poate aprinde
-        de: Motorkontrollleuchte kann aufleuchten
-        fr: Le témoin moteur peut s'allumer
-        es: Puede encenderse el testigo del motor
-        it: La spia motore può accendersi
-        nl: Het motorstoringslampje kan gaan branden
-
-    possible_causes:
-      - en: Spark plug problem
-        ro: Problemă la bujie
-        de: Zündkerzenproblem
-        fr: Problème de bougie
-        es: Problema de bujía
-        it: Problema della candela
-        nl: Probleem met de bougie
-
-      - en: Ignition coil problem
-        ro: Problemă la bobina de inducție
-        de: Zündspulenproblem
-        fr: Problème de bobine d'allumage
-        es: Problema de bobina de encendido
-        it: Problema della bobina di accensione
-        nl: Probleem met de bobine
-
-      - en: Fuel mixture problem
-        ro: Problemă de amestec aer-combustibil
-        de: Problem mit dem Kraftstoff-Luft-Gemisch
-        fr: Problème de mélange air-carburant
-        es: Problema de mezcla aire-combustible
-        it: Problema della miscela aria-carburante
-        nl: Probleem met het lucht-brandstofmengsel
-
-      - en: Intake or crankcase ventilation leak
-        ro: Pierdere pe admisie sau ventilația carterului
-        de: Leck im Ansaug- oder Kurbelgehäuseentlüftungssystem
-        fr: Fuite d'admission ou de ventilation du carter
-        es: Fuga en admisión o ventilación del cárter
-        it: Perdita nell'aspirazione o nella ventilazione del basamento
-        nl: Lekkage in inlaat of carterventilatie
-
-    diagnostic_steps:
-      - en: Read misfire counters and fault memory
-        ro: Citește contoarele de rateuri și memoria de erori
-        de: Fehlerspeicher und Fehlzündungszähler auslesen
-        fr: Lire la mémoire des défauts et les compteurs de ratés
-        es: Leer la memoria de averías y los contadores de fallos
-        it: Leggere la memoria guasti e i contatori delle mancate accensioni
-        nl: Lees foutgeheugen en ontstekingsuitvaltellers uit
-
-      - en: Inspect and test spark plugs
-        ro: Inspectează și testează bujiile
-        de: Zündkerzen prüfen und testen
-        fr: Inspecter et tester les bougies
-        es: Inspeccionar y comprobar las bujías
-        it: Ispezionare e testare le candele
-        nl: Inspecteer en test de bougies
-
-      - en: Test ignition coils by approved diagnostic substitution where appropriate
-        ro: Testează bobinele prin înlocuire de probă acolo unde metoda este potrivită
-        de: Zündspulen durch geeigneten Tauschtest prüfen
-        fr: Tester les bobines par permutation lorsque cette méthode est appropriée
-        es: Comprobar las bobinas mediante intercambio cuando sea apropiado
-        it: Testare le bobine mediante scambio quando appropriato
-        nl: Test bobines door omwisselen indien geschikt
-
-      - en: Check fuel mixture data and intake leaks
-        ro: Verifică datele amestecului și eventualele pierderi pe admisie
-        de: Gemischdaten und Ansauglecks prüfen
-        fr: Vérifier les données de mélange et les fuites d'admission
-        es: Comprobar los datos de mezcla y las fugas de admisión
-        it: Controllare i dati della miscela e le perdite di aspirazione
-        nl: Controleer mengselgegevens en inlaatlekkages
-
-    keywords:
-      - 1.4 TSI
-      - misfire
-      - rateu
-      - Fehlzündung
-      - raté
-      - fallo de encendido
-      - mancata accensione
-      - ontstekingsuitval
-    related_dtcs: []
-    difficulty: intermediate
-
-
-  # ============================================================
-  # 7. GOLF VIII eHYBRID - EV/ICE TRANSITION
-  # ============================================================
-
-  - id: vw_golf_viii_ehybrid_engine_transition
-    vehicle:
-      manufacturer: volkswagen
-      models:
-        - volkswagen_golf
-      generations:
-        - volkswagen_golf_viii
-      engines:
-        - 15ehybrid
-    category: diagnostics
-    system: hybrid
-    title:
-      en: eHybrid Engine Start or EV to Engine Transition Concern
-      ro: Problemă la pornirea motorului sau tranziția EV către motorul termic la eHybrid
-      de: Problem beim Motorstart oder Übergang von EV zu Verbrennungsmotor beim eHybrid
-      fr: Problème de démarrage du moteur ou de transition EV vers moteur thermique sur eHybrid
-      es: Problema de arranque del motor o transición EV a motor térmico en eHybrid
-      it: Problema di avviamento del motore o transizione EV a motore termico su eHybrid
-      nl: Probleem met motorstart of overgang van EV naar verbrandingsmotor bij eHybrid
-
-    symptoms:
-      - en: Petrol engine does not start when requested
-        ro: Motorul pe benzină nu pornește când sistemul solicită acest lucru
-        de: Der Benzinmotor startet bei Anforderung nicht
-        fr: Le moteur essence ne démarre pas lorsqu'il est demandé
-        es: El motor de gasolina no arranca cuando se solicita
-        it: Il motore a benzina non si avvia quando richiesto
-        nl: De benzinemotor start niet wanneer dit wordt gevraagd
-
-      - en: Unexpected transition between electric and petrol operation
-        ro: Tranziție neașteptată între funcționarea electrică și cea pe benzină
-        de: Unerwarteter Wechsel zwischen Elektro- und Benzinbetrieb
-        fr: Transition inattendue entre fonctionnement électrique et essence
-        es: Transición inesperada entre funcionamiento eléctrico y de gasolina
-        it: Transizione imprevista tra funzionamento elettrico e benzina
-        nl: Onverwachte overgang tussen elektrisch en benzinebedrijf
-
-      - en: Hybrid warning message may be displayed
-        ro: Poate apărea un mesaj de avertizare al sistemului hibrid
-        de: Eine Hybridwarnung kann angezeigt werden
-        fr: Un message d'avertissement hybride peut apparaître
-        es: Puede aparecer un mensaje de advertencia del sistema híbrido
-        it: Può comparire un messaggio di avviso del sistema ibrido
-        nl: Er kan een hybridewaarschuwing verschijnen
-
-    possible_causes:
-      - en: Fault in the petrol engine management system
-        ro: Defecțiune în sistemul de management al motorului pe benzină
-        de: Fehler im Motormanagement des Benzinmotors
-        fr: Défaut du système de gestion du moteur essence
-        es: Fallo en la gestión del motor de gasolina
-        it: Guasto nella gestione del motore a benzina
-        nl: Storing in het motormanagement van de benzinemotor
-
-      - en: Hybrid system control fault
-        ro: Defecțiune de control a sistemului hibrid
-        de: Fehler der Hybrid-Systemsteuerung
-        fr: Défaut de commande du système hybride
-        es: Fallo de control del sistema híbrido
-        it: Guasto nel controllo del sistema ibrido
-        nl: Storing in de hybride-systeemregeling
-
-      - en: High-voltage system fault
-        ro: Defecțiune a sistemului de înaltă tensiune
-        de: Fehler im Hochvoltsystem
-        fr: Défaut du système haute tension
-        es: Fallo del sistema de alta tensión
-        it: Guasto del sistema ad alta tensione
-        nl: Storing in het hoogspanningssysteem
-
-    diagnostic_steps:
-      - en: Read fault memory from the engine and hybrid control systems
-        ro: Citește memoria de erori din sistemele de control ale motorului și hibridului
-        de: Fehlerspeicher von Motor- und Hybridsystem auslesen
-        fr: Lire les défauts des systèmes moteur et hybride
-        es: Leer los fallos de los sistemas de motor e híbrido
-        it: Leggere i guasti dei sistemi motore e ibrido
-        nl: Lees foutgeheugen van motor- en hybridesysteem uit
-
-      - en: Check whether the petrol engine start request is being issued
-        ro: Verifică dacă este emisă comanda de pornire a motorului termic
-        de: Prüfen, ob eine Startanforderung für den Verbrennungsmotor vorliegt
-        fr: Vérifier si une demande de démarrage du moteur thermique est émise
-        es: Comprobar si se emite una solicitud de arranque del motor térmico
-        it: Verificare se viene emessa la richiesta di avviamento del motore termico
-        nl: Controleer of een startverzoek voor de verbrandingsmotor wordt gegeven
-
-      - en: Do not open or service high-voltage components without the required safety qualification
-        ro: Nu deschide și nu interveni asupra componentelor de înaltă tensiune fără calificarea de siguranță necesară
-        de: Hochvoltkomponenten nicht ohne erforderliche Sicherheitsqualifikation öffnen oder warten
-        fr: Ne pas ouvrir ou intervenir sur les composants haute tension sans qualification de sécurité
-        es: No abrir ni reparar componentes de alta tensión sin la cualificación de seguridad necesaria
-        it: Non aprire o intervenire sui componenti ad alta tensione senza la qualifica di sicurezza necessaria
-        nl: Open of onderhoud hoogspanningscomponenten niet zonder vereiste veiligheidskwalificatie
-
-    keywords:
-      - eHybrid
-      - plug-in hybrid
-      - PHEV
-      - EV transition
-      - hybrid system
-      - sistem hibrid
-    related_dtcs: []
-    difficulty: advanced
-
-
-  # ============================================================
-  # 8. ID ELECTRIC - CHARGING FAILURE
-  # ============================================================
-
-  - id: vw_id_charging_session_not_starting
-    vehicle:
-      manufacturer: volkswagen
-      models:
-        - volkswagen_id3
-        - volkswagen_id4
-        - volkswagen_id5
-        - volkswagen_id7
-        - volkswagen_id_buzz
-      generations: all
-      engines: all
-    category: diagnostics
-    system: charging
-    title:
-      en: Electric Vehicle Charging Session Does Not Start
-      ro: Sesiunea de încărcare a vehiculului electric nu pornește
-      de: Ladevorgang des Elektrofahrzeugs startet nicht
-      fr: La recharge du véhicule électrique ne démarre pas
-      es: La carga del vehículo eléctrico no se inicia
-      it: La ricarica del veicolo elettrico non si avvia
-      nl: Het laden van het elektrische voertuig start niet
-
-    symptoms:
-      - en: Charging cable is connected but charging does not begin
-        ro: Cablul este conectat, dar încărcarea nu începe
-        de: Ladekabel ist angeschlossen, aber der Ladevorgang startet nicht
-        fr: Le câble est connecté mais la recharge ne démarre pas
-        es: El cable está conectado pero la carga no comienza
-        it: Il cavo è collegato ma la ricarica non inizia
-        nl: De laadkabel is aangesloten maar het laden begint niet
-
-      - en: Charging status indicates an error
-        ro: Starea încărcării indică o eroare
-        de: Der Ladestatus zeigt einen Fehler
-        fr: L'état de charge indique une erreur
-        es: El estado de carga indica un error
-        it: Lo stato di ricarica indica un errore
-        nl: De laadstatus geeft een fout aan
-
-      - en: Vehicle refuses to accept charging
-        ro: Vehiculul refuză încărcarea
-        de: Das Fahrzeug nimmt keine Ladung an
-        fr: Le véhicule refuse la recharge
-        es: El vehículo no acepta la carga
-        it: Il veicolo rifiuta la ricarica
-        nl: Het voertuig accepteert geen laadstroom
-
-    possible_causes:
-      - en: Charging equipment or supply problem
-        ro: Problemă la echipamentul sau alimentarea de încărcare
-        de: Problem mit Ladeeinrichtung oder Stromversorgung
-        fr: Problème de borne ou d'alimentation
-        es: Problema del equipo o suministro de carga
-        it: Problema dell'apparecchiatura o dell'alimentazione di ricarica
-        nl: Probleem met laadapparatuur of stroomvoorziening
-
-      - en: Charging connector or cable problem
-        ro: Problemă la conectorul sau cablul de încărcare
-        de: Problem mit Ladeanschluss oder Ladekabel
-        fr: Problème de connecteur ou de câble de recharge
-        es: Problema del conector o cable de carga
-        it: Problema del connettore o del cavo di ricarica
-        nl: Probleem met laadconnector of laadkabel
-
-      - en: Vehicle charging control fault
-        ro: Defecțiune a sistemului de control al încărcării
-        de: Fehler der Ladeelektronik
-        fr: Défaut du système de gestion de la recharge
-        es: Fallo del sistema de control de carga
-        it: Guasto del sistema di controllo della ricarica
-        nl: Storing in de laadregeling
-
-      - en: High-voltage system fault
-        ro: Defecțiune a sistemului de înaltă tensiune
-        de: Fehler im Hochvoltsystem
-        fr: Défaut du système haute tension
-        es: Fallo del sistema de alta tensión
-        it: Guasto del sistema ad alta tensione
-        nl: Storing in het hoogspanningssysteem
-
-    diagnostic_steps:
-      - en: Verify the external charging station or outlet
-        ro: Verifică stația de încărcare sau priza externă
-        de: Ladestation oder Steckdose prüfen
-        fr: Vérifier la borne ou la prise de recharge
-        es: Comprobar el cargador o la toma de corriente
-        it: Verificare la stazione o la presa di ricarica
-        nl: Controleer laadstation of stopcontact
-
-      - en: Inspect the charging connector and cable
-        ro: Inspectează conectorul și cablul de încărcare
-        de: Ladeanschluss und Kabel prüfen
-        fr: Inspecter le connecteur et le câble de recharge
-        es: Inspeccionar el conector y el cable de carga
-        it: Ispezionare connettore e cavo di ricarica
-        nl: Inspecteer laadconnector en kabel
-
-      - en: Read charging and high-voltage system fault memory
-        ro: Citește memoria de erori a sistemelor de încărcare și înaltă tensiune
-        de: Fehlerspeicher von Lade- und Hochvoltsystem auslesen
-        fr: Lire les défauts des systèmes de recharge et haute tension
-        es: Leer los fallos de los sistemas de carga y alta tensión
-        it: Leggere i guasti dei sistemi di ricarica e alta tensione
-        nl: Lees foutgeheugen van laad- en hoogspanningssysteem uit
-
-    keywords:
-      - ID
-      - electric
-      - EV
-      - charging
-      - încărcare
-      - recharge
-      - Laden
-      - ricarica
-    related_dtcs: []
-    difficulty: intermediate
-
-
-  # ============================================================
-  # 9. MODERN VW - START STOP / LOW 12V BATTERY
-  # ============================================================
-
-  - id: vw_modern_start_stop_unavailable_low_12v
-    vehicle:
-      manufacturer: volkswagen
-      models:
-        - volkswagen_golf
-        - volkswagen_passat
-        - volkswagen_tiguan
-        - volkswagen_polo
-      generations: all
-      engines: all
-    category: diagnostics
-    system: electrical
-    title:
-      en: Start-Stop System Unavailable Due to 12 V Battery Condition
-      ro: Sistem Start-Stop indisponibil din cauza stării bateriei de 12 V
-      de: Start-Stopp-System wegen Batteriezustand der 12-V-Batterie nicht verfügbar
-      fr: Système Start-Stop indisponible en raison de l'état de la batterie 12 V
-      es: Sistema Start-Stop no disponible por el estado de la batería de 12 V
-      it: Sistema Start-Stop non disponibile a causa dello stato della batteria 12 V
-      nl: Start-stopsysteem niet beschikbaar door de toestand van de 12V-accu
-
-    symptoms:
-      - en: Start-stop function does not activate
-        ro: Funcția Start-Stop nu se activează
-        de: Start-Stopp-Funktion wird nicht aktiviert
-        fr: La fonction Start-Stop ne s'active pas
-        es: La función Start-Stop no se activa
-        it: La funzione Start-Stop non si attiva
-        nl: De start-stopfunctie wordt niet geactiveerd
-
-      - en: Battery or energy management warning may be displayed
-        ro: Poate apărea un avertisment privind bateria sau managementul energiei
-        de: Eine Batterie- oder Energiemanagementwarnung kann erscheinen
-        fr: Un avertissement de batterie ou de gestion d'énergie peut apparaître
-        es: Puede aparecer una advertencia de batería o gestión de energía
-        it: Può comparire un avviso relativo alla batteria o alla gestione energetica
-        nl: Er kan een waarschuwing voor accu- of energiemanagement verschijnen
-
-      - en: Engine starts normally but Start-Stop remains disabled
-        ro: Motorul pornește normal, dar Start-Stop rămâne dezactivat
-        de: Der Motor startet normal, aber Start-Stopp bleibt deaktiviert
-        fr: Le moteur démarre normalement mais le Start-Stop reste désactivé
-        es: El motor arranca normalmente pero el Start-Stop permanece desactivado
-        it: Il motore si avvia normalmente ma lo Start-Stop rimane disattivato
-        nl: De motor start normaal maar Start-Stop blijft uitgeschakeld
-
-    possible_causes:
-      - en: Low 12 V battery state of charge
-        ro: Nivel scăzut de încărcare al bateriei de 12 V
-        de: Niedriger Ladezustand der 12-V-Batterie
-        fr: État de charge faible de la batterie 12 V
-        es: Bajo estado de carga de la batería de 12 V
-        it: Basso stato di carica della batteria 12 V
-        nl: Lage laadtoestand van de 12V-accu
-
-      - en: Battery aging or reduced capacity
-        ro: Îmbătrânirea bateriei sau capacitate redusă
-        de: Alterung oder verringerte Kapazität der Batterie
-        fr: Vieillissement ou capacité réduite de la batterie
-        es: Envejecimiento o capacidad reducida de la batería
-        it: Invecchiamento o capacità ridotta della batteria
-        nl: Veroudering of verminderde capaciteit van de accu
-
-      - en: Energy management limitation due to operating conditions
-        ro: Limitare a managementului energiei din cauza condițiilor de funcționare
-        de: Begrenzung des Energiemanagements aufgrund der Betriebsbedingungen
-        fr: Limitation de la gestion d'énergie selon les conditions de fonctionnement
-        es: Limitación de la gestión energética por las condiciones de funcionamiento
-        it: Limitazione della gestione energetica dovuta alle condizioni operative
-        nl: Beperking van het energiemanagement door bedrijfsomstandigheden
-
-    diagnostic_steps:
-      - en: Measure 12 V battery voltage under appropriate conditions
-        ro: Măsoară tensiunea bateriei de 12 V în condiții corespunzătoare
-        de: 12-V-Batteriespannung unter geeigneten Bedingungen messen
-        fr: Mesurer la tension de la batterie 12 V dans des conditions appropriées
-        es: Medir la tensión de la batería de 12 V en condiciones adecuadas
-        it: Misurare la tensione della batteria 12 V nelle condizioni appropriate
-        nl: Meet de 12V-accuspanning onder geschikte omstandigheden
-
-      - en: Check battery condition and energy management data
-        ro: Verifică starea bateriei și datele managementului energiei
-        de: Batteriezustand und Energiemanagementdaten prüfen
-        fr: Vérifier l'état de la batterie et les données de gestion d'énergie
-        es: Comprobar el estado de la batería y los datos de gestión energética
-        it: Controllare lo stato della batteria e i dati di gestione energetica
-        nl: Controleer accutoestand en energiemanagementgegevens
-
-      - en: Confirm that no other system fault is preventing Start-Stop operation
-        ro: Confirmă că nicio altă defecțiune de sistem nu împiedică funcționarea Start-Stop
-        de: Prüfen, ob kein anderer Systemfehler die Start-Stopp-Funktion verhindert
-        fr: Vérifier qu'aucun autre défaut ne bloque le fonctionnement du Start-Stop
-        es: Confirmar que ninguna otra avería impide el funcionamiento del Start-Stop
-        it: Verificare che nessun altro guasto impedisca il funzionamento dello Start-Stop
-        nl: Controleer of geen andere systeemstoring Start-Stop blokkeert
-
-    keywords:
-      - Start Stop
-      - Start-Stop
-      - 12V battery
-      - baterie 12V
-      - Batterie
-      - accu
-    related_dtcs: []
-    difficulty: basic
-
-
-  # ============================================================
-  # 10. MODERN VW PETROL - COOLING SYSTEM / WATER PUMP
-  # ============================================================
-
-  - id: vw_tsi_coolant_loss_cooling_system
-    vehicle:
-      manufacturer: volkswagen
-      models:
-        - volkswagen_golf
-        - volkswagen_passat
-        - volkswagen_tiguan
-        - volkswagen_polo
-      generations: all
-      engines:
-        - 12tsi
-        - 14tsi
-        - 15tsi
-        - 10etsi
-        - 15etsi
-        - 15ehybrid
-    category: diagnostics
-    system: cooling
-    title:
-      en: TSI Coolant Loss or Cooling System Fault
-      ro: Pierdere de lichid de răcire sau problemă a sistemului de răcire TSI
-      de: Kühlmittelverlust oder Kühlungsproblem beim TSI
-      fr: Perte de liquide de refroidissement ou défaut du circuit de refroidissement TSI
-      es: Pérdida de refrigerante o fallo del sistema de refrigeración TSI
-      it: Perdita di refrigerante o guasto del sistema di raffreddamento TSI
-      nl: Koelvloeistofverlies of storing in het TSI-koelsysteem
-
-    symptoms:
-      - en: Coolant level decreases over time
-        ro: Nivelul lichidului de răcire scade în timp
-        de: Der Kühlmittelstand sinkt mit der Zeit
-        fr: Le niveau de liquide de refroidissement diminue avec le temps
-        es: El nivel de refrigerante disminuye con el tiempo
-        it: Il livello del refrigerante diminuisce nel tempo
-        nl: Het koelvloeistofniveau daalt na verloop van tijd
-
-      - en: Coolant warning may appear
-        ro: Poate apărea avertizarea pentru lichidul de răcire
-        de: Eine Kühlmittelwarnung kann erscheinen
-        fr: Un avertissement de liquide de refroidissement peut apparaître
-        es: Puede aparecer una advertencia de refrigerante
-        it: Può comparire un avviso del liquido di raffreddamento
-        nl: Er kan een koelvloeistofwaarschuwing verschijnen
-
-      - en: Cooling fan operation may become abnormal
-        ro: Funcționarea ventilatorului de răcire poate deveni anormală
-        de: Das Verhalten des Kühlerlüfters kann ungewöhnlich sein
-        fr: Le fonctionnement du ventilateur peut devenir anormal
-        es: El funcionamiento del ventilador puede ser anormal
-        it: Il funzionamento della ventola può diventare anomalo
-        nl: De werking van de koelventilator kan abnormaal worden
-
-      - en: Engine temperature may not remain within the expected range
-        ro: Temperatura motorului poate să nu rămână în intervalul normal
-        de: Die Motortemperatur bleibt möglicherweise nicht im erwarteten Bereich
-        fr: La température moteur peut sortir de la plage normale
-        es: La temperatura del motor puede salir del rango esperado
-        it: La temperatura del motore può uscire dall'intervallo previsto
-        nl: De motortemperatuur blijft mogelijk niet binnen het verwachte bereik
-
-    possible_causes:
-      - en: External coolant leak
-        ro: Pierdere externă de lichid de răcire
-        de: Äußeres Kühlmittelleck
-        fr: Fuite externe de liquide de refroidissement
-        es: Fuga externa de refrigerante
-        it: Perdita esterna di refrigerante
-        nl: Externe koelvloeistoflekkage
-
-      - en: Water pump or thermostat assembly problem where fitted
-        ro: Problemă la pompa de apă sau ansamblul termostatului acolo unde este utilizat
-        de: Problem an Wasserpumpe oder Thermostateinheit, sofern vorhanden
-        fr: Problème de pompe à eau ou de thermostat selon l'équipement
-        es: Problema de bomba de agua o termostato según el equipamiento
-        it: Problema alla pompa dell'acqua o al termostato secondo l'allestimento
-        nl: Probleem met waterpomp of thermostaat afhankelijk van uitvoering
-
-      - en: Hose or connection leak
-        ro: Pierdere la furtun sau conexiune
-        de: Leck an Schlauch oder Anschluss
-        fr: Fuite sur une durite ou un raccord
-        es: Fuga en manguito o conexión
-        it: Perdita su manicotto o raccordo
-        nl: Lekkage bij slang of aansluiting
-
-      - en: Internal coolant loss
-        ro: Pierdere internă de lichid de răcire
-        de: Interner Kühlmittelverlust
-        fr: Perte interne de liquide de refroidissement
-        es: Pérdida interna de refrigerante
-        it: Perdita interna di refrigerante
-        nl: Intern koelvloeistofverlies
-
-    diagnostic_steps:
-      - en: Inspect the complete cooling system for visible leaks
-        ro: Inspectează întregul sistem de răcire pentru pierderi vizibile
-        de: Kühlsystem vollständig auf sichtbare Lecks prüfen
-        fr: Inspecter tout le circuit de refroidissement à la recherche de fuites visibles
-        es: Inspeccionar todo el sistema de refrigeración en busca de fugas visibles
-        it: Ispezionare l'intero circuito di raffreddamento per perdite visibili
-        nl: Inspecteer het volledige koelsysteem op zichtbare lekkages
-
-      - en: Perform a pressure test when appropriate
-        ro: Efectuează un test de presiune atunci când este potrivit
-        de: Bei Bedarf eine Druckprüfung durchführen
-        fr: Effectuer un test de pression si nécessaire
-        es: Realizar una prueba de presión cuando sea apropiado
-        it: Eseguire una prova di pressione quando appropriato
-        nl: Voer indien nodig een druktest uit
-
-      - en: Compare coolant temperature data with actual engine temperature
-        ro: Compară datele temperaturii lichidului de răcire cu temperatura reală a motorului
-        de: Kühlmitteltemperaturdaten mit der tatsächlichen Motortemperatur vergleichen
-        fr: Comparer la température mesurée avec la température réelle du moteur
-        es: Comparar la temperatura medida con la temperatura real del motor
-        it: Confrontare la temperatura misurata con quella reale del motore
-        nl: Vergelijk gemeten koelvloeistoftemperatuur met de werkelijke motortemperatuur
-
-      - en: Check for evidence of internal coolant loss if no external leak is found
-        ro: Verifică indicii de pierdere internă dacă nu este găsită o pierdere externă
-        de: Bei fehlendem äußerem Leck auf internen Kühlmittelverlust prüfen
-        fr: Rechercher une perte interne si aucune fuite externe n'est trouvée
-        es: Buscar pérdida interna si no se encuentra una fuga externa
-        it: Verificare eventuali perdite interne se non si trova una perdita esterna
-        nl: Controleer op intern koelvloeistofverlies als geen externe lekkage wordt gevonden
-
-    keywords:
-      - TSI
-      - coolant
-      - cooling system
-      - lichid de răcire
-      - Kühlmittel
-      - refroidissement
-      - refrigerante
-      - koelvloeistof
-    related_dtcs: []
-    difficulty: intermediate
+- id: vw_mechanical_diesel_hard_start
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - golf
+      - jetta
+      - passat
+    generations:
+      - golf_mk1
+      - golf_mk2
+      - jetta_1
+      - jetta_2
+      - passat_b1
+      - passat_b2
+    engines:
+      - "1471_diesel"
+      - "1588_d_54"
+      - "1588_gtd_70"
+      - "1588_gtd_80"
+      - "1588_td"
+      - "1588_td_60"
+      - "1588_td_70"
+      - "1588_td_80"
+
+  category: diagnostics
+  system: engine
+
+  title:
+    en: Mechanical diesel engine hard starting
+    ro: Pornire grea a motorului diesel cu injecție mecanică
+    de: Schwerer Start eines Dieselmotors mit mechanischer Einspritzung
+    fr: Démarrage difficile d'un moteur diesel à injection mécanique
+    es: Arranque difícil de un motor diésel con inyección mecánica
+    it: Avviamento difficoltoso di un motore diesel a iniezione meccanica
+    nl: Moeilijk starten van een dieselmotor met mechanische inspuiting
+
+  symptoms:
+    - en: Engine requires extended cranking before starting
+      ro: Motorul necesită o perioadă lungă de pornire înainte să pornească
+      de: Der Motor benötigt eine lange Anlasszeit, bevor er startet
+      fr: Le moteur nécessite une longue phase de lancement avant de démarrer
+      es: El motor necesita un tiempo prolongado de arranque antes de ponerse en marcha
+      it: Il motore richiede un lungo azionamento del motorino prima di avviarsi
+      nl: De motor heeft lang starten nodig voordat hij aanslaat
+    - en: Poor starting is more noticeable when the engine is cold
+      ro: Pornirea dificilă este mai evidentă când motorul este rece
+      de: Das Startproblem ist bei kaltem Motor stärker ausgeprägt
+      fr: Le problème de démarrage est plus marqué lorsque le moteur est froid
+      es: El problema de arranque es más evidente con el motor frío
+      it: Il problema di avviamento è più evidente a motore freddo
+      nl: Het startprobleem is duidelijker bij een koude motor
+    - en: White or grey smoke may appear during cranking and immediately after starting
+      ro: Poate apărea fum alb sau gri în timpul pornirii și imediat după pornire
+      de: Während des Anlassens und unmittelbar nach dem Start kann weißer oder grauer Rauch auftreten
+      fr: Une fumée blanche ou grise peut apparaître pendant le lancement et juste après le démarrage
+      es: Puede aparecer humo blanco o gris durante el arranque y justo después de arrancar
+      it: Durante l'avviamento e subito dopo può comparire fumo bianco o grigio
+      nl: Tijdens het starten en direct daarna kan witte of grijze rook verschijnen
+
+  possible_causes:
+    - en: Faulty glow plugs or preheating system
+      ro: Bujii incandescente defecte sau sistem de preîncălzire defect
+      de: Defekte Glühkerzen oder fehlerhaftes Vorglühsystem
+      fr: Bougies de préchauffage défectueuses ou système de préchauffage défaillant
+      es: Bujías de incandescencia defectuosas o sistema de precalentamiento averiado
+      it: Candelette difettose o sistema di preriscaldamento guasto
+      nl: Defecte gloeibougies of defect voorgloeisysteem
+    - en: Air entering the fuel system
+      ro: Pătrunderea aerului în sistemul de alimentare cu motorină
+      de: Lufteintritt in das Kraftstoffsystem
+      fr: Entrée d'air dans le circuit de carburant
+      es: Entrada de aire en el sistema de combustible
+      it: Ingresso di aria nel circuito del carburante
+      nl: Luchtinlaat in het brandstofsysteem
+    - en: Fuel draining back toward the tank after shutdown
+      ro: Motorina se retrage spre rezervor după oprirea motorului
+      de: Kraftstoff läuft nach dem Abstellen zum Tank zurück
+      fr: Le carburant retourne vers le réservoir après l'arrêt
+      es: El combustible retorna hacia el depósito después de apagar el motor
+      it: Il carburante rifluisce verso il serbatoio dopo lo spegnimento
+      nl: Brandstof loopt na het uitschakelen terug naar de tank
+    - en: Insufficient cranking speed
+      ro: Turație insuficientă la pornire
+      de: Unzureichende Anlassdrehzahl
+      fr: Vitesse de lancement insuffisante
+      es: Velocidad de giro insuficiente durante el arranque
+      it: Regime di avviamento insufficiente
+      nl: Onvoldoende startsnelheid
+    - en: Incorrect injection timing
+      ro: Avansul injecției este reglat incorect
+      de: Falsch eingestellter Einspritzzeitpunkt
+      fr: Calage incorrect de l'injection
+      es: Reglaje incorrecto del avance de inyección
+      it: Fasatura dell'iniezione errata
+      nl: Verkeerd inspuittijdstip
+    - en: Low engine compression
+      ro: Compresie scăzută a motorului
+      de: Niedrige Motorkompression
+      fr: Compression moteur insuffisante
+      es: Compresión del motor insuficiente
+      it: Compressione del motore insufficiente
+      nl: Te lage motorcompressie
+
+  diagnostic_steps:
+    - en: Check battery voltage and measure cranking speed during starting
+      ro: Verificați tensiunea bateriei și măsurați turația motorului în timpul pornirii
+      de: Batteriespannung prüfen und Anlassdrehzahl während des Startvorgangs messen
+      fr: Contrôler la tension de batterie et mesurer le régime pendant le lancement
+      es: Comprobar la tensión de la batería y medir el régimen durante el arranque
+      it: Controllare la tensione della batteria e misurare il regime durante l'avviamento
+      nl: Controleer de accuspanning en meet het toerental tijdens het starten
+    - en: Inspect the glow plugs and preheating circuit
+      ro: Verificați bujiile incandescente și circuitul de preîncălzire
+      de: Glühkerzen und Vorglühkreis prüfen
+      fr: Contrôler les bougies de préchauffage et le circuit de préchauffage
+      es: Comprobar las bujías de incandescencia y el circuito de precalentamiento
+      it: Controllare le candelette e il circuito di preriscaldamento
+      nl: Controleer de gloeibougies en het voorgloeicircuit
+    - en: Check the fuel lines and filter for air ingress
+      ro: Verificați conductele de motorină și filtrul pentru pătrunderea aerului
+      de: Kraftstoffleitungen und Filter auf Lufteintritt prüfen
+      fr: Contrôler les conduites de carburant et le filtre pour détecter une entrée d'air
+      es: Comprobar las líneas de combustible y el filtro para detectar entrada de aire
+      it: Controllare i tubi del carburante e il filtro per eventuali ingressi d'aria
+      nl: Controleer brandstofleidingen en filter op luchtinlaat
+    - en: Verify injection pump timing according to the engine specification
+      ro: Verificați avansul pompei de injecție conform specificației motorului
+      de: Einspritzpumpenzeitpunkt gemäß Motorspezifikation prüfen
+      fr: Vérifier le calage de la pompe d'injection selon les spécifications du moteur
+      es: Verificar el calado de la bomba de inyección según las especificaciones del motor
+      it: Verificare la fasatura della pompa di iniezione secondo le specifiche del motore
+      nl: Controleer de timing van de injectiepomp volgens de motorspecificatie
+    - en: Perform a compression test if fuel and preheating systems are satisfactory
+      ro: Efectuați un test de compresie dacă sistemele de alimentare și preîncălzire sunt în regulă
+      de: Kompressionsprüfung durchführen, wenn Kraftstoff- und Vorglühsystem in Ordnung sind
+      fr: Effectuer un test de compression si les systèmes de carburant et de préchauffage sont corrects
+      es: Realizar una prueba de compresión si los sistemas de combustible y precalentamiento funcionan correctamente
+      it: Eseguire una prova di compressione se i sistemi carburante e preriscaldamento sono efficienti
+      nl: Voer een compressietest uit als brandstof- en voorgloeisysteem in orde zijn
+
+  keywords:
+    - hard start
+    - difficult starting
+    - diesel
+    - mechanical injection
+    - cold start
+    - pornire grea
+    - diesel mecanic
+    - démarrage difficile
+    - schwieriger Start
+    - arranque difícil
+    - avviamento difficile
+    - moeilijk starten
+
+  related_dtcs: []
+  difficulty: intermediate
+
+
+- id: vw_mechanical_diesel_glow_plug_fault
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - golf
+      - jetta
+      - passat
+    generations:
+      - golf_mk1
+      - golf_mk2
+      - jetta_1
+      - jetta_2
+      - passat_b1
+      - passat_b2
+    engines:
+      - "1471_diesel"
+      - "1588_d_54"
+      - "1588_gtd_70"
+      - "1588_gtd_80"
+      - "1588_td"
+      - "1588_td_60"
+      - "1588_td_70"
+      - "1588_td_80"
+
+  category: diagnostics
+  system: engine
+
+  title:
+    en: Glow plug or preheating system fault
+    ro: Defecțiune a bujiilor incandescente sau a sistemului de preîncălzire
+    de: Fehler an Glühkerzen oder Vorglühsystem
+    fr: Défaut des bougies de préchauffage ou du système de préchauffage
+    es: Fallo de las bujías de incandescencia o del sistema de precalentamiento
+    it: Guasto delle candelette o del sistema di preriscaldamento
+    nl: Storing van gloeibougies of voorgloeisysteem
+
+  symptoms:
+    - en: Very difficult cold starting
+      ro: Pornire foarte dificilă la rece
+      de: Sehr schwieriger Kaltstart
+      fr: Démarrage à froid très difficile
+      es: Arranque en frío muy difícil
+      it: Avviamento a freddo molto difficoltoso
+      nl: Zeer moeilijk starten bij koude motor
+    - en: Extended cranking followed by rough running
+      ro: Pornire prelungită urmată de funcționare neregulată
+      de: Langes Anlassen mit anschließendem unrundem Motorlauf
+      fr: Long lancement suivi d'un fonctionnement irrégulier
+      es: Arranque prolongado seguido de funcionamiento irregular
+      it: Avviamento prolungato seguito da funzionamento irregolare
+      nl: Lang starten gevolgd door onregelmatig lopen
+    - en: White or grey smoke immediately after cold start
+      ro: Fum alb sau gri imediat după pornirea la rece
+      de: Weißer oder grauer Rauch unmittelbar nach dem Kaltstart
+      fr: Fumée blanche ou grise immédiatement après un démarrage à froid
+      es: Humo blanco o gris inmediatamente después del arranque en frío
+      it: Fumo bianco o grigio subito dopo l'avviamento a freddo
+      nl: Witte of grijze rook direct na een koude start
+
+  possible_causes:
+    - en: One or more open-circuit glow plugs
+      ro: Una sau mai multe bujii incandescente întrerupte
+      de: Eine oder mehrere unterbrochene Glühkerzen
+      fr: Une ou plusieurs bougies de préchauffage coupées
+      es: Una o varias bujías de incandescencia con circuito abierto
+      it: Una o più candelette interrotte
+      nl: Een of meer gloeibougies met een onderbreking
+    - en: High resistance in glow plug wiring
+      ro: Rezistență mare în cablajul bujiilor incandescente
+      de: Hoher Widerstand in der Verkabelung der Glühkerzen
+      fr: Résistance élevée dans le câblage des bougies
+      es: Resistencia elevada en el cableado de las bujías
+      it: Elevata resistenza nel cablaggio delle candelette
+      nl: Hoge weerstand in de bedrading van de gloeibougies
+    - en: Faulty glow plug relay or control circuit
+      ro: Releu sau circuit de comandă al preîncălzirii defect
+      de: Defektes Glührelais oder fehlerhafter Steuerkreis
+      fr: Relais de préchauffage ou circuit de commande défectueux
+      es: Relé de precalentamiento o circuito de control defectuoso
+      it: Relè di preriscaldamento o circuito di comando guasto
+      nl: Defect voorgloeirelais of defecte stuurkring
+    - en: Poor electrical connection at the glow plug busbar
+      ro: Contact electric slab la bara de alimentare a bujiilor
+      de: Schlechter elektrischer Kontakt an der Glühkerzen-Sammelschiene
+      fr: Mauvais contact électrique sur la barre d'alimentation des bougies
+      es: Mala conexión eléctrica en la barra de alimentación de las bujías
+      it: Cattivo collegamento elettrico sulla barra delle candelette
+      nl: Slechte elektrische verbinding aan de voedingsrail van de gloeibougies
+
+  diagnostic_steps:
+    - en: Measure the resistance of each glow plug individually
+      ro: Măsurați individual rezistența fiecărei bujii incandescente
+      de: Widerstand jeder Glühkerze einzeln messen
+      fr: Mesurer individuellement la résistance de chaque bougie
+      es: Medir individualmente la resistencia de cada bujía
+      it: Misurare individualmente la resistenza di ogni candeletta
+      nl: Meet de weerstand van elke gloeibougie afzonderlijk
+    - en: Check supply voltage at the glow plug busbar during preheating
+      ro: Verificați tensiunea de alimentare la bara bujiilor în timpul preîncălzirii
+      de: Versorgungsspannung an der Glühkerzenleiste während des Vorglühens prüfen
+      fr: Contrôler la tension d'alimentation sur la barre pendant le préchauffage
+      es: Comprobar la tensión de alimentación en la barra durante el precalentamiento
+      it: Controllare la tensione di alimentazione sulla barra durante il preriscaldamento
+      nl: Controleer de voedingsspanning op de gloeibougie-rail tijdens het voorgloeien
+    - en: Inspect the glow plug relay and its control circuit
+      ro: Verificați releul bujiilor incandescente și circuitul său de comandă
+      de: Glührelais und Steuerkreis prüfen
+      fr: Contrôler le relais de préchauffage et son circuit de commande
+      es: Comprobar el relé de precalentamiento y su circuito de control
+      it: Controllare il relè di preriscaldamento e il relativo circuito di comando
+      nl: Controleer het voorgloeirelais en de stuurkring
+
+  keywords:
+    - glow plugs
+    - preheating
+    - cold start
+    - bujii incandescente
+    - preîncălzire
+    - Glühkerzen
+    - bougies de préchauffage
+    - bujías
+    - candelette
+    - gloeibougies
+
+  related_dtcs: []
+  difficulty: basic
+
+
+- id: vw_mechanical_diesel_air_in_fuel_system
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - golf
+      - jetta
+      - passat
+    generations:
+      - golf_mk1
+      - golf_mk2
+      - jetta_1
+      - jetta_2
+      - passat_b1
+      - passat_b2
+    engines:
+      - "1471_diesel"
+      - "1588_d_54"
+      - "1588_gtd_70"
+      - "1588_gtd_80"
+      - "1588_td"
+      - "1588_td_60"
+      - "1588_td_70"
+      - "1588_td_80"
+
+  category: diagnostics
+  system: fuel
+
+  title:
+    en: Air ingress into the diesel fuel system
+    ro: Pătrunderea aerului în sistemul de alimentare cu motorină
+    de: Lufteintritt in das Diesel-Kraftstoffsystem
+    fr: Entrée d'air dans le circuit de carburant diesel
+    es: Entrada de aire en el sistema de combustible diésel
+    it: Ingresso di aria nel circuito del carburante diesel
+    nl: Luchtinlaat in het dieselsysteem
+
+  symptoms:
+    - en: Extended cranking after the vehicle has been parked
+      ro: Pornire prelungită după ce vehiculul a stat parcat
+      de: Langes Anlassen nach längerer Standzeit
+      fr: Long lancement après une période de stationnement
+      es: Arranque prolongado después de estar estacionado
+      it: Avviamento prolungato dopo una sosta
+      nl: Lang starten nadat de auto heeft stilgestaan
+    - en: Transparent or visibly aerated fuel in the supply line
+      ro: Motorină cu bule de aer vizibile pe conducta de alimentare
+      de: Sichtbare Luftblasen in der Kraftstoffleitung
+      fr: Bulles d'air visibles dans la conduite de carburant
+      es: Burbujas de aire visibles en la línea de combustible
+      it: Bolle d'aria visibili nel tubo del carburante
+      nl: Zichtbare luchtbellen in de brandstofleiding
+    - en: Engine may start and then stall
+      ro: Motorul poate porni și apoi se poate opri
+      de: Der Motor kann starten und anschließend absterben
+      fr: Le moteur peut démarrer puis caler
+      es: El motor puede arrancar y después calarse
+      it: Il motore può avviarsi e poi spegnersi
+      nl: De motor kan starten en daarna afslaan
+
+  possible_causes:
+    - en: Cracked or hardened fuel hoses
+      ro: Furtunuri de motorină crăpate sau întărite
+      de: Gerissene oder verhärtete Kraftstoffschläuche
+      fr: Durites de carburant fissurées ou durcies
+      es: Manguitos de combustible agrietados o endurecidos
+      it: Tubi del carburante crepati o induriti
+      nl: Gebarsten of verharde brandstofslangen
+    - en: Leaking fuel filter seal
+      ro: Garnitură neetanșă la filtrul de motorină
+      de: Undichte Dichtung am Kraftstofffilter
+      fr: Joint non étanche du filtre à carburant
+      es: Junta del filtro de combustible con fugas
+      it: Guarnizione del filtro carburante non a tenuta
+      nl: Lekkende afdichting van het brandstoffilter
+    - en: Loose hose connections
+      ro: Racorduri sau coliere slăbite pe conductele de combustibil
+      de: Lose Schlauchverbindungen
+      fr: Raccords ou colliers de durites desserrés
+      es: Conexiones o abrazaderas de combustible flojas
+      it: Collegamenti o fascette dei tubi del carburante allentati
+      nl: Losse aansluitingen of slangklemmen
+    - en: Leakage at the injection pump shaft seal or other pump seals
+      ro: Pierderi la simeringul axului sau la alte etanșări ale pompei de injecție
+      de: Undichtigkeit an der Wellendichtung oder anderen Dichtungen der Einspritzpumpe
+      fr: Fuite au joint d'arbre ou à d'autres joints de la pompe d'injection
+      es: Fuga en el retén del eje u otras juntas de la bomba de inyección
+      it: Perdita dal paraolio dell'albero o da altre guarnizioni della pompa di iniezione
+      nl: Lekkage aan de asafdichting of andere afdichtingen van de injectiepomp
+
+  diagnostic_steps:
+    - en: Inspect the complete fuel supply line from tank to injection pump
+      ro: Verificați întreaga conductă de alimentare de la rezervor până la pompa de injecție
+      de: Die komplette Kraftstoffleitung vom Tank bis zur Einspritzpumpe prüfen
+      fr: Contrôler toute la conduite de carburant du réservoir à la pompe d'injection
+      es: Inspeccionar toda la línea de combustible desde el depósito hasta la bomba
+      it: Ispezionare l'intera linea del carburante dal serbatoio alla pompa
+      nl: Inspecteer de volledige brandstofleiding van tank tot injectiepomp
+    - en: Check the fuel filter housing and all seals
+      ro: Verificați carcasa filtrului de motorină și toate garniturile
+      de: Kraftstofffiltergehäuse und alle Dichtungen prüfen
+      fr: Contrôler le boîtier du filtre à carburant et tous les joints
+      es: Comprobar la carcasa del filtro de combustible y todas las juntas
+      it: Controllare il corpo del filtro carburante e tutte le guarnizioni
+      nl: Controleer het brandstoffilterhuis en alle afdichtingen
+    - en: Prime the system and observe whether air returns after the engine is stopped
+      ro: Amorsați sistemul și observați dacă aerul reapare după oprirea motorului
+      de: Kraftstoffsystem entlüften und prüfen, ob nach dem Abstellen erneut Luft eintritt
+      fr: Amorcer le circuit et vérifier si de l'air réapparaît après l'arrêt du moteur
+      es: Cebar el sistema y comprobar si vuelve a entrar aire después de apagar el motor
+      it: Adescare il circuito e verificare se l'aria ricompare dopo lo spegnimento
+      nl: Ontlucht het systeem en controleer of er na het uitschakelen opnieuw lucht verschijnt
+
+  keywords:
+    - air in fuel
+    - air ingress
+    - fuel leak
+    - diesel fuel system
+    - aer pe motorină
+    - prise d'air
+    - Luft im Kraftstoff
+    - aire en combustible
+    - aria nel carburante
+    - lucht in brandstof
+
+  related_dtcs: []
+  difficulty: intermediate
+
+
+- id: vw_mechanical_diesel_fuel_drainback
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - golf
+      - jetta
+      - passat
+    generations:
+      - golf_mk1
+      - golf_mk2
+      - jetta_1
+      - jetta_2
+      - passat_b1
+      - passat_b2
+    engines:
+      - "1471_diesel"
+      - "1588_d_54"
+      - "1588_gtd_70"
+      - "1588_gtd_80"
+      - "1588_td"
+      - "1588_td_60"
+      - "1588_td_70"
+      - "1588_td_80"
+
+  category: diagnostics
+  system: fuel
+
+  title:
+    en: Diesel fuel drain-back after shutdown
+    ro: Retragerea motorinei spre rezervor după oprirea motorului
+    de: Kraftstoffrücklauf nach dem Abstellen
+    fr: Retour du carburant vers le réservoir après l'arrêt
+    es: Retorno del combustible hacia el depósito después de apagar el motor
+    it: Riflusso del carburante verso il serbatoio dopo lo spegnimento
+    nl: Teruglopen van dieselbrandstof na uitschakelen
+
+  symptoms:
+    - en: Long cranking after several hours of parking
+      ro: Pornire lungă după câteva ore de staționare
+      de: Langes Anlassen nach mehreren Stunden Standzeit
+      fr: Long lancement après plusieurs heures de stationnement
+      es: Arranque prolongado después de varias horas estacionado
+      it: Avviamento prolungato dopo diverse ore di sosta
+      nl: Lang starten na enkele uren stilstand
+    - en: Engine starts more easily after manual priming
+      ro: Motorul pornește mai ușor după amorsarea manuală a sistemului
+      de: Der Motor startet nach manueller Kraftstoffvorförderung leichter
+      fr: Le moteur démarre plus facilement après amorçage manuel
+      es: El motor arranca más fácilmente después de cebar manualmente el sistema
+      it: Il motore si avvia più facilmente dopo l'adescamento manuale
+      nl: De motor start gemakkelijker na handmatig ontluchten of voorpompen
+    - en: Starting difficulty increases with longer parking periods
+      ro: Dificultatea la pornire crește odată cu durata staționării
+      de: Die Startprobleme nehmen mit längerer Standzeit zu
+      fr: La difficulté de démarrage augmente avec la durée du stationnement
+      es: La dificultad de arranque aumenta cuanto más tiempo permanece estacionado
+      it: La difficoltà di avviamento aumenta con la durata della sosta
+      nl: Het startprobleem neemt toe naarmate de auto langer stilstaat
+
+  possible_causes:
+    - en: Faulty anti-drainback valve
+      ro: Supapă anti-retur defectă
+      de: Defektes Rückschlagventil
+      fr: Clapet anti-retour défectueux
+      es: Válvula antirretorno defectuosa
+      it: Valvola di non ritorno difettosa
+      nl: Defecte terugslagklep
+    - en: Air leak on the suction side
+      ro: Pierdere de etanșeitate pe partea de aspirație
+      de: Undichtigkeit auf der Saugseite
+      fr: Prise d'air sur le côté aspiration
+      es: Entrada de aire en el lado de aspiración
+      it: Ingresso di aria sul lato aspirazione
+      nl: Luchtlekkage aan de aanzuigzijde
+    - en: Leaking fuel filter housing or connections
+      ro: Carcasă sau racorduri ale filtrului de motorină neetanșe
+      de: Undichtes Kraftstofffiltergehäuse oder undichte Anschlüsse
+      fr: Boîtier ou raccords du filtre à carburant non étanches
+      es: Carcasa o conexiones del filtro de combustible con fugas
+      it: Corpo o raccordi del filtro carburante non a tenuta
+      nl: Lekkend brandstoffilterhuis of lekkende aansluitingen
+
+  diagnostic_steps:
+    - en: Prime the fuel system before starting and compare starting time
+      ro: Amorsați sistemul de alimentare înainte de pornire și comparați timpul de pornire
+      de: Kraftstoffsystem vor dem Start vorfüllen und Startzeit vergleichen
+      fr: Amorcer le circuit avant le démarrage et comparer le temps de lancement
+      es: Cebar el sistema antes de arrancar y comparar el tiempo de arranque
+      it: Adescare il circuito prima dell'avviamento e confrontare il tempo necessario
+      nl: Ontlucht of vul het brandstofsysteem vóór het starten en vergelijk de starttijd
+    - en: Inspect the suction-side hoses and filter connections
+      ro: Verificați furtunurile de aspirație și racordurile filtrului
+      de: Saugseitige Schläuche und Filteranschlüsse prüfen
+      fr: Contrôler les durites d'aspiration et les raccords du filtre
+      es: Comprobar los manguitos de aspiración y las conexiones del filtro
+      it: Controllare i tubi di aspirazione e i raccordi del filtro
+      nl: Controleer de aanzuigslangen en filteraansluitingen
+
+  keywords:
+    - fuel drainback
+    - diesel drainback
+    - hard start
+    - anti-drainback
+    - terugloop brandstof
+    - Rücklauf
+    - retour carburant
+    - retorno combustible
+    - riflusso carburante
+
+  related_dtcs: []
+  difficulty: intermediate
+
+
+- id: vw_mechanical_diesel_low_cranking_speed
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - golf
+      - jetta
+      - passat
+    generations:
+      - golf_mk1
+      - golf_mk2
+      - jetta_1
+      - jetta_2
+      - passat_b1
+      - passat_b2
+    engines:
+      - "1471_diesel"
+      - "1588_d_54"
+      - "1588_gtd_70"
+      - "1588_gtd_80"
+      - "1588_td"
+      - "1588_td_60"
+      - "1588_td_70"
+      - "1588_td_80"
+
+  category: diagnostics
+  system: starting
+
+  title:
+    en: Low cranking speed causing diesel starting problems
+    ro: Turație redusă la pornire care provoacă probleme de pornire la diesel
+    de: Zu niedrige Anlassdrehzahl verursacht Startprobleme beim Diesel
+    fr: Vitesse de lancement insuffisante provoquant des difficultés de démarrage diesel
+    es: Velocidad de arranque insuficiente que provoca problemas de arranque del diésel
+    it: Regime di avviamento insufficiente che provoca problemi di avviamento del diesel
+    nl: Te lage startsnelheid veroorzaakt startproblemen bij diesel
+
+  symptoms:
+    - en: Starter turns the engine slowly
+      ro: Electromotorul învârte motorul lent
+      de: Der Anlasser dreht den Motor langsam durch
+      fr: Le démarreur entraîne lentement le moteur
+      es: El motor de arranque gira el motor lentamente
+      it: Il motorino di avviamento fa girare lentamente il motore
+      nl: De startmotor draait de motor langzaam rond
+    - en: Starting improves with a fully charged battery
+      ro: Pornirea se îmbunătățește cu o baterie complet încărcată
+      de: Der Start verbessert sich mit einer vollständig geladenen Batterie
+      fr: Le démarrage s'améliore avec une batterie complètement chargée
+      es: El arranque mejora con una batería completamente cargada
+      it: L'avviamento migliora con una batteria completamente carica
+      nl: Het starten verbetert met een volledig geladen accu
+
+  possible_causes:
+    - en: Weak or discharged battery
+      ro: Baterie slabă sau descărcată
+      de: Schwache oder entladene Batterie
+      fr: Batterie faible ou déchargée
+      es: Batería débil o descargada
+      it: Batteria debole o scarica
+      nl: Zwakke of ontladen accu
+    - en: High resistance in battery or starter cables
+      ro: Rezistență mare în cablurile bateriei sau electromotorului
+      de: Hoher Widerstand in Batterie- oder Anlasserkabeln
+      fr: Résistance élevée dans les câbles de batterie ou de démarreur
+      es: Resistencia elevada en los cables de batería o del motor de arranque
+      it: Elevata resistenza nei cavi della batteria o del motorino di avviamento
+      nl: Hoge weerstand in accu- of startmotorkabels
+    - en: Worn starter motor
+      ro: Electromotor de pornire uzat
+      de: Verschlissener Anlasser
+      fr: Démarreur usé
+      es: Motor de arranque desgastado
+      it: Motorino di avviamento usurato
+      nl: Versleten startmotor
+
+  diagnostic_steps:
+    - en: Measure battery voltage before and during cranking
+      ro: Măsurați tensiunea bateriei înainte și în timpul pornirii
+      de: Batteriespannung vor und während des Anlassens messen
+      fr: Mesurer la tension de batterie avant et pendant le lancement
+      es: Medir la tensión de la batería antes y durante el arranque
+      it: Misurare la tensione della batteria prima e durante l'avviamento
+      nl: Meet de accuspanning vóór en tijdens het starten
+    - en: Perform voltage-drop tests on the positive and ground circuits
+      ro: Efectuați teste de cădere de tensiune pe circuitele pozitiv și de masă
+      de: Spannungsabfall an Plus- und Massekreis prüfen
+      fr: Effectuer des tests de chute de tension sur les circuits positif et de masse
+      es: Realizar pruebas de caída de tensión en los circuitos positivo y de masa
+      it: Eseguire test di caduta di tensione sui circuiti positivo e massa
+      nl: Voer spanningsvaltests uit op de plus- en massakringen
+    - en: Test starter current draw and mechanical condition
+      ro: Verificați consumul de curent și starea mecanică a electromotorului
+      de: Stromaufnahme und mechanischen Zustand des Anlassers prüfen
+      fr: Contrôler la consommation du démarreur et son état mécanique
+      es: Comprobar el consumo de corriente y el estado mecánico del motor de arranque
+      it: Controllare l'assorbimento e lo stato meccanico del motorino di avviamento
+      nl: Controleer het stroomverbruik en de mechanische toestand van de startmotor
+
+  keywords:
+    - low cranking speed
+    - starter
+    - battery
+    - diesel starting
+    - turație pornire
+    - Anlassdrehzahl
+    - vitesse de lancement
+    - velocidad de arranque
+    - regime avviamento
+    - startsnelheid
+
+  related_dtcs: []
+  difficulty: basic
+
+
+- id: vw_mechanical_diesel_injection_timing_incorrect
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - golf
+      - jetta
+      - passat
+    generations:
+      - golf_mk1
+      - golf_mk2
+      - jetta_1
+      - jetta_2
+      - passat_b1
+      - passat_b2
+    engines:
+      - "1471_diesel"
+      - "1588_d_54"
+      - "1588_gtd_70"
+      - "1588_gtd_80"
+      - "1588_td"
+      - "1588_td_60"
+      - "1588_td_70"
+      - "1588_td_80"
+
+  category: diagnostics
+  system: fuel_injection
+
+  title:
+    en: Incorrect mechanical diesel injection timing
+    ro: Avans incorect al injecției la motorul diesel mecanic
+    de: Falscher Einspritzzeitpunkt beim mechanischen Dieselmotor
+    fr: Calage incorrect de l'injection sur moteur diesel mécanique
+    es: Reglaje incorrecto del avance de inyección en motor diésel mecánico
+    it: Fasatura errata dell'iniezione su motore diesel meccanico
+    nl: Verkeerd inspuittijdstip bij mechanische dieselmotor
+
+  symptoms:
+    - en: Difficult starting
+      ro: Pornire dificilă
+      de: Erschwertes Starten
+      fr: Démarrage difficile
+      es: Arranque difícil
+      it: Avviamento difficoltoso
+      nl: Moeilijk starten
+    - en: Poor engine response or reduced power
+      ro: Răspuns slab al motorului sau putere redusă
+      de: Schlechte Gasannahme oder verringerte Leistung
+      fr: Mauvaise réponse moteur ou puissance réduite
+      es: Mala respuesta del motor o potencia reducida
+      it: Scarsa risposta del motore o potenza ridotta
+      nl: Slechte gasrespons of verminderd vermogen
+    - en: Excessive smoke
+      ro: Fum excesiv
+      de: Übermäßige Rauchentwicklung
+      fr: Fumée excessive
+      es: Exceso de humo
+      it: Eccessiva fumosità
+      nl: Overmatige rookontwikkeling
+    - en: Rough or noisy combustion
+      ro: Ardere neregulată sau zgomotoasă
+      de: Unruhige oder harte Verbrennung
+      fr: Combustion irrégulière ou bruyante
+      es: Combustión irregular o ruidosa
+      it: Combustione irregolare o rumorosa
+      nl: Onregelmatige of harde verbranding
+
+  possible_causes:
+    - en: Injection pump timing incorrectly adjusted
+      ro: Pompa de injecție reglată incorect
+      de: Einspritzpumpe falsch eingestellt
+      fr: Pompe d'injection mal calée
+      es: Bomba de inyección mal ajustada
+      it: Pompa di iniezione regolata in modo errato
+      nl: Injectiepomp verkeerd afgesteld
+    - en: Timing changed after timing-belt or pump removal
+      ro: Reglajul s-a modificat după demontarea curelei sau pompei de injecție
+      de: Verstellter Zeitpunkt nach Demontage von Zahnriemen oder Einspritzpumpe
+      fr: Calage modifié après dépose de la courroie ou de la pompe
+      es: Reglaje alterado después de desmontar la correa o la bomba
+      it: Fasatura modificata dopo la rimozione della cinghia o della pompa
+      nl: Timing gewijzigd na demontage van distributieriem of pomp
+    - en: Incorrect timing-belt installation
+      ro: Montarea incorectă a distribuției
+      de: Falsch montierter Zahnriemen
+      fr: Courroie de distribution mal montée
+      es: Correa de distribución montada incorrectamente
+      it: Cinghia di distribuzione montata in modo errato
+      nl: Distributieriem verkeerd gemonteerd
+
+  diagnostic_steps:
+    - en: Verify crankshaft and camshaft timing marks
+      ro: Verificați semnele de calare ale arborelui cotit și arborelui cu came
+      de: Kurbelwellen- und Nockenwellenmarkierungen prüfen
+      fr: Vérifier les repères de calage du vilebrequin et de l'arbre à cames
+      es: Comprobar las marcas de distribución del cigüeñal y árbol de levas
+      it: Verificare i riferimenti di fasatura dell'albero motore e dell'albero a camme
+      nl: Controleer de distributiemarkeringen van krukas en nokkenas
+    - en: Verify injection pump timing using the specified mechanical procedure
+      ro: Verificați avansul pompei de injecție folosind procedura mecanică specificată
+      de: Einspritzpumpenzeitpunkt mit dem vorgeschriebenen mechanischen Verfahren prüfen
+      fr: Vérifier le calage de la pompe avec la procédure mécanique spécifiée
+      es: Verificar el avance de la bomba mediante el procedimiento mecánico especificado
+      it: Verificare la fasatura della pompa mediante la procedura meccanica prevista
+      nl: Controleer de timing van de injectiepomp volgens de voorgeschreven mechanische procedure
+    - en: Inspect for signs of previous pump or timing-belt adjustment
+      ro: Căutați urme ale unor reglaje anterioare ale pompei sau distribuției
+      de: Auf Spuren früherer Einstellungen an Pumpe oder Zahnriemen prüfen
+      fr: Rechercher des traces de réglages antérieurs de la pompe ou de la distribution
+      es: Buscar signos de ajustes anteriores de la bomba o distribución
+      it: Cercare segni di precedenti regolazioni della pompa o della distribuzione
+      nl: Controleer op sporen van eerdere afstelling van pomp of distributie
+
+  keywords:
+    - injection timing
+    - injection pump
+    - diesel timing
+    - injection advance
+    - avans injecție
+    - Einspritzzeitpunkt
+    - calage injection
+    - avance inyección
+    - fasatura iniezione
+    - inspuittiming
+
+  related_dtcs: []
+  difficulty: advanced
+
+
+- id: vw_mechanical_diesel_low_compression
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - golf
+      - jetta
+      - passat
+    generations:
+      - golf_mk1
+      - golf_mk2
+      - jetta_1
+      - jetta_2
+      - passat_b1
+      - passat_b2
+    engines:
+      - "1471_diesel"
+      - "1588_d_54"
+      - "1588_gtd_70"
+      - "1588_gtd_80"
+      - "1588_td"
+      - "1588_td_60"
+      - "1588_td_70"
+      - "1588_td_80"
+
+  category: diagnostics
+  system: engine
+
+  title:
+    en: Low compression in mechanical diesel engine
+    ro: Compresie scăzută la motorul diesel cu injecție mecanică
+    de: Niedrige Kompression bei einem mechanischen Dieselmotor
+    fr: Compression insuffisante sur moteur diesel à injection mécanique
+    es: Compresión baja en un motor diésel con inyección mecánica
+    it: Compressione bassa su motore diesel a iniezione meccanica
+    nl: Lage compressie bij een dieselmotor met mechanische inspuiting
+
+  symptoms:
+    - en: Difficult starting, especially when cold
+      ro: Pornire dificilă, în special la rece
+      de: Schwieriger Start, besonders bei kaltem Motor
+      fr: Démarrage difficile, surtout à froid
+      es: Arranque difícil, especialmente en frío
+      it: Avviamento difficoltoso, soprattutto a freddo
+      nl: Moeilijk starten, vooral bij koude motor
+    - en: Uneven idle after starting
+      ro: Ralanti neregulat după pornire
+      de: Unruhiger Leerlauf nach dem Start
+      fr: Ralenti irrégulier après le démarrage
+      es: Ralentí irregular después del arranque
+      it: Minimo irregolare dopo l'avviamento
+      nl: Onregelmatig stationair draaien na het starten
+    - en: Increased smoke during starting
+      ro: Fum crescut în timpul pornirii
+      de: Erhöhte Rauchentwicklung beim Start
+      fr: Fumée accrue au démarrage
+      es: Aumento del humo durante el arranque
+      it: Aumento della fumosità durante l'avviamento
+      nl: Meer rook tijdens het starten
+
+  possible_causes:
+    - en: Worn piston rings
+      ro: Segmenți de piston uzați
+      de: Verschlissene Kolbenringe
+      fr: Segments de piston usés
+      es: Segmentos de pistón desgastados
+      it: Fasce elastiche usurate
+      nl: Versleten zuigerveren
+    - en: Worn cylinder bores
+      ro: Uzură a cilindrilor
+      de: Verschleiß der Zylinderlaufbahnen
+      fr: Usure des cylindres
+      es: Desgaste de los cilindros
+      it: Usura delle canne cilindri
+      nl: Versleten cilinderwanden
+    - en: Valve sealing problems
+      ro: Probleme de etanșare ale supapelor
+      de: Probleme mit der Ventilabdichtung
+      fr: Problèmes d'étanchéité des soupapes
+      es: Problemas de estanqueidad de las válvulas
+      it: Problemi di tenuta delle valvole
+      nl: Problemen met klepafdichting
+    - en: Excessive cylinder-head sealing leakage
+      ro: Pierderi excesive de etanșare la chiulasă
+      de: Übermäßige Undichtigkeit der Zylinderkopfdichtung
+      fr: Fuite excessive au niveau du joint de culasse
+      es: Fugas excesivas en la junta de culata
+      it: Perdite eccessive dalla guarnizione della testata
+      nl: Overmatige lekkage langs de koppakking
+
+  diagnostic_steps:
+    - en: Perform a compression test on all cylinders
+      ro: Efectuați un test de compresie pe toți cilindrii
+      de: Kompressionsprüfung an allen Zylindern durchführen
+      fr: Effectuer un test de compression sur tous les cylindres
+      es: Realizar una prueba de compresión en todos los cilindros
+      it: Eseguire una prova di compressione su tutti i cilindri
+      nl: Voer een compressietest uit op alle cilinders
+    - en: Compare cylinder readings rather than evaluating one value alone
+      ro: Comparați valorile cilindrilor, nu evaluați o singură valoare izolată
+      de: Zylinderwerte miteinander vergleichen und nicht nur einen Einzelwert bewerten
+      fr: Comparer les valeurs des cylindres plutôt que d'évaluer une seule valeur
+      es: Comparar los valores de los cilindros en lugar de evaluar un único valor
+      it: Confrontare i valori dei cilindri invece di valutare un singolo valore
+      nl: Vergelijk de cilinderwaarden in plaats van één waarde afzonderlijk te beoordelen
+    - en: If necessary, perform a leak-down or additional mechanical inspection
+      ro: Dacă este necesar, efectuați un test de pierderi sau o inspecție mecanică suplimentară
+      de: Bei Bedarf Druckverlustprüfung oder weitere mechanische Prüfung durchführen
+      fr: Si nécessaire, effectuer un test d'étanchéité ou une inspection mécanique complémentaire
+      es: Si es necesario, realizar una prueba de fugas o una inspección mecánica adicional
+      it: Se necessario, eseguire un test di tenuta o un'ulteriore ispezione meccanica
+      nl: Voer indien nodig een lektest of aanvullende mechanische inspectie uit
+
+  keywords:
+    - low compression
+    - compression test
+    - piston rings
+    - valves
+    - compresie
+    - Kompression
+    - compression moteur
+    - compresión
+    - compressione
+    - compressie
+
+  related_dtcs: []
+  difficulty: advanced
+
+
+- id: vw_mechanical_diesel_starts_then_stalls
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - golf
+      - jetta
+      - passat
+    generations:
+      - golf_mk1
+      - golf_mk2
+      - jetta_1
+      - jetta_2
+      - passat_b1
+      - passat_b2
+    engines:
+      - "1471_diesel"
+      - "1588_d_54"
+      - "1588_gtd_70"
+      - "1588_gtd_80"
+      - "1588_td"
+      - "1588_td_60"
+      - "1588_td_70"
+      - "1588_td_80"
+
+  category: diagnostics
+  system: fuel
+
+  title:
+    en: Mechanical diesel engine starts and then stalls
+    ro: Motorul diesel cu injecție mecanică pornește și apoi se oprește
+    de: Mechanischer Dieselmotor startet und geht anschließend aus
+    fr: Le moteur diesel à injection mécanique démarre puis cale
+    es: El motor diésel con inyección mecánica arranca y después se cala
+    it: Il motore diesel a iniezione meccanica si avvia e poi si spegne
+    nl: Diesel met mechanische inspuiting start en slaat daarna af
+
+  symptoms:
+    - en: Engine starts normally but stops after a few seconds
+      ro: Motorul pornește normal, dar se oprește după câteva secunde
+      de: Der Motor startet normal, geht aber nach einigen Sekunden aus
+      fr: Le moteur démarre normalement mais cale après quelques secondes
+      es: El motor arranca normalmente pero se cala después de unos segundos
+      it: Il motore si avvia normalmente ma si spegne dopo pochi secondi
+      nl: De motor start normaal maar slaat na enkele seconden af
+    - en: Engine may restart after repeated priming
+      ro: Motorul poate reporni după amorsarea repetată a sistemului
+      de: Der Motor kann nach erneutem Vorpumpen wieder starten
+      fr: Le moteur peut redémarrer après un nouvel amorçage
+      es: El motor puede volver a arrancar después de cebar nuevamente el sistema
+      it: Il motore può ripartire dopo un nuovo adescamento
+      nl: De motor kan opnieuw starten na opnieuw voorpompen
+
+  possible_causes:
+    - en: Air entering the fuel supply
+      ro: Aer care pătrunde în circuitul de alimentare
+      de: Lufteintritt in die Kraftstoffversorgung
+      fr: Entrée d'air dans l'alimentation en carburant
+      es: Entrada de aire en la alimentación de combustible
+      it: Ingresso di aria nell'alimentazione del carburante
+      nl: Luchtinlaat in de brandstoftoevoer
+    - en: Restricted fuel filter
+      ro: Filtru de motorină colmatat
+      de: Verstopfter Kraftstofffilter
+      fr: Filtre à carburant colmaté
+      es: Filtro de combustible obstruido
+      it: Filtro carburante ostruito
+      nl: Verstopt brandstoffilter
+    - en: Fuel supply restriction between tank and pump
+      ro: Restricție pe alimentarea dintre rezervor și pompă
+      de: Einschränkung der Kraftstoffversorgung zwischen Tank und Pumpe
+      fr: Restriction de l'alimentation entre le réservoir et la pompe
+      es: Restricción del suministro entre el depósito y la bomba
+      it: Restrizione dell'alimentazione tra serbatoio e pompa
+      nl: Beperking in de brandstoftoevoer tussen tank en pomp
+    - en: Fault inside the mechanical injection pump
+      ro: Defecțiune internă a pompei de injecție mecanice
+      de: Interner Fehler der mechanischen Einspritzpumpe
+      fr: Défaut interne de la pompe d'injection mécanique
+      es: Fallo interno de la bomba de inyección mecánica
+      it: Guasto interno alla pompa di iniezione meccanica
+      nl: Interne storing van de mechanische injectiepomp
+
+  diagnostic_steps:
+    - en: Prime the fuel system and observe whether the engine remains running
+      ro: Amorsați sistemul de alimentare și observați dacă motorul rămâne pornit
+      de: Kraftstoffsystem vorfüllen und prüfen, ob der Motor weiterläuft
+      fr: Amorcer le circuit et vérifier si le moteur reste en marche
+      es: Cebar el sistema y comprobar si el motor permanece en marcha
+      it: Adescare il circuito e verificare se il motore rimane acceso
+      nl: Ontlucht of vul het systeem voor en controleer of de motor blijft draaien
+    - en: Check the fuel filter and supply line for restrictions
+      ro: Verificați filtrul și conducta de alimentare pentru restricții
+      de: Kraftstofffilter und Zuleitung auf Einschränkungen prüfen
+      fr: Contrôler le filtre et la conduite d'alimentation pour détecter une restriction
+      es: Comprobar el filtro y la línea de alimentación en busca de restricciones
+      it: Controllare il filtro e la linea di alimentazione per eventuali restrizioni
+      nl: Controleer filter en toevoerleiding op beperkingen
+    - en: Inspect the fuel system for air ingress
+      ro: Verificați sistemul pentru pătrunderea aerului
+      de: Kraftstoffsystem auf Lufteintritt prüfen
+      fr: Contrôler le circuit de carburant pour détecter une prise d'air
+      es: Inspeccionar el sistema para detectar entrada de aire
+      it: Ispezionare il circuito per eventuali ingressi d'aria
+      nl: Controleer het brandstofsysteem op luchtinlaat
+
+  keywords:
+    - starts then stalls
+    - diesel stall
+    - fuel restriction
+    - air in fuel
+    - pornește și se oprește
+    - Motor geht aus
+    - démarre puis cale
+    - arranca y se cala
+    - si avvia e si spegne
+    - start en slaat af
+
+  related_dtcs: []
+  difficulty: intermediate
