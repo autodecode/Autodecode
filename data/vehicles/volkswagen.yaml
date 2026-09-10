@@ -6,6 +6,491 @@ manufacturer:
 
 models:
 
+  - id: transporter
+    name: Transporter
+    generations:
+
+      - id: transporter_t1
+        name: T1
+        production:
+          from: 1950
+          to: 1967
+        engines:
+
+          - id: "1192_25"
+            name: 1.2
+            fuel: petrol
+            displacement_cc: 1192
+            power_kw: 18
+            power_hp: 25
+            engine_codes: []
+
+          - id: "1192_30"
+            name: 1.2
+            fuel: petrol
+            displacement_cc: 1192
+            power_kw: 22
+            power_hp: 30
+            engine_codes: []
+
+          - id: "1493_42"
+            name: 1.5
+            fuel: petrol
+            displacement_cc: 1493
+            power_kw: 31
+            power_hp: 42
+            engine_codes: []
+
+          - id: "1493_44"
+            name: 1.5
+            fuel: petrol
+            displacement_cc: 1493
+            power_kw: 32
+            power_hp: 44
+            engine_codes: []
+
+      - id: transporter_t2
+        name: T2
+        production:
+          from: 1967
+          to: 1979
+        engines:
+
+          - id: "1584_47"
+            name: 1.6
+            fuel: petrol
+            displacement_cc: 1584
+            power_kw: 35
+            power_hp: 47
+            engine_codes: []
+
+          - id: "1679_50"
+            name: 1.7
+            fuel: petrol
+            displacement_cc: 1679
+            power_kw: 37
+            power_hp: 50
+            engine_codes: []
+
+          - id: "1970_67"
+            name: 2.0
+            fuel: petrol
+            displacement_cc: 1970
+            power_kw: 49
+            power_hp: 67
+            engine_codes: []
+
+          - id: "1970_70"
+            name: 2.0
+            fuel: petrol
+            displacement_cc: 1970
+            power_kw: 51
+            power_hp: 70
+            engine_codes: []
+
+      - id: transporter_t3
+        name: T3
+        production:
+          from: 1979
+          to: 1992
+        engines:
+
+          - id: "1584_50"
+            name: 1.6
+            fuel: petrol
+            displacement_cc: 1584
+            power_kw: 37
+            power_hp: 50
+            engine_codes: []
+
+          - id: "1913_60"
+            name: 1.9
+            fuel: petrol
+            displacement_cc: 1913
+            power_kw: 44
+            power_hp: 60
+            engine_codes: []
+
+          - id: "1913_78"
+            name: 1.9
+            fuel: petrol
+            displacement_cc: 1913
+            power_kw: 57
+            power_hp: 78
+            engine_codes: []
+
+          - id: "1913_90"
+            name: 1.9
+            fuel: petrol
+            displacement_cc: 1913
+            power_kw: 66
+            power_hp: 90
+            engine_codes: []
+
+          - id: "2109_95"
+            name: 2.1
+            fuel: petrol
+            displacement_cc: 2109
+            power_kw: 70
+            power_hp: 95
+            engine_codes: []
+
+          - id: "2109_112"
+            name: 2.1
+            fuel: petrol
+            displacement_cc: 2109
+            power_kw: 82
+            power_hp: 112
+            engine_codes: []
+
+          - id: "1600_diesel"
+            name: 1.6 D
+            fuel: diesel
+            displacement_cc: 1588
+            power_kw: 37
+            power_hp: 50
+            engine_codes: []
+
+          - id: "1600_td"
+            name: 1.6 TD
+            fuel: diesel
+            displacement_cc: 1588
+            power_kw: 51
+            power_hp: 70
+            engine_codes: []
+
+      - id: transporter_t4
+        name: T4
+        production:
+          from: 1990
+          to: 2003
+        engines:
+
+          - id: "1968_60"
+            name: 2.0
+            fuel: petrol
+            displacement_cc: 1968
+            power_kw: 44
+            power_hp: 60
+            engine_codes: []
+
+          - id: "1968_62"
+            name: 2.0
+            fuel: petrol
+            displacement_cc: 1968
+            power_kw: 46
+            power_hp: 62
+            engine_codes: []
+
+          - id: "1968_84"
+            name: 2.0
+            fuel: petrol
+            displacement_cc: 1968
+            power_kw: 62
+            power_hp: 84
+            engine_codes: []
+
+          - id: "2370_110"
+            name: 2.4
+            fuel: petrol
+            displacement_cc: 2370
+            power_kw: 81
+            power_hp: 110
+            engine_codes: []
+
+          - id: "2792_vr6_140"
+            name: 2.8 VR6
+            fuel: petrol
+            displacement_cc: 2792
+            power_kw: 103
+            power_hp: 140
+            engine_codes: []
+
+          - id: "2792_vr6_174"
+            name: 2.8 VR6
+            fuel: petrol
+            displacement_cc: 2792
+            power_kw: 128
+            power_hp: 174
+            engine_codes: []
+
+          - id: "1900_d"
+            name: 1.9 D
+            fuel: diesel
+            displacement_cc: 1896
+            power_kw: 44
+            power_hp: 60
+            engine_codes: []
+
+          - id: "1900_td"
+            name: 1.9 TD
+            fuel: diesel
+            displacement_cc: 1896
+            power_kw: 50
+            power_hp: 68
+            engine_codes: []
+
+          - id: "2400_d"
+            name: 2.4 D
+            fuel: diesel
+            displacement_cc: 2370
+            power_kw: 55
+            power_hp: 75
+            engine_codes: []
+
+          - id: "2400_d_78"
+            name: 2.4 D
+            fuel: diesel
+            displacement_cc: 2370
+            power_kw: 57
+            power_hp: 78
+            engine_codes: []
+
+          - id: "2400_td"
+            name: 2.4 TD
+            fuel: diesel
+            displacement_cc: 2370
+            power_kw: 75
+            power_hp: 102
+            engine_codes: []
+
+          - id: "2500_tdi_88"
+            name: 2.5 TDI
+            fuel: diesel
+            displacement_cc: 2461
+            power_kw: 65
+            power_hp: 88
+            engine_codes: []
+
+          - id: "2500_tdi_102"
+            name: 2.5 TDI
+            fuel: diesel
+            displacement_cc: 2461
+            power_kw: 75
+            power_hp: 102
+            engine_codes: []
+
+          - id: "2500_tdi_150"
+            name: 2.5 TDI
+            fuel: diesel
+            displacement_cc: 2461
+            power_kw: 111
+            power_hp: 150
+            engine_codes: []
+
+      - id: transporter_t5
+        name: T5
+        production:
+          from: 2003
+          to: 2015
+        engines:
+
+          - id: "1984_115"
+            name: 2.0
+            fuel: petrol
+            displacement_cc: 1984
+            power_kw: 85
+            power_hp: 115
+            engine_codes: []
+
+          - id: "1984_turbo_150"
+            name: 2.0 TSI
+            fuel: petrol
+            displacement_cc: 1984
+            power_kw: 110
+            power_hp: 150
+            engine_codes: []
+
+          - id: "1984_turbo_204"
+            name: 2.0 TSI
+            fuel: petrol
+            displacement_cc: 1984
+            power_kw: 150
+            power_hp: 204
+            engine_codes: []
+
+          - id: "1984_cng"
+            name: 2.0 EcoFuel
+            fuel: cng
+            displacement_cc: 1984
+            power_kw: 85
+            power_hp: 115
+            engine_codes: []
+
+          - id: "1896_tdi_84"
+            name: 1.9 TDI
+            fuel: diesel
+            displacement_cc: 1896
+            power_kw: 62
+            power_hp: 84
+            engine_codes: []
+
+          - id: "1896_tdi_102"
+            name: 1.9 TDI
+            fuel: diesel
+            displacement_cc: 1896
+            power_kw: 75
+            power_hp: 102
+            engine_codes: []
+
+          - id: "1896_tdi_105"
+            name: 1.9 TDI
+            fuel: diesel
+            displacement_cc: 1896
+            power_kw: 77
+            power_hp: 105
+            engine_codes: []
+
+          - id: "1896_tdi_130"
+            name: 1.9 TDI
+            fuel: diesel
+            displacement_cc: 1896
+            power_kw: 96
+            power_hp: 130
+            engine_codes: []
+
+          - id: "1896_tdi_150"
+            name: 1.9 TDI
+            fuel: diesel
+            displacement_cc: 1896
+            power_kw: 110
+            power_hp: 150
+            engine_codes: []
+
+          - id: "2499_tdi_102"
+            name: 2.5 TDI
+            fuel: diesel
+            displacement_cc: 2461
+            power_kw: 75
+            power_hp: 102
+            engine_codes: []
+
+          - id: "2499_tdi_130"
+            name: 2.5 TDI
+            fuel: diesel
+            displacement_cc: 2461
+            power_kw: 96
+            power_hp: 130
+            engine_codes: []
+
+          - id: "2499_tdi_174"
+            name: 2.5 TDI
+            fuel: diesel
+            displacement_cc: 2461
+            power_kw: 128
+            power_hp: 174
+            engine_codes: []
+
+      - id: transporter_t6
+        name: T6
+        production:
+          from: 2015
+          to: 2019
+        engines:
+
+          - id: "1984_tsi_150"
+            name: 2.0 TSI
+            fuel: petrol
+            displacement_cc: 1984
+            power_kw: 110
+            power_hp: 150
+            engine_codes: []
+
+          - id: "1984_tsi_204"
+            name: 2.0 TSI
+            fuel: petrol
+            displacement_cc: 1984
+            power_kw: 150
+            power_hp: 204
+            engine_codes: []
+
+          - id: "1968_tdi_84"
+            name: 2.0 TDI
+            fuel: diesel
+            displacement_cc: 1968
+            power_kw: 62
+            power_hp: 84
+            engine_codes: []
+
+          - id: "1968_tdi_102"
+            name: 2.0 TDI
+            fuel: diesel
+            displacement_cc: 1968
+            power_kw: 75
+            power_hp: 102
+            engine_codes: []
+
+          - id: "1968_tdi_110"
+            name: 2.0 TDI
+            fuel: diesel
+            displacement_cc: 1968
+            power_kw: 81
+            power_hp: 110
+            engine_codes: []
+
+          - id: "1968_tdi_150"
+            name: 2.0 TDI
+            fuel: diesel
+            displacement_cc: 1968
+            power_kw: 110
+            power_hp: 150
+            engine_codes: []
+
+          - id: "1968_biturbo_180"
+            name: 2.0 BiTDI
+            fuel: diesel
+            displacement_cc: 1968
+            power_kw: 132
+            power_hp: 180
+            engine_codes: []
+
+      - id: transporter_t6_1
+        name: T6.1
+        production:
+          from: 2019
+          to: 2024
+        engines:
+
+          - id: "1984_tsi_150"
+            name: 2.0 TSI
+            fuel: petrol
+            displacement_cc: 1984
+            power_kw: 110
+            power_hp: 150
+            engine_codes: []
+
+          - id: "1968_tdi_90"
+            name: 2.0 TDI
+            fuel: diesel
+            displacement_cc: 1968
+            power_kw: 66
+            power_hp: 90
+            engine_codes: []
+
+          - id: "1968_tdi_110"
+            name: 2.0 TDI
+            fuel: diesel
+            displacement_cc: 1968
+            power_kw: 81
+            power_hp: 110
+            engine_codes: []
+
+          - id: "1968_tdi_150"
+            name: 2.0 TDI
+            fuel: diesel
+            displacement_cc: 1968
+            power_kw: 110
+            power_hp: 150
+            engine_codes: []
+
+          - id: "1968_biturbo_199"
+            name: 2.0 BiTDI
+            fuel: diesel
+            displacement_cc: 1968
+            power_kw: 146
+            power_hp: 199
+            engine_codes: []
+
   - id: caddy
     name: Caddy
     generations:
