@@ -6,6 +6,998 @@ manufacturer:
 
 technical_data:
 
+- id: vw_classic_petrol_incorrect_valve_timing
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_type_1
+      - volkswagen_type_2
+      - volkswagen_type_3
+      - volkswagen_karmann_ghia
+      - volkswagen_type_4
+      - volkswagen_k70
+      - volkswagen_passat
+      - volkswagen_golf
+      - volkswagen_polo
+      - volkswagen_scirocco
+      - volkswagen_jetta
+      - volkswagen_santana
+    generations:
+      - volkswagen_type_1
+      - volkswagen_type_2_t1
+      - volkswagen_type_2_t2
+      - volkswagen_type_3
+      - volkswagen_karmann_ghia_type_14
+      - volkswagen_karmann_ghia_type_34
+      - volkswagen_type_4_411
+      - volkswagen_type_4_412
+      - volkswagen_k70
+      - volkswagen_passat_b1
+      - volkswagen_passat_b2
+      - volkswagen_golf_mk1
+      - volkswagen_golf_mk2
+      - volkswagen_polo_mk1
+      - volkswagen_polo_mk2
+      - volkswagen_scirocco_mk1
+      - volkswagen_scirocco_mk2
+      - volkswagen_jetta_mk1
+      - volkswagen_jetta_mk2
+      - volkswagen_santana_b2
+    engines: []
+  category: diagnostics
+  system: engine
+  title:
+    en: Incorrect valve timing
+    ro: Distribuție incorect sincronizată
+    de: Falsche Steuerzeiten
+    fr: Calage incorrect de la distribution
+    es: Distribución incorrectamente sincronizada
+    it: Fasatura della distribuzione errata
+    nl: Onjuiste kleptiming
+  symptoms:
+    - en: Difficult starting
+      ro: Pornire dificilă
+      de: Schwieriger Start
+      fr: Démarrage difficile
+      es: Arranque difícil
+      it: Avviamento difficile
+      nl: Moeilijk starten
+    - en: Loss of engine power
+      ro: Pierdere de putere a motorului
+      de: Leistungsverlust des Motors
+      fr: Perte de puissance du moteur
+      es: Pérdida de potencia del motor
+      it: Perdita di potenza del motore
+      nl: Vermogensverlies van de motor
+    - en: Poor idle quality
+      ro: Ralanti instabil sau neregulat
+      de: Unruhiger oder instabiler Leerlauf
+      fr: Ralenti irrégulier ou instable
+      es: Ralentí irregular o inestable
+      it: Minimo irregolare o instabile
+      nl: Onstabiel of onregelmatig stationair toerental
+  possible_causes:
+    - en: Incorrectly installed timing belt or chain
+      ro: Curea sau lanț de distribuție montat incorect
+      de: Falsch montierter Zahnriemen oder Steuerkette
+      fr: Courroie ou chaîne de distribution mal montée
+      es: Correa o cadena de distribución montada incorrectamente
+      it: Cinghia o catena di distribuzione montata in modo errato
+      nl: Verkeerd gemonteerde distributieriem of ketting
+    - en: Timing mechanism displaced after mechanical failure
+      ro: Mecanism de distribuție deplasat după o defecțiune mecanică
+      de: Verstellte Steuerung nach einem mechanischen Defekt
+      fr: Distribution décalée après une défaillance mécanique
+      es: Distribución desplazada tras una avería mecánica
+      it: Distribuzione fuori fase dopo un guasto meccanico
+      nl: Versprongen distributie na een mechanisch defect
+    - en: Incorrect camshaft installation
+      ro: Arbore cu came montat incorect
+      de: Falsch montierte Nockenwelle
+      fr: Arbre à cames mal monté
+      es: Árbol de levas montado incorrectamente
+      it: Albero a camme montato in modo errato
+      nl: Verkeerd gemonteerde nokkenas
+  diagnostic_steps:
+    - en: Set the engine to the specified reference position
+      ro: Adu motorul în poziția de referință specificată
+      de: Motor auf die vorgeschriebene Referenzposition stellen
+      fr: Placer le moteur sur la position de référence prescrite
+      es: Colocar el motor en la posición de referencia especificada
+      it: Portare il motore nella posizione di riferimento prescritta
+      nl: Zet de motor op de voorgeschreven referentiepositie
+    - en: Check crankshaft and camshaft timing marks
+      ro: Verifică reperele arborelui cotit și arborelui cu came
+      de: Markierungen von Kurbelwelle und Nockenwelle prüfen
+      fr: Vérifier les repères du vilebrequin et de l'arbre à cames
+      es: Comprobar las marcas del cigüeñal y del árbol de levas
+      it: Controllare i riferimenti di albero motore e albero a camme
+      nl: Controleer de merktekens van krukas en nokkenas
+    - en: Inspect the timing drive for excessive play or damage
+      ro: Inspectează mecanismul distribuției pentru joc excesiv sau deteriorări
+      de: Steuertrieb auf übermäßiges Spiel oder Schäden prüfen
+      fr: Inspecter la distribution pour un jeu excessif ou des dommages
+      es: Inspeccionar la distribución por holgura excesiva o daños
+      it: Controllare la distribuzione per gioco eccessivo o danni
+      nl: Controleer de distributie op overmatige speling of schade
+  keywords:
+    - valve timing
+    - camshaft timing
+    - timing marks
+    - incorrect timing
+    - distribuție
+    - steuerzeiten
+  related_dtcs: []
+  difficulty: intermediate
+
+- id: vw_classic_petrol_timing_drive_jump
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_type_1
+      - volkswagen_type_2
+      - volkswagen_type_3
+      - volkswagen_karmann_ghia
+      - volkswagen_type_4
+      - volkswagen_k70
+      - volkswagen_passat
+      - volkswagen_golf
+      - volkswagen_polo
+      - volkswagen_scirocco
+      - volkswagen_jetta
+      - volkswagen_santana
+    generations:
+      - volkswagen_type_1
+      - volkswagen_type_2_t1
+      - volkswagen_type_2_t2
+      - volkswagen_type_3
+      - volkswagen_karmann_ghia_type_14
+      - volkswagen_karmann_ghia_type_34
+      - volkswagen_type_4_411
+      - volkswagen_type_4_412
+      - volkswagen_k70
+      - volkswagen_passat_b1
+      - volkswagen_passat_b2
+      - volkswagen_golf_mk1
+      - volkswagen_golf_mk2
+      - volkswagen_polo_mk1
+      - volkswagen_polo_mk2
+      - volkswagen_scirocco_mk1
+      - volkswagen_scirocco_mk2
+      - volkswagen_jetta_mk1
+      - volkswagen_jetta_mk2
+      - volkswagen_santana_b2
+    engines: []
+  category: diagnostics
+  system: engine
+  title:
+    en: Timing drive jumped or displaced
+    ro: Distribuția a sărit sau s-a deplasat
+    de: Steuertrieb übergesprungen oder verstellt
+    fr: Distribution décalée ou ayant sauté
+    es: Distribución desplazada o saltada
+    it: Distribuzione saltata o fuori fase
+    nl: Distributie versprongen of verschoven
+  symptoms:
+    - en: Sudden loss of power
+      ro: Pierdere bruscă de putere
+      de: Plötzlicher Leistungsverlust
+      fr: Perte soudaine de puissance
+      es: Pérdida repentina de potencia
+      it: Perdita improvvisa di potenza
+      nl: Plotseling vermogensverlies
+    - en: Engine runs very roughly
+      ro: Motorul funcționează foarte neregulat
+      de: Motor läuft sehr unrund
+      fr: Fonctionnement très irrégulier du moteur
+      es: Motor con funcionamiento muy irregular
+      it: Motore molto irregolare
+      nl: Zeer onregelmatige motorloop
+    - en: Engine may fail to start
+      ro: Motorul poate să nu mai pornească
+      de: Motor kann nicht mehr starten
+      fr: Le moteur peut ne plus démarrer
+      es: El motor puede no arrancar
+      it: Il motore può non avviarsi
+      nl: De motor kan niet meer starten
+  possible_causes:
+    - en: Worn timing drive components
+      ro: Componente uzate ale mecanismului de distribuție
+      de: Verschlissene Komponenten des Steuertriebs
+      fr: Composants usés de la distribution
+      es: Componentes desgastados de la distribución
+      it: Componenti usurati della distribuzione
+      nl: Versleten distributiecomponenten
+    - en: Insufficient timing drive tension
+      ro: Tensionare insuficientă a distribuției
+      de: Unzureichende Spannung des Steuertriebs
+      fr: Tension insuffisante de la distribution
+      es: Tensión insuficiente de la distribución
+      it: Tensione insufficiente della distribuzione
+      nl: Onvoldoende spanning van de distributie
+    - en: Mechanical failure in the timing system
+      ro: Defecțiune mecanică în sistemul de distribuție
+      de: Mechanischer Defekt im Steuertrieb
+      fr: Défaillance mécanique du système de distribution
+      es: Avería mecánica en el sistema de distribución
+      it: Guasto meccanico nel sistema di distribuzione
+      nl: Mechanisch defect in het distributiesysteem
+  diagnostic_steps:
+    - en: Do not continue cranking if a major timing failure is suspected
+      ro: Nu continua acționarea demarorului dacă suspectezi o defecțiune majoră a distribuției
+      de: Anlasser nicht weiter betätigen, wenn ein schwerer Steuerungsfehler vermutet wird
+      fr: Ne pas continuer à lancer le moteur en cas de suspicion de défaillance majeure
+      es: No seguir accionando el motor de arranque si se sospecha una avería grave
+      it: Non continuare ad azionare il motorino se si sospetta un grave guasto della distribuzione
+      nl: Blijf de startmotor niet gebruiken bij een vermoeden van ernstige distributieschade
+    - en: Verify crankshaft and camshaft alignment
+      ro: Verifică alinierea arborelui cotit și a arborelui cu came
+      de: Ausrichtung von Kurbelwelle und Nockenwelle prüfen
+      fr: Vérifier l'alignement du vilebrequin et de l'arbre à cames
+      es: Comprobar la alineación del cigüeñal y del árbol de levas
+      it: Verificare l'allineamento dell'albero motore e dell'albero a camme
+      nl: Controleer de uitlijning van krukas en nokkenas
+    - en: Inspect the timing components for the cause of displacement
+      ro: Inspectează componentele distribuției pentru a identifica cauza deplasării
+      de: Steuertriebkomponenten auf die Ursache der Verstellung prüfen
+      fr: Inspecter les composants pour déterminer la cause du décalage
+      es: Inspeccionar los componentes para determinar la causa del desplazamiento
+      it: Controllare i componenti per determinare la causa dello sfasamento
+      nl: Controleer de distributiecomponenten om de oorzaak van het verspringen te vinden
+  keywords:
+    - timing jumped
+    - timing failure
+    - camshaft timing
+    - distribution
+    - distribuție sărită
+    - steuertrieb
+  related_dtcs: []
+  difficulty: advanced
+
+- id: vw_classic_petrol_low_engine_compression
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_type_1
+      - volkswagen_type_2
+      - volkswagen_type_3
+      - volkswagen_karmann_ghia
+      - volkswagen_type_4
+      - volkswagen_k70
+      - volkswagen_passat
+      - volkswagen_golf
+      - volkswagen_polo
+      - volkswagen_scirocco
+      - volkswagen_jetta
+      - volkswagen_santana
+    generations:
+      - volkswagen_type_1
+      - volkswagen_type_2_t1
+      - volkswagen_type_2_t2
+      - volkswagen_type_3
+      - volkswagen_karmann_ghia_type_14
+      - volkswagen_karmann_ghia_type_34
+      - volkswagen_type_4_411
+      - volkswagen_type_4_412
+      - volkswagen_k70
+      - volkswagen_passat_b1
+      - volkswagen_passat_b2
+      - volkswagen_golf_mk1
+      - volkswagen_golf_mk2
+      - volkswagen_polo_mk1
+      - volkswagen_polo_mk2
+      - volkswagen_scirocco_mk1
+      - volkswagen_scirocco_mk2
+      - volkswagen_jetta_mk1
+      - volkswagen_jetta_mk2
+      - volkswagen_santana_b2
+    engines: []
+  category: diagnostics
+  system: engine
+  title:
+    en: Low engine compression
+    ro: Compresie scăzută a motorului
+    de: Niedrige Motorkompression
+    fr: Faible compression moteur
+    es: Baja compresión del motor
+    it: Bassa compressione del motore
+    nl: Lage motorcompressie
+  symptoms:
+    - en: Difficult starting
+      ro: Pornire dificilă
+      de: Schwieriger Start
+      fr: Démarrage difficile
+      es: Arranque difícil
+      it: Avviamento difficile
+      nl: Moeilijk starten
+    - en: Reduced engine power
+      ro: Putere redusă a motorului
+      de: Verringerte Motorleistung
+      fr: Puissance moteur réduite
+      es: Potencia reducida del motor
+      it: Potenza motore ridotta
+      nl: Verminderd motorvermogen
+    - en: Rough idle
+      ro: Ralanti neregulat
+      de: Unruhiger Leerlauf
+      fr: Ralenti irrégulier
+      es: Ralentí irregular
+      it: Minimo irregolare
+      nl: Onregelmatig stationair toerental
+  possible_causes:
+    - en: Worn piston rings
+      ro: Segmenți de piston uzați
+      de: Verschlissene Kolbenringe
+      fr: Segments de piston usés
+      es: Segmentos de pistón desgastados
+      it: Fasce elastiche usurate
+      nl: Versleten zuigerveren
+    - en: Burned or leaking valve
+      ro: Supapă arsă sau neetanșă
+      de: Verbranntes oder undichtes Ventil
+      fr: Soupape brûlée ou non étanche
+      es: Válvula quemada o con fugas
+      it: Valvola bruciata o non a tenuta
+      nl: Verbrande of lekkende klep
+    - en: Cylinder head sealing problem
+      ro: Problemă de etanșare a chiulasei
+      de: Dichtungsproblem am Zylinderkopf
+      fr: Problème d'étanchéité de la culasse
+      es: Problema de estanqueidad de la culata
+      it: Problema di tenuta della testata
+      nl: Afdichtingsprobleem van de cilinderkop
+  diagnostic_steps:
+    - en: Check compression on all cylinders using the correct procedure
+      ro: Verifică compresia pe toți cilindrii folosind procedura corectă
+      de: Kompression an allen Zylindern nach dem korrekten Verfahren messen
+      fr: Mesurer la compression de tous les cylindres selon la procédure correcte
+      es: Medir la compresión de todos los cilindros siguiendo el procedimiento correcto
+      it: Misurare la compressione di tutti i cilindri secondo la procedura corretta
+      nl: Meet de compressie van alle cilinders volgens de juiste procedure
+    - en: Compare readings between cylinders
+      ro: Compară valorile între cilindri
+      de: Messwerte zwischen den Zylindern vergleichen
+      fr: Comparer les valeurs entre les cylindres
+      es: Comparar los valores entre cilindros
+      it: Confrontare i valori tra i cilindri
+      nl: Vergelijk de meetwaarden tussen de cilinders
+    - en: Perform a wet compression or leak-down test when required
+      ro: Efectuează un test de compresie umedă sau leak-down când este necesar
+      de: Bei Bedarf einen Nasskompressionstest oder Druckverlusttest durchführen
+      fr: Effectuer si nécessaire un test de compression humide ou un test d'étanchéité
+      es: Realizar una prueba de compresión húmeda o de fugas cuando sea necesario
+      it: Eseguire se necessario un test di compressione umida o di tenuta
+      nl: Voer indien nodig een natte compressietest of lektest uit
+  keywords:
+    - low compression
+    - compression test
+    - engine compression
+    - piston rings
+    - compresie
+    - motorkompression
+  related_dtcs: []
+  difficulty: intermediate
+
+- id: vw_classic_petrol_uneven_cylinder_compression
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_type_1
+      - volkswagen_type_2
+      - volkswagen_type_3
+      - volkswagen_karmann_ghia
+      - volkswagen_type_4
+      - volkswagen_k70
+      - volkswagen_passat
+      - volkswagen_golf
+      - volkswagen_polo
+      - volkswagen_scirocco
+      - volkswagen_jetta
+      - volkswagen_santana
+    generations:
+      - volkswagen_type_1
+      - volkswagen_type_2_t1
+      - volkswagen_type_2_t2
+      - volkswagen_type_3
+      - volkswagen_karmann_ghia_type_14
+      - volkswagen_karmann_ghia_type_34
+      - volkswagen_type_4_411
+      - volkswagen_type_4_412
+      - volkswagen_k70
+      - volkswagen_passat_b1
+      - volkswagen_passat_b2
+      - volkswagen_golf_mk1
+      - volkswagen_golf_mk2
+      - volkswagen_polo_mk1
+      - volkswagen_polo_mk2
+      - volkswagen_scirocco_mk1
+      - volkswagen_scirocco_mk2
+      - volkswagen_jetta_mk1
+      - volkswagen_jetta_mk2
+      - volkswagen_santana_b2
+    engines: []
+  category: diagnostics
+  system: engine
+  title:
+    en: Uneven compression between cylinders
+    ro: Compresie neuniformă între cilindri
+    de: Ungleichmäßige Kompression zwischen den Zylindern
+    fr: Compression inégale entre les cylindres
+    es: Compresión desigual entre cilindros
+    it: Compressione irregolare tra i cilindri
+    nl: Ongelijke compressie tussen cilinders
+  symptoms:
+    - en: Rough idle
+      ro: Ralanti neregulat
+      de: Unruhiger Leerlauf
+      fr: Ralenti irrégulier
+      es: Ralentí irregular
+      it: Minimo irregolare
+      nl: Onregelmatig stationair toerental
+    - en: Engine vibration
+      ro: Vibrații ale motorului
+      de: Motorvibrationen
+      fr: Vibrations du moteur
+      es: Vibraciones del motor
+      it: Vibrazioni del motore
+      nl: Motortrillingen
+    - en: Uneven power delivery
+      ro: Livrare neuniformă a puterii
+      de: Ungleichmäßige Leistungsabgabe
+      fr: Distribution irrégulière de la puissance
+      es: Entrega irregular de potencia
+      it: Erogazione irregolare della potenza
+      nl: Ongelijkmatige vermogensafgifte
+  possible_causes:
+    - en: Valve sealing problem in one cylinder
+      ro: Problemă de etanșare a unei supape
+      de: Ventilundichtigkeit in einem Zylinder
+      fr: Problème d'étanchéité d'une soupape
+      es: Problema de estanqueidad de una válvula
+      it: Problema di tenuta di una valvola
+      nl: Klepafdichtingsprobleem in een cilinder
+    - en: Piston ring wear
+      ro: Uzura segmentului de piston
+      de: Verschleiß der Kolbenringe
+      fr: Usure des segments de piston
+      es: Desgaste de los segmentos del pistón
+      it: Usura delle fasce elastiche
+      nl: Slijtage van de zuigerveren
+    - en: Localized cylinder head sealing failure
+      ro: Defecțiune locală de etanșare a chiulasei
+      de: Lokaler Dichtungsfehler am Zylinderkopf
+      fr: Défaut local d'étanchéité de la culasse
+      es: Fallo localizado de estanqueidad de la culata
+      it: Guasto localizzato di tenuta della testata
+      nl: Plaatselijk afdichtingsprobleem van de cilinderkop
+  diagnostic_steps:
+    - en: Measure compression on every cylinder
+      ro: Măsoară compresia pe fiecare cilindru
+      de: Kompression an jedem Zylinder messen
+      fr: Mesurer la compression de chaque cylindre
+      es: Medir la compresión de cada cilindro
+      it: Misurare la compressione di ogni cilindro
+      nl: Meet de compressie van elke cilinder
+    - en: Identify the cylinder with the lowest reading
+      ro: Identifică cilindrul cu cea mai mică valoare
+      de: Zylinder mit dem niedrigsten Messwert identifizieren
+      fr: Identifier le cylindre ayant la valeur la plus basse
+      es: Identificar el cilindro con el valor más bajo
+      it: Identificare il cilindro con il valore più basso
+      nl: Bepaal de cilinder met de laagste waarde
+    - en: Use a wet compression or leak-down test to locate the leakage path
+      ro: Folosește un test umed sau leak-down pentru identificarea pierderii
+      de: Nasskompressions- oder Druckverlusttest zur Lokalisierung der Leckage durchführen
+      fr: Utiliser un test humide ou un test d'étanchéité pour localiser la fuite
+      es: Usar una prueba húmeda o de fugas para localizar la pérdida
+      it: Usare un test umido o di tenuta per localizzare la perdita
+      nl: Gebruik een natte test of lektest om het lek te lokaliseren
+  keywords:
+    - uneven compression
+    - compression difference
+    - cylinder compression
+    - leak down
+    - compresie cilindri
+    - kompressionsunterschied
+  related_dtcs: []
+  difficulty: intermediate
+
+- id: vw_classic_petrol_burned_valve
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_type_1
+      - volkswagen_type_2
+      - volkswagen_type_3
+      - volkswagen_karmann_ghia
+      - volkswagen_type_4
+      - volkswagen_k70
+      - volkswagen_passat
+      - volkswagen_golf
+      - volkswagen_polo
+      - volkswagen_scirocco
+      - volkswagen_jetta
+      - volkswagen_santana
+    generations:
+      - volkswagen_type_1
+      - volkswagen_type_2_t1
+      - volkswagen_type_2_t2
+      - volkswagen_type_3
+      - volkswagen_karmann_ghia_type_14
+      - volkswagen_karmann_ghia_type_34
+      - volkswagen_type_4_411
+      - volkswagen_type_4_412
+      - volkswagen_k70
+      - volkswagen_passat_b1
+      - volkswagen_passat_b2
+      - volkswagen_golf_mk1
+      - volkswagen_golf_mk2
+      - volkswagen_polo_mk1
+      - volkswagen_polo_mk2
+      - volkswagen_scirocco_mk1
+      - volkswagen_scirocco_mk2
+      - volkswagen_jetta_mk1
+      - volkswagen_jetta_mk2
+      - volkswagen_santana_b2
+    engines: []
+  category: diagnostics
+  system: engine
+  title:
+    en: Burned or leaking valve
+    ro: Supapă arsă sau neetanșă
+    de: Verbranntes oder undichtes Ventil
+    fr: Soupape brûlée ou non étanche
+    es: Válvula quemada o con fugas
+    it: Valvola bruciata o non a tenuta
+    nl: Verbrande of lekkende klep
+  symptoms:
+    - en: Persistent misfire
+      ro: Rateuri persistente
+      de: Dauerhafte Zündaussetzer
+      fr: Ratés d'allumage persistants
+      es: Fallos de encendido persistentes
+      it: Mancate accensioni persistenti
+      nl: Aanhoudende ontstekingsmissers
+    - en: Low compression in one cylinder
+      ro: Compresie scăzută pe un cilindru
+      de: Niedrige Kompression in einem Zylinder
+      fr: Faible compression sur un cylindre
+      es: Baja compresión en un cilindro
+      it: Bassa compressione in un cilindro
+      nl: Lage compressie in één cilinder
+    - en: Reduced engine power
+      ro: Putere redusă a motorului
+      de: Verringerte Motorleistung
+      fr: Puissance moteur réduite
+      es: Potencia reducida del motor
+      it: Potenza motore ridotta
+      nl: Verminderd motorvermogen
+  possible_causes:
+    - en: Excessive valve temperature
+      ro: Temperatură excesivă a supapei
+      de: Überhöhte Ventiltemperatur
+      fr: Température excessive de la soupape
+      es: Temperatura excesiva de la válvula
+      it: Temperatura eccessiva della valvola
+      nl: Te hoge kleptemperatuur
+    - en: Incorrect valve clearance
+      ro: Joc incorect al supapei
+      de: Falsches Ventilspiel
+      fr: Jeu de soupape incorrect
+      es: Holgura incorrecta de válvula
+      it: Gioco valvola errato
+      nl: Verkeerde klepspeling
+    - en: Poor valve seating
+      ro: Așezare necorespunzătoare a supapei pe scaun
+      de: Schlechter Ventilsitz
+      fr: Mauvais contact de la soupape avec son siège
+      es: Mal asiento de la válvula
+      it: Cattivo appoggio della valvola sulla sede
+      nl: Slechte klepzitting
+  diagnostic_steps:
+    - en: Perform a compression test
+      ro: Efectuează un test de compresie
+      de: Kompressionstest durchführen
+      fr: Effectuer un test de compression
+      es: Realizar una prueba de compresión
+      it: Eseguire un test di compressione
+      nl: Voer een compressietest uit
+    - en: Perform a leak-down test if compression is low
+      ro: Efectuează un test leak-down dacă compresia este scăzută
+      de: Bei niedriger Kompression einen Druckverlusttest durchführen
+      fr: Effectuer un test d'étanchéité si la compression est faible
+      es: Realizar una prueba de fugas si la compresión es baja
+      it: Eseguire un test di tenuta se la compressione è bassa
+      nl: Voer een lektest uit bij lage compressie
+    - en: Inspect the cylinder head and valve seat if leakage is confirmed
+      ro: Inspectează chiulasa și scaunul supapei dacă pierderea este confirmată
+      de: Zylinderkopf und Ventilsitz prüfen, wenn eine Undichtigkeit bestätigt wird
+      fr: Inspecter la culasse et le siège de soupape si la fuite est confirmée
+      es: Inspeccionar la culata y el asiento si se confirma la fuga
+      it: Ispezionare testata e sede valvola se la perdita è confermata
+      nl: Controleer cilinderkop en klepzitting als lekkage is bevestigd
+  keywords:
+    - burned valve
+    - leaking valve
+    - valve seat
+    - low compression
+    - supapă arsă
+    - ventil
+  related_dtcs: []
+  difficulty: advanced
+
+- id: vw_classic_petrol_incorrect_valve_clearance
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_type_1
+      - volkswagen_type_2
+      - volkswagen_type_3
+      - volkswagen_karmann_ghia
+      - volkswagen_type_4
+      - volkswagen_k70
+      - volkswagen_passat
+      - volkswagen_golf
+      - volkswagen_polo
+      - volkswagen_scirocco
+      - volkswagen_jetta
+      - volkswagen_santana
+    generations:
+      - volkswagen_type_1
+      - volkswagen_type_2_t1
+      - volkswagen_type_2_t2
+      - volkswagen_type_3
+      - volkswagen_karmann_ghia_type_14
+      - volkswagen_karmann_ghia_type_34
+      - volkswagen_type_4_411
+      - volkswagen_type_4_412
+      - volkswagen_k70
+      - volkswagen_passat_b1
+      - volkswagen_passat_b2
+      - volkswagen_golf_mk1
+      - volkswagen_golf_mk2
+      - volkswagen_polo_mk1
+      - volkswagen_polo_mk2
+      - volkswagen_scirocco_mk1
+      - volkswagen_scirocco_mk2
+      - volkswagen_jetta_mk1
+      - volkswagen_jetta_mk2
+      - volkswagen_santana_b2
+    engines: []
+  category: diagnostics
+  system: engine
+  title:
+    en: Incorrect valve clearance
+    ro: Joc incorect al supapelor
+    de: Falsches Ventilspiel
+    fr: Jeu de soupapes incorrect
+    es: Holgura incorrecta de válvulas
+    it: Gioco valvole errato
+    nl: Onjuiste klepspeling
+  symptoms:
+    - en: Ticking or tapping noise from the cylinder head
+      ro: Zgomot de ticăit sau bătăi din chiulasă
+      de: Tick- oder Klappergeräusche aus dem Zylinderkopf
+      fr: Cliquetis ou bruit de claquement provenant de la culasse
+      es: Ruido de taqueteo procedente de la culata
+      it: Ticchettio o battito proveniente dalla testata
+      nl: Tik- of kleppergeluid uit de cilinderkop
+    - en: Rough idle
+      ro: Ralanti neregulat
+      de: Unruhiger Leerlauf
+      fr: Ralenti irrégulier
+      es: Ralentí irregular
+      it: Minimo irregolare
+      nl: Onregelmatig stationair toerental
+    - en: Reduced engine performance
+      ro: Performanță redusă a motorului
+      de: Verringerte Motorleistung
+      fr: Performances réduites du moteur
+      es: Rendimiento reducido del motor
+      it: Prestazioni ridotte del motore
+      nl: Verminderde motorprestaties
+  possible_causes:
+    - en: Incorrect mechanical adjustment
+      ro: Reglaj mecanic incorect
+      de: Falsche mechanische Einstellung
+      fr: Réglage mécanique incorrect
+      es: Ajuste mecánico incorrecto
+      it: Regolazione meccanica errata
+      nl: Verkeerde mechanische afstelling
+    - en: Valve train wear
+      ro: Uzura mecanismului de acționare a supapelor
+      de: Verschleiß des Ventiltriebs
+      fr: Usure de la distribution des soupapes
+      es: Desgaste del tren de válvulas
+      it: Usura del comando valvole
+      nl: Slijtage van de klepbediening
+    - en: Incorrect adjustment after cylinder head work
+      ro: Reglaj incorect după lucrări la chiulasă
+      de: Falsche Einstellung nach Arbeiten am Zylinderkopf
+      fr: Mauvais réglage après intervention sur la culasse
+      es: Ajuste incorrecto después de trabajos en la culata
+      it: Regolazione errata dopo lavori sulla testata
+      nl: Verkeerde afstelling na werkzaamheden aan de cilinderkop
+  diagnostic_steps:
+    - en: Check valve clearance with the engine in the specified position
+      ro: Verifică jocul supapelor cu motorul în poziția specificată
+      de: Ventilspiel bei der vorgeschriebenen Motorstellung prüfen
+      fr: Vérifier le jeu des soupapes dans la position prescrite
+      es: Comprobar la holgura con el motor en la posición especificada
+      it: Controllare il gioco valvole nella posizione prescritta
+      nl: Controleer de klepspeling met de motor in de voorgeschreven positie
+    - en: Compare measurements with the exact engine specification
+      ro: Compară măsurătorile cu specificația exactă a motorului
+      de: Messwerte mit der genauen Motorspezifikation vergleichen
+      fr: Comparer les mesures aux spécifications exactes du moteur
+      es: Comparar las mediciones con la especificación exacta del motor
+      it: Confrontare le misure con le specifiche esatte del motore
+      nl: Vergelijk de metingen met de exacte motorspecificatie
+    - en: Inspect adjustment components and valve train if clearance cannot be maintained
+      ro: Inspectează elementele de reglaj și mecanismul supapelor dacă jocul nu poate fi menținut
+      de: Einstellkomponenten und Ventiltrieb prüfen, wenn das Spiel nicht gehalten werden kann
+      fr: Inspecter les éléments de réglage et la commande des soupapes si le jeu ne peut être maintenu
+      es: Inspeccionar los elementos de ajuste y el tren de válvulas si no se mantiene la holgura
+      it: Controllare gli elementi di regolazione e il comando valvole se il gioco non rimane corretto
+      nl: Controleer de afstelling en klepbediening als de speling niet behouden blijft
+  keywords:
+    - valve clearance
+    - valve adjustment
+    - valve train
+    - tappet noise
+    - joc supape
+    - ventilspiel
+  related_dtcs: []
+  difficulty: intermediate
+
+- id: vw_classic_petrol_worn_valve_train
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_type_1
+      - volkswagen_type_2
+      - volkswagen_type_3
+      - volkswagen_karmann_ghia
+      - volkswagen_type_4
+      - volkswagen_k70
+      - volkswagen_passat
+      - volkswagen_golf
+      - volkswagen_polo
+      - volkswagen_scirocco
+      - volkswagen_jetta
+      - volkswagen_santana
+    generations:
+      - volkswagen_type_1
+      - volkswagen_type_2_t1
+      - volkswagen_type_2_t2
+      - volkswagen_type_3
+      - volkswagen_karmann_ghia_type_14
+      - volkswagen_karmann_ghia_type_34
+      - volkswagen_type_4_411
+      - volkswagen_type_4_412
+      - volkswagen_k70
+      - volkswagen_passat_b1
+      - volkswagen_passat_b2
+      - volkswagen_golf_mk1
+      - volkswagen_golf_mk2
+      - volkswagen_polo_mk1
+      - volkswagen_polo_mk2
+      - volkswagen_scirocco_mk1
+      - volkswagen_scirocco_mk2
+      - volkswagen_jetta_mk1
+      - volkswagen_jetta_mk2
+      - volkswagen_santana_b2
+    engines: []
+  category: diagnostics
+  system: engine
+  title:
+    en: Worn valve train components
+    ro: Componente uzate ale mecanismului supapelor
+    de: Verschlissene Komponenten des Ventiltriebs
+    fr: Composants usés de la commande des soupapes
+    es: Componentes desgastados del tren de válvulas
+    it: Componenti usurati del comando valvole
+    nl: Versleten onderdelen van de klepbediening
+  symptoms:
+    - en: Ticking or mechanical noise from the cylinder head
+      ro: Zgomot de ticăit sau zgomot mecanic din chiulasă
+      de: Tick- oder mechanische Geräusche aus dem Zylinderkopf
+      fr: Cliquetis ou bruit mécanique provenant de la culasse
+      es: Ruido mecánico procedente de la culata
+      it: Rumore meccanico proveniente dalla testata
+      nl: Tik- of mechanisch geluid uit de cilinderkop
+    - en: Reduced engine power
+      ro: Putere redusă a motorului
+      de: Verringerte Motorleistung
+      fr: Puissance moteur réduite
+      es: Potencia reducida del motor
+      it: Potenza motore ridotta
+      nl: Verminderd motorvermogen
+    - en: Uneven idle
+      ro: Ralanti neregulat
+      de: Unruhiger Leerlauf
+      fr: Ralenti irrégulier
+      es: Ralentí irregular
+      it: Minimo irregolare
+      nl: Onregelmatig stationair toerental
+  possible_causes:
+    - en: Worn camshaft lobes
+      ro: Came ale arborelui cu came uzate
+      de: Verschlissene Nocken der Nockenwelle
+      fr: Cames d'arbre à cames usées
+      es: Levas del árbol de levas desgastadas
+      it: Lobi dell'albero a camme usurati
+      nl: Versleten nokken van de nokkenas
+    - en: Worn rocker arms or tappets
+      ro: Culbutori sau tacheți uzați
+      de: Verschlissene Kipphebel oder Stößel
+      fr: Culbuteurs ou poussoirs usés
+      es: Balancines o taqués desgastados
+      it: Bilancieri o punterie usurati
+      nl: Versleten tuimelaars of klepstoters
+    - en: Excessive mechanical clearance
+      ro: Joc mecanic excesiv
+      de: Übermäßiges mechanisches Spiel
+      fr: Jeu mécanique excessif
+      es: Holgura mecánica excesiva
+      it: Gioco meccanico eccessivo
+      nl: Overmatige mechanische speling
+  diagnostic_steps:
+    - en: Locate the source of the mechanical noise
+      ro: Identifică sursa zgomotului mecanic
+      de: Quelle des mechanischen Geräuschs lokalisieren
+      fr: Localiser la source du bruit mécanique
+      es: Localizar el origen del ruido mecánico
+      it: Localizzare l'origine del rumore meccanico
+      nl: Lokaliseer de bron van het mechanische geluid
+    - en: Inspect the camshaft and valve train components
+      ro: Inspectează arborele cu came și componentele mecanismului supapelor
+      de: Nockenwelle und Ventiltriebskomponenten prüfen
+      fr: Inspecter l'arbre à cames et les composants de la commande des soupapes
+      es: Inspeccionar el árbol de levas y los componentes del tren de válvulas
+      it: Ispezionare albero a camme e componenti del comando valvole
+      nl: Controleer nokkenas en onderdelen van de klepbediening
+    - en: Measure worn components against the applicable service limits
+      ro: Măsoară componentele uzate și compară-le cu limitele de service aplicabile
+      de: Verschlissene Komponenten mit den zulässigen Verschleißgrenzen vergleichen
+      fr: Mesurer les composants usés et les comparer aux limites de service
+      es: Medir los componentes desgastados y compararlos con los límites de servicio
+      it: Misurare i componenti usurati e confrontarli con i limiti di servizio
+      nl: Meet versleten onderdelen en vergelijk ze met de toegestane servicelimieten
+  keywords:
+    - valve train
+    - camshaft wear
+    - rocker arm
+    - tappet
+    - mecanism supape
+    - ventiltrieb
+  related_dtcs: []
+  difficulty: advanced
+
+- id: vw_classic_petrol_valve_spring_fault
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_type_1
+      - volkswagen_type_2
+      - volkswagen_type_3
+      - volkswagen_karmann_ghia
+      - volkswagen_type_4
+      - volkswagen_k70
+      - volkswagen_passat
+      - volkswagen_golf
+      - volkswagen_polo
+      - volkswagen_scirocco
+      - volkswagen_jetta
+      - volkswagen_santana
+    generations:
+      - volkswagen_type_1
+      - volkswagen_type_2_t1
+      - volkswagen_type_2_t2
+      - volkswagen_type_3
+      - volkswagen_karmann_ghia_type_14
+      - volkswagen_karmann_ghia_type_34
+      - volkswagen_type_4_411
+      - volkswagen_type_4_412
+      - volkswagen_k70
+      - volkswagen_passat_b1
+      - volkswagen_passat_b2
+      - volkswagen_golf_mk1
+      - volkswagen_golf_mk2
+      - volkswagen_polo_mk1
+      - volkswagen_polo_mk2
+      - volkswagen_scirocco_mk1
+      - volkswagen_scirocco_mk2
+      - volkswagen_jetta_mk1
+      - volkswagen_jetta_mk2
+      - volkswagen_santana_b2
+    engines: []
+  category: diagnostics
+  system: engine
+  title:
+    en: Weak or broken valve spring
+    ro: Arc de supapă slăbit sau rupt
+    de: Schwache oder gebrochene Ventilfeder
+    fr: Ressort de soupape faible ou cassé
+    es: Muelle de válvula débil o roto
+    it: Molla valvola debole o rotta
+    nl: Zwakke of gebroken klepveer
+  symptoms:
+    - en: Misfire at higher engine speed
+      ro: Rateuri la turații mai mari
+      de: Zündaussetzer bei höheren Drehzahlen
+      fr: Ratés d'allumage à régime élevé
+      es: Fallos de encendido a altas revoluciones
+      it: Mancate accensioni agli alti regimi
+      nl: Ontstekingsmissers bij hogere toerentallen
+    - en: Loss of power at high rpm
+      ro: Pierdere de putere la turații mari
+      de: Leistungsverlust bei hohen Drehzahlen
+      fr: Perte de puissance à haut régime
+      es: Pérdida de potencia a altas revoluciones
+      it: Perdita di potenza agli alti regimi
+      nl: Vermogensverlies bij hoge toerentallen
+    - en: Valve train noise
+      ro: Zgomot al mecanismului supapelor
+      de: Geräusche aus dem Ventiltrieb
+      fr: Bruit de la commande des soupapes
+      es: Ruido del tren de válvulas
+      it: Rumore del comando valvole
+      nl: Geluid uit de klepbediening
+  possible_causes:
+    - en: Fatigued valve spring
+      ro: Arc de supapă obosit
+      de: Ermüdete Ventilfeder
+      fr: Ressort de soupape fatigué
+      es: Muelle de válvula fatigado
+      it: Molla valvola affaticata
+      nl: Vermoeide klepveer
+    - en: Broken valve spring
+      ro: Arc de supapă rupt
+      de: Gebrochene Ventilfeder
+      fr: Ressort de soupape cassé
+      es: Muelle de válvula roto
+      it: Molla valvola rotta
+      nl: Gebroken klepveer
+    - en: Incorrect spring specification
+      ro: Arc cu specificație incorectă
+      de: Falsche Ventilfeder-Spezifikation
+      fr: Spécification incorrecte du ressort de soupape
+      es: Especificación incorrecta del muelle de válvula
+      it: Specifica errata della molla valvola
+      nl: Verkeerde specificatie van de klepveer
+  diagnostic_steps:
+    - en: Inspect valve train operation
+      ro: Inspectează funcționarea mecanismului supapelor
+      de: Funktion des Ventiltriebs prüfen
+      fr: Inspecter le fonctionnement de la commande des soupapes
+      es: Inspeccionar el funcionamiento del tren de válvulas
+      it: Controllare il funzionamento del comando valvole
+      nl: Controleer de werking van de klepbediening
+    - en: Inspect the springs for cracks, breakage or abnormal height
+      ro: Inspectează arcurile pentru crăpături, rupere sau înălțime anormală
+      de: Federn auf Risse, Bruch oder falsche Einbauhöhe prüfen
+      fr: Inspecter les ressorts pour fissures, rupture ou hauteur anormale
+      es: Inspeccionar los muelles por grietas, roturas o altura anormal
+      it: Controllare le molle per crepe, rotture o altezza anomala
+      nl: Controleer de veren op scheuren, breuken of afwijkende hoogte
+    - en: Measure spring condition according to the applicable service specification
+      ro: Verifică starea arcului conform specificației de service aplicabile
+      de: Federzustand gemäß der jeweiligen Servicevorgabe messen
+      fr: Mesurer l'état du ressort selon les spécifications de service
+      es: Medir el estado del muelle según la especificación de servicio
+      it: Misurare lo stato della molla secondo le specifiche di servizio
+      nl: Meet de toestand van de veer volgens de geldende servicespecificatie
+  keywords:
+    - valve spring
+    - broken valve spring
+    - valve train
+    - high rpm misfire
+    - arc supapă
+    - ventilfeder
+  related_dtcs: []
+  difficulty: advanced
+
 - id: vw_classic_petrol_spark_plug_fouling
   vehicle:
     manufacturer: volkswagen
