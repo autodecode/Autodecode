@@ -6,6 +6,573 @@ manufacturer:
 
 technical_data:
 
+- id: vw_classic_petrol_fuel_vapor_lock
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_type_1
+      - volkswagen_type_2
+      - volkswagen_type_3
+      - volkswagen_karmann_ghia
+      - volkswagen_k70
+    generations:
+      - volkswagen_type_1
+      - volkswagen_type_2_t1
+      - volkswagen_type_2_t2
+      - volkswagen_type_3
+      - volkswagen_karmann_ghia_type_14
+      - volkswagen_karmann_ghia_type_34
+      - volkswagen_k70
+    engines: []
+  category: diagnostics
+  system: fuel
+  title:
+    en: Fuel Vapor Lock
+    ro: Blocaj de vapori în sistemul de alimentare
+    de: Dampfblasenbildung im Kraftstoffsystem
+    fr: Vaporisation du carburant dans le circuit
+    es: Bloqueo por vapores de combustible
+    it: Vapor lock nel sistema di alimentazione
+    nl: Dampbelvorming in het brandstofsysteem
+  symptoms:
+    - en: Engine stalls after becoming hot and is difficult to restart.
+      ro: Motorul se oprește după încălzire și pornește greu la cald.
+      de: Der Motor geht nach dem Warmwerden aus und lässt sich heiß schwer starten.
+      fr: Le moteur cale à chaud et redémarre difficilement.
+      es: El motor se cala en caliente y cuesta volver a arrancarlo.
+      it: Il motore si spegne a caldo e si riavvia con difficoltà.
+      nl: De motor slaat warm af en start daarna moeilijk.
+    - en: Fuel delivery temporarily becomes insufficient.
+      ro: Alimentarea cu combustibil devine temporar insuficientă.
+      de: Die Kraftstoffversorgung wird vorübergehend unzureichend.
+      fr: L'alimentation en carburant devient temporairement insuffisante.
+      es: El suministro de combustible se vuelve temporalmente insuficiente.
+      it: L'alimentazione del carburante diventa temporaneamente insufficiente.
+      nl: De brandstoftoevoer wordt tijdelijk onvoldoende.
+  possible_causes:
+    - en: Excessive heat around the fuel line or mechanical fuel pump.
+      ro: Căldură excesivă în zona conductei de combustibil sau a pompei mecanice.
+      de: Übermäßige Hitze an der Kraftstoffleitung oder der mechanischen Kraftstoffpumpe.
+      fr: Chaleur excessive autour de la conduite ou de la pompe mécanique.
+      es: Calor excesivo alrededor de la línea o de la bomba mecánica de combustible.
+      it: Calore eccessivo intorno al tubo o alla pompa meccanica del carburante.
+      nl: Overmatige warmte rond de brandstofleiding of mechanische brandstofpomp.
+    - en: Incorrect fuel-line routing or insufficient heat shielding.
+      ro: Traseu incorect al conductei de combustibil sau protecție termică insuficientă.
+      de: Falsche Verlegung der Kraftstoffleitung oder unzureichende Hitzeschutzmaßnahmen.
+      fr: Mauvais cheminement de la conduite ou protection thermique insuffisante.
+      es: Enrutamiento incorrecto de la línea o protección térmica insuficiente.
+      it: Percorso errato del tubo o protezione termica insufficiente.
+      nl: Verkeerde routing van de brandstofleiding of onvoldoende hitteschild.
+  diagnostic_steps:
+    - en: Check whether the fault occurs only after prolonged heat soak.
+      ro: Verifică dacă defectul apare numai după încălzirea prelungită a motorului.
+      de: Prüfen, ob der Fehler nur nach längerer Wärmeeinwirkung auftritt.
+      fr: Vérifier si le défaut apparaît uniquement après une longue montée en température.
+      es: Comprobar si el fallo aparece solo después de una exposición prolongada al calor.
+      it: Verificare se il difetto compare solo dopo un lungo periodo a caldo.
+      nl: Controleer of de storing alleen optreedt na langdurige warmte-inwerking.
+    - en: Inspect fuel-line routing and heat shielding near hot engine components.
+      ro: Inspectează traseul conductei și protecția termică din apropierea componentelor fierbinți.
+      de: Kraftstoffleitungsverlegung und Hitzeschutz in der Nähe heißer Motorteile prüfen.
+      fr: Inspecter le cheminement et la protection thermique près des composants chauds.
+      es: Inspeccionar el recorrido y la protección térmica cerca de componentes calientes.
+      it: Controllare il percorso e la protezione termica vicino ai componenti caldi.
+      nl: Controleer de leidingloop en hittescherming bij hete motoronderdelen.
+  keywords:
+    - vapor lock
+    - fuel vaporization
+    - hot restart
+    - vapour lock
+  related_dtcs: []
+  difficulty: intermediate
+
+- id: vw_classic_petrol_carburetor_fuel_bowl_evaporation
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_type_1
+      - volkswagen_type_2
+      - volkswagen_type_3
+      - volkswagen_karmann_ghia
+      - volkswagen_k70
+    generations:
+      - volkswagen_type_1
+      - volkswagen_type_2_t1
+      - volkswagen_type_2_t2
+      - volkswagen_type_3
+      - volkswagen_karmann_ghia_type_14
+      - volkswagen_karmann_ghia_type_34
+      - volkswagen_k70
+    engines: []
+  category: diagnostics
+  system: fuel
+  title:
+    en: Carburetor Fuel Bowl Evaporation
+    ro: Evaporarea combustibilului din camera carburatorului
+    de: Kraftstoffverdunstung aus der Schwimmerkammer
+    fr: Évaporation du carburant dans la cuve du carburateur
+    es: Evaporación del combustible de la cuba del carburador
+    it: Evaporazione del carburante dalla vaschetta del carburatore
+    nl: Verdamping van brandstof uit de vlotterkamer
+  symptoms:
+    - en: Engine requires extended cranking after sitting for several hours.
+      ro: Motorul necesită pornire îndelungată după ce a stat câteva ore.
+      de: Der Motor benötigt nach mehreren Stunden Standzeit langes Durchdrehen.
+      fr: Le moteur nécessite un long lancement après plusieurs heures d'arrêt.
+      es: El motor necesita mucho tiempo de arranque después de varias horas parado.
+      it: Il motore richiede un avviamento prolungato dopo diverse ore di sosta.
+      nl: De motor moet na enkele uren stilstand lang worden rondgedraaid.
+    - en: Starting improves after manually restoring fuel to the carburetor.
+      ro: Pornirea se îmbunătățește după restabilirea manuală a alimentării carburatorului.
+      de: Der Start verbessert sich nach manueller Wiederherstellung der Kraftstoffversorgung.
+      fr: Le démarrage s'améliore après avoir rétabli manuellement l'alimentation du carburateur.
+      es: El arranque mejora después de restablecer manualmente el suministro al carburador.
+      it: L'avviamento migliora dopo aver ripristinato manualmente l'alimentazione del carburatore.
+      nl: Het starten verbetert nadat de brandstoftoevoer naar de carburateur handmatig is hersteld.
+  possible_causes:
+    - en: Fuel evaporates from the carburetor bowl during prolonged standing.
+      ro: Combustibilul se evaporă din camera carburatorului în timpul staționării prelungite.
+      de: Kraftstoff verdunstet während längerer Standzeit aus der Schwimmerkammer.
+      fr: Le carburant s'évapore de la cuve pendant une longue immobilisation.
+      es: El combustible se evapora de la cuba durante una parada prolongada.
+      it: Il carburante evapora dalla vaschetta durante una lunga sosta.
+      nl: Brandstof verdampt tijdens langdurige stilstand uit de vlotterkamer.
+    - en: Excessive engine-compartment temperature accelerates evaporation.
+      ro: Temperatura excesivă din compartimentul motor accelerează evaporarea.
+      de: Eine hohe Temperatur im Motorraum beschleunigt die Verdunstung.
+      fr: Une température élevée dans le compartiment moteur accélère l'évaporation.
+      es: Una temperatura elevada en el vano motor acelera la evaporación.
+      it: Una temperatura elevata nel vano motore accelera l'evaporazione.
+      nl: Een hoge temperatuur in de motorruimte versnelt de verdamping.
+  diagnostic_steps:
+    - en: Compare cold-start behavior after short and long periods of standing.
+      ro: Compară comportamentul la pornire după staționări scurte și lungi.
+      de: Kaltstartverhalten nach kurzer und langer Standzeit vergleichen.
+      fr: Comparer le comportement au démarrage après une courte et une longue immobilisation.
+      es: Comparar el comportamiento de arranque después de paradas cortas y largas.
+      it: Confrontare il comportamento all'avviamento dopo soste brevi e lunghe.
+      nl: Vergelijk het startgedrag na korte en lange stilstand.
+    - en: Check the carburetor fuel level and bowl vent for abnormal conditions.
+      ro: Verifică nivelul combustibilului și aerisirea camerei carburatorului.
+      de: Kraftstoffstand und Entlüftung der Schwimmerkammer prüfen.
+      fr: Vérifier le niveau de carburant et la mise à l'air de la cuve.
+      es: Comprobar el nivel de combustible y la ventilación de la cuba.
+      it: Controllare il livello del carburante e lo sfiato della vaschetta.
+      nl: Controleer het brandstofniveau en de ontluchting van de vlotterkamer.
+  keywords:
+    - carburetor
+    - fuel bowl
+    - hard starting
+    - fuel evaporation
+  related_dtcs: []
+  difficulty: basic
+
+- id: vw_classic_petrol_carburetor_throttle_shaft_wear
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_type_1
+      - volkswagen_type_2
+      - volkswagen_type_3
+      - volkswagen_karmann_ghia
+      - volkswagen_k70
+    generations:
+      - volkswagen_type_1
+      - volkswagen_type_2_t1
+      - volkswagen_type_2_t2
+      - volkswagen_type_3
+      - volkswagen_karmann_ghia_type_14
+      - volkswagen_karmann_ghia_type_34
+      - volkswagen_k70
+    engines: []
+  category: diagnostics
+  system: fuel
+  title:
+    en: Carburetor Throttle Shaft Wear
+    ro: Uzura axului clapetei carburatorului
+    de: Verschleiß der Drosselklappenwelle
+    fr: Usure de l'axe du papillon du carburateur
+    es: Desgaste del eje de la mariposa del carburador
+    it: Usura dell'alberino della farfalla del carburatore
+    nl: Slijtage van de gasklepas van de carburateur
+  symptoms:
+    - en: Unstable or excessively high idle speed.
+      ro: Turație de ralanti instabilă sau excesiv de mare.
+      de: Instabile oder zu hohe Leerlaufdrehzahl.
+      fr: Régime de ralenti instable ou excessivement élevé.
+      es: Ralentí inestable o excesivamente alto.
+      it: Regime minimo instabile o eccessivamente alto.
+      nl: Onstabiel of te hoog stationair toerental.
+    - en: Idle mixture adjustment has little effect.
+      ro: Reglajul amestecului la ralanti are efect redus.
+      de: Die Leerlaufgemischeinstellung zeigt kaum Wirkung.
+      fr: Le réglage du mélange au ralenti a peu d'effet.
+      es: El ajuste de mezcla al ralentí tiene poco efecto.
+      it: La regolazione della miscela al minimo ha poco effetto.
+      nl: De mengselafstelling bij stationair draaien heeft weinig effect.
+  possible_causes:
+    - en: Excessive radial play in the throttle shaft.
+      ro: Joc radial excesiv al axului clapetei.
+      de: Übermäßiges Radialspiel der Drosselklappenwelle.
+      fr: Jeu radial excessif de l'axe du papillon.
+      es: Juego radial excesivo del eje de la mariposa.
+      it: Gioco radiale eccessivo dell'alberino della farfalla.
+      nl: Overmatige radiale speling van de gasklepas.
+    - en: Worn throttle-shaft bushings allow unmetered air into the engine.
+      ro: Bucșele uzate ale axului permit pătrunderea aerului necontorizat în motor.
+      de: Verschlissene Wellenbuchsen lassen Nebenluft in den Motor gelangen.
+      fr: Des bagues usées permettent une prise d'air non mesurée.
+      es: Los casquillos desgastados permiten la entrada de aire no medido.
+      it: Boccole usurate permettono l'ingresso di aria non misurata.
+      nl: Versleten bussen laten ongemeten lucht de motor binnenkomen.
+  diagnostic_steps:
+    - en: Check for radial and axial movement of the throttle shaft with the engine stopped.
+      ro: Verifică jocul radial și axial al axului cu motorul oprit.
+      de: Radial- und Axialspiel der Drosselklappenwelle bei abgestelltem Motor prüfen.
+      fr: Vérifier le jeu radial et axial de l'axe papillon moteur arrêté.
+      es: Comprobar el juego radial y axial del eje con el motor parado.
+      it: Controllare il gioco radiale e assiale dell'alberino a motore spento.
+      nl: Controleer de radiale en axiale speling van de gasklepas met stilstaande motor.
+    - en: Check whether spraying around the shaft changes engine speed.
+      ro: Verifică dacă pulverizarea în zona axului modifică turația motorului.
+      de: Prüfen, ob Sprühen im Bereich der Welle die Motordrehzahl verändert.
+      fr: Vérifier si une pulvérisation autour de l'axe modifie le régime moteur.
+      es: Comprobar si pulverizar alrededor del eje modifica el régimen.
+      it: Verificare se una nebulizzazione intorno all'alberino modifica il regime.
+      nl: Controleer of spuiten rond de as het motortoerental verandert.
+  keywords:
+    - throttle shaft
+    - carburetor wear
+    - vacuum leak
+    - high idle
+  related_dtcs: []
+  difficulty: intermediate
+
+- id: vw_classic_petrol_carburetor_mounting_flange_warped
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_type_1
+      - volkswagen_type_2
+      - volkswagen_type_3
+      - volkswagen_karmann_ghia
+      - volkswagen_k70
+    generations:
+      - volkswagen_type_1
+      - volkswagen_type_2_t1
+      - volkswagen_type_2_t2
+      - volkswagen_type_3
+      - volkswagen_karmann_ghia_type_14
+      - volkswagen_karmann_ghia_type_34
+      - volkswagen_k70
+    engines: []
+  category: diagnostics
+  system: fuel
+  title:
+    en: Warped Carburetor Mounting Flange
+    ro: Flanșă de montare a carburatorului deformată
+    de: Verformter Vergaserflansch
+    fr: Bride de fixation du carburateur déformée
+    es: Brida de montaje del carburador deformada
+    it: Flangia di montaggio del carburatore deformata
+    nl: Vervormde montageflens van de carburateur
+  symptoms:
+    - en: Persistent vacuum leak at the carburetor base.
+      ro: Pierdere persistentă de vacuum la baza carburatorului.
+      de: Dauerhafte Nebenluft am Vergaserflansch.
+      fr: Prise d'air persistante à la base du carburateur.
+      es: Fuga de vacío persistente en la base del carburador.
+      it: Perdita di vuoto persistente alla base del carburatore.
+      nl: Aanhoudende vacuümlekkage aan de carburateurvoet.
+    - en: Idle speed remains difficult to adjust correctly.
+      ro: Turația de ralanti rămâne dificil de reglat corect.
+      de: Die Leerlaufdrehzahl lässt sich nur schwer korrekt einstellen.
+      fr: Le ralenti reste difficile à régler correctement.
+      es: El ralentí sigue siendo difícil de ajustar correctamente.
+      it: Il minimo rimane difficile da regolare correttamente.
+      nl: Het stationair toerental blijft moeilijk correct af te stellen.
+  possible_causes:
+    - en: Excessive tightening has distorted the carburetor flange.
+      ro: Strângerea excesivă a deformat flanșa carburatorului.
+      de: Übermäßiges Anziehen hat den Vergaserflansch verformt.
+      fr: Un serrage excessif a déformé la bride du carburateur.
+      es: Un apriete excesivo ha deformado la brida del carburador.
+      it: Un serraggio eccessivo ha deformato la flangia del carburatore.
+      nl: Te strak aandraaien heeft de carburateurflens vervormd.
+    - en: Uneven mounting surface prevents the gasket from sealing correctly.
+      ro: Suprafața de montare neuniformă împiedică etanșarea corectă a garniturii.
+      de: Eine unebene Montagefläche verhindert eine korrekte Abdichtung.
+      fr: Une surface de montage irrégulière empêche une bonne étanchéité.
+      es: Una superficie de montaje irregular impide un sellado correcto.
+      it: Una superficie di montaggio irregolare impedisce una corretta tenuta.
+      nl: Een ongelijk montagevlak voorkomt een goede afdichting.
+  diagnostic_steps:
+    - en: Remove the carburetor and inspect the mounting flange for distortion.
+      ro: Demontează carburatorul și verifică flanșa pentru deformări.
+      de: Vergaser ausbauen und Montageflansch auf Verformung prüfen.
+      fr: Déposer le carburateur et contrôler la bride de fixation.
+      es: Desmontar el carburador y comprobar la deformación de la brida.
+      it: Smontare il carburatore e controllare la deformazione della flangia.
+      nl: Verwijder de carburateur en controleer de montageflens op vervorming.
+    - en: Check the mounting surface with a straightedge.
+      ro: Verifică planeitatea suprafeței cu o riglă dreaptă.
+      de: Montagefläche mit einem Haarlineal prüfen.
+      fr: Contrôler la planéité avec une règle de précision.
+      es: Comprobar la planitud con una regla recta.
+      it: Controllare la planarità con un righello rettilineo.
+      nl: Controleer de vlakheid met een rechte liniaal.
+  keywords:
+    - carburetor flange
+    - vacuum leak
+    - warped flange
+    - intake leak
+  related_dtcs: []
+  difficulty: intermediate
+
+- id: vw_classic_petrol_carburetor_icing
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_type_1
+      - volkswagen_type_2
+      - volkswagen_type_3
+      - volkswagen_karmann_ghia
+      - volkswagen_k70
+    generations:
+      - volkswagen_type_1
+      - volkswagen_type_2_t1
+      - volkswagen_type_2_t2
+      - volkswagen_type_3
+      - volkswagen_karmann_ghia_type_14
+      - volkswagen_karmann_ghia_type_34
+      - volkswagen_k70
+    engines: []
+  category: diagnostics
+  system: fuel
+  title:
+    en: Carburetor Icing
+    ro: Înghețarea carburatorului
+    de: Vergaservereisung
+    fr: Givrage du carburateur
+    es: Formación de hielo en el carburador
+    it: Ghiacciamento del carburatore
+    nl: Carburateurbevriezing
+  symptoms:
+    - en: Engine loses power or begins to run roughly in cool, humid conditions.
+      ro: Motorul pierde putere sau începe să funcționeze neregulat în condiții reci și umede.
+      de: Der Motor verliert bei kühler, feuchter Witterung Leistung oder läuft unrund.
+      fr: Le moteur perd de la puissance ou fonctionne irrégulièrement par temps frais et humide.
+      es: El motor pierde potencia o funciona de forma irregular con tiempo frío y húmedo.
+      it: Il motore perde potenza o gira irregolarmente in condizioni fredde e umide.
+      nl: De motor verliest vermogen of loopt onregelmatig bij koel en vochtig weer.
+    - en: The fault may temporarily disappear after stopping and allowing the intake system to warm.
+      ro: Defectul poate dispărea temporar după oprire și încălzirea sistemului de admisie.
+      de: Der Fehler kann nach dem Abstellen und Erwärmen des Ansaugsystems vorübergehend verschwinden.
+      fr: Le défaut peut disparaître temporairement après l'arrêt et le réchauffement de l'admission.
+      es: El fallo puede desaparecer temporalmente después de parar y dejar que la admisión se caliente.
+      it: Il difetto può scomparire temporaneamente dopo l'arresto e il riscaldamento dell'aspirazione.
+      nl: De storing kan tijdelijk verdwijnen nadat de motor is gestopt en de inlaat is opgewarmd.
+  possible_causes:
+    - en: Insufficient intake-air preheating.
+      ro: Preîncălzire insuficientă a aerului de admisie.
+      de: Unzureichende Ansaugluftvorwärmung.
+      fr: Préchauffage insuffisant de l'air d'admission.
+      es: Precalentamiento insuficiente del aire de admisión.
+      it: Preriscaldamento insufficiente dell'aria aspirata.
+      nl: Onvoldoende voorverwarming van de inlaatlucht.
+    - en: Restricted or incorrectly routed warm-air supply.
+      ro: Alimentare cu aer cald restricționată sau traseu incorect.
+      de: Eingeschränkte oder falsch verlegte Warmluftzufuhr.
+      fr: Alimentation en air chaud limitée ou mal acheminée.
+      es: Suministro de aire caliente restringido o mal dirigido.
+      it: Alimentazione di aria calda limitata o instradata in modo errato.
+      nl: Beperkte of verkeerd geleide toevoer van warme lucht.
+  diagnostic_steps:
+    - en: Reproduce the symptom under cool and humid driving conditions.
+      ro: Reproduce simptomul în condiții de rulare reci și umede.
+      de: Symptom bei kühler und feuchter Witterung reproduzieren.
+      fr: Reproduire le symptôme par temps frais et humide.
+      es: Reproducir el síntoma en condiciones frías y húmedas.
+      it: Riprodurre il sintomo in condizioni fredde e umide.
+      nl: Reproduceer de klacht bij koel en vochtig weer.
+    - en: Inspect the intake preheating system and warm-air ducting.
+      ro: Inspectează sistemul de preîncălzire și conductele de aer cald.
+      de: Ansaugluftvorwärmung und Warmluftführung prüfen.
+      fr: Inspecter le système de préchauffage et les conduits d'air chaud.
+      es: Inspeccionar el sistema de precalentamiento y los conductos de aire caliente.
+      it: Controllare il sistema di preriscaldamento e i condotti dell'aria calda.
+      nl: Controleer het voorverwarmingssysteem en de warme-luchtkanalen.
+  keywords:
+    - carburetor icing
+    - intake preheating
+    - cold weather
+    - icing
+  related_dtcs: []
+  difficulty: basic
+
+- id: vw_classic_petrol_carburetor_main_jet_incorrect
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_type_1
+      - volkswagen_type_2
+      - volkswagen_type_3
+      - volkswagen_karmann_ghia
+      - volkswagen_k70
+    generations:
+      - volkswagen_type_1
+      - volkswagen_type_2_t1
+      - volkswagen_type_2_t2
+      - volkswagen_type_3
+      - volkswagen_karmann_ghia_type_14
+      - volkswagen_karmann_ghia_type_34
+      - volkswagen_k70
+    engines: []
+  category: diagnostics
+  system: fuel
+  title:
+    en: Incorrect Main Jet Size
+    ro: Dimensiune incorectă a jiclorului principal
+    de: Falsche Größe der Hauptdüse
+    fr: Taille incorrecte du gicleur principal
+    es: Tamaño incorrecto del chiclé principal
+    it: Dimensione errata del getto principale
+    nl: Verkeerde maat van de hoofdsproeier
+  symptoms:
+    - en: Engine runs too lean or too rich under sustained load.
+      ro: Motorul funcționează prea sărac sau prea bogat la sarcină susținută.
+      de: Der Motor läuft unter längerer Last zu mager oder zu fett.
+      fr: Le moteur fonctionne trop pauvre ou trop riche sous charge prolongée.
+      es: El motor funciona demasiado pobre o rico bajo carga sostenida.
+      it: Il motore funziona troppo magro o troppo ricco sotto carico prolungato.
+      nl: De motor loopt te arm of te rijk bij langdurige belasting.
+    - en: Full-throttle performance is abnormal despite correct basic adjustments.
+      ro: Performanța la accelerație maximă este anormală în ciuda reglajelor de bază corecte.
+      de: Die Volllastleistung ist trotz korrekter Grundeinstellung abnormal.
+      fr: Les performances à pleine charge restent anormales malgré des réglages de base corrects.
+      es: El rendimiento a plena carga es anormal pese a unos ajustes básicos correctos.
+      it: Le prestazioni a pieno carico sono anomale nonostante le regolazioni di base corrette.
+      nl: De prestaties bij volgas zijn abnormaal ondanks correcte basisafstellingen.
+  possible_causes:
+    - en: Main jet has been replaced with an incorrect size.
+      ro: Jiclorul principal a fost înlocuit cu unul de dimensiune incorectă.
+      de: Die Hauptdüse wurde durch eine falsche Größe ersetzt.
+      fr: Le gicleur principal a été remplacé par une taille incorrecte.
+      es: El chiclé principal ha sido sustituido por uno de tamaño incorrecto.
+      it: Il getto principale è stato sostituito con una misura errata.
+      nl: De hoofdsproeier is vervangen door een verkeerde maat.
+    - en: Previous carburetor tuning or modification changed the required jet size.
+      ro: Reglajele sau modificările anterioare ale carburatorului au schimbat dimensiunea necesară a jiclorului.
+      de: Frühere Vergaserabstimmungen oder Änderungen haben die erforderliche Düsengröße verändert.
+      fr: Des modifications ou réglages antérieurs ont changé la taille de gicleur nécessaire.
+      es: Ajustes o modificaciones anteriores han cambiado el tamaño de chiclé necesario.
+      it: Regolazioni o modifiche precedenti hanno cambiato la misura necessaria del getto.
+      nl: Eerdere afstellingen of modificaties hebben de benodigde sproeiermaat veranderd.
+  diagnostic_steps:
+    - en: Identify the installed main jet and compare it with the specification for the exact carburetor.
+      ro: Identifică jiclorul montat și compară-l cu specificația carburatorului exact.
+      de: Eingebaute Hauptdüse identifizieren und mit der Spezifikation des genauen Vergasers vergleichen.
+      fr: Identifier le gicleur monté et le comparer à la spécification du carburateur concerné.
+      es: Identificar el chiclé instalado y compararlo con la especificación del carburador exacto.
+      it: Identificare il getto montato e confrontarlo con la specifica del carburatore esatto.
+      nl: Identificeer de gemonteerde hoofdsproeier en vergelijk deze met de specificatie van de exacte carburateur.
+    - en: Inspect spark-plug appearance after a controlled load test.
+      ro: Inspectează aspectul bujiilor după un test controlat la sarcină.
+      de: Zündkerzenbild nach einem kontrollierten Lasttest prüfen.
+      fr: Contrôler l'aspect des bougies après un essai sous charge contrôlé.
+      es: Inspeccionar las bujías después de una prueba controlada bajo carga.
+      it: Controllare l'aspetto delle candele dopo una prova controllata sotto carico.
+      nl: Controleer het bougiebeeld na een gecontroleerde belastingstest.
+  keywords:
+    - main jet
+    - carburetor tuning
+    - rich mixture
+    - lean mixture
+  related_dtcs: []
+  difficulty: advanced
+
+- id: vw_classic_petrol_carburetor_air_correction_jet_fault
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_type_1
+      - volkswagen_type_2
+      - volkswagen_type_3
+      - volkswagen_karmann_ghia
+      - volkswagen_k70
+    generations:
+      - volkswagen_type_1
+      - volkswagen_type_2_t1
+      - volkswagen_type_2_t2
+      - volkswagen_type_3
+      - volkswagen_karmann_ghia_type_14
+      - volkswagen_karmann_ghia_type_34
+      - volkswagen_k70
+    engines: []
+  category: diagnostics
+  system: fuel
+  title:
+    en: Carburetor Air Correction Jet Fault
+    ro: Defecțiune a jiclorului de corecție a aerului
+    de: Fehler der Luftkorrekturdüse des Vergasers
+    fr: Défaut du gicleur de correction d'air du carburateur
+    es: Fallo del chiclé de corrección de aire del carburador
+    it: Guasto del getto di correzione aria del carburatore
+    nl: Storing van de luchtcorrectiesproeier van de carburateur
+  symptoms:
+    - en: Mixture becomes excessively rich or lean at higher engine speed.
+      ro: Amestecul devine excesiv de bogat sau sărac la turații mai mari.
+      de: Das Gemisch wird bei höherer Drehzahl zu fett oder zu mager.
+      fr: Le mélange devient trop riche ou trop pauvre à régime élevé.
+      es: La mezcla se vuelve demasiado rica o pobre a altas revoluciones.
+      it: La miscela diventa troppo ricca o magra ad alto regime.
+      nl: Het mengsel wordt bij hogere toerentallen te rijk of te arm.
+    - en: Engine performance changes abnormally as engine speed increases.
+      ro: Performanța motorului se modifică anormal pe măsură ce crește turația.
+      de: Die Motorleistung verändert sich beim Ansteigen der Drehzahl ungewöhnlich.
+      fr: Le comportement du moteur change anormalement avec l'augmentation du régime.
+      es: El comportamiento del motor cambia anormalmente al aumentar las revoluciones.
+      it: Il comportamento del motore cambia in modo anomalo aumentando il regime.
+      nl: Het motorgedrag verandert abnormaal bij stijgend toerental.
+  possible_causes:
+    - en: Air correction jet is blocked or contaminated.
+      ro: Jiclorul de corecție a aerului este înfundat sau contaminat.
+      de: Die Luftkorrekturdüse ist verstopft oder verschmutzt.
+      fr: Le gicleur de correction d'air est obstrué ou contaminé.
+      es: El chiclé de corrección de aire está obstruido o contaminado.
+      it: Il getto di correzione aria è ostruito o contaminato.
+      nl: De luchtcorrectiesproeier is verstopt of vervuild.
+    - en: Incorrect air correction jet has been installed.
+      ro: A fost montat un jiclor de corecție a aerului incorect.
+      de: Eine falsche Luftkorrekturdüse wurde eingebaut.
+      fr: Un gicleur de correction d'air incorrect a été monté.
+      es: Se ha instalado un chiclé de corrección de aire incorrecto.
+      it: È stato installato un getto di correzione aria errato.
+      nl: Er is een verkeerde luchtcorrectiesproeier gemonteerd.
+  diagnostic_steps:
+    - en: Remove and inspect the air correction jet for contamination or damage.
+      ro: Demontează și inspectează jiclorul pentru contaminare sau deteriorare.
+      de: Luftkorrekturdüse ausbauen und auf Verschmutzung oder Beschädigung prüfen.
+      fr: Déposer et inspecter le gicleur de correction d'air.
+      es: Retirar e inspeccionar el chiclé de corrección de aire.
+      it: Rimuovere e controllare il getto di correzione aria.
+      nl: Verwijder en inspecteer de luchtcorrectiesproeier.
+    - en: Verify the installed jet size against the exact carburetor specification.
+      ro: Verifică dimensiunea jiclorului față de specificația carburatorului exact.
+      de: Düsengröße mit der Spezifikation des genauen Vergasers vergleichen.
+      fr: Comparer la taille du gicleur avec la spécification du carburateur concerné.
+      es: Comparar el tamaño del chiclé con la especificación del carburador exacto.
+      it: Confrontare la misura del getto con la specifica del carburatore esatto.
+      nl: Vergelijk de sproeiermaat met de specificatie van de exacte carburateur.
+  keywords:
+    - air correction jet
+    - carburetor
+    - mixture
+    - high rpm
+  related_dtcs: []
+  difficulty: advanced
+
 - id: vw_classic_petrol_carburetor_idle_speed_too_high
   vehicle:
     manufacturer: volkswagen
