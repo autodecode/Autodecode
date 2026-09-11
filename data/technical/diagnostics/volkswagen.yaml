@@ -6,6 +6,1984 @@ manufacturer:
 
 technical_data:
 
+- id: vw_early_electronic_coolant_temperature_sensor_fault
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_golf
+      - volkswagen_vento
+      - volkswagen_polo
+      - volkswagen_bora
+      - volkswagen_lupo
+      - volkswagen_new_beetle
+      - volkswagen_passat
+      - volkswagen_sharan
+      - volkswagen_caddy
+    generations:
+      - volkswagen_golf_mk3
+      - volkswagen_golf_mk4
+      - volkswagen_vento_mk3
+      - volkswagen_polo_mk3
+      - volkswagen_polo_mk4
+      - volkswagen_bora_1j
+      - volkswagen_lupo_6x
+      - volkswagen_new_beetle_9c
+      - volkswagen_passat_b3
+      - volkswagen_passat_b4
+      - volkswagen_passat_b5
+      - volkswagen_sharan_7m
+      - volkswagen_caddy_9k
+    engines: []
+  category: diagnostics
+  system: engine
+  title:
+    en: Engine coolant temperature sensor fault
+    ro: Defecțiune senzor temperatură lichid de răcire
+    de: Fehler des Kühlmitteltemperatursensors
+    fr: Défaut du capteur de température du liquide de refroidissement
+    es: Fallo del sensor de temperatura del refrigerante
+    it: Guasto del sensore temperatura liquido refrigerante
+    nl: Storing koelvloeistoftemperatuursensor
+  symptoms:
+    - en: Hard starting when cold or hot
+      ro: Pornire dificilă la rece sau la cald
+      de: Schwieriger Kalt- oder Warmstart
+      fr: Démarrage difficile à froid ou à chaud
+      es: Arranque difícil en frío o en caliente
+      it: Avviamento difficoltoso a freddo o a caldo
+      nl: Moeizaam starten bij koude of warme motor
+    - en: High or unstable idle
+      ro: Ralanti ridicat sau instabil
+      de: Hohe oder instabile Leerlaufdrehzahl
+      fr: Ralenti élevé ou instable
+      es: Ralentí alto o inestable
+      it: Minimo alto o instabile
+      nl: Hoog of onstabiel stationair toerental
+    - en: Excessive fuel consumption
+      ro: Consum excesiv de combustibil
+      de: Erhöhter Kraftstoffverbrauch
+      fr: Consommation excessive de carburant
+      es: Consumo excesivo de combustible
+      it: Consumo eccessivo di carburante
+      nl: Verhoogd brandstofverbruik
+  possible_causes:
+    - en: Faulty coolant temperature sensor
+      ro: Senzor de temperatură defect
+      de: Defekter Kühlmitteltemperatursensor
+      fr: Capteur de température défectueux
+      es: Sensor de temperatura defectuoso
+      it: Sensore temperatura guasto
+      nl: Defecte temperatuursensor
+    - en: Corroded connector or wiring
+      ro: Conector sau cablaj corodat
+      de: Korrodierter Stecker oder Kabel
+      fr: Connecteur ou câblage corrodé
+      es: Conector o cableado corroído
+      it: Connettore o cablaggio corroso
+      nl: Gecorrodeerde stekker of bedrading
+  diagnostic_steps:
+    - en: Check sensor resistance against coolant temperature
+      ro: Verifică rezistența senzorului în funcție de temperatura lichidului
+      de: Sensorwiderstand anhand der Kühlmitteltemperatur prüfen
+      fr: Contrôler la résistance du capteur selon la température
+      es: Comprobar la resistencia del sensor según la temperatura
+      it: Controllare la resistenza del sensore in base alla temperatura
+      nl: Sensorweerstand controleren volgens koelvloeistoftemperatuur
+    - en: Inspect connector and wiring for corrosion or open circuits
+      ro: Verifică mufa și cablajul pentru coroziune sau întreruperi
+      de: Stecker und Kabel auf Korrosion oder Unterbrechungen prüfen
+      fr: Vérifier le connecteur et le câblage
+      es: Revisar conector y cableado
+      it: Controllare connettore e cablaggio
+      nl: Stekker en bedrading controleren
+  keywords:
+    - G62
+    - coolant
+    - temperature
+    - ECT
+    - hard start
+    - cold start
+  related_dtcs: []
+  difficulty: basic
+
+- id: vw_early_electronic_engine_speed_sensor_fault
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_golf
+      - volkswagen_vento
+      - volkswagen_polo
+      - volkswagen_bora
+      - volkswagen_lupo
+      - volkswagen_new_beetle
+      - volkswagen_passat
+      - volkswagen_sharan
+    generations:
+      - volkswagen_golf_mk3
+      - volkswagen_golf_mk4
+      - volkswagen_vento_mk3
+      - volkswagen_polo_mk3
+      - volkswagen_polo_mk4
+      - volkswagen_bora_1j
+      - volkswagen_lupo_6x
+      - volkswagen_new_beetle_9c
+      - volkswagen_passat_b3
+      - volkswagen_passat_b4
+      - volkswagen_passat_b5
+      - volkswagen_sharan_7m
+    engines: []
+  category: diagnostics
+  system: engine
+  title:
+    en: Engine speed sensor signal fault
+    ro: Defecțiune semnal senzor turație motor
+    de: Fehler des Motordrehzahlsensors
+    fr: Défaut du capteur de régime moteur
+    es: Fallo del sensor de régimen del motor
+    it: Guasto del sensore giri motore
+    nl: Storing motortoerentalsensor
+  symptoms:
+    - en: Engine cranks but does not start
+      ro: Motorul învârte dar nu pornește
+      de: Motor dreht, startet aber nicht
+      fr: Le moteur tourne mais ne démarre pas
+      es: El motor gira pero no arranca
+      it: Il motore gira ma non si avvia
+      nl: Motor draait maar start niet
+    - en: Intermittent engine stall
+      ro: Oprire intermitentă a motorului
+      de: Sporadisches Absterben des Motors
+      fr: Calage moteur intermittent
+      es: Parada intermitente del motor
+      it: Spegnimento intermittente del motore
+      nl: Intermitterend afslaan van de motor
+  possible_causes:
+    - en: Faulty crankshaft speed sensor
+      ro: Senzor de turație arbore cotit defect
+      de: Defekter Kurbelwellendrehzahlsensor
+      fr: Capteur de régime vilebrequin défectueux
+      es: Sensor de régimen del cigüeñal defectuoso
+      it: Sensore giri albero motore guasto
+      nl: Defecte krukastoerentalsensor
+    - en: Damaged wiring or connector
+      ro: Cablaj sau conector deteriorat
+      de: Beschädigte Verkabelung oder Steckverbindung
+      fr: Câblage ou connecteur endommagé
+      es: Cableado o conector dañado
+      it: Cablaggio o connettore danneggiato
+      nl: Beschadigde bedrading of stekker
+  diagnostic_steps:
+    - en: Verify engine speed signal during cranking
+      ro: Verifică existența semnalului de turație în timpul pornirii
+      de: Drehzahlsignal beim Starten prüfen
+      fr: Vérifier le signal de régime pendant le lancement
+      es: Comprobar la señal de régimen durante el arranque
+      it: Verificare il segnale giri durante l'avviamento
+      nl: Toerentalsignaal tijdens starten controleren
+    - en: Inspect sensor wiring near the crankshaft
+      ro: Inspectează cablajul senzorului în zona arborelui cotit
+      de: Sensorverkabelung an der Kurbelwelle prüfen
+      fr: Contrôler le câblage du capteur
+      es: Revisar el cableado del sensor
+      it: Controllare il cablaggio del sensore
+      nl: Sensorbedrading controleren
+  keywords:
+    - G28
+    - crankshaft
+    - RPM
+    - engine speed
+    - no start
+  related_dtcs: []
+  difficulty: intermediate
+
+- id: vw_early_electronic_hall_sensor_signal_fault
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_golf
+      - volkswagen_vento
+      - volkswagen_polo
+      - volkswagen_passat
+      - volkswagen_corrado
+      - volkswagen_bora
+      - volkswagen_new_beetle
+    generations:
+      - volkswagen_golf_mk3
+      - volkswagen_golf_mk4
+      - volkswagen_vento_mk3
+      - volkswagen_polo_mk3
+      - volkswagen_polo_mk4
+      - volkswagen_passat_b3
+      - volkswagen_passat_b4
+      - volkswagen_passat_b5
+      - volkswagen_corrado
+      - volkswagen_bora_1j
+      - volkswagen_new_beetle_9c
+    engines: []
+  category: diagnostics
+  system: engine
+  title:
+    en: Camshaft Hall sensor signal fault
+    ro: Defecțiune semnal senzor Hall arbore cu came
+    de: Fehler des Hall-Sensors der Nockenwelle
+    fr: Défaut du capteur Hall d'arbre à cames
+    es: Fallo del sensor Hall del árbol de levas
+    it: Guasto del sensore Hall dell'albero a camme
+    nl: Storing Hall-sensor nokkenas
+  symptoms:
+    - en: Hard starting or no start
+      ro: Pornire dificilă sau imposibilă
+      de: Schwerer Start oder kein Start
+      fr: Démarrage difficile ou impossible
+      es: Arranque difícil o imposible
+      it: Avviamento difficoltoso o impossibile
+      nl: Moeizaam of niet starten
+    - en: Misfire or unstable running
+      ro: Rateuri sau funcționare instabilă
+      de: Zündaussetzer oder unruhiger Motorlauf
+      fr: Ratés ou fonctionnement irrégulier
+      es: Fallos de encendido o funcionamiento irregular
+      it: Mancate accensioni o funzionamento irregolare
+      nl: Misfire of onrustige motorloop
+  possible_causes:
+    - en: Faulty Hall sensor
+      ro: Senzor Hall defect
+      de: Defekter Hall-Sensor
+      fr: Capteur Hall défectueux
+      es: Sensor Hall defectuoso
+      it: Sensore Hall guasto
+      nl: Defecte Hall-sensor
+    - en: Incorrect timing or damaged trigger wheel
+      ro: Distribuție decalată sau roată de impuls deteriorată
+      de: Falsche Steuerzeiten oder beschädigtes Geberrad
+      fr: Calage incorrect ou roue cible endommagée
+      es: Distribución incorrecta o rueda fónica dañada
+      it: Fasatura errata o ruota fonica danneggiata
+      nl: Verkeerde timing of beschadigd triggerwiel
+  diagnostic_steps:
+    - en: Check Hall signal while cranking
+      ro: Verifică semnalul Hall în timpul pornirii
+      de: Hall-Signal beim Starten prüfen
+      fr: Vérifier le signal Hall au démarrage
+      es: Comprobar la señal Hall durante el arranque
+      it: Controllare il segnale Hall durante l'avviamento
+      nl: Hall-signaal tijdens starten controleren
+  keywords:
+    - Hall
+    - G40
+    - camshaft
+    - synchronization
+    - no start
+  related_dtcs: []
+  difficulty: intermediate
+
+- id: vw_early_electronic_mass_airflow_sensor_fault
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_golf
+      - volkswagen_vento
+      - volkswagen_polo
+      - volkswagen_bora
+      - volkswagen_lupo
+      - volkswagen_new_beetle
+      - volkswagen_passat
+      - volkswagen_sharan
+    generations:
+      - volkswagen_golf_mk3
+      - volkswagen_golf_mk4
+      - volkswagen_vento_mk3
+      - volkswagen_polo_mk3
+      - volkswagen_polo_mk4
+      - volkswagen_bora_1j
+      - volkswagen_lupo_6x
+      - volkswagen_new_beetle_9c
+      - volkswagen_passat_b3
+      - volkswagen_passat_b4
+      - volkswagen_passat_b5
+      - volkswagen_sharan_7m
+    engines: []
+  category: diagnostics
+  system: engine
+  title:
+    en: Mass airflow sensor signal fault
+    ro: Defecțiune semnal debitmetru aer
+    de: Fehler des Luftmassenmessersignals
+    fr: Défaut du signal du débitmètre d'air
+    es: Fallo de señal del caudalímetro de aire
+    it: Guasto segnale misuratore massa aria
+    nl: Storing luchtmassametersignaal
+  symptoms:
+    - en: Loss of engine power
+      ro: Pierdere de putere
+      de: Leistungsverlust
+      fr: Perte de puissance
+      es: Pérdida de potencia
+      it: Perdita di potenza
+      nl: Vermogensverlies
+    - en: Poor acceleration
+      ro: Accelerație slabă
+      de: Schlechte Beschleunigung
+      fr: Mauvaise accélération
+      es: Mala aceleración
+      it: Scarsa accelerazione
+      nl: Slechte acceleratie
+    - en: Excessive smoke on diesel engines
+      ro: Fum excesiv la motoarele diesel
+      de: Starke Rauchentwicklung bei Dieselmotoren
+      fr: Fumée excessive sur diesel
+      es: Humo excesivo en motores diésel
+      it: Fumo eccessivo sui diesel
+      nl: Overmatige rook bij dieselmotoren
+  possible_causes:
+    - en: Contaminated or faulty MAF sensor
+      ro: Debitmetru murdar sau defect
+      de: Verschmutzter oder defekter Luftmassenmesser
+      fr: Débitmètre encrassé ou défectueux
+      es: Caudalímetro sucio o defectuoso
+      it: Misuratore massa aria sporco o guasto
+      nl: Vervuilde of defecte luchtmassameter
+    - en: Intake air leak
+      ro: Pierdere de aer pe admisie
+      de: Falschluft im Ansaugsystem
+      fr: Prise d'air à l'admission
+      es: Entrada de aire falsa
+      it: Aspirazione d'aria parassita
+      nl: Valse lucht inlaatsysteem
+  diagnostic_steps:
+    - en: Compare measured and expected airflow
+      ro: Compară debitul măsurat cu cel așteptat
+      de: Gemessenen und erwarteten Luftmassenwert vergleichen
+      fr: Comparer le débit mesuré au débit attendu
+      es: Comparar caudal medido y esperado
+      it: Confrontare massa aria misurata e prevista
+      nl: Gemeten en verwachte luchtmassa vergelijken
+    - en: Inspect MAF connector and intake system
+      ro: Verifică mufa debitmetrului și admisia
+      de: Stecker und Ansaugsystem prüfen
+      fr: Contrôler le connecteur et l'admission
+      es: Revisar conector y admisión
+      it: Controllare connettore e aspirazione
+      nl: Stekker en inlaatsysteem controleren
+  keywords:
+    - MAF
+    - G70
+    - airflow
+    - air mass
+    - low power
+  related_dtcs: []
+  difficulty: intermediate
+
+- id: vw_early_electronic_map_sensor_fault
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_golf
+      - volkswagen_vento
+      - volkswagen_polo
+      - volkswagen_bora
+      - volkswagen_lupo
+      - volkswagen_new_beetle
+      - volkswagen_passat
+      - volkswagen_sharan
+    generations:
+      - volkswagen_golf_mk3
+      - volkswagen_golf_mk4
+      - volkswagen_vento_mk3
+      - volkswagen_polo_mk3
+      - volkswagen_polo_mk4
+      - volkswagen_bora_1j
+      - volkswagen_lupo_6x
+      - volkswagen_new_beetle_9c
+      - volkswagen_passat_b3
+      - volkswagen_passat_b4
+      - volkswagen_passat_b5
+      - volkswagen_sharan_7m
+    engines: []
+  category: diagnostics
+  system: engine
+  title:
+    en: Intake manifold pressure sensor fault
+    ro: Defecțiune senzor presiune galerie admisie
+    de: Fehler des Saugrohrdrucksensors
+    fr: Défaut du capteur de pression d'admission
+    es: Fallo del sensor de presión de admisión
+    it: Guasto del sensore pressione collettore
+    nl: Storing inlaatspruksensor
+  symptoms:
+    - en: Poor engine response
+      ro: Răspuns slab al motorului
+      de: Schlechte Motorreaktion
+      fr: Mauvaise réponse moteur
+      es: Mala respuesta del motor
+      it: Scarsa risposta del motore
+      nl: Slechte motorrespons
+    - en: Unstable idle
+      ro: Ralanti instabil
+      de: Unruhiger Leerlauf
+      fr: Ralenti instable
+      es: Onstabiel stationair
+      it: Minimo instabile
+      nl: Onstabiel stationair
+  possible_causes:
+    - en: Faulty MAP sensor
+      ro: Senzor MAP defect
+      de: Defekter MAP-Sensor
+      fr: Capteur MAP défectueux
+      es: Sensor MAP defectuoso
+      it: Sensore MAP guasto
+      nl: Defecte MAP-sensor
+    - en: Damaged vacuum hose or wiring
+      ro: Furtun vacuum sau cablaj deteriorat
+      de: Beschädigter Unterdruckschlauch oder Kabel
+      fr: Durite de dépression ou câblage endommagé
+      es: Manguito de vacío o cableado dañado
+      it: Tubo depressione o cablaggio danneggiato
+      nl: Beschadigde vacuümslang of bedrading
+  diagnostic_steps:
+    - en: Check MAP signal against engine load
+      ro: Compară semnalul MAP cu sarcina motorului
+      de: MAP-Signal mit Motorlast vergleichen
+      fr: Comparer le signal MAP à la charge moteur
+      es: Comparar señal MAP con carga del motor
+      it: Confrontare segnale MAP e carico motore
+      nl: MAP-signaal vergelijken met motorbelasting
+  keywords:
+    - MAP
+    - G71
+    - manifold pressure
+    - vacuum
+    - boost
+  related_dtcs: []
+  difficulty: intermediate
+
+- id: vw_early_electronic_intake_air_temperature_sensor_fault
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_golf
+      - volkswagen_vento
+      - volkswagen_polo
+      - volkswagen_bora
+      - volkswagen_lupo
+      - volkswagen_new_beetle
+      - volkswagen_passat
+      - volkswagen_sharan
+    generations:
+      - volkswagen_golf_mk3
+      - volkswagen_golf_mk4
+      - volkswagen_vento_mk3
+      - volkswagen_polo_mk3
+      - volkswagen_polo_mk4
+      - volkswagen_bora_1j
+      - volkswagen_lupo_6x
+      - volkswagen_new_beetle_9c
+      - volkswagen_passat_b3
+      - volkswagen_passat_b4
+      - volkswagen_passat_b5
+      - volkswagen_sharan_7m
+    engines: []
+  category: diagnostics
+  system: engine
+  title:
+    en: Intake air temperature sensor fault
+    ro: Defecțiune senzor temperatură aer admis
+    de: Fehler des Ansauglufttemperatursensors
+    fr: Défaut du capteur de température d'air d'admission
+    es: Fallo del sensor de temperatura del aire de admisión
+    it: Guasto del sensore temperatura aria aspirata
+    nl: Storing inlaatluchttemperatuursensor
+  symptoms:
+    - en: Poor cold or hot running
+      ro: Funcționare slabă la rece sau la cald
+      de: Schlechter Motorlauf kalt oder warm
+      fr: Fonctionnement irrégulier à froid ou à chaud
+      es: Funcionamiento deficiente en frío o caliente
+      it: Funzionamento irregolare a freddo o caldo
+      nl: Slechte werking koud of warm
+  possible_causes:
+    - en: Faulty intake air temperature sensor
+      ro: Senzor temperatură aer defect
+      de: Defekter Ansauglufttemperatursensor
+      fr: Capteur de température défectueux
+      es: Sensor defectuoso
+      it: Sensore temperatura guasto
+      nl: Defecte temperatuursensor
+    - en: Wiring or connector fault
+      ro: Problemă de cablaj sau conector
+      de: Kabel- oder Steckverbindungsfehler
+      fr: Défaut de câblage ou connecteur
+      es: Fallo de cableado o conector
+      it: Guasto cablaggio o connettore
+      nl: Bedradings- of stekkerprobleem
+  diagnostic_steps:
+    - en: Compare sensor reading with actual intake temperature
+      ro: Compară valoarea senzorului cu temperatura reală
+      de: Sensorwert mit tatsächlicher Temperatur vergleichen
+      fr: Comparer la valeur avec la température réelle
+      es: Comparar lectura con temperatura real
+      it: Confrontare lettura con temperatura reale
+      nl: Sensorwaarde vergelijken met werkelijke temperatuur
+  keywords:
+    - IAT
+    - G72
+    - intake air temperature
+    - air temperature
+  related_dtcs: []
+  difficulty: basic
+
+- id: vw_early_electronic_throttle_position_sensor_fault
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_golf
+      - volkswagen_vento
+      - volkswagen_polo
+      - volkswagen_bora
+      - volkswagen_lupo
+      - volkswagen_new_beetle
+      - volkswagen_passat
+    generations:
+      - volkswagen_golf_mk3
+      - volkswagen_golf_mk4
+      - volkswagen_vento_mk3
+      - volkswagen_polo_mk3
+      - volkswagen_polo_mk4
+      - volkswagen_bora_1j
+      - volkswagen_lupo_6x
+      - volkswagen_new_beetle_9c
+      - volkswagen_passat_b3
+      - volkswagen_passat_b4
+      - volkswagen_passat_b5
+    engines: []
+  category: diagnostics
+  system: engine
+  title:
+    en: Throttle position sensor fault
+    ro: Defecțiune senzor poziție clapetă accelerație
+    de: Fehler des Drosselklappenpositionssensors
+    fr: Défaut du capteur de position du papillon
+    es: Fallo del sensor de posición del acelerador
+    it: Guasto del sensore posizione farfalla
+    nl: Storing gaskleppositiesensor
+  symptoms:
+    - en: Hesitation during acceleration
+      ro: Ezitare la accelerație
+      de: Ruckeln beim Beschleunigen
+      fr: Hésitation à l'accélération
+      es: Vacilación durante la aceleración
+      it: Esitazione in accelerazione
+      nl: Inhouden bij accelereren
+    - en: Unstable idle
+      ro: Ralanti instabil
+      de: Unruhiger Leerlauf
+      fr: Ralenti instable
+      es: Ralentí inestable
+      it: Minimo instabile
+      nl: Onstabiel stationair
+  possible_causes:
+    - en: Worn throttle potentiometer
+      ro: Potențiometru clapetă uzat
+      de: Verschlissener Drosselklappenpotentiometer
+      fr: Potentiomètre de papillon usé
+      es: Potenciómetro del acelerador desgastado
+      it: Potenziometro farfalla usurato
+      nl: Versleten gaskleppotentiometer
+    - en: Wiring fault
+      ro: Defecțiune cablaj
+      de: Kabeldefekt
+      fr: Défaut de câblage
+      es: Fallo de cableado
+      it: Guasto cablaggio
+      nl: Bedradingsfout
+  diagnostic_steps:
+    - en: Check sensor output for smooth voltage change
+      ro: Verifică variația lină a tensiunii senzorului
+      de: Gleichmäßige Spannungsänderung prüfen
+      fr: Vérifier une variation régulière de tension
+      es: Comprobar variación uniforme de tensión
+      it: Controllare la variazione regolare della tensione
+      nl: Controleer gelijkmatige spanningsverandering
+    - en: Check connector and sensor supply voltage
+      ro: Verifică alimentarea și conectorul
+      de: Versorgung und Stecker prüfen
+      fr: Contrôler alimentation et connecteur
+      es: Revisar alimentación y conector
+      it: Controllare alimentazione e connettore
+      nl: Voeding en stekker controleren
+  keywords:
+    - TPS
+    - G69
+    - throttle
+    - potentiometer
+    - hesitation
+  related_dtcs: []
+  difficulty: intermediate
+
+- id: vw_early_electronic_idle_control_fault
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_golf
+      - volkswagen_vento
+      - volkswagen_polo
+      - volkswagen_bora
+      - volkswagen_lupo
+      - volkswagen_passat
+      - volkswagen_corrado
+    generations:
+      - volkswagen_golf_mk3
+      - volkswagen_golf_mk4
+      - volkswagen_vento_mk3
+      - volkswagen_polo_mk3
+      - volkswagen_polo_mk4
+      - volkswagen_bora_1j
+      - volkswagen_lupo_6x
+      - volkswagen_passat_b3
+      - volkswagen_passat_b4
+      - volkswagen_corrado
+    engines: []
+  category: diagnostics
+  system: engine
+  title:
+    en: Electronic idle stabilization fault
+    ro: Defecțiune stabilizare electronică ralanti
+    de: Fehler der elektronischen Leerlaufstabilisierung
+    fr: Défaut de stabilisation électronique du ralenti
+    es: Fallo de estabilización electrónica del ralentí
+    it: Guasto stabilizzazione elettronica del minimo
+    nl: Storing elektronische stationairregeling
+  symptoms:
+    - en: Unstable idle
+      ro: Ralanti instabil
+      de: Unruhiger Leerlauf
+      fr: Ralenti instable
+      es: Ralentí inestable
+      it: Minimo instabile
+      nl: Onstabiel stationair
+    - en: Engine stalls when returning to idle
+      ro: Motorul se oprește la revenirea la ralanti
+      de: Motor stirbt beim Zurückkehren in den Leerlauf ab
+      fr: Calage lors du retour au ralenti
+      es: El motor se cala al volver al ralentí
+      it: Spegnimento tornando al minimo
+      nl: Motor valt uit bij terugkeer naar stationair
+  possible_causes:
+    - en: Faulty idle control valve
+      ro: Supapă de stabilizare ralanti defectă
+      de: Defektes Leerlaufregelventil
+      fr: Valve de régulation du ralenti défectueuse
+      es: Válvula de control de ralentí defectuosa
+      it: Valvola regolazione minimo guasta
+      nl: Defecte stationairregelklep
+    - en: Carbon contamination
+      ro: Depuneri de carbon
+      de: Kohlenstoffablagerungen
+      fr: Dépôts de carbone
+      es: Depósitos de carbonilla
+      it: Depositi carboniosi
+      nl: Koolstofafzettingen
+  diagnostic_steps:
+    - en: Inspect idle valve operation and electrical supply
+      ro: Verifică funcționarea și alimentarea supapei de ralanti
+      de: Funktion und Versorgung des Leerlaufventils prüfen
+      fr: Vérifier fonctionnement et alimentation de la valve
+      es: Revisar funcionamiento y alimentación
+      it: Controllare funzionamento e alimentazione
+      nl: Werking en voeding controleren
+    - en: Check for intake vacuum leaks
+      ro: Verifică pierderile de vacuum pe admisie
+      de: Ansaugsystem auf Unterdrucklecks prüfen
+      fr: Rechercher les fuites de dépression
+      es: Buscar fugas de vacío
+      it: Cercare perdite di depressione
+      nl: Vacuümlekken controleren
+  keywords:
+    - idle
+    - ISV
+    - idle valve
+    - stabilization
+    - stalling
+  related_dtcs: []
+  difficulty: intermediate
+
+- id: vw_early_electronic_lambda_sensor_fault
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_golf
+      - volkswagen_vento
+      - volkswagen_polo
+      - volkswagen_bora
+      - volkswagen_lupo
+      - volkswagen_new_beetle
+      - volkswagen_passat
+      - volkswagen_corrado
+    generations:
+      - volkswagen_golf_mk3
+      - volkswagen_golf_mk4
+      - volkswagen_vento_mk3
+      - volkswagen_polo_mk3
+      - volkswagen_polo_mk4
+      - volkswagen_bora_1j
+      - volkswagen_lupo_6x
+      - volkswagen_new_beetle_9c
+      - volkswagen_passat_b3
+      - volkswagen_passat_b4
+      - volkswagen_passat_b5
+      - volkswagen_corrado
+    engines: []
+  category: diagnostics
+  system: engine
+  title:
+    en: Oxygen sensor signal fault
+    ro: Defecțiune semnal sondă lambda
+    de: Fehler des Lambdasondensignals
+    fr: Défaut du signal de sonde lambda
+    es: Fallo de señal de la sonda lambda
+    it: Guasto segnale sonda lambda
+    nl: Storing lambdasignaal
+  symptoms:
+    - en: Poor fuel economy
+      ro: Consum crescut
+      de: Erhöhter Kraftstoffverbrauch
+      fr: Consommation élevée
+      es: Consumo elevado
+      it: Consumo elevato
+      nl: Verhoogd brandstofverbruik
+    - en: Rough idle
+      ro: Ralanti neregulat
+      de: Unruhiger Leerlauf
+      fr: Ralenti irrégulier
+      es: Ralentí irregular
+      it: Minimo irregolare
+      nl: Onrustig stationair
+  possible_causes:
+    - en: Aging oxygen sensor
+      ro: Sondă lambda îmbătrânită
+      de: Gealterte Lambdasonde
+      fr: Sonde lambda vieillissante
+      es: Sonda lambda envejecida
+      it: Sonda lambda usurata
+      nl: Verouderde lambdasonde
+    - en: Exhaust leak before sensor
+      ro: Pierdere pe evacuare înainte de sondă
+      de: Abgasleck vor der Sonde
+      fr: Fuite d'échappement avant la sonde
+      es: Fuga de escape antes de la sonda
+      it: Perdita scarico prima della sonda
+      nl: Uitlaatlek vóór de sensor
+  diagnostic_steps:
+    - en: Check sensor signal switching after warm-up
+      ro: Verifică variația semnalului după încălzire
+      de: Signalwechsel nach dem Warmlauf prüfen
+      fr: Vérifier les variations du signal à chaud
+      es: Comprobar variación de señal en caliente
+      it: Controllare la variazione del segnale a caldo
+      nl: Signaalvariatie bij warme motor controleren
+  keywords:
+    - lambda
+    - oxygen sensor
+    - O2
+    - G39
+    - mixture
+  related_dtcs: []
+  difficulty: intermediate
+
+- id: vw_early_electronic_n75_boost_control_fault
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_golf
+      - volkswagen_vento
+      - volkswagen_polo
+      - volkswagen_bora
+      - volkswagen_new_beetle
+      - volkswagen_passat
+      - volkswagen_sharan
+      - volkswagen_caddy
+    generations:
+      - volkswagen_golf_mk3
+      - volkswagen_golf_mk4
+      - volkswagen_vento_mk3
+      - volkswagen_polo_mk3
+      - volkswagen_polo_mk4
+      - volkswagen_bora_1j
+      - volkswagen_new_beetle_9c
+      - volkswagen_passat_b3
+      - volkswagen_passat_b4
+      - volkswagen_passat_b5
+      - volkswagen_sharan_7m
+      - volkswagen_caddy_9k
+    engines:
+      - 19_tdi
+      - 19_tdi_110
+      - 19_tdi_115
+      - 19_tdi_130
+    category: diagnostics
+    system: engine
+    title:
+      en: N75 turbocharger boost control fault
+      ro: Defecțiune control presiune turbo prin N75
+      de: Fehler der N75-Ladedruckregelung
+      fr: Défaut de commande de pression turbo N75
+      es: Fallo del control de presión turbo N75
+      it: Guasto controllo pressione turbo N75
+      nl: Storing N75-turbodrukregeling
+    symptoms:
+      - en: Low boost and poor acceleration
+        ro: Presiune turbo scăzută și accelerație slabă
+        de: Niedriger Ladedruck und schlechte Beschleunigung
+        fr: Faible pression turbo et mauvaise accélération
+        es: Baja presión turbo y mala aceleración
+        it: Bassa pressione turbo e scarsa accelerazione
+        nl: Lage turbodruk en slechte acceleratie
+      - en: Intermittent limp mode
+        ro: Limp mode intermitent
+        de: Sporadischer Notlauf
+        fr: Mode dégradé intermittent
+        es: Modo emergencia intermitente
+        it: Recovery intermittente
+        nl: Intermitterende noodloop
+    possible_causes:
+      - en: Faulty N75 solenoid
+        ro: Electrovalvă N75 defectă
+        de: Defektes N75-Magnetventil
+        fr: Électrovanne N75 défectueuse
+        es: Solenoide N75 defectuoso
+        it: Elettrovalvola N75 guasta
+        nl: Defecte N75-solenoïde
+      - en: Vacuum hose leak or restriction
+        ro: Furtun vacuum fisurat sau obturat
+        de: Unterdruckschlauch undicht oder verstopft
+        fr: Durite de dépression fuyarde ou obstruée
+        es: Tubo de vacío con fuga u obstruido
+        it: Tubo depressione lesionato o ostruito
+        nl: Vacuümslang lek of verstopt
+    diagnostic_steps:
+      - en: Check N75 electrical resistance and activation
+        ro: Verifică rezistența și comanda electrică a N75
+        de: Widerstand und Ansteuerung des N75 prüfen
+        fr: Contrôler résistance et commande N75
+        es: Comprobar resistencia y activación N75
+        it: Controllare resistenza e comando N75
+        nl: Weerstand en aansturing N75 controleren
+      - en: Test all vacuum lines
+        ro: Testează toate conductele de vacuum
+        de: Alle Unterdruckleitungen prüfen
+        fr: Contrôler toutes les durites de dépression
+        es: Comprobar todos los tubos de vacío
+        it: Controllare tutti i tubi depressione
+        nl: Alle vacuümslangen controleren
+    keywords:
+      - N75
+      - boost
+      - turbo
+      - vacuum
+      - limp mode
+    related_dtcs: []
+    difficulty: intermediate
+
+- id: vw_early_tdi_vacuum_system_leak
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_golf
+      - volkswagen_vento
+      - volkswagen_polo
+      - volkswagen_bora
+      - volkswagen_new_beetle
+      - volkswagen_passat
+      - volkswagen_sharan
+      - volkswagen_caddy
+    generations:
+      - volkswagen_golf_mk3
+      - volkswagen_golf_mk4
+      - volkswagen_vento_mk3
+      - volkswagen_polo_mk3
+      - volkswagen_polo_mk4
+      - volkswagen_bora_1j
+      - volkswagen_new_beetle_9c
+      - volkswagen_passat_b4
+      - volkswagen_passat_b5
+      - volkswagen_sharan_7m
+      - volkswagen_caddy_9k
+    engines: []
+  category: diagnostics
+  system: engine
+  title:
+    en: Engine vacuum system leak
+    ro: Pierdere în sistemul de vacuum al motorului
+    de: Undichtigkeit im Motor-Unterdrucksystem
+    fr: Fuite du système de dépression moteur
+    es: Fuga en el sistema de vacío del motor
+    it: Perdita nel sistema di depressione motore
+    nl: Lekkage in het motorvacuümsysteem
+  symptoms:
+    - en: Poor turbo response
+      ro: Răspuns slab al turbinei
+      de: Schlechte Turboreaktion
+      fr: Mauvaise réponse du turbo
+      es: Mala respuesta del turbo
+      it: Risposta scarsa del turbo
+      nl: Slechte turbodrukrespons
+    - en: Limp mode under load
+      ro: Limp mode la sarcină
+      de: Notlauf unter Last
+      fr: Mode dégradé sous charge
+      es: Modo emergencia bajo carga
+      it: Recovery sotto carico
+      nl: Noodloop onder belasting
+  possible_causes:
+    - en: Cracked vacuum hose
+      ro: Furtun vacuum fisurat
+      de: Gerissener Unterdruckschlauch
+      fr: Durite de dépression fissurée
+      es: Tubo de vacío agrietado
+      it: Tubo depressione crepato
+      nl: Gebarsten vacuümslang
+    - en: Faulty vacuum actuator or check valve
+      ro: Actuator vacuum sau supapă de sens defectă
+      de: Defekter Unterdrucksteller oder Rückschlagventil
+      fr: Actionneur ou clapet anti-retour défectueux
+      es: Actuador o válvula de retención defectuosos
+      it: Attuatore o valvola di ritegno guasti
+      nl: Defecte vacuümactuator of terugslagklep
+  diagnostic_steps:
+    - en: Apply vacuum with a hand pump and check whether it holds
+      ro: Aplică vacuum cu o pompă manuală și verifică dacă îl menține
+      de: Mit Handvakuumpumpe prüfen, ob Unterdruck gehalten wird
+      fr: Tester le maintien du vide avec une pompe manuelle
+      es: Comprobar mantenimiento del vacío con bomba manual
+      it: Verificare tenuta con pompa manuale
+      nl: Vacuüm vasthouden met handpomp controleren
+  keywords:
+    - vacuum
+    - N75
+    - turbo
+    - actuator
+    - limp mode
+  related_dtcs: []
+  difficulty: basic
+
+- id: vw_early_electronic_egr_control_fault
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_golf
+      - volkswagen_vento
+      - volkswagen_polo
+      - volkswagen_bora
+      - volkswagen_new_beetle
+      - volkswagen_passat
+      - volkswagen_sharan
+      - volkswagen_caddy
+    generations:
+      - volkswagen_golf_mk3
+      - volkswagen_golf_mk4
+      - volkswagen_vento_mk3
+      - volkswagen_polo_mk3
+      - volkswagen_polo_mk4
+      - volkswagen_bora_1j
+      - volkswagen_new_beetle_9c
+      - volkswagen_passat_b4
+      - volkswagen_passat_b5
+      - volkswagen_sharan_7m
+      - volkswagen_caddy_9k
+    engines: []
+  category: diagnostics
+  system: engine
+  title:
+    en: EGR valve control fault
+    ro: Defecțiune control supapă EGR
+    de: Fehler der AGR-Ventilsteuerung
+    fr: Défaut de commande de vanne EGR
+    es: Fallo de control de la válvula EGR
+    it: Guasto comando valvola EGR
+    nl: Storing EGR-klepregeling
+  symptoms:
+    - en: Poor low-speed response
+      ro: Răspuns slab la turații joase
+      de: Schlechte Reaktion bei niedriger Drehzahl
+      fr: Mauvaise réponse à bas régime
+      es: Mala respuesta a bajo régimen
+      it: Scarsa risposta ai bassi regimi
+      nl: Slechte respons bij lage toerentallen
+    - en: Rough idle
+      ro: Ralanti neregulat
+      de: Unruhiger Leerlauf
+      fr: Ralenti irrégulier
+      es: Ralentí irregular
+      it: Minimo irregolare
+      nl: Onrustig stationair
+  possible_causes:
+    - en: Carbon deposits causing EGR valve to stick
+      ro: Depuneri care blochează supapa EGR
+      de: Kohlenstoffablagerungen blockieren das AGR-Ventil
+      fr: Dépôts de carbone bloquant la vanne EGR
+      es: Carbonilla que bloquea la EGR
+      it: Depositi carboniosi che bloccano la EGR
+      nl: Koolstofafzetting waardoor EGR klemt
+    - en: Vacuum actuator fault
+      ro: Defecțiune actuator vacuum
+      de: Fehler des Unterdruckstellers
+      fr: Défaut de l'actionneur à dépression
+      es: Fallo del actuador de vacío
+      it: Guasto attuatore a depressione
+      nl: Defecte vacuümactuator
+  diagnostic_steps:
+    - en: Check EGR movement and vacuum supply
+      ro: Verifică mișcarea EGR și alimentarea cu vacuum
+      de: EGR-Bewegung und Unterdruckversorgung prüfen
+      fr: Vérifier le mouvement EGR et la dépression
+      es: Comprobar movimiento EGR y vacío
+      it: Controllare movimento EGR e depressione
+      nl: EGR-beweging en vacuüm controleren
+  keywords:
+    - EGR
+    - AGR
+    - exhaust gas recirculation
+    - vacuum
+    - carbon
+  related_dtcs: []
+  difficulty: intermediate
+
+- id: vw_early_electronic_injector_circuit_fault
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_golf
+      - volkswagen_vento
+      - volkswagen_polo
+      - volkswagen_bora
+      - volkswagen_lupo
+      - volkswagen_new_beetle
+      - volkswagen_passat
+      - volkswagen_sharan
+    generations:
+      - volkswagen_golf_mk3
+      - volkswagen_golf_mk4
+      - volkswagen_vento_mk3
+      - volkswagen_polo_mk3
+      - volkswagen_polo_mk4
+      - volkswagen_bora_1j
+      - volkswagen_lupo_6x
+      - volkswagen_new_beetle_9c
+      - volkswagen_passat_b3
+      - volkswagen_passat_b4
+      - volkswagen_passat_b5
+      - volkswagen_sharan_7m
+    engines: []
+  category: diagnostics
+  system: engine
+  title:
+    en: Fuel injector electrical circuit fault
+    ro: Defecțiune circuit electric injector
+    de: Elektrischer Fehler im Einspritzventilkreis
+    fr: Défaut électrique du circuit d'injecteur
+    es: Fallo eléctrico del circuito del inyector
+    it: Guasto elettrico del circuito iniettore
+    nl: Elektrische storing in injectorcircuit
+  symptoms:
+    - en: Misfire
+      ro: Rateu
+      de: Zündaussetzer
+      fr: Raté moteur
+      es: Fallo de combustión
+      it: Mancata accensione
+      nl: Misfire
+    - en: Rough idle
+      ro: Ralanti neregulat
+      de: Unruhiger Leerlauf
+      fr: Ralenti irrégulier
+      es: Ralentí irregular
+      it: Minimo irregolare
+      nl: Onrustig stationair
+  possible_causes:
+    - en: Open or shorted injector wiring
+      ro: Cablaj injector întrerupt sau în scurt
+      de: Unterbrochene oder kurzgeschlossene Injektorleitung
+      fr: Câblage d'injecteur coupé ou en court-circuit
+      es: Cableado del inyector abierto o en cortocircuito
+      it: Cablaggio iniettore interrotto o in corto
+      nl: Onderbroken of kortgesloten injectorbedrading
+    - en: Faulty injector coil
+      ro: Bobină injector defectă
+      de: Defekte Injektorspule
+      fr: Bobine d'injecteur défectueuse
+      es: Bobina del inyector defectuosa
+      it: Bobina iniettore guasta
+      nl: Defecte injectorcoil
+  diagnostic_steps:
+    - en: Measure injector resistance
+      ro: Măsoară rezistența injectorului
+      de: Injektorwiderstand messen
+      fr: Mesurer la résistance de l'injecteur
+      es: Medir resistencia del inyector
+      it: Misurare la resistenza dell'iniettore
+      nl: Injectorweerstand meten
+    - en: Check wiring continuity and supply
+      ro: Verifică continuitatea și alimentarea cablajului
+      de: Kabeldurchgang und Versorgung prüfen
+      fr: Vérifier continuité et alimentation
+      es: Comprobar continuidad y alimentación
+      it: Controllare continuità e alimentazione
+      nl: Bedrading op continuïteit en voeding controleren
+  keywords:
+    - injector
+    - injection
+    - electrical
+    - misfire
+    - wiring
+  related_dtcs: []
+  difficulty: intermediate
+
+- id: vw_early_electronic_fuel_pump_relay_fault
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_golf
+      - volkswagen_vento
+      - volkswagen_polo
+      - volkswagen_bora
+      - volkswagen_lupo
+      - volkswagen_new_beetle
+      - volkswagen_passat
+      - volkswagen_sharan
+    generations:
+      - volkswagen_golf_mk3
+      - volkswagen_golf_mk4
+      - volkswagen_vento_mk3
+      - volkswagen_polo_mk3
+      - volkswagen_polo_mk4
+      - volkswagen_bora_1j
+      - volkswagen_lupo_6x
+      - volkswagen_new_beetle_9c
+      - volkswagen_passat_b3
+      - volkswagen_passat_b4
+      - volkswagen_passat_b5
+      - volkswagen_sharan_7m
+    engines: []
+  category: diagnostics
+  system: fuel
+  title:
+    en: Fuel pump relay or power supply fault
+    ro: Defecțiune releu sau alimentare pompă de combustibil
+    de: Fehler des Kraftstoffpumpenrelais oder der Versorgung
+    fr: Défaut du relais ou de l'alimentation de la pompe à carburant
+    es: Fallo del relé o alimentación de la bomba de combustible
+    it: Guasto relè o alimentazione pompa carburante
+    nl: Storing brandstofpomprelais of voeding
+  symptoms:
+    - en: Engine cranks but does not start
+      ro: Motorul învârte dar nu pornește
+      de: Motor dreht, startet aber nicht
+      fr: Le moteur tourne mais ne démarre pas
+      es: El motor gira pero no arranca
+      it: Il motore gira ma non si avvia
+      nl: Motor draait maar start niet
+    - en: Intermittent engine stall
+      ro: Oprire intermitentă
+      de: Sporadisches Absterben
+      fr: Calage intermittent
+      es: Parada intermitente
+      it: Spegnimento intermittente
+      nl: Intermitterend afslaan
+  possible_causes:
+    - en: Defective fuel pump relay
+      ro: Releu pompă combustibil defect
+      de: Defektes Kraftstoffpumpenrelais
+      fr: Relais de pompe défectueux
+      es: Relé de bomba defectuoso
+      it: Relè pompa guasto
+      nl: Defect brandstofpomprelais
+    - en: Poor relay socket contact
+      ro: Contact slab în soclul releului
+      de: Schlechter Kontakt im Relaisstecker
+      fr: Mauvais contact dans le support du relais
+      es: Mal contacto en el zócalo
+      it: Cattivo contatto nel supporto relè
+      nl: Slecht contact in relaisvoet
+  diagnostic_steps:
+    - en: Check pump voltage during cranking
+      ro: Verifică tensiunea pompei în timpul pornirii
+      de: Pumpenspannung beim Starten prüfen
+      fr: Vérifier la tension de pompe au démarrage
+      es: Comprobar tensión de bomba durante arranque
+      it: Controllare tensione pompa durante avviamento
+      nl: Pompspanning tijdens starten controleren
+    - en: Check relay output under load
+      ro: Verifică ieșirea releului sub sarcină
+      de: Relaisausgang unter Last prüfen
+      fr: Vérifier la sortie du relais sous charge
+      es: Comprobar salida del relé bajo carga
+      it: Controllare uscita relè sotto carico
+      nl: Relaisuitgang onder belasting controleren
+  keywords:
+    - fuel pump
+    - relay
+    - no start
+    - power supply
+  related_dtcs: []
+  difficulty: basic
+
+- id: vw_early_electronic_ecu_power_supply_fault
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_golf
+      - volkswagen_vento
+      - volkswagen_polo
+      - volkswagen_bora
+      - volkswagen_lupo
+      - volkswagen_new_beetle
+      - volkswagen_passat
+      - volkswagen_sharan
+    generations:
+      - volkswagen_golf_mk3
+      - volkswagen_golf_mk4
+      - volkswagen_vento_mk3
+      - volkswagen_polo_mk3
+      - volkswagen_polo_mk4
+      - volkswagen_bora_1j
+      - volkswagen_lupo_6x
+      - volkswagen_new_beetle_9c
+      - volkswagen_passat_b3
+      - volkswagen_passat_b4
+      - volkswagen_passat_b5
+      - volkswagen_sharan_7m
+    engines: []
+  category: diagnostics
+  system: electrical
+  title:
+    en: Engine control unit power supply fault
+    ro: Defecțiune alimentare ECU motor
+    de: Fehler der Motorsteuergeräteversorgung
+    fr: Défaut d'alimentation du calculateur moteur
+    es: Fallo de alimentación de la ECU del motor
+    it: Guasto alimentazione centralina motore
+    nl: Storing voeding motorregeleenheid
+  symptoms:
+    - en: Intermittent no-start
+      ro: Nepornire intermitentă
+      de: Sporadischer Startausfall
+      fr: Non-démarrage intermittent
+      es: No arranque intermitente
+      it: Mancato avviamento intermittente
+      nl: Intermitterend niet starten
+    - en: Multiple unrelated electrical faults
+      ro: Mai multe defecțiuni electrice aparent fără legătură
+      de: Mehrere scheinbar unabhängige elektrische Fehler
+      fr: Plusieurs défauts électriques sans lien apparent
+      es: Múltiples fallos eléctricos aparentemente independientes
+      it: Più guasti elettrici apparentemente indipendenti
+      nl: Meerdere schijnbaar ongerelateerde elektrische storingen
+  possible_causes:
+    - en: Faulty ECU relay
+      ro: Releu ECU defect
+      de: Defektes Steuergeräterelais
+      fr: Relais de calculateur défectueux
+      es: Relé de ECU defectuoso
+      it: Relè centralina guasto
+      nl: Defect relais regeleenheid
+    - en: Corroded ground connection
+      ro: Masă corodată
+      de: Korrodierte Masseverbindung
+      fr: Masse corrodée
+      es: Masa corroída
+      it: Massa corrosa
+      nl: Gecorrodeerde massaverbinding
+  diagnostic_steps:
+    - en: Measure ECU supply voltage under load
+      ro: Măsoară tensiunea de alimentare ECU sub sarcină
+      de: Versorgungsspannung des Steuergeräts unter Last messen
+      fr: Mesurer la tension d'alimentation sous charge
+      es: Medir tensión de alimentación bajo carga
+      it: Misurare tensione alimentazione sotto carico
+      nl: Voedingsspanning onder belasting meten
+    - en: Perform voltage-drop tests on grounds
+      ro: Efectuează teste de cădere de tensiune pe mase
+      de: Spannungsabfall an Masseverbindungen prüfen
+      fr: Mesurer les chutes de tension sur les masses
+      es: Medir caídas de tensión en las masas
+      it: Misurare cadute di tensione sulle masse
+      nl: Spanningsval over massa-aansluitingen meten
+  keywords:
+    - ECU
+    - relay
+    - terminal 30
+    - terminal 15
+    - ground
+    - power supply
+  related_dtcs: []
+  difficulty: intermediate
+
+- id: vw_early_electronic_ignition_coil_fault
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_golf
+      - volkswagen_vento
+      - volkswagen_polo
+      - volkswagen_bora
+      - volkswagen_lupo
+      - volkswagen_new_beetle
+      - volkswagen_passat
+      - volkswagen_corrado
+    generations:
+      - volkswagen_golf_mk3
+      - volkswagen_golf_mk4
+      - volkswagen_vento_mk3
+      - volkswagen_polo_mk3
+      - volkswagen_polo_mk4
+      - volkswagen_bora_1j
+      - volkswagen_lupo_6x
+      - volkswagen_new_beetle_9c
+      - volkswagen_passat_b3
+      - volkswagen_passat_b4
+      - volkswagen_corrado
+    engines: []
+  category: diagnostics
+  system: ignition
+  title:
+    en: Ignition coil electrical fault
+    ro: Defecțiune electrică bobină de inducție
+    de: Elektrischer Fehler der Zündspule
+    fr: Défaut électrique de la bobine d'allumage
+    es: Fallo eléctrico de la bobina de encendido
+    it: Guasto elettrico della bobina di accensione
+    nl: Elektrische storing ontstekingsspoel
+  symptoms:
+    - en: Misfire under load
+      ro: Rateuri sub sarcină
+      de: Zündaussetzer unter Last
+      fr: Ratés sous charge
+      es: Fallos bajo carga
+      it: Mancate accensioni sotto carico
+      nl: Misfire onder belasting
+    - en: Hard starting
+      ro: Pornire dificilă
+      de: Schwieriger Start
+      fr: Démarrage difficile
+      es: Arranque difícil
+      it: Avviamento difficoltoso
+      nl: Moeizaam starten
+  possible_causes:
+    - en: Internal ignition coil failure
+      ro: Defecțiune internă bobină
+      de: Interner Zündspulenfehler
+      fr: Défaut interne de bobine
+      es: Fallo interno de la bobina
+      it: Guasto interno della bobina
+      nl: Interne storing ontstekingsspoel
+    - en: Poor power or ground connection
+      ro: Alimentare sau masă slabă
+      de: Schlechte Versorgung oder Masse
+      fr: Mauvaise alimentation ou masse
+      es: Mala alimentación o masa
+      it: Alimentazione o massa insufficiente
+      nl: Slechte voeding of massa
+  diagnostic_steps:
+    - en: Measure primary and secondary coil resistance
+      ro: Măsoară rezistența primarului și secundarului
+      de: Primär- und Sekundärwiderstand messen
+      fr: Mesurer les résistances primaire et secondaire
+      es: Medir resistencias primaria y secundaria
+      it: Misurare resistenze primaria e secondaria
+      nl: Primaire en secundaire weerstand meten
+    - en: Check coil supply and trigger signal
+      ro: Verifică alimentarea și semnalul de comandă
+      de: Versorgung und Ansteuersignal prüfen
+      fr: Contrôler alimentation et signal de commande
+      es: Comprobar alimentación y señal de mando
+      it: Controllare alimentazione e comando
+      nl: Voeding en aanstuursignaal controleren
+  keywords:
+    - ignition coil
+    - spark
+    - misfire
+    - ignition
+  related_dtcs: []
+  difficulty: intermediate
+
+- id: vw_early_electronic_knock_sensor_fault
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_golf
+      - volkswagen_vento
+      - volkswagen_polo
+      - volkswagen_bora
+      - volkswagen_lupo
+      - volkswagen_new_beetle
+      - volkswagen_passat
+      - volkswagen_sharan
+    generations:
+      - volkswagen_golf_mk3
+      - volkswagen_golf_mk4
+      - volkswagen_vento_mk3
+      - volkswagen_polo_mk3
+      - volkswagen_polo_mk4
+      - volkswagen_bora_1j
+      - volkswagen_lupo_6x
+      - volkswagen_new_beetle_9c
+      - volkswagen_passat_b3
+      - volkswagen_passat_b4
+      - volkswagen_passat_b5
+      - volkswagen_sharan_7m
+    engines: []
+  category: diagnostics
+  system: engine
+  title:
+    en: Knock sensor signal fault
+    ro: Defecțiune semnal senzor detonație
+    de: Fehler des Klopfsensorsignals
+    fr: Défaut du signal du capteur de cliquetis
+    es: Fallo de señal del sensor de detonación
+    it: Guasto segnale sensore battito
+    nl: Storing pingelsensorsignaal
+  symptoms:
+    - en: Reduced engine performance
+      ro: Performanță redusă
+      de: Verringerte Motorleistung
+      fr: Performances moteur réduites
+      es: Rendimiento reducido
+      it: Prestazioni ridotte
+      nl: Verminderde motorprestaties
+    - en: Engine knock or abnormal combustion
+      ro: Detonație sau ardere anormală
+      de: Klopfen oder anormale Verbrennung
+      fr: Cliquetis ou combustion anormale
+      es: Detonación o combustión anormal
+      it: Battito o combustione anomala
+      nl: Pingelen of abnormale verbranding
+  possible_causes:
+    - en: Faulty knock sensor
+      ro: Senzor de detonație defect
+      de: Defekter Klopfsensor
+      fr: Capteur de cliquetis défectueux
+      es: Sensor de detonación defectuoso
+      it: Sensore battito guasto
+      nl: Defecte pingelsensor
+    - en: Incorrect sensor torque or mounting
+      ro: Cuplu sau montaj incorect al senzorului
+      de: Falsches Anzugsdrehmoment oder Montage
+      fr: Couple ou montage incorrect
+      es: Par de apriete o montaje incorrecto
+      it: Coppia o montaggio errati
+      nl: Verkeerd aanhaalmoment of montage
+  diagnostic_steps:
+    - en: Inspect sensor mounting and wiring
+      ro: Verifică montajul și cablajul senzorului
+      de: Montage und Verkabelung prüfen
+      fr: Contrôler montage et câblage
+      es: Revisar montaje y cableado
+      it: Controllare montaggio e cablaggio
+      nl: Montage en bedrading controleren
+  keywords:
+    - knock
+    - detonation
+    - ping
+    - G61
+    - G66
+  related_dtcs: []
+  difficulty: intermediate
+
+- id: vw_early_electronic_vehicle_speed_signal_fault
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_golf
+      - volkswagen_vento
+      - volkswagen_polo
+      - volkswagen_bora
+      - volkswagen_lupo
+      - volkswagen_new_beetle
+      - volkswagen_passat
+    generations:
+      - volkswagen_golf_mk3
+      - volkswagen_golf_mk4
+      - volkswagen_vento_mk3
+      - volkswagen_polo_mk3
+      - volkswagen_polo_mk4
+      - volkswagen_bora_1j
+      - volkswagen_lupo_6x
+      - volkswagen_new_beetle_9c
+      - volkswagen_passat_b3
+      - volkswagen_passat_b4
+      - volkswagen_passat_b5
+    engines: []
+  category: diagnostics
+  system: engine
+  title:
+    en: Vehicle speed signal fault affecting engine management
+    ro: Defecțiune semnal viteză vehicul care afectează managementul motorului
+    de: Fehler des Fahrzeuggeschwindigkeitssignals mit Einfluss auf die Motorsteuerung
+    fr: Défaut du signal de vitesse véhicule affectant la gestion moteur
+    es: Fallo de señal de velocidad del vehículo que afecta a la gestión del motor
+    it: Guasto segnale velocità veicolo che influenza la gestione motore
+    nl: Storing voertuigsnelheidssignaal met invloed op motormanagement
+  symptoms:
+    - en: Idle instability when coasting
+      ro: Instabilitate la ralanti în timpul decelerării
+      de: Leerlaufprobleme beim Ausrollen
+      fr: Instabilité du ralenti en décélération
+      es: Inestabilidad del ralentí al desacelerar
+      it: Minimo instabile in rilascio
+      nl: Onstabiel stationair tijdens uitrollen
+  possible_causes:
+    - en: Faulty vehicle speed sensor
+      ro: Senzor viteză vehicul defect
+      de: Defekter Geschwindigkeitssensor
+      fr: Capteur de vitesse défectueux
+      es: Sensor de velocidad defectuoso
+      it: Sensore velocità guasto
+      nl: Defecte snelheidssensor
+    - en: Broken wiring or poor connector contact
+      ro: Cablaj întrerupt sau contact slab în conector
+      de: Kabelbruch oder schlechter Steckerkontakt
+      fr: Câble coupé ou mauvais contact
+      es: Cable roto o mal contacto
+      it: Cablaggio interrotto o contatto difettoso
+      nl: Kabelbreuk of slecht stekkercontact
+  diagnostic_steps:
+    - en: Verify speed signal while driving or turning the wheels
+      ro: Verifică semnalul de viteză la rulare
+      de: Geschwindigkeitssignal während der Fahrt prüfen
+      fr: Vérifier le signal de vitesse en roulant
+      es: Comprobar señal de velocidad durante la marcha
+      it: Verificare il segnale velocità durante la marcia
+      nl: Snelheidssignaal tijdens rijden controleren
+  keywords:
+    - vehicle speed
+    - VSS
+    - speed sensor
+    - idle
+  related_dtcs: []
+  difficulty: intermediate
+
+- id: vw_early_electronic_brake_switch_engine_signal_fault
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_golf
+      - volkswagen_vento
+      - volkswagen_polo
+      - volkswagen_bora
+      - volkswagen_lupo
+      - volkswagen_new_beetle
+      - volkswagen_passat
+      - volkswagen_sharan
+    generations:
+      - volkswagen_golf_mk3
+      - volkswagen_golf_mk4
+      - volkswagen_vento_mk3
+      - volkswagen_polo_mk3
+      - volkswagen_polo_mk4
+      - volkswagen_bora_1j
+      - volkswagen_lupo_6x
+      - volkswagen_new_beetle_9c
+      - volkswagen_passat_b3
+      - volkswagen_passat_b4
+      - volkswagen_passat_b5
+      - volkswagen_sharan_7m
+    engines: []
+  category: diagnostics
+  system: engine
+  title:
+    en: Brake switch signal fault affecting engine management
+    ro: Defecțiune semnal contact frână care afectează managementul motorului
+    de: Fehler des Bremsschaltersignals mit Einfluss auf die Motorsteuerung
+    fr: Défaut du signal du contacteur de frein affectant la gestion moteur
+    es: Fallo de señal del interruptor de freno que afecta a la gestión del motor
+    it: Guasto segnale interruttore freno che influenza la gestione motore
+    nl: Storing remlichtschakelaarsignaal met invloed op motormanagement
+  symptoms:
+    - en: Cruise or engine control functions may behave incorrectly
+      ro: Funcțiile de control ale motorului pot funcționa incorect
+      de: Motorsteuerungsfunktionen können fehlerhaft arbeiten
+      fr: Les fonctions de gestion moteur peuvent mal fonctionner
+      es: Las funciones de gestión del motor pueden funcionar incorrectamente
+      it: Le funzioni di gestione motore possono funzionare in modo errato
+      nl: Motormanagementfuncties kunnen verkeerd werken
+  possible_causes:
+    - en: Faulty brake light switch
+      ro: Contact frână defect
+      de: Defekter Bremslichtschalter
+      fr: Contacteur de frein défectueux
+      es: Interruptor de freno defectuoso
+      it: Interruttore freno guasto
+      nl: Defecte remlichtschakelaar
+    - en: Incorrect switch adjustment
+      ro: Reglaj incorect al contactului
+      de: Falsche Einstellung des Schalters
+      fr: Mauvais réglage du contacteur
+      es: Ajuste incorrecto del interruptor
+      it: Regolazione errata dell'interruttore
+      nl: Verkeerde afstelling van de schakelaar
+  diagnostic_steps:
+    - en: Check brake light operation and switch signals
+      ro: Verifică stopurile și semnalele contactului
+      de: Bremslicht und Schaltersignale prüfen
+      fr: Vérifier les feux stop et les signaux du contacteur
+      es: Comprobar luces de freno y señales
+      it: Controllare luci stop e segnali
+      nl: Remlichten en schakelaarsignalen controleren
+  keywords:
+    - brake switch
+    - brake pedal
+    - stop light
+    - engine management
+  related_dtcs: []
+  difficulty: basic
+
+- id: vw_early_electronic_alternator_voltage_engine_management_fault
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_golf
+      - volkswagen_vento
+      - volkswagen_polo
+      - volkswagen_bora
+      - volkswagen_lupo
+      - volkswagen_new_beetle
+      - volkswagen_passat
+      - volkswagen_sharan
+      - volkswagen_caddy
+    generations:
+      - volkswagen_golf_mk3
+      - volkswagen_golf_mk4
+      - volkswagen_vento_mk3
+      - volkswagen_polo_mk3
+      - volkswagen_polo_mk4
+      - volkswagen_bora_1j
+      - volkswagen_lupo_6x
+      - volkswagen_new_beetle_9c
+      - volkswagen_passat_b3
+      - volkswagen_passat_b4
+      - volkswagen_passat_b5
+      - volkswagen_sharan_7m
+      - volkswagen_caddy_9k
+    engines: []
+  category: diagnostics
+  system: electrical
+  title:
+    en: Charging voltage instability affecting engine management
+    ro: Instabilitate tensiune încărcare care afectează managementul motorului
+    de: Instabile Ladespannung mit Einfluss auf die Motorsteuerung
+    fr: Instabilité de tension de charge affectant la gestion moteur
+    es: Inestabilidad de tensión de carga que afecta a la gestión del motor
+    it: Instabilità della tensione di carica che influenza la gestione motore
+    nl: Instabiele laadspanning die het motormanagement beïnvloedt
+  symptoms:
+    - en: Intermittent electrical faults
+      ro: Defecțiuni electrice intermitente
+      de: Sporadische elektrische Fehler
+      fr: Défauts électriques intermittents
+      es: Fallos eléctricos intermitentes
+      it: Guasti elettrici intermittenti
+      nl: Intermitterende elektrische storingen
+    - en: Engine running instability
+      ro: Funcționare instabilă a motorului
+      de: Unruhiger Motorlauf
+      fr: Fonctionnement moteur instable
+      es: Funcionamiento inestable del motor
+      it: Funzionamento instabile del motore
+      nl: Onstabiele motorloop
+  possible_causes:
+    - en: Failing alternator regulator
+      ro: Regulator alternator defect
+      de: Defekter Lichtmaschinenregler
+      fr: Régulateur d'alternateur défectueux
+      es: Regulador del alternador defectuoso
+      it: Regolatore alternatore guasto
+      nl: Defecte dynamoregelaar
+    - en: Poor battery or ground connection
+      ro: Baterie sau masă cu contact slab
+      de: Schlechter Batterie- oder Massekontakt
+      fr: Mauvais contact batterie ou masse
+      es: Mal contacto de batería o masa
+      it: Cattivo contatto batteria o massa
+      nl: Slechte accu- of massaverbinding
+  diagnostic_steps:
+    - en: Measure charging voltage at idle and under electrical load
+      ro: Măsoară tensiunea de încărcare la ralanti și sub sarcină
+      de: Ladespannung im Leerlauf und unter Last messen
+      fr: Mesurer la tension de charge au ralenti et sous charge
+      es: Medir tensión de carga al ralentí y bajo carga
+      it: Misurare tensione di carica al minimo e sotto carico
+      nl: Laadspanning stationair en onder belasting meten
+  keywords:
+    - alternator
+    - charging
+    - voltage
+    - battery
+    - ECU
+  related_dtcs: []
+  difficulty: basic
+
+- id: vw_early_electronic_intake_vacuum_leak
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_golf
+      - volkswagen_vento
+      - volkswagen_polo
+      - volkswagen_bora
+      - volkswagen_lupo
+      - volkswagen_new_beetle
+      - volkswagen_passat
+      - volkswagen_corrado
+      - volkswagen_sharan
+    generations:
+      - volkswagen_golf_mk3
+      - volkswagen_golf_mk4
+      - volkswagen_vento_mk3
+      - volkswagen_polo_mk3
+      - volkswagen_polo_mk4
+      - volkswagen_bora_1j
+      - volkswagen_lupo_6x
+      - volkswagen_new_beetle_9c
+      - volkswagen_passat_b3
+      - volkswagen_passat_b4
+      - volkswagen_passat_b5
+      - volkswagen_corrado
+      - volkswagen_sharan_7m
+    engines: []
+  category: diagnostics
+  system: engine
+  title:
+    en: Intake manifold vacuum leak
+    ro: Pierdere de vacuum pe admisie
+    de: Unterdruckleck im Ansaugsystem
+    fr: Fuite de dépression dans l'admission
+    es: Fuga de vacío en la admisión
+    it: Perdita di depressione nell'aspirazione
+    nl: Vacuümlek in het inlaatsysteem
+  symptoms:
+    - en: Unstable idle
+      ro: Ralanti instabil
+      de: Unruhiger Leerlauf
+      fr: Ralenti instable
+      es: Ralentí inestable
+      it: Minimo instabile
+      nl: Onstabiel stationair
+    - en: Hesitation during acceleration
+      ro: Ezitare la accelerație
+      de: Ruckeln beim Beschleunigen
+      fr: Hésitation à l'accélération
+      es: Vacilación al acelerar
+      it: Esitazione in accelerazione
+      nl: Inhouden bij accelereren
+  possible_causes:
+    - en: Cracked vacuum hose
+      ro: Furtun vacuum fisurat
+      de: Gerissener Unterdruckschlauch
+      fr: Durite de dépression fissurée
+      es: Tubo de vacío agrietado
+      it: Tubo depressione crepato
+      nl: Gebarsten vacuümslang
+    - en: Intake manifold gasket leak
+      ro: Garnitură galerie admisie neetanșă
+      de: Undichte Ansaugkrümmerdichtung
+      fr: Joint de collecteur d'admission fuyard
+      es: Junta del colector de admisión con fuga
+      it: Guarnizione collettore aspirazione non ermetica
+      nl: Lekkende pakking van inlaatspruitstuk
+  diagnostic_steps:
+    - en: Perform a smoke test or controlled vacuum leak test
+      ro: Efectuează test cu fum sau test controlat pentru pierderi
+      de: Rauchtest oder kontrollierte Leckprüfung durchführen
+      fr: Effectuer un test fumigène ou une recherche de fuite
+      es: Realizar prueba de humo o de fugas
+      it: Eseguire prova fumo o ricerca perdite
+      nl: Rooktest of gecontroleerde lektest uitvoeren
+  keywords:
+    - vacuum leak
+    - intake
+    - manifold
+    - rough idle
+    - hesitation
+  related_dtcs: []
+  difficulty: basic
+
+- id: vw_early_tdi_boost_leak
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_golf
+      - volkswagen_vento
+      - volkswagen_bora
+      - volkswagen_new_beetle
+      - volkswagen_passat
+      - volkswagen_sharan
+      - volkswagen_caddy
+    generations:
+      - volkswagen_golf_mk3
+      - volkswagen_golf_mk4
+      - volkswagen_vento_mk3
+      - volkswagen_bora_1j
+      - volkswagen_new_beetle_9c
+      - volkswagen_passat_b4
+      - volkswagen_passat_b5
+      - volkswagen_sharan_7m
+      - volkswagen_caddy_9k
+    engines:
+      - 19_tdi
+      - 19_tdi_110
+      - 19_tdi_115
+      - 19_tdi_130
+      - 19_tdi_150
+    category: diagnostics
+    system: engine
+    title:
+      en: Turbocharger charge-air leak
+      ro: Pierdere pe circuitul de aer comprimat al turbinei
+      de: Ladedruckverlust im Ladeluftsystem
+      fr: Fuite sur le circuit d'air de suralimentation
+      es: Fuga en el circuito de sobrealimentación
+      it: Perdita nel circuito aria sovralimentata
+      nl: Lekkage in het laadluchtsysteem
+    symptoms:
+      - en: Low boost
+        ro: Presiune turbo scăzută
+        de: Niedriger Ladedruck
+        fr: Faible pression de suralimentation
+        es: Baja presión de sobrealimentación
+        it: Bassa pressione di sovralimentazione
+        nl: Lage turbodruk
+      - en: Poor acceleration under load
+        ro: Accelerație slabă sub sarcină
+        de: Schlechte Beschleunigung unter Last
+        fr: Mauvaise accélération sous charge
+        es: Mala aceleración bajo carga
+        it: Scarsa accelerazione sotto carico
+        nl: Slechte acceleratie onder belasting
+      - en: Black smoke
+        ro: Fum negru
+        de: Schwarzer Rauch
+        fr: Fumée noire
+        es: Humo negro
+        it: Fumo nero
+        nl: Zwarte rook
+    possible_causes:
+      - en: Split intercooler hose
+        ro: Furtun intercooler fisurat
+        de: Gerissener Ladeluftschlauch
+        fr: Durite d'intercooler fissurée
+        es: Manguito del intercooler agrietado
+        it: Manicotto intercooler lesionato
+        nl: Gescheurde intercoolerslang
+      - en: Loose hose connection
+        ro: Racord de furtun slăbit
+        de: Lose Schlauchverbindung
+        fr: Raccord de durite desserré
+        es: Conexión de manguito floja
+        it: Raccordo manicotto allentato
+        nl: Losse slangverbinding
+    diagnostic_steps:
+      - en: Pressurize the charge-air system and inspect for leaks
+        ro: Presurizează circuitul de supraalimentare și caută pierderi
+        de: Ladeluftsystem abdrücken und auf Lecks prüfen
+        fr: Mettre le circuit de suralimentation sous pression
+        es: Presurizar el circuito y buscar fugas
+        it: Pressurizzare il circuito e cercare perdite
+        nl: Laadluchtsysteem onder druk zetten en controleren
+    keywords:
+      - boost leak
+      - intercooler
+      - turbo
+      - charge air
+      - black smoke
+    related_dtcs: []
+    difficulty: basic
+
+- id: vw_early_tdi_turbo_actuator_stuck
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_golf
+      - volkswagen_bora
+      - volkswagen_new_beetle
+      - volkswagen_passat
+      - volkswagen_sharan
+    generations:
+      - volkswagen_golf_mk4
+      - volkswagen_bora_1j
+      - volkswagen_new_beetle_9c
+      - volkswagen_passat_b5
+      - volkswagen_sharan_7m
+    engines:
+      - 19_tdi
+      - 19_tdi_110
+      - 19_tdi_115
+      - 19_tdi_130
+      - 19_tdi_150
+    category: diagnostics
+    system: engine
+    title:
+      en: Turbocharger actuator or vane mechanism sticking
+      ro: Blocare actuator sau mecanism geometrie turbo
+      de: Schwergängiger Turboladersteller oder Verstellmechanismus
+      fr: Grippage de l'actionneur ou du mécanisme du turbo
+      es: Actuador o mecanismo del turbo agarrotado
+      it: Attuatore o meccanismo turbo bloccato
+      nl: Vastzittende turboactuator of verstelling
+    symptoms:
+      - en: Intermittent limp mode
+        ro: Limp mode intermitent
+        de: Sporadischer Notlauf
+        fr: Mode dégradé intermittent
+        es: Modo emergencia intermitente
+        it: Recovery intermittente
+        nl: Intermitterende noodloop
+      - en: Overboost or underboost
+        ro: Suprapresiune sau subpresiune turbo
+        de: Über- oder Unterdruck
+        fr: Surpression ou sous-pression
+        es: Sobrepresión o baja presión
+        it: Sovrapressione o bassa pressione
+        nl: Over- of onderdruk
+    possible_causes:
+      - en: Sticking variable vane mechanism
+        ro: Geometrie variabilă blocată
+        de: Schwergängige Leitschaufelverstellung
+        fr: Géométrie variable grippée
+        es: Geometría variable agarrotada
+        it: Geometria variabile bloccata
+        nl: Vastzittende variabele geometrie
+      - en: Faulty vacuum actuator
+        ro: Actuator vacuum defect
+        de: Defekter Unterdrucksteller
+        fr: Actionneur à dépression défectueux
+        es: Actuador de vacío defectuoso
+        it: Attuatore a depressione guasto
+        nl: Defecte vacuümactuator
+    diagnostic_steps:
+      - en: Check actuator travel with a hand vacuum pump
+        ro: Verifică cursa actuatorului cu pompă manuală de vacuum
+        de: Stellweg mit Handvakuumpumpe prüfen
+        fr: Vérifier la course avec une pompe à dépression
+        es: Comprobar recorrido con bomba de vacío
+        it: Controllare corsa con pompa depressione
+        nl: Slag controleren met handvacuümpomp
+      - en: Check whether the mechanism moves freely
+        ro: Verifică dacă mecanismul se mișcă liber
+        de: Prüfen, ob sich der Mechanismus frei bewegt
+        fr: Vérifier la liberté de mouvement du mécanisme
+        es: Comprobar movimiento libre del mecanismo
+        it: Controllare il libero movimento del meccanismo
+        nl: Controleren of het mechanisme vrij beweegt
+    keywords:
+      - VNT
+      - turbo actuator
+      - boost
+      - overboost
+      - underboost
+      - limp mode
+    related_dtcs: []
+    difficulty: advanced
+
 - id: vw_classic_brake_pedal_soft
   vehicle:
     manufacturer: volkswagen
