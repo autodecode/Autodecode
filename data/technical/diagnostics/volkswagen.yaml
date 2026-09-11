@@ -6,6 +6,644 @@ manufacturer:
 
 technical_data:
 
+- id: vw_classic_petrol_crankshaft_endplay_excessive
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_type_1
+      - volkswagen_type_2
+      - volkswagen_type_3
+      - volkswagen_karmann_ghia
+    generations:
+      - volkswagen_type_1
+      - volkswagen_type_2_t1
+      - volkswagen_type_2_t2
+      - volkswagen_type_3
+      - volkswagen_karmann_ghia_type_14
+      - volkswagen_karmann_ghia_type_34
+    engines: []
+  category: diagnostics
+  system: engine
+  title:
+    en: Excessive Crankshaft Endplay
+    ro: Joc axial excesiv al arborelui cotit
+    de: Übermäßiges Axialspiel der Kurbelwelle
+    fr: Jeu axial excessif du vilebrequin
+    es: Juego axial excesivo del cigüeñal
+    it: Gioco assiale eccessivo dell'albero motore
+    nl: Overmatige axiale speling van de krukas
+  symptoms:
+    - en: Clutch engagement or disengagement may produce abnormal movement or noise.
+      ro: Acționarea ambreiajului poate produce mișcare sau zgomot anormal.
+      de: Beim Betätigen der Kupplung können ungewöhnliche Bewegungen oder Geräusche auftreten.
+      fr: L'actionnement de l'embrayage peut provoquer un mouvement ou un bruit anormal.
+      es: El accionamiento del embrague puede provocar movimientos o ruidos anormales.
+      it: L'azionamento della frizione può provocare movimenti o rumori anomali.
+      nl: Bij het bedienen van de koppeling kunnen abnormale bewegingen of geluiden optreden.
+    - en: Engine may develop unstable idle or abnormal vibration.
+      ro: Motorul poate prezenta ralanti instabil sau vibrații anormale.
+      de: Der Motor kann einen instabilen Leerlauf oder ungewöhnliche Vibrationen entwickeln.
+      fr: Le moteur peut présenter un ralenti instable ou des vibrations anormales.
+      es: El motor puede presentar un ralentí inestable o vibraciones anormales.
+      it: Il motore può presentare un minimo instabile o vibrazioni anomale.
+      nl: De motor kan een onstabiel stationair toerental of abnormale trillingen vertonen.
+  possible_causes:
+    - en: Worn crankshaft thrust bearing surfaces.
+      ro: Suprafețe de reazem axial ale arborelui cotit uzate.
+      de: Verschlissene Axiallagerflächen der Kurbelwelle.
+      fr: Surfaces de butée du vilebrequin usées.
+      es: Superficies de apoyo axial del cigüeñal desgastadas.
+      it: Superfici di spinta dell'albero motore usurate.
+      nl: Versleten axiale lageroppervlakken van de krukas.
+    - en: Excessive clutch loading or prolonged incorrect clutch adjustment.
+      ro: Solicitare excesivă a lagărului axial prin ambreiaj sau reglaj incorect prelungit.
+      de: Übermäßige Belastung durch die Kupplung oder dauerhaft falsche Kupplungseinstellung.
+      fr: Charge excessive du palier axial ou mauvais réglage prolongé de l'embrayage.
+      es: Carga excesiva del apoyo axial o ajuste incorrecto prolongado del embrague.
+      it: Eccessivo carico sul supporto assiale o regolazione errata prolungata della frizione.
+      nl: Overmatige belasting van het axiale lager of langdurige verkeerde koppelingafstelling.
+  diagnostic_steps:
+    - en: Measure crankshaft endplay with a dial indicator.
+      ro: Măsoară jocul axial al arborelui cotit cu un comparator.
+      de: Kurbelwellen-Axialspiel mit einer Messuhr messen.
+      fr: Mesurer le jeu axial du vilebrequin avec un comparateur.
+      es: Medir el juego axial del cigüeñal con un comparador.
+      it: Misurare il gioco assiale dell'albero motore con un comparatore.
+      nl: Meet de axiale speling van de krukas met een meetklok.
+    - en: Compare the measurement with the specification for the exact engine.
+      ro: Compară măsurătoarea cu specificația motorului respectiv.
+      de: Messwert mit der Spezifikation des jeweiligen Motors vergleichen.
+      fr: Comparer la mesure à la spécification du moteur concerné.
+      es: Comparar la medición con la especificación del motor correspondiente.
+      it: Confrontare la misura con la specifica del motore interessato.
+      nl: Vergelijk de meting met de specificatie van de betreffende motor.
+  keywords:
+    - crankshaft endplay
+    - crankshaft axial play
+    - thrust bearing
+    - engine wear
+  related_dtcs: []
+  difficulty: advanced
+
+- id: vw_classic_petrol_flywheel_loose
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_type_1
+      - volkswagen_type_2
+      - volkswagen_type_3
+      - volkswagen_karmann_ghia
+    generations:
+      - volkswagen_type_1
+      - volkswagen_type_2_t1
+      - volkswagen_type_2_t2
+      - volkswagen_type_3
+      - volkswagen_karmann_ghia_type_14
+      - volkswagen_karmann_ghia_type_34
+    engines: []
+  category: diagnostics
+  system: engine
+  title:
+    en: Loose Flywheel
+    ro: Volant motor slăbit
+    de: Lockeres Schwungrad
+    fr: Volant moteur desserré
+    es: Volante motor flojo
+    it: Volano motore allentato
+    nl: Los vliegwiel
+  symptoms:
+    - en: Knocking or metallic noise from the rear of the engine.
+      ro: Zgomot de lovire sau metalic din partea din spate a motorului.
+      de: Klopfende oder metallische Geräusche vom hinteren Motorbereich.
+      fr: Bruit de cognement ou métallique provenant de l'arrière du moteur.
+      es: Golpeteo o ruido metálico desde la parte trasera del motor.
+      it: Rumore di battito o metallico dalla parte posteriore del motore.
+      nl: Kloppend of metaalachtig geluid aan de achterzijde van de motor.
+    - en: Engine vibration may increase with engine speed.
+      ro: Vibrațiile motorului pot crește odată cu turația.
+      de: Motorvibrationen können mit steigender Drehzahl zunehmen.
+      fr: Les vibrations moteur peuvent augmenter avec le régime.
+      es: Las vibraciones del motor pueden aumentar con las revoluciones.
+      it: Le vibrazioni del motore possono aumentare con il regime.
+      nl: Motortrillingen kunnen toenemen met het toerental.
+  possible_causes:
+    - en: Flywheel retaining hardware has loosened.
+      ro: Elementele de fixare ale volantului s-au slăbit.
+      de: Die Befestigung des Schwungrads hat sich gelöst.
+      fr: La fixation du volant moteur s'est desserrée.
+      es: La fijación del volante se ha aflojado.
+      it: Il fissaggio del volano si è allentato.
+      nl: De bevestiging van het vliegwiel is losgeraakt.
+    - en: Incorrect tightening procedure or damaged mating surfaces.
+      ro: Procedură de strângere incorectă sau suprafețe de contact deteriorate.
+      de: Falsches Anzugsverfahren oder beschädigte Kontaktflächen.
+      fr: Procédure de serrage incorrecte ou surfaces de contact endommagées.
+      es: Procedimiento de apriete incorrecto o superficies de contacto dañadas.
+      it: Procedura di serraggio errata o superfici di contatto danneggiate.
+      nl: Verkeerde aanhaalprocedure of beschadigde contactvlakken.
+  diagnostic_steps:
+    - en: Inspect flywheel retaining hardware and check for abnormal movement.
+      ro: Inspectează elementele de fixare și verifică existența unei mișcări anormale.
+      de: Befestigung prüfen und auf ungewöhnliche Bewegung achten.
+      fr: Inspecter la fixation et rechercher un mouvement anormal.
+      es: Inspeccionar la fijación y comprobar si existe movimiento anormal.
+      it: Controllare il fissaggio e verificare eventuali movimenti anomali.
+      nl: Controleer de bevestiging en controleer op abnormale beweging.
+    - en: Inspect the crankshaft and flywheel mating surfaces if movement is found.
+      ro: Dacă există joc, inspectează suprafețele de contact ale arborelui cotit și volantului.
+      de: Bei festgestelltem Spiel Kontaktflächen von Kurbelwelle und Schwungrad prüfen.
+      fr: En cas de jeu, contrôler les surfaces de contact du vilebrequin et du volant.
+      es: Si existe juego, inspeccionar las superficies de contacto del cigüeñal y volante.
+      it: In presenza di gioco, controllare le superfici di contatto dell'albero e del volano.
+      nl: Controleer bij speling de contactvlakken van krukas en vliegwiel.
+  keywords:
+    - flywheel
+    - loose flywheel
+    - engine noise
+    - vibration
+  related_dtcs: []
+  difficulty: advanced
+
+- id: vw_classic_petrol_crankshaft_pulley_loose
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_type_1
+      - volkswagen_type_2
+      - volkswagen_type_3
+      - volkswagen_karmann_ghia
+    generations:
+      - volkswagen_type_1
+      - volkswagen_type_2_t1
+      - volkswagen_type_2_t2
+      - volkswagen_type_3
+      - volkswagen_karmann_ghia_type_14
+      - volkswagen_karmann_ghia_type_34
+    engines: []
+  category: diagnostics
+  system: engine
+  title:
+    en: Loose Crankshaft Pulley
+    ro: Fulie de arbore cotit slăbită
+    de: Lose Kurbelwellenriemenscheibe
+    fr: Poulie de vilebrequin desserrée
+    es: Polea del cigüeñal floja
+    it: Puleggia dell'albero motore allentata
+    nl: Losse krukaspoelie
+  symptoms:
+    - en: Visible pulley wobble during engine operation.
+      ro: Fulie cu mișcare oscilantă vizibilă în timpul funcționării motorului.
+      de: Sichtbares Taumeln der Riemenscheibe bei laufendem Motor.
+      fr: Oscillation visible de la poulie moteur en fonctionnement.
+      es: Oscilación visible de la polea con el motor en marcha.
+      it: Oscillazione visibile della puleggia durante il funzionamento.
+      nl: Zichtbare slingering van de poelie tijdens het draaien van de motor.
+    - en: Auxiliary belt may run unevenly or make abnormal noise.
+      ro: Cureaua auxiliară poate merge neuniform sau poate produce zgomote anormale.
+      de: Der Nebenaggregateriemen kann ungleichmäßig laufen oder Geräusche erzeugen.
+      fr: La courroie auxiliaire peut fonctionner irrégulièrement ou produire un bruit anormal.
+      es: La correa auxiliar puede funcionar de forma irregular o producir ruido.
+      it: La cinghia ausiliaria può girare irregolarmente o produrre rumori anomali.
+      nl: De multiriem kan onregelmatig lopen of abnormale geluiden maken.
+  possible_causes:
+    - en: Pulley retaining hardware is loose.
+      ro: Elementul de fixare al fuliei este slăbit.
+      de: Die Befestigung der Riemenscheibe ist lose.
+      fr: La fixation de la poulie est desserrée.
+      es: La fijación de la polea está floja.
+      it: Il fissaggio della puleggia è allentato.
+      nl: De bevestiging van de poelie zit los.
+    - en: Pulley hub or crankshaft keyway is damaged.
+      ro: Butucul fuliei sau locașul de pană al arborelui cotit este deteriorat.
+      de: Nabe oder Passfedernut der Kurbelwelle sind beschädigt.
+      fr: Le moyeu de poulie ou la rainure de clavette est endommagé.
+      es: El buje de la polea o la chaveta del cigüeñal están dañados.
+      it: Il mozzo della puleggia o la sede della chiavetta sono danneggiati.
+      nl: De poelienaaf of spiebaan van de krukas is beschadigd.
+  diagnostic_steps:
+    - en: Observe pulley alignment with the engine running.
+      ro: Observă alinierea fuliei cu motorul pornit.
+      de: Ausrichtung der Riemenscheibe bei laufendem Motor beobachten.
+      fr: Observer l'alignement de la poulie moteur tournant.
+      es: Observar la alineación de la polea con el motor en marcha.
+      it: Osservare l'allineamento della puleggia a motore acceso.
+      nl: Controleer de uitlijning van de poelie met draaiende motor.
+    - en: Inspect the pulley, keyway and retaining hardware after shutdown.
+      ro: Inspectează fulia, locașul de pană și elementele de fixare cu motorul oprit.
+      de: Riemenscheibe, Passfedernut und Befestigung nach dem Abstellen prüfen.
+      fr: Contrôler la poulie, la rainure et la fixation moteur arrêté.
+      es: Inspeccionar polea, chaveta y fijación con el motor parado.
+      it: Controllare puleggia, sede e fissaggio a motore spento.
+      nl: Controleer poelie, spiebaan en bevestiging met uitgeschakelde motor.
+  keywords:
+    - crankshaft pulley
+    - pulley wobble
+    - vibration
+    - belt alignment
+  related_dtcs: []
+  difficulty: intermediate
+
+- id: vw_classic_petrol_engine_oil_pressure_low
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_type_1
+      - volkswagen_type_2
+      - volkswagen_type_3
+      - volkswagen_karmann_ghia
+      - volkswagen_type_4
+      - volkswagen_k70
+      - volkswagen_passat
+      - volkswagen_golf
+      - volkswagen_polo
+      - volkswagen_scirocco
+      - volkswagen_jetta
+      - volkswagen_santana
+    generations:
+      - volkswagen_type_1
+      - volkswagen_type_2_t1
+      - volkswagen_type_2_t2
+      - volkswagen_type_3
+      - volkswagen_karmann_ghia_type_14
+      - volkswagen_karmann_ghia_type_34
+      - volkswagen_type_4_411
+      - volkswagen_type_4_412
+      - volkswagen_k70
+      - volkswagen_passat_b1
+      - volkswagen_passat_b2
+      - volkswagen_golf_mk1
+      - volkswagen_golf_mk2
+      - volkswagen_polo_mk1
+      - volkswagen_polo_mk2
+      - volkswagen_scirocco_mk1
+      - volkswagen_scirocco_mk2
+      - volkswagen_jetta_mk1
+      - volkswagen_jetta_mk2
+      - volkswagen_santana_b2
+    engines: []
+  category: diagnostics
+  system: lubrication
+  title:
+    en: Low Engine Oil Pressure
+    ro: Presiune scăzută a uleiului motor
+    de: Niedriger Motoröldruck
+    fr: Pression d'huile moteur insuffisante
+    es: Presión de aceite del motor baja
+    it: Bassa pressione dell'olio motore
+    nl: Lage motoroliedruk
+  symptoms:
+    - en: Oil-pressure warning may illuminate at idle or during operation.
+      ro: Martorul de presiune ulei poate apărea la ralanti sau în timpul funcționării.
+      de: Die Öldruckwarnung kann im Leerlauf oder während des Betriebs aufleuchten.
+      fr: Le témoin de pression d'huile peut s'allumer au ralenti ou en fonctionnement.
+      es: El testigo de presión de aceite puede encenderse al ralentí o durante el funcionamiento.
+      it: La spia della pressione olio può accendersi al minimo o durante il funzionamento.
+      nl: Het oliedruklampje kan bij stationair draaien of tijdens bedrijf gaan branden.
+    - en: Mechanical noise from the valve train or bottom end may occur.
+      ro: Pot apărea zgomote mecanice din distribuție sau partea inferioară a motorului.
+      de: Mechanische Geräusche aus Ventiltrieb oder Kurbeltrieb können auftreten.
+      fr: Des bruits mécaniques peuvent apparaître dans la distribution ou le bas moteur.
+      es: Pueden aparecer ruidos mecánicos en la distribución o parte baja del motor.
+      it: Possono comparire rumori meccanici dalla distribuzione o dal basamento.
+      nl: Er kunnen mechanische geluiden uit de klepbediening of onderzijde van de motor ontstaan.
+  possible_causes:
+    - en: Low oil level or incorrect oil viscosity.
+      ro: Nivel scăzut de ulei sau vâscozitate incorectă.
+      de: Zu niedriger Ölstand oder falsche Ölviskosität.
+      fr: Niveau d'huile insuffisant ou viscosité incorrecte.
+      es: Nivel de aceite bajo o viscosidad incorrecta.
+      it: Livello dell'olio basso o viscosità errata.
+      nl: Laag oliepeil of verkeerde olieviscositeit.
+    - en: Worn bearings, oil pump or excessive internal clearances.
+      ro: Lagăre uzate, pompă de ulei uzată sau jocuri interne excesive.
+      de: Verschlissene Lager, Ölpumpe oder zu große innere Lagerspiele.
+      fr: Paliers usés, pompe à huile usée ou jeux internes excessifs.
+      es: Cojinetes desgastados, bomba de aceite desgastada o holguras internas excesivas.
+      it: Cuscinetti usurati, pompa olio usurata o giochi interni eccessivi.
+      nl: Versleten lagers, oliepomp of te grote interne spelingen.
+  diagnostic_steps:
+    - en: Check oil level and verify the correct oil grade.
+      ro: Verifică nivelul uleiului și specificația corectă a uleiului.
+      de: Ölstand und vorgeschriebene Ölsorte prüfen.
+      fr: Vérifier le niveau et la qualité d'huile prescrite.
+      es: Comprobar el nivel y la especificación correcta del aceite.
+      it: Controllare il livello e la specifica corretta dell'olio.
+      nl: Controleer het oliepeil en de voorgeschreven oliespecificatie.
+    - en: Measure actual oil pressure with a mechanical gauge.
+      ro: Măsoară presiunea reală cu un manometru mecanic.
+      de: Tatsächlichen Öldruck mit einem mechanischen Manometer messen.
+      fr: Mesurer la pression réelle avec un manomètre mécanique.
+      es: Medir la presión real con un manómetro mecánico.
+      it: Misurare la pressione reale con un manometro meccanico.
+      nl: Meet de werkelijke oliedruk met een mechanische manometer.
+  keywords:
+    - oil pressure
+    - lubrication
+    - oil pump
+    - engine wear
+  related_dtcs: []
+  difficulty: intermediate
+
+- id: vw_classic_petrol_exhaust_restriction
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_type_1
+      - volkswagen_type_2
+      - volkswagen_type_3
+      - volkswagen_karmann_ghia
+      - volkswagen_type_4
+      - volkswagen_k70
+      - volkswagen_passat
+      - volkswagen_golf
+      - volkswagen_polo
+      - volkswagen_scirocco
+      - volkswagen_jetta
+      - volkswagen_santana
+    generations:
+      - volkswagen_type_1
+      - volkswagen_type_2_t1
+      - volkswagen_type_2_t2
+      - volkswagen_type_3
+      - volkswagen_karmann_ghia_type_14
+      - volkswagen_karmann_ghia_type_34
+      - volkswagen_type_4_411
+      - volkswagen_type_4_412
+      - volkswagen_k70
+      - volkswagen_passat_b1
+      - volkswagen_passat_b2
+      - volkswagen_golf_mk1
+      - volkswagen_golf_mk2
+      - volkswagen_polo_mk1
+      - volkswagen_polo_mk2
+      - volkswagen_scirocco_mk1
+      - volkswagen_scirocco_mk2
+      - volkswagen_jetta_mk1
+      - volkswagen_jetta_mk2
+      - volkswagen_santana_b2
+    engines: []
+  category: diagnostics
+  system: exhaust
+  title:
+    en: Restricted Exhaust System
+    ro: Sistem de evacuare obturat
+    de: Eingeschränkte Abgasanlage
+    fr: Ligne d'échappement obstruée
+    es: Sistema de escape restringido
+    it: Impianto di scarico ostruito
+    nl: Beperkte uitlaatgasdoorstroming
+  symptoms:
+    - en: Engine loses power at higher load or engine speed.
+      ro: Motorul pierde putere la sarcină sau turație ridicată.
+      de: Der Motor verliert bei hoher Last oder Drehzahl Leistung.
+      fr: Le moteur perd de la puissance à forte charge ou à haut régime.
+      es: El motor pierde potencia con alta carga o régimen.
+      it: Il motore perde potenza ad alto carico o regime.
+      nl: De motor verliest vermogen bij hoge belasting of toerentallen.
+    - en: Engine may run normally at low load but deteriorate during acceleration.
+      ro: Motorul poate funcționa normal la sarcină mică, dar se poate sufoca la accelerație.
+      de: Der Motor kann bei geringer Last normal laufen, aber bei Beschleunigung schlechter werden.
+      fr: Le moteur peut fonctionner normalement à faible charge puis perdre en performance à l'accélération.
+      es: El motor puede funcionar normalmente a baja carga y perder rendimiento al acelerar.
+      it: Il motore può funzionare normalmente a basso carico e peggiorare in accelerazione.
+      nl: De motor kan bij lage belasting normaal lopen maar bij accelereren verslechteren.
+  possible_causes:
+    - en: Collapsed internal exhaust component or damaged muffler.
+      ro: Element intern de evacuare prăbușit sau tobă deteriorată.
+      de: Eingefallenes Abgasteil oder beschädigter Schalldämpfer.
+      fr: Élément interne d'échappement effondré ou silencieux endommagé.
+      es: Componente interno del escape colapsado o silenciador dañado.
+      it: Componente interno dello scarico collassato o silenziatore danneggiato.
+      nl: Inwendig ingestort uitlaatonderdeel of beschadigde demper.
+    - en: Excessive carbon or corrosion restricting gas flow.
+      ro: Depuneri excesive de carbon sau coroziune care restricționează evacuarea.
+      de: Starke Ablagerungen oder Korrosion mit eingeschränktem Gasdurchsatz.
+      fr: Dépôts importants ou corrosion limitant le débit des gaz.
+      es: Depósitos excesivos o corrosión que restringen el flujo.
+      it: Depositi eccessivi o corrosione che limitano il flusso dei gas.
+      nl: Overmatige afzettingen of corrosie die de gasstroom beperken.
+  diagnostic_steps:
+    - en: Check exhaust flow and inspect the muffler and exhaust components.
+      ro: Verifică debitul evacuării și inspectează toba și componentele sistemului.
+      de: Abgasdurchsatz prüfen und Schalldämpfer sowie Abgaskomponenten kontrollieren.
+      fr: Contrôler le débit des gaz et inspecter le silencieux et la ligne.
+      es: Comprobar el flujo de escape e inspeccionar el silenciador y componentes.
+      it: Controllare il flusso dei gas e ispezionare il silenziatore e i componenti.
+      nl: Controleer de uitlaatgasdoorstroming en inspecteer demper en onderdelen.
+    - en: Measure exhaust backpressure when necessary.
+      ro: Măsoară contrapresiunea evacuării atunci când este necesar.
+      de: Bei Bedarf den Abgasgegendruck messen.
+      fr: Mesurer la contre-pression si nécessaire.
+      es: Medir la contrapresión del escape cuando sea necesario.
+      it: Misurare la contropressione allo scarico quando necessario.
+      nl: Meet indien nodig de uitlaattegendruk.
+  keywords:
+    - exhaust restriction
+    - low power
+    - backpressure
+    - muffler
+  related_dtcs: []
+  difficulty: intermediate
+
+- id: vw_classic_petrol_engine_mount_worn
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_type_1
+      - volkswagen_type_2
+      - volkswagen_type_3
+      - volkswagen_karmann_ghia
+      - volkswagen_k70
+      - volkswagen_passat
+      - volkswagen_golf
+      - volkswagen_polo
+      - volkswagen_scirocco
+      - volkswagen_jetta
+      - volkswagen_santana
+    generations:
+      - volkswagen_type_1
+      - volkswagen_type_2_t1
+      - volkswagen_type_2_t2
+      - volkswagen_type_3
+      - volkswagen_karmann_ghia_type_14
+      - volkswagen_karmann_ghia_type_34
+      - volkswagen_k70
+      - volkswagen_passat_b1
+      - volkswagen_passat_b2
+      - volkswagen_golf_mk1
+      - volkswagen_golf_mk2
+      - volkswagen_polo_mk1
+      - volkswagen_polo_mk2
+      - volkswagen_scirocco_mk1
+      - volkswagen_scirocco_mk2
+      - volkswagen_jetta_mk1
+      - volkswagen_jetta_mk2
+      - volkswagen_santana_b2
+    engines: []
+  category: diagnostics
+  system: engine
+  title:
+    en: Worn Engine Mount
+    ro: Suport motor uzat
+    de: Verschlissene Motorlagerung
+    fr: Support moteur usé
+    es: Soporte de motor desgastado
+    it: Supporto motore usurato
+    nl: Versleten motorsteun
+  symptoms:
+    - en: Excessive engine movement during acceleration or load changes.
+      ro: Mișcare excesivă a motorului la accelerație sau schimbări de sarcină.
+      de: Übermäßige Motorbewegung bei Beschleunigung oder Lastwechsel.
+      fr: Mouvement excessif du moteur lors des accélérations ou changements de charge.
+      es: Movimiento excesivo del motor durante aceleraciones o cambios de carga.
+      it: Movimento eccessivo del motore durante accelerazioni o variazioni di carico.
+      nl: Overmatige motorbeweging bij accelereren of lastwisselingen.
+    - en: Increased vibration transmitted to the body.
+      ro: Vibrații mai mari transmise către caroserie.
+      de: Verstärkte Vibrationen werden auf die Karosserie übertragen.
+      fr: Des vibrations accrues sont transmises à la carrosserie.
+      es: Se transmiten más vibraciones a la carrocería.
+      it: Maggiori vibrazioni vengono trasmesse alla carrozzeria.
+      nl: Meer trillingen worden aan de carrosserie doorgegeven.
+  possible_causes:
+    - en: Rubber mount has cracked, hardened or separated.
+      ro: Tamponul de cauciuc este crăpat, întărit sau desprins.
+      de: Das Gummilager ist gerissen, verhärtet oder abgelöst.
+      fr: Le support en caoutchouc est fissuré, durci ou décollé.
+      es: El soporte de goma está agrietado, endurecido o separado.
+      it: Il supporto in gomma è crepato, indurito o distaccato.
+      nl: De rubberen motorsteun is gescheurd, verhard of losgeraakt.
+    - en: Mounting hardware is loose or damaged.
+      ro: Elementele de fixare sunt slăbite sau deteriorate.
+      de: Befestigungsteile sind lose oder beschädigt.
+      fr: Les éléments de fixation sont desserrés ou endommagés.
+      es: Los elementos de fijación están flojos o dañados.
+      it: Gli elementi di fissaggio sono allentati o danneggiati.
+      nl: Bevestigingsdelen zijn los of beschadigd.
+  diagnostic_steps:
+    - en: Inspect all engine mounts for cracks, separation and deformation.
+      ro: Inspectează toate suporturile pentru fisuri, desprinderi și deformări.
+      de: Alle Motorlager auf Risse, Ablösung und Verformung prüfen.
+      fr: Inspecter tous les supports pour fissures, décollement et déformation.
+      es: Inspeccionar todos los soportes por grietas, separación y deformación.
+      it: Ispezionare tutti i supporti per crepe, distacco e deformazioni.
+      nl: Inspecteer alle motorsteunen op scheuren, loslaten en vervorming.
+    - en: Observe engine movement during controlled load changes.
+      ro: Observă mișcarea motorului la schimbări controlate de sarcină.
+      de: Motorbewegung bei kontrollierten Lastwechseln beobachten.
+      fr: Observer le mouvement du moteur lors de variations de charge contrôlées.
+      es: Observar el movimiento del motor durante cambios de carga controlados.
+      it: Osservare il movimento del motore durante variazioni di carico controllate.
+      nl: Observeer de motorbeweging bij gecontroleerde lastwisselingen.
+  keywords:
+    - engine mount
+    - vibration
+    - engine movement
+    - mount failure
+  related_dtcs: []
+  difficulty: basic
+
+- id: vw_classic_petrol_cooling_system_air_lock
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_type_1
+      - volkswagen_type_2
+      - volkswagen_type_3
+      - volkswagen_karmann_ghia
+      - volkswagen_type_4
+      - volkswagen_k70
+      - volkswagen_passat
+      - volkswagen_golf
+      - volkswagen_polo
+      - volkswagen_scirocco
+      - volkswagen_jetta
+      - volkswagen_santana
+    generations:
+      - volkswagen_type_1
+      - volkswagen_type_2_t1
+      - volkswagen_type_2_t2
+      - volkswagen_type_3
+      - volkswagen_karmann_ghia_type_14
+      - volkswagen_karmann_ghia_type_34
+      - volkswagen_type_4_411
+      - volkswagen_type_4_412
+      - volkswagen_k70
+      - volkswagen_passat_b1
+      - volkswagen_passat_b2
+      - volkswagen_golf_mk1
+      - volkswagen_golf_mk2
+      - volkswagen_polo_mk1
+      - volkswagen_polo_mk2
+      - volkswagen_scirocco_mk1
+      - volkswagen_scirocco_mk2
+      - volkswagen_jetta_mk1
+      - volkswagen_jetta_mk2
+      - volkswagen_santana_b2
+    engines: []
+  category: diagnostics
+  system: cooling
+  title:
+    en: Air Lock in Cooling System
+    ro: Buzunar de aer în sistemul de răcire
+    de: Luft im Kühlsystem
+    fr: Poche d'air dans le circuit de refroidissement
+    es: Bolsa de aire en el sistema de refrigeración
+    it: Bolla d'aria nel sistema di raffreddamento
+    nl: Luchtbel in het koelsysteem
+  symptoms:
+    - en: Engine temperature fluctuates or rises abnormally.
+      ro: Temperatura motorului fluctuează sau crește anormal.
+      de: Die Motortemperatur schwankt oder steigt ungewöhnlich an.
+      fr: La température moteur fluctue ou augmente anormalement.
+      es: La temperatura del motor fluctúa o aumenta de forma anormal.
+      it: La temperatura del motore oscilla o aumenta in modo anomalo.
+      nl: De motortemperatuur schommelt of loopt abnormaal op.
+    - en: Coolant circulation may be inconsistent after cooling-system service.
+      ro: Circulația lichidului de răcire poate fi neuniformă după intervenții asupra sistemului.
+      de: Die Kühlmittelzirkulation kann nach Arbeiten am Kühlsystem ungleichmäßig sein.
+      fr: La circulation du liquide peut être irrégulière après une intervention sur le circuit.
+      es: La circulación del refrigerante puede ser irregular después de trabajar en el sistema.
+      it: La circolazione del liquido può essere irregolare dopo interventi sul circuito.
+      nl: De koelvloeistofcirculatie kan na werkzaamheden aan het systeem onregelmatig zijn.
+  possible_causes:
+    - en: Cooling system was not correctly filled or bled.
+      ro: Sistemul nu a fost umplut sau aerisit corect.
+      de: Das Kühlsystem wurde nicht korrekt befüllt oder entlüftet.
+      fr: Le circuit n'a pas été correctement rempli ou purgé.
+      es: El sistema no se llenó o purgó correctamente.
+      it: Il circuito non è stato riempito o spurgato correttamente.
+      nl: Het koelsysteem is niet correct gevuld of ontlucht.
+    - en: Coolant loss allowed air to enter the system.
+      ro: Pierderea lichidului de răcire a permis pătrunderea aerului în sistem.
+      de: Kühlmittelverlust hat das Eindringen von Luft ermöglicht.
+      fr: Une perte de liquide a permis à l'air d'entrer dans le circuit.
+      es: La pérdida de refrigerante permitió la entrada de aire.
+      it: Una perdita di liquido ha permesso l'ingresso di aria nel circuito.
+      nl: Koelvloeistofverlies heeft lucht in het systeem gebracht.
+  diagnostic_steps:
+    - en: Check coolant level and inspect the system for leaks.
+      ro: Verifică nivelul lichidului și inspectează sistemul pentru scurgeri.
+      de: Kühlmittelstand prüfen und System auf Leckagen kontrollieren.
+      fr: Vérifier le niveau et rechercher des fuites.
+      es: Comprobar el nivel y buscar fugas.
+      it: Controllare il livello e cercare perdite.
+      nl: Controleer het niveau en inspecteer op lekkages.
+    - en: Bleed the cooling system according to the procedure applicable to the exact vehicle.
+      ro: Aerisește sistemul conform procedurii specifice vehiculului.
+      de: Kühlsystem nach der für das Fahrzeug vorgesehenen Methode entlüften.
+      fr: Purger le circuit selon la procédure du véhicule concerné.
+      es: Purgar el sistema según el procedimiento específico del vehículo.
+      it: Spurgare il circuito secondo la procedura prevista per il veicolo.
+      nl: Ontlucht het systeem volgens de procedure voor het betreffende voertuig.
+  keywords:
+    - cooling system
+    - air lock
+    - coolant circulation
+    - overheating
+  related_dtcs: []
+  difficulty: basic
+
 - id: vw_classic_petrol_fuel_vapor_lock
   vehicle:
     manufacturer: volkswagen
