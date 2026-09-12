@@ -6,6 +6,951 @@ manufacturer:
 
 technical_data:
 
+- id: vw_early_petrol_low_compression
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_golf
+      - volkswagen_vento
+      - volkswagen_polo
+      - volkswagen_bora
+      - volkswagen_new_beetle
+      - volkswagen_passat
+    generations:
+      - volkswagen_golf_mk3
+      - volkswagen_golf_mk4
+      - volkswagen_vento_mk3
+      - volkswagen_polo_mk3
+      - volkswagen_polo_mk4
+      - volkswagen_bora_1j
+      - volkswagen_new_beetle_9c
+      - volkswagen_passat_b3
+      - volkswagen_passat_b4
+      - volkswagen_passat_b5
+    engines:
+      - '14'
+      - '14_16v'
+      - '16'
+      - '16_16v'
+      - '18'
+      - '18_16v'
+      - '18_t'
+      - '20'
+      - '20_16v'
+      - '20_gti_16v'
+      - '23_v5'
+      - '28_v6'
+      - '28_vr6'
+      - '29_vr6'
+      - '32'
+  category: diagnostics
+  system: engine_mechanical
+  title:
+    en: Low engine compression
+    ro: Compresie scăzută a motorului
+    de: Niedrige Motorkompression
+    fr: Compression moteur faible
+    es: Compresión baja del motor
+    it: Bassa compressione del motore
+    nl: Lage motorcompressie
+  description:
+    en: One or more cylinders have compression below specification, causing poor combustion and reduced engine performance.
+    ro: Unul sau mai mulți cilindri au compresia sub valoarea specificată, provocând ardere slabă și performanțe reduse.
+    de: Ein oder mehrere Zylinder weisen eine zu niedrige Kompression auf und verursachen eine schlechte Verbrennung und verringerte Motorleistung.
+    fr: Un ou plusieurs cylindres présentent une compression inférieure aux spécifications, entraînant une mauvaise combustion et une baisse des performances.
+    es: Uno o varios cilindros presentan una compresión inferior a la especificada, provocando una combustión deficiente y menor rendimiento.
+    it: Uno o più cilindri presentano una compressione inferiore alla specifica, causando combustione insufficiente e prestazioni ridotte.
+    nl: Een of meer cilinders hebben een te lage compressie, wat slechte verbranding en minder motorprestaties veroorzaakt.
+  symptoms:
+    - en: Difficult starting
+      ro: Pornire dificilă
+      de: Schwieriger Motorstart
+      fr: Démarrage difficile
+      es: Arranque difícil
+      it: Avviamento difficile
+      nl: Moeilijk starten
+    - en: Uneven idle
+      ro: Ralanti neregulat
+      de: Unruhiger Leerlauf
+      fr: Ralenti irrégulier
+      es: Ralentí irregular
+      it: Minimo irregolare
+      nl: Onrustige stationaire loop
+    - en: Reduced power
+      ro: Putere redusă
+      de: Leistungsverlust
+      fr: Perte de puissance
+      es: Pérdida de potencia
+      it: Perdita di potenza
+      nl: Vermogensverlies
+  possible_causes:
+    - en: Worn piston rings
+      ro: Segmenți de piston uzați
+      de: Verschlissene Kolbenringe
+      fr: Segments de piston usés
+      es: Aros de pistón desgastados
+      it: Fasce elastiche usurate
+      nl: Versleten zuigerveren
+    - en: Burned or leaking valve
+      ro: Supapă arsă sau neetanșă
+      de: Verbranntes oder undichtes Ventil
+      fr: Soupape brûlée ou non étanche
+      es: Válvula quemada o con fuga
+      it: Valvola bruciata o non a tenuta
+      nl: Verbrande of lekkende klep
+    - en: Cylinder head gasket leakage
+      ro: Pierdere prin garnitura de chiulasă
+      de: Undichte Zylinderkopfdichtung
+      fr: Fuite du joint de culasse
+      es: Fuga de junta de culata
+      it: Perdita dalla guarnizione della testata
+      nl: Lekkende koppakking
+  diagnostic_steps:
+    - en: Perform a compression test on all cylinders
+      ro: Efectuează un test de compresie pe toți cilindrii
+      de: Kompression an allen Zylindern messen
+      fr: Effectuer un test de compression sur tous les cylindres
+      es: Realizar una prueba de compresión en todos los cilindros
+      it: Eseguire un test di compressione su tutti i cilindri
+      nl: Compressietest op alle cilinders uitvoeren
+    - en: Repeat the test with a small amount of oil in the affected cylinder
+      ro: Repetă testul cu o cantitate mică de ulei în cilindrul afectat
+      de: Prüfung mit einer kleinen Ölmenge im betroffenen Zylinder wiederholen
+      fr: Répéter le test avec une petite quantité d'huile dans le cylindre concerné
+      es: Repetir la prueba con una pequeña cantidad de aceite en el cilindro afectado
+      it: Ripetere il test con una piccola quantità di olio nel cilindro interessato
+      nl: Test herhalen met een kleine hoeveelheid olie in de betreffende cilinder
+  keywords:
+    - low compression
+    - compression test
+    - engine compression
+    - poor compression
+    - cylinder compression
+  related_dtcs: []
+  difficulty: intermediate
+
+- id: vw_early_petrol_low_oil_pressure_hot_idle
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_golf
+      - volkswagen_vento
+      - volkswagen_polo
+      - volkswagen_bora
+      - volkswagen_new_beetle
+      - volkswagen_passat
+    generations:
+      - volkswagen_golf_mk3
+      - volkswagen_golf_mk4
+      - volkswagen_vento_mk3
+      - volkswagen_polo_mk3
+      - volkswagen_polo_mk4
+      - volkswagen_bora_1j
+      - volkswagen_new_beetle_9c
+      - volkswagen_passat_b3
+      - volkswagen_passat_b4
+      - volkswagen_passat_b5
+    engines:
+      - '14'
+      - '14_16v'
+      - '16'
+      - '16_16v'
+      - '18'
+      - '18_16v'
+      - '18_t'
+      - '20'
+      - '20_16v'
+      - '20_gti_16v'
+      - '23_v5'
+      - '28_v6'
+      - '28_vr6'
+      - '29_vr6'
+      - '32'
+  category: diagnostics
+  system: lubrication
+  title:
+    en: Low oil pressure at hot idle
+    ro: Presiune scăzută a uleiului la ralanti cu motorul cald
+    de: Niedriger Öldruck im warmen Leerlauf
+    fr: Pression d'huile faible au ralenti moteur chaud
+    es: Baja presión de aceite al ralentí con el motor caliente
+    it: Bassa pressione olio al minimo a motore caldo
+    nl: Lage oliedruk bij warme stationaire motor
+  description:
+    en: Engine oil pressure falls below the safe range when the engine is fully warm and idling.
+    ro: Presiunea uleiului scade sub nivelul sigur când motorul este complet încălzit și funcționează la ralanti.
+    de: Der Öldruck fällt bei vollständig warmem Motor und Leerlauf unter den sicheren Bereich.
+    fr: La pression d'huile descend sous la plage normale lorsque le moteur est chaud au ralenti.
+    es: La presión de aceite cae por debajo del rango seguro con el motor caliente al ralentí.
+    it: La pressione dell'olio scende sotto il livello sicuro con il motore caldo al minimo.
+    nl: De oliedruk daalt onder het veilige bereik bij een volledig warme motor en stationair toerental.
+  symptoms:
+    - en: Oil pressure warning at idle
+      ro: Martor de presiune ulei la ralanti
+      de: Öldruckwarnung im Leerlauf
+      fr: Témoin de pression d'huile au ralenti
+      es: Testigo de presión de aceite al ralentí
+      it: Spia pressione olio al minimo
+      nl: Oliedrukwaarschuwing bij stationair toerental
+    - en: Warning disappears when engine speed increases
+      ro: Martorul se stinge când crește turația
+      de: Warnung erlischt bei höherer Drehzahl
+      fr: Le témoin s'éteint lorsque le régime augmente
+      es: El testigo se apaga al aumentar las rpm
+      it: La spia si spegne aumentando il regime
+      nl: Waarschuwing verdwijnt bij hogere toerentallen
+  possible_causes:
+    - en: Worn engine bearings
+      ro: Cuzineți motor uzați
+      de: Verschlissene Motorlager
+      fr: Paliers moteur usés
+      es: Cojinetes del motor desgastados
+      it: Bronzine motore usurate
+      nl: Versleten motorlagers
+    - en: Worn oil pump
+      ro: Pompă de ulei uzată
+      de: Verschlissene Ölpumpe
+      fr: Pompe à huile usée
+      es: Bomba de aceite desgastada
+      it: Pompa dell'olio usurata
+      nl: Versleten oliepomp
+    - en: Incorrect oil viscosity
+      ro: Vâscozitate incorectă a uleiului
+      de: Falsche Ölviskosität
+      fr: Viscosité d'huile incorrecte
+      es: Viscosidad de aceite incorrecta
+      it: Viscosità dell'olio errata
+      nl: Verkeerde olieviscositeit
+  diagnostic_steps:
+    - en: Verify oil level and oil specification
+      ro: Verifică nivelul și specificația uleiului
+      de: Ölstand und Ölspezifikation prüfen
+      fr: Vérifier le niveau et la spécification de l'huile
+      es: Comprobar el nivel y la especificación del aceite
+      it: Controllare il livello e la specifica dell'olio
+      nl: Oliepeil en oliespecificatie controleren
+    - en: Measure actual oil pressure with a mechanical gauge
+      ro: Măsoară presiunea reală cu un manometru mecanic
+      de: Tatsächlichen Öldruck mit einem mechanischen Manometer messen
+      fr: Mesurer la pression réelle avec un manomètre mécanique
+      es: Medir la presión real con un manómetro mecánico
+      it: Misurare la pressione reale con un manometro meccanico
+      nl: Werkelijke oliedruk meten met een mechanische manometer
+  keywords:
+    - low oil pressure
+    - hot idle
+    - oil pressure warning
+    - worn bearings
+    - oil pump
+  related_dtcs: []
+  difficulty: advanced
+
+- id: vw_early_petrol_excessive_oil_consumption
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_golf
+      - volkswagen_vento
+      - volkswagen_polo
+      - volkswagen_bora
+      - volkswagen_new_beetle
+      - volkswagen_passat
+    generations:
+      - volkswagen_golf_mk3
+      - volkswagen_golf_mk4
+      - volkswagen_vento_mk3
+      - volkswagen_polo_mk3
+      - volkswagen_polo_mk4
+      - volkswagen_bora_1j
+      - volkswagen_new_beetle_9c
+      - volkswagen_passat_b3
+      - volkswagen_passat_b4
+      - volkswagen_passat_b5
+    engines:
+      - '14'
+      - '14_16v'
+      - '16'
+      - '16_16v'
+      - '18'
+      - '18_16v'
+      - '18_t'
+      - '20'
+      - '20_16v'
+      - '20_gti_16v'
+      - '23_v5'
+      - '28_v6'
+      - '28_vr6'
+      - '29_vr6'
+      - '32'
+  category: diagnostics
+  system: lubrication
+  title:
+    en: Excessive engine oil consumption
+    ro: Consum excesiv de ulei motor
+    de: Übermäßiger Motorölverbrauch
+    fr: Consommation excessive d'huile moteur
+    es: Consumo excesivo de aceite del motor
+    it: Consumo eccessivo di olio motore
+    nl: Overmatig motorolieverbruik
+  description:
+    en: The engine consumes significantly more oil than expected without a corresponding external oil leak.
+    ro: Motorul consumă semnificativ mai mult ulei decât normal fără o pierdere externă corespunzătoare.
+    de: Der Motor verbraucht deutlich mehr Öl als erwartet, ohne dass ein entsprechender äußerer Ölverlust vorliegt.
+    fr: Le moteur consomme beaucoup plus d'huile que prévu sans fuite externe correspondante.
+    es: El motor consume mucho más aceite de lo esperado sin una fuga externa equivalente.
+    it: Il motore consuma molto più olio del previsto senza una perdita esterna corrispondente.
+    nl: De motor verbruikt aanzienlijk meer olie dan verwacht zonder overeenkomstig extern olieverlies.
+  symptoms:
+    - en: Blue exhaust smoke
+      ro: Fum albastru pe evacuare
+      de: Blauer Abgasrauch
+      fr: Fumée bleue à l'échappement
+      es: Humo azul por el escape
+      it: Fumo blu dallo scarico
+      nl: Blauwe uitlaatrook
+    - en: Frequent need to top up engine oil
+      ro: Necesitatea frecventă de completare a uleiului
+      de: Häufiges Nachfüllen von Motoröl
+      fr: Besoin fréquent de faire l'appoint d'huile
+      es: Necesidad frecuente de rellenar aceite
+      it: Necessità frequente di rabboccare l'olio
+      nl: Regelmatig motorolie bijvullen
+  possible_causes:
+    - en: Worn piston rings
+      ro: Segmenți de piston uzați
+      de: Verschlissene Kolbenringe
+      fr: Segments de piston usés
+      es: Aros de pistón desgastados
+      it: Fasce elastiche usurate
+      nl: Versleten zuigerveren
+    - en: Worn valve stem seals
+      ro: Simeringuri de supapă uzate
+      de: Verschlissene Ventilschaftdichtungen
+      fr: Joints de queue de soupape usés
+      es: Retenes de válvula desgastados
+      it: Paraoli delle valvole usurati
+      nl: Versleten klepsteelafdichtingen
+    - en: Turbocharger oil leakage
+      ro: Pierdere de ulei prin turbocompresor
+      de: Ölleckage am Turbolader
+      fr: Fuite d'huile du turbocompresseur
+      es: Fuga de aceite del turbocompresor
+      it: Perdita d'olio dal turbocompressore
+      nl: Olielekkage via de turbocompressor
+  diagnostic_steps:
+    - en: Check the engine for external oil leaks
+      ro: Verifică motorul pentru pierderi externe de ulei
+      de: Motor auf äußere Öllecks prüfen
+      fr: Vérifier le moteur pour détecter les fuites externes
+      es: Comprobar el motor en busca de fugas externas
+      it: Controllare il motore per perdite esterne
+      nl: Motor controleren op externe olielekken
+    - en: Inspect exhaust smoke during cold start, deceleration and acceleration
+      ro: Inspectează fumul la pornire la rece, decelerare și accelerație
+      de: Abgasrauch bei Kaltstart, Schubbetrieb und Beschleunigung prüfen
+      fr: Contrôler la fumée au démarrage à froid, en décélération et à l'accélération
+      es: Comprobar el humo en arranque en frío, deceleración y aceleración
+      it: Controllare il fumo all'avviamento a freddo, in rilascio e accelerazione
+      nl: Uitlaatrook controleren bij koude start, deceleratie en acceleratie
+  keywords:
+    - oil consumption
+    - blue smoke
+    - piston rings
+    - valve seals
+    - turbo oil
+  related_dtcs: []
+  difficulty: intermediate
+
+- id: vw_early_petrol_thermostat_stuck_open
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_golf
+      - volkswagen_vento
+      - volkswagen_polo
+      - volkswagen_bora
+      - volkswagen_new_beetle
+      - volkswagen_passat
+    generations:
+      - volkswagen_golf_mk3
+      - volkswagen_golf_mk4
+      - volkswagen_vento_mk3
+      - volkswagen_polo_mk3
+      - volkswagen_polo_mk4
+      - volkswagen_bora_1j
+      - volkswagen_new_beetle_9c
+      - volkswagen_passat_b3
+      - volkswagen_passat_b4
+      - volkswagen_passat_b5
+    engines:
+      - '14'
+      - '14_16v'
+      - '16'
+      - '16_16v'
+      - '18'
+      - '18_16v'
+      - '18_t'
+      - '20'
+      - '20_16v'
+      - '20_gti_16v'
+      - '23_v5'
+      - '28_v6'
+      - '28_vr6'
+      - '29_vr6'
+      - '32'
+  category: diagnostics
+  system: cooling
+  title:
+    en: Thermostat stuck open
+    ro: Termostat blocat deschis
+    de: Thermostat hängt offen
+    fr: Thermostat bloqué ouvert
+    es: Termostato atascado abierto
+    it: Termostato bloccato aperto
+    nl: Thermostaat blijft open staan
+  description:
+    en: The thermostat remains open and allows coolant to circulate through the radiator before the engine reaches normal operating temperature.
+    ro: Termostatul rămâne deschis și permite circulația lichidului prin radiator înainte ca motorul să atingă temperatura normală.
+    de: Das Thermostat bleibt geöffnet und lässt Kühlmittel durch den Kühler zirkulieren, bevor der Motor Betriebstemperatur erreicht.
+    fr: Le thermostat reste ouvert et fait circuler le liquide dans le radiateur avant que le moteur atteigne sa température normale.
+    es: El termostato permanece abierto y permite la circulación por el radiador antes de alcanzar la temperatura normal.
+    it: Il termostato rimane aperto e permette la circolazione nel radiatore prima del raggiungimento della temperatura normale.
+    nl: De thermostaat blijft open en laat koelvloeistof door de radiator circuleren voordat de motor bedrijfstemperatuur bereikt.
+  symptoms:
+    - en: Engine warms up slowly
+      ro: Motorul se încălzește lent
+      de: Motor wird langsam warm
+      fr: Le moteur chauffe lentement
+      es: El motor tarda en calentarse
+      it: Il motore raggiunge lentamente la temperatura
+      nl: Motor warmt langzaam op
+    - en: Heater output remains weak during driving
+      ro: Încălzirea habitaclului rămâne slabă în mers
+      de: Heizleistung bleibt während der Fahrt schwach
+      fr: Chauffage habitacle faible en roulant
+      es: Calefacción débil durante la conducción
+      it: Riscaldamento debole durante la marcia
+      nl: Verwarming blijft zwak tijdens het rijden
+  possible_causes:
+    - en: Thermostat valve stuck open
+      ro: Supapa termostatului blocată deschis
+      de: Thermostatventil hängt offen
+      fr: Soupape de thermostat bloquée ouverte
+      es: Válvula del termostato atascada abierta
+      it: Valvola del termostato bloccata aperta
+      nl: Thermostaatklep blijft open
+  diagnostic_steps:
+    - en: Monitor coolant temperature during warm-up
+      ro: Monitorizează temperatura lichidului în timpul încălzirii
+      de: Kühlmitteltemperatur während des Warmlaufs überwachen
+      fr: Surveiller la température du liquide pendant la montée en température
+      es: Vigilar la temperatura durante el calentamiento
+      it: Monitorare la temperatura durante il riscaldamento
+      nl: Koelvloeistoftemperatuur tijdens opwarmen controleren
+    - en: Check radiator hose temperature during warm-up
+      ro: Verifică temperatura furtunului radiatorului în timpul încălzirii
+      de: Kühlerschlauchtemperatur während des Warmlaufs prüfen
+      fr: Contrôler la température de la durite du radiateur pendant la montée en température
+      es: Comprobar la temperatura del manguito del radiador durante el calentamiento
+      it: Controllare la temperatura del manicotto del radiatore durante il riscaldamento
+      nl: Radiateurslangtemperatuur tijdens opwarmen controleren
+  keywords:
+    - thermostat stuck open
+    - engine runs cold
+    - slow warm up
+    - cooling system
+  related_dtcs: []
+  difficulty: basic
+
+- id: vw_early_petrol_thermostat_stuck_closed
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_golf
+      - volkswagen_vento
+      - volkswagen_polo
+      - volkswagen_bora
+      - volkswagen_new_beetle
+      - volkswagen_passat
+    generations:
+      - volkswagen_golf_mk3
+      - volkswagen_golf_mk4
+      - volkswagen_vento_mk3
+      - volkswagen_polo_mk3
+      - volkswagen_polo_mk4
+      - volkswagen_bora_1j
+      - volkswagen_new_beetle_9c
+      - volkswagen_passat_b3
+      - volkswagen_passat_b4
+      - volkswagen_passat_b5
+    engines:
+      - '14'
+      - '14_16v'
+      - '16'
+      - '16_16v'
+      - '18'
+      - '18_16v'
+      - '18_t'
+      - '20'
+      - '20_16v'
+      - '20_gti_16v'
+      - '23_v5'
+      - '28_v6'
+      - '28_vr6'
+      - '29_vr6'
+      - '32'
+  category: diagnostics
+  system: cooling
+  title:
+    en: Thermostat stuck closed
+    ro: Termostat blocat închis
+    de: Thermostat hängt geschlossen
+    fr: Thermostat bloqué fermé
+    es: Termostato atascado cerrado
+    it: Termostato bloccato chiuso
+    nl: Thermostaat blijft gesloten
+  description:
+    en: The thermostat fails to open and restricts coolant flow through the radiator, potentially causing engine overheating.
+    ro: Termostatul nu se deschide și restricționează circulația lichidului prin radiator, putând provoca supraîncălzirea motorului.
+    de: Das Thermostat öffnet nicht und begrenzt den Kühlmittelfluss durch den Kühler, wodurch der Motor überhitzen kann.
+    fr: Le thermostat ne s'ouvre pas et limite la circulation du liquide dans le radiateur, ce qui peut provoquer une surchauffe.
+    es: El termostato no abre y restringe el flujo hacia el radiador, pudiendo provocar sobrecalentamiento.
+    it: Il termostato non si apre e limita il flusso verso il radiatore, causando potenzialmente un surriscaldamento.
+    nl: De thermostaat opent niet en beperkt de koelvloeistofstroom door de radiator, waardoor oververhitting kan ontstaan.
+  symptoms:
+    - en: Rapid coolant temperature rise
+      ro: Creștere rapidă a temperaturii lichidului de răcire
+      de: Schneller Anstieg der Kühlmitteltemperatur
+      fr: Montée rapide de la température du liquide de refroidissement
+      es: Aumento rápido de la temperatura del refrigerante
+      it: Rapido aumento della temperatura del liquido refrigerante
+      nl: Snelle stijging van de koelvloeistoftemperatuur
+    - en: Radiator remains relatively cold while engine overheats
+      ro: Radiatorul rămâne relativ rece în timp ce motorul se supraîncălzește
+      de: Kühler bleibt relativ kalt, während der Motor überhitzt
+      fr: Le radiateur reste relativement froid alors que le moteur surchauffe
+      es: El radiador permanece relativamente frío mientras el motor se sobrecalienta
+      it: Il radiatore rimane relativamente freddo mentre il motore si surriscalda
+      nl: Radiator blijft relatief koud terwijl de motor oververhit
+  possible_causes:
+    - en: Thermostat mechanically stuck closed
+      ro: Termostat blocat mecanic în poziția închis
+      de: Thermostat mechanisch geschlossen
+      fr: Thermostat bloqué mécaniquement fermé
+      es: Termostato bloqueado mecánicamente en posición cerrada
+      it: Termostato bloccato meccanicamente chiuso
+      nl: Thermostaat mechanisch gesloten vastgelopen
+  diagnostic_steps:
+    - en: Monitor coolant temperature and radiator hose temperature
+      ro: Monitorizează temperatura lichidului și a furtunurilor radiatorului
+      de: Kühlmittel- und Kühlerschlauchtemperatur überwachen
+      fr: Surveiller la température du liquide et des durites du radiateur
+      es: Vigilar la temperatura del refrigerante y de los manguitos del radiador
+      it: Monitorare la temperatura del refrigerante e dei manicotti del radiatore
+      nl: Koelvloeistof- en radiateurslangtemperatuur controleren
+    - en: Do not continue driving if overheating is confirmed
+      ro: Nu continua deplasarea dacă este confirmată supraîncălzirea
+      de: Bei bestätigter Überhitzung nicht weiterfahren
+      fr: Ne pas continuer à rouler en cas de surchauffe confirmée
+      es: No continuar conduciendo si se confirma el sobrecalentamiento
+      it: Non continuare a guidare se il surriscaldamento è confermato
+      nl: Niet verder rijden als oververhitting is bevestigd
+  keywords:
+    - thermostat stuck closed
+    - overheating
+    - cooling system
+    - coolant flow
+  related_dtcs: []
+  difficulty: basic
+
+- id: vw_early_clutch_slipping
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_golf
+      - volkswagen_vento
+      - volkswagen_polo
+      - volkswagen_bora
+      - volkswagen_new_beetle
+      - volkswagen_passat
+    generations:
+      - volkswagen_golf_mk3
+      - volkswagen_golf_mk4
+      - volkswagen_vento_mk3
+      - volkswagen_polo_mk3
+      - volkswagen_polo_mk4
+      - volkswagen_bora_1j
+      - volkswagen_new_beetle_9c
+      - volkswagen_passat_b3
+      - volkswagen_passat_b4
+      - volkswagen_passat_b5
+    engines: []
+  category: diagnostics
+  system: clutch
+  title:
+    en: Clutch slipping
+    ro: Ambreiaj care patinează
+    de: Kupplung rutscht
+    fr: Embrayage qui patine
+    es: Embrague patinando
+    it: Frizione che slitta
+    nl: Slippende koppeling
+  description:
+    en: The clutch fails to transmit full engine torque to the transmission under load.
+    ro: Ambreiajul nu mai transmite integral cuplul motor către transmisie sub sarcină.
+    de: Die Kupplung überträgt unter Last das Motordrehmoment nicht mehr vollständig auf das Getriebe.
+    fr: L'embrayage ne transmet plus complètement le couple moteur à la transmission sous charge.
+    es: El embrague no transmite completamente el par del motor a la transmisión bajo carga.
+    it: La frizione non trasmette completamente la coppia del motore alla trasmissione sotto carico.
+    nl: De koppeling brengt onder belasting niet langer het volledige motorkoppel over op de transmissie.
+  symptoms:
+    - en: Engine speed rises without proportional vehicle acceleration
+      ro: Turația motorului crește fără o accelerare proporțională a mașinii
+      de: Motordrehzahl steigt ohne entsprechende Fahrzeugbeschleunigung
+      fr: Le régime moteur augmente sans accélération proportionnelle du véhicule
+      es: Las rpm aumentan sin una aceleración proporcional del vehículo
+      it: Il regime aumenta senza un'accelerazione proporzionale
+      nl: Motortoerental stijgt zonder evenredige acceleratie
+    - en: Slipping is worse in high gears under heavy load
+      ro: Patinarea este mai accentuată în treptele superioare sub sarcină mare
+      de: Rutschen tritt in hohen Gängen unter hoher Last stärker auf
+      fr: Le patinage est plus marqué sur les rapports élevés sous forte charge
+      es: El patinamiento es mayor en marchas largas bajo carga
+      it: Lo slittamento è maggiore alle marce alte sotto carico
+      nl: Slip is erger in hoge versnellingen onder zware belasting
+  possible_causes:
+    - en: Worn clutch friction disc
+      ro: Disc de ambreiaj uzat
+      de: Verschlissene Kupplungsscheibe
+      fr: Disque d'embrayage usé
+      es: Disco de embrague desgastado
+      it: Disco frizione usurato
+      nl: Versleten koppelingsplaat
+    - en: Oil contamination of clutch disc
+      ro: Contaminarea discului cu ulei
+      de: Ölverunreinigung der Kupplungsscheibe
+      fr: Contamination du disque par de l'huile
+      es: Contaminación del disco con aceite
+      it: Contaminazione del disco con olio
+      nl: Olievervuiling van de koppelingsplaat
+  diagnostic_steps:
+    - en: Test clutch slip under controlled high-load conditions
+      ro: Testează patinarea ambreiajului în condiții controlate de sarcină mare
+      de: Kupplungsschlupf unter kontrollierter hoher Last prüfen
+      fr: Contrôler le patinage sous charge élevée contrôlée
+      es: Comprobar el patinamiento bajo carga elevada controlada
+      it: Controllare lo slittamento sotto carico elevato controllato
+      nl: Koppelingsslip onder gecontroleerde hoge belasting controleren
+    - en: Inspect clutch assembly if slip is confirmed
+      ro: Inspectează ansamblul ambreiajului dacă patinarea este confirmată
+      de: Kupplung bei bestätigtem Rutschen prüfen
+      fr: Inspecter l'embrayage si le patinage est confirmé
+      es: Inspeccionar el embrague si se confirma el patinamiento
+      it: Ispezionare la frizione se lo slittamento è confermato
+      nl: Koppeling inspecteren als slip is bevestigd
+  keywords:
+    - clutch slipping
+    - clutch slip
+    - worn clutch
+    - clutch disc
+  related_dtcs: []
+  difficulty: intermediate
+
+- id: vw_early_clutch_dragging
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_golf
+      - volkswagen_vento
+      - volkswagen_polo
+      - volkswagen_bora
+      - volkswagen_new_beetle
+      - volkswagen_passat
+    generations:
+      - volkswagen_golf_mk3
+      - volkswagen_golf_mk4
+      - volkswagen_vento_mk3
+      - volkswagen_polo_mk3
+      - volkswagen_polo_mk4
+      - volkswagen_bora_1j
+      - volkswagen_new_beetle_9c
+      - volkswagen_passat_b3
+      - volkswagen_passat_b4
+      - volkswagen_passat_b5
+    engines: []
+  category: diagnostics
+  system: clutch
+  title:
+    en: Clutch dragging
+    ro: Ambreiaj care nu debreiază complet
+    de: Kupplung trennt nicht vollständig
+    fr: Embrayage qui ne débraye pas complètement
+    es: Embrague que no desacopla completamente
+    it: Frizione che non disinnesta completamente
+    nl: Koppeling ontkoppelt niet volledig
+  description:
+    en: The clutch remains partially engaged when the pedal is fully depressed, allowing engine torque to reach the transmission.
+    ro: Ambreiajul rămâne parțial cuplat când pedala este apăsată complet, permițând transmiterea cuplului către transmisie.
+    de: Die Kupplung bleibt bei vollständig getretenem Pedal teilweise eingekuppelt.
+    fr: L'embrayage reste partiellement engagé lorsque la pédale est complètement enfoncée.
+    es: El embrague permanece parcialmente acoplado con el pedal completamente pisado.
+    it: La frizione rimane parzialmente innestata con il pedale completamente premuto.
+    nl: De koppeling blijft gedeeltelijk ingeschakeld wanneer het pedaal volledig wordt ingetrapt.
+  symptoms:
+    - en: Difficulty selecting first gear or reverse
+      ro: Dificultate la selectarea primei trepte sau a marșarierului
+      de: Erster Gang oder Rückwärtsgang schwer einzulegen
+      fr: Première ou marche arrière difficiles à engager
+      es: Dificultad para engranar primera o marcha atrás
+      it: Difficoltà a inserire prima o retromarcia
+      nl: Eerste versnelling of achteruit moeilijk in te schakelen
+    - en: Vehicle tends to creep with clutch fully depressed
+      ro: Mașina tinde să se deplaseze cu ambreiajul complet apăsat
+      de: Fahrzeug bewegt sich trotz vollständig getretener Kupplung
+      fr: Le véhicule tend à avancer malgré la pédale complètement enfoncée
+      es: El vehículo tiende a avanzar con el embrague completamente pisado
+      it: Il veicolo tende ad avanzare con la frizione completamente premuta
+      nl: Voertuig wil bewegen terwijl de koppeling volledig is ingetrapt
+  possible_causes:
+    - en: Incorrect clutch adjustment
+      ro: Reglaj incorect al ambreiajului
+      de: Falsche Kupplungseinstellung
+      fr: Mauvais réglage de l'embrayage
+      es: Ajuste incorrecto del embrague
+      it: Regolazione errata della frizione
+      nl: Verkeerde koppelingafstelling
+    - en: Air or leakage in hydraulic clutch system
+      ro: Aer sau pierdere în sistemul hidraulic al ambreiajului
+      de: Luft oder Leckage im hydraulischen Kupplungssystem
+      fr: Air ou fuite dans le circuit hydraulique
+      es: Aire o fuga en el sistema hidráulico
+      it: Aria o perdita nel circuito idraulico
+      nl: Lucht of lekkage in het hydraulische koppelingssysteem
+    - en: Warped clutch disc
+      ro: Disc de ambreiaj deformat
+      de: Verformte Kupplungsscheibe
+      fr: Disque d'embrayage voilé
+      es: Disco de embrague deformado
+      it: Disco frizione deformato
+      nl: Vervormde koppelingsplaat
+  diagnostic_steps:
+    - en: Check clutch pedal travel and hydraulic operation
+      ro: Verifică cursa pedalei și funcționarea hidraulică
+      de: Pedalweg und hydraulische Funktion prüfen
+      fr: Contrôler la course de pédale et le fonctionnement hydraulique
+      es: Comprobar el recorrido del pedal y el sistema hidráulico
+      it: Controllare la corsa del pedale e il funzionamento idraulico
+      nl: Pedaalslag en hydraulische werking controleren
+    - en: Check clutch disengagement with the engine running
+      ro: Verifică decuplarea ambreiajului cu motorul pornit
+      de: Kupplungstrennung bei laufendem Motor prüfen
+      fr: Vérifier le débrayage moteur tournant
+      es: Comprobar el desacoplamiento con el motor en marcha
+      it: Controllare il disinnesto con motore acceso
+      nl: Koppelingsontkoppeling controleren met draaiende motor
+  keywords:
+    - clutch dragging
+    - clutch not disengaging
+    - difficult first gear
+    - difficult reverse
+  related_dtcs: []
+  difficulty: intermediate
+
+- id: vw_early_manual_transmission_hard_shifting
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_golf
+      - volkswagen_vento
+      - volkswagen_polo
+      - volkswagen_bora
+      - volkswagen_new_beetle
+      - volkswagen_passat
+    generations:
+      - volkswagen_golf_mk3
+      - volkswagen_golf_mk4
+      - volkswagen_vento_mk3
+      - volkswagen_polo_mk3
+      - volkswagen_polo_mk4
+      - volkswagen_bora_1j
+      - volkswagen_new_beetle_9c
+      - volkswagen_passat_b3
+      - volkswagen_passat_b4
+      - volkswagen_passat_b5
+    engines: []
+  category: diagnostics
+  system: transmission
+  title:
+    en: Manual transmission difficult to shift
+    ro: Cutie manuală greu de schimbat
+    de: Schaltgetriebe lässt sich schwer schalten
+    fr: Boîte manuelle difficile à engager
+    es: Cambio manual difícil de engranar
+    it: Cambio manuale difficile da innestare
+    nl: Handgeschakelde versnellingsbak schakelt moeilijk
+  description:
+    en: Gear selection requires excessive force or becomes difficult, especially when the transmission is cold or when selecting specific gears.
+    ro: Selectarea treptelor necesită forță excesivă sau devine dificilă, în special la rece sau pentru anumite trepte.
+    de: Die Gangwahl erfordert übermäßige Kraft oder ist besonders bei kaltem Getriebe oder bestimmten Gängen schwierig.
+    fr: La sélection des rapports demande un effort excessif, notamment à froid ou pour certains rapports.
+    es: La selección de marchas requiere una fuerza excesiva, especialmente en frío o en determinadas marchas.
+    it: L'innesto delle marce richiede una forza eccessiva, soprattutto a freddo o per determinate marce.
+    nl: Schakelen vereist te veel kracht, vooral bij koude transmissie of bepaalde versnellingen.
+  symptoms:
+    - en: Gear lever difficult to move
+      ro: Maneta schimbătorului se mișcă greu
+      de: Schalthebel lässt sich schwer bewegen
+      fr: Levier de vitesses difficile à déplacer
+      es: Palanca de cambios difícil de mover
+      it: Leva del cambio difficile da muovere
+      nl: Versnellingspook beweegt moeilijk
+    - en: Gear engagement improves after warming up
+      ro: Schimbarea treptelor se îmbunătățește după încălzire
+      de: Schaltbarkeit verbessert sich nach dem Warmlauf
+      fr: Le passage des rapports s'améliore à chaud
+      es: El cambio mejora al calentarse
+      it: L'innesto migliora a caldo
+      nl: Schakelen verbetert na opwarmen
+  possible_causes:
+    - en: Incorrect or degraded transmission oil
+      ro: Ulei de transmisie incorect sau degradat
+      de: Falsches oder gealtertes Getriebeöl
+      fr: Huile de boîte incorrecte ou dégradée
+      es: Aceite de transmisión incorrecto o degradado
+      it: Olio del cambio errato o degradato
+      nl: Verkeerde of versleten transmissieolie
+    - en: Clutch not fully disengaging
+      ro: Ambreiajul nu se decuplează complet
+      de: Kupplung trennt nicht vollständig
+      fr: Embrayage ne débrayant pas complètement
+      es: Embrague que no desacopla completamente
+      it: Frizione che non disinnesta completamente
+      nl: Koppeling ontkoppelt niet volledig
+    - en: Worn shift linkage
+      ro: Mecanism de comandă al schimbătorului uzat
+      de: Verschlissenes Schaltgestänge
+      fr: Tringlerie de sélection usée
+      es: Varillaje del cambio desgastado
+      it: Leveraggi del cambio usurati
+      nl: Versleten schakelmechanisme
+  diagnostic_steps:
+    - en: Check clutch disengagement before inspecting the gearbox
+      ro: Verifică decuplarea ambreiajului înaintea cutiei
+      de: Kupplungstrennung vor der Getriebeprüfung kontrollieren
+      fr: Vérifier le débrayage avant d'inspecter la boîte
+      es: Comprobar el desacoplamiento antes de inspeccionar la caja
+      it: Controllare il disinnesto prima di ispezionare il cambio
+      nl: Koppelingsontkoppeling controleren voordat de versnellingsbak wordt geïnspecteerd
+    - en: Check transmission oil level and specification
+      ro: Verifică nivelul și specificația uleiului din cutie
+      de: Getriebeölstand und Spezifikation prüfen
+      fr: Vérifier le niveau et la spécification de l'huile de boîte
+      es: Comprobar nivel y especificación del aceite de transmisión
+      it: Controllare livello e specifica dell'olio del cambio
+      nl: Versnellingsbakoliepeil en specificatie controleren
+  keywords:
+    - hard shifting
+    - manual transmission
+    - difficult gear engagement
+    - shift linkage
+    - gearbox oil
+  related_dtcs: []
+  difficulty: intermediate
+
+- id: vw_early_wheel_bearing_noise
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_golf
+      - volkswagen_vento
+      - volkswagen_polo
+      - volkswagen_bora
+      - volkswagen_new_beetle
+      - volkswagen_passat
+    generations:
+      - volkswagen_golf_mk3
+      - volkswagen_golf_mk4
+      - volkswagen_vento_mk3
+      - volkswagen_polo_mk3
+      - volkswagen_polo_mk4
+      - volkswagen_bora_1j
+      - volkswagen_new_beetle_9c
+      - volkswagen_passat_b3
+      - volkswagen_passat_b4
+      - volkswagen_passat_b5
+    engines: []
+  category: diagnostics
+  system: suspension
+  title:
+    en: Wheel bearing noise or play
+    ro: Zgomot sau joc la rulmentul roții
+    de: Radlagergeräusch oder Spiel
+    fr: Bruit ou jeu de roulement de roue
+    es: Ruido o juego del rodamiento de rueda
+    it: Rumore o gioco del cuscinetto ruota
+    nl: Wiellagergeluid of speling
+  description:
+    en: A worn wheel bearing produces a speed-dependent humming or grinding noise and may develop detectable play.
+    ro: Un rulment de roată uzat produce un zgomot de huruit dependent de viteză și poate dezvolta joc.
+    de: Ein verschlissenes Radlager erzeugt ein geschwindigkeitsabhängiges Brummen oder Mahlen und kann Spiel entwickeln.
+    fr: Un roulement de roue usé produit un bourdonnement lié à la vitesse et peut présenter du jeu.
+    es: Un rodamiento de rueda desgastado produce un zumbido dependiente de la velocidad y puede presentar holgura.
+    it: Un cuscinetto ruota usurato produce un ronzio dipendente dalla velocità e può presentare gioco.
+    nl: Een versleten wiellager veroorzaakt een snelheidsafhankelijk zoemend of schurend geluid en kan speling krijgen.
+  symptoms:
+    - en: Humming or rumbling that increases with road speed
+      ro: Huruit care crește odată cu viteza
+      de: Brummen nimmt mit der Fahrgeschwindigkeit zu
+      fr: Bourdonnement augmentant avec la vitesse
+      es: Zumbido que aumenta con la velocidad
+      it: Ronzio che aumenta con la velocità
+      nl: Zoemend geluid neemt toe met snelheid
+    - en: Noise changes when cornering
+      ro: Zgomotul se schimbă în viraje
+      de: Geräusch verändert sich in Kurven
+      fr: Le bruit change en virage
+      es: El ruido cambia al tomar curvas
+      it: Il rumore cambia in curva
+      nl: Geluid verandert tijdens bochten
+  possible_causes:
+    - en: Worn wheel bearing
+      ro: Rulment de roată uzat
+      de: Verschlissenes Radlager
+      fr: Roulement de roue usé
+      es: Rodamiento de rueda desgastado
+      it: Cuscinetto ruota usurato
+      nl: Versleten wiellager
+    - en: Bearing preload or installation problem
+      ro: Problemă de preîncărcare sau montaj a rulmentului
+      de: Problem mit Vorspannung oder Montage des Lagers
+      fr: Problème de précharge ou de montage du roulement
+      es: Problema de precarga o montaje del rodamiento
+      it: Problema di precarico o montaggio del cuscinetto
+      nl: Probleem met lager voorspanning of montage
+  diagnostic_steps:
+    - en: Road test and determine whether noise changes during gentle cornering
+      ro: Efectuează un test rutier și verifică dacă zgomotul se schimbă în viraje ușoare
+      de: Probefahrt durchführen und Geräuschveränderung bei leichten Kurven prüfen
+      fr: Effectuer un essai routier et vérifier le changement de bruit en virage léger
+      es: Realizar una prueba en carretera y comprobar el cambio de ruido en curvas suaves
+      it: Effettuare una prova su strada e verificare il cambiamento del rumore in curva
+      nl: Proefrit uitvoeren en controleren of het geluid verandert in lichte bochten
+    - en: Check the wheel for play with the vehicle safely lifted
+      ro: Verifică jocul roții cu mașina ridicată în siguranță
+      de: Rad bei sicher angehobenem Fahrzeug auf Spiel prüfen
+      fr: Contrôler le jeu de la roue avec le véhicule correctement levé
+      es: Comprobar el juego de la rueda con el vehículo levantado de forma segura
+      it: Controllare il gioco della ruota con il veicolo sollevato in sicurezza
+      nl: Wielspeling controleren met het voertuig veilig opgekrikt
+  keywords:
+    - wheel bearing
+    - bearing noise
+    - humming noise
+    - wheel play
+    - rumbling
+  related_dtcs: []
+  difficulty: intermediate
+
 - id: vw_mechanical_petrol_compression_imbalance
   title:
     en: Uneven compression between petrol cylinders
