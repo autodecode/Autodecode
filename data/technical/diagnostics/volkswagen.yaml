@@ -6,6 +6,1609 @@ manufacturer:
 
 technical_data:
 
+- id: vw_early_petrol_fuel_pressure_low
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_golf
+      - volkswagen_vento
+      - volkswagen_polo
+      - volkswagen_bora
+      - volkswagen_new_beetle
+      - volkswagen_passat
+      - volkswagen_sharan
+      - volkswagen_caddy
+    generations:
+      - volkswagen_golf_mk3
+      - volkswagen_golf_mk4
+      - volkswagen_vento_mk3
+      - volkswagen_polo_mk3
+      - volkswagen_polo_mk4
+      - volkswagen_bora_1j
+      - volkswagen_new_beetle_9c
+      - volkswagen_passat_b3
+      - volkswagen_passat_b4
+      - volkswagen_passat_b5
+      - volkswagen_sharan_7m
+      - volkswagen_caddy_9k
+    engines:
+      - '14'
+      - '14_16v'
+      - '16'
+      - '16_16v'
+      - '18'
+      - '18_16v'
+      - '18_t'
+      - '20'
+      - '20_16v'
+      - '20_gti_16v'
+      - '23_v5'
+      - '28_v6'
+      - '28_vr6'
+      - '29_vr6'
+      - '32'
+      - '32_r32'
+      - '40_w8'
+  category: diagnostics
+  system: engine
+  title:
+    en: Low fuel pressure
+    ro: Presiune scăzută a combustibilului
+    de: Niedriger Kraftstoffdruck
+    fr: Pression de carburant insuffisante
+    es: Presión de combustible baja
+    it: Pressione carburante insufficiente
+    nl: Lage brandstofdruk
+  symptoms:
+    - en: Poor acceleration and loss of engine power
+      ro: Accelerație slabă și pierdere de putere
+      de: Schlechte Beschleunigung und Leistungsverlust
+      fr: Mauvaise accélération et perte de puissance
+      es: Mala aceleración y pérdida de potencia
+      it: Scarsa accelerazione e perdita di potenza
+      nl: Slechte acceleratie en vermogensverlies
+    - en: Hard starting or engine hesitation
+      ro: Pornire dificilă sau ezitarea motorului
+      de: Schwieriger Start oder Motorruckeln
+      fr: Démarrage difficile ou hésitation du moteur
+      es: Arranque difícil o vacilación del motor
+      it: Avviamento difficoltoso o esitazione del motore
+      nl: Moeizaam starten of inhouden van de motor
+  possible_causes:
+    - en: Weak fuel pump
+      ro: Pompă de combustibil slăbită
+      de: Schwache Kraftstoffpumpe
+      fr: Pompe à carburant faible
+      es: Bomba de combustible débil
+      it: Pompa carburante debole
+      nl: Zwakke brandstofpomp
+    - en: Restricted fuel filter or fuel line
+      ro: Filtru sau conductă de combustibil restricționată
+      de: Eingeschränkter Kraftstofffilter oder Kraftstoffleitung
+      fr: Filtre ou conduite de carburant obstrué
+      es: Filtro o conducto de combustible restringido
+      it: Filtro o linea carburante ostruiti
+      nl: Beperkt brandstoffilter of brandstofleiding
+  diagnostic_steps:
+    - en: Measure fuel pressure under idle and load conditions
+      ro: Măsoară presiunea combustibilului la ralanti și sub sarcină
+      de: Kraftstoffdruck im Leerlauf und unter Last messen
+      fr: Mesurer la pression de carburant au ralenti et sous charge
+      es: Medir la presión de combustible al ralentí y bajo carga
+      it: Misurare la pressione carburante al minimo e sotto carico
+      nl: Brandstofdruk stationair en onder belasting meten
+    - en: Check fuel filter, pump and supply line
+      ro: Verifică filtrul, pompa și conducta de alimentare
+      de: Kraftstofffilter, Pumpe und Zuleitung prüfen
+      fr: Contrôler le filtre, la pompe et la conduite
+      es: Comprobar filtro, bomba y conducto
+      it: Controllare filtro, pompa e linea di alimentazione
+      nl: Filter, pomp en toevoerleiding controleren
+  keywords:
+    - fuel pressure
+    - fuel pump
+    - fuel filter
+    - low pressure
+    - poor acceleration
+  related_dtcs: []
+  difficulty: intermediate
+
+- id: vw_early_petrol_fuel_pump_not_running
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_golf
+      - volkswagen_vento
+      - volkswagen_polo
+      - volkswagen_bora
+      - volkswagen_new_beetle
+      - volkswagen_passat
+      - volkswagen_sharan
+      - volkswagen_caddy
+    generations:
+      - volkswagen_golf_mk3
+      - volkswagen_golf_mk4
+      - volkswagen_vento_mk3
+      - volkswagen_polo_mk3
+      - volkswagen_polo_mk4
+      - volkswagen_bora_1j
+      - volkswagen_new_beetle_9c
+      - volkswagen_passat_b3
+      - volkswagen_passat_b4
+      - volkswagen_passat_b5
+      - volkswagen_sharan_7m
+      - volkswagen_caddy_9k
+    engines:
+      - '14'
+      - '14_16v'
+      - '16'
+      - '16_16v'
+      - '18'
+      - '18_16v'
+      - '18_t'
+      - '20'
+      - '20_16v'
+      - '20_gti_16v'
+      - '23_v5'
+      - '28_v6'
+      - '28_vr6'
+      - '29_vr6'
+      - '32'
+      - '32_r32'
+      - '40_w8'
+  category: diagnostics
+  system: fuel
+  title:
+    en: Petrol fuel pump not running
+    ro: Pompa de combustibil pentru benzină nu funcționează
+    de: Benzinkraftstoffpumpe läuft nicht
+    fr: Pompe à carburant essence inactive
+    es: Bomba de combustible de gasolina no funciona
+    it: Pompa carburante benzina non funziona
+    nl: Benzinebrandstofpomp werkt niet
+  symptoms:
+    - en: Engine cranks but does not start
+      ro: Motorul învârte dar nu pornește
+      de: Motor dreht, startet aber nicht
+      fr: Le moteur tourne mais ne démarre pas
+      es: El motor gira pero no arranca
+      it: Il motore gira ma non si avvia
+      nl: Motor draait maar start niet
+    - en: No fuel pressure
+      ro: Lipsă presiune combustibil
+      de: Kein Kraftstoffdruck
+      fr: Absence de pression de carburant
+      es: Sin presión de combustible
+      it: Assenza di pressione carburante
+      nl: Geen brandstofdruk
+  possible_causes:
+    - en: Failed fuel pump
+      ro: Pompă de combustibil defectă
+      de: Defekte Kraftstoffpumpe
+      fr: Pompe à carburant défectueuse
+      es: Bomba de combustible defectuosa
+      it: Pompa carburante guasta
+      nl: Defecte brandstofpomp
+    - en: Faulty pump relay or power supply
+      ro: Releu sau alimentare pompă defectă
+      de: Defektes Pumpenrelais oder Spannungsversorgung
+      fr: Relais ou alimentation de pompe défectueux
+      es: Relé o alimentación de la bomba defectuosos
+      it: Relè o alimentazione della pompa guasti
+      nl: Defect relais of voeding van de pomp
+  diagnostic_steps:
+    - en: Check pump voltage during cranking
+      ro: Verifică tensiunea pompei în timpul pornirii
+      de: Pumpenspannung während des Startens prüfen
+      fr: Vérifier la tension de la pompe pendant le démarrage
+      es: Comprobar la tensión de la bomba durante el arranque
+      it: Controllare la tensione della pompa durante l'avviamento
+      nl: Pompspanning tijdens starten controleren
+    - en: Check pump relay and fuse
+      ro: Verifică releul și siguranța pompei
+      de: Pumpenrelais und Sicherung prüfen
+      fr: Contrôler le relais et le fusible de pompe
+      es: Comprobar relé y fusible de la bomba
+      it: Controllare relè e fusibile della pompa
+      nl: Relais en zekering van de pomp controleren
+  keywords:
+    - fuel pump
+    - pump relay
+    - no fuel pressure
+    - no start
+  related_dtcs: []
+  difficulty: intermediate
+
+- id: vw_early_petrol_injector_sticking
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_golf
+      - volkswagen_vento
+      - volkswagen_polo
+      - volkswagen_bora
+      - volkswagen_new_beetle
+      - volkswagen_passat
+      - volkswagen_sharan
+    generations:
+      - volkswagen_golf_mk3
+      - volkswagen_golf_mk4
+      - volkswagen_vento_mk3
+      - volkswagen_polo_mk3
+      - volkswagen_polo_mk4
+      - volkswagen_bora_1j
+      - volkswagen_new_beetle_9c
+      - volkswagen_passat_b3
+      - volkswagen_passat_b4
+      - volkswagen_passat_b5
+      - volkswagen_sharan_7m
+    engines:
+      - '14'
+      - '14_16v'
+      - '16'
+      - '16_16v'
+      - '18'
+      - '18_16v'
+      - '18_t'
+      - '20'
+      - '20_16v'
+      - '20_gti_16v'
+      - '23_v5'
+      - '28_v6'
+      - '28_vr6'
+      - '29_vr6'
+  category: diagnostics
+  system: fuel
+  title:
+    en: Petrol injector sticking or poor flow
+    ro: Injector de benzină blocat sau cu debit slab
+    de: Benzineinspritzventil klemmt oder hat schlechten Durchfluss
+    fr: Injecteur essence grippé ou débit insuffisant
+    es: Inyector de gasolina atascado o con caudal insuficiente
+    it: Iniettore benzina bloccato o con portata insufficiente
+    nl: Benzine-injector klemt of heeft onvoldoende doorstroming
+  symptoms:
+    - en: Rough idle or misfire
+      ro: Ralanti neregulat sau rateuri
+      de: Unruhiger Leerlauf oder Zündaussetzer
+      fr: Ralenti irrégulier ou ratés
+      es: Ralentí irregular o fallos de encendido
+      it: Minimo irregolare o mancate accensioni
+      nl: Onrustig stationair of misfire
+    - en: Uneven acceleration
+      ro: Accelerație neregulată
+      de: Ungleichmäßige Beschleunigung
+      fr: Accélération irrégulière
+      es: Aceleración irregular
+      it: Accelerazione irregolare
+      nl: Onregelmatige acceleratie
+  possible_causes:
+    - en: Deposits inside injector
+      ro: Depuneri în injector
+      de: Ablagerungen im Einspritzventil
+      fr: Dépôts dans l'injecteur
+      es: Depósitos en el inyector
+      it: Depositi nell'iniettore
+      nl: Afzettingen in de injector
+    - en: Injector electrical fault
+      ro: Defecțiune electrică a injectorului
+      de: Elektrischer Fehler des Einspritzventils
+      fr: Défaut électrique de l'injecteur
+      es: Fallo eléctrico del inyector
+      it: Guasto elettrico dell'iniettore
+      nl: Elektrische storing van de injector
+  diagnostic_steps:
+    - en: Compare injector resistance and current draw
+      ro: Compară rezistența și curentul injectorului
+      de: Widerstand und Stromaufnahme des Einspritzventils vergleichen
+      fr: Comparer la résistance et le courant de l'injecteur
+      es: Comparar resistencia y consumo de corriente
+      it: Confrontare resistenza e corrente dell'iniettore
+      nl: Weerstand en stroomopname van de injector vergelijken
+    - en: Check injector spray or flow balance
+      ro: Verifică pulverizarea sau debitul injectorului
+      de: Spritzbild oder Durchfluss des Einspritzventils prüfen
+      fr: Contrôler le jet ou le débit de l'injecteur
+      es: Comprobar pulverización o caudal
+      it: Controllare polverizzazione o portata
+      nl: Sproeibeeld of doorstroming controleren
+  keywords:
+    - petrol injector
+    - injector
+    - misfire
+    - rough idle
+    - poor flow
+  related_dtcs: []
+  difficulty: advanced
+
+- id: vw_early_petrol_injector_leak
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_golf
+      - volkswagen_vento
+      - volkswagen_polo
+      - volkswagen_bora
+      - volkswagen_new_beetle
+      - volkswagen_passat
+      - volkswagen_sharan
+    generations:
+      - volkswagen_golf_mk3
+      - volkswagen_golf_mk4
+      - volkswagen_vento_mk3
+      - volkswagen_polo_mk3
+      - volkswagen_polo_mk4
+      - volkswagen_bora_1j
+      - volkswagen_new_beetle_9c
+      - volkswagen_passat_b3
+      - volkswagen_passat_b4
+      - volkswagen_passat_b5
+      - volkswagen_sharan_7m
+    engines:
+      - '14'
+      - '14_16v'
+      - '16'
+      - '16_16v'
+      - '18'
+      - '18_16v'
+      - '18_t'
+      - '20'
+      - '20_16v'
+      - '20_gti_16v'
+      - '23_v5'
+      - '28_v6'
+      - '28_vr6'
+      - '29_vr6'
+  category: diagnostics
+  system: fuel
+  title:
+    en: Petrol injector leaking
+    ro: Injector de benzină cu scurgeri
+    de: Benzineinspritzventil undicht
+    fr: Injecteur essence fuyard
+    es: Inyector de gasolina con fugas
+    it: Iniettore benzina con perdita
+    nl: Lekkende benzine-injector
+  symptoms:
+    - en: Hard starting after hot soak
+      ro: Pornire dificilă după staționare cu motorul cald
+      de: Schwieriger Start nach heißem Abstellen
+      fr: Démarrage difficile après arrêt moteur chaud
+      es: Arranque difícil después de parar con el motor caliente
+      it: Avviamento difficoltoso dopo arresto a caldo
+      nl: Moeizaam starten na warme stilstand
+    - en: Rich mixture or fuel smell
+      ro: Amestec bogat sau miros de combustibil
+      de: Fettes Gemisch oder Kraftstoffgeruch
+      fr: Mélange riche ou odeur de carburant
+      es: Mezcla rica u olor a combustible
+      it: Miscela ricca o odore di carburante
+      nl: Rijk mengsel of brandstofgeur
+  possible_causes:
+    - en: Injector nozzle not sealing
+      ro: Duză injector care nu etanșează
+      de: Einspritzventil schließt nicht dicht
+      fr: Injecteur qui n'assure pas l'étanchéité
+      es: Inyector que no sella correctamente
+      it: Iniettore che non garantisce la tenuta
+      nl: Injector sluit niet goed af
+    - en: Excessive fuel pressure
+      ro: Presiune excesivă a combustibilului
+      de: Zu hoher Kraftstoffdruck
+      fr: Pression de carburant excessive
+      es: Presión de combustible excesiva
+      it: Pressione carburante eccessiva
+      nl: Te hoge brandstofdruk
+  diagnostic_steps:
+    - en: Check residual fuel pressure after engine shutdown
+      ro: Verifică presiunea reziduală după oprirea motorului
+      de: Restdruck nach dem Abstellen prüfen
+      fr: Contrôler la pression résiduelle après l'arrêt
+      es: Comprobar la presión residual después de apagar el motor
+      it: Controllare la pressione residua dopo lo spegnimento
+      nl: Restdruk na uitschakelen controleren
+    - en: Inspect injector sealing and spray pattern
+      ro: Verifică etanșarea și pulverizarea injectorului
+      de: Dichtheit und Spritzbild des Einspritzventils prüfen
+      fr: Contrôler l'étanchéité et le jet de l'injecteur
+      es: Comprobar estanqueidad y pulverización
+      it: Controllare tenuta e polverizzazione
+      nl: Afdichting en sproeibeeld controleren
+  keywords:
+    - leaking injector
+    - injector leak
+    - rich mixture
+    - fuel smell
+    - hot start
+  related_dtcs: []
+  difficulty: advanced
+
+- id: vw_early_petrol_fuel_pressure_regulator_fault
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_golf
+      - volkswagen_vento
+      - volkswagen_polo
+      - volkswagen_bora
+      - volkswagen_new_beetle
+      - volkswagen_passat
+      - volkswagen_sharan
+    generations:
+      - volkswagen_golf_mk3
+      - volkswagen_golf_mk4
+      - volkswagen_vento_mk3
+      - volkswagen_polo_mk3
+      - volkswagen_polo_mk4
+      - volkswagen_bora_1j
+      - volkswagen_new_beetle_9c
+      - volkswagen_passat_b3
+      - volkswagen_passat_b4
+      - volkswagen_passat_b5
+      - volkswagen_sharan_7m
+    engines:
+      - '14'
+      - '14_16v'
+      - '16'
+      - '16_16v'
+      - '18'
+      - '18_16v'
+      - '18_t'
+      - '20'
+      - '20_16v'
+      - '20_gti_16v'
+      - '23_v5'
+      - '28_v6'
+      - '28_vr6'
+      - '29_vr6'
+  category: diagnostics
+  system: fuel
+  title:
+    en: Petrol fuel pressure regulator fault
+    ro: Defecțiune regulator presiune combustibil benzină
+    de: Fehler des Benzinkraftstoffdruckreglers
+    fr: Défaut du régulateur de pression d'essence
+    es: Fallo del regulador de presión de gasolina
+    it: Guasto del regolatore pressione benzina
+    nl: Storing benzinedrukregelaar
+  symptoms:
+    - en: Rich or lean mixture
+      ro: Amestec prea bogat sau prea sărac
+      de: Zu fettes oder zu mageres Gemisch
+      fr: Mélange trop riche ou trop pauvre
+      es: Mezcla demasiado rica o pobre
+      it: Miscela troppo ricca o magra
+      nl: Te rijk of te arm mengsel
+    - en: Poor idle quality
+      ro: Ralanti instabil
+      de: Unruhiger Leerlauf
+      fr: Ralenti instable
+      es: Ralentí inestable
+      it: Minimo instabile
+      nl: Onstabiel stationair toerental
+  possible_causes:
+    - en: Failed pressure regulator
+      ro: Regulator de presiune defect
+      de: Defekter Druckregler
+      fr: Régulateur de pression défectueux
+      es: Regulador de presión defectuoso
+      it: Regolatore di pressione guasto
+      nl: Defecte drukregelaar
+    - en: Vacuum reference hose leaking
+      ro: Furtun de vacuum al regulatorului fisurat
+      de: Unterdruckschlauch des Reglers undicht
+      fr: Durite de dépression du régulateur fuyarde
+      es: Fuga en el tubo de vacío del regulador
+      it: Perdita nel tubo di depressione del regolatore
+      nl: Lekkende vacuümslang van de regelaar
+  diagnostic_steps:
+    - en: Measure fuel pressure with regulator connected and disconnected
+      ro: Măsoară presiunea cu regulatorul conectat și deconectat
+      de: Kraftstoffdruck mit angeschlossenem und getrenntem Regler messen
+      fr: Mesurer la pression avec régulateur branché et débranché
+      es: Medir presión con regulador conectado y desconectado
+      it: Misurare la pressione con regolatore collegato e scollegato
+      nl: Brandstofdruk met aangesloten en losgenomen regelaar meten
+    - en: Inspect regulator vacuum hose
+      ro: Verifică furtunul de vacuum al regulatorului
+      de: Unterdruckschlauch des Reglers prüfen
+      fr: Contrôler la durite de dépression
+      es: Revisar el tubo de vacío
+      it: Controllare il tubo di depressione
+      nl: Vacuümslang controleren
+  keywords:
+    - fuel pressure regulator
+    - pressure regulator
+    - rich mixture
+    - lean mixture
+    - vacuum
+  related_dtcs: []
+  difficulty: intermediate
+
+- id: vw_early_petrol_ignition_coil_secondary_fault
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_golf
+      - volkswagen_vento
+      - volkswagen_polo
+      - volkswagen_bora
+      - volkswagen_new_beetle
+      - volkswagen_passat
+      - volkswagen_sharan
+    generations:
+      - volkswagen_golf_mk3
+      - volkswagen_golf_mk4
+      - volkswagen_vento_mk3
+      - volkswagen_polo_mk3
+      - volkswagen_polo_mk4
+      - volkswagen_bora_1j
+      - volkswagen_new_beetle_9c
+      - volkswagen_passat_b3
+      - volkswagen_passat_b4
+      - volkswagen_passat_b5
+      - volkswagen_sharan_7m
+    engines:
+      - '14'
+      - '14_16v'
+      - '16'
+      - '16_16v'
+      - '18'
+      - '18_16v'
+      - '18_t'
+      - '20'
+      - '20_16v'
+      - '20_gti_16v'
+      - '23_v5'
+      - '28_v6'
+      - '28_vr6'
+      - '29_vr6'
+  category: diagnostics
+  system: ignition
+  title:
+    en: Ignition coil secondary circuit fault
+    ro: Defecțiune circuit secundar bobină de aprindere
+    de: Fehler im Sekundärkreis der Zündspule
+    fr: Défaut du circuit secondaire de la bobine d'allumage
+    es: Fallo del circuito secundario de la bobina de encendido
+    it: Guasto del circuito secondario della bobina
+    nl: Storing secundair circuit bobine
+  symptoms:
+    - en: Misfire under load
+      ro: Rateuri sub sarcină
+      de: Zündaussetzer unter Last
+      fr: Ratés sous charge
+      es: Fallos de encendido bajo carga
+      it: Mancate accensioni sotto carico
+      nl: Misfire onder belasting
+    - en: Poor acceleration
+      ro: Accelerație slabă
+      de: Schlechte Beschleunigung
+      fr: Mauvaise accélération
+      es: Mala aceleración
+      it: Scarsa accelerazione
+      nl: Slechte acceleratie
+  possible_causes:
+    - en: Defective ignition coil
+      ro: Bobină de aprindere defectă
+      de: Defekte Zündspule
+      fr: Bobine d'allumage défectueuse
+      es: Bobina de encendido defectuosa
+      it: Bobina di accensione guasta
+      nl: Defecte bobine
+    - en: Damaged high-voltage wiring or plug
+      ro: Cablaj de înaltă tensiune sau bujie deteriorată
+      de: Beschädigte Hochspannungsleitung oder Zündkerze
+      fr: Câble haute tension ou bougie endommagé
+      es: Cable de alta tensión o bujía dañados
+      it: Cavo alta tensione o candela danneggiati
+      nl: Beschadigde hoogspanningskabel of bougie
+  diagnostic_steps:
+    - en: Check coil resistance and output
+      ro: Verifică rezistența și ieșirea bobinei
+      de: Spulenwiderstand und Ausgang prüfen
+      fr: Contrôler la résistance et la sortie de la bobine
+      es: Comprobar resistencia y salida de la bobina
+      it: Controllare resistenza e uscita della bobina
+      nl: Weerstand en uitgang van de bobine controleren
+    - en: Inspect high-voltage components
+      ro: Inspectează componentele de înaltă tensiune
+      de: Hochspannungskomponenten prüfen
+      fr: Contrôler les composants haute tension
+      es: Revisar componentes de alta tensión
+      it: Controllare i componenti ad alta tensione
+      nl: Hoogspanningscomponenten controleren
+  keywords:
+    - ignition coil
+    - secondary circuit
+    - misfire
+    - high voltage
+  related_dtcs: []
+  difficulty: intermediate
+
+- id: vw_early_petrol_spark_plug_fouling
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_golf
+      - volkswagen_vento
+      - volkswagen_polo
+      - volkswagen_bora
+      - volkswagen_new_beetle
+      - volkswagen_passat
+      - volkswagen_sharan
+    generations:
+      - volkswagen_golf_mk3
+      - volkswagen_golf_mk4
+      - volkswagen_vento_mk3
+      - volkswagen_polo_mk3
+      - volkswagen_polo_mk4
+      - volkswagen_bora_1j
+      - volkswagen_new_beetle_9c
+      - volkswagen_passat_b3
+      - volkswagen_passat_b4
+      - volkswagen_passat_b5
+      - volkswagen_sharan_7m
+    engines:
+      - '14'
+      - '14_16v'
+      - '16'
+      - '16_16v'
+      - '18'
+      - '18_16v'
+      - '18_t'
+      - '20'
+      - '20_16v'
+      - '20_gti_16v'
+      - '23_v5'
+      - '28_v6'
+      - '28_vr6'
+      - '29_vr6'
+  category: diagnostics
+  system: ignition
+  title:
+    en: Spark plug fouling
+    ro: Bujii de aprindere ancrasate
+    de: Verrußte Zündkerzen
+    fr: Bougies d'allumage encrassées
+    es: Bujías de encendido sucias
+    it: Candele di accensione imbrattate
+    nl: Vervuilde bougies
+  symptoms:
+    - en: Misfire and rough idle
+      ro: Rateuri și ralanti neregulat
+      de: Zündaussetzer und unruhiger Leerlauf
+      fr: Ratés et ralenti irrégulier
+      es: Fallos de encendido y ralentí irregular
+      it: Mancate accensioni e minimo irregolare
+      nl: Misfire en onrustig stationair
+    - en: Difficult cold starting
+      ro: Pornire dificilă la rece
+      de: Schwieriger Kaltstart
+      fr: Démarrage à froid difficile
+      es: Arranque en frío difícil
+      it: Avviamento a freddo difficoltoso
+      nl: Moeizaam starten bij koude motor
+  possible_causes:
+    - en: Rich mixture
+      ro: Amestec prea bogat
+      de: Zu fettes Gemisch
+      fr: Mélange trop riche
+      es: Mezcla demasiado rica
+      it: Miscela troppo ricca
+      nl: Te rijk mengsel
+    - en: Oil contamination or incorrect spark plug heat range
+      ro: Contaminare cu ulei sau indice termic incorect al bujiei
+      de: Ölverschmutzung oder falscher Wärmewert
+      fr: Contamination par l'huile ou indice thermique incorrect
+      es: Contaminación por aceite o grado térmico incorrecto
+      it: Contaminazione d'olio o grado termico errato
+      nl: Olievervuiling of verkeerde warmtegraad
+  diagnostic_steps:
+    - en: Remove and inspect spark plugs
+      ro: Demontează și inspectează bujiile
+      de: Zündkerzen ausbauen und prüfen
+      fr: Déposer et contrôler les bougies
+      es: Retirar e inspeccionar las bujías
+      it: Rimuovere e controllare le candele
+      nl: Bougies verwijderen en controleren
+    - en: Check mixture and ignition condition
+      ro: Verifică amestecul și sistemul de aprindere
+      de: Gemisch und Zündanlage prüfen
+      fr: Contrôler le mélange et l'allumage
+      es: Comprobar mezcla y encendido
+      it: Controllare miscela e accensione
+      nl: Mengsel en ontsteking controleren
+  keywords:
+    - spark plug
+    - fouling
+    - misfire
+    - rich mixture
+  related_dtcs: []
+  difficulty: basic
+
+- id: vw_early_petrol_engine_vacuum_low
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_golf
+      - volkswagen_vento
+      - volkswagen_polo
+      - volkswagen_bora
+      - volkswagen_new_beetle
+      - volkswagen_passat
+      - volkswagen_sharan
+    generations:
+      - volkswagen_golf_mk3
+      - volkswagen_golf_mk4
+      - volkswagen_vento_mk3
+      - volkswagen_polo_mk3
+      - volkswagen_polo_mk4
+      - volkswagen_bora_1j
+      - volkswagen_new_beetle_9c
+      - volkswagen_passat_b3
+      - volkswagen_passat_b4
+      - volkswagen_passat_b5
+      - volkswagen_sharan_7m
+    engines:
+      - '14'
+      - '14_16v'
+      - '16'
+      - '16_16v'
+      - '18'
+      - '18_16v'
+      - '18_t'
+      - '20'
+      - '20_16v'
+      - '20_gti_16v'
+      - '23_v5'
+      - '28_v6'
+      - '28_vr6'
+      - '29_vr6'
+  category: diagnostics
+  system: intake
+  title:
+    en: Low intake vacuum
+    ro: Vacuum scăzut pe admisie
+    de: Niedriger Ansaugunterdruck
+    fr: Dépression d'admission faible
+    es: Vacío de admisión bajo
+    it: Depressione aspirazione bassa
+    nl: Lage inlaatvacuümdruk
+  symptoms:
+    - en: Unstable idle
+      ro: Ralanti instabil
+      de: Unruhiger Leerlauf
+      fr: Ralenti instable
+      es: Ralentí inestable
+      it: Minimo instabile
+      nl: Onstabiel stationair toerental
+    - en: Poor throttle response
+      ro: Răspuns slab la accelerație
+      de: Schlechte Gasannahme
+      fr: Mauvaise réponse à l'accélérateur
+      es: Mala respuesta del acelerador
+      it: Scarsa risposta all'acceleratore
+      nl: Slechte gasrespons
+  possible_causes:
+    - en: Intake vacuum leak
+      ro: Pierdere de vacuum pe admisie
+      de: Falschluft oder Unterdruckleck
+      fr: Fuite de dépression à l'admission
+      es: Fuga de vacío en admisión
+      it: Perdita di depressione sull'aspirazione
+      nl: Vacuümlek in het inlaatsysteem
+    - en: Incorrect valve timing
+      ro: Distribuție incorectă
+      de: Falsche Steuerzeiten
+      fr: Calage de distribution incorrect
+      es: Distribución incorrecta
+      it: Fasatura distribuzione errata
+      nl: Verkeerde kleptiming
+  diagnostic_steps:
+    - en: Measure manifold vacuum at idle
+      ro: Măsoară vacuumul galeriei la ralanti
+      de: Ansaugunterdruck im Leerlauf messen
+      fr: Mesurer la dépression du collecteur au ralenti
+      es: Medir el vacío del colector al ralentí
+      it: Misurare la depressione del collettore al minimo
+      nl: Inlaatvacuüm stationair meten
+    - en: Check intake hoses and manifold for leaks
+      ro: Verifică furtunurile și galeria pentru pierderi
+      de: Schläuche und Ansaugkrümmer auf Lecks prüfen
+      fr: Contrôler les durites et le collecteur
+      es: Revisar manguitos y colector
+      it: Controllare tubi e collettore
+      nl: Slangen en inlaatspruitstuk controleren
+  keywords:
+    - vacuum
+    - intake
+    - low vacuum
+    - rough idle
+    - throttle response
+  related_dtcs: []
+  difficulty: intermediate
+
+- id: vw_early_petrol_throttle_body_dirty
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_golf
+      - volkswagen_vento
+      - volkswagen_polo
+      - volkswagen_bora
+      - volkswagen_new_beetle
+      - volkswagen_passat
+      - volkswagen_sharan
+    generations:
+      - volkswagen_golf_mk3
+      - volkswagen_golf_mk4
+      - volkswagen_vento_mk3
+      - volkswagen_polo_mk3
+      - volkswagen_polo_mk4
+      - volkswagen_bora_1j
+      - volkswagen_new_beetle_9c
+      - volkswagen_passat_b3
+      - volkswagen_passat_b4
+      - volkswagen_passat_b5
+      - volkswagen_sharan_7m
+    engines:
+      - '14'
+      - '14_16v'
+      - '16'
+      - '16_16v'
+      - '18'
+      - '18_16v'
+      - '18_t'
+      - '20'
+      - '20_16v'
+      - '20_gti_16v'
+      - '23_v5'
+      - '28_v6'
+      - '28_vr6'
+      - '29_vr6'
+  category: diagnostics
+  system: intake
+  title:
+    en: Dirty throttle body
+    ro: Corp clapetă de accelerație murdar
+    de: Verschmutzte Drosselklappe
+    fr: Boîtier papillon encrassé
+    es: Cuerpo de mariposa sucio
+    it: Corpo farfallato sporco
+    nl: Vervuild gasklephuis
+  symptoms:
+    - en: Unstable idle
+      ro: Ralanti instabil
+      de: Unruhiger Leerlauf
+      fr: Ralenti instable
+      es: Ralentí inestable
+      it: Minimo instabile
+      nl: Onstabiel stationair
+    - en: Poor throttle response
+      ro: Răspuns slab la accelerație
+      de: Schlechte Gasannahme
+      fr: Mauvaise réponse à l'accélérateur
+      es: Mala respuesta del acelerador
+      it: Scarsa risposta all'acceleratore
+      nl: Slechte gasrespons
+  possible_causes:
+    - en: Carbon deposits around throttle plate
+      ro: Depuneri de carbon pe clapetă
+      de: Kohlenstoffablagerungen an der Drosselklappe
+      fr: Dépôts de carbone sur le papillon
+      es: Depósitos de carbonilla en la mariposa
+      it: Depositi di carbonio sulla farfalla
+      nl: Koolafzetting rond de gasklep
+    - en: Crankcase ventilation contamination
+      ro: Contaminare provenită din ventilarea carterului
+      de: Verschmutzung durch Kurbelgehäuseentlüftung
+      fr: Contamination par ventilation du carter
+      es: Contaminación de la ventilación del cárter
+      it: Contaminazione dalla ventilazione del basamento
+      nl: Vervuiling door carterventilatie
+  diagnostic_steps:
+    - en: Inspect throttle plate and bore
+      ro: Inspectează clapeta și canalul acesteia
+      de: Drosselklappe und Gehäuse prüfen
+      fr: Contrôler le papillon et son conduit
+      es: Inspeccionar mariposa y conducto
+      it: Controllare farfalla e condotto
+      nl: Gasklep en boring controleren
+    - en: Clean throttle body and perform adaptation if required
+      ro: Curăță clapeta și efectuează adaptarea dacă este necesar
+      de: Drosselklappe reinigen und bei Bedarf adaptieren
+      fr: Nettoyer le boîtier et effectuer l'adaptation si nécessaire
+      es: Limpiar el cuerpo y realizar adaptación si es necesario
+      it: Pulire il corpo farfallato ed eseguire l'adattamento se necessario
+      nl: Gasklephuis reinigen en indien nodig aanpassen
+  keywords:
+    - throttle body
+    - throttle
+    - dirty throttle
+    - idle
+    - adaptation
+  related_dtcs: []
+  difficulty: basic
+
+- id: vw_early_petrol_idle_air_control_sticking
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_golf
+      - volkswagen_vento
+      - volkswagen_polo
+      - volkswagen_bora
+      - volkswagen_passat
+    generations:
+      - volkswagen_golf_mk3
+      - volkswagen_vento_mk3
+      - volkswagen_polo_mk3
+      - volkswagen_passat_b3
+      - volkswagen_passat_b4
+    engines:
+      - '14'
+      - '16'
+      - '18'
+      - '20'
+  category: diagnostics
+  system: idle_control
+  title:
+    en: Idle air control valve sticking
+    ro: Supapă de control al aerului la ralanti blocată
+    de: Leerlaufluftregelventil klemmt
+    fr: Actuateur de ralenti grippé
+    es: Válvula de control de ralentí atascada
+    it: Valvola controllo aria al minimo bloccata
+    nl: Klemmende stationairluchtregelklep
+  symptoms:
+    - en: Unstable or high idle
+      ro: Ralanti instabil sau prea ridicat
+      de: Unruhiger oder zu hoher Leerlauf
+      fr: Ralenti instable ou trop élevé
+      es: Ralentí inestable o demasiado alto
+      it: Minimo instabile o troppo alto
+      nl: Onstabiel of te hoog stationair toerental
+    - en: Engine stalls when throttle closes
+      ro: Motorul se oprește la închiderea accelerației
+      de: Motor stirbt beim Schließen der Drosselklappe ab
+      fr: Calage lors de la fermeture du papillon
+      es: El motor se cala al cerrar la mariposa
+      it: Il motore si spegne quando si chiude la farfalla
+      nl: Motor slaat af bij sluiten van de gasklep
+  possible_causes:
+    - en: Carbon deposits in idle air valve
+      ro: Depuneri în supapa de aer la ralanti
+      de: Ablagerungen im Leerlaufventil
+      fr: Dépôts dans l'actuateur de ralenti
+      es: Depósitos en la válvula de ralentí
+      it: Depositi nella valvola del minimo
+      nl: Afzettingen in de stationairklep
+    - en: Sticking actuator
+      ro: Actuator blocat
+      de: Schwergängiger Stellmotor
+      fr: Actuateur grippé
+      es: Actuador atascado
+      it: Attuatore bloccato
+      nl: Vastzittende actuator
+  diagnostic_steps:
+    - en: Inspect idle valve movement
+      ro: Verifică mișcarea supapei de ralanti
+      de: Bewegung des Leerlaufventils prüfen
+      fr: Contrôler le mouvement de l'actuateur
+      es: Comprobar el movimiento del actuador
+      it: Controllare il movimento della valvola
+      nl: Beweging van de stationairklep controleren
+    - en: Check valve resistance and power supply
+      ro: Verifică rezistența și alimentarea supapei
+      de: Widerstand und Spannungsversorgung prüfen
+      fr: Contrôler la résistance et l'alimentation
+      es: Comprobar resistencia y alimentación
+      it: Controllare resistenza e alimentazione
+      nl: Weerstand en voeding controleren
+  keywords:
+    - idle air control
+    - IAC
+    - idle valve
+    - high idle
+    - stalling
+  related_dtcs: []
+  difficulty: intermediate
+
+- id: vw_early_electronic_engine_speed_signal_intermittent
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_golf
+      - volkswagen_vento
+      - volkswagen_polo
+      - volkswagen_bora
+      - volkswagen_new_beetle
+      - volkswagen_passat
+      - volkswagen_sharan
+    generations:
+      - volkswagen_golf_mk3
+      - volkswagen_golf_mk4
+      - volkswagen_vento_mk3
+      - volkswagen_polo_mk3
+      - volkswagen_polo_mk4
+      - volkswagen_bora_1j
+      - volkswagen_new_beetle_9c
+      - volkswagen_passat_b3
+      - volkswagen_passat_b4
+      - volkswagen_passat_b5
+      - volkswagen_sharan_7m
+    engines:
+      - '14'
+      - '14_16v'
+      - '16'
+      - '16_16v'
+      - '18'
+      - '18_16v'
+      - '18_t'
+      - '20'
+      - '20_16v'
+      - '20_gti_16v'
+      - '23_v5'
+      - '28_v6'
+      - '28_vr6'
+      - '29_vr6'
+      - '32'
+  category: diagnostics
+  system: engine
+  title:
+    en: Intermittent engine speed signal
+    ro: Semnal intermitent al senzorului de turație motor
+    de: Sporadisches Motordrehzahlsignal
+    fr: Signal de régime moteur intermittent
+    es: Señal intermitente de régimen del motor
+    it: Segnale intermittente del regime motore
+    nl: Intermitterend motortoerentalsignaal
+  symptoms:
+    - en: Intermittent stalling
+      ro: Oprire intermitentă a motorului
+      de: Sporadisches Absterben des Motors
+      fr: Calage intermittent
+      es: Parada intermitente del motor
+      it: Spegnimento intermittente
+      nl: Intermitterend afslaan
+    - en: Crank-no-start condition
+      ro: Motorul învârte dar uneori nu pornește
+      de: Motor dreht manchmal ohne zu starten
+      fr: Le moteur tourne parfois sans démarrer
+      es: El motor gira a veces sin arrancar
+      it: Il motore gira ma a volte non si avvia
+      nl: Motor draait soms zonder te starten
+  possible_causes:
+    - en: Intermittent crankshaft sensor signal
+      ro: Semnal intermitent al senzorului arborelui cotit
+      de: Sporadisches Signal des Kurbelwellensensors
+      fr: Signal intermittent du capteur vilebrequin
+      es: Señal intermitente del sensor del cigüeñal
+      it: Segnale intermittente del sensore albero motore
+      nl: Intermitterend signaal van de krukassensor
+    - en: Wiring or connector fault
+      ro: Defecțiune cablaj sau conector
+      de: Fehler an Kabel oder Stecker
+      fr: Défaut de câblage ou connecteur
+      es: Fallo de cableado o conector
+      it: Guasto del cablaggio o connettore
+      nl: Bedradings- of stekkerstoring
+  diagnostic_steps:
+    - en: Monitor RPM signal during cranking and when fault occurs
+      ro: Monitorizează semnalul RPM la pornire și când apare defectul
+      de: Drehzahlsignal beim Starten und während des Fehlers überwachen
+      fr: Surveiller le signal de régime pendant le démarrage
+      es: Vigilar la señal de régimen durante el arranque
+      it: Monitorare il segnale giri durante l'avviamento
+      nl: Toerentalsignaal tijdens starten en storing controleren
+    - en: Inspect crankshaft sensor wiring and connector
+      ro: Verifică cablajul și conectorul senzorului arborelui cotit
+      de: Verkabelung und Stecker des Kurbelwellensensors prüfen
+      fr: Contrôler le câblage du capteur vilebrequin
+      es: Revisar cableado y conector del sensor del cigüeñal
+      it: Controllare cablaggio e connettore del sensore albero motore
+      nl: Bedrading en stekker van de krukassensor controleren
+  keywords:
+    - G28
+    - crankshaft sensor
+    - RPM
+    - intermittent
+    - stalling
+    - no start
+  related_dtcs: []
+  difficulty: intermediate
+
+- id: vw_early_petrol_oxygen_sensor_slow_response
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_golf
+      - volkswagen_vento
+      - volkswagen_polo
+      - volkswagen_bora
+      - volkswagen_new_beetle
+      - volkswagen_passat
+      - volkswagen_sharan
+    generations:
+      - volkswagen_golf_mk3
+      - volkswagen_golf_mk4
+      - volkswagen_vento_mk3
+      - volkswagen_polo_mk3
+      - volkswagen_polo_mk4
+      - volkswagen_bora_1j
+      - volkswagen_new_beetle_9c
+      - volkswagen_passat_b3
+      - volkswagen_passat_b4
+      - volkswagen_passat_b5
+      - volkswagen_sharan_7m
+    engines:
+      - '14'
+      - '14_16v'
+      - '16'
+      - '16_16v'
+      - '18'
+      - '18_16v'
+      - '18_t'
+      - '20'
+      - '20_16v'
+      - '20_gti_16v'
+      - '23_v5'
+      - '28_v6'
+      - '28_vr6'
+      - '29_vr6'
+  category: diagnostics
+  system: emissions
+  title:
+    en: Oxygen sensor slow response
+    ro: Răspuns lent al sondei lambda
+    de: Langsame Reaktion der Lambdasonde
+    fr: Réponse lente de la sonde lambda
+    es: Respuesta lenta del sensor de oxígeno
+    it: Risposta lenta del sensore ossigeno
+    nl: Trage respons van de lambdasonde
+  symptoms:
+    - en: Poor fuel economy
+      ro: Consum ridicat de combustibil
+      de: Erhöhter Kraftstoffverbrauch
+      fr: Consommation élevée
+      es: Consumo elevado
+      it: Consumo elevato
+      nl: Verhoogd brandstofverbruik
+    - en: Unstable idle or hesitation
+      ro: Ralanti instabil sau ezitări
+      de: Unruhiger Leerlauf oder Ruckeln
+      fr: Ralenti instable ou hésitation
+      es: Ralentí inestable o vacilación
+      it: Minimo instabile o esitazione
+      nl: Onstabiel stationair of inhouden
+  possible_causes:
+    - en: Aging oxygen sensor
+      ro: Sondă lambda îmbătrânită
+      de: Alternde Lambdasonde
+      fr: Sonde lambda vieillissante
+      es: Sensor de oxígeno envejecido
+      it: Sonda lambda usurata
+      nl: Verouderde lambdasonde
+    - en: Exhaust leak before oxygen sensor
+      ro: Pierdere pe evacuare înaintea sondei
+      de: Abgasleck vor der Lambdasonde
+      fr: Fuite d'échappement avant la sonde
+      es: Fuga de escape antes del sensor
+      it: Perdita di scarico prima della sonda
+      nl: Uitlaatlek vóór de sensor
+  diagnostic_steps:
+    - en: Monitor oxygen sensor voltage or lambda correction
+      ro: Monitorizează tensiunea sondei sau corecția lambda
+      de: Sondenspannung oder Lambdakorrektur überwachen
+      fr: Surveiller la tension de sonde ou la correction lambda
+      es: Vigilar tensión o corrección lambda
+      it: Monitorare tensione o correzione lambda
+      nl: Sensorspanning of lambdacorrectie controleren
+    - en: Check exhaust for leaks before the sensor
+      ro: Verifică evacuarea pentru pierderi înaintea sondei
+      de: Abgasanlage vor der Sonde auf Lecks prüfen
+      fr: Contrôler les fuites avant la sonde
+      es: Comprobar fugas antes del sensor
+      it: Controllare perdite prima della sonda
+      nl: Uitlaat vóór de sensor op lekkage controleren
+  keywords:
+    - lambda
+    - oxygen sensor
+    - O2
+    - slow response
+    - fuel economy
+  related_dtcs: []
+  difficulty: advanced
+
+- id: vw_early_diesel_fuel_supply_restriction
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_golf
+      - volkswagen_vento
+      - volkswagen_polo
+      - volkswagen_bora
+      - volkswagen_new_beetle
+      - volkswagen_passat
+      - volkswagen_sharan
+      - volkswagen_caddy
+    generations:
+      - volkswagen_golf_mk3
+      - volkswagen_golf_mk4
+      - volkswagen_vento_mk3
+      - volkswagen_polo_mk3
+      - volkswagen_polo_mk4
+      - volkswagen_bora_1j
+      - volkswagen_new_beetle_9c
+      - volkswagen_passat_b3
+      - volkswagen_passat_b4
+      - volkswagen_passat_b5
+      - volkswagen_sharan_7m
+      - volkswagen_caddy_9k
+    engines:
+      - '16_d'
+      - '19_d'
+      - '19_td'
+      - '19_tdi'
+      - '19_sdi'
+      - '19_tdi_110'
+      - '19_tdi_115'
+      - '19_tdi_130'
+      - '19_tdi_150'
+      - '19_tdi_101'
+      - '19_tdi_105'
+      - '14_tdi'
+      - '14_tdi_80'
+      - '17_sdi'
+      - '25_tdi'
+      - '20_tdi'
+  category: diagnostics
+  system: fuel
+  title:
+    en: Diesel fuel supply restriction
+    ro: Restricție pe alimentarea cu motorină
+    de: Einschränkung der Dieselkraftstoffversorgung
+    fr: Restriction de l'alimentation en gazole
+    es: Restricción del suministro de diésel
+    it: Restrizione dell'alimentazione diesel
+    nl: Beperking van de dieselbrandstoftoevoer
+  symptoms:
+    - en: Loss of power under load
+      ro: Pierdere de putere sub sarcină
+      de: Leistungsverlust unter Last
+      fr: Perte de puissance sous charge
+      es: Pérdida de potencia bajo carga
+      it: Perdita di potenza sotto carico
+      nl: Vermogensverlies onder belasting
+    - en: Hard starting or stalling
+      ro: Pornire dificilă sau oprire a motorului
+      de: Schwieriger Start oder Absterben des Motors
+      fr: Démarrage difficile ou calage
+      es: Arranque difícil o parada del motor
+      it: Avviamento difficoltoso o spegnimento
+      nl: Moeizaam starten of afslaan
+  possible_causes:
+    - en: Restricted diesel fuel filter
+      ro: Filtru de motorină colmatat
+      de: Verstopfter Dieselkraftstofffilter
+      fr: Filtre à gazole colmaté
+      es: Filtro de diésel obstruido
+      it: Filtro gasolio ostruito
+      nl: Verstopt dieselfilter
+    - en: Restricted fuel line or tank pickup
+      ro: Conductă de combustibil sau sorb rezervor restricționat
+      de: Eingeschränkte Kraftstoffleitung oder Tankentnahme
+      fr: Conduite ou crépine de réservoir obstruée
+      es: Conducto o toma del depósito restringidos
+      it: Linea o pescante serbatoio ostruiti
+      nl: Beperkte brandstofleiding of aanzuigpijp
+  diagnostic_steps:
+    - en: Check filter and fuel flow before the injection system
+      ro: Verifică filtrul și debitul înaintea sistemului de injecție
+      de: Filter und Kraftstoffdurchfluss vor der Einspritzanlage prüfen
+      fr: Contrôler le filtre et le débit avant l'injection
+      es: Comprobar filtro y caudal antes de la inyección
+      it: Controllare filtro e portata prima dell'iniezione
+      nl: Filter en brandstofdoorstroming vóór de injectie controleren
+    - en: Check for air entering the fuel supply
+      ro: Verifică pătrunderea aerului în alimentarea cu combustibil
+      de: Kraftstoffsystem auf Lufteintritt prüfen
+      fr: Vérifier l'entrée d'air dans l'alimentation
+      es: Comprobar entrada de aire en el suministro
+      it: Controllare l'ingresso d'aria nel circuito
+      nl: Brandstofsysteem op luchtinlaat controleren
+  keywords:
+    - diesel fuel
+    - fuel filter
+    - restricted fuel
+    - loss of power
+    - air in fuel
+  related_dtcs: []
+  difficulty: intermediate
+
+- id: vw_early_diesel_injection_pump_control_fault
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_golf
+      - volkswagen_vento
+      - volkswagen_bora
+      - volkswagen_new_beetle
+      - volkswagen_passat
+      - volkswagen_sharan
+      - volkswagen_caddy
+    generations:
+      - volkswagen_golf_mk3
+      - volkswagen_golf_mk4
+      - volkswagen_vento_mk3
+      - volkswagen_bora_1j
+      - volkswagen_new_beetle_9c
+      - volkswagen_passat_b4
+      - volkswagen_passat_b5
+      - volkswagen_sharan_7m
+      - volkswagen_caddy_9k
+    engines:
+      - '19_tdi'
+      - '19_tdi_110'
+      - '19_tdi_115'
+      - '19_tdi_130'
+      - '19_tdi_150'
+      - '19_tdi_101'
+      - '19_tdi_105'
+      - '14_tdi'
+      - '14_tdi_80'
+  category: diagnostics
+  system: fuel
+  title:
+    en: Electronic diesel injection pump control fault
+    ro: Defecțiune comandă electronică a pompei de injecție diesel
+    de: Fehler der elektronischen Dieseleinspritzpumpenregelung
+    fr: Défaut de commande électronique de la pompe d'injection diesel
+    es: Fallo del control electrónico de la bomba de inyección diésel
+    it: Guasto del controllo elettronico della pompa d'iniezione diesel
+    nl: Storing elektronische regeling van de dieselinjectiepomp
+  symptoms:
+    - en: Hard starting
+      ro: Pornire dificilă
+      de: Schwieriger Start
+      fr: Démarrage difficile
+      es: Arranque difícil
+      it: Avviamento difficoltoso
+      nl: Moeizaam starten
+    - en: Loss of power or engine stalling
+      ro: Pierdere de putere sau oprirea motorului
+      de: Leistungsverlust oder Absterben des Motors
+      fr: Perte de puissance ou calage
+      es: Pérdida de potencia o parada
+      it: Perdita di potenza o spegnimento
+      nl: Vermogensverlies of afslaan
+  possible_causes:
+    - en: Injection pump actuator or quantity control fault
+      ro: Defecțiune actuator sau comandă cantitate pompă
+      de: Fehler des Pumpenstellers oder der Mengenregelung
+      fr: Défaut de l'actuateur ou de la régulation de quantité
+      es: Fallo del actuador o control de cantidad
+      it: Guasto dell'attuatore o del controllo quantità
+      nl: Storing actuator of hoeveelheidregeling
+    - en: Wiring or power supply fault
+      ro: Defecțiune cablaj sau alimentare
+      de: Fehler an Kabel oder Spannungsversorgung
+      fr: Fehler an Verkabelung oder Spannungsversorgung
+      es: Fallo de cableado o alimentación
+      it: Guasto del cablaggio o dell'alimentazione
+      nl: Bedradings- of voedingsstoring
+  diagnostic_steps:
+    - en: Check pump control signals and supply voltage
+      ro: Verifică semnalele de comandă și alimentarea pompei
+      de: Steuersignale und Versorgungsspannung der Pumpe prüfen
+      fr: Contrôler les signaux de commande et l'alimentation
+      es: Comprobar señales de control y alimentación
+      it: Controllare segnali di comando e alimentazione
+      nl: Regelsignalen en voedingsspanning controleren
+    - en: Check injection timing and quantity control
+      ro: Verifică avansul și controlul cantității injectate
+      de: Einspritzzeitpunkt und Mengenregelung prüfen
+      fr: Contrôler le calage et la quantité injectée
+      es: Comprobar avance y cantidad de inyección
+      it: Controllare anticipo e quantità iniettata
+      nl: Inspuittiming en hoeveelheidregeling controleren
+  keywords:
+    - TDI
+    - injection pump
+    - quantity control
+    - hard start
+    - power loss
+  related_dtcs: []
+  difficulty: advanced
+
+- id: vw_early_diesel_injector_nozzle_sticking
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_golf
+      - volkswagen_vento
+      - volkswagen_bora
+      - volkswagen_new_beetle
+      - volkswagen_passat
+      - volkswagen_sharan
+    generations:
+      - volkswagen_golf_mk3
+      - volkswagen_golf_mk4
+      - volkswagen_vento_mk3
+      - volkswagen_bora_1j
+      - volkswagen_new_beetle_9c
+      - volkswagen_passat_b4
+      - volkswagen_passat_b5
+      - volkswagen_sharan_7m
+    engines:
+      - '19_d'
+      - '19_td'
+      - '19_tdi'
+      - '19_tdi_110'
+      - '19_tdi_115'
+      - '19_tdi_130'
+      - '19_tdi_150'
+      - '19_tdi_101'
+      - '19_tdi_105'
+      - '19_sdi'
+      - '17_sdi'
+  category: diagnostics
+  system: fuel
+  title:
+    en: Diesel injector nozzle sticking
+    ro: Duză injector diesel blocată
+    de: Klemmende Dieseleinspritzdüse
+    fr: Injecteur diesel grippé
+    es: Tobera de inyector diésel atascada
+    it: Ugello iniettore diesel bloccato
+    nl: Vastzittend diesel-injectormondstuk
+  symptoms:
+    - en: Rough running
+      ro: Funcționare neregulată
+      de: Unruhiger Motorlauf
+      fr: Fonctionnement irrégulier
+      es: Funcionamiento irregular
+      it: Funzionamento irregolare
+      nl: Onregelmatige motorloop
+    - en: Excessive smoke or difficult starting
+      ro: Fum excesiv sau pornire dificilă
+      de: Starke Rauchentwicklung oder schwieriger Start
+      fr: Fumée excessive ou démarrage difficile
+      es: Humo excesivo o démarrage difficile
+      it: Fumo eccessivo o avviamento difficoltoso
+      nl: Overmatige rook of moeilijk starten
+  possible_causes:
+    - en: Injector nozzle deposits
+      ro: Depuneri pe duza injectorului
+      de: Ablagerungen an der Einspritzdüse
+      fr: Dépôts sur la buse d'injecteur
+      es: Depósitos en la tobera
+      it: Depositi sull'ugello
+      nl: Afzettingen op het injectormondstuk
+    - en: Injector wear
+      ro: Uzura injectorului
+      de: Verschleiß des Einspritzventils
+      fr: Usura dell'injecteur
+      es: Desgaste del inyector
+      it: Usura dell'iniettore
+      nl: Slijtage van de injector
+  diagnostic_steps:
+    - en: Check injector opening pressure and spray pattern
+      ro: Verifică presiunea de deschidere și pulverizarea injectorului
+      de: Öffnungsdruck und Spritzbild prüfen
+      fr: Contrôler la pression d'ouverture et le jet
+      es: Comprobar presión de apertura y pulverización
+      it: Controllare pressione di apertura e polverizzazione
+      nl: Openingsdruk en sproeibeeld controleren
+    - en: Compare cylinder contribution where supported
+      ro: Compară contribuția cilindrilor unde sistemul permite
+      de: Zylinderbeitrag vergleichen, sofern unterstützt
+      fr: Comparer la contribution des cylindres si disponible
+      es: Comparar contribución de cilindros cuando esté disponible
+      it: Confrontare il contributo cilindri dove supportato
+      nl: Cilinderbijdrage vergelijken indien ondersteund
+  keywords:
+    - diesel injector
+    - injector nozzle
+    - smoke
+    - rough running
+    - hard start
+  related_dtcs: []
+  difficulty: advanced
+
+- id: vw_early_diesel_injection_timing_incorrect
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - volkswagen_golf
+      - volkswagen_vento
+      - volkswagen_bora
+      - volkswagen_passat
+      - volkswagen_sharan
+    generations:
+      - volkswagen_golf_mk3
+      - volkswagen_golf_mk4
+      - volkswagen_vento_mk3
+      - volkswagen_bora_1j
+      - volkswagen_passat_b4
+      - volkswagen_passat_b5
+      - volkswagen_sharan_7m
+    engines:
+      - '19_d'
+      - '19_td'
+      - '19_tdi'
+      - '19_tdi_110'
+      - '19_tdi_115'
+      - '19_tdi_130'
+      - '19_tdi_150'
+      - '19_tdi_101'
+      - '19_tdi_105'
+      - '19_sdi'
+  category: diagnostics
+  system: engine
+  title:
+    en: Diesel injection timing incorrect
+    ro: Avans injecție diesel incorect
+    de: Falscher Diesel-Einspritzzeitpunkt
+    fr: Calage d'injection diesel incorrect
+    es: Reglaje de inyección diésel incorrecto
+    it: Fasatura dell'iniezione diesel errata
+    nl: Verkeerde diesel-inspuittiming
+  symptoms:
+    - en: Hard starting, especially when cold
+      ro: Pornire dificilă, mai ales la rece
+      de: Schwieriger Start, besonders bei kaltem Motor
+      fr: Démarrage difficile, surtout à froid
+      es: Arranque difícil, especialmente en frío
+      it: Avviamento difficoltoso, soprattutto a freddo
+      nl: Moeizaam starten, vooral koud
+    - en: Excessive smoke and poor performance
+      ro: Fum excesiv și performanță slabă
+      de: Starke Rauchentwicklung und schlechte Leistung
+      fr: Fumée excessive et mauvaises performances
+      es: Fumée excessive y bajo rendimiento
+      it: Fumo eccessivo e prestazioni ridotte
+      nl: Overmatige rook en slechte prestaties
+  possible_causes:
+    - en: Incorrect injection pump timing
+      ro: Reglaj incorect al pompei de injecție
+      de: Falsche Einstellung der Einspritzpumpe
+      fr: Calage incorrect de la pompe d'injection
+      es: Reglaje incorrecto de la bomba de inyección
+      it: Fasatura errata della pompa d'iniezione
+      nl: Verkeerde afstelling van de injectiepomp
+    - en: Timing belt installation error
+      ro: Montaj incorect al distribuției
+      de: Fehlerhafte Zahnriemenmontage
+      fr: Erreur de montage du courroie de distribution
+      es: Error de montaje de la correa de distribución
+      it: Errore di montaggio della cinghia di distribución
+      nl: Foutieve montage van de distributieriem
+  diagnostic_steps:
+    - en: Verify injection timing with the appropriate procedure
+      ro: Verifică avansul injecției conform procedurii potrivite
+      de: Einspritzzeitpunkt nach dem entsprechenden Verfahren prüfen
+      fr: Vérifier le calage d'injection selon la procédure adaptée
+      es: Comprobar el reglaje de inyección según el procedimiento
+      it: Verificare la fasatura secondo la procedura prevista
+      nl: Inspuittiming volgens de juiste procedure controleren
+    - en: Verify mechanical timing after timing belt work
+      ro: Verifică distribuția mecanică după lucrări la cureaua de distribuție
+      de: Mechanische Steuerzeiten nach Arbeiten am Zahnriemen prüfen
+      fr: Vérifier le calage mécanique après intervention sur la courroie
+      es: Comprobar distribución mecánica tras trabajos en la correa
+      it: Verificare fasatura meccanica dopo lavori sulla cinghia
+      nl: Mechanische timing controleren na distributiewerk
+  keywords:
+    - diesel timing
+    - injection timing
+    - injection pump
+    - hard start
+    - smoke
+  related_dtcs: []
+  difficulty: advanced
+
 - id: vw_early_electronic_coolant_temperature_sensor_fault
   vehicle:
     manufacturer: volkswagen
