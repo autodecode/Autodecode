@@ -6,6 +6,360 @@ manufacturer:
 
 technical_data:
 
+- id: vw_mechanical_petrol_compression_imbalance
+  title:
+    en: Uneven compression between petrol cylinders
+    de: Ungleichmäßige Kompression zwischen Benzinzylindern
+    ro: Compresie neuniformă între cilindrii motorului pe benzină
+    fr: Compression inégale entre les cylindres essence
+    es: Compresión desigual entre los cilindros de gasolina
+    it: Compressione irregolare tra i cilindri del motore benzina
+    nl: Ongelijke compressie tussen benzinecilinders
+  description:
+    en: Compression differs significantly between cylinders, causing uneven combustion and reduced engine performance.
+    de: Die Kompression unterscheidet sich deutlich zwischen den Zylindern und verursacht ungleichmäßige Verbrennung und Leistungsverlust.
+    ro: Compresia diferă semnificativ între cilindri, provocând ardere neuniformă și pierdere de performanță.
+    fr: La compression diffère fortement entre les cylindres, provoquant une combustion irrégulière et une perte de performances.
+    es: La compresión difiere significativamente entre los cilindros, provocando una combustión irregular y pérdida de rendimiento.
+    it: La compressione differisce significativamente tra i cilindri, causando combustione irregolare e perdita di prestazioni.
+    nl: De compressie verschilt sterk tussen de cilinders, waardoor de verbranding onregelmatig wordt en het motorvermogen afneemt.
+  system: Engine Mechanical
+  category: compression
+  symptoms:
+    en:
+      - Rough engine operation
+      - Reduced engine power
+      - Difficult starting
+    de:
+      - Unruhiger Motorlauf
+      - Leistungsverlust
+      - Schwieriger Motorstart
+    ro:
+      - Funcționare neregulată a motorului
+      - Pierdere de putere
+      - Pornire dificilă
+    fr:
+      - Fonctionnement irrégulier
+      - Perte de puissance
+      - Démarrage difficile
+    es:
+      - Funcionamiento irregular
+      - Pérdida de potencia
+      - Arranque difícil
+    it:
+      - Funzionamento irregolare
+      - Perdita di potenza
+      - Avviamento difficoltoso
+    nl:
+      - Onrustige motorloop
+      - Vermogensverlies
+      - Moeilijke start
+  keywords:
+    en:
+      - compression imbalance
+      - cylinder compression
+      - compression test
+      - uneven compression
+    de:
+      - Kompressionsunterschied
+      - Zylinderkompression
+      - Kompressionstest
+    ro:
+      - compresie cilindri
+      - diferență compresie
+      - test compresie
+    fr:
+      - compression cylindres
+      - test de compression
+    es:
+      - compresión cilindros
+      - prueba de compresión
+    it:
+      - compressione cilindri
+      - test compressione
+    nl:
+      - cilindercompressie
+      - compressietest
+  possible_causes:
+    en:
+      - Worn piston rings
+      - Valve sealing problem
+      - Head gasket leakage
+      - Cylinder wear
+    de:
+      - Verschlissene Kolbenringe
+      - Undichte Ventile
+      - Undichte Zylinderkopfdichtung
+      - Zylinderverschleiß
+    ro:
+      - Segmenți uzați
+      - Supape care nu etanșează
+      - Pierdere prin garnitura de chiulasă
+      - Uzura cilindrului
+    fr:
+      - Segments usés
+      - Soupape ne garantissant plus l'étanchéité
+      - Fuite du joint de culasse
+      - Usure du cylindre
+    es:
+      - Segmentos desgastados
+      - Válvulas con mala estanqueidad
+      - Fuga de junta de culata
+      - Desgaste del cilindro
+    it:
+      - Fasce elastiche usurate
+      - Valvole non tenute
+      - Perdita dalla guarnizione della testata
+      - Usura del cilindro
+    nl:
+      - Versleten zuigerveren
+      - Slecht afdichtende kleppen
+      - Lekkende koppakking
+      - Cilinderslijtage
+  diagnostic_steps:
+    en:
+      - Perform a compression test on all cylinders
+      - Compare cylinder-to-cylinder compression
+      - Repeat the test with a wet cylinder if required
+    de:
+      - Kompression aller Zylinder messen
+      - Werte zwischen den Zylindern vergleichen
+      - Bei Bedarf Nasskompression messen
+    ro:
+      - Efectuează testul de compresie pe toți cilindrii
+      - Compară valorile între cilindri
+      - Repetă testul umed dacă este necesar
+    fr:
+      - Effectuer un test de compression sur tous les cylindres
+      - Comparer les valeurs entre cylindres
+      - Effectuer un test humide si nécessaire
+    es:
+      - Realizar una prueba de compresión en todos los cilindros
+      - Comparar los valores entre cilindros
+      - Repetir la prueba en húmedo si es necesario
+    it:
+      - Eseguire un test di compressione su tutti i cilindri
+      - Confrontare i valori tra i cilindri
+      - Ripetere il test a umido se necessario
+    nl:
+      - Compressietest op alle cilinders uitvoeren
+      - Waarden tussen cilinders vergelijken
+      - Indien nodig een natte compressietest uitvoeren
+  related_dtcs: []
+  vehicle:
+    manufacturers:
+      - volkswagen
+    models:
+      - volkswagen_golf
+      - volkswagen_vento
+      - volkswagen_polo
+      - volkswagen_bora
+      - volkswagen_new_beetle
+      - volkswagen_passat
+    generations:
+      - volkswagen_golf_mk3
+      - volkswagen_golf_mk4
+      - volkswagen_vento_mk3
+      - volkswagen_polo_mk3
+      - volkswagen_polo_mk4
+      - volkswagen_bora_1j
+      - volkswagen_new_beetle_9c
+      - volkswagen_passat_b3
+      - volkswagen_passat_b4
+      - volkswagen_passat_b5
+    engines:
+      - '14'
+      - '14_16v'
+      - '16'
+      - '16_16v'
+      - '18'
+      - '18_16v'
+      - '18_t'
+      - '20'
+      - '20_16v'
+      - '20_gti_16v'
+      - '23_v5'
+      - '28_v6'
+      - '28_vr6'
+      - '29_vr6'
+      - '32'
+
+- id: vw_mechanical_petrol_oil_pressure_low_hot_idle
+  title:
+    en: Low engine oil pressure at hot idle
+    de: Niedriger Öldruck bei warmem Leerlauf
+    ro: Presiune scăzută a uleiului la ralanti cu motorul cald
+    fr: Faible pression d'huile au ralenti moteur chaud
+    es: Baja presión de aceite al ralentí con el motor caliente
+    it: Bassa pressione dell'olio al minimo a motore caldo
+    nl: Lage oliedruk bij warme stationaire motor
+  description:
+    en: Engine oil pressure becomes insufficient after the engine reaches operating temperature, especially at idle.
+    de: Der Motoröldruck wird bei Betriebstemperatur, insbesondere im Leerlauf, zu niedrig.
+    ro: Presiunea uleiului motorului devine insuficientă după atingerea temperaturii de funcționare, în special la ralanti.
+    fr: La pression d'huile devient insuffisante à température de fonctionnement, surtout au ralenti.
+    es: La presión de aceite resulta insuficiente a temperatura de funcionamiento, especialmente al ralentí.
+    it: La pressione dell'olio diventa insufficiente a temperatura di esercizio, soprattutto al minimo.
+    nl: De oliedruk wordt bij bedrijfstemperatuur onvoldoende, vooral stationair.
+  system: Lubrication
+  category: lubrication
+  symptoms:
+    en:
+      - Oil pressure warning at hot idle
+      - Ticking from the valve train
+      - Warning disappears when engine speed increases
+    de:
+      - Öldruckwarnung bei warmem Leerlauf
+      - Geräusche aus dem Ventiltrieb
+      - Warnung verschwindet bei höherer Drehzahl
+    ro:
+      - Martor de presiune ulei la ralanti cu motorul cald
+      - Zgomote în zona distribuției/chiulasei
+      - Martorul se stinge la creșterea turației
+    fr:
+      - Voyant de pression d'huile au ralenti chaud
+      - Bruits du système de distribution
+      - Extinction du voyant lorsque le régime augmente
+    es:
+      - Testigo de presión de aceite al ralentí en caliente
+      - Ruido en el tren de válvulas
+      - El testigo desaparece al aumentar el régimen
+    it:
+      - Spia pressione olio al minimo a caldo
+      - Rumori dal comando valvole
+      - La spia si spegne aumentando il regime
+    nl:
+      - Oliedruklampje bij warme stationaire motor
+      - Geluid uit de klepbediening
+      - Waarschuwing verdwijnt bij hoger toerental
+  keywords:
+    en:
+      - low oil pressure
+      - hot idle oil pressure
+      - oil pressure warning
+      - lubrication
+    de:
+      - niedriger Öldruck
+      - Öldruckwarnung
+    ro:
+      - presiune ulei scăzută
+      - presiune ulei la cald
+      - ungere
+    fr:
+      - pression d'huile basse
+      - pression d'huile à chaud
+    es:
+      - baja presión de aceite
+      - presión de aceite en caliente
+    it:
+      - bassa pressione olio
+      - pressione olio a caldo
+    nl:
+      - lage oliedruk
+      - oliedruk warm
+  possible_causes:
+    en:
+      - Low oil level
+      - Excessive bearing clearance
+      - Worn oil pump
+      - Incorrect oil viscosity
+      - Restricted oil pickup
+    de:
+      - Zu niedriger Ölstand
+      - Zu großes Lagerspiel
+      - Verschlissene Ölpumpe
+      - Falsche Ölviskosität
+      - Verstopftes Ansaugsieb
+    ro:
+      - Nivel scăzut de ulei
+      - Joc excesiv în lagăre
+      - Pompă de ulei uzată
+      - Vâscozitate incorectă a uleiului
+      - Sorb de ulei obturat
+    fr:
+      - Niveau d'huile insuffisant
+      - Jeu excessif des paliers
+      - Pompe à huile usée
+      - Viscosité d'huile incorrecte
+      - Crépine d'huile obstruée
+    es:
+      - Nivel de aceite bajo
+      - Holgura excesiva de cojinetes
+      - Bomba de aceite desgastada
+      - Viscosidad incorrecta
+      - Colador de aceite obstruido
+    it:
+      - Livello olio basso
+      - Gioco eccessivo dei cuscinetti
+      - Pompa olio usurata
+      - Viscosità errata
+      - Pescante olio ostruito
+    nl:
+      - Laag oliepeil
+      - Te grote lagerspeling
+      - Versleten oliepomp
+      - Verkeerde oliedikte
+      - Verstopte aanzuigzeef
+  diagnostic_steps:
+    en:
+      - Verify oil level and specification
+      - Measure oil pressure with a mechanical gauge
+      - Compare pressure cold and hot at idle and raised engine speed
+      - Inspect the oil pickup and pump if pressure remains low
+    de:
+      - Ölstand und Ölspezifikation prüfen
+      - Öldruck mit einem mechanischen Manometer messen
+      - Druck kalt und warm im Leerlauf sowie bei erhöhter Drehzahl vergleichen
+      - Ölsieb und Ölpumpe prüfen, wenn der Druck niedrig bleibt
+    ro:
+      - Verifică nivelul și specificația uleiului
+      - Măsoară presiunea cu un manometru mecanic
+      - Compară presiunea la rece și la cald, la ralanti și la turație ridicată
+      - Verifică sorbul și pompa dacă presiunea rămâne scăzută
+    fr:
+      - Vérifier le niveau et la spécification de l'huile
+      - Mesurer la pression avec un manomètre mécanique
+      - Comparer la pression à froid et à chaud au ralenti et à régime élevé
+      - Contrôler la crépine et la pompe si la pression reste faible
+    es:
+      - Comprobar nivel y especificación del aceite
+      - Medir la presión con un manómetro mecánico
+      - Comparar la presión en frío y caliente al ralentí y a mayor régimen
+      - Revisar el colador y la bomba si la presión sigue baja
+    it:
+      - Controllare livello e specifica dell'olio
+      - Misurare la pressione con un manometro meccanico
+      - Confrontare la pressione a freddo e a caldo al minimo e a regime superiore
+      - Controllare pescante e pompa se la pressione rimane bassa
+    nl:
+      - Oliepeil en oliespecificatie controleren
+      - Oliedruk met een mechanische manometer meten
+      - Druk koud en warm stationair en bij hoger toerental vergelijken
+      - Aanzuigzeef en pomp controleren als de druk laag blijft
+  related_dtcs: []
+  vehicle:
+    manufacturers:
+      - volkswagen
+    models:
+      - volkswagen_golf
+      - volkswagen_vento
+      - volkswagen_polo
+      - volkswagen_bora
+      - volkswagen_new_beetle
+      - volkswagen_passat
+    generations:
+      - volkswagen_golf_mk3
+      - volkswagen_golf_mk4
+      - volkswagen_vento_mk3
+      - volkswagen_polo_mk3
+      - volkswagen_polo_mk4
+      - volkswagen_bora_1j
+      - volkswagen_new_beetle_9c
+      - volkswagen_passat_b3
+      - volkswagen_passat_b4
+      - volkswagen_passat_b5
+    engines: []
+
 - id: vw_early_petrol_lambda_rich_limit
   vehicle:
     manufacturer: volkswagen
