@@ -6,6 +6,1275 @@ manufacturer:
 
 technical_data:
 
+- id: vw_modern_direct_injection_high_pressure_fuel_fault
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - jetta
+      - t_cross
+      - taigo
+    generations:
+      - jetta_mk5
+      - jetta_mk6
+      - t_cross_1
+      - taigo_1
+    engines:
+      - "1598_fsi_115"
+      - "1984_fsi_150"
+      - "1984_tfsi_200"
+      - "1390_tsi_140"
+      - "1390_tsi_170"
+      - "1390_tsi_122"
+      - "1390_tsi_150"
+      - "1798_tsi_170"
+      - "1984_tsi_200"
+      - "999_tsi_95"
+      - "999_tsi_115"
+      - "999_tsi_110"
+      - "1498_tsi_150"
+  category: diagnostics
+  system: direct_injection_fuel
+  title:
+    en: High-pressure fuel system fault
+    ro: Defecțiune sistem de alimentare cu înaltă presiune
+    de: Fehler im Hochdruck-Kraftstoffsystem
+    fr: Défaut du système de carburant haute pression
+    es: Fallo del sistema de combustible de alta presión
+    it: Guasto del sistema carburante ad alta pressione
+    nl: Storing in het hogedrukbrandstofsysteem
+  description:
+    en: The direct-injection high-pressure fuel system cannot maintain the required fuel pressure under all operating conditions.
+    ro: Sistemul de alimentare cu injecție directă nu poate menține presiunea de combustibil necesară în toate condițiile de funcționare.
+    de: Das Hochdruck-Kraftstoffsystem der Direkteinspritzung kann den erforderlichen Kraftstoffdruck nicht unter allen Betriebsbedingungen halten.
+    fr: Le système de carburant haute pression de l'injection directe ne peut pas maintenir la pression requise dans toutes les conditions.
+    es: El sistema de combustible de alta presión de la inyección directa no puede mantener la presión requerida en todas las condiciones.
+    it: Il sistema carburante ad alta pressione dell'iniezione diretta non riesce a mantenere la pressione richiesta in tutte le condizioni.
+    nl: Het hogedrukbrandstofsysteem van de directe injectie kan de vereiste brandstofdruk niet onder alle omstandigheden handhaven.
+  symptoms:
+    - en: Loss of engine power
+      ro: Pierdere de putere
+      de: Leistungsverlust
+      fr: Perte de puissance
+      es: Pérdida de potencia
+      it: Perdita di potenza
+      nl: Vermogensverlies
+    - en: Hard starting
+      ro: Pornire dificilă
+      de: Schwieriger Motorstart
+      fr: Démarrage difficile
+      es: Arranque difícil
+      it: Avviamento difficile
+      nl: Moeilijk starten
+    - en: Engine hesitation under load
+      ro: Ezitare a motorului sub sarcină
+      de: Motorruckeln unter Last
+      fr: Hésitation du moteur sous charge
+      es: Vacilación del motor bajo carga
+      it: Esitazione del motore sotto carico
+      nl: Inhouden van de motor onder belasting
+  possible_causes:
+    - en: High-pressure fuel pump malfunction
+      ro: Defecțiune pompă de combustibil de înaltă presiune
+      de: Defekt der Hochdruckkraftstoffpumpe
+      fr: Pompe haute pression défectueuse
+      es: Bomba de combustible de alta presión defectuosa
+      it: Pompa carburante ad alta pressione guasta
+      nl: Defecte hogedrukbrandstofpomp
+    - en: Fuel pressure control valve fault
+      ro: Defecțiune supapă de reglare a presiunii combustibilului
+      de: Fehler am Kraftstoffdruckregelventil
+      fr: Défaut de la vanne de régulation de pression
+      es: Fallo de la válvula de regulación de presión
+      it: Guasto della valvola di regolazione pressione
+      nl: Storing van de brandstofdrukregelklep
+    - en: Restricted fuel supply
+      ro: Alimentare cu combustibil restricționată
+      de: Eingeschränkte Kraftstoffversorgung
+      fr: Alimentation en carburant insuffisante
+      es: Alimentación de combustible restringida
+      it: Alimentazione carburante insufficiente
+      nl: Beperkte brandstoftoevoer
+  diagnostic_steps:
+    - en: Compare specified and actual high-pressure fuel rail pressure
+      ro: Compară presiunea prescrisă și presiunea reală în rampa de înaltă presiune
+      de: Soll- und Ist-Kraftstoffhochdruck vergleichen
+      fr: Comparer la pression haute pression demandée et réelle
+      es: Comparar la presión de combustible de alta presión solicitada y real
+      it: Confrontare la pressione carburante alta richiesta e reale
+      nl: Gewenste en werkelijke hogedruk vergelijken
+    - en: Check low-pressure fuel supply before condemning the high-pressure pump
+      ro: Verifică alimentarea de joasă presiune înainte de a condamna pompa de înaltă presiune
+      de: Niederdruckversorgung vor dem Austausch der Hochdruckpumpe prüfen
+      fr: Vérifier l'alimentation basse pression avant de remplacer la pompe haute pression
+      es: Comprobar la alimentación de baja presión antes de sustituir la bomba de alta presión
+      it: Controllare l'alimentazione a bassa pressione prima di sostituire la pompa alta pressione
+      nl: Controleer de lagedruktoevoer voordat de hogedrukpomp wordt vervangen
+  keywords:
+    - high pressure fuel
+    - fuel rail pressure
+    - direct injection
+    - HPFP
+    - fuel pressure
+  related_dtcs: []
+  difficulty: advanced
+
+- id: vw_modern_direct_injection_injector_fault
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - jetta
+      - t_cross
+      - taigo
+    generations:
+      - jetta_mk5
+      - jetta_mk6
+      - t_cross_1
+      - taigo_1
+    engines:
+      - "1598_fsi_115"
+      - "1984_fsi_150"
+      - "1984_tfsi_200"
+      - "1390_tsi_140"
+      - "1390_tsi_170"
+      - "1390_tsi_122"
+      - "1390_tsi_150"
+      - "1798_tsi_170"
+      - "1984_tsi_200"
+      - "999_tsi_95"
+      - "999_tsi_115"
+      - "999_tsi_110"
+      - "1498_tsi_150"
+  category: diagnostics
+  system: direct_injection_fuel
+  title:
+    en: Direct fuel injector fault
+    ro: Defecțiune injector de combustibil cu injecție directă
+    de: Fehler am Direkteinspritzventil
+    fr: Défaut d'injecteur de carburant à injection directe
+    es: Fallo del inyector de combustible de inyección directa
+    it: Guasto dell'iniettore a iniezione diretta
+    nl: Storing van directe brandstofinjector
+  description:
+    en: One or more direct fuel injectors have incorrect electrical operation, flow or spray characteristics.
+    ro: Unul sau mai multe injectoare cu injecție directă au funcționare electrică, debit sau pulverizare incorectă.
+    de: Ein oder mehrere Direkteinspritzventile weisen elektrische, hydraulische oder spritzbildbezogene Abweichungen auf.
+    fr: Un ou plusieurs injecteurs directs présentent un défaut électrique, hydraulique ou de pulvérisation.
+    es: Uno o varios inyectores directos presentan un funcionamiento eléctrico, hidráulico o de pulverización incorrecto.
+    it: Uno o più iniettori diretti presentano un funzionamento elettrico, idraulico o di nebulizzazione anomalo.
+    nl: Een of meer directe injectoren hebben een elektrische, hydraulische of sproeibeeldafwijking.
+  symptoms:
+    - en: Misfire
+      ro: Rateu
+      de: Fehlzündung
+      fr: Raté d'allumage
+      es: Fallo de encendido
+      it: Mancata accensione
+      nl: Misfire
+    - en: Rough idle
+      ro: Ralanti neregulat
+      de: Unruhiger Leerlauf
+      fr: Ralenti irrégulier
+      es: Ralentí irregular
+      it: Minimo irregolare
+      nl: Onrustig stationair draaien
+    - en: Increased fuel consumption
+      ro: Consum crescut de combustibil
+      de: Erhöhter Kraftstoffverbrauch
+      fr: Consommation accrue
+      es: Mayor consumo de combustible
+      it: Aumento del consumo
+      nl: Hoger brandstofverbruik
+  possible_causes:
+    - en: Injector electrical fault
+      ro: Defecțiune electrică injector
+      de: Elektrischer Fehler des Injektors
+      fr: Défaut électrique de l'injecteur
+      es: Fallo eléctrico del inyector
+      it: Guasto elettrico dell'iniettore
+      nl: Elektrische storing van de injector
+    - en: Injector nozzle deposits
+      ro: Depuneri pe duza injectorului
+      de: Ablagerungen an der Einspritzdüse
+      fr: Dépôts sur la buse d'injection
+      es: Depósitos en la boquilla del inyector
+      it: Depositi sull'ugello dell'iniettore
+      nl: Afzettingen op het injectormondstuk
+    - en: Injector internal leakage
+      ro: Pierdere internă a injectorului
+      de: Interne Undichtigkeit des Injektors
+      fr: Fuite interne de l'injecteur
+      es: Fuga interna del inyector
+      it: Perdita interna dell'iniettore
+      nl: Interne lekkage van de injector
+  diagnostic_steps:
+    - en: Check injector fault counters and cylinder-specific misfire data
+      ro: Verifică contoarele de defecte ale injectoarelor și datele de rateu pe cilindru
+      de: Injektorfehlerzähler und zylinderspezifische Fehlzündungsdaten prüfen
+      fr: Vérifier les compteurs de défauts et les ratés par cylindre
+      es: Comprobar contadores de fallos y datos de fallos por cilindro
+      it: Controllare i contatori guasti e i dati di mancata accensione per cilindro
+      nl: Injectorstorings tellers en misfiregegevens per cilinder controleren
+    - en: Compare injector correction or fuel trim values between cylinders
+      ro: Compară corecțiile injectorului sau valorile de fuel trim între cilindri
+      de: Injektorkorrekturen oder Gemischanpassungen zwischen den Zylindern vergleichen
+      fr: Comparer les corrections d'injection ou les adaptations de mélange
+      es: Comparar las correcciones de inyección o ajustes de combustible
+      it: Confrontare le correzioni degli iniettori o i fuel trim
+      nl: Injectiecorrecties of brandstoftrim tussen cilinders vergelijken
+  keywords:
+    - direct injector
+    - injector fault
+    - injector correction
+    - injector leak
+    - misfire
+  related_dtcs: []
+  difficulty: advanced
+
+- id: vw_modern_tsi_pcv_crankcase_ventilation_fault
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - jetta
+      - t_cross
+      - taigo
+    generations:
+      - jetta_mk5
+      - jetta_mk6
+      - t_cross_1
+      - taigo_1
+    engines:
+      - "1390_tsi_140"
+      - "1390_tsi_170"
+      - "1390_tsi_122"
+      - "1390_tsi_150"
+      - "1798_tsi_170"
+      - "1984_tfsi_200"
+      - "1984_tsi_200"
+      - "999_tsi_95"
+      - "999_tsi_115"
+      - "999_tsi_110"
+      - "1498_tsi_150"
+  category: diagnostics
+  system: crankcase_ventilation
+  title:
+    en: PCV crankcase ventilation fault
+    ro: Defecțiune sistem PCV de ventilare a carterului
+    de: Fehler der Kurbelgehäuseentlüftung
+    fr: Défaut du système PCV de ventilation du carter
+    es: Fallo del sistema PCV de ventilación del cárter
+    it: Guasto del sistema PCV di ventilazione del basamento
+    nl: Storing in het PCV-carterventilatiesysteem
+  description:
+    en: The crankcase ventilation system creates incorrect crankcase pressure or allows excessive unmetered air or oil vapour into the intake.
+    ro: Sistemul de ventilare a carterului generează o presiune incorectă sau permite intrarea excesivă de aer nemăsurat ori vapori de ulei în admisie.
+    de: Die Kurbelgehäuseentlüftung erzeugt einen falschen Kurbelgehäusedruck oder lässt zu viel Nebenluft bzw. Öldampf in den Ansaugtrakt.
+    fr: Le système de ventilation du carter génère une pression incorrecte ou laisse entrer trop d'air parasite ou de vapeurs d'huile.
+    es: El sistema de ventilación del cárter genera una presión incorrecta o introduce demasiado aire no medido o vapores de aceite.
+    it: Il sistema di ventilazione del basamento genera una pressione errata o introduce aria non misurata o vapori d'olio eccessivi.
+    nl: Het carterventilatiesysteem veroorzaakt een verkeerde carterdruk of laat te veel valse lucht of oliedamp toe.
+  symptoms:
+    - en: Rough idle
+      ro: Ralanti neregulat
+      de: Unruhiger Leerlauf
+      fr: Ralenti irrégulier
+      es: Ralentí irregular
+      it: Minimo irregolare
+      nl: Onrustig stationair draaien
+    - en: Whistling noise from engine
+      ro: Zgomot de fluierat din zona motorului
+      de: Pfeifgeräusch aus dem Motorraum
+      fr: Sifflement provenant du moteur
+      es: Silbido procedente del motor
+      it: Fischio proveniente dal motore
+      nl: Fluitend geluid uit de motorruimte
+    - en: Increased oil consumption
+      ro: Consum crescut de ulei
+      de: Erhöhter Ölverbrauch
+      fr: Consommation d'huile accrue
+      es: Mayor consumo de aceite
+      it: Aumento del consumo d'olio
+      nl: Hoger olieverbruik
+  possible_causes:
+    - en: Failed PCV diaphragm
+      ro: Membrană PCV defectă
+      de: Defekte PCV-Membran
+      fr: Membrane PCV défectueuse
+      es: Membrana PCV defectuosa
+      it: Membrana PCV guasta
+      nl: Defect PCV-membraan
+    - en: Blocked crankcase ventilation passage
+      ro: Conductă de ventilare a carterului blocată
+      de: Verstopfte Kurbelgehäuseentlüftung
+      fr: Passage de ventilation du carter obstrué
+      es: Conducto de ventilación del cárter obstruido
+      it: Passaggio di ventilazione del basamento ostruito
+      nl: Geblokkeerd carterventilatiekanaal
+  diagnostic_steps:
+    - en: Check crankcase pressure at idle
+      ro: Verifică presiunea din carter la ralanti
+      de: Kurbelgehäusedruck im Leerlauf prüfen
+      fr: Vérifier la pression du carter au ralenti
+      es: Comprobar la presión del cárter al ralentí
+      it: Controllare la pressione del basamento al minimo
+      nl: Carterdruk bij stationair toerental controleren
+    - en: Inspect PCV diaphragm, hoses and connections for leaks
+      ro: Inspectează membrana PCV, furtunurile și conexiunile pentru pierderi
+      de: PCV-Membran, Schläuche und Anschlüsse auf Undichtigkeiten prüfen
+      fr: Inspecter la membrane, les durites et raccords PCV
+      es: Inspeccionar membrana, manguitos y conexiones PCV
+      it: Ispezionare membrana, tubi e collegamenti PCV
+      nl: PCV-membraan, slangen en aansluitingen op lekkage controleren
+  keywords:
+    - PCV
+    - crankcase ventilation
+    - crankcase pressure
+    - oil vapour
+    - vacuum leak
+  related_dtcs: []
+  difficulty: intermediate
+
+- id: vw_modern_tsi_intake_valve_carbon_deposits
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - jetta
+      - t_cross
+      - taigo
+    generations:
+      - jetta_mk5
+      - jetta_mk6
+      - t_cross_1
+      - taigo_1
+    engines:
+      - "1598_fsi_115"
+      - "1984_fsi_150"
+      - "1984_tfsi_200"
+      - "1390_tsi_140"
+      - "1390_tsi_170"
+      - "1390_tsi_122"
+      - "1390_tsi_150"
+      - "1798_tsi_170"
+      - "1984_tsi_200"
+      - "999_tsi_95"
+      - "999_tsi_115"
+      - "999_tsi_110"
+      - "1498_tsi_150"
+  category: diagnostics
+  system: intake_system
+  title:
+    en: Intake valve carbon deposits
+    ro: Depuneri de carbon pe supapele de admisie
+    de: Kohlenstoffablagerungen an Einlassventilen
+    fr: Dépôts de carbone sur les soupapes d'admission
+    es: Depósitos de carbonilla en las válvulas de admisión
+    it: Depositi carboniosi sulle valvole di aspirazione
+    nl: Koolafzettingen op de inlaatkleppen
+  description:
+    en: Carbon deposits on direct-injection intake valves restrict airflow and can disturb cylinder filling and combustion.
+    ro: Depunerile de carbon de pe supapele de admisie restricționează fluxul de aer și pot afecta umplerea cilindrilor și arderea.
+    de: Kohlenstoffablagerungen an den Einlassventilen beeinträchtigen den Luftstrom sowie Zylinderfüllung und Verbrennung.
+    fr: Les dépôts de carbone sur les soupapes d'admission réduisent le débit d'air et peuvent perturber le remplissage des cylindres et la combustion.
+    es: Los depósitos de carbonilla en las válvulas de admisión restringen el flujo de aire y pueden alterar el llenado y la combustión.
+    it: I depositi carboniosi sulle valvole di aspirazione limitano il flusso d'aria e possono alterare il riempimento dei cilindri e la combustione.
+    nl: Koolafzettingen op de inlaatkleppen beperken de luchtstroom en kunnen cilindervulling en verbranding verstoren.
+  symptoms:
+    - en: Rough idle
+      ro: Ralanti neregulat
+      de: Unruhiger Leerlauf
+      fr: Ralenti irrégulier
+      es: Ralentí irregular
+      it: Minimo irregolare
+      nl: Onrustig stationair draaien
+    - en: Reduced high-rpm power
+      ro: Putere redusă la turații ridicate
+      de: Leistungsverlust bei hohen Drehzahlen
+      fr: Perte de puissance à haut régime
+      es: Pérdida de potencia a altas rpm
+      it: Perdita di potenza agli alti regimi
+      nl: Vermogensverlies bij hoge toerentallen
+    - en: Cold-start misfire
+      ro: Rateuri la pornirea la rece
+      de: Fehlzündungen beim Kaltstart
+      fr: Ratés au démarrage à froid
+      es: Fallos de encendido en frío
+      it: Mancate accensioni all'avviamento a freddo
+      nl: Misfire bij koude start
+  possible_causes:
+    - en: Oil vapour accumulation
+      ro: Acumulare de vapori de ulei
+      de: Ansammlung von Öldämpfen
+      fr: Accumulation de vapeurs d'huile
+      es: Acumulación de vapores de aceite
+      it: Accumulo di vapori d'olio
+      nl: Ophoping van oliedamp
+    - en: Exhaust gas recirculation deposits
+      ro: Depuneri provenite din recircularea gazelor
+      de: Ablagerungen durch Abgasrückführung
+      fr: Dépôts liés à la recirculation des gaz
+      es: Depósitos procedentes de la recirculación de gases
+      it: Depositi dovuti al ricircolo dei gas
+      nl: Afzettingen door uitlaatgasrecirculatie
+  diagnostic_steps:
+    - en: Compare cylinder-specific misfire counts and fuel trims
+      ro: Compară rateurile pe cilindru și corecțiile de amestec
+      de: Zylinderspezifische Fehlzündungszähler und Gemischanpassungen vergleichen
+      fr: Comparer les ratés par cylindre et les corrections de mélange
+      es: Comparar fallos por cilindro y ajustes de combustible
+      it: Confrontare mancate accensioni per cilindro e correzioni miscela
+      nl: Misfire-tellers per cilinder en brandstoftrim vergelijken
+    - en: Inspect intake valves with a suitable borescope if necessary
+      ro: Inspectează supapele cu un boroscop dacă este necesar
+      de: Einlassventile bei Bedarf mit einem geeigneten Endoskop prüfen
+      fr: Inspecter les soupapes avec un endoscope si nécessaire
+      es: Inspeccionar las válvulas con un boroscopio si es necesario
+      it: Ispezionare le valvole con un boroscopio se necessario
+      nl: Inlaatkleppen indien nodig met een geschikte endoscoop inspecteren
+  keywords:
+    - intake carbon
+    - intake valve deposits
+    - direct injection carbon
+    - walnut blasting
+    - cold start misfire
+  related_dtcs: []
+  difficulty: advanced
+
+- id: vw_modern_tsi_variable_valve_timing_fault
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - jetta
+      - t_cross
+      - taigo
+    generations:
+      - jetta_mk5
+      - jetta_mk6
+      - t_cross_1
+      - taigo_1
+    engines:
+      - "1390_tsi_140"
+      - "1390_tsi_170"
+      - "1390_tsi_122"
+      - "1390_tsi_150"
+      - "1798_tsi_170"
+      - "1984_tsi_200"
+      - "999_tsi_95"
+      - "999_tsi_115"
+      - "999_tsi_110"
+      - "1498_tsi_150"
+  category: diagnostics
+  system: variable_valve_timing
+  title:
+    en: Variable valve timing system fault
+    ro: Defecțiune sistem distribuție variabilă
+    de: Fehler der variablen Ventilsteuerung
+    fr: Défaut du système de distribution variable
+    es: Fallo del sistema de distribución variable
+    it: Guasto del sistema di fasatura variabile
+    nl: Storing in variabele kleptiming
+  description:
+    en: The camshaft timing system cannot achieve or maintain the commanded camshaft position.
+    ro: Sistemul de variație a distribuției nu poate atinge sau menține poziția comandată a arborelui cu came.
+    de: Die variable Ventilsteuerung kann die vorgegebene Nockenwellenposition nicht erreichen oder halten.
+    fr: Le système de distribution variable ne peut pas atteindre ou maintenir la position demandée de l'arbre à cames.
+    es: El sistema de distribución variable no puede alcanzar o mantener la posición solicitada del árbol de levas.
+    it: Il sistema di fasatura variabile non riesce a raggiungere o mantenere la posizione richiesta dell'albero a camme.
+    nl: Het variabele kleptimingsysteem kan de gewenste nokkenaspositie niet bereiken of vasthouden.
+  symptoms:
+    - en: Poor low-rpm torque
+      ro: Cuplu redus la turații joase
+      de: Geringes Drehmoment bei niedrigen Drehzahlen
+      fr: Couple réduit à bas régime
+      es: Par reducido a bajas rpm
+      it: Coppia ridotta ai bassi regimi
+      nl: Lager koppel bij lage toerentallen
+    - en: Rough idle
+      ro: Ralanti neregulat
+      de: Unruhiger Leerlauf
+      fr: Ralenti irrégulier
+      es: Ralentí irregular
+      it: Minimo irregolare
+      nl: Onrustig stationair draaien
+    - en: Engine warning light
+      ro: Martor motor aprins
+      de: Motorkontrollleuchte
+      fr: Voyant moteur
+      es: Testigo de motor
+      it: Spia motore
+      nl: Motorstoringslampje
+  possible_causes:
+    - en: Camshaft position actuator fault
+      ro: Defecțiune actuator poziție arbore cu came
+      de: Fehler des Nockenwellenstellers
+      fr: Défaut de l'actionneur d'arbre à cames
+      es: Fallo del actuador del árbol de levas
+      it: Guasto dell'attuatore dell'albero a camme
+      nl: Storing van de nokkenasactuator
+    - en: Restricted oil supply to timing actuator
+      ro: Alimentare cu ulei restricționată către actuator
+      de: Eingeschränkte Ölversorgung des Stellers
+      fr: Alimentation d'huile insuffisante vers l'actionneur
+      es: Alimentación de aceite restringida al actuador
+      it: Alimentazione olio insufficiente all'attuatore
+      nl: Beperkte olietoevoer naar de actuator
+    - en: Incorrect mechanical timing
+      ro: Distribuție mecanică incorectă
+      de: Falsche mechanische Steuerzeiten
+      fr: Calage mécanique incorrect
+      es: Reglaje mecánicos incorrectos
+      it: Fasatura meccanica errata
+      nl: Verkeerde mechanische timing
+  diagnostic_steps:
+    - en: Compare commanded and actual camshaft position
+      ro: Compară poziția comandată și reală a arborelui cu came
+      de: Soll- und Ist-Nockenwellenposition vergleichen
+      fr: Comparer la position demandée et réelle de l'arbre à cames
+      es: Comparar la posición solicitada y real del árbol de levas
+      it: Confrontare posizione richiesta e reale dell'albero a camme
+      nl: Gewenste en werkelijke nokkenaspositie vergelijken
+    - en: Check oil level, oil condition and actuator control valve operation
+      ro: Verifică nivelul și starea uleiului și funcționarea valvei de comandă
+      de: Ölstand, Ölzustand und Funktion des Steuerventils prüfen
+      fr: Vérifier le niveau et l'état de l'huile ainsi que la vanne de commande
+      es: Comprobar nivel y estado del aceite y funcionamiento de la válvula
+      it: Controllare livello e stato dell'olio e funzionamento della valvola
+      nl: Oliepeil, olieconditie en werking van de regelklep controleren
+  keywords:
+    - variable valve timing
+    - camshaft timing
+    - VVT
+    - camshaft actuator
+    - camshaft position
+  related_dtcs: []
+  difficulty: advanced
+
+- id: vw_modern_tsi_turbocharger_wastegate_fault
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - jetta
+      - t_cross
+      - taigo
+    generations:
+      - jetta_mk5
+      - jetta_mk6
+      - t_cross_1
+      - taigo_1
+    engines:
+      - "1390_tsi_140"
+      - "1390_tsi_170"
+      - "1984_tfsi_200"
+      - "1390_tsi_122"
+      - "1390_tsi_150"
+      - "1798_tsi_170"
+      - "1984_tsi_200"
+      - "999_tsi_95"
+      - "999_tsi_115"
+      - "999_tsi_110"
+      - "1498_tsi_150"
+  category: diagnostics
+  system: turbocharging
+  title:
+    en: Turbocharger wastegate control fault
+    ro: Defecțiune comandă wastegate turbocompresor
+    de: Fehler der Wastegate-Regelung des Turboladers
+    fr: Défaut de commande de wastegate du turbocompresseur
+    es: Fallo del control de la wastegate del turbocompresor
+    it: Guasto del comando wastegate del turbocompressore
+    nl: Storing in de wastegate-regeling van de turbocompressor
+  description:
+    en: The turbocharger wastegate system cannot correctly control boost pressure.
+    ro: Sistemul wastegate al turbocompresorului nu poate controla corect presiunea de supraalimentare.
+    de: Die Wastegate-Regelung des Turboladers kann den Ladedruck nicht korrekt steuern.
+    fr: Le système wastegate du turbocompresseur ne peut pas contrôler correctement la pression de suralimentation.
+    es: El sistema wastegate del turbocompresor no puede controlar correctamente la presión de sobrealimentación.
+    it: Il sistema wastegate del turbocompressore non riesce a controllare correttamente la pressione di sovralimentazione.
+    nl: Het wastegatesysteem van de turbocompressor kan de laaddruk niet correct regelen.
+  symptoms:
+    - en: Underboost
+      ro: Presiune de supraalimentare prea mică
+      de: Zu geringer Ladedruck
+      fr: Sous-pression de suralimentation
+      es: Baja presión de sobrealimentación
+      it: Pressione di sovralimentazione insufficiente
+      nl: Te lage laaddruk
+    - en: Overboost
+      ro: Presiune de supraalimentare prea mare
+      de: Zu hoher Ladedruck
+      fr: Surpression de suralimentation
+      es: Sobrepresión de sobrealimentación
+      it: Sovrapressione
+      nl: Te hoge laaddruk
+    - en: Reduced engine power
+      ro: Putere redusă
+      de: Leistungsverlust
+      fr: Perte de puissance
+      es: Pérdida de potencia
+      it: Perdita di potenza
+      nl: Vermogensverlies
+  possible_causes:
+    - en: Wastegate actuator fault
+      ro: Defecțiune actuator wastegate
+      de: Defekt des Wastegate-Stellers
+      fr: Défaut de l'actionneur wastegate
+      es: Fallo del actuador de wastegate
+      it: Guasto dell'attuatore wastegate
+      nl: Defecte wastegate-actuator
+    - en: Wastegate mechanism sticking
+      ro: Mecanism wastegate blocat
+      de: Schwergängige Wastegate-Mechanik
+      fr: Mécanisme wastegate grippé
+      es: Mecanismo de wastegate agarrotado
+      it: Meccanismo wastegate bloccato
+      nl: Vastzittend wastegatemechanisme
+    - en: Boost control wiring fault
+      ro: Defecțiune cablaj comandă supraalimentare
+      de: Leitungsfehler der Ladedruckregelung
+      fr: Défaut de câblage de commande de suralimentation
+      es: Fallo del cableado del control de sobrealimentación
+      it: Guasto cablaggio comando sovralimentazione
+      nl: Bedradingsfout van de laaddrukregeling
+  diagnostic_steps:
+    - en: Compare requested and actual boost pressure under load
+      ro: Compară presiunea de supraalimentare cerută și reală sub sarcină
+      de: Soll- und Ist-Ladedruck unter Last vergleichen
+      fr: Comparer la pression demandée et réelle sous charge
+      es: Comparar la presión solicitada y real bajo carga
+      it: Confrontare pressione richiesta e reale sotto carico
+      nl: Gewenste en werkelijke laaddruk onder belasting vergelijken
+    - en: Check wastegate actuator movement and position feedback where available
+      ro: Verifică mișcarea actuatorului wastegate și feedback-ul de poziție unde este disponibil
+      de: Wastegate-Stellerbewegung und Positionsrückmeldung prüfen, sofern vorhanden
+      fr: Vérifier le mouvement et le retour de position de l'actionneur wastegate si disponible
+      es: Comprobar movimiento y posición del actuador wastegate si está disponible
+      it: Controllare movimento e feedback posizione dell'attuatore wastegate se disponibile
+      nl: Beweging en positiefeedback van de wastegate-actuator controleren indien beschikbaar
+  keywords:
+    - wastegate
+    - turbo actuator
+    - boost control
+    - underboost
+    - overboost
+  related_dtcs: []
+  difficulty: advanced
+
+- id: vw_modern_tsi_charge_air_pressure_sensor_fault
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - jetta
+      - t_cross
+      - taigo
+    generations:
+      - jetta_mk5
+      - jetta_mk6
+      - t_cross_1
+      - taigo_1
+    engines:
+      - "1390_tsi_140"
+      - "1390_tsi_170"
+      - "1984_tfsi_200"
+      - "1390_tsi_122"
+      - "1390_tsi_150"
+      - "1798_tsi_170"
+      - "1984_tsi_200"
+      - "999_tsi_95"
+      - "999_tsi_115"
+      - "999_tsi_110"
+      - "1498_tsi_150"
+  category: diagnostics
+  system: turbocharging
+  title:
+    en: Charge air pressure sensor fault
+    ro: Defecțiune senzor presiune aer supraalimentat
+    de: Fehler des Ladedrucksensors
+    fr: Défaut du capteur de pression de suralimentation
+    es: Fallo del sensor de presión de sobrealimentación
+    it: Guasto del sensore pressione di sovralimentazione
+    nl: Storing van de laaddruksensor
+  description:
+    en: The charge air pressure sensor provides an implausible or inaccurate pressure signal to the engine control system.
+    ro: Senzorul de presiune al aerului supraalimentat furnizează un semnal neverosimil sau incorect către sistemul de management al motorului.
+    de: Der Ladedrucksensor liefert ein unplausibles oder fehlerhaftes Signal an das Motorsteuergerät.
+    fr: Le capteur de pression de suralimentation fournit un signal incohérent ou incorrect au calculateur moteur.
+    es: El sensor de presión de sobrealimentación proporciona una señal incorrecta o no plausible.
+    it: Il sensore di pressione di sovralimentazione fornisce un segnale errato o non plausibile.
+    nl: De laaddruksensor levert een onplausibel of onjuist signaal aan de motorregeling.
+  symptoms:
+    - en: Reduced power
+      ro: Putere redusă
+      de: Leistungsverlust
+      fr: Perte de puissance
+      es: Pérdida de potencia
+      it: Perdita di potenza
+      nl: Vermogensverlies
+    - en: Boost pressure regulation fault
+      ro: Defecțiune reglare presiune supraalimentare
+      de: Fehler der Ladedruckregelung
+      fr: Défaut de régulation de suralimentation
+      es: Fallo de regulación de sobrealimentación
+      it: Guasto regolazione sovralimentazione
+      nl: Storing laaddrukregeling
+  possible_causes:
+    - en: Faulty pressure sensor
+      ro: Senzor de presiune defect
+      de: Defekter Drucksensor
+      fr: Capteur de pression défectueux
+      es: Sensor de presión defectuoso
+      it: Sensore pressione guasto
+      nl: Defecte druksensor
+    - en: Damaged wiring or connector
+      ro: Cablaj sau conector deteriorat
+      de: Beschädigte Leitung oder Steckverbindung
+      fr: Câblage ou connecteur endommagé
+      es: Cableado o conector dañado
+      it: Cablaggio o connettore danneggiato
+      nl: Beschadigde bedrading of connector
+    - en: Charge air leak
+      ro: Pierdere pe circuitul de aer supraalimentat
+      de: Ladeluftleck
+      fr: Fuite du circuit de suralimentation
+      es: Fuga en el circuito de sobrealimentación
+      it: Perdita nel circuito aria di sovralimentazione
+      nl: Lekkage in het laaddrukcircuit
+  diagnostic_steps:
+    - en: Check sensor reading with ignition on and engine off against atmospheric pressure
+      ro: Compară valoarea senzorului cu presiunea atmosferică având contactul pus și motorul oprit
+      de: Sensorwert bei eingeschalteter Zündung und abgestelltem Motor mit dem Atmosphärendruck vergleichen
+      fr: Comparer la valeur du capteur à la pression atmosphérique moteur arrêté et contact mis
+      es: Comparar el sensor con la presión atmosférica con contacto puesto y motor parado
+      it: Confrontare il valore del sensore con la pressione atmosferica a motore spento
+      nl: Sensorwaarde met atmosferische druk vergelijken met contact aan en motor uit
+    - en: Inspect wiring and check the intake system for leaks
+      ro: Inspectează cablajul și verifică circuitul de admisie pentru pierderi
+      de: Verkabelung prüfen und Ansaugsystem auf Undichtigkeiten kontrollieren
+      fr: Vérifier le câblage et rechercher les fuites du circuit d'admission
+      es: Inspeccionar cableado y buscar fugas en la admisión
+      it: Controllare cablaggio e perdite nel circuito di aspirazione
+      nl: Bedrading controleren en het inlaatsysteem op lekkage inspecteren
+  keywords:
+    - MAP sensor
+    - boost pressure sensor
+    - charge pressure
+    - intake pressure
+    - turbo pressure
+  related_dtcs: []
+  difficulty: intermediate
+
+- id: vw_modern_tsi_intake_manifold_runner_fault
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - jetta
+    generations:
+      - jetta_mk5
+      - jetta_mk6
+    engines:
+      - "1984_fsi_150"
+      - "1984_tfsi_200"
+      - "1390_tsi_140"
+      - "1390_tsi_170"
+      - "1390_tsi_122"
+      - "1390_tsi_150"
+      - "1798_tsi_170"
+      - "1984_tsi_200"
+  category: diagnostics
+  system: intake_manifold
+  title:
+    en: Intake manifold runner control fault
+    ro: Defecțiune clapete galerie de admisie
+    de: Fehler der Saugrohrklappensteuerung
+    fr: Défaut des volets du collecteur d'admission
+    es: Fallo del control de las mariposas del colector de admisión
+    it: Guasto del comando delle farfalle del collettore di aspirazione
+    nl: Storing van de inlaatspruitstukkleppen
+  description:
+    en: The intake manifold runner mechanism cannot reach or maintain the commanded position.
+    ro: Mecanismul clapetelor galeriei de admisie nu poate atinge sau menține poziția comandată.
+    de: Die Saugrohrklappen können die vorgegebene Position nicht erreichen oder halten.
+    fr: Le mécanisme des volets du collecteur ne peut pas atteindre ou maintenir la position demandée.
+    es: El mecanismo de las mariposas del colector no puede alcanzar o mantener la posición solicitada.
+    it: Il meccanismo delle farfalle del collettore non riesce a raggiungere o mantenere la posizione richiesta.
+    nl: Het mechanisme van de inlaatspruitstukkleppen kan de gewenste positie niet bereiken of vasthouden.
+  symptoms:
+    - en: Poor low-rpm response
+      ro: Răspuns slab la turații joase
+      de: Schlechte Reaktion bei niedrigen Drehzahlen
+      fr: Mauvaise réponse à bas régime
+      es: Mala respuesta a bajas rpm
+      it: Risposta scarsa ai bassi regimi
+      nl: Slechte respons bij lage toerentallen
+    - en: Reduced engine power
+      ro: Putere redusă
+      de: Leistungsverlust
+      fr: Perte de puissance
+      es: Pérdida de potencia
+      it: Perdita di potenza
+      nl: Vermogensverlies
+  possible_causes:
+    - en: Carbon or mechanical deposits restricting runner movement
+      ro: Depuneri de carbon care limitează mișcarea clapetelor
+      de: Kohlenstoffablagerungen behindern die Klappenbewegung
+      fr: Dépôts de carbone limitant le mouvement des volets
+      es: Depósitos de carbonilla que restringen el movimiento
+      it: Depositi carboniosi che limitano il movimento
+      nl: Koolafzettingen die de klepbeweging beperken
+    - en: Faulty runner actuator
+      ro: Actuator clapete defect
+      de: Defekter Klappensteller
+      fr: Actionneur des volets défectueux
+      es: Actuador de las mariposas defectuoso
+      it: Attuatore delle farfalle guasto
+      nl: Defecte klepactuator
+    - en: Broken linkage
+      ro: Tijă sau mecanism de acționare rupt
+      de: Gebrochenes Gestänge
+      fr: Tringlerie cassée
+      es: Varillaje roto
+      it: Leveraggio rotto
+      nl: Gebroken verbindingsstang
+  diagnostic_steps:
+    - en: Command the intake runner actuator and observe actual position
+      ro: Comandă actuatorul și observă poziția reală
+      de: Saugrohrklappensteller ansteuern und Ist-Position beobachten
+      fr: Commander l'actionneur et observer la position réelle
+      es: Activar el actuador y observar la posición real
+      it: Azionare l'attuatore e osservare la posizione reale
+      nl: De actuator aansturen en de werkelijke positie controleren
+    - en: Inspect the linkage and manifold for mechanical restriction
+      ro: Inspectează mecanismul și galeria pentru blocaje mecanice
+      de: Gestänge und Saugrohr auf mechanische Einschränkungen prüfen
+      fr: Inspecter la tringlerie et le collecteur
+      es: Inspeccionar el varillaje y el colector
+      it: Ispezionare leveraggio e collettore
+      nl: Verbindingsmechanisme en spruitstuk op mechanische blokkering controleren
+  keywords:
+    - intake manifold runner
+    - intake flap
+    - manifold actuator
+    - runner control
+  related_dtcs: []
+  difficulty: advanced
+
+- id: vw_modern_tsi_ignition_misfire_under_load
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - jetta
+      - t_cross
+      - taigo
+    generations:
+      - jetta_mk5
+      - jetta_mk6
+      - t_cross_1
+      - taigo_1
+    engines:
+      - "1598_fsi_115"
+      - "1984_fsi_150"
+      - "1984_tfsi_200"
+      - "1390_tsi_140"
+      - "1390_tsi_170"
+      - "1390_tsi_122"
+      - "1390_tsi_150"
+      - "1798_tsi_170"
+      - "1984_tsi_200"
+      - "999_tsi_95"
+      - "999_tsi_115"
+      - "999_tsi_110"
+      - "1498_tsi_150"
+  category: diagnostics
+  system: ignition
+  title:
+    en: Ignition misfire under load
+    ro: Rateu de aprindere sub sarcină
+    de: Zündaussetzer unter Last
+    fr: Ratés d'allumage sous charge
+    es: Fallos de encendido bajo carga
+    it: Mancate accensioni sotto carico
+    nl: Ontstekingsmisfire onder belasting
+  description:
+    en: The engine develops cylinder misfires primarily when cylinder pressure and ignition demand increase under load.
+    ro: Motorul prezintă rateuri în special când presiunea în cilindru și cerința de aprindere cresc sub sarcină.
+    de: Der Motor zeigt Fehlzündungen hauptsächlich bei hoher Zylinderfüllung und erhöhter Zündanforderung unter Last.
+    fr: Le moteur présente principalement des ratés lorsque la pression cylindre et la demande d'allumage augmentent sous charge.
+    es: El motor presenta fallos principalmente cuando aumentan la presión del cilindro y la demanda de encendido.
+    it: Il motore presenta mancate accensioni soprattutto quando aumentano la pressione nel cilindro e la richiesta di accensione.
+    nl: De motor vertoont vooral misfires wanneer cilinderdruk en ontstekingsbelasting onder belasting toenemen.
+  symptoms:
+    - en: Hesitation during acceleration
+      ro: Ezitare la accelerare
+      de: Ruckeln beim Beschleunigen
+      fr: Hésitation à l'accélération
+      es: Vacilación durante la aceleración
+      it: Esitazione durante l'accelerazione
+      nl: Inhouden tijdens acceleratie
+    - en: Flashing engine warning light
+      ro: Martor motor clipind
+      de: Blinkende Motorkontrollleuchte
+      fr: Voyant moteur clignotant
+      es: Testigo de motor parpadeando
+      it: Spia motore lampeggiante
+      nl: Knipperend motorstoringslampje
+  possible_causes:
+    - en: Weak ignition coil
+      ro: Bobină de inducție slabă
+      de: Schwache Zündspule
+      fr: Bobine d'allumage faible
+      es: Bobina de encendido débil
+      it: Bobina di accensione debole
+      nl: Zwakke bobine
+    - en: Excessive spark plug gap
+      ro: Distanță prea mare între electrozii bujiei
+      de: Zu großer Elektrodenabstand
+      fr: Écartement excessif des électrodes
+      es: Luz de bujía excesiva
+      it: Distanza eccessiva degli elettrodi
+      nl: Te grote elektrodeafstand
+    - en: Fuel delivery problem
+      ro: Problemă de alimentare cu combustibil
+      de: Kraftstoffversorgungsproblem
+      fr: Problème d'alimentation en carburant
+      es: Problema de suministro de combustible
+      it: Problema di alimentazione carburante
+      nl: Probleem met brandstoftoevoer
+  diagnostic_steps:
+    - en: Identify the affected cylinder using live misfire counters
+      ro: Identifică cilindrul afectat folosind contoarele live de rateuri
+      de: Betroffenen Zylinder über Fehlzündungszähler identifizieren
+      fr: Identifier le cylindre concerné avec les compteurs de ratés
+      es: Identificar el cilindro afectado mediante contadores de fallos
+      it: Identificare il cilindro interessato tramite i contatori di mancate accensioni
+      nl: De betreffende cilinder identificeren via live misfire-tellers
+    - en: Swap the ignition coil with another cylinder and check whether the misfire follows
+      ro: Mută bobina pe alt cilindru și verifică dacă rateul se mută
+      de: Zündspule mit einem anderen Zylinder tauschen und prüfen, ob der Fehler mitwandert
+      fr: Permuter la bobine avec un autre cylindre et vérifier si le raté suit
+      es: Intercambiar la bobina y comprobar si el fallo se desplaza
+      it: Scambiare la bobina e verificare se il difetto si sposta
+      nl: Bobine met een andere cilinder wisselen en controleren of de misfire meeverhuist
+  keywords:
+    - misfire under load
+    - ignition coil
+    - spark plug
+    - cylinder misfire
+    - acceleration misfire
+  related_dtcs: []
+  difficulty: intermediate
+
+- id: vw_modern_tsi_cooling_thermostat_module_fault
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - jetta
+      - t_cross
+      - taigo
+    generations:
+      - jetta_mk5
+      - jetta_mk6
+      - t_cross_1
+      - taigo_1
+    engines:
+      - "1390_tsi_140"
+      - "1390_tsi_170"
+      - "1390_tsi_122"
+      - "1390_tsi_150"
+      - "1798_tsi_170"
+      - "1984_tsi_200"
+      - "999_tsi_95"
+      - "999_tsi_115"
+      - "999_tsi_110"
+      - "1498_tsi_150"
+  category: diagnostics
+  system: engine_cooling
+  title:
+    en: Electronic thermostat or coolant temperature control fault
+    ro: Defecțiune termostat electronic sau control temperatură lichid răcire
+    de: Fehler des elektronischen Thermostats oder der Kühlmitteltemperaturregelung
+    fr: Défaut du thermostat électronique ou de la régulation de température
+    es: Fallo del termostato electrónico o del control de temperatura
+    it: Guasto del termostato elettronico o del controllo temperatura
+    nl: Storing van elektronische thermostaat of koelvloeistoftemperatuurregeling
+  description:
+    en: The engine cooling system cannot regulate coolant temperature according to the commanded operating strategy.
+    ro: Sistemul de răcire nu poate regla temperatura lichidului conform strategiei de funcționare comandate.
+    de: Das Kühlsystem kann die Kühlmitteltemperatur nicht entsprechend der vorgesehenen Betriebsstrategie regeln.
+    fr: Le système de refroidissement ne peut pas réguler la température du liquide selon la stratégie prévue.
+    es: El sistema de refrigeración no puede regular la temperatura según la estrategia de funcionamiento.
+    it: Il sistema di raffreddamento non riesce a regolare la temperatura secondo la strategia prevista.
+    nl: Het koelsysteem kan de koelvloeistoftemperatuur niet volgens de gewenste strategie regelen.
+  symptoms:
+    - en: Engine takes too long to reach operating temperature
+      ro: Motorul ajunge greu la temperatura de funcționare
+      de: Motor erreicht Betriebstemperatur zu langsam
+      fr: Le moteur atteint lentement sa température de fonctionnement
+      es: El motor tarda demasiado en alcanzar la temperatura de servicio
+      it: Il motore raggiunge lentamente la temperatura di esercizio
+      nl: Motor bereikt bedrijfstemperatuur te langzaam
+    - en: Coolant temperature too high
+      ro: Temperatură lichid răcire prea mare
+      de: Kühlmitteltemperatur zu hoch
+      fr: Température de liquide de refroidissement trop élevée
+      es: Temperatura del refrigerante demasiado alta
+      it: Temperatura del liquido di raffreddamento troppo alta
+      nl: Koelvloeistoftemperatuur te hoog
+  possible_causes:
+    - en: Thermostat module malfunction
+      ro: Defecțiune modul termostat
+      de: Fehler des Thermostatmoduls
+      fr: Défaut du module thermostat
+      es: Fallo del módulo termostato
+      it: Guasto del modulo termostato
+      nl: Storing van de thermostaatmodule
+    - en: Coolant temperature sensor fault
+      ro: Defecțiune senzor temperatură lichid răcire
+      de: Fehler des Kühlmitteltemperatursensors
+      fr: Défaut du capteur de température
+      es: Fallo del sensor de temperatura
+      it: Guasto del sensore temperatura
+      nl: Storing van de koelvloeistoftemperatuursensor
+    - en: Cooling system air pocket or coolant loss
+      ro: Aer în instalație sau pierdere de lichid
+      de: Luft im Kühlsystem oder Kühlmittelverlust
+      fr: Poche d'air ou perte de liquide
+      es: Aire en el sistema o pérdida de refrigerante
+      it: Aria nel circuito o perdita di liquido
+      nl: Lucht in het systeem of koelvloeistofverlies
+  diagnostic_steps:
+    - en: Monitor coolant temperature from cold start using diagnostic live data
+      ro: Monitorizează temperatura lichidului de la pornirea la rece folosind datele live
+      de: Kühlmitteltemperatur beim Kaltstart über Live-Daten überwachen
+      fr: Surveiller la température du liquide depuis le démarrage à froid
+      es: Monitorizar la temperatura desde el arranque en frío
+      it: Monitorare la temperatura dal primo avviamento a freddo
+      nl: Koelvloeistoftemperatuur vanaf koude start via live data controleren
+    - en: Compare commanded and actual thermostat behavior
+      ro: Compară funcționarea comandată și reală a termostatului
+      de: Soll- und Ist-Verhalten des Thermostats vergleichen
+      fr: Comparer le fonctionnement demandé et réel du thermostat
+      es: Comparar el funcionamiento solicitado y real del termostato
+      it: Confrontare funzionamento richiesto e reale del termostato
+      nl: Gewenste en werkelijke werking van de thermostaat vergelijken
+  keywords:
+    - electronic thermostat
+    - coolant temperature
+    - thermostat module
+    - overheating
+    - slow warmup
+  related_dtcs: []
+  difficulty: intermediate
+
+- id: vw_modern_tsi_crankshaft_camshaft_sync_fault
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - jetta
+      - t_cross
+      - taigo
+    generations:
+      - jetta_mk5
+      - jetta_mk6
+      - t_cross_1
+      - taigo_1
+    engines:
+      - "1390_tsi_140"
+      - "1390_tsi_170"
+      - "1390_tsi_122"
+      - "1390_tsi_150"
+      - "1798_tsi_170"
+      - "1984_tsi_200"
+      - "999_tsi_95"
+      - "999_tsi_115"
+      - "999_tsi_110"
+      - "1498_tsi_150"
+  category: diagnostics
+  system: engine_timing
+  title:
+    en: Crankshaft and camshaft synchronization fault
+    ro: Defecțiune sincronizare arbore cotit-arbore cu came
+    de: Fehler der Kurbelwellen-Nockenwellen-Synchronisation
+    fr: Défaut de synchronisation vilebrequin-arbre à cames
+    es: Fallo de sincronización entre cigüeñal y árbol de levas
+    it: Guasto sincronizzazione albero motore-albero a camme
+    nl: Storing in synchronisatie krukas-nokkenas
+  description:
+    en: The engine control system detects an implausible relationship between crankshaft and camshaft positions.
+    ro: Sistemul de management detectează o relație neverosimilă între pozițiile arborelui cotit și arborelui cu came.
+    de: Das Motorsteuergerät erkennt eine unplausible Beziehung zwischen Kurbelwellen- und Nockenwellenposition.
+    fr: Le calculateur détecte une relation incohérente entre les positions du vilebrequin et de l'arbre à cames.
+    es: La unidad de control detecta una relación no plausible entre las posiciones del cigüeñal y del árbol de levas.
+    it: La centralina rileva una relazione non plausibile tra le posizioni dell'albero motore e dell'albero a camme.
+    nl: De motorregeling detecteert een onplausibele relatie tussen krukas- en nokkenaspositie.
+  symptoms:
+    - en: Difficult starting
+      ro: Pornire dificilă
+      de: Schwieriger Start
+      fr: Démarrage difficile
+      es: Arranque difícil
+      it: Avviamento difficile
+      nl: Moeilijk starten
+    - en: Rough running
+      ro: Funcționare neregulată
+      de: Unruhiger Motorlauf
+      fr: Fonctionnement irrégulier
+      es: Funcionamiento irregular
+      it: Funzionamento irregolare
+      nl: Onregelmatige motorloop
+    - en: Reduced engine power
+      ro: Putere redusă
+      de: Leistungsverlust
+      fr: Perte de puissance
+      es: Perdita di potenza
+      nl: Vermogensverlies
+  possible_causes:
+    - en: Timing chain or belt wear
+      ro: Uzură lanț sau curea de distribuție
+      de: Verschleiß von Steuerkette oder Zahnriemen
+      fr: Usure de la chaîne ou courroie de distribution
+      es: Desgaste de la cadena o correa de distribución
+      it: Usura della catena o cinghia di distribuzione
+      nl: Slijtage van distributieketting of riem
+    - en: Incorrect mechanical timing
+      ro: Distribuție mecanică decalată
+      de: Falsche mechanische Steuerzeiten
+      fr: Falsche mechanische Steuerzeiten
+      es: Distribución mecánica incorrecta
+      it: Fasatura meccanica errata
+      nl: Verkeerde mechanische timing
+    - en: Camshaft position actuator fault
+      ro: Defecțiune actuator arbore cu came
+      de: Fehler des Nockenwellenstellers
+      fr: Défaut de l'actionneur d'arbre à cames
+      es: Fallo del actuador del árbol de levas
+      it: Guasto dell'attuatore dell'albero a camme
+      nl: Storing van de nokkenasactuator
+  diagnostic_steps:
+    - en: Compare crankshaft and camshaft synchronization values in live data
+      ro: Compară valorile de sincronizare ale arborelui cotit și arborelui cu came în datele live
+      de: Kurbelwellen- und Nockenwellen-Synchronisationswerte in den Live-Daten vergleichen
+      fr: Comparer les valeurs de synchronisation dans les données réelles
+      es: Comparar los valores de sincronización en datos en vivo
+      it: Confrontare i valori di sincronizzazione nei dati live
+      nl: Krukas- en nokkenassynchronisatiewaarden in live data vergelijken
+    - en: If timing deviation is confirmed, inspect mechanical timing before replacing sensors
+      ro: Dacă abaterea este confirmată, verifică distribuția mecanică înainte de înlocuirea senzorilor
+      de: Bei bestätigter Abweichung Steuerzeiten mechanisch prüfen, bevor Sensoren ersetzt werden
+      fr: Si l'écart est confirmé, contrôler le calage mécanique avant de remplacer les capteurs
+      es: Si se confirma la desviación, comprobar la distribución mecánica antes de cambiar sensores
+      it: Se la deviazione è confermata, controllare la fasatura meccanica prima di sostituire i sensori
+      nl: Bij bevestigde afwijking eerst de mechanische timing controleren voordat sensoren worden vervangen
+  keywords:
+    - cam crank correlation
+    - timing synchronization
+    - timing chain
+    - camshaft position
+    - crankshaft position
+  related_dtcs: []
+  difficulty: advanced
+
+- id: vw_modern_tsi_evap_leak_detection_fault
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - jetta
+      - t_cross
+      - taigo
+    generations:
+      - jetta_mk5
+      - jetta_mk6
+      - t_cross_1
+      - taigo_1
+    engines:
+      - "1598_fsi_115"
+      - "1984_fsi_150"
+      - "1984_tfsi_200"
+      - "1390_tsi_140"
+      - "1390_tsi_170"
+      - "1390_tsi_122"
+      - "1390_tsi_150"
+      - "1798_tsi_170"
+      - "1984_tsi_200"
+      - "999_tsi_95"
+      - "999_tsi_115"
+      - "999_tsi_110"
+      - "1498_tsi_150"
+  category: diagnostics
+  system: evaporative_emissions
+  title:
+    en: EVAP system leak detection fault
+    ro: Defecțiune detectare pierdere în sistemul EVAP
+    de: Fehler bei der Leckageerkennung des EVAP-Systems
+    fr: Défaut de détection de fuite du système EVAP
+    es: Fallo de detección de fugas del sistema EVAP
+    it: Guasto rilevamento perdite sistema EVAP
+    nl: Storing in lekdetectie van het EVAP-systeem
+  description:
+    en: The evaporative emissions system cannot maintain the expected pressure or vacuum during leak testing.
+    ro: Sistemul de emisii evaporative nu poate menține presiunea sau vacuumul așteptat în timpul testului de etanșeitate.
+    de: Das EVAP-System kann während der Dichtheitsprüfung den erwarteten Druck oder Unterdruck nicht halten.
+    fr: Le système EVAP ne peut pas maintenir la pression ou la dépression attendue pendant le test d'étanchéité.
+    es: El sistema EVAP no puede mantener la presión o vacío esperado durante la prueba de fugas.
+    it: Il sistema EVAP non riesce a mantenere la pressione o il vuoto previsto durante il test di tenuta.
+    nl: Het EVAP-systeem kan tijdens de lektest de verwachte druk of onderdruk niet handhaven.
+  symptoms:
+    - en: Engine warning light
+      ro: Martor motor aprins
+      de: Motorkontrollleuchte
+      fr: Voyant moteur
+      es: Testigo de motor
+      it: Spia motore
+      nl: Motorstoringslampje
+    - en: Fuel vapour smell
+      ro: Miros de vapori de combustibil
+      de: Kraftstoffgeruch
+      fr: Odeur de carburant
+      es: Olor a combustible
+      it: Odore di carburante
+      nl: Brandstofgeur
+  possible_causes:
+    - en: Loose or leaking fuel tank cap
+      ro: Bușon rezervor slăbit sau neetanș
+      de: Lockerer oder undichter Tankdeckel
+      fr: Bouchon de réservoir mal serré ou fuyard
+      es: Tapón del depósito flojo o con fuga
+      it: Tappo del serbatoio allentato o non a tenuta
+      nl: Losse of lekkende tankdop
+    - en: Cracked EVAP hose
+      ro: Furtun EVAP fisurat
+      de: Gerissener EVAP-Schlauch
+      fr: Durite EVAP fissurée
+      es: Manguito EVAP agrietado
+      it: Tubo EVAP crepato
+      nl: Gebarsten EVAP-slang
+    - en: Faulty purge or vent valve
+      ro: Supapă purge sau ventilație defectă
+      de: Defektes Spül- oder Entlüftungsventil
+      fr: Électrovanne de purge ou de mise à l'air défectueuse
+      es: Válvula de purga o ventilación defectuosa
+      it: Valvola di spurgo o sfiato guasta
+      nl: Defecte purge- of ontluchtingsklep
+  diagnostic_steps:
+    - en: Inspect the fuel cap and EVAP lines for visible damage
+      ro: Inspectează bușonul rezervorului și conductele EVAP
+      de: Tankdeckel und EVAP-Leitungen auf sichtbare Schäden prüfen
+      fr: Inspecter le bouchon et les conduites EVAP
+      es: Inspeccionar tapón y conductos EVAP
+      it: Ispezionare tappo e tubazioni EVAP
+      nl: Tankdop en EVAP-leidingen op zichtbare schade controleren
+    - en: Perform a smoke test if a leak is suspected
+      ro: Efectuează un test cu fum dacă este suspectată o pierdere
+      de: Bei Verdacht auf Leck eine Rauchprüfung durchführen
+      fr: Effectuer un test à la fumée en cas de suspicion de fuite
+      es: Realizar una prueba de humo si se sospecha una fuga
+      it: Eseguire un test con fumo se si sospetta una perdita
+      nl: Een rooktest uitvoeren bij vermoeden van lekkage
+  keywords:
+    - EVAP leak
+    - evaporative emissions
+    - fuel vapour
+    - purge valve
+    - smoke test
+  related_dtcs: []
+  difficulty: intermediate
+
 - id: vw_early_petrol_low_compression
   vehicle:
     manufacturer: volkswagen
