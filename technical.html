@@ -206,7 +206,8 @@ function oneValueMatch(selected,value){
 const s=valueForms(selected),v=valueForms(value);if(!v.length)return true;
 for(const a of s)for(const b of v){
 const na=N(a),nb=N(b);
-if(!na||!nb||na==='all'||nb==='all'||na==='*'||nb==='*')return true;
+if(!na||!nb)continue;
+if(na==='all'||nb==='all'||na==='*'||nb==='*')return true;
 if(na===nb)return true;
 const A=tokens(a),B=tokens(b);if(A.size&&B.size){let common=0;for(const x of A)if(B.has(x))common++;if(common===Math.min(A.size,B.size))return true}
 }
@@ -214,8 +215,11 @@ return false
 }
 function matchesValue(selected,value){if(value==null)return true;const arr=Array.isArray(value)?value:[value];return!arr.length||arr.some(v=>oneValueMatch(selected,v))}
 function vehicleMatch(r,v){
-const x=r.vehicle||r.applicable||r.applicable_vehicle||r.vehicle_compatibility||{};
-return matchesValue(v.mk,x.manufacturers??x.manufacturer)&&matchesValue(v.m,x.models??x.model)&&matchesValue(v.g,x.generations??x.generation)&&matchesValue(v.e,x.engines??x.engine)
+const x=r.vehicle||r.applicable||r.applicable_vehicle||r.vehicle_compatibility;
+if(!x)return true;
+const model=x.models??x.model,generation=x.generations??x.generation,engine=x.engines??x.engine;
+if(model==null&&generation==null&&engine==null)return false;
+return matchesValue(v.m,model)&&matchesValue(v.g,generation)&&matchesValue(v.e,engine)
 }
 
 function score(r,a,q){
