@@ -6,6 +6,1217 @@ manufacturer:
 
 technical_data:
 
+- id: vw_modern_direct_injection_high_pressure_fuel_fault
+  vehicle:
+    manufacturers:
+      - volkswagen
+    models:
+      - volkswagen_golf
+      - volkswagen_polo
+      - volkswagen_jetta
+      - volkswagen_passat
+      - volkswagen_tiguan
+      - volkswagen_t_roc
+      - volkswagen_t_cross
+      - volkswagen_taigo
+      - volkswagen_arteon
+    generations:
+      - volkswagen_golf_mk5
+      - volkswagen_golf_mk6
+      - golf_vii
+      - golf_viii
+      - polo_v
+      - polo_vi
+      - jetta_vi
+      - passat_b6
+      - passat_b7
+      - passat_b8
+      - passat_b9
+      - tiguan_i
+      - tiguan_ii
+      - t_roc_i
+      - t_cross_i
+      - taigo_i
+      - arteon_i
+    engines:
+      - 14_tsi
+      - 14_tsi_105
+      - 14_tsi_122
+      - 14_tsi_140
+      - 14_tsi_150
+      - 14_tsi_160
+      - 15_tsi
+      - 15_tsi_130
+      - 15_tsi_150
+      - 18_tsi
+      - 20_tsi
+      - 20_tsi_190
+      - 20_tsi_200
+      - 20_tsi_220
+      - 20_tsi_280
+      - 20_tsi_320
+      - 20_tsi_gti
+      - 20_tsi_gti_clubsport
+      - 20_tsi_r
+  category: engine
+  system: fuel_system
+  title:
+    en: Direct Injection High-Pressure Fuel System Fault
+    ro: Defecțiune sistem de alimentare cu injecție directă la presiune înaltă
+    de: Fehler im Hochdruck-Kraftstoffsystem der Direkteinspritzung
+    fr: Défaut du système de carburant haute pression à injection directe
+    es: Fallo del sistema de combustible de alta presión de inyección directa
+    it: Guasto al sistema carburante ad alta pressione a iniezione diretta
+    nl: Storing in het hogedrukbrandstofsysteem van directe injectie
+  description:
+    en: A fault in the high-pressure fuel system can cause insufficient rail pressure, unstable combustion, hard starting or loss of engine power.
+    ro: O defecțiune a sistemului de alimentare la presiune înaltă poate provoca presiune insuficientă în rampă, ardere instabilă, pornire dificilă sau pierdere de putere.
+    de: Ein Fehler im Hochdruck-Kraftstoffsystem kann zu unzureichendem Raildruck, instabiler Verbrennung, schlechtem Startverhalten oder Leistungsverlust führen.
+    fr: Un défaut du système haute pression peut provoquer une pression de rampe insuffisante, une combustion instable, des difficultés de démarrage ou une perte de puissance.
+    es: Un fallo del sistema de alta presión puede provocar presión insuficiente en el rail, combustión inestable, dificultad de arranque o pérdida de potencia.
+    it: Un guasto del sistema ad alta pressione può causare pressione insufficiente nel rail, combustione instabile, difficoltà di avviamento o perdita di potenza.
+    nl: Een storing in het hogedrukbrandstofsysteem kan onvoldoende raildruk, instabiele verbranding, moeilijk starten of vermogensverlies veroorzaken.
+  symptoms:
+    - hard starting
+    - engine hesitation
+    - loss of power
+    - rough running
+    - engine misfire
+    - reduced fuel pressure
+  possible_causes:
+    - high pressure fuel pump fault
+    - low pressure fuel supply problem
+    - fuel pressure regulator fault
+    - restricted fuel filter
+    - fuel pressure sensor fault
+    - wiring or connector fault
+  diagnostic_steps:
+    - Read stored and pending fuel pressure related DTCs.
+    - Compare specified and actual rail pressure during cranking and acceleration.
+    - Check low pressure fuel supply before condemning the high pressure pump.
+    - Inspect the fuel pressure sensor and electrical connector.
+    - Check the high pressure pump control signal.
+  keywords:
+    - high pressure fuel pump
+    - rail pressure
+    - direct injection
+    - fuel pressure
+    - TSI fuel system
+  related_dtcs:
+    - P0087
+    - P0088
+    - P2293
+  difficulty: advanced
+
+- id: vw_modern_direct_injection_injector_fault
+  vehicle:
+    manufacturers:
+      - volkswagen
+    models:
+      - volkswagen_golf
+      - volkswagen_polo
+      - volkswagen_jetta
+      - volkswagen_passat
+      - volkswagen_tiguan
+      - volkswagen_t_roc
+      - volkswagen_t_cross
+      - volkswagen_taigo
+      - volkswagen_arteon
+    generations:
+      - volkswagen_golf_mk5
+      - volkswagen_golf_mk6
+      - golf_vii
+      - golf_viii
+      - polo_v
+      - polo_vi
+      - jetta_vi
+      - passat_b6
+      - passat_b7
+      - passat_b8
+      - passat_b9
+      - tiguan_i
+      - tiguan_ii
+      - t_roc_i
+      - t_cross_i
+      - taigo_i
+      - arteon_i
+    engines:
+      - 14_fsi
+      - 20_fsi
+      - 14_tsi
+      - 14_tsi_105
+      - 14_tsi_122
+      - 14_tsi_140
+      - 14_tsi_150
+      - 14_tsi_160
+      - 15_tsi
+      - 15_tsi_130
+      - 15_tsi_150
+      - 18_tsi
+      - 20_tsi
+      - 20_tsi_190
+      - 20_tsi_200
+      - 20_tsi_220
+      - 20_tsi_280
+      - 20_tsi_320
+      - 20_tsi_gti
+      - 20_tsi_gti_clubsport
+      - 20_tsi_r
+  category: engine
+  system: fuel_injection
+  title:
+    en: Direct Injection Fuel Injector Fault
+    ro: Defecțiune injector pentru injecție directă
+    de: Fehler eines Direkteinspritz-Injektors
+    fr: Défaut d'injecteur d'injection directe
+    es: Fallo de inyector de inyección directa
+    it: Guasto all'iniettore a iniezione diretta
+    nl: Storing van een directe-injectie-injector
+  description:
+    en: A faulty direct injection injector can cause misfire, rough idle, poor starting, increased fuel consumption and uneven combustion.
+    ro: Un injector defect pentru injecție directă poate provoca rateuri, ralanti instabil, pornire dificilă, consum crescut și ardere neuniformă.
+    de: Ein defekter Direkteinspritz-Injektor kann Fehlzündungen, unrunden Leerlauf, schlechtes Startverhalten und erhöhten Kraftstoffverbrauch verursachen.
+    fr: Un injecteur défectueux peut provoquer des ratés, un ralenti irrégulier, des difficultés de démarrage et une consommation accrue.
+    es: Un inyector defectuoso puede provocar fallos de encendido, ralentí irregular, dificultades de arranque y mayor consumo.
+    it: Un iniettore difettoso può causare mancate accensioni, minimo irregolare, difficoltà di avviamento e aumento dei consumi.
+    nl: Een defecte injector kan overslaan, onregelmatig stationair draaien, moeilijk starten en een hoger brandstofverbruik veroorzaken.
+  symptoms:
+    - engine misfire
+    - rough idle
+    - hard starting
+    - increased fuel consumption
+    - uneven engine operation
+  possible_causes:
+    - injector electrical fault
+    - injector nozzle contamination
+    - injector internal leakage
+    - fuel pressure problem
+    - injector wiring fault
+  diagnostic_steps:
+    - Read cylinder-specific misfire and injector DTCs.
+    - Compare cylinder contribution or smooth-running values.
+    - Check injector electrical resistance where applicable.
+    - Inspect injector wiring and connectors.
+    - Perform injector balance or leakage testing where supported.
+  keywords:
+    - injector
+    - direct injection injector
+    - TSI injector
+    - FSI injector
+    - misfire
+  related_dtcs:
+    - P0201
+    - P0202
+    - P0203
+    - P0204
+  difficulty: advanced
+
+- id: vw_modern_tsi_pcv_crankcase_ventilation_fault
+  vehicle:
+    manufacturers:
+      - volkswagen
+    models:
+      - volkswagen_golf
+      - volkswagen_polo
+      - volkswagen_jetta
+      - volkswagen_passat
+      - volkswagen_tiguan
+      - volkswagen_t_roc
+      - volkswagen_t_cross
+      - volkswagen_taigo
+      - volkswagen_arteon
+    generations:
+      - volkswagen_golf_mk5
+      - volkswagen_golf_mk6
+      - golf_vii
+      - golf_viii
+      - polo_v
+      - polo_vi
+      - jetta_vi
+      - passat_b6
+      - passat_b7
+      - passat_b8
+      - passat_b9
+      - tiguan_i
+      - tiguan_ii
+      - t_roc_i
+      - t_cross_i
+      - taigo_i
+      - arteon_i
+    engines:
+      - 14_tsi
+      - 14_tsi_105
+      - 14_tsi_122
+      - 14_tsi_140
+      - 14_tsi_150
+      - 14_tsi_160
+      - 15_tsi
+      - 15_tsi_130
+      - 15_tsi_150
+      - 18_tsi
+      - 20_tsi
+      - 20_tsi_190
+      - 20_tsi_200
+      - 20_tsi_220
+      - 20_tsi_280
+      - 20_tsi_320
+      - 20_tsi_gti
+      - 20_tsi_gti_clubsport
+      - 20_tsi_r
+  category: engine
+  system: crankcase_ventilation
+  title:
+    en: TSI Crankcase Ventilation and PCV Fault
+    ro: Defecțiune sistem ventilație carter și PCV TSI
+    de: Fehler der Kurbelgehäuseentlüftung und PCV bei TSI
+    fr: Défaut de ventilation du carter et du système PCV TSI
+    es: Fallo de ventilación del cárter y PCV TSI
+    it: Guasto alla ventilazione del basamento e al sistema PCV TSI
+    nl: Storing in carterventilatie en PCV van de TSI
+  description:
+    en: A faulty crankcase ventilation system can create an incorrect intake vacuum, oil consumption, whistling noises and mixture adaptation problems.
+    ro: Un sistem de ventilație a carterului defect poate produce vacuum incorect în admisie, consum de ulei, zgomote de șuierat și probleme de adaptare a amestecului.
+    de: Eine fehlerhafte Kurbelgehäuseentlüftung kann falschen Unterdruck, Ölverbrauch, Pfeifgeräusche und Gemischanpassungsprobleme verursachen.
+    fr: Un système de ventilation du carter défectueux peut provoquer une dépression incorrecte, une consommation d'huile, des sifflements et des problèmes d'adaptation du mélange.
+    es: Un sistema de ventilación del cárter defectuoso puede provocar vacío incorrecto, consumo de aceite, silbidos y problemas de adaptación de mezcla.
+    it: Un sistema di ventilazione del basamento difettoso può causare depressione errata, consumo d'olio, fischi e problemi di adattamento della miscela.
+    nl: Een defect carterventilatiesysteem kan verkeerde onderdruk, olieverbruik, fluitgeluiden en mengselcorrectieproblemen veroorzaken.
+  symptoms:
+    - rough idle
+    - whistling noise
+    - oil consumption
+    - lean mixture
+    - unstable idle
+  possible_causes:
+    - PCV diaphragm failure
+    - blocked crankcase breather
+    - cracked breather hose
+    - leaking PCV valve
+    - excessive crankcase pressure
+  diagnostic_steps:
+    - Check crankcase vacuum at idle.
+    - Inspect the PCV assembly and hoses.
+    - Check for abnormal whistling or air leakage.
+    - Compare fuel trims at idle and under load.
+    - Inspect for oil contamination around the PCV system.
+  keywords:
+    - PCV
+    - crankcase ventilation
+    - TSI breather
+    - crankcase pressure
+    - vacuum leak
+  related_dtcs:
+    - P0171
+    - P0507
+  difficulty: intermediate
+
+- id: vw_modern_tsi_intake_valve_carbon_deposits
+  vehicle:
+    manufacturers:
+      - volkswagen
+    models:
+      - volkswagen_golf
+      - volkswagen_polo
+      - volkswagen_jetta
+      - volkswagen_passat
+      - volkswagen_tiguan
+      - volkswagen_t_roc
+      - volkswagen_t_cross
+      - volkswagen_taigo
+      - volkswagen_arteon
+    generations:
+      - volkswagen_golf_mk5
+      - volkswagen_golf_mk6
+      - golf_vii
+      - golf_viii
+      - polo_v
+      - polo_vi
+      - jetta_vi
+      - passat_b6
+      - passat_b7
+      - passat_b8
+      - passat_b9
+      - tiguan_i
+      - tiguan_ii
+      - t_roc_i
+      - t_cross_i
+      - taigo_i
+      - arteon_i
+    engines:
+      - 14_tsi
+      - 14_tsi_105
+      - 14_tsi_122
+      - 14_tsi_140
+      - 14_tsi_150
+      - 14_tsi_160
+      - 15_tsi
+      - 15_tsi_130
+      - 15_tsi_150
+      - 18_tsi
+      - 20_tsi
+      - 20_tsi_190
+      - 20_tsi_200
+      - 20_tsi_220
+      - 20_tsi_280
+      - 20_tsi_320
+      - 20_tsi_gti
+      - 20_tsi_gti_clubsport
+      - 20_tsi_r
+  category: engine
+  system: intake
+  title:
+    en: TSI Intake Valve Carbon Deposits
+    ro: Depuneri de carbon pe supapele de admisie TSI
+    de: Kohlenstoffablagerungen an TSI-Einlassventilen
+    fr: Dépôts de carbone sur les soupapes d'admission TSI
+    es: Depósitos de carbono en las válvulas de admisión TSI
+    it: Depositi carboniosi sulle valvole di aspirazione TSI
+    nl: Koolafzettingen op TSI-inlaatkleppen
+  description:
+    en: Carbon deposits on intake valves can restrict airflow and disturb cylinder filling, especially on direct-injection petrol engines.
+    ro: Depunerile de carbon pe supapele de admisie pot restricționa fluxul de aer și pot afecta umplerea cilindrilor, în special la motoarele pe benzină cu injecție directă.
+    de: Kohlenstoffablagerungen an Einlassventilen können den Luftstrom und die Zylinderfüllung beeinträchtigen.
+    fr: Les dépôts de carbone sur les soupapes d'admission peuvent réduire le débit d'air et perturber le remplissage des cylindres.
+    es: Los depósitos de carbono pueden reducir el flujo de aire y alterar el llenado de los cilindros.
+    it: I depositi carboniosi possono ridurre il flusso d'aria e compromettere il riempimento dei cilindri.
+    nl: Koolafzettingen kunnen de luchtstroom beperken en de cilindervulling verstoren.
+  symptoms:
+    - rough idle
+    - hesitation
+    - reduced power
+    - misfire
+    - poor throttle response
+  possible_causes:
+    - intake valve carbon buildup
+    - crankcase vapour deposits
+    - short trip operation
+    - oil vapour contamination
+  diagnostic_steps:
+    - Check misfire counters by cylinder.
+    - Inspect intake airflow and fuel trims.
+    - Inspect the intake ports with a borescope where possible.
+    - Remove the intake manifold if physical inspection is required.
+    - Clean the intake valves using an appropriate carbon removal method.
+  keywords:
+    - intake valve carbon
+    - carbon buildup
+    - TSI
+    - direct injection
+    - intake deposits
+  related_dtcs:
+    - P0300
+    - P0301
+    - P0302
+    - P0303
+    - P0304
+  difficulty: advanced
+
+- id: vw_modern_tsi_variable_valve_timing_fault
+  vehicle:
+    manufacturers:
+      - volkswagen
+    models:
+      - volkswagen_golf
+      - volkswagen_polo
+      - volkswagen_jetta
+      - volkswagen_passat
+      - volkswagen_tiguan
+      - volkswagen_t_roc
+      - volkswagen_t_cross
+      - volkswagen_taigo
+      - volkswagen_arteon
+    generations:
+      - volkswagen_golf_mk5
+      - volkswagen_golf_mk6
+      - golf_vii
+      - golf_viii
+      - polo_v
+      - polo_vi
+      - jetta_vi
+      - passat_b6
+      - passat_b7
+      - passat_b8
+      - passat_b9
+      - tiguan_i
+      - tiguan_ii
+      - t_roc_i
+      - t_cross_i
+      - taigo_i
+      - arteon_i
+    engines:
+      - 14_tsi
+      - 14_tsi_105
+      - 14_tsi_122
+      - 14_tsi_140
+      - 14_tsi_150
+      - 14_tsi_160
+      - 15_tsi
+      - 15_tsi_130
+      - 15_tsi_150
+      - 18_tsi
+      - 20_tsi
+      - 20_tsi_190
+      - 20_tsi_200
+      - 20_tsi_220
+      - 20_tsi_280
+      - 20_tsi_320
+      - 20_tsi_gti
+      - 20_tsi_gti_clubsport
+      - 20_tsi_r
+  category: engine
+  system: valve_timing
+  title:
+    en: TSI Variable Valve Timing Fault
+    ro: Defecțiune sistem distribuție variabilă TSI
+    de: Fehler der variablen Ventilsteuerung beim TSI
+    fr: Défaut de distribution variable sur moteur TSI
+    es: Fallo de distribución variable en motor TSI
+    it: Guasto alla fasatura variabile del motore TSI
+    nl: Storing van variabele kleptiming bij TSI
+  description:
+    en: A fault in the variable valve timing system can cause poor torque, rough running, reduced power and camshaft timing faults.
+    ro: O defecțiune a sistemului de distribuție variabilă poate provoca cuplu redus, funcționare instabilă, pierdere de putere și erori de sincronizare a arborilor cu came.
+    de: Ein Fehler der variablen Ventilsteuerung kann Drehmomentverlust, unrunden Motorlauf und Leistungsverlust verursachen.
+    fr: Un défaut de distribution variable peut provoquer une perte de couple, un fonctionnement irrégulier et une perte de puissance.
+    es: Un fallo de la distribución variable puede provocar pérdida de par, funcionamiento irregular y pérdida de potencia.
+    it: Un guasto della fasatura variabile può causare perdita di coppia, funzionamento irregolare e perdita di potenza.
+    nl: Een storing in de variabele kleptiming kan koppelverlies, onregelmatig lopen en vermogensverlies veroorzaken.
+  symptoms:
+    - rough running
+    - reduced power
+    - poor low rpm torque
+    - hard starting
+    - camshaft timing fault
+  possible_causes:
+    - camshaft control valve fault
+    - oil pressure problem
+    - contaminated engine oil
+    - timing actuator fault
+    - wiring fault
+    - mechanical timing problem
+  diagnostic_steps:
+    - Read camshaft timing DTCs.
+    - Check engine oil level and condition.
+    - Inspect the camshaft control solenoid.
+    - Compare commanded and actual camshaft position.
+    - Verify mechanical timing if electronic checks are inconclusive.
+  keywords:
+    - variable valve timing
+    - camshaft adjustment
+    - TSI timing
+    - camshaft actuator
+  related_dtcs:
+    - P0010
+    - P0011
+    - P0016
+    - P0017
+  difficulty: advanced
+
+- id: vw_modern_tsi_turbocharger_wastegate_fault
+  vehicle:
+    manufacturers:
+      - volkswagen
+    models:
+      - volkswagen_golf
+      - volkswagen_polo
+      - volkswagen_jetta
+      - volkswagen_passat
+      - volkswagen_tiguan
+      - volkswagen_t_roc
+      - volkswagen_t_cross
+      - volkswagen_taigo
+      - volkswagen_arteon
+    generations:
+      - volkswagen_golf_mk5
+      - volkswagen_golf_mk6
+      - golf_vii
+      - golf_viii
+      - polo_v
+      - polo_vi
+      - jetta_vi
+      - passat_b6
+      - passat_b7
+      - passat_b8
+      - passat_b9
+      - tiguan_i
+      - tiguan_ii
+      - t_roc_i
+      - t_cross_i
+      - taigo_i
+      - arteon_i
+    engines:
+      - 14_tsi
+      - 14_tsi_105
+      - 14_tsi_122
+      - 14_tsi_140
+      - 14_tsi_150
+      - 14_tsi_160
+      - 15_tsi
+      - 15_tsi_130
+      - 15_tsi_150
+      - 18_tsi
+      - 20_tsi
+      - 20_tsi_190
+      - 20_tsi_200
+      - 20_tsi_220
+      - 20_tsi_280
+      - 20_tsi_320
+      - 20_tsi_gti
+      - 20_tsi_gti_clubsport
+      - 20_tsi_r
+  category: engine
+  system: turbocharging
+  title:
+    en: TSI Turbocharger Wastegate Fault
+    ro: Defecțiune wastegate turbină TSI
+    de: Fehler am Wastegate des TSI-Turboladers
+    fr: Défaut de wastegate du turbocompresseur TSI
+    es: Fallo de la wastegate del turbocompresor TSI
+    it: Guasto alla wastegate del turbocompressore TSI
+    nl: Storing van de wastegate van de TSI-turbo
+  description:
+    en: A sticking, worn or incorrectly controlled wastegate can cause boost pressure deviation, poor acceleration and reduced engine power.
+    ro: O wastegate blocată, uzată sau comandată incorect poate provoca abaterea presiunii de supraalimentare, accelerație slabă și pierdere de putere.
+    de: Ein klemmendes, verschlissenes oder falsch angesteuertes Wastegate kann Ladedruckabweichungen und Leistungsverlust verursachen.
+    fr: Une wastegate grippée, usée ou mal commandée peut provoquer un écart de pression de suralimentation et une perte de puissance.
+    es: Una wastegate atascada, desgastada o mal controlada puede provocar desviaciones de presión de sobrealimentación y pérdida de potencia.
+    it: Una wastegate bloccata, usurata o comandata in modo errato può causare anomalie di pressione e perdita di potenza.
+    nl: Een vastzittende, versleten of verkeerd aangestuurde wastegate kan afwijkende turbodruk en vermogensverlies veroorzaken.
+  symptoms:
+    - poor acceleration
+    - underboost
+    - overboost
+    - reduced power
+    - intermittent limp mode
+  possible_causes:
+    - wastegate actuator fault
+    - worn wastegate mechanism
+    - turbocharger mechanical fault
+    - boost control wiring fault
+    - vacuum or pressure control problem
+  diagnostic_steps:
+    - Read boost pressure related DTCs.
+    - Compare requested and actual boost pressure.
+    - Check wastegate actuator movement.
+    - Inspect the actuator linkage for excessive play.
+    - Check boost control hoses and electrical connections.
+  keywords:
+    - wastegate
+    - turbocharger
+    - boost pressure
+    - TSI turbo
+    - underboost
+    - overboost
+  related_dtcs:
+    - P0299
+    - P0234
+  difficulty: advanced
+
+- id: vw_modern_tsi_charge_air_pressure_sensor_fault
+  vehicle:
+    manufacturers:
+      - volkswagen
+    models:
+      - volkswagen_golf
+      - volkswagen_polo
+      - volkswagen_jetta
+      - volkswagen_passat
+      - volkswagen_tiguan
+      - volkswagen_t_roc
+      - volkswagen_t_cross
+      - volkswagen_taigo
+      - volkswagen_arteon
+    generations:
+      - volkswagen_golf_mk5
+      - volkswagen_golf_mk6
+      - golf_vii
+      - golf_viii
+      - polo_v
+      - polo_vi
+      - jetta_vi
+      - passat_b6
+      - passat_b7
+      - passat_b8
+      - passat_b9
+      - tiguan_i
+      - tiguan_ii
+      - t_roc_i
+      - t_cross_i
+      - taigo_i
+      - arteon_i
+    engines:
+      - 14_tsi
+      - 14_tsi_105
+      - 14_tsi_122
+      - 14_tsi_140
+      - 14_tsi_150
+      - 14_tsi_160
+      - 15_tsi
+      - 15_tsi_130
+      - 15_tsi_150
+      - 18_tsi
+      - 20_tsi
+      - 20_tsi_190
+      - 20_tsi_200
+      - 20_tsi_220
+      - 20_tsi_280
+      - 20_tsi_320
+      - 20_tsi_gti
+      - 20_tsi_gti_clubsport
+      - 20_tsi_r
+  category: engine
+  system: turbocharging
+  title:
+    en: TSI Charge Air Pressure Sensor Fault
+    ro: Defecțiune senzor presiune aer supraalimentare TSI
+    de: Fehler des Ladedrucksensors beim TSI
+    fr: Défaut du capteur de pression de suralimentation TSI
+    es: Fallo del sensor de presión de sobrealimentación TSI
+    it: Guasto al sensore di pressione di sovralimentazione TSI
+    nl: Storing van de turbodruksensor TSI
+  description:
+    en: An incorrect charge air pressure signal can cause incorrect boost control, poor engine response and reduced power.
+    ro: Un semnal incorect al senzorului de presiune din circuitul de supraalimentare poate provoca reglarea incorectă a presiunii, răspuns slab și pierdere de putere.
+    de: Ein falsches Signal des Ladedrucksensors kann zu fehlerhafter Ladedruckregelung und Leistungsverlust führen.
+    fr: Un signal incorrect du capteur de pression de suralimentation peut perturber la régulation et réduire les performances.
+    es: Una señal incorrecta del sensor de presión puede alterar el control de sobrealimentación y reducir la potencia.
+    it: Un segnale errato del sensore di pressione può compromettere il controllo della sovralimentazione e ridurre le prestazioni.
+    nl: Een verkeerd signaal van de turbodruksensor kan de turbodrukregeling verstoren en vermogensverlies veroorzaken.
+  symptoms:
+    - reduced power
+    - poor throttle response
+    - underboost
+    - overboost
+    - engine warning light
+  possible_causes:
+    - pressure sensor failure
+    - wiring fault
+    - connector corrosion
+    - intake pressure leak
+    - reference voltage fault
+  diagnostic_steps:
+    - Read boost pressure sensor DTCs.
+    - Compare sensor reading with atmospheric pressure before starting.
+    - Check sensor supply voltage and ground.
+    - Inspect the connector and wiring.
+    - Compare requested and measured boost pressure during a road test.
+  keywords:
+    - MAP sensor
+    - charge air pressure
+    - boost pressure sensor
+    - TSI
+    - turbo pressure
+  related_dtcs:
+    - P0236
+    - P0237
+    - P0238
+  difficulty: intermediate
+
+- id: vw_modern_tsi_intake_manifold_runner_fault
+  vehicle:
+    manufacturers:
+      - volkswagen
+    models:
+      - volkswagen_golf
+      - volkswagen_polo
+      - volkswagen_jetta
+      - volkswagen_passat
+      - volkswagen_tiguan
+      - volkswagen_t_roc
+      - volkswagen_t_cross
+      - volkswagen_taigo
+      - volkswagen_arteon
+    generations:
+      - volkswagen_golf_mk5
+      - volkswagen_golf_mk6
+      - golf_vii
+      - golf_viii
+      - polo_v
+      - polo_vi
+      - jetta_vi
+      - passat_b6
+      - passat_b7
+      - passat_b8
+      - passat_b9
+      - tiguan_i
+      - tiguan_ii
+      - t_roc_i
+      - t_cross_i
+      - taigo_i
+      - arteon_i
+    engines:
+      - 14_tsi
+      - 14_tsi_105
+      - 14_tsi_122
+      - 14_tsi_140
+      - 14_tsi_150
+      - 14_tsi_160
+      - 15_tsi
+      - 15_tsi_130
+      - 15_tsi_150
+      - 18_tsi
+      - 20_tsi
+      - 20_tsi_190
+      - 20_tsi_200
+      - 20_tsi_220
+      - 20_tsi_280
+      - 20_tsi_320
+      - 20_tsi_gti
+      - 20_tsi_gti_clubsport
+      - 20_tsi_r
+  category: engine
+  system: intake
+  title:
+    en: TSI Intake Manifold Runner Fault
+    ro: Defecțiune clapete galerie de admisie TSI
+    de: Fehler der Saugrohrklappen beim TSI
+    fr: Défaut des volets du collecteur d'admission TSI
+    es: Fallo de las mariposas del colector de admisión TSI
+    it: Guasto alle farfalle del collettore di aspirazione TSI
+    nl: Storing van de inlaatspruitstukkleppen TSI
+  description:
+    en: A malfunction of the intake manifold runner mechanism can affect airflow distribution and engine performance.
+    ro: Defecțiunea mecanismului clapetelor galeriei de admisie poate afecta distribuția aerului și performanța motorului.
+    de: Eine Fehlfunktion der Saugrohrklappen kann die Luftverteilung und Motorleistung beeinträchtigen.
+    fr: Une défaillance des volets du collecteur peut perturber la distribution de l'air et les performances du moteur.
+    es: Un fallo del mecanismo del colector puede alterar la distribución del aire y el rendimiento del motor.
+    it: Un guasto al meccanismo delle farfalle del collettore può compromettere la distribuzione dell'aria e le prestazioni.
+    nl: Een storing van het kleppenmechanisme kan de luchtverdeling en motorprestaties beïnvloeden.
+  symptoms:
+    - reduced power
+    - rough idle
+    - hesitation
+    - poor acceleration
+    - engine warning light
+  possible_causes:
+    - runner actuator failure
+    - carbon contamination
+    - broken linkage
+    - position sensor fault
+    - wiring fault
+  diagnostic_steps:
+    - Read intake manifold actuator DTCs.
+    - Check commanded and actual flap position.
+    - Inspect the actuator and linkage.
+    - Check for mechanical obstruction or carbon contamination.
+    - Check wiring and connector integrity.
+  keywords:
+    - intake manifold runner
+    - intake flap
+    - manifold flap
+    - TSI intake
+  related_dtcs:
+    - P2004
+    - P2006
+    - P2015
+  difficulty: advanced
+
+- id: vw_modern_tsi_ignition_misfire_under_load
+  vehicle:
+    manufacturers:
+      - volkswagen
+    models:
+      - volkswagen_golf
+      - volkswagen_polo
+      - volkswagen_jetta
+      - volkswagen_passat
+      - volkswagen_tiguan
+      - volkswagen_t_roc
+      - volkswagen_t_cross
+      - volkswagen_taigo
+      - volkswagen_arteon
+    generations:
+      - volkswagen_golf_mk5
+      - volkswagen_golf_mk6
+      - golf_vii
+      - golf_viii
+      - polo_v
+      - polo_vi
+      - jetta_vi
+      - passat_b6
+      - passat_b7
+      - passat_b8
+      - passat_b9
+      - tiguan_i
+      - tiguan_ii
+      - t_roc_i
+      - t_cross_i
+      - taigo_i
+      - arteon_i
+    engines:
+      - 14_tsi
+      - 14_tsi_105
+      - 14_tsi_122
+      - 14_tsi_140
+      - 14_tsi_150
+      - 14_tsi_160
+      - 15_tsi
+      - 15_tsi_130
+      - 15_tsi_150
+      - 18_tsi
+      - 20_tsi
+      - 20_tsi_190
+      - 20_tsi_200
+      - 20_tsi_220
+      - 20_tsi_280
+      - 20_tsi_320
+      - 20_tsi_gti
+      - 20_tsi_gti_clubsport
+      - 20_tsi_r
+  category: engine
+  system: ignition
+  title:
+    en: TSI Ignition Misfire Under Load
+    ro: Rateu de aprindere TSI sub sarcină
+    de: Zündaussetzer beim TSI unter Last
+    fr: Ratés d'allumage TSI sous charge
+    es: Fallos de encendido TSI bajo carga
+    it: Mancate accensioni TSI sotto carico
+    nl: TSI-ontstekingsmisfire onder belasting
+  description:
+    en: Misfire that appears mainly under load can be caused by ignition, fuel delivery, boost or internal engine problems.
+    ro: Rateurile care apar în special sub sarcină pot fi provocate de aprindere, alimentare, supraalimentare sau probleme interne ale motorului.
+    de: Zündaussetzer unter Last können durch Zündung, Kraftstoffversorgung, Ladedruck oder interne Motorprobleme verursacht werden.
+    fr: Des ratés sous charge peuvent être liés à l'allumage, à l'alimentation, à la suralimentation ou au moteur.
+    es: Los fallos bajo carga pueden estar relacionados con el encendido, combustible, sobrealimentación o problemas internos.
+    it: Le mancate accensioni sotto carico possono essere causate da accensione, alimentazione, sovralimentazione o problemi interni.
+    nl: Misfires onder belasting kunnen worden veroorzaakt door ontsteking, brandstof, turbodruk of interne motorproblemen.
+  symptoms:
+    - misfire under acceleration
+    - hesitation under load
+    - loss of power
+    - flashing engine warning light
+    - rough running
+  possible_causes:
+    - worn spark plugs
+    - ignition coil failure
+    - injector fault
+    - boost leak
+    - fuel pressure problem
+    - carbon deposits
+  diagnostic_steps:
+    - Identify the affected cylinder using misfire counters.
+    - Inspect and test the spark plug.
+    - Swap ignition coils between cylinders and observe whether the misfire follows.
+    - Check injector operation and fuel pressure.
+    - Check boost pressure and intake leaks.
+  keywords:
+    - TSI misfire
+    - misfire under load
+    - ignition coil
+    - spark plug
+    - cylinder misfire
+  related_dtcs:
+    - P0300
+    - P0301
+    - P0302
+    - P0303
+    - P0304
+  difficulty: intermediate
+
+- id: vw_modern_tsi_cooling_thermostat_module_fault
+  vehicle:
+    manufacturers:
+      - volkswagen
+    models:
+      - volkswagen_golf
+      - volkswagen_polo
+      - volkswagen_jetta
+      - volkswagen_passat
+      - volkswagen_tiguan
+      - volkswagen_t_roc
+      - volkswagen_t_cross
+      - volkswagen_taigo
+      - volkswagen_arteon
+    generations:
+      - volkswagen_golf_mk5
+      - volkswagen_golf_mk6
+      - golf_vii
+      - golf_viii
+      - polo_v
+      - polo_vi
+      - jetta_vi
+      - passat_b6
+      - passat_b7
+      - passat_b8
+      - passat_b9
+      - tiguan_i
+      - tiguan_ii
+      - t_roc_i
+      - t_cross_i
+      - taigo_i
+      - arteon_i
+    engines:
+      - 14_tsi
+      - 14_tsi_105
+      - 14_tsi_122
+      - 14_tsi_140
+      - 14_tsi_150
+      - 14_tsi_160
+      - 15_tsi
+      - 15_tsi_130
+      - 15_tsi_150
+      - 18_tsi
+      - 20_tsi
+      - 20_tsi_190
+      - 20_tsi_200
+      - 20_tsi_220
+      - 20_tsi_280
+      - 20_tsi_320
+      - 20_tsi_gti
+      - 20_tsi_gti_clubsport
+      - 20_tsi_r
+  category: engine
+  system: cooling
+  title:
+    en: TSI Thermostat and Cooling Module Fault
+    ro: Defecțiune termostat și modul de răcire TSI
+    de: Fehler am Thermostat- und Kühlmodul des TSI
+    fr: Défaut du thermostat et du module de refroidissement TSI
+    es: Fallo del termostato y módulo de refrigeración TSI
+    it: Guasto al termostato e al modulo di raffreddamento TSI
+    nl: Storing van thermostaat en koelmodule TSI
+  description:
+    en: A thermostat or cooling module fault can cause incorrect engine temperature regulation, slow warm-up or overheating.
+    ro: O defecțiune a termostatului sau a modulului de răcire poate provoca reglarea incorectă a temperaturii, încălzire lentă sau supraîncălzire.
+    de: Ein Fehler am Thermostat oder Kühlmodul kann eine falsche Temperaturregelung, langsames Aufwärmen oder Überhitzung verursachen.
+    fr: Un défaut du thermostat ou du module de refroidissement peut provoquer une mauvaise régulation de température, une montée en température lente ou une surchauffe.
+    es: Un fallo del termostato o módulo de refrigeración puede provocar una regulación incorrecta, calentamiento lento o sobrecalentamiento.
+    it: Un guasto al termostato o al modulo di raffreddamento può causare regolazione errata della temperatura, riscaldamento lento o surriscaldamento.
+    nl: Een storing van de thermostaat of koelmodule kan verkeerde temperatuurregeling, langzaam opwarmen of oververhitting veroorzaken.
+  symptoms:
+    - engine runs too cold
+    - overheating
+    - slow warm-up
+    - coolant temperature fluctuation
+    - cooling fan running excessively
+  possible_causes:
+    - thermostat failure
+    - thermostat housing leak
+    - coolant temperature sensor fault
+    - cooling module fault
+    - coolant circulation problem
+  diagnostic_steps:
+    - Read coolant temperature related DTCs.
+    - Monitor actual coolant temperature from live data.
+    - Compare coolant temperature with engine warm-up behavior.
+    - Check thermostat operation.
+    - Inspect the cooling module and coolant circuit for leaks.
+  keywords:
+    - TSI thermostat
+    - cooling module
+    - coolant temperature
+    - thermostat fault
+  related_dtcs:
+    - P2181
+    - P0128
+  difficulty: intermediate
+
+- id: vw_modern_tsi_crankshaft_camshaft_sync_fault
+  vehicle:
+    manufacturers:
+      - volkswagen
+    models:
+      - volkswagen_golf
+      - volkswagen_polo
+      - volkswagen_jetta
+      - volkswagen_passat
+      - volkswagen_tiguan
+      - volkswagen_t_roc
+      - volkswagen_t_cross
+      - volkswagen_taigo
+      - volkswagen_arteon
+    generations:
+      - volkswagen_golf_mk5
+      - volkswagen_golf_mk6
+      - golf_vii
+      - golf_viii
+      - polo_v
+      - polo_vi
+      - jetta_vi
+      - passat_b6
+      - passat_b7
+      - passat_b8
+      - passat_b9
+      - tiguan_i
+      - tiguan_ii
+      - t_roc_i
+      - t_cross_i
+      - taigo_i
+      - arteon_i
+    engines:
+      - 14_tsi
+      - 14_tsi_105
+      - 14_tsi_122
+      - 14_tsi_140
+      - 14_tsi_150
+      - 14_tsi_160
+      - 15_tsi
+      - 15_tsi_130
+      - 15_tsi_150
+      - 18_tsi
+      - 20_tsi
+      - 20_tsi_190
+      - 20_tsi_200
+      - 20_tsi_220
+      - 20_tsi_280
+      - 20_tsi_320
+      - 20_tsi_gti
+      - 20_tsi_gti_clubsport
+      - 20_tsi_r
+  category: engine
+  system: engine_timing
+  title:
+    en: TSI Crankshaft Camshaft Synchronization Fault
+    ro: Defecțiune sincronizare arbore cotit și arbore cu came TSI
+    de: Fehler der Kurbelwellen-Nockenwellen-Synchronisation beim TSI
+    fr: Défaut de synchronisation vilebrequin-arbre à cames TSI
+    es: Fallo de sincronización entre cigüeñal y árbol de levas TSI
+    it: Guasto sincronizzazione albero motore-albero a camme TSI
+    nl: Storing in de synchronisatie tussen krukas en nokkenas TSI
+  description:
+    en: Incorrect crankshaft and camshaft synchronization can be caused by mechanical timing problems, sensor faults or variable valve timing faults.
+    ro: Sincronizarea incorectă dintre arborele cotit și arborele cu came poate fi provocată de probleme mecanice ale distribuției, senzori sau sistemul de distribuție variabilă.
+    de: Eine falsche Synchronisation kann durch mechanische Steuerzeiten, Sensorfehler oder die variable Ventilsteuerung verursacht werden.
+    fr: Une mauvaise synchronisation peut être due à un problème mécanique de distribution, à un capteur ou à la distribution variable.
+    es: Una sincronización incorrecta puede deberse a problemas mecánicos de distribución, sensores o distribución variable.
+    it: Una sincronizzazione errata può essere causata da problemi meccanici della distribuzione, sensori o fasatura variabile.
+    nl: Een verkeerde synchronisatie kan worden veroorzaakt door mechanische timingproblemen, sensoren of variabele kleptiming.
+  symptoms:
+    - hard starting
+    - rough running
+    - engine misfire
+    - loss of power
+    - engine warning light
+  possible_causes:
+    - timing chain stretch
+    - timing belt timing error
+    - camshaft sensor fault
+    - crankshaft sensor fault
+    - variable valve timing fault
+  diagnostic_steps:
+    - Read synchronization related DTCs.
+    - Compare camshaft and crankshaft position signals.
+    - Check actual camshaft adaptation values.
+    - Inspect mechanical timing if synchronization remains incorrect.
+    - Check timing chain or belt condition where applicable.
+  keywords:
+    - crankshaft camshaft correlation
+    - engine synchronization
+    - timing chain
+    - timing belt
+    - TSI timing
+  related_dtcs:
+    - P0016
+    - P0017
+    - P0341
+    - P0335
+  difficulty: advanced
+
+- id: vw_modern_tsi_evap_leak_detection_fault
+  vehicle:
+    manufacturers:
+      - volkswagen
+    models:
+      - volkswagen_golf
+      - volkswagen_polo
+      - volkswagen_jetta
+      - volkswagen_passat
+      - volkswagen_tiguan
+      - volkswagen_t_roc
+      - volkswagen_t_cross
+      - volkswagen_taigo
+      - volkswagen_arteon
+    generations:
+      - volkswagen_golf_mk5
+      - volkswagen_golf_mk6
+      - golf_vii
+      - golf_viii
+      - polo_v
+      - polo_vi
+      - jetta_vi
+      - passat_b6
+      - passat_b7
+      - passat_b8
+      - passat_b9
+      - tiguan_i
+      - tiguan_ii
+      - t_roc_i
+      - t_cross_i
+      - taigo_i
+      - arteon_i
+    engines:
+      - 14_fsi
+      - 20_fsi
+      - 14_tsi
+      - 14_tsi_105
+      - 14_tsi_122
+      - 14_tsi_140
+      - 14_tsi_150
+      - 14_tsi_160
+      - 15_tsi
+      - 15_tsi_130
+      - 15_tsi_150
+      - 18_tsi
+      - 20_tsi
+      - 20_tsi_190
+      - 20_tsi_200
+      - 20_tsi_220
+      - 20_tsi_280
+      - 20_tsi_320
+      - 20_tsi_gti
+      - 20_tsi_gti_clubsport
+      - 20_tsi_r
+  category: engine
+  system: evap
+  title:
+    en: TSI EVAP System Leak Detection Fault
+    ro: Defecțiune detectare scurgere sistem EVAP TSI
+    de: Fehler bei der EVAP-Leckerkennung beim TSI
+    fr: Défaut de détection de fuite du système EVAP TSI
+    es: Fallo de detección de fugas del sistema EVAP TSI
+    it: Guasto al rilevamento perdite del sistema EVAP TSI
+    nl: Storing bij lekdetectie van het EVAP-systeem TSI
+  description:
+    en: A leak or malfunction in the evaporative emissions system can cause fuel vapour leakage, mixture adaptation problems and an engine warning light.
+    ro: O scurgere sau o defecțiune în sistemul de vapori de combustibil poate provoca pierderi de vapori, probleme de adaptare a amestecului și aprinderea martorului motor.
+    de: Eine Undichtigkeit oder Fehlfunktion des EVAP-Systems kann Kraftstoffdämpfe freisetzen und Gemischprobleme verursachen.
+    fr: Une fuite ou un défaut du système EVAP peut provoquer une fuite de vapeurs de carburant et des problèmes d'adaptation du mélange.
+    es: Una fuga o avería del sistema EVAP puede provocar pérdidas de vapores de combustible y problemas de adaptación de mezcla.
+    it: Una perdita o un guasto del sistema EVAP può causare fuoriuscita di vapori e problemi di adattamento della miscela.
+    nl: Een lekkage of storing in het EVAP-systeem kan brandstofdampen laten ontsnappen en mengselcorrectieproblemen veroorzaken.
+  symptoms:
+    - engine warning light
+    - fuel vapour smell
+    - lean mixture
+    - rough idle
+    - hard starting after refuelling
+  possible_causes:
+    - loose fuel filler cap
+    - EVAP hose leak
+    - purge valve fault
+    - charcoal canister fault
+    - leak detection pump fault
+    - fuel tank ventilation fault
+  diagnostic_steps:
+    - Read EVAP related DTCs.
+    - Inspect the fuel filler cap and sealing surface.
+    - Check EVAP hoses and connections.
+    - Test purge valve operation.
+    - Perform an EVAP smoke test if required.
+  keywords:
+    - EVAP
+    - evaporative emissions
+    - fuel vapour leak
+    - purge valve
+    - leak detection
+  related_dtcs:
+    - P0442
+    - P0455
+    - P0456
+    - P0441
+  difficulty: intermediate
+
 - id: vw_early_petrol_low_compression
   vehicle:
     manufacturer: volkswagen
