@@ -6,6 +6,736 @@ manufacturer:
 
 technical_data:
 
+schema_version: 1
+
+manufacturer:
+  id: volkswagen
+  name: Volkswagen
+
+technical_data:
+
+# ============================================================
+# HIGH PRESSURE FUEL SYSTEM
+# ============================================================
+
+- id: vw_modern_direct_injection_high_pressure_fuel_fault
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - jetta
+    generations:
+      - jetta_mk5
+    engines:
+      - 1598_115
+      - 1984_fsi_150
+      - 1984_tfsi_200
+      - 1390_tsi_140
+      - 1390_tsi_170
+  category: diagnostics
+  system: fuel
+  title:
+    en: Direct-injection high-pressure fuel system fault
+    ro: Defecțiune a sistemului de alimentare de înaltă presiune pentru injecție directă
+    de: Fehler im Hochdruck-Kraftstoffsystem der Direkteinspritzung
+    fr: Défaut du système de carburant haute pression à injection directe
+    es: Fallo del sistema de combustible de alta presión de inyección directa
+    it: Guasto al sistema carburante ad alta pressione a iniezione diretta
+    nl: Storing in het hogedrukbrandstofsysteem van de directe injectie
+  description:
+    en: A fault in the high-pressure fuel system can prevent the engine from maintaining the required rail pressure during starting, idling or acceleration.
+    ro: O defecțiune a sistemului de înaltă presiune poate împiedica motorul să mențină presiunea necesară în rampă la pornire, ralanti sau accelerație.
+    de: Ein Fehler im Hochdruck-Kraftstoffsystem kann dazu führen, dass der erforderliche Raildruck beim Starten, im Leerlauf oder unter Last nicht gehalten wird.
+    fr: Un défaut du système de carburant haute pression peut empêcher le maintien de la pression de rampe requise au démarrage, au ralenti ou en accélération.
+    es: Una avería en el sistema de combustible de alta presión puede impedir mantener la presión necesaria del raíl durante el arranque, ralentí o aceleración.
+    it: Un guasto al sistema carburante ad alta pressione può impedire di mantenere la pressione richiesta nel rail durante avviamento, minimo o accelerazione.
+    nl: Een storing in het hogedrukbrandstofsysteem kan ervoor zorgen dat de vereiste raildruk tijdens starten, stationair draaien of accelereren niet wordt gehandhaafd.
+  symptoms:
+    - en: Hard starting or extended cranking
+      ro: Pornire dificilă sau demaror care învârte mult timp
+      de: Erschwertes Starten oder verlängertes Durchdrehen
+      fr: Démarrage difficile ou temps de lancement prolongé
+      es: Arranque difícil o tiempo de arranque prolongado
+      it: Avviamento difficoltoso o tempi di trascinamento prolungati
+      nl: Moeilijk starten of langdurig rondgaan van de startmotor
+    - en: Engine hesitation or loss of power under load
+      ro: Ezitare sau pierdere de putere sub sarcină
+      de: Ruckeln oder Leistungsverlust unter Last
+      fr: Hésitation ou perte de puissance sous charge
+      es: Vacilación o pérdida de potencia bajo carga
+      it: Esitazione o perdita di potenza sotto carico
+      nl: Inhouden of vermogensverlies onder belasting
+    - en: Engine misfire
+      ro: Rateuri ale motorului
+      de: Motoraussetzer
+      fr: Ratés moteur
+      es: Fallos de encendido
+      it: Mancate accensioni
+      nl: Motorstoringen
+    - en: Reduced engine performance
+      ro: Performanță redusă a motorului
+      de: Verringerte Motorleistung
+      fr: Performances moteur réduites
+      es: Rendimiento reducido del motor
+      it: Prestazioni del motore ridotte
+      nl: Verminderde motorprestaties
+  possible_causes:
+    - en: High-pressure fuel pump malfunction
+      ro: Defecțiune a pompei de combustibil de înaltă presiune
+      de: Fehler der Hochdruck-Kraftstoffpumpe
+      fr: Défaillance de la pompe à carburant haute pression
+      es: Fallo de la bomba de combustible de alta presión
+      it: Guasto della pompa carburante ad alta pressione
+      nl: Defecte hogedrukbrandstofpomp
+    - en: Low fuel supply pressure
+      ro: Presiune scăzută pe circuitul de alimentare
+      de: Zu niedriger Kraftstoffvorlaufdruck
+      fr: Pression d'alimentation en carburant insuffisante
+      es: Presión de alimentación de combustible insuficiente
+      it: Pressione di alimentazione carburante insufficiente
+      nl: Te lage brandstoftoevoerdruk
+    - en: Faulty fuel pressure regulator or control valve
+      ro: Regulator sau supapă de control a presiunii defectă
+      de: Fehlerhafter Kraftstoffdruckregler oder Druckregelventil
+      fr: Régulateur ou vanne de pression défectueux
+      es: Regulador o válvula de control de presión defectuosos
+      it: Regolatore o valvola di controllo della pressione difettosi
+      nl: Defecte brandstofdrukregelaar of regelklep
+    - en: Restricted fuel filter or fuel line
+      ro: Filtru sau conductă de combustibil obturată
+      de: Verstopfter Kraftstofffilter oder Kraftstoffleitung
+      fr: Filtre ou conduite de carburant obstrué
+      es: Filtro o línea de combustible obstruidos
+      it: Filtro o linea carburante ostruiti
+      nl: Verstopt brandstoffilter of brandstofleiding
+  diagnostic_steps:
+    - en: Read stored and pending fuel-pressure related DTCs
+      ro: Citiți codurile DTC memorate și în așteptare legate de presiunea combustibilului
+      de: Gespeicherte und anstehende kraftstoffdruckbezogene DTCs auslesen
+      fr: Lire les DTC mémorisés et en attente liés à la pression de carburant
+      es: Leer los DTC almacenados y pendientes relacionados con la presión de combustible
+      it: Leggere i DTC memorizzati e in sospeso relativi alla pressione carburante
+      nl: Lees opgeslagen en actieve DTC's met betrekking tot de brandstofdruk uit
+    - en: Compare specified and actual rail pressure during cranking and acceleration
+      ro: Comparați presiunea de rampă cerută cu cea reală la pornire și accelerație
+      de: Soll- und Ist-Raildruck beim Starten und Beschleunigen vergleichen
+      fr: Comparer la pression de rampe demandée et réelle au démarrage et à l'accélération
+      es: Comparar la presión del raíl solicitada y real durante el arranque y la aceleración
+      it: Confrontare la pressione rail richiesta e reale durante avviamento e accelerazione
+      nl: Vergelijk de gevraagde en werkelijke raildruk tijdens starten en accelereren
+    - en: Check low-pressure fuel supply before testing the high-pressure pump
+      ro: Verificați alimentarea de joasă presiune înaintea testării pompei de înaltă presiune
+      de: Kraftstoffvorlaufdruck prüfen, bevor die Hochdruckpumpe getestet wird
+      fr: Contrôler l'alimentation basse pression avant de tester la pompe haute pression
+      es: Comprobar la alimentación de baja presión antes de probar la bomba de alta presión
+      it: Controllare l'alimentazione a bassa pressione prima di testare la pompa alta pressione
+      nl: Controleer de lagedrukbrandstoftoevoer voordat de hogedrukpomp wordt getest
+    - en: Inspect the pressure regulator, control valve, wiring and connectors
+      ro: Inspectați regulatorul, supapa de control, cablajul și conectorii
+      de: Druckregler, Regelventil, Verkabelung und Steckverbindungen prüfen
+      fr: Contrôler le régulateur, la vanne, le câblage et les connecteurs
+      es: Inspeccionar el regulador, la válvula, el cableado y los conectores
+      it: Ispezionare regolatore, valvola, cablaggio e connettori
+      nl: Controleer regelaar, regelklep, bedrading en stekkers
+  keywords:
+    - high pressure fuel
+    - rail pressure
+    - direct injection
+    - fuel pressure
+    - presiune combustibil
+    - Hochdruck
+    - pression rail
+    - alta presión combustible
+    - alta pressione carburante
+    - hogedruk brandstof
+  related_dtcs: []
+  difficulty: advanced
+
+- id: vw_modern_direct_injection_high_pressure_fuel_fault_jettamk6
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - jetta
+    generations:
+      - jetta_mk6
+    engines:
+      - 1390_tsi_122
+      - 1390_tsi_150
+      - 1798_tsi_170
+      - 1984_tsi_200
+  category: diagnostics
+  system: fuel
+  title:
+    en: Direct-injection high-pressure fuel system fault
+    ro: Defecțiune a sistemului de alimentare de înaltă presiune pentru injecție directă
+    de: Fehler im Hochdruck-Kraftstoffsystem der Direkteinspritzung
+    fr: Défaut du système de carburant haute pression à injection directe
+    es: Fallo del sistema de combustible de alta presión de inyección directa
+    it: Guasto al sistema carburante ad alta pressione a iniezione diretta
+    nl: Storing in het hogedrukbrandstofsysteem van de directe injectie
+  description:
+    en: A fault in the high-pressure fuel system can prevent the engine from maintaining the required rail pressure during starting, idling or acceleration.
+    ro: O defecțiune a sistemului de înaltă presiune poate împiedica motorul să mențină presiunea necesară în rampă la pornire, ralanti sau accelerație.
+    de: Ein Fehler im Hochdruck-Kraftstoffsystem kann dazu führen, dass der erforderliche Raildruck beim Starten, im Leerlauf oder unter Last nicht gehalten wird.
+    fr: Un défaut du système de carburant haute pression peut empêcher le maintien de la pression de rampe requise au démarrage, au ralenti ou en accélération.
+    es: Una avería en el sistema de combustible de alta presión puede impedir mantener la presión necesaria del raíl durante el arranque, ralentí o aceleración.
+    it: Un guasto al sistema carburante ad alta pressione può impedire di mantenere la pressione richiesta nel rail durante avviamento, minimo o accelerazione.
+    nl: Een storing in het hogedrukbrandstofsysteem kan ervoor zorgen dat de vereiste raildruk tijdens starten, stationair draaien of accelereren niet wordt gehandhaafd.
+  symptoms:
+    - en: Hard starting or extended cranking
+      ro: Pornire dificilă sau demaror care învârte mult timp
+      de: Erschwertes Starten oder verlängertes Durchdrehen
+      fr: Démarrage difficile ou temps de lancement prolongé
+      es: Arranque difícil o tiempo de arranque prolongado
+      it: Avviamento difficoltoso o tempi di trascinamento prolungati
+      nl: Moeilijk starten of langdurig rondgaan van de startmotor
+    - en: Engine hesitation or loss of power under load
+      ro: Ezitare sau pierdere de putere sub sarcină
+      de: Ruckeln oder Leistungsverlust unter Last
+      fr: Hésitation ou perte de puissance sous charge
+      es: Vacilación o pérdida de potencia bajo carga
+      it: Esitazione o perdita di potenza sotto carico
+      nl: Inhouden of vermogensverlies onder belasting
+    - en: Engine misfire
+      ro: Rateuri ale motorului
+      de: Motoraussetzer
+      fr: Ratés moteur
+      es: Fallos de encendido
+      it: Mancate accensioni
+      nl: Motorstoringen
+  possible_causes:
+    - en: High-pressure fuel pump malfunction
+      ro: Defecțiune a pompei de combustibil de înaltă presiune
+      de: Fehler der Hochdruck-Kraftstoffpumpe
+      fr: Défaillance de la pompe à carburant haute pression
+      es: Fallo de la bomba de combustible de alta presión
+      it: Guasto della pompa carburante ad alta pressione
+      nl: Defecte hogedrukbrandstofpomp
+    - en: Faulty fuel pressure regulator or control valve
+      ro: Regulator sau supapă de control a presiunii defectă
+      de: Fehlerhafter Kraftstoffdruckregler oder Druckregelventil
+      fr: Régulateur ou vanne de pression défectueux
+      es: Regulador o válvula de control de presión defectuosos
+      it: Regolatore o valvola di controllo della pressione difettosi
+      nl: Defecte brandstofdrukregelaar of regelklep
+  diagnostic_steps:
+    - en: Read fuel-pressure related DTCs
+      ro: Citiți codurile DTC legate de presiunea combustibilului
+      de: Kraftstoffdruckbezogene DTCs auslesen
+      fr: Lire les DTC liés à la pression de carburant
+      es: Leer los DTC relacionados con la presión de combustible
+      it: Leggere i DTC relativi alla pressione carburante
+      nl: Lees de DTC's met betrekking tot de brandstofdruk uit
+    - en: Compare requested and actual rail pressure
+      ro: Comparați presiunea de rampă cerută cu cea reală
+      de: Angeforderten und tatsächlichen Raildruck vergleichen
+      fr: Comparer la pression de rampe demandée et réelle
+      es: Comparar la presión del raíl solicitada y real
+      it: Confrontare la pressione rail richiesta e reale
+      nl: Vergelijk de gevraagde en werkelijke raildruk
+    - en: Check pump control and electrical supply
+      ro: Verificați comanda pompei și alimentarea electrică
+      de: Pumpenansteuerung und elektrische Versorgung prüfen
+      fr: Contrôler la commande de pompe et l'alimentation électrique
+      es: Comprobar el control de la bomba y la alimentación eléctrica
+      it: Controllare il comando della pompa e l'alimentazione elettrica
+      nl: Controleer de pompaansturing en elektrische voeding
+  keywords:
+    - high pressure fuel
+    - rail pressure
+    - direct injection
+    - TSI
+    - presiune rampă
+    - Hochdruck
+    - pression rail
+    - alta presión
+    - alta pressione
+    - hogedruk
+  related_dtcs: []
+  difficulty: advanced
+
+# ============================================================
+# DIRECT-INJECTION INJECTOR FAULT
+# ============================================================
+
+- id: vw_modern_direct_injection_injector_fault
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - jetta
+    generations:
+      - jetta_mk5
+    engines:
+      - 1598_115
+      - 1984_fsi_150
+      - 1984_tfsi_200
+      - 1390_tsi_140
+      - 1390_tsi_170
+  category: diagnostics
+  system: fuel
+  title:
+    en: Direct-injection injector fault
+    ro: Defecțiune injector pentru injecție directă
+    de: Fehler eines Direkteinspritz-Injektors
+    fr: Défaut d'injecteur à injection directe
+    es: Fallo del inyector de inyección directa
+    it: Guasto dell'iniettore a iniezione diretta
+    nl: Storing van een directe-injectie-injector
+  description:
+    en: A faulty injector can cause incorrect fuel delivery, resulting in misfires, unstable combustion, poor starting or increased emissions.
+    ro: Un injector defect poate provoca o dozare incorectă a combustibilului, ducând la rateuri, ardere instabilă, pornire dificilă sau emisii crescute.
+    de: Ein fehlerhafter Injektor kann zu einer falschen Kraftstoffdosierung und dadurch zu Aussetzern, instabiler Verbrennung, schlechtem Startverhalten oder erhöhten Emissionen führen.
+    fr: Un injecteur défectueux peut provoquer une mauvaise quantité de carburant injectée et entraîner des ratés, une combustion instable, des difficultés de démarrage ou des émissions accrues.
+    es: Un inyector defectuoso puede provocar una dosificación incorrecta del combustible y causar fallos de encendido, combustión inestable, dificultad de arranque o mayores emisiones.
+    it: Un iniettore difettoso può causare un dosaggio errato del carburante, con mancate accensioni, combustione instabile, difficoltà di avviamento o maggiori emissioni.
+    nl: Een defecte injector kan een verkeerde brandstofdosering veroorzaken, met misfires, instabiele verbranding, moeilijk starten of verhoogde emissies als gevolg.
+  symptoms:
+    - en: Engine misfire
+      ro: Rateuri ale motorului
+      de: Motoraussetzer
+      fr: Ratés moteur
+      es: Fallos de encendido
+      it: Mancate accensioni
+      nl: Motorstoringen
+    - en: Rough idle
+      ro: Relanti neregulat
+      de: Unruhiger Leerlauf
+      fr: Ralenti irrégulier
+      es: Ralentí irregular
+      it: Minimo irregolare
+      nl: Onrustig stationair toerental
+    - en: Difficult starting
+      ro: Pornire dificilă
+      de: Erschwertes Starten
+      fr: Démarrage difficile
+      es: Arranque difícil
+      it: Avviamento difficoltoso
+      nl: Moeilijk starten
+    - en: Increased fuel consumption
+      ro: Consum crescut de combustibil
+      de: Erhöhter Kraftstoffverbrauch
+      fr: Consommation de carburant accrue
+      es: Aumento del consumo de combustible
+      it: Aumento del consumo di carburante
+      nl: Verhoogd brandstofverbruik
+  possible_causes:
+    - en: Injector nozzle contamination
+      ro: Contaminarea duzei injectorului
+      de: Verschmutzte Injektordüse
+      fr: Encrassement de la buse d'injecteur
+      es: Contaminación de la boquilla del inyector
+      it: Contaminazione dell'ugello dell'iniettore
+      nl: Vervuilde injectorverstuiver
+    - en: Injector electrical fault
+      ro: Defecțiune electrică a injectorului
+      de: Elektrischer Fehler des Injektors
+      fr: Défaut électrique de l'injecteur
+      es: Fallo eléctrico del inyector
+      it: Guasto elettrico dell'iniettore
+      nl: Elektrische storing van de injector
+    - en: Fuel pressure outside specification
+      ro: Presiune combustibil în afara specificațiilor
+      de: Kraftstoffdruck außerhalb der Spezifikation
+      fr: Pression de carburant hors spécification
+      es: Presión de combustible fuera de especificación
+      it: Pressione carburante fuori specifica
+      nl: Brandstofdruk buiten specificatie
+  diagnostic_steps:
+    - en: Read cylinder-specific misfire and injector DTCs
+      ro: Citiți DTC-urile specifice cilindrului pentru rateuri și injector
+      de: Zylinderbezogene Aussetzer- und Injektor-DTCs auslesen
+      fr: Lire les DTC de ratés et d'injecteur spécifiques au cylindre
+      es: Leer los DTC de fallos de encendido e inyector específicos del cilindro
+      it: Leggere i DTC di mancata accensione e iniettore specifici del cilindro
+      nl: Lees cilinderspecifieke misfire- en injectorstoringscodes uit
+    - en: Compare injector correction or contribution values
+      ro: Comparați valorile de corecție sau contribuție ale injectoarelor
+      de: Injektorkorrektur- oder Beitragswerte vergleichen
+      fr: Comparer les valeurs de correction ou de contribution des injecteurs
+      es: Comparar los valores de corrección o contribución de los inyectores
+      it: Confrontare i valori di correzione o contributo degli iniettori
+      nl: Vergelijk de correctie- of bijdragewaarden van de injectoren
+    - en: Inspect injector wiring and connectors
+      ro: Inspectați cablajul și conectorii injectorului
+      de: Injektorverkabelung und Steckverbindungen prüfen
+      fr: Contrôler le câblage et les connecteurs de l'injecteur
+      es: Inspeccionar el cableado y los conectores del inyector
+      it: Ispezionare cablaggio e connettori dell'iniettore
+      nl: Controleer de bedrading en stekkers van de injector
+    - en: Perform injector leak or balance testing when required
+      ro: Efectuați testarea etanșeității sau echilibrării injectorului când este necesar
+      de: Bei Bedarf Dichtheits- oder Mengentest des Injektors durchführen
+      fr: Effectuer un test d'étanchéité ou d'équilibrage de l'injecteur si nécessaire
+      es: Realizar una prueba de fugas o equilibrado del inyector cuando sea necesario
+      it: Eseguire una prova di tenuta o bilanciamento dell'iniettore quando necessario
+      nl: Voer indien nodig een lektest of balanstest van de injector uit
+  keywords:
+    - injector fault
+    - direct injection
+    - injector misfire
+    - injector correction
+    - defect injector
+    - injector defect
+  related_dtcs: []
+  difficulty: advanced
+
+# ============================================================
+# TSI PCV / CRANKCASE VENTILATION
+# ============================================================
+
+- id: vw_modern_tsi_pcv_crankcase_ventilation_fault
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - jetta
+      - eos
+      - scirocco
+      - golf_plus
+      - golf_sportsvan
+      - tiguan_allspace
+      - multivan
+      - sharan
+      - touran
+      - tiguan
+      - passat
+      - golf
+      - polo
+      - beetle
+      - t_roc
+      - arteon
+      - caddy
+      - transporter
+      - caravelle
+  generations:
+    - jetta_mk5
+    - jetta_mk6
+    - jetta_mk7
+    - eos_1
+    - scirocco_mk3
+    - golf_plus_1
+    - golf_sportsvan_1
+    - tiguan_allspace_1
+    - multivan_t5
+    - multivan_t6
+    - multivan_t7
+    - sharan_2
+    - touran_1
+    - touran_2
+    - tiguan_1
+    - tiguan_2
+    - tiguan_3
+    - passat_b6
+    - passat_b7
+    - passat_b8
+    - golf_mk5
+    - golf_mk6
+    - golf_mk7
+    - golf_mk8
+    - polo_mk5
+    - polo_mk6
+    - beetle_a5
+    - t_roc_1
+    - t_roc_2
+    - arteon_1
+    - arteon_2
+    - caddy_4
+    - caddy_5
+    - transporter_t5
+    - transporter_t6
+    - transporter_t6_1
+    - caravelle_t5
+    - caravelle_t6
+  engines: []
+  category: diagnostics
+  system: crankcase_ventilation
+  title:
+    en: TSI PCV and crankcase ventilation fault
+    ro: Defecțiune PCV și ventilație carter la motor TSI
+    de: Fehler der TSI-Kurbelgehäuseentlüftung und PCV
+    fr: Défaut du système PCV et de ventilation du carter TSI
+    es: Fallo del sistema PCV y ventilación del cárter TSI
+    it: Guasto del sistema PCV e ventilazione del basamento TSI
+    nl: Storing van PCV en carterventilatie bij TSI
+  description:
+    en: A faulty crankcase ventilation system can create abnormal crankcase pressure, intake leaks and oil consumption and may affect engine idle and mixture control.
+    ro: Un sistem defect de ventilație a carterului poate crea presiuni anormale în carter, pierderi pe admisie și consum de ulei și poate afecta ralantiul și controlul amestecului.
+    de: Eine fehlerhafte Kurbelgehäuseentlüftung kann abnormalen Kurbelgehäusedruck, Falschluft und erhöhten Ölverbrauch verursachen und Leerlauf sowie Gemischregelung beeinflussen.
+    fr: Un système de ventilation du carter défectueux peut provoquer une pression anormale dans le carter, des prises d'air et une consommation d'huile accrue et perturber le ralenti et la régulation du mélange.
+    es: Un sistema de ventilación del cárter defectuoso puede provocar presión anormal, entradas de aire y consumo de aceite y afectar al ralentí y al control de mezcla.
+    it: Un sistema di ventilazione del basamento difettoso può causare pressione anomala, aspirazioni d'aria e consumo d'olio e influenzare minimo e regolazione della miscela.
+    nl: Een defect carterventilatiesysteem kan abnormale carterdruk, valse lucht en olieverbruik veroorzaken en het stationair toerental en de mengselregeling beïnvloeden.
+  symptoms:
+    - en: Rough or unstable idle
+      ro: Relanti neregulat sau instabil
+      de: Unruhiger oder instabiler Leerlauf
+      fr: Ralenti irrégulier ou instable
+      es: Ralentí irregular o inestable
+      it: Minimo irregolare o instabile
+      nl: Onrustig of instabiel stationair toerental
+    - en: Whistling or hissing noise from the engine
+      ro: Șuierat sau zgomot de aer din zona motorului
+      de: Pfeif- oder Zischgeräusch aus dem Motorraum
+      fr: Sifflement ou bruit d'air provenant du moteur
+      es: Silbido o ruido de aire procedente del motor
+      it: Fischio o rumore d'aria proveniente dal motore
+      nl: Fluitend of sissend geluid uit de motorruimte
+    - en: Increased oil consumption
+      ro: Consum crescut de ulei
+      de: Erhöhter Ölverbrauch
+      fr: Consommation d'huile accrue
+      es: Mayor consumo de aceite
+      it: Aumento del consumo d'olio
+      nl: Verhoogd olieverbruik
+    - en: Lean mixture or fuel-trim faults
+      ro: Amestec sărac sau erori ale corecției de combustibil
+      de: Mageres Gemisch oder Kraftstofftrimmfehler
+      fr: Mélange pauvre ou défauts de correction de carburant
+      es: Mezcla pobre o fallos de corrección de combustible
+      it: Miscela magra o errori di correzione carburante
+      nl: Arm mengsel of brandstoftrimstoringen
+  possible_causes:
+    - en: Failed PCV diaphragm or valve
+      ro: Membrană sau supapă PCV defectă
+      de: Defekte PCV-Membran oder PCV-Ventil
+      fr: Membrane ou soupape PCV défectueuse
+      es: Membrana o válvula PCV defectuosa
+      it: Membrana o valvola PCV difettosa
+      nl: Defect PCV-membraan of PCV-klep
+    - en: Cracked crankcase ventilation hose
+      ro: Furtun fisurat al ventilației carterului
+      de: Gerissener Kurbelgehäuseentlüftungsschlauch
+      fr: Durite de ventilation du carter fissurée
+      es: Manguito de ventilación del cárter agrietado
+      it: Tubo della ventilazione basamento crepato
+      nl: Gescheurde carterventilatieslang
+    - en: Blocked ventilation passage
+      ro: Canal de ventilație obturat
+      de: Verstopfter Entlüftungskanal
+      fr: Passage de ventilation obstrué
+      es: Conducto de ventilación obstruido
+      it: Passaggio di ventilazione ostruito
+      nl: Verstopte ventilatiedoorgang
+  diagnostic_steps:
+    - en: Inspect the PCV assembly, hoses and connections
+      ro: Inspectați ansamblul PCV, furtunurile și conexiunile
+      de: PCV-Einheit, Schläuche und Anschlüsse prüfen
+      fr: Contrôler l'ensemble PCV, les durites et les connexions
+      es: Inspeccionar el conjunto PCV, manguitos y conexiones
+      it: Ispezionare il gruppo PCV, i tubi e i collegamenti
+      nl: Controleer de PCV-eenheid, slangen en aansluitingen
+    - en: Check crankcase pressure or vacuum at idle
+      ro: Verificați presiunea sau vacuumul din carter la ralanti
+      de: Kurbelgehäusedruck oder -unterdruck im Leerlauf prüfen
+      fr: Contrôler la pression ou dépression du carter au ralenti
+      es: Comprobar la presión o depresión del cárter al ralentí
+      it: Controllare pressione o depressione del basamento al minimo
+      nl: Controleer de carterdruk of onderdruk bij stationair toerental
+    - en: Inspect for unmetered air entering through the PCV system
+      ro: Verificați pătrunderea aerului nemăsurat prin sistemul PCV
+      de: Auf Falschluft über das PCV-System prüfen
+      fr: Rechercher une prise d'air non mesurée via le système PCV
+      es: Comprobar la entrada de aire no medido a través del sistema PCV
+      it: Verificare l'ingresso di aria non misurata attraverso il sistema PCV
+      nl: Controleer op ongemeten lucht via het PCV-systeem
+    - en: Check fuel trims and misfire counters after repair
+      ro: Verificați corecțiile de combustibil și contoarele de rateuri după reparație
+      de: Kraftstofftrims und Fehlzündungszähler nach der Reparatur prüfen
+      fr: Contrôler les corrections de carburant et les compteurs de ratés après réparation
+      es: Comprobar las correcciones de combustible y contadores de fallos después de la reparación
+      it: Controllare correzioni carburante e contatori di mancate accensioni dopo la riparazione
+      nl: Controleer brandstoftrims en misfire-tellers na reparatie
+  keywords:
+    - PCV
+    - crankcase ventilation
+    - oil separator
+    - TSI PCV
+    - ventilație carter
+    - Kurbelgehäuseentlüftung
+    - ventilation carter
+    - ventilación cárter
+    - ventilazione basamento
+    - carterventilatie
+  related_dtcs: []
+  difficulty: intermediate
+
+# ============================================================
+# DIRECT-INJECTION INTAKE VALVE CARBON DEPOSITS
+# ============================================================
+
+- id: vw_modern_tsi_intake_valve_carbon_deposits
+  vehicle:
+    manufacturer: volkswagen
+    models:
+      - jetta
+      - eos
+      - scirocco
+      - golf_plus
+      - golf_sportsvan
+      - tiguan_allspace
+      - multivan
+      - sharan
+      - touran
+      - tiguan
+      - passat
+      - golf
+      - polo
+      - beetle
+      - t_roc
+      - arteon
+      - caddy
+      - transporter
+      - caravelle
+  generations:
+    - jetta_mk5
+    - jetta_mk6
+    - jetta_mk7
+    - eos_1
+    - scirocco_mk3
+    - golf_plus_1
+    - golf_sportsvan_1
+    - tiguan_allspace_1
+    - multivan_t5
+    - multivan_t6
+    - multivan_t7
+    - sharan_2
+    - touran_1
+    - touran_2
+    - tiguan_1
+    - tiguan_2
+    - tiguan_3
+    - passat_b6
+    - passat_b7
+    - passat_b8
+    - golf_mk5
+    - golf_mk6
+    - golf_mk7
+    - golf_mk8
+    - polo_mk5
+    - polo_mk6
+    - beetle_a5
+    - t_roc_1
+    - t_roc_2
+    - arteon_1
+    - arteon_2
+    - caddy_4
+    - caddy_5
+    - transporter_t5
+    - transporter_t6
+    - transporter_t6_1
+    - caravelle_t5
+    - caravelle_t6
+  engines: []
+  category: diagnostics
+  system: intake
+  title:
+    en: Intake valve carbon deposits
+    ro: Depuneri de carbon pe supapele de admisie
+    de: Kohlenstoffablagerungen an den Einlassventilen
+    fr: Dépôts de carbone sur les soupapes d'admission
+    es: Depósitos de carbono en las válvulas de admisión
+    it: Depositi carboniosi sulle valvole di aspirazione
+    nl: Koolafzetting op de inlaatkleppen
+  description:
+    en: Direct-injection petrol engines can accumulate carbon deposits on the intake valves because fuel does not wash over the back of the valves.
+    ro: Motoarele pe benzină cu injecție directă pot acumula depuneri de carbon pe supapele de admisie deoarece combustibilul nu spală partea din spate a supapelor.
+    de: Bei Ottomotoren mit Direkteinspritzung können sich Kohlenstoffablagerungen an den Einlassventilen bilden, da der Kraftstoff die Ventilrückseiten nicht benetzt.
+    fr: Les moteurs essence à injection directe peuvent accumuler des dépôts de carbone sur les soupapes d'admission car le carburant ne lave pas l'arrière des soupapes.
+    es: Los motores de gasolina de inyección directa pueden acumular depósitos de carbono en las válvulas de admisión porque el combustible no lava la parte posterior de las válvulas.
+    it: I motori benzina a iniezione diretta possono accumulare depositi carboniosi sulle valvole di aspirazione perché il carburante non ne lava il retro.
+    nl: Benzinemotoren met directe injectie kunnen koolafzettingen op de inlaatkleppen opbouwen omdat de brandstof de achterkant van de kleppen niet reinigt.
+  symptoms:
+    - en: Rough idle
+      ro: Relanti neregulat
+      de: Unruhiger Leerlauf
+      fr: Ralenti irrégulier
+      es: Ralentí irregular
+      it: Minimo irregolare
+      nl: Onrustig stationair toerental
+    - en: Misfire at idle or low rpm
+      ro: Rateuri la ralanti sau la turații joase
+      de: Fehlzündungen im Leerlauf oder bei niedriger Drehzahl
+      fr: Ratés au ralenti ou à bas régime
+      es: Fallos de encendido al ralentí o a bajas rpm
+      it: Mancate accensioni al minimo o a basso regime
+      nl: Misfires bij stationair toerental of lage toerentallen
+    - en: Reduced acceleration
+      ro: Accelerație redusă
+      de: Schlechtere Beschleunigung
+      fr: Accélération réduite
+      es: Aceleración reducida
+      it: Accelerazione ridotta
+      nl: Verminderde acceleratie
+    - en: Uneven engine response
+      ro: Răspuns neregulat al motorului
+      de: Unregelmäßige Motorreaktion
+      fr: Réponse moteur irrégulière
+      es: Respuesta irregular del motor
+      it: Risposta irregolare del motore
+      nl: Onregelmatige motorrespons
+  possible_causes:
+    - en: Long-term operation with direct injection
+      ro: Funcționare îndelungată cu injecție directă
+      de: Langjähriger Betrieb mit Direkteinspritzung
+      fr: Fonctionnement prolongé avec injection directe
+      es: Funcionamiento prolongado con inyección directa
+      it: Funzionamento prolungato con iniezione diretta
+      nl: Langdurig gebruik met directe injectie
+    - en: Crankcase oil vapour entering the intake
+      ro: Vapori de ulei din carter care intră în admisie
+      de: In die Ansaugung gelangende Kurbelgehäuseöldämpfe
+      fr: Vapeurs d'huile du carter entrant dans l'admission
+      es: Vapores de aceite del cárter que entran en la admisión
+      it: Vapori d'olio del basamento che entrano nell'aspirazione
+      nl: Olie-dampen uit het carter die de inlaat binnendringen
+    - en: Exhaust gas recirculation contamination where applicable
+      ro: Contaminare prin recircularea gazelor de evacuare, unde este cazul
+      de: Verschmutzung durch Abgasrückführung, sofern vorhanden
+      fr: Encrassement lié à la recirculation des gaz d'échappement, le cas échéant
+      es: Contaminación por recirculación de gases de escape, cuando corresponda
+      it: Contaminazione dovuta al ricircolo dei gas di scarico, se presente
+      nl: Vervuiling door uitlaatgasrecirculatie indien van toepassing
+  diagnostic_steps:
+    - en: Check misfire counters by cylinder
+      ro: Verificați contoarele de rateuri pentru fiecare cilindru
+      de: Fehlzündungszähler für jeden Zylinder prüfen
+      fr: Contrôler les compteurs de ratés par cylindre
+      es: Comprobar los contadores de fallos por cilindro
+      it: Controllare i contatori delle mancate accensioni per cilindro
+      nl: Controleer de misfire-tellers per cilinder
+    - en: Inspect fuel trims and intake air measurements
+      ro: Verificați corecțiile de combustibil și măsurătorile aerului de admisie
+      de: Kraftstofftrims und Ansaugluftmesswerte prüfen
+      fr: Contrôler les corrections de carburant et les mesures d'air d'admission
+      es: Comprobar las correcciones de combustible y las mediciones del aire de admisión
+      it: Controllare correzioni carburante e misure dell'aria aspirata
+      nl: Controleer brandstoftrims en inlaatluchtmetingen
+    - en: Inspect the intake ports and valves with a suitable inspection camera
+      ro: Inspectați canalele de admisie și supapele cu o cameră de inspecție adecvată
+      de: Einlasskanäle und Ventile mit einer geeigneten Inspektionskamera prüfen
+      fr: Inspecter les conduits et soupapes d'admission avec une caméra adaptée
+      es: Inspeccionar los conductos y válvulas de admisión con una cámara adecuada
+      it: Ispezionare i condotti e le valvole di aspirazione con una telecamera adatta
+      nl: Inspecteer de inlaatkanalen en kleppen met een geschikte inspectiecamera
+    - en: Remove and clean the intake system if deposits are confirmed
+      ro: Demontați și curățați sistemul de admisie dacă depunerile sunt confirmate
+      de: Ansaugsystem ausbauen und reinigen, wenn Ablagerungen bestätigt sind
+      fr: Déposer et nettoyer le système d'admission si les dépôts sont confirmés
+      es: Desmontar y limpiar el sistema de admisión si se confirman los depósitos
+      it: Smontare e pulire il sistema di aspirazione se i depositi sono confermati
+      nl: Demonteer en reinig het inlaatsysteem als afzettingen worden bevestigd
+  keywords:
+    - intake valve carbon
+    - carbon deposits
+    - direct injection
+    - valve deposits
+    - depuneri supape admisie
+    - Kohlenstoffablagerungen
+    - dépôts soupapes
+    - depósitos válvulas
+    - depositi valvole
+    - klepafzettingen
+  related_dtcs: []
+  difficulty: intermediate
+
 - id: vw_early_petrol_low_compression
   vehicle:
     manufacturer: volkswagen
