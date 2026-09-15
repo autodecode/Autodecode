@@ -6,6 +6,3399 @@ manufacturer:
 
 technical_data:
 
+# ============================================================
+# VOLKSWAGEN — MODERN DIAGNOSTICS BATCH
+# Source vehicle IDs:
+# 0628ac1ca07dde01f730aa44b6122287f260ecbc
+# ============================================================
+
+- id: vw_battery_low_voltage
+  vehicle:
+    models:
+      - jetta
+      - golf
+      - polo
+      - passat
+      - tiguan
+      - touran
+      - t_roc
+      - t_cross
+      - taigo
+      - arteon
+      - caddy
+      - transporter
+      - caravelle
+      - multivan
+      - sharan
+      - beetle
+      - scirocco
+      - eos
+      - golf_plus
+      - golf_sportsvan
+      - tiguan_allspace
+    generations:
+      - jetta_mk5
+      - jetta_mk6
+      - jetta_mk7
+      - golf_mk6
+      - golf_mk7
+      - golf_mk8
+      - polo_mk5
+      - polo_mk6
+      - passat_b6
+      - passat_b7
+      - passat_b8
+      - tiguan_1
+      - tiguan_2
+      - tiguan_3
+      - touran_1
+      - touran_2
+      - t_roc_1
+      - t_roc_2
+      - t_cross_1
+      - taigo_1
+      - arteon_1
+      - arteon_2
+      - caddy_4
+      - caddy_5
+      - transporter_t5
+      - transporter_t6
+      - transporter_t6_1
+      - caravelle_t5
+      - caravelle_t6
+      - multivan_t5
+      - multivan_t6
+      - multivan_t7
+      - sharan_2
+      - beetle_a5
+      - scirocco_mk3
+      - eos_1
+      - golf_plus_1
+      - golf_sportsvan_1
+      - tiguan_allspace_1
+  category: diagnostics
+  system: electrical
+  title:
+    en: Low battery voltage
+    ro: Tensiune scăzută a bateriei
+    de: Niedrige Batteriespannung
+    fr: Tension de batterie faible
+    es: Tensión baja de la batería
+    it: Tensione batteria bassa
+    nl: Lage accuspanning
+  description:
+    en: Low system voltage can cause multiple unrelated warning lights, communication faults and control-module errors.
+    ro: Tensiunea scăzută a sistemului poate provoca mai multe martori, erori de comunicare și coduri aparent fără legătură între module.
+    de: Eine niedrige Systemspannung kann mehrere Warnleuchten, Kommunikationsfehler und scheinbar unabhängige Steuergerätefehler verursachen.
+    fr: Une tension système faible peut provoquer plusieurs voyants, erreurs de communication et défauts de calculateurs apparemment indépendants.
+    es: Una tensión baja del sistema puede provocar varios testigos, errores de comunicación y fallos aparentemente independientes de las unidades de control.
+    it: Una bassa tensione di sistema può causare diverse spie, errori di comunicazione e guasti apparentemente indipendenti delle centraline.
+    nl: Een lage systeemspanning kan meerdere waarschuwingslampjes, communicatiefouten en schijnbaar losstaande regelmodulefouten veroorzaken.
+  symptoms:
+    - en: Multiple warning lights
+      ro: Mai mulți martori aprinși
+      de: Mehrere Warnleuchten
+      fr: Plusieurs voyants allumés
+      es: Varios testigos encendidos
+      it: Diverse spie accese
+      nl: Meerdere waarschuwingslampjes
+    - en: Intermittent electrical faults
+      ro: Defecțiuni electrice intermitente
+      de: Sporadische elektrische Fehler
+      fr: Défauts électriques intermittents
+      es: Fallos eléctricos intermitentes
+      it: Guasti elettrici intermittenti
+      nl: Intermitterende elektrische storingen
+    - en: Difficult starting
+      ro: Pornire dificilă
+      de: Erschwertes Starten
+      fr: Démarrage difficile
+      es: Arranque difícil
+      it: Avviamento difficoltoso
+      nl: Moeilijk starten
+  possible_causes:
+    - en: Discharged or aged battery
+      ro: Baterie descărcată sau îmbătrânită
+      de: Entladene oder gealterte Batterie
+      fr: Batterie déchargée ou vieillissante
+      es: Batería descargada o envejecida
+      it: Batteria scarica o usurata
+      nl: Ontladen of verouderde accu
+    - en: Poor battery terminal connection
+      ro: Contact slab la bornele bateriei
+      de: Schlechter Kontakt an den Batteriepolen
+      fr: Mauvais contact aux bornes de batterie
+      es: Mal contacto en los bornes de la batería
+      it: Cattivo contatto ai morsetti della batteria
+      nl: Slecht contact bij de accupolen
+    - en: Charging-system fault
+      ro: Defecțiune a sistemului de încărcare
+      de: Fehler im Ladesystem
+      fr: Défaut du système de charge
+      es: Fallo del sistema de carga
+      it: Guasto del sistema di ricarica
+      nl: Storing in het laadsysteem
+  diagnostic_steps:
+    - en: Measure battery voltage with the engine off
+      ro: Măsurați tensiunea bateriei cu motorul oprit
+      de: Batteriespannung bei ausgeschaltetem Motor messen
+      fr: Mesurer la tension de batterie moteur arrêté
+      es: Medir la tensión de la batería con el motor apagado
+      it: Misurare la tensione della batteria a motore spento
+      nl: Meet de accuspanning met uitgeschakelde motor
+    - en: Check voltage during cranking
+      ro: Verificați tensiunea în timpul pornirii
+      de: Spannung während des Anlassens prüfen
+      fr: Contrôler la tension pendant le démarrage
+      es: Comprobar la tensión durante el arranque
+      it: Controllare la tensione durante l'avviamento
+      nl: Controleer de spanning tijdens het starten
+    - en: Check alternator output and charging voltage
+      ro: Verificați alternatorul și tensiunea de încărcare
+      de: Lichtmaschinenleistung und Ladespannung prüfen
+      fr: Contrôler l'alternateur et la tension de charge
+      es: Comprobar el alternador y la tensión de carga
+      it: Controllare alternatore e tensione di carica
+      nl: Controleer dynamo en laadspanning
+  keywords:
+    - battery voltage
+    - low voltage
+    - electrical fault
+    - baterie
+    - tensiune
+    - Batteriespannung
+    - tension batterie
+    - tensión batería
+    - tensione batteria
+    - accuspanning
+  related_dtcs: []
+  difficulty: basic
+
+
+- id: vw_alternator_charging_fault
+  vehicle:
+    models:
+      - jetta
+      - golf
+      - polo
+      - passat
+      - tiguan
+      - touran
+      - t_roc
+      - t_cross
+      - taigo
+      - arteon
+      - caddy
+      - transporter
+      - caravelle
+      - multivan
+      - sharan
+    generations:
+      - jetta_mk5
+      - jetta_mk6
+      - jetta_mk7
+      - golf_mk6
+      - golf_mk7
+      - golf_mk8
+      - polo_mk5
+      - polo_mk6
+      - passat_b6
+      - passat_b7
+      - passat_b8
+      - tiguan_1
+      - tiguan_2
+      - tiguan_3
+      - touran_1
+      - touran_2
+      - t_roc_1
+      - t_roc_2
+      - t_cross_1
+      - taigo_1
+      - arteon_1
+      - arteon_2
+      - caddy_4
+      - caddy_5
+      - transporter_t5
+      - transporter_t6
+      - transporter_t6_1
+      - caravelle_t5
+      - caravelle_t6
+      - multivan_t5
+      - multivan_t6
+      - multivan_t7
+      - sharan_2
+  category: diagnostics
+  system: charging
+  title:
+    en: Alternator charging fault
+    ro: Defecțiune sistem încărcare alternator
+    de: Fehler im Lichtmaschinen-Ladesystem
+    fr: Défaut du système de charge de l'alternateur
+    es: Fallo del sistema de carga del alternador
+    it: Guasto del sistema di carica dell'alternatore
+    nl: Storing in het dynamolaadsysteem
+  description:
+    en: The charging system is not maintaining the expected electrical voltage.
+    ro: Sistemul de încărcare nu menține tensiunea electrică necesară.
+    de: Das Ladesystem hält die erforderliche elektrische Spannung nicht aufrecht.
+    fr: Le système de charge ne maintient pas la tension électrique requise.
+    es: El sistema de carga no mantiene la tensión eléctrica necesaria.
+    it: Il sistema di carica non mantiene la tensione elettrica richiesta.
+    nl: Het laadsysteem houdt de vereiste elektrische spanning niet in stand.
+  symptoms:
+    - en: Battery warning light
+      ro: Martor baterie aprins
+      de: Batteriewarnleuchte
+      fr: Voyant de batterie
+      es: Testigo de batería
+      it: Spia batteria
+      nl: Accuwaarschuwingslampje
+    - en: Battery repeatedly discharges
+      ro: Bateria se descarcă repetat
+      de: Batterie entlädt sich wiederholt
+      fr: Batterie qui se décharge régulièrement
+      es: La batería se descarga repetidamente
+      it: Batteria che si scarica ripetutamente
+      nl: Accu loopt herhaaldelijk leeg
+    - en: Electrical systems switching off
+      ro: Sisteme electrice care se opresc
+      de: Elektrische Systeme schalten sich ab
+      fr: Systèmes électriques qui se coupent
+      es: Sistemas eléctricos que se desconectan
+      it: Sistemi elettrici che si disattivano
+      nl: Elektrische systemen schakelen uit
+  possible_causes:
+    - en: Alternator fault
+      ro: Alternator defect
+      de: Lichtmaschine defekt
+      fr: Alternateur défectueux
+      es: Alternador defectuoso
+      it: Alternatore difettoso
+      nl: Defecte dynamo
+    - en: Voltage regulator fault
+      ro: Regulator de tensiune defect
+      de: Spannungsregler defekt
+      fr: Régulateur de tension défectueux
+      es: Regulador de tensión defectuoso
+      it: Regolatore di tensione difettoso
+      nl: Defecte spanningsregelaar
+    - en: Drive belt problem
+      ro: Problemă la cureaua de accesorii
+      de: Problem mit dem Keilrippenriemen
+      fr: Problème de courroie d'accessoires
+      es: Problema de la correa auxiliar
+      it: Problema alla cinghia servizi
+      nl: Probleem met de multiriem
+  diagnostic_steps:
+    - en: Measure charging voltage at the battery
+      ro: Măsurați tensiunea de încărcare la baterie
+      de: Ladespannung an der Batterie messen
+      fr: Mesurer la tension de charge à la batterie
+      es: Medir la tensión de carga en la batería
+      it: Misurare la tensione di carica sulla batteria
+      nl: Meet de laadspanning bij de accu
+    - en: Inspect the drive belt and tensioner
+      ro: Inspectați cureaua și întinzătorul
+      de: Riemen und Spanner prüfen
+      fr: Contrôler la courroie et le tendeur
+      es: Inspeccionar la correa y el tensor
+      it: Ispezionare cinghia e tenditore
+      nl: Controleer riem en spanner
+    - en: Check alternator wiring and ground connections
+      ro: Verificați cablajul alternatorului și masele
+      de: Lichtmaschinenverkabelung und Masseverbindungen prüfen
+      fr: Contrôler le câblage de l'alternateur et les masses
+      es: Comprobar cableado del alternador y masas
+      it: Controllare cablaggio alternatore e masse
+      nl: Controleer dynamobedrading en massaverbindingen
+  keywords:
+    - alternator
+    - charging
+    - battery warning
+    - alternator
+    - încărcare
+    - Lichtmaschine
+    - alternateur
+    - alternador
+    - alternatore
+    - dynamo
+  related_dtcs: []
+  difficulty: intermediate
+
+
+- id: vw_starter_motor_fault
+  vehicle:
+    models:
+      - jetta
+      - golf
+      - polo
+      - passat
+      - tiguan
+      - touran
+      - t_roc
+      - t_cross
+      - taigo
+      - arteon
+      - caddy
+      - transporter
+      - caravelle
+      - multivan
+      - sharan
+    generations:
+      - jetta_mk5
+      - jetta_mk6
+      - jetta_mk7
+      - golf_mk6
+      - golf_mk7
+      - golf_mk8
+      - polo_mk5
+      - polo_mk6
+      - passat_b6
+      - passat_b7
+      - passat_b8
+      - tiguan_1
+      - tiguan_2
+      - tiguan_3
+      - touran_1
+      - touran_2
+      - t_roc_1
+      - t_roc_2
+      - t_cross_1
+      - taigo_1
+      - arteon_1
+      - arteon_2
+      - caddy_4
+      - caddy_5
+      - transporter_t5
+      - transporter_t6
+      - transporter_t6_1
+      - caravelle_t5
+      - caravelle_t6
+      - multivan_t5
+      - multivan_t6
+      - multivan_t7
+      - sharan_2
+  category: diagnostics
+  system: starting
+  title:
+    en: Starter motor fault
+    ro: Defecțiune motor de pornire
+    de: Anlasserfehler
+    fr: Défaut du démarreur
+    es: Fallo del motor de arranque
+    it: Guasto del motorino di avviamento
+    nl: Storing van de startmotor
+  description:
+    en: A starter or starter-control fault can prevent the engine from cranking normally.
+    ro: O defecțiune a demarorului sau a comenzii acestuia poate împiedica motorul să fie antrenat normal.
+    de: Ein Fehler des Anlassers oder seiner Ansteuerung kann verhindern, dass der Motor normal durchgedreht wird.
+    fr: Un défaut du démarreur ou de sa commande peut empêcher le moteur de tourner normalement au démarrage.
+    es: Un fallo del motor de arranque o de su control puede impedir que el motor gire correctamente durante el arranque.
+    it: Un guasto al motorino di avviamento o al suo comando può impedire il normale trascinamento del motore.
+    nl: Een storing van de startmotor of de aansturing kan voorkomen dat de motor normaal wordt rondgedraaid.
+  symptoms:
+    - en: No crank
+      ro: Motorul nu se învârte la pornire
+      de: Motor dreht beim Starten nicht
+      fr: Le moteur ne tourne pas au démarrage
+      es: El motor no gira al arrancar
+      it: Il motore non gira all'avviamento
+      nl: Motor draait niet rond bij starten
+    - en: Slow cranking
+      ro: Pornire lentă
+      de: Langsames Durchdrehen
+      fr: Lancement lent
+      es: Arranque lento
+      it: Avviamento lento
+      nl: Langzaam rondgaan
+  possible_causes:
+    - en: Worn starter motor
+      ro: Demaror uzat
+      de: Verschlissener Anlasser
+      fr: Démarreur usé
+      es: Motor de arranque desgastado
+      it: Motorino di avviamento usurato
+      nl: Versleten startmotor
+    - en: Weak battery
+      ro: Baterie slabă
+      de: Schwache Batterie
+      fr: Batterie faible
+      es: Batería débil
+      it: Batteria debole
+      nl: Zwakke accu
+    - en: Poor ground connection
+      ro: Conexiune de masă slabă
+      de: Schlechte Masseverbindung
+      fr: Mauvaise masse
+      es: Mala conexión a masa
+      it: Cattivo collegamento di massa
+      nl: Slechte massaverbinding
+  diagnostic_steps:
+    - en: Measure battery voltage
+      ro: Măsurați tensiunea bateriei
+      de: Batteriespannung messen
+      fr: Mesurer la tension de batterie
+      es: Medir la tensión de la batería
+      it: Misurare la tensione della batteria
+      nl: Meet de accuspanning
+    - en: Measure voltage at the starter during cranking
+      ro: Măsurați tensiunea la demaror în timpul pornirii
+      de: Spannung am Anlasser während des Startens messen
+      fr: Mesurer la tension au démarreur pendant le lancement
+      es: Medir la tensión en el motor de arranque durante el arranque
+      it: Misurare la tensione sul motorino durante l'avviamento
+      nl: Meet de spanning op de startmotor tijdens starten
+    - en: Check starter relay and control signal
+      ro: Verificați releul și semnalul de comandă al demarorului
+      de: Anlasserrelais und Steuersignal prüfen
+      fr: Contrôler le relais et le signal de commande du démarreur
+      es: Comprobar el relé y la señal de control del motor de arranque
+      it: Controllare relè e segnale di comando del motorino
+      nl: Controleer startrelais en stuursignaal
+  keywords:
+    - starter
+    - no crank
+    - starting fault
+    - demaror
+    - Anlasser
+    - démarreur
+    - motor de arranque
+    - motorino avviamento
+    - startmotor
+  related_dtcs: []
+  difficulty: intermediate
+
+
+- id: vw_engine_coolant_temperature_sensor_fault
+  vehicle:
+    models:
+      - jetta
+      - golf
+      - polo
+      - passat
+      - tiguan
+      - touran
+      - t_roc
+      - t_cross
+      - taigo
+      - arteon
+      - caddy
+      - transporter
+      - caravelle
+      - multivan
+      - sharan
+    generations:
+      - jetta_mk5
+      - jetta_mk6
+      - jetta_mk7
+      - golf_mk6
+      - golf_mk7
+      - golf_mk8
+      - polo_mk5
+      - polo_mk6
+      - passat_b6
+      - passat_b7
+      - passat_b8
+      - tiguan_1
+      - tiguan_2
+      - tiguan_3
+      - touran_1
+      - touran_2
+      - t_roc_1
+      - t_roc_2
+      - t_cross_1
+      - taigo_1
+      - arteon_1
+      - arteon_2
+      - caddy_4
+      - caddy_5
+      - transporter_t5
+      - transporter_t6
+      - transporter_t6_1
+      - caravelle_t5
+      - caravelle_t6
+      - multivan_t5
+      - multivan_t6
+      - multivan_t7
+      - sharan_2
+  category: diagnostics
+  system: engine_management
+  title:
+    en: Engine coolant temperature sensor fault
+    ro: Defecțiune senzor temperatură lichid de răcire
+    de: Fehler des Kühlmitteltemperatursensors
+    fr: Défaut du capteur de température du liquide de refroidissement
+    es: Fallo del sensor de temperatura del refrigerante
+    it: Guasto del sensore temperatura liquido refrigerante
+    nl: Storing van de koelvloeistoftemperatuursensor
+  description:
+    en: An incorrect coolant temperature signal can affect fuel mixture, cooling strategy, idle control and cold starting.
+    ro: Un semnal incorect al temperaturii lichidului de răcire poate afecta amestecul, strategia de răcire, ralantiul și pornirea la rece.
+    de: Ein falsches Kühlmitteltemperatursignal kann Gemisch, Kühlstrategie, Leerlaufregelung und Kaltstart beeinflussen.
+    fr: Un signal incorrect de température du liquide de refroidissement peut affecter le mélange, la stratégie de refroidissement, le ralenti et le démarrage à froid.
+    es: Una señal incorrecta de temperatura del refrigerante puede afectar la mezcla, la estrategia de refrigeración, el ralentí y el arranque en frío.
+    it: Un segnale errato della temperatura del refrigerante può influenzare miscela, strategia di raffreddamento, minimo e avviamento a freddo.
+    nl: Een onjuist koelvloeistoftemperatuursignaal kan mengsel, koelstrategie, stationair toerental en koude start beïnvloeden.
+  symptoms:
+    - en: Difficult cold starting
+      ro: Pornire dificilă la rece
+      de: Schwieriger Kaltstart
+      fr: Démarrage à froid difficile
+      es: Arranque en frío difícil
+      it: Avviamento a freddo difficoltoso
+      nl: Moeilijke koude start
+    - en: Cooling fan running unexpectedly
+      ro: Ventilatorul pornește neașteptat
+      de: Kühlerlüfter läuft unerwartet
+      fr: Ventilateur qui fonctionne de manière inattendue
+      es: Ventilador funcionando inesperadamente
+      it: Ventola che funziona inaspettatamente
+      nl: Koelventilator draait onverwacht
+    - en: Incorrect temperature reading
+      ro: Temperatură afișată incorect
+      de: Falsche Temperaturanzeige
+      fr: Indication de température incorrecte
+      es: Lectura de temperatura incorrecta
+      it: Lettura temperatura errata
+      nl: Onjuiste temperatuurweergave
+  possible_causes:
+    - en: Faulty temperature sensor
+      ro: Senzor de temperatură defect
+      de: Defekter Temperatursensor
+      fr: Capteur de température défectueux
+      es: Sensor de temperatura defectuoso
+      it: Sensore temperatura difettoso
+      nl: Defecte temperatuursensor
+    - en: Damaged wiring
+      ro: Cablaj deteriorat
+      de: Beschädigte Verkabelung
+      fr: Câblage endommagé
+      es: Cableado dañado
+      it: Cablaggio danneggiato
+      nl: Beschadigde bedrading
+  diagnostic_steps:
+    - en: Read coolant temperature data with a diagnostic tool
+      ro: Citiți temperatura lichidului de răcire cu testerul
+      de: Kühlmitteltemperatur mit Diagnosetester auslesen
+      fr: Lire la température du liquide avec l'outil de diagnostic
+      es: Leer la temperatura del refrigerante con el equipo de diagnosis
+      it: Leggere la temperatura del refrigerante con lo strumento diagnostico
+      nl: Lees de koelvloeistoftemperatuur uit met diagnoseapparatuur
+    - en: Compare the reading with actual coolant temperature
+      ro: Comparați valoarea cu temperatura reală a lichidului
+      de: Messwert mit der tatsächlichen Kühlmitteltemperatur vergleichen
+      fr: Comparer la valeur à la température réelle du liquide
+      es: Comparar el valor con la temperatura real del refrigerante
+      it: Confrontare il valore con la temperatura reale del refrigerante
+      nl: Vergelijk de waarde met de werkelijke koelvloeistoftemperatuur
+    - en: Inspect sensor connector and wiring
+      ro: Inspectați conectorul și cablajul senzorului
+      de: Sensorstecker und Verkabelung prüfen
+      fr: Contrôler le connecteur et le câblage du capteur
+      es: Inspeccionar el conector y cableado del sensor
+      it: Ispezionare connettore e cablaggio del sensore
+      nl: Controleer stekker en bedrading van de sensor
+  keywords:
+    - coolant temperature sensor
+    - ECT sensor
+    - temperature sensor
+    - senzor temperatură
+    - Kühlmitteltemperatur
+    - température liquide
+    - temperatura refrigerante
+    - temperatura refrigerante
+    - koelvloeistoftemperatuur
+  related_dtcs: []
+  difficulty: intermediate
+
+
+- id: vw_cooling_fan_control_fault
+  vehicle:
+    models:
+      - jetta
+      - golf
+      - polo
+      - passat
+      - tiguan
+      - touran
+      - t_roc
+      - t_cross
+      - taigo
+      - arteon
+      - caddy
+      - transporter
+      - caravelle
+      - multivan
+      - sharan
+    generations:
+      - jetta_mk5
+      - jetta_mk6
+      - jetta_mk7
+      - golf_mk6
+      - golf_mk7
+      - golf_mk8
+      - polo_mk5
+      - polo_mk6
+      - passat_b6
+      - passat_b7
+      - passat_b8
+      - tiguan_1
+      - tiguan_2
+      - tiguan_3
+      - touran_1
+      - touran_2
+      - t_roc_1
+      - t_roc_2
+      - t_cross_1
+      - taigo_1
+      - arteon_1
+      - arteon_2
+      - caddy_4
+      - caddy_5
+      - transporter_t5
+      - transporter_t6
+      - transporter_t6_1
+      - caravelle_t5
+      - caravelle_t6
+      - multivan_t5
+      - multivan_t6
+      - multivan_t7
+      - sharan_2
+  category: diagnostics
+  system: cooling
+  title:
+    en: Cooling fan control fault
+    ro: Defecțiune comandă ventilator răcire
+    de: Fehler der Kühlerlüftersteuerung
+    fr: Défaut de commande du ventilateur de refroidissement
+    es: Fallo del control del ventilador de refrigeración
+    it: Guasto del comando ventola di raffreddamento
+    nl: Storing in de koelventilatorregeling
+  description:
+    en: A cooling fan control fault can cause overheating or an unnecessarily running fan.
+    ro: O defecțiune a comenzii ventilatorului poate provoca supraîncălzire sau funcționarea inutilă a ventilatorului.
+    de: Ein Fehler der Kühlerlüftersteuerung kann Überhitzung oder einen unnötig laufenden Lüfter verursachen.
+    fr: Un défaut de commande du ventilateur peut provoquer une surchauffe ou un fonctionnement permanent du ventilateur.
+    es: Un fallo del control del ventilador puede causar sobrecalentamiento o funcionamiento innecesario del ventilador.
+    it: Un guasto al comando della ventola può causare surriscaldamento o funzionamento inutile della ventola.
+    nl: Een storing in de koelventilatorregeling kan oververhitting of onnodig draaien van de ventilator veroorzaken.
+  symptoms:
+    - en: Cooling fan does not run
+      ro: Ventilatorul nu pornește
+      de: Kühlerlüfter läuft nicht
+      fr: Le ventilateur ne fonctionne pas
+      es: El ventilador no funciona
+      it: La ventola non funziona
+      nl: Koelventilator draait niet
+    - en: Fan runs continuously
+      ro: Ventilatorul funcționează continuu
+      de: Lüfter läuft ständig
+      fr: Ventilateur fonctionnant en permanence
+      es: Ventilador funcionando continuamente
+      it: Ventola sempre in funzione
+      nl: Ventilator draait continu
+    - en: Engine overheating
+      ro: Motor supraîncălzit
+      de: Motor überhitzt
+      fr: Surchauffe moteur
+      es: Sobrecalentamiento del motor
+      it: Surriscaldamento motore
+      nl: Oververhitting van de motor
+  possible_causes:
+    - en: Failed cooling fan
+      ro: Ventilator defect
+      de: Kühlerlüfter defekt
+      fr: Ventilateur défectueux
+      es: Ventilador defectuoso
+      it: Ventola difettosa
+      nl: Defecte ventilator
+    - en: Faulty fan controller
+      ro: Modul de comandă ventilator defect
+      de: Lüftersteuergerät defekt
+      fr: Module de commande du ventilateur défectueux
+      es: Módulo de control del ventilador defectuoso
+      it: Modulo di comando ventola difettoso
+      nl: Defecte ventilatorregelmodule
+    - en: Wiring or power supply fault
+      ro: Defecțiune cablaj sau alimentare
+      de: Fehler in Verkabelung oder Stromversorgung
+      fr: Défaut de câblage ou d'alimentation
+      es: Fallo de cableado o alimentación
+      it: Guasto cablaggio o alimentazione
+      nl: Storing in bedrading of voeding
+  diagnostic_steps:
+    - en: Activate the fan using the diagnostic tool
+      ro: Activați ventilatorul cu testerul
+      de: Lüfter mit dem Diagnosetester ansteuern
+      fr: Commander le ventilateur avec l'outil de diagnostic
+      es: Activar el ventilador con el equipo de diagnosis
+      it: Attivare la ventola con lo strumento diagnostico
+      nl: Activeer de ventilator met diagnoseapparatuur
+    - en: Check power supply and ground
+      ro: Verificați alimentarea și masa
+      de: Stromversorgung und Masse prüfen
+      fr: Contrôler l'alimentation et la masse
+      es: Comprobar alimentación y masa
+      it: Controllare alimentazione e massa
+      nl: Controleer voeding en massa
+    - en: Check coolant and refrigerant-related fan requests
+      ro: Verificați comenzile ventilatorului provenite de la temperatură și A/C
+      de: Lüfteranforderungen durch Kühlung und Klimaanlage prüfen
+      fr: Contrôler les demandes du ventilateur liées au refroidissement et à la climatisation
+      es: Comprobar las solicitudes del ventilador de refrigeración y A/C
+      it: Controllare le richieste della ventola da raffreddamento e A/C
+      nl: Controleer ventilatoraanvragen door koeling en airconditioning
+  keywords:
+    - cooling fan
+    - radiator fan
+    - fan control
+    - ventilator răcire
+    - Kühlerlüfter
+    - ventilateur refroidissement
+    - ventilador refrigeración
+    - ventola raffreddamento
+    - koelventilator
+  related_dtcs: []
+  difficulty: intermediate
+
+
+- id: vw_abs_wheel_speed_sensor_fault
+  vehicle:
+    models:
+      - jetta
+      - golf
+      - polo
+      - passat
+      - tiguan
+      - touran
+      - t_roc
+      - t_cross
+      - taigo
+      - arteon
+      - caddy
+      - transporter
+      - caravelle
+      - multivan
+      - sharan
+      - beetle
+      - scirocco
+      - eos
+    generations:
+      - jetta_mk5
+      - jetta_mk6
+      - jetta_mk7
+      - golf_mk6
+      - golf_mk7
+      - golf_mk8
+      - polo_mk5
+      - polo_mk6
+      - passat_b6
+      - passat_b7
+      - passat_b8
+      - tiguan_1
+      - tiguan_2
+      - tiguan_3
+      - touran_1
+      - touran_2
+      - t_roc_1
+      - t_roc_2
+      - t_cross_1
+      - taigo_1
+      - arteon_1
+      - arteon_2
+      - caddy_4
+      - caddy_5
+      - transporter_t5
+      - transporter_t6
+      - transporter_t6_1
+      - caravelle_t5
+      - caravelle_t6
+      - multivan_t5
+      - multivan_t6
+      - multivan_t7
+      - sharan_2
+      - beetle_a5
+      - scirocco_mk3
+      - eos_1
+  category: diagnostics
+  system: abs
+  title:
+    en: ABS wheel speed sensor fault
+    ro: Defecțiune senzor viteză roată ABS
+    de: Fehler des ABS-Raddrehzahlsensors
+    fr: Défaut du capteur de vitesse de roue ABS
+    es: Fallo del sensor de velocidad de rueda ABS
+    it: Guasto del sensore velocità ruota ABS
+    nl: Storing van de ABS-wielsnelheidssensor
+  description:
+    en: An incorrect wheel-speed signal can disable ABS, traction control or stability-control functions.
+    ro: Un semnal incorect de viteză a roții poate dezactiva ABS, controlul tracțiunii sau stabilitatea.
+    de: Ein falsches Raddrehzahlsignal kann ABS, Traktionskontrolle oder Stabilitätsregelung deaktivieren.
+    fr: Un signal de vitesse de roue incorrect peut désactiver l'ABS, l'antipatinage ou le contrôle de stabilité.
+    es: Una señal incorrecta de velocidad de rueda puede desactivar ABS, control de tracción o estabilidad.
+    it: Un segnale errato della velocità ruota può disattivare ABS, controllo trazione o stabilità.
+    nl: Een onjuist wielsnelheidssignaal kan ABS, tractiecontrole of stabiliteitsregeling uitschakelen.
+  symptoms:
+    - en: ABS warning light
+      ro: Martor ABS
+      de: ABS-Warnleuchte
+      fr: Voyant ABS
+      es: Testigo ABS
+      it: Spia ABS
+      nl: ABS-waarschuwingslampje
+    - en: Traction-control warning
+      ro: Martor control tracțiune
+      de: Warnleuchte der Traktionskontrolle
+      fr: Voyant antipatinage
+      es: Testigo de control de tracción
+      it: Spia controllo trazione
+      nl: Waarschuwingslampje tractiecontrole
+    - en: Speedometer abnormalities
+      ro: Indicații anormale ale vitezometrului
+      de: Auffälligkeiten am Tacho
+      fr: Anomalies du compteur de vitesse
+      es: Anomalías del velocímetro
+      it: Anomalie del tachimetro
+      nl: Afwijkingen van de snelheidsmeter
+  possible_causes:
+    - en: Failed wheel-speed sensor
+      ro: Senzor ABS defect
+      de: Raddrehzahlsensor defekt
+      fr: Capteur de roue défectueux
+      es: Sensor de rueda defectuoso
+      it: Sensore ruota difettoso
+      nl: Defecte wielsnelheidssensor
+    - en: Damaged sensor wiring
+      ro: Cablaj senzor deteriorat
+      de: Beschädigte Sensorverkabelung
+      fr: Câblage du capteur endommagé
+      es: Cableado del sensor dañado
+      it: Cablaggio sensore danneggiato
+      nl: Beschadigde sensorbedrading
+    - en: Damaged magnetic encoder or wheel bearing
+      ro: Inel magnetic sau rulment deteriorat
+      de: Beschädigter Magnetring oder Radlager
+      fr: Bague magnétique ou roulement endommagé
+      es: Encoder magnético o rodamiento dañado
+      it: Anello magnetico o cuscinetto danneggiato
+      nl: Beschadigde magnetische encoder of wiellager
+  diagnostic_steps:
+    - en: Read ABS live wheel-speed data
+      ro: Citiți vitezele live ale roților în modulul ABS
+      de: Raddrehzahlen im ABS-Steuergerät auslesen
+      fr: Lire les vitesses de roue en temps réel dans le calculateur ABS
+      es: Leer velocidades de rueda en tiempo real en el ABS
+      it: Leggere le velocità ruota in tempo reale nell'ABS
+      nl: Lees live wielsnelheden uit in de ABS-module
+    - en: Compare all four wheel signals
+      ro: Comparați semnalele celor patru roți
+      de: Alle vier Raddrehzahlsignale vergleichen
+      fr: Comparer les quatre signaux de roue
+      es: Comparar las cuatro señales de rueda
+      it: Confrontare i quattro segnali ruota
+      nl: Vergelijk de vier wielsnelheidssignalen
+    - en: Inspect the sensor, connector and encoder ring
+      ro: Inspectați senzorul, conectorul și inelul magnetic
+      de: Sensor, Stecker und Magnetring prüfen
+      fr: Contrôler le capteur, le connecteur et la bague magnétique
+      es: Inspeccionar sensor, conector y anillo magnético
+      it: Ispezionare sensore, connettore e anello magnetico
+      nl: Controleer sensor, stekker en magnetische ring
+  keywords:
+    - ABS sensor
+    - wheel speed sensor
+    - wheel speed
+    - senzor ABS
+    - Raddrehzahl
+    - capteur ABS
+    - sensor ABS
+    - sensore ABS
+    - ABS sensor
+  related_dtcs: []
+  difficulty: intermediate
+
+
+- id: vw_brake_light_switch_fault
+  vehicle:
+    models:
+      - jetta
+      - golf
+      - polo
+      - passat
+      - tiguan
+      - touran
+      - t_roc
+      - t_cross
+      - taigo
+      - arteon
+      - caddy
+      - transporter
+      - caravelle
+      - multivan
+      - sharan
+    generations:
+      - jetta_mk5
+      - jetta_mk6
+      - jetta_mk7
+      - golf_mk6
+      - golf_mk7
+      - golf_mk8
+      - polo_mk5
+      - polo_mk6
+      - passat_b6
+      - passat_b7
+      - passat_b8
+      - tiguan_1
+      - tiguan_2
+      - tiguan_3
+      - touran_1
+      - touran_2
+      - t_roc_1
+      - t_roc_2
+      - t_cross_1
+      - taigo_1
+      - arteon_1
+      - arteon_2
+      - caddy_4
+      - caddy_5
+      - transporter_t5
+      - transporter_t6
+      - transporter_t6_1
+      - caravelle_t5
+      - caravelle_t6
+      - multivan_t5
+      - multivan_t6
+      - multivan_t7
+      - sharan_2
+  category: diagnostics
+  system: braking
+  title:
+    en: Brake light switch fault
+    ro: Defecțiune contactor pedala de frână
+    de: Fehler des Bremslichtschalters
+    fr: Défaut du contacteur de feu stop
+    es: Fallo del interruptor de freno
+    it: Guasto dell'interruttore del pedale freno
+    nl: Storing van de remlichtschakelaar
+  description:
+    en: An incorrect brake-pedal signal can affect brake lights, cruise control and several driver-assistance functions.
+    ro: Un semnal incorect al pedalei de frână poate afecta stopurile, tempomatul și mai multe funcții de asistență.
+    de: Ein falsches Bremspedalsignal kann Bremsleuchten, Tempomat und mehrere Assistenzfunktionen beeinflussen.
+    fr: Un signal incorrect de pédale de frein peut affecter les feux stop, le régulateur et plusieurs fonctions d'assistance.
+    es: Una señal incorrecta del pedal de freno puede afectar a las luces de freno, el control de crucero y varias funciones de asistencia.
+    it: Un segnale errato del pedale freno può influenzare luci stop, cruise control e diverse funzioni di assistenza.
+    nl: Een onjuist rempedaalsignaal kan remlichten, cruisecontrol en verschillende assistentiefuncties beïnvloeden.
+  symptoms:
+    - en: Brake lights not working correctly
+      ro: Stopurile nu funcționează corect
+      de: Bremsleuchten funktionieren nicht korrekt
+      fr: Feux stop fonctionnant incorrectement
+      es: Luces de freno funcionando incorrectamente
+      it: Luci stop non funzionanti correttamente
+      nl: Remlichten werken niet correct
+    - en: Cruise control unavailable
+      ro: Tempomat indisponibil
+      de: Tempomat nicht verfügbar
+      fr: Régulateur de vitesse indisponible
+      es: Control de crucero no disponible
+      it: Cruise control non disponibile
+      nl: Cruisecontrol niet beschikbaar
+  possible_causes:
+    - en: Failed brake switch
+      ro: Contactor de frână defect
+      de: Bremslichtschalter defekt
+      fr: Contacteur de frein défectueux
+      es: Interruptor de freno defectuoso
+      it: Interruttore freno difettoso
+      nl: Defecte remlichtschakelaar
+    - en: Incorrect switch adjustment
+      ro: Reglaj incorect al contactorului
+      de: Falsche Einstellung des Schalters
+      fr: Mauvais réglage du contacteur
+      es: Ajuste incorrecto del interruptor
+      it: Regolazione errata dell'interruttore
+      nl: Onjuiste afstelling van de schakelaar
+    - en: Wiring fault
+      ro: Defecțiune cablaj
+      de: Verkabelungsfehler
+      fr: Défaut de câblage
+      es: Fallo de cableado
+      it: Guasto cablaggio
+      nl: Bedradingsstoring
+  diagnostic_steps:
+    - en: Check brake-pedal live data
+      ro: Verificați valoarea pedalei de frână în datele live
+      de: Bremspedalsignal in den Messwerten prüfen
+      fr: Contrôler le signal de pédale de frein dans les données réelles
+      es: Comprobar la señal del pedal de freno en datos en vivo
+      it: Controllare il segnale pedale freno nei dati live
+      nl: Controleer het rempedaalsignaal in live data
+    - en: Check both brake-light circuits
+      ro: Verificați ambele circuite ale stopurilor
+      de: Beide Bremslichtkreise prüfen
+      fr: Contrôler les deux circuits de feux stop
+      es: Comprobar ambos circuitos de luces de freno
+      it: Controllare entrambi i circuiti delle luci stop
+      nl: Controleer beide remlichtcircuits
+    - en: Inspect switch mounting and wiring
+      ro: Inspectați montarea și cablajul contactorului
+      de: Schalterbefestigung und Verkabelung prüfen
+      fr: Contrôler le montage et le câblage du contacteur
+      es: Inspeccionar montaje y cableado del interruptor
+      it: Ispezionare montaggio e cablaggio dell'interruttore
+      nl: Controleer montage en bedrading van de schakelaar
+  keywords:
+    - brake switch
+    - brake light
+    - cruise control
+    - contactor frână
+    - Bremslichtschalter
+    - contacteur frein
+    - interruptor freno
+    - interruttore freno
+    - remlichtschakelaar
+  related_dtcs: []
+  difficulty: basic
+
+
+- id: vw_crankshaft_position_sensor_fault
+  vehicle:
+    models:
+      - jetta
+      - golf
+      - polo
+      - passat
+      - tiguan
+      - touran
+      - t_roc
+      - t_cross
+      - taigo
+      - arteon
+      - caddy
+      - transporter
+      - caravelle
+      - multivan
+      - sharan
+    generations:
+      - jetta_mk5
+      - jetta_mk6
+      - jetta_mk7
+      - golf_mk6
+      - golf_mk7
+      - golf_mk8
+      - polo_mk5
+      - polo_mk6
+      - passat_b6
+      - passat_b7
+      - passat_b8
+      - tiguan_1
+      - tiguan_2
+      - tiguan_3
+      - touran_1
+      - touran_2
+      - t_roc_1
+      - t_roc_2
+      - t_cross_1
+      - taigo_1
+      - arteon_1
+      - arteon_2
+      - caddy_4
+      - caddy_5
+      - transporter_t5
+      - transporter_t6
+      - transporter_t6_1
+      - caravelle_t5
+      - caravelle_t6
+      - multivan_t5
+      - multivan_t6
+      - multivan_t7
+      - sharan_2
+  category: diagnostics
+  system: engine_management
+  title:
+    en: Crankshaft position sensor fault
+    ro: Defecțiune senzor poziție arbore cotit
+    de: Fehler des Kurbelwellensensors
+    fr: Défaut du capteur de position du vilebrequin
+    es: Fallo del sensor de posición del cigüeñal
+    it: Guasto del sensore posizione albero motore
+    nl: Storing van de krukassensor
+  description:
+    en: The crankshaft position signal is required for engine synchronization and injection or ignition timing.
+    ro: Semnalul de poziție al arborelui cotit este necesar pentru sincronizarea motorului și pentru injecție sau aprindere.
+    de: Das Kurbelwellensignal wird für die Motorsynchronisation sowie Einspritz- und Zündsteuerung benötigt.
+    fr: Le signal de position du vilebrequin est nécessaire à la synchronisation du moteur et au pilotage de l'injection ou de l'allumage.
+    es: La señal del cigüeñal es necesaria para la sincronización del motor y el control de inyección o encendido.
+    it: Il segnale dell'albero motore è necessario per la sincronizzazione e per il controllo di iniezione o accensione.
+    nl: Het krukassignaal is nodig voor motorsynchronisatie en voor de regeling van injectie of ontsteking.
+  symptoms:
+    - en: Engine does not start
+      ro: Motorul nu pornește
+      de: Motor startet nicht
+      fr: Le moteur ne démarre pas
+      es: El motor no arranca
+      it: Il motore non si avvia
+      nl: Motor start niet
+    - en: Intermittent stalling
+      ro: Motorul se oprește intermitent
+      de: Sporadisches Absterben
+      fr: Calages intermittents
+      es: Paradas intermitentes
+      it: Spegnimenti intermittenti
+      nl: Intermitterend afslaan
+    - en: Engine hesitation
+      ro: Ezitare a motorului
+      de: Motorruckeln
+      fr: Hésitations moteur
+      es: Vacilación del motor
+      it: Esitazioni del motore
+      nl: Inhouden van de motor
+  possible_causes:
+    - en: Failed crankshaft sensor
+      ro: Senzor arbore cotit defect
+      de: Kurbelwellensensor defekt
+      fr: Capteur de vilebrequin défectueux
+      es: Sensor de cigüeñal defectuoso
+      it: Sensore albero motore difettoso
+      nl: Defecte krukassensor
+    - en: Damaged wiring
+      ro: Cablaj deteriorat
+      de: Beschädigte Verkabelung
+      fr: Câblage endommagé
+      es: Cableado dañado
+      it: Cablaggio danneggiato
+      nl: Beschadigde bedrading
+    - en: Damaged trigger wheel
+      ro: Roată fonică / fonoabsorbantă deteriorată
+      de: Beschädigtes Geberrad
+      fr: Roue phonique endommagée
+      es: Rueda fónica dañada
+      it: Ruota fonica danneggiata
+      nl: Beschadigd triggerwiel
+  diagnostic_steps:
+    - en: Read crankshaft RPM while cranking
+      ro: Citiți turația arborelui cotit în timpul pornirii
+      de: Kurbelwellendrehzahl während des Anlassens prüfen
+      fr: Contrôler le régime vilebrequin pendant le lancement
+      es: Comprobar las rpm del cigüeñal durante el arranque
+      it: Controllare il regime dell'albero durante l'avviamento
+      nl: Controleer het krukastoerental tijdens starten
+    - en: Inspect sensor wiring and connector
+      ro: Inspectați cablajul și conectorul senzorului
+      de: Sensorverkabelung und Stecker prüfen
+      fr: Contrôler le câblage et le connecteur
+      es: Inspeccionar cableado y conector
+      it: Ispezionare cablaggio e connettore
+      nl: Controleer bedrading en stekker
+    - en: Compare crankshaft and camshaft synchronization
+      ro: Comparați sincronizarea arborelui cotit cu cea a arborelui cu came
+      de: Kurbel- und Nockenwellensynchronisation vergleichen
+      fr: Comparer la synchronisation vilebrequin/arbre à cames
+      es: Comparar sincronización de cigüeñal y árbol de levas
+      it: Confrontare la sincronizzazione albero motore/albero a camme
+      nl: Vergelijk krukas- en nokkenassynchronisatie
+  keywords:
+    - crankshaft sensor
+    - crank sensor
+    - engine synchronization
+    - senzor arbore cotit
+    - Kurbelwellensensor
+    - capteur vilebrequin
+    - sensor cigüeñal
+    - sensore albero motore
+    - krukassensor
+  related_dtcs: []
+  difficulty: intermediate
+
+
+- id: vw_camshaft_position_sensor_fault
+  vehicle:
+    models:
+      - jetta
+      - golf
+      - polo
+      - passat
+      - tiguan
+      - touran
+      - t_roc
+      - t_cross
+      - taigo
+      - arteon
+      - caddy
+      - transporter
+      - caravelle
+      - multivan
+      - sharan
+    generations:
+      - jetta_mk5
+      - jetta_mk6
+      - jetta_mk7
+      - golf_mk6
+      - golf_mk7
+      - golf_mk8
+      - polo_mk5
+      - polo_mk6
+      - passat_b6
+      - passat_b7
+      - passat_b8
+      - tiguan_1
+      - tiguan_2
+      - tiguan_3
+      - touran_1
+      - touran_2
+      - t_roc_1
+      - t_roc_2
+      - t_cross_1
+      - taigo_1
+      - arteon_1
+      - arteon_2
+      - caddy_4
+      - caddy_5
+      - transporter_t5
+      - transporter_t6
+      - transporter_t6_1
+      - caravelle_t5
+      - caravelle_t6
+      - multivan_t5
+      - multivan_t6
+      - multivan_t7
+      - sharan_2
+  category: diagnostics
+  system: engine_management
+  title:
+    en: Camshaft position sensor fault
+    ro: Defecțiune senzor poziție arbore cu came
+    de: Fehler des Nockenwellensensors
+    fr: Défaut du capteur de position d'arbre à cames
+    es: Fallo del sensor de posición del árbol de levas
+    it: Guasto del sensore posizione albero a camme
+    nl: Storing van de nokkenassensor
+  description:
+    en: An incorrect camshaft position signal can cause synchronization faults, difficult starting and engine performance problems.
+    ro: Un semnal incorect al poziției arborelui cu came poate provoca probleme de sincronizare, pornire dificilă și funcționare neregulată.
+    de: Ein falsches Nockenwellensignal kann Synchronisationsfehler, Startprobleme und Motorleistungsprobleme verursachen.
+    fr: Un signal incorrect d'arbre à cames peut provoquer des défauts de synchronisation, des difficultés de démarrage et des problèmes de fonctionnement.
+    es: Una señal incorrecta del árbol de levas puede provocar fallos de sincronización, dificultades de arranque y problemas de rendimiento.
+    it: Un segnale errato dell'albero a camme può causare problemi di sincronizzazione, avviamento e prestazioni.
+    nl: Een onjuist nokkenassignaal kan synchronisatieproblemen, startproblemen en prestatieverlies veroorzaken.
+  symptoms:
+    - en: Difficult starting
+      ro: Pornire dificilă
+      de: Erschwertes Starten
+      fr: Démarrage difficile
+      es: Arranque difícil
+      it: Avviamento difficoltoso
+      nl: Moeilijk starten
+    - en: Rough running
+      ro: Funcționare neregulată
+      de: Unruhiger Motorlauf
+      fr: Fonctionnement irrégulier
+      es: Funcionamiento irregular
+      it: Funzionamento irregolare
+      nl: Onrustige motorloop
+    - en: Loss of power
+      ro: Pierdere de putere
+      de: Leistungsverlust
+      fr: Perte de puissance
+      es: Pérdida de potencia
+      it: Perdita di potenza
+      nl: Vermogensverlies
+  possible_causes:
+    - en: Failed camshaft sensor
+      ro: Senzor arbore cu came defect
+      de: Nockenwellensensor defekt
+      fr: Capteur d'arbre à cames défectueux
+      es: Sensor de árbol de levas defectuoso
+      it: Sensore albero a camme difettoso
+      nl: Defecte nokkenassensor
+    - en: Wiring or connector fault
+      ro: Defecțiune cablaj sau conector
+      de: Fehler an Verkabelung oder Stecker
+      fr: Défaut de câblage ou connecteur
+      es: Fallo de cableado o conector
+      it: Guasto cablaggio o connettore
+      nl: Storing in bedrading of stekker
+    - en: Timing problem
+      ro: Problemă de distribuție
+      de: Steuerzeitenproblem
+      fr: Problème de distribution
+      es: Problema de distribución
+      it: Problema di fasatura
+      nl: Probleem met de distributietiming
+  diagnostic_steps:
+    - en: Read camshaft synchronization data
+      ro: Citiți datele de sincronizare ale arborelui cu came
+      de: Nockenwellensynchronisation auslesen
+      fr: Lire les données de synchronisation de l'arbre à cames
+      es: Leer los datos de sincronización del árbol de levas
+      it: Leggere i dati di sincronizzazione dell'albero a camme
+      nl: Lees de nokkenassynchronisatie uit
+    - en: Inspect sensor wiring
+      ro: Inspectați cablajul senzorului
+      de: Sensorverkabelung prüfen
+      fr: Contrôler le câblage du capteur
+      es: Inspeccionar cableado del sensor
+      it: Ispezionare cablaggio del sensore
+      nl: Controleer sensorbedrading
+    - en: Verify mechanical timing if synchronization is incorrect
+      ro: Verificați distribuția mecanică dacă sincronizarea este incorectă
+      de: Mechanische Steuerzeiten prüfen, wenn die Synchronisation falsch ist
+      fr: Vérifier le calage mécanique si la synchronisation est incorrecte
+      es: Verificar la distribución mecánica si la sincronización es incorrecta
+      it: Verificare la fasatura meccanica se la sincronizzazione è errata
+      nl: Controleer de mechanische timing als synchronisatie onjuist is
+  keywords:
+    - camshaft sensor
+    - cam sensor
+    - synchronization
+    - senzor arbore cu came
+    - Nockenwellensensor
+    - capteur arbre à cames
+    - sensor árbol de levas
+    - sensore albero a camme
+    - nokkenassensor
+  related_dtcs: []
+  difficulty: intermediate
+
+
+- id: vw_thermostat_coolant_regulation_fault
+  vehicle:
+    models:
+      - jetta
+      - golf
+      - polo
+      - passat
+      - tiguan
+      - touran
+      - t_roc
+      - t_cross
+      - taigo
+      - arteon
+      - caddy
+      - transporter
+      - caravelle
+      - multivan
+      - sharan
+    generations:
+      - jetta_mk5
+      - jetta_mk6
+      - jetta_mk7
+      - golf_mk6
+      - golf_mk7
+      - golf_mk8
+      - polo_mk5
+      - polo_mk6
+      - passat_b6
+      - passat_b7
+      - passat_b8
+      - tiguan_1
+      - tiguan_2
+      - tiguan_3
+      - touran_1
+      - touran_2
+      - t_roc_1
+      - t_roc_2
+      - t_cross_1
+      - taigo_1
+      - arteon_1
+      - arteon_2
+      - caddy_4
+      - caddy_5
+      - transporter_t5
+      - transporter_t6
+      - transporter_t6_1
+      - caravelle_t5
+      - caravelle_t6
+      - multivan_t5
+      - multivan_t6
+      - multivan_t7
+      - sharan_2
+  category: diagnostics
+  system: cooling
+  title:
+    en: Thermostat and coolant temperature regulation fault
+    ro: Defecțiune termostat și reglare temperatură lichid răcire
+    de: Fehler von Thermostat und Kühlmitteltemperaturregelung
+    fr: Défaut du thermostat et de la régulation de température
+    es: Fallo del termostato y regulación de temperatura
+    it: Guasto termostato e regolazione temperatura refrigerante
+    nl: Storing thermostaat en koelvloeistoftemperatuurregeling
+  description:
+    en: Incorrect thermostat operation can cause slow warm-up, excessive temperature or unstable coolant temperature.
+    ro: Funcționarea incorectă a termostatului poate provoca încălzire lentă, temperatură excesivă sau temperatură instabilă a lichidului.
+    de: Ein fehlerhaft arbeitendes Thermostat kann langsames Aufwärmen, Übertemperatur oder eine instabile Kühlmitteltemperatur verursachen.
+    fr: Un thermostat défectueux peut provoquer une montée en température lente, une surchauffe ou une température instable.
+    es: Un termostato defectuoso puede causar calentamiento lento, sobretemperatura o temperatura inestable.
+    it: Un termostato difettoso può causare riscaldamento lento, surriscaldamento o temperatura instabile.
+    nl: Een defecte thermostaat kan langzaam opwarmen, oververhitting of een instabiele koelvloeistoftemperatuur veroorzaken.
+  symptoms:
+    - en: Engine takes too long to warm up
+      ro: Motorul se încălzește prea greu
+      de: Motor wird zu langsam warm
+      fr: Moteur qui chauffe trop lentement
+      es: El motor tarda demasiado en calentarse
+      it: Motore che impiega troppo a scaldarsi
+      nl: Motor warmt te langzaam op
+    - en: Coolant temperature fluctuates
+      ro: Temperatura lichidului fluctuează
+      de: Kühlmitteltemperatur schwankt
+      fr: Température du liquide fluctuante
+      es: Temperatura del refrigerante fluctúa
+      it: Temperatura refrigerante instabile
+      nl: Koelvloeistoftemperatuur schommelt
+    - en: Engine overheating
+      ro: Supraîncălzirea motorului
+      de: Motorüberhitzung
+      fr: Surchauffe moteur
+      es: Sobrecalentamiento
+      it: Surriscaldamento
+      nl: Oververhitting
+  possible_causes:
+    - en: Thermostat stuck open
+      ro: Termostat blocat deschis
+      de: Thermostat hängt offen
+      fr: Thermostat bloqué ouvert
+      es: Termostato bloqueado abierto
+      it: Termostato bloccato aperto
+      nl: Thermostaat blijft open staan
+    - en: Thermostat stuck closed
+      ro: Termostat blocat închis
+      de: Thermostat hängt geschlossen
+      fr: Thermostat bloqué fermé
+      es: Termostato bloqueado cerrado
+      it: Termostato bloccato chiuso
+      nl: Thermostaat blijft gesloten
+    - en: Coolant circulation problem
+      ro: Problemă de circulație a lichidului
+      de: Problem der Kühlmittelzirkulation
+      fr: Problème de circulation du liquide
+      es: Problema de circulación del refrigerante
+      it: Problema di circolazione del refrigerante
+      nl: Probleem met koelvloeistofcirculatie
+  diagnostic_steps:
+    - en: Monitor coolant temperature from cold start
+      ro: Monitorizați temperatura de la pornirea la rece
+      de: Kühlmitteltemperatur vom Kaltstart an überwachen
+      fr: Surveiller la température depuis le démarrage à froid
+      es: Monitorizar la temperatura desde el arranque en frío
+      it: Monitorare la temperatura dall'avviamento a freddo
+      nl: Volg de temperatuur vanaf koude start
+    - en: Compare engine and radiator hose temperatures
+      ro: Comparați temperaturile furtunurilor motorului și radiatorului
+      de: Temperaturen von Motor- und Kühlerschläuchen vergleichen
+      fr: Comparer les températures des durites moteur et radiateur
+      es: Comparar temperaturas de los manguitos del motor y radiador
+      it: Confrontare le temperature dei tubi motore e radiatore
+      nl: Vergelijk de temperaturen van motor- en radiateurslangen
+    - en: Test thermostat operation according to manufacturer procedure
+      ro: Testați termostatul conform procedurii producătorului
+      de: Thermostat nach Herstellervorgabe prüfen
+      fr: Tester le thermostat selon la procédure constructeur
+      es: Probar el termostato según el procedimiento del fabricante
+      it: Testare il termostato secondo la procedura del costruttore
+      nl: Test de thermostaat volgens de fabrieksprocedure
+  keywords:
+    - thermostat
+    - coolant temperature
+    - overheating
+    - termostat
+    - Kühlmitteltemperatur
+    - thermostat
+    - refrigerante
+    - termostato
+    - thermostaat
+  related_dtcs: []
+  difficulty: intermediate
+
+
+- id: vw_steering_angle_sensor_fault
+  vehicle:
+    models:
+      - jetta
+      - golf
+      - polo
+      - passat
+      - tiguan
+      - touran
+      - t_roc
+      - t_cross
+      - taigo
+      - arteon
+      - caddy
+      - transporter
+      - caravelle
+      - multivan
+      - sharan
+    generations:
+      - jetta_mk5
+      - jetta_mk6
+      - jetta_mk7
+      - golf_mk6
+      - golf_mk7
+      - golf_mk8
+      - polo_mk5
+      - polo_mk6
+      - passat_b6
+      - passat_b7
+      - passat_b8
+      - tiguan_1
+      - tiguan_2
+      - tiguan_3
+      - touran_1
+      - touran_2
+      - t_roc_1
+      - t_roc_2
+      - t_cross_1
+      - taigo_1
+      - arteon_1
+      - arteon_2
+      - caddy_4
+      - caddy_5
+      - transporter_t5
+      - transporter_t6
+      - transporter_t6_1
+      - caravelle_t5
+      - caravelle_t6
+      - multivan_t5
+      - multivan_t6
+      - multivan_t7
+      - sharan_2
+  category: diagnostics
+  system: steering
+  title:
+    en: Steering angle sensor fault
+    ro: Defecțiune senzor unghi volan
+    de: Fehler des Lenkwinkelsensors
+    fr: Défaut du capteur d'angle de braquage
+    es: Fallo del sensor de ángulo de dirección
+    it: Guasto del sensore angolo sterzo
+    nl: Storing van de stuurhoeksensor
+  description:
+    en: Incorrect steering-angle information can affect ABS, ESC and steering-assistance systems.
+    ro: Informațiile incorecte despre unghiul volanului pot afecta ABS, ESC și sistemele de asistență a direcției.
+    de: Falsche Lenkwinkelinformationen können ABS, ESC und die Lenkunterstützung beeinflussen.
+    fr: Une information incorrecte d'angle de braquage peut affecter l'ABS, l'ESC et l'assistance de direction.
+    es: Una información incorrecta del ángulo de dirección puede afectar al ABS, ESC y la asistencia de dirección.
+    it: Un'informazione errata sull'angolo sterzo può influenzare ABS, ESC e assistenza sterzo.
+    nl: Onjuiste stuurhoekinformatie kan ABS, ESC en stuurassistentie beïnvloeden.
+  symptoms:
+    - en: ESC warning
+      ro: Martor ESC
+      de: ESC-Warnleuchte
+      fr: Voyant ESC
+      es: Testigo ESC
+      it: Spia ESC
+      nl: ESC-waarschuwingslampje
+    - en: Steering warning
+      ro: Martor direcție
+      de: Lenkungswarnung
+      fr: Alerte de direction
+      es: Advertencia de dirección
+      it: Avviso sterzo
+      nl: Stuurwaarschuwing
+  possible_causes:
+    - en: Sensor calibration lost
+      ro: Calibrarea senzorului pierdută
+      de: Sensorkalibrierung verloren
+      fr: Calibration du capteur perdue
+      es: Calibración del sensor perdida
+      it: Calibrazione del sensore persa
+      nl: Sensorkalibratie verloren
+    - en: Faulty steering angle sensor
+      ro: Senzor unghi volan defect
+      de: Lenkwinkelsensor defekt
+      fr: Capteur d'angle défectueux
+      es: Sensor de ángulo defectuoso
+      it: Sensore angolo difettoso
+      nl: Defecte stuurhoeksensor
+    - en: Steering-column or wiring fault
+      ro: Defecțiune coloană direcție sau cablaj
+      de: Fehler an Lenksäule oder Verkabelung
+      fr: Défaut de colonne ou de câblage
+      es: Fallo de columna o cableado
+      it: Guasto colonna o cablaggio
+      nl: Storing in stuurkolom of bedrading
+  diagnostic_steps:
+    - en: Read steering-angle live data
+      ro: Citiți unghiul volanului în datele live
+      de: Lenkwinkel in den Messwerten prüfen
+      fr: Lire l'angle de braquage dans les données réelles
+      es: Leer el ángulo de dirección en datos en vivo
+      it: Leggere l'angolo sterzo nei dati live
+      nl: Lees de stuurhoek uit in live data
+    - en: Check steering-angle calibration
+      ro: Verificați calibrarea senzorului
+      de: Lenkwinkelkalibrierung prüfen
+      fr: Contrôler la calibration
+      es: Comprobar la calibración
+      it: Controllare la calibrazione
+      nl: Controleer de kalibratie
+    - en: Perform basic setting if required
+      ro: Efectuați basic setting dacă este necesar
+      de: Falls erforderlich Grundeinstellung durchführen
+      fr: Effectuer le réglage de base si nécessaire
+      es: Realizar ajuste básico si es necesario
+      it: Eseguire la regolazione di base se necessario
+      nl: Voer indien nodig een basisinstelling uit
+  keywords:
+    - steering angle
+    - ESC
+    - ABS
+    - steering sensor
+    - unghi volan
+    - Lenkwinkel
+    - angle braquage
+    - ángulo dirección
+    - angolo sterzo
+    - stuurhoek
+  related_dtcs: []
+  difficulty: intermediate
+
+
+- id: vw_parking_brake_fault
+  vehicle:
+    models:
+      - jetta
+      - golf
+      - passat
+      - tiguan
+      - touran
+      - t_roc
+      - arteon
+      - sharan
+      - caddy
+    generations:
+      - jetta_mk6
+      - jetta_mk7
+      - golf_mk6
+      - golf_mk7
+      - golf_mk8
+      - passat_b6
+      - passat_b7
+      - passat_b8
+      - tiguan_1
+      - tiguan_2
+      - tiguan_3
+      - touran_1
+      - touran_2
+      - t_roc_1
+      - t_roc_2
+      - arteon_1
+      - arteon_2
+      - sharan_2
+      - caddy_4
+      - caddy_5
+  category: diagnostics
+  system: parking_brake
+  title:
+    en: Electronic parking brake fault
+    ro: Defecțiune frână de parcare electrică
+    de: Fehler der elektrischen Parkbremse
+    fr: Défaut du frein de stationnement électrique
+    es: Fallo del freno de estacionamiento eléctrico
+    it: Guasto del freno di stazionamento elettrico
+    nl: Storing van de elektrische parkeerrem
+  description:
+    en: An electronic parking-brake fault can prevent normal application or release of the parking brake.
+    ro: O defecțiune a frânei de parcare electrice poate împiedica aplicarea sau eliberarea normală a frânei.
+    de: Ein Fehler der elektrischen Parkbremse kann das normale Anziehen oder Lösen verhindern.
+    fr: Un défaut du frein de stationnement électrique peut empêcher son serrage ou son desserrage normal.
+    es: Un fallo del freno de estacionamiento eléctrico puede impedir su aplicación o liberación normal.
+    it: Un guasto del freno di stazionamento elettrico può impedire il normale inserimento o rilascio.
+    nl: Een storing van de elektrische parkeerrem kan normaal inschakelen of vrijgeven verhinderen.
+  symptoms:
+    - en: Parking brake warning
+      ro: Martor frână de parcare
+      de: Parkbremswarnung
+      fr: Voyant de frein de stationnement
+      es: Testigo del freno de estacionamiento
+      it: Spia freno di stazionamento
+      nl: Waarschuwingslampje parkeerrem
+    - en: Parking brake will not release
+      ro: Frâna de parcare nu se eliberează
+      de: Parkbremse löst nicht
+      fr: Frein de stationnement qui ne se desserre pas
+      es: El freno de estacionamiento no se libera
+      it: Il freno di stazionamento non si rilascia
+      nl: Parkeerrem komt niet vrij
+    - en: Parking brake will not apply
+      ro: Frâna de parcare nu se aplică
+      de: Parkbremse lässt sich nicht anziehen
+      fr: Frein de stationnement qui ne se serre pas
+      es: El freno de estacionamiento no se aplica
+      it: Il freno di stazionamento non si inserisce
+      nl: Parkeerrem schakelt niet in
+  possible_causes:
+    - en: Parking brake actuator fault
+      ro: Defecțiune actuator frână de parcare
+      de: Fehler des Parkbremsenstellers
+      fr: Défaut de l'actionneur
+      es: Fallo del actuador
+      it: Guasto dell'attuatore
+      nl: Storing van de parkeerremactuator
+    - en: Wiring fault
+      ro: Defecțiune cablaj
+      de: Verkabelungsfehler
+      fr: Défaut de câblage
+      es: Fallo de cableado
+      it: Guasto cablaggio
+      nl: Bedradingsstoring
+    - en: Low battery voltage
+      ro: Tensiune scăzută a bateriei
+      de: Niedrige Batteriespannung
+      fr: Tension de batterie faible
+      es: Tensión de batería baja
+      it: Tensione batteria bassa
+      nl: Lage accuspanning
+  diagnostic_steps:
+    - en: Scan the parking-brake module
+      ro: Scanați modulul frânei de parcare
+      de: Parkbremsensteuergerät auslesen
+      fr: Interroger le calculateur de frein de stationnement
+      es: Escanear el módulo del freno de estacionamiento
+      it: Scansionare la centralina del freno di stazionamento
+      nl: Lees de parkeerremmodule uit
+    - en: Check actuator operation
+      ro: Verificați funcționarea actuatorului
+      de: Stellgliedfunktion prüfen
+      fr: Contrôler le fonctionnement de l'actionneur
+      es: Comprobar el funcionamiento del actuador
+      it: Controllare il funzionamento dell'attuatore
+      nl: Controleer de actuatorwerking
+    - en: Check battery voltage before further testing
+      ro: Verificați tensiunea bateriei înaintea testelor
+      de: Batteriespannung vor weiteren Prüfungen kontrollieren
+      fr: Contrôler la tension de batterie avant les tests
+      es: Comprobar la tensión de batería antes de continuar
+      it: Controllare la tensione batteria prima di ulteriori test
+      nl: Controleer de accuspanning voor verdere tests
+  keywords:
+    - electronic parking brake
+    - EPB
+    - parking brake
+    - frână electrică
+    - elektrische Parkbremse
+    - frein stationnement électrique
+    - freno eléctrico
+    - freno di stazionamento
+    - elektrische parkeerrem
+  related_dtcs: []
+  difficulty: intermediate
+
+
+- id: vw_power_steering_fault
+  vehicle:
+    models:
+      - jetta
+      - golf
+      - polo
+      - passat
+      - tiguan
+      - touran
+      - t_roc
+      - t_cross
+      - taigo
+      - arteon
+      - caddy
+      - transporter
+      - caravelle
+      - multivan
+      - sharan
+    generations:
+      - jetta_mk5
+      - jetta_mk6
+      - jetta_mk7
+      - golf_mk6
+      - golf_mk7
+      - golf_mk8
+      - polo_mk5
+      - polo_mk6
+      - passat_b6
+      - passat_b7
+      - passat_b8
+      - tiguan_1
+      - tiguan_2
+      - tiguan_3
+      - touran_1
+      - touran_2
+      - t_roc_1
+      - t_roc_2
+      - t_cross_1
+      - taigo_1
+      - arteon_1
+      - arteon_2
+      - caddy_4
+      - caddy_5
+      - transporter_t5
+      - transporter_t6
+      - transporter_t6_1
+      - caravelle_t5
+      - caravelle_t6
+      - multivan_t5
+      - multivan_t6
+      - multivan_t7
+      - sharan_2
+  category: diagnostics
+  system: steering
+  title:
+    en: Power steering system fault
+    ro: Defecțiune sistem servodirecție
+    de: Fehler der Servolenkung
+    fr: Défaut du système de direction assistée
+    es: Fallo del sistema de dirección asistida
+    it: Guasto del servosterzo
+    nl: Storing in de stuurbekrachtiging
+  description:
+    en: A steering-assistance fault can increase steering effort and may disable assistance.
+    ro: O defecțiune a servodirecției poate crește efortul la volan și poate dezactiva asistența.
+    de: Ein Fehler der Lenkunterstützung kann die erforderliche Lenkkraft erhöhen oder die Unterstützung abschalten.
+    fr: Un défaut de direction assistée peut augmenter l'effort au volant ou désactiver l'assistance.
+    es: Un fallo de la dirección asistida puede aumentar el esfuerzo de dirección o desactivar la asistencia.
+    it: Un guasto del servosterzo può aumentare lo sforzo al volante o disattivare l'assistenza.
+    nl: Een storing in de stuurbekrachtiging kan de benodigde stuurkracht verhogen of de ondersteuning uitschakelen.
+  symptoms:
+    - en: Heavy steering
+      ro: Volan greu
+      de: Schwergängige Lenkung
+      fr: Direction dure
+      es: Dirección pesada
+      it: Sterzo pesante
+      nl: Zwaar sturen
+    - en: Steering warning light
+      ro: Martor direcție
+      de: Lenkungswarnleuchte
+      fr: Voyant de direction
+      es: Testigo de dirección
+      it: Spia sterzo
+      nl: Stuurwaarschuwingslampje
+  possible_causes:
+    - en: Low system voltage
+      ro: Tensiune scăzută
+      de: Niedrige Systemspannung
+      fr: Tension système faible
+      es: Tensión del sistema baja
+      it: Bassa tensione di sistema
+      nl: Lage systeemspanning
+    - en: Steering-assistance motor or pump fault
+      ro: Defecțiune motor sau pompă servodirecție
+      de: Fehler von Lenkhilfemotor oder -pumpe
+      fr: Défaut du moteur ou de la pompe d'assistance
+      es: Fallo del motor o bomba de asistencia
+      it: Guasto motore o pompa servosterzo
+      nl: Storing van stuurhulpmotor of pomp
+    - en: Wiring or communication fault
+      ro: Defecțiune cablaj sau comunicație
+      de: Verkabelungs- oder Kommunikationsfehler
+      fr: Défaut de câblage ou de communication
+      es: Fallo de cableado o comunicación
+      it: Guasto cablaggio o comunicazione
+      nl: Bedradings- of communicatiestoring
+  diagnostic_steps:
+    - en: Scan the steering-control module
+      ro: Scanați modulul de servodirecție
+      de: Lenkungssteuergerät auslesen
+      fr: Interroger le calculateur de direction
+      es: Escanear el módulo de dirección
+      it: Scansionare la centralina sterzo
+      nl: Lees de stuurmodule uit
+    - en: Check system voltage
+      ro: Verificați tensiunea sistemului
+      de: Systemspannung prüfen
+      fr: Contrôler la tension système
+      es: Comprobar la tensión del sistema
+      it: Controllare la tensione di sistema
+      nl: Controleer de systeemspanning
+    - en: Check motor or pump current and wiring
+      ro: Verificați curentul motorului/pompei și cablajul
+      de: Stromaufnahme von Motor/Pumpe und Verkabelung prüfen
+      fr: Contrôler le courant du moteur/pompe et le câblage
+      es: Comprobar corriente del motor/bomba y cableado
+      it: Controllare corrente motore/pompa e cablaggio
+      nl: Controleer stroom van motor/pomp en bedrading
+  keywords:
+    - power steering
+    - steering assistance
+    - heavy steering
+    - servodirecție
+    - Servolenkung
+    - direction assistée
+    - dirección asistida
+    - servosterzo
+    - stuurbekrachtiging
+  related_dtcs: []
+  difficulty: intermediate
+
+
+- id: vw_can_bus_communication_fault
+  vehicle:
+    models:
+      - jetta
+      - golf
+      - polo
+      - passat
+      - tiguan
+      - touran
+      - t_roc
+      - t_cross
+      - taigo
+      - arteon
+      - caddy
+      - transporter
+      - caravelle
+      - multivan
+      - sharan
+    generations:
+      - jetta_mk5
+      - jetta_mk6
+      - jetta_mk7
+      - golf_mk6
+      - golf_mk7
+      - golf_mk8
+      - polo_mk5
+      - polo_mk6
+      - passat_b6
+      - passat_b7
+      - passat_b8
+      - tiguan_1
+      - tiguan_2
+      - tiguan_3
+      - touran_1
+      - touran_2
+      - t_roc_1
+      - t_roc_2
+      - t_cross_1
+      - taigo_1
+      - arteon_1
+      - arteon_2
+      - caddy_4
+      - caddy_5
+      - transporter_t5
+      - transporter_t6
+      - transporter_t6_1
+      - caravelle_t5
+      - caravelle_t6
+      - multivan_t5
+      - multivan_t6
+      - multivan_t7
+      - sharan_2
+  category: diagnostics
+  system: communication
+  title:
+    en: CAN bus communication fault
+    ro: Defecțiune comunicare CAN bus
+    de: CAN-Bus-Kommunikationsfehler
+    fr: Défaut de communication CAN
+    es: Fallo de comunicación CAN
+    it: Guasto di comunicazione CAN
+    nl: CAN-bus communicatiestoring
+  description:
+    en: A CAN communication fault can cause multiple modules to report communication errors or become unavailable.
+    ro: O defecțiune de comunicație CAN poate determina mai multe module să raporteze erori sau să devină indisponibile.
+    de: Ein CAN-Kommunikationsfehler kann dazu führen, dass mehrere Steuergeräte Kommunikationsfehler melden oder nicht erreichbar sind.
+    fr: Un défaut de communication CAN peut provoquer des erreurs dans plusieurs calculateurs ou les rendre inaccessibles.
+    es: Un fallo de comunicación CAN puede provocar errores en varios módulos o hacerlos inaccesibles.
+    it: Un guasto di comunicazione CAN può generare errori in diverse centraline o renderle irraggiungibili.
+    nl: Een CAN-communicatiestoring kan ertoe leiden dat meerdere modules communicatiefouten melden of niet bereikbaar zijn.
+  symptoms:
+    - en: Multiple communication DTCs
+      ro: Mai multe DTC-uri de comunicație
+      de: Mehrere Kommunikations-DTCs
+      fr: Plusieurs DTC de communication
+      es: Múltiples DTC de comunicación
+      it: Diversi DTC di comunicazione
+      nl: Meerdere communicatiediagnosecodes
+    - en: Several modules unavailable
+      ro: Mai multe module indisponibile
+      de: Mehrere Steuergeräte nicht erreichbar
+      fr: Plusieurs calculateurs inaccessibles
+      es: Varios módulos no disponibles
+      it: Diverse centraline non raggiungibili
+      nl: Meerdere modules niet bereikbaar
+    - en: Intermittent electrical warnings
+      ro: Avertizări electrice intermitente
+      de: Sporadische elektrische Warnungen
+      fr: Avertissements électriques intermittents
+      es: Advertencias eléctricas intermitentes
+      it: Avvisi elettrici intermittenti
+      nl: Intermitterende elektrische waarschuwingen
+  possible_causes:
+    - en: Low system voltage
+      ro: Tensiune scăzută a sistemului
+      de: Niedrige Systemspannung
+      fr: Tension système faible
+      es: Tensión baja del sistema
+      it: Bassa tensione di sistema
+      nl: Lage systeemspanning
+    - en: Damaged CAN wiring
+      ro: Cablaj CAN deteriorat
+      de: Beschädigte CAN-Verkabelung
+      fr: Câblage CAN endommagé
+      es: Cableado CAN dañado
+      it: Cablaggio CAN danneggiato
+      nl: Beschadigde CAN-bedrading
+    - en: Faulty control module
+      ro: Modul de control defect
+      de: Steuergerät defekt
+      fr: Calculateur défectueux
+      es: Unidad de control defectuosa
+      it: Centralina difettosa
+      nl: Defecte regelmodule
+  diagnostic_steps:
+    - en: Scan all control modules and identify the common missing module
+      ro: Scanați toate modulele și identificați modulul comun care lipsește
+      de: Alle Steuergeräte auslesen und das gemeinsam fehlende Steuergerät identifizieren
+      fr: Scanner tous les calculateurs et identifier celui qui est communément absent
+      es: Escanear todos los módulos e identificar el módulo común ausente
+      it: Scansionare tutte le centraline e identificare quella comunemente assente
+      nl: Scan alle modules en identificeer de gemeenschappelijk ontbrekende module
+    - en: Check battery and charging voltage
+      ro: Verificați bateria și tensiunea de încărcare
+      de: Batterie- und Ladespannung prüfen
+      fr: Contrôler la batterie et la tension de charge
+      es: Comprobar batería y tensión de carga
+      it: Controllare batteria e tensione di carica
+      nl: Controleer accu en laadspanning
+    - en: Inspect CAN wiring and connectors
+      ro: Inspectați cablajul și conectorii CAN
+      de: CAN-Verkabelung und Steckverbindungen prüfen
+      fr: Contrôler le câblage et les connecteurs CAN
+      es: Inspeccionar cableado y conectores CAN
+      it: Ispezionare cablaggio e connettori CAN
+      nl: Controleer CAN-bedrading en stekkers
+  keywords:
+    - CAN bus
+    - communication fault
+    - module communication
+    - CAN
+    - comunicație
+    - CAN-Bus
+    - communication CAN
+    - comunicación CAN
+    - comunicazione CAN
+    - CAN-communicatie
+  related_dtcs: []
+  difficulty: advanced
+
+
+- id: vw_air_conditioning_pressure_sensor_fault
+  vehicle:
+    models:
+      - jetta
+      - golf
+      - polo
+      - passat
+      - tiguan
+      - touran
+      - t_roc
+      - t_cross
+      - taigo
+      - arteon
+      - caddy
+      - transporter
+      - caravelle
+      - multivan
+      - sharan
+    generations:
+      - jetta_mk5
+      - jetta_mk6
+      - jetta_mk7
+      - golf_mk6
+      - golf_mk7
+      - golf_mk8
+      - polo_mk5
+      - polo_mk6
+      - passat_b6
+      - passat_b7
+      - passat_b8
+      - tiguan_1
+      - tiguan_2
+      - tiguan_3
+      - touran_1
+      - touran_2
+      - t_roc_1
+      - t_roc_2
+      - t_cross_1
+      - taigo_1
+      - arteon_1
+      - arteon_2
+      - caddy_4
+      - caddy_5
+      - transporter_t5
+      - transporter_t6
+      - transporter_t6_1
+      - caravelle_t5
+      - caravelle_t6
+      - multivan_t5
+      - multivan_t6
+      - multivan_t7
+      - sharan_2
+  category: diagnostics
+  system: air_conditioning
+  title:
+    en: Air-conditioning pressure sensor fault
+    ro: Defecțiune senzor presiune instalație A/C
+    de: Fehler des Klimaanlagendrucksensors
+    fr: Défaut du capteur de pression de climatisation
+    es: Fallo del sensor de presión del aire acondicionado
+    it: Guasto del sensore pressione climatizzatore
+    nl: Storing van de aircodruksensor
+  description:
+    en: Incorrect refrigerant-pressure information can prevent compressor operation or cause incorrect cooling-system control.
+    ro: Informațiile incorecte despre presiunea agentului frigorific pot împiedica funcționarea compresorului sau pot afecta comanda răcirii.
+    de: Falsche Kältemitteldruckwerte können den Kompressorbetrieb verhindern oder die Kühlungsregelung beeinflussen.
+    fr: Une information incorrecte de pression de réfrigérant peut empêcher le compresseur de fonctionner ou perturber la régulation.
+    es: Una información incorrecta de presión del refrigerante puede impedir el funcionamiento del compresor o afectar al control de refrigeración.
+    it: Un'informazione errata sulla pressione del refrigerante può impedire il funzionamento del compressore o alterare la gestione del raffreddamento.
+    nl: Onjuiste koudemiddeldrukinformatie kan compressorwerking verhinderen of de koelregeling beïnvloeden.
+  symptoms:
+    - en: Air conditioning not cooling
+      ro: Aerul condiționat nu răcește
+      de: Klimaanlage kühlt nicht
+      fr: Climatisation ne refroidit pas
+      es: El aire acondicionado no enfría
+      it: Climatizzatore non raffredda
+      nl: Airconditioning koelt niet
+    - en: Compressor does not engage
+      ro: Compresorul nu cuplează
+      de: Kompressor schaltet nicht ein
+      fr: Compresseur qui ne s'enclenche pas
+      es: El compresor no se activa
+      it: Compressore non si inserisce
+      nl: Compressor schakelt niet in
+  possible_causes:
+    - en: Faulty pressure sensor
+      ro: Senzor de presiune defect
+      de: Drucksensor defekt
+      fr: Capteur de pression défectueux
+      es: Sensor de presión defectuoso
+      it: Sensore di pressione difettoso
+      nl: Defecte druksensor
+    - en: Low refrigerant charge
+      ro: Cantitate insuficientă de agent frigorific
+      de: Zu wenig Kältemittel
+      fr: Charge de réfrigérant insuffisante
+      es: Carga de refrigerante insuficiente
+      it: Carica refrigerante insufficiente
+      nl: Te weinig koudemiddel
+    - en: Wiring fault
+      ro: Defecțiune cablaj
+      de: Verkabelungsfehler
+      fr: Défaut de câblage
+      es: Fallo de cableado
+      it: Guasto cablaggio
+      nl: Bedradingsstoring
+  diagnostic_steps:
+    - en: Read refrigerant pressure from live data
+      ro: Citiți presiunea agentului frigorific din datele live
+      de: Kältemitteldruck in den Messwerten prüfen
+      fr: Lire la pression du réfrigérant dans les données réelles
+      es: Leer la presión del refrigerante en datos en vivo
+      it: Leggere la pressione refrigerante nei dati live
+      nl: Lees de koudemiddeldruk uit in live data
+    - en: Compare displayed pressure with measured system pressure
+      ro: Comparați presiunea afișată cu presiunea măsurată
+      de: Angezeigten und gemessenen Druck vergleichen
+      fr: Comparer la pression affichée à la pression mesurée
+      es: Comparar presión indicada y medida
+      it: Confrontare pressione indicata e misurata
+      nl: Vergelijk weergegeven en gemeten druk
+    - en: Inspect sensor wiring and connector
+      ro: Inspectați cablajul și conectorul senzorului
+      de: Sensorverkabelung und Stecker prüfen
+      fr: Contrôler le câblage et le connecteur
+      es: Inspeccionar cableado y conector
+      it: Ispezionare cablaggio e connettore
+      nl: Controleer bedrading en stekker
+  keywords:
+    - A/C pressure sensor
+    - refrigerant pressure
+    - air conditioning
+    - senzor presiune AC
+    - Klimaanlagendruck
+    - pression climatisation
+    - presión aire acondicionado
+    - pressione climatizzatore
+    - aircodruk
+  related_dtcs: []
+  difficulty: intermediate
+
+
+- id: vw_interior_blower_motor_fault
+  vehicle:
+    models:
+      - jetta
+      - golf
+      - polo
+      - passat
+      - tiguan
+      - touran
+      - t_roc
+      - t_cross
+      - taigo
+      - arteon
+      - caddy
+      - transporter
+      - caravelle
+      - multivan
+      - sharan
+    generations:
+      - jetta_mk5
+      - jetta_mk6
+      - jetta_mk7
+      - golf_mk6
+      - golf_mk7
+      - golf_mk8
+      - polo_mk5
+      - polo_mk6
+      - passat_b6
+      - passat_b7
+      - passat_b8
+      - tiguan_1
+      - tiguan_2
+      - tiguan_3
+      - touran_1
+      - touran_2
+      - t_roc_1
+      - t_roc_2
+      - t_cross_1
+      - taigo_1
+      - arteon_1
+      - arteon_2
+      - caddy_4
+      - caddy_5
+      - transporter_t5
+      - transporter_t6
+      - transporter_t6_1
+      - caravelle_t5
+      - caravelle_t6
+      - multivan_t5
+      - multivan_t6
+      - multivan_t7
+      - sharan_2
+  category: diagnostics
+  system: climate_control
+  title:
+    en: Interior blower motor fault
+    ro: Defecțiune ventilator habitaclu
+    de: Fehler des Innenraumgebläses
+    fr: Défaut du pulseur d'air habitacle
+    es: Fallo del ventilador del habitáculo
+    it: Guasto del ventilatore abitacolo
+    nl: Storing van de interieurventilator
+  description:
+    en: A blower motor or blower-control fault can cause loss of cabin airflow.
+    ro: O defecțiune a ventilatorului sau a comenzii acestuia poate duce la lipsa fluxului de aer în habitaclu.
+    de: Ein Fehler des Innenraumgebläses oder seiner Ansteuerung kann zum Ausfall des Luftstroms führen.
+    fr: Un défaut du pulseur ou de sa commande peut provoquer une perte de débit d'air dans l'habitacle.
+    es: Un fallo del ventilador o su control puede provocar pérdida del flujo de aire en el habitáculo.
+    it: Un guasto del ventilatore o del relativo comando può causare perdita del flusso d'aria nell'abitacolo.
+    nl: Een storing van de interieurventilator of aansturing kan verlies van luchtstroom veroorzaken.
+  symptoms:
+    - en: No cabin airflow
+      ro: Nu există flux de aer în habitaclu
+      de: Kein Luftstrom im Innenraum
+      fr: Aucun débit d'air dans l'habitacle
+      es: No hay flujo de aire en el habitáculo
+      it: Nessun flusso d'aria nell'abitacolo
+      nl: Geen luchtstroom in het interieur
+    - en: Fan works only on some speeds
+      ro: Ventilatorul funcționează doar pe anumite trepte
+      de: Gebläse funktioniert nur auf bestimmten Stufen
+      fr: Ventilateur fonctionnant seulement à certaines vitesses
+      es: El ventilador funciona solo en algunas velocidades
+      it: Ventola funziona solo ad alcune velocità
+      nl: Ventilator werkt alleen op sommige standen
+  possible_causes:
+    - en: Blower motor worn or seized
+      ro: Motor ventilator uzat sau blocat
+      de: Gebläsemotor verschlissen oder fest
+      fr: Moteur de pulseur usé ou grippé
+      es: Motor del ventilador desgastado o agarrotado
+      it: Motore ventola usurato o bloccato
+      nl: Versleten of vastgelopen ventilatormotor
+    - en: Blower resistor or controller fault
+      ro: Rezistență sau modul de comandă defect
+      de: Gebläsewiderstand oder Steuergerät defekt
+      fr: Résistance ou module de commande défectueux
+      es: Resistencia o módulo de control defectuoso
+      it: Resistenza o modulo di comando difettoso
+      nl: Defecte weerstand of regelmodule
+  diagnostic_steps:
+    - en: Test blower operation at every speed
+      ro: Testați ventilatorul pe toate treptele
+      de: Gebläse auf allen Stufen testen
+      fr: Tester le pulseur à toutes les vitesses
+      es: Probar el ventilador en todas las velocidades
+      it: Testare la ventola a tutte le velocità
+      nl: Test de ventilator op alle standen
+    - en: Check blower power supply and ground
+      ro: Verificați alimentarea și masa ventilatorului
+      de: Stromversorgung und Masse des Gebläses prüfen
+      fr: Contrôler l'alimentation et la masse
+      es: Comprobar alimentación y masa
+      it: Controllare alimentazione e massa
+      nl: Controleer voeding en massa
+    - en: Check blower controller or resistor
+      ro: Verificați modulul sau rezistența ventilatorului
+      de: Gebläsemodul oder Widerstand prüfen
+      fr: Contrôler le module ou la résistance
+      es: Comprobar módulo o resistencia
+      it: Controllare modulo o resistenza
+      nl: Controleer module of weerstand
+  keywords:
+    - blower motor
+    - cabin fan
+    - HVAC
+    - ventilator habitaclu
+    - Innenraumgebläse
+    - pulseur
+    - ventilador habitáculo
+    - ventola abitacolo
+    - interieurventilator
+  related_dtcs: []
+  difficulty: intermediate
+
+
+- id: vw_fuel_pump_low_pressure_fault
+  vehicle:
+    models:
+      - jetta
+      - golf
+      - polo
+      - passat
+      - tiguan
+      - touran
+      - t_roc
+      - t_cross
+      - taigo
+      - arteon
+      - caddy
+      - transporter
+      - caravelle
+      - multivan
+      - sharan
+    generations:
+      - jetta_mk5
+      - jetta_mk6
+      - jetta_mk7
+      - golf_mk6
+      - golf_mk7
+      - golf_mk8
+      - polo_mk5
+      - polo_mk6
+      - passat_b6
+      - passat_b7
+      - passat_b8
+      - tiguan_1
+      - tiguan_2
+      - tiguan_3
+      - touran_1
+      - touran_2
+      - t_roc_1
+      - t_roc_2
+      - t_cross_1
+      - taigo_1
+      - arteon_1
+      - arteon_2
+      - caddy_4
+      - caddy_5
+      - transporter_t5
+      - transporter_t6
+      - transporter_t6_1
+      - caravelle_t5
+      - caravelle_t6
+      - multivan_t5
+      - multivan_t6
+      - sharan_2
+  category: diagnostics
+  system: fuel
+  title:
+    en: Low-pressure fuel pump fault
+    ro: Defecțiune pompă combustibil de joasă presiune
+    de: Fehler der Kraftstoff-Niederdruckpumpe
+    fr: Défaut de pompe à carburant basse pression
+    es: Fallo de la bomba de combustible de baja presión
+    it: Guasto della pompa carburante a bassa pressione
+    nl: Storing van de lagedrukbrandstofpomp
+  description:
+    en: A low-pressure fuel supply problem can cause difficult starting, hesitation and insufficient fuel delivery under load.
+    ro: O problemă pe circuitul de joasă presiune poate provoca pornire dificilă, ezitare și alimentare insuficientă sub sarcină.
+    de: Ein Problem der Kraftstoffversorgung auf der Niederdruckseite kann Startprobleme, Ruckeln und unzureichende Kraftstoffversorgung unter Last verursachen.
+    fr: Un problème d'alimentation basse pression peut provoquer des difficultés de démarrage, des hésitations et un débit insuffisant sous charge.
+    es: Un problema de alimentación de baja presión puede provocar dificultades de arranque, vacilaciones y suministro insuficiente bajo carga.
+    it: Un problema di alimentazione a bassa pressione può causare difficoltà di avviamento, esitazioni e alimentazione insufficiente sotto carico.
+    nl: Een probleem in de lagedrukbrandstoftoevoer kan moeilijk starten, inhouden en onvoldoende brandstoftoevoer onder belasting veroorzaken.
+  symptoms:
+    - en: Difficult starting
+      ro: Pornire dificilă
+      de: Erschwertes Starten
+      fr: Démarrage difficile
+      es: Arranque difícil
+      it: Avviamento difficoltoso
+      nl: Moeilijk starten
+    - en: Hesitation under acceleration
+      ro: Ezitare la accelerație
+      de: Ruckeln beim Beschleunigen
+      fr: Hésitation à l'accélération
+      es: Vacilación al acelerar
+      it: Esitazione in accelerazione
+      nl: Inhouden bij accelereren
+    - en: Loss of power under load
+      ro: Pierdere de putere sub sarcină
+      de: Leistungsverlust unter Last
+      fr: Perte de puissance sous charge
+      es: Pérdida de potencia bajo carga
+      it: Perdita di potenza sotto carico
+      nl: Vermogensverlies onder belasting
+  possible_causes:
+    - en: Weak fuel pump
+      ro: Pompă de combustibil slăbită
+      de: Schwache Kraftstoffpumpe
+      fr: Pompe à carburant faible
+      es: Bomba de combustible débil
+      it: Pompa carburante debole
+      nl: Zwakke brandstofpomp
+    - en: Restricted fuel filter
+      ro: Filtru de combustibil obturat
+      de: Verstopfter Kraftstofffilter
+      fr: Filtre à carburant obstrué
+      es: Filtro de combustible obstruido
+      it: Filtro carburante ostruito
+      nl: Verstopt brandstoffilter
+    - en: Electrical supply fault
+      ro: Defecțiune alimentare electrică
+      de: Fehler der elektrischen Versorgung
+      fr: Défaut d'alimentation électrique
+      es: Fallo de alimentación eléctrica
+      it: Guasto dell'alimentazione elettrica
+      nl: Storing in de elektrische voeding
+  diagnostic_steps:
+    - en: Measure low-pressure fuel pressure
+      ro: Măsurați presiunea combustibilului pe circuitul de joasă presiune
+      de: Kraftstoffdruck auf der Niederdruckseite messen
+      fr: Mesurer la pression de carburant basse pression
+      es: Medir la presión de combustible de baja presión
+      it: Misurare la pressione carburante a bassa pressione
+      nl: Meet de lagedrukbrandstofdruk
+    - en: Check pump current draw
+      ro: Verificați consumul de curent al pompei
+      de: Stromaufnahme der Pumpe prüfen
+      fr: Contrôler le courant absorbé par la pompe
+      es: Comprobar el consumo de corriente de la bomba
+      it: Controllare l'assorbimento della pompa
+      nl: Controleer het stroomverbruik van de pomp
+    - en: Inspect filter and fuel lines
+      ro: Inspectați filtrul și conductele
+      de: Filter und Kraftstoffleitungen prüfen
+      fr: Contrôler le filtre et les conduites
+      es: Inspeccionar filtro y líneas
+      it: Ispezionare filtro e tubazioni
+      nl: Controleer filter en brandstofleidingen
+  keywords:
+    - fuel pump
+    - low pressure fuel
+    - fuel supply
+    - pompă combustibil
+    - Kraftstoffpumpe
+    - pompe carburant
+    - bomba combustible
+    - pompa carburante
+    - brandstofpomp
+  related_dtcs: []
+  difficulty: intermediate
+
+
+- id: vw_engine_mount_vibration_fault
+  vehicle:
+    models:
+      - jetta
+      - golf
+      - polo
+      - passat
+      - tiguan
+      - touran
+      - t_roc
+      - t_cross
+      - taigo
+      - arteon
+      - caddy
+      - transporter
+      - caravelle
+      - multivan
+      - sharan
+    generations:
+      - jetta_mk5
+      - jetta_mk6
+      - jetta_mk7
+      - golf_mk6
+      - golf_mk7
+      - golf_mk8
+      - polo_mk5
+      - polo_mk6
+      - passat_b6
+      - passat_b7
+      - passat_b8
+      - tiguan_1
+      - tiguan_2
+      - tiguan_3
+      - touran_1
+      - touran_2
+      - t_roc_1
+      - t_roc_2
+      - t_cross_1
+      - taigo_1
+      - arteon_1
+      - arteon_2
+      - caddy_4
+      - caddy_5
+      - transporter_t5
+      - transporter_t6
+      - transporter_t6_1
+      - caravelle_t5
+      - caravelle_t6
+      - multivan_t5
+      - multivan_t6
+      - multivan_t7
+      - sharan_2
+  category: diagnostics
+  system: engine_mounting
+  title:
+    en: Engine mount vibration fault
+    ro: Vibrații cauzate de suporturile motorului
+    de: Vibrationen durch Motorlager
+    fr: Vibrations dues aux supports moteur
+    es: Vibraciones causadas por soportes del motor
+    it: Vibrazioni dovute ai supporti motore
+    nl: Trillingen door motorsteunen
+  description:
+    en: Worn or damaged engine mounts can transmit excessive engine vibration to the body.
+    ro: Suporturile motorului uzate sau deteriorate pot transmite vibrații excesive către caroserie.
+    de: Verschlissene oder beschädigte Motorlager können übermäßige Vibrationen auf die Karosserie übertragen.
+    fr: Des supports moteur usés ou endommagés peuvent transmettre des vibrations excessives à la carrosserie.
+    es: Los soportes del motor desgastados o dañados pueden transmitir vibraciones excesivas a la carrocería.
+    it: Supporti motore usurati o danneggiati possono trasmettere vibrazioni eccessive alla carrozzeria.
+    nl: Versleten of beschadigde motorsteunen kunnen overmatige motortrillingen aan de carrosserie doorgeven.
+  symptoms:
+    - en: Excessive vibration at idle
+      ro: Vibrații excesive la ralanti
+      de: Starke Vibrationen im Leerlauf
+      fr: Vibrations excessives au ralenti
+      es: Vibraciones excesivas al ralentí
+      it: Vibrazioni eccessive al minimo
+      nl: Overmatige trillingen stationair
+    - en: Clunk during gear changes
+      ro: Pocnit la schimbarea vitezelor
+      de: Klonk beim Gangwechsel
+      fr: Claquement lors des changements de rapport
+      es: Golpe al cambiar de marcha
+      it: Colpo durante il cambio marcia
+      nl: Klonk bij schakelen
+    - en: Vibration transmitted into cabin
+      ro: Vibrații transmise în habitaclu
+      de: Vibrationen im Innenraum
+      fr: Vibrations transmises à l'habitacle
+      es: Vibraciones transmitidas al habitáculo
+      it: Vibrazioni trasmesse all'abitacolo
+      nl: Trillingen in het interieur
+  possible_causes:
+    - en: Worn hydraulic engine mount
+      ro: Suport hidraulic uzat
+      de: Verschlissenes Hydrolager
+      fr: Support hydraulique usé
+      es: Soporte hidráulico desgastado
+      it: Supporto idraulico usurato
+      nl: Versleten hydraulische motorsteun
+    - en: Damaged rubber mount
+      ro: Suport cauciuc deteriorat
+      de: Beschädigtes Gummilager
+      fr: Silentbloc endommagé
+      es: Soporte de goma dañado
+      it: Supporto in gomma danneggiato
+      nl: Beschadigde rubberen motorsteun
+  diagnostic_steps:
+    - en: Inspect all engine and gearbox mounts
+      ro: Inspectați toate suporturile motorului și cutiei
+      de: Alle Motor- und Getriebelager prüfen
+      fr: Contrôler tous les supports moteur et boîte
+      es: Inspeccionar todos los soportes de motor y caja
+      it: Ispezionare tutti i supporti motore e cambio
+      nl: Controleer alle motor- en versnellingsbaksteunen
+    - en: Observe engine movement during load changes
+      ro: Observați mișcarea motorului la schimbarea sarcinii
+      de: Motorbewegung bei Lastwechsel beobachten
+      fr: Observer le mouvement du moteur lors des changements de charge
+      es: Observar el movimiento del motor durante cambios de carga
+      it: Osservare il movimento del motore durante i cambi di carico
+      nl: Observeer motorbeweging bij lastwisselingen
+  keywords:
+    - engine mount
+    - vibration
+    - motor mount
+    - suport motor
+    - Motorlager
+    - support moteur
+    - soporte motor
+    - supporto motore
+    - motorsteun
+  related_dtcs: []
+  difficulty: basic
+
+
+- id: vw_exhaust_flex_joint_leak
+  vehicle:
+    models:
+      - jetta
+      - golf
+      - polo
+      - passat
+      - tiguan
+      - touran
+      - t_roc
+      - caddy
+      - transporter
+      - caravelle
+      - multivan
+      - sharan
+    generations:
+      - jetta_mk5
+      - jetta_mk6
+      - jetta_mk7
+      - golf_mk6
+      - golf_mk7
+      - golf_mk8
+      - polo_mk5
+      - polo_mk6
+      - passat_b6
+      - passat_b7
+      - passat_b8
+      - tiguan_1
+      - tiguan_2
+      - tiguan_3
+      - touran_1
+      - touran_2
+      - t_roc_1
+      - caddy_4
+      - caddy_5
+      - transporter_t5
+      - transporter_t6
+      - transporter_t6_1
+      - caravelle_t5
+      - caravelle_t6
+      - multivan_t5
+      - multivan_t6
+      - multivan_t7
+      - sharan_2
+  category: diagnostics
+  system: exhaust
+  title:
+    en: Exhaust flex joint leak
+    ro: Pierdere la racordul flexibil al evacuării
+    de: Abgasflexrohr undicht
+    fr: Fuite du flexible d'échappement
+    es: Fuga en el flexible de escape
+    it: Perdita dal flessibile di scarico
+    nl: Lek in de flexibele uitlaatverbinding
+  description:
+    en: A damaged exhaust flex joint can cause exhaust leakage, noise and incorrect oxygen-sensor readings.
+    ro: Un racord flexibil deteriorat poate provoca pierderi de gaze, zgomot și valori incorecte ale senzorilor de oxigen.
+    de: Ein beschädigtes Abgasflexrohr kann Abgaslecks, Geräusche und falsche Lambdasondenwerte verursachen.
+    fr: Un flexible d'échappement endommagé peut provoquer des fuites, du bruit et des valeurs incorrectes de sonde lambda.
+    es: Un flexible de escape dañado puede causar fugas, ruido y lecturas incorrectas de los sensores de oxígeno.
+    it: Un flessibile di scarico danneggiato può causare perdite, rumore e letture errate delle sonde lambda.
+    nl: Een beschadigde flexibele uitlaatverbinding kan lekkage, geluid en onjuiste lambdasensorwaarden veroorzaken.
+  symptoms:
+    - en: Exhaust noise
+      ro: Zgomot de evacuare
+      de: Abgasgeräusch
+      fr: Bruit d'échappement
+      es: Ruido de escape
+      it: Rumore di scarico
+      nl: Uitlaatgeluid
+    - en: Exhaust smell
+      ro: Miros de gaze de evacuare
+      de: Abgasgeruch
+      fr: Odeur d'échappement
+      es: Olor a gases de escape
+      it: Odore di scarico
+      nl: Uitlaatgeur
+    - en: Lambda-related faults
+      ro: Erori legate de sonda lambda
+      de: Lambdasondenbezogene Fehler
+      fr: Défauts liés à la sonde lambda
+      es: Fallos relacionados con la sonda lambda
+      it: Errori relativi alla sonda lambda
+      nl: Lambdagerelateerde storingen
+  possible_causes:
+    - en: Cracked flex joint
+      ro: Racord flexibil fisurat
+      de: Gerissenes Flexrohr
+      fr: Flexible fissuré
+      es: Flexible agrietado
+      it: Flessibile crepato
+      nl: Gescheurde flexibele verbinding
+    - en: Corrosion
+      ro: Coroziune
+      de: Korrosion
+      fr: Corrosion
+      es: Corrosión
+      it: Corrosione
+      nl: Corrosie
+  diagnostic_steps:
+    - en: Inspect the flex joint visually
+      ro: Inspectați vizual racordul flexibil
+      de: Flexrohr visuell prüfen
+      fr: Contrôler visuellement le flexible
+      es: Inspeccionar visualmente el flexible
+      it: Ispezionare visivamente il flessibile
+      nl: Inspecteer de flexibele verbinding visueel
+    - en: Check for soot marks around the leak
+      ro: Verificați urmele de funingine în jurul pierderii
+      de: Rußspuren am Leck prüfen
+      fr: Rechercher des traces de suie autour de la fuite
+      es: Buscar marcas de hollín alrededor de la fuga
+      it: Cercare tracce di fuliggine intorno alla perdita
+      nl: Controleer op roetsporen rond het lek
+    - en: Check exhaust pressure and lambda readings where applicable
+      ro: Verificați presiunea evacuării și valorile lambda unde este cazul
+      de: Abgasdruck und Lambdawerte prüfen, sofern vorhanden
+      fr: Contrôler la pression d'échappement et les valeurs lambda si applicable
+      es: Comprobar presión de escape y valores lambda cuando corresponda
+      it: Controllare pressione scarico e valori lambda quando presenti
+      nl: Controleer uitlaatdruk en lambdawaarden indien van toepassing
+  keywords:
+    - exhaust leak
+    - flex pipe
+    - exhaust flex
+    - racord flexibil
+    - Flexrohr
+    - flexible échappement
+    - flexible escape
+    - flessibile scarico
+    - flexibele uitlaat
+  related_dtcs: []
+  difficulty: basic
+
+
+- id: vw_intake_air_leak
+  vehicle:
+    models:
+      - jetta
+      - golf
+      - polo
+      - passat
+      - tiguan
+      - touran
+      - t_roc
+      - t_cross
+      - taigo
+      - arteon
+      - caddy
+      - transporter
+      - caravelle
+      - multivan
+      - sharan
+    generations:
+      - jetta_mk5
+      - jetta_mk6
+      - jetta_mk7
+      - golf_mk6
+      - golf_mk7
+      - golf_mk8
+      - polo_mk5
+      - polo_mk6
+      - passat_b6
+      - passat_b7
+      - passat_b8
+      - tiguan_1
+      - tiguan_2
+      - tiguan_3
+      - touran_1
+      - touran_2
+      - t_roc_1
+      - t_roc_2
+      - t_cross_1
+      - taigo_1
+      - arteon_1
+      - arteon_2
+      - caddy_4
+      - caddy_5
+      - transporter_t5
+      - transporter_t6
+      - transporter_t6_1
+      - caravelle_t5
+      - caravelle_t6
+      - multivan_t5
+      - multivan_t6
+      - multivan_t7
+      - sharan_2
+  category: diagnostics
+  system: intake
+  title:
+    en: Intake air leak
+    ro: Pierdere de aer pe admisie
+    de: Falschluft im Ansaugsystem
+    fr: Prise d'air dans l'admission
+    es: Entrada de aire no medido en la admisión
+    it: Aspirazione di aria falsa
+    nl: Valse lucht in het inlaatsysteem
+  description:
+    en: An intake leak can allow unmetered air into the engine and disturb mixture, boost and idle control.
+    ro: O pierdere pe admisie poate introduce aer nemăsurat și poate afecta amestecul, presiunea de supraalimentare și ralantiul.
+    de: Eine Undichtigkeit im Ansaugsystem kann Falschluft verursachen und Gemisch, Ladedruck und Leerlaufregelung beeinflussen.
+    fr: Une fuite d'admission peut introduire de l'air non mesuré et perturber le mélange, la suralimentation et le ralenti.
+    es: Una fuga de admisión puede introducir aire no medido y alterar la mezcla, la presión de sobrealimentación y el ralentí.
+    it: Una perdita nell'aspirazione può introdurre aria non misurata e alterare miscela, sovralimentazione e minimo.
+    nl: Een inlaatlek kan ongemeten lucht toelaten en mengsel, turbodruk en stationair toerental verstoren.
+  symptoms:
+    - en: Rough idle
+      ro: Relanti neregulat
+      de: Unruhiger Leerlauf
+      fr: Ralenti irrégulier
+      es: Ralentí irregular
+      it: Minimo irregolare
+      nl: Onrustig stationair toerental
+    - en: Lean mixture
+      ro: Amestec sărac
+      de: Mageres Gemisch
+      fr: Mélange pauvre
+      es: Mezcla pobre
+      it: Miscela magra
+      nl: Arm mengsel
+    - en: Boost pressure deviation
+      ro: Abatere presiune turbo
+      de: Ladedruckabweichung
+      fr: Écart de pression de suralimentation
+      es: Desviación de presión de sobrealimentación
+      it: Scostamento pressione sovralimentazione
+      nl: Afwijking turbodruk
+  possible_causes:
+    - en: Cracked intake hose
+      ro: Furtun admisie fisurat
+      de: Gerissener Ansaugschlauch
+      fr: Durite d'admission fissurée
+      es: Manguito de admisión agrietado
+      it: Tubo aspirazione crepato
+      nl: Gescheurde inlaatslang
+    - en: Loose hose connection
+      ro: Racord slăbit
+      de: Lose Schlauchverbindung
+      fr: Raccord de durite desserré
+      es: Conexión de manguito suelta
+      it: Collegamento tubo allentato
+      nl: Losse slangverbinding
+    - en: Failed PCV component
+      ro: Componentă PCV defectă
+      de: Defektes PCV-Bauteil
+      fr: Élément PCV défectueux
+      es: Componente PCV defectuoso
+      it: Componente PCV difettoso
+      nl: Defect PCV-onderdeel
+  diagnostic_steps:
+    - en: Perform a smoke test of the intake system
+      ro: Efectuați un test cu fum al sistemului de admisie
+      de: Ansaugsystem mit Rauchtest prüfen
+      fr: Effectuer un test fumigène du système d'admission
+      es: Realizar una prueba de humo del sistema de admisión
+      it: Eseguire un test al fumo dell'aspirazione
+      nl: Voer een rooktest van het inlaatsysteem uit
+    - en: Check fuel trims where applicable
+      ro: Verificați corecțiile de combustibil unde este cazul
+      de: Kraftstofftrims prüfen, sofern vorhanden
+      fr: Contrôler les corrections de carburant si applicable
+      es: Comprobar correcciones de combustible cuando corresponda
+      it: Controllare le correzioni carburante quando presenti
+      nl: Controleer brandstoftrims indien van toepassing
+    - en: Inspect intake hoses and PCV connections
+      ro: Inspectați furtunurile de admisie și conexiunile PCV
+      de: Ansaugschläuche und PCV-Anschlüsse prüfen
+      fr: Contrôler les durites d'admission et raccords PCV
+      es: Inspeccionar manguitos de admisión y conexiones PCV
+      it: Ispezionare tubi aspirazione e collegamenti PCV
+      nl: Controleer inlaatslangen en PCV-aansluitingen
+  keywords:
+    - intake leak
+    - vacuum leak
+    - boost leak
+    - air leak
+    - pierdere admisie
+    - Falschluft
+    - prise air
+    - fuga admisión
+    - perdita aspirazione
+    - inlaatlek
+  related_dtcs: []
+  difficulty: intermediate
+
+
+- id: vw_turbo_boost_pressure_control_fault
+  vehicle:
+    models:
+      - jetta
+      - golf
+      - polo
+      - passat
+      - tiguan
+      - touran
+      - t_roc
+      - t_cross
+      - taigo
+      - arteon
+      - caddy
+      - transporter
+      - caravelle
+      - multivan
+      - sharan
+    generations:
+      - jetta_mk5
+      - jetta_mk6
+      - jetta_mk7
+      - golf_mk6
+      - golf_mk7
+      - golf_mk8
+      - polo_mk5
+      - polo_mk6
+      - passat_b6
+      - passat_b7
+      - passat_b8
+      - tiguan_1
+      - tiguan_2
+      - tiguan_3
+      - touran_1
+      - touran_2
+      - t_roc_1
+      - t_roc_2
+      - t_cross_1
+      - taigo_1
+      - arteon_1
+      - arteon_2
+      - caddy_4
+      - caddy_5
+      - transporter_t5
+      - transporter_t6
+      - transporter_t6_1
+      - caravelle_t5
+      - caravelle_t6
+      - multivan_t5
+      - multivan_t6
+      - multivan_t7
+      - sharan_2
+  category: diagnostics
+  system: turbocharging
+  title:
+    en: Turbo boost pressure control fault
+    ro: Defecțiune control presiune supraalimentare
+    de: Fehler der Ladedruckregelung
+    fr: Défaut de régulation de pression de suralimentation
+    es: Fallo del control de presión de sobrealimentación
+    it: Guasto del controllo pressione di sovralimentazione
+    nl: Storing in de turbodrukregeling
+  description:
+    en: A boost-control fault can cause insufficient or excessive turbocharger pressure and reduced engine performance.
+    ro: O defecțiune a controlului presiunii turbo poate provoca presiune insuficientă sau excesivă și reducerea performanței motorului.
+    de: Ein Fehler der Ladedruckregelung kann zu zu niedrigem oder zu hohem Ladedruck und verringerter Motorleistung führen.
+    fr: Un défaut de régulation de suralimentation peut provoquer une pression insuffisante ou excessive et une perte de performances.
+    es: Un fallo del control de sobrealimentación puede causar presión insuficiente o excesiva y pérdida de rendimiento.
+    it: Un guasto del controllo della sovralimentazione può causare pressione insufficiente o eccessiva e perdita di prestazioni.
+    nl: Een storing in de turbodrukregeling kan te weinig of te veel turbodruk en vermogensverlies veroorzaken.
+  symptoms:
+    - en: Loss of power
+      ro: Pierdere de putere
+      de: Leistungsverlust
+      fr: Perte de puissance
+      es: Pérdida de potencia
+      it: Perdita di potenza
+      nl: Vermogensverlies
+    - en: Limp mode
+      ro: Mod avarie
+      de: Notlauf
+      fr: Mode dégradé
+      es: Modo de emergencia
+      it: Modalità recovery
+      nl: Noodloop
+    - en: Boost pressure too low or high
+      ro: Presiune turbo prea mică sau prea mare
+      de: Ladedruck zu niedrig oder zu hoch
+      fr: Pression de suralimentation trop faible ou trop élevée
+      es: Presión de sobrealimentación demasiado baja o alta
+      it: Pressione sovralimentazione troppo bassa o alta
+      nl: Turbodruk te laag of te hoog
+  possible_causes:
+    - en: Boost-control actuator fault
+      ro: Defecțiune actuator control turbo
+      de: Fehler des Ladedruckstellers
+      fr: Défaut de l'actionneur de suralimentation
+      es: Fallo del actuador de sobrealimentación
+      it: Guasto dell'attuatore della sovralimentazione
+      nl: Storing van de turbodrukactuator
+    - en: Vacuum or pressure hose leak
+      ro: Pierdere pe furtun vacuum/presiune
+      de: Leck im Unterdruck- oder Druckschlauch
+      fr: Fuite sur une durite de dépression ou pression
+      es: Fuga en manguito de vacío o presión
+      it: Perdita su tubo depressione o pressione
+      nl: Lek in vacuüm- of drukslang
+    - en: Turbocharger mechanical fault
+      ro: Defecțiune mecanică turbo
+      de: Mechanischer Turboladerfehler
+      fr: Défaut mécanique du turbocompresseur
+      es: Fallo mecánico del turbocompresor
+      it: Guasto meccanico del turbocompressore
+      nl: Mechanische storing van de turbo
+  diagnostic_steps:
+    - en: Compare requested and actual boost pressure
+      ro: Comparați presiunea turbo cerută cu cea reală
+      de: Soll- und Ist-Ladedruck vergleichen
+      fr: Comparer la pression demandée et réelle
+      es: Comparar presión solicitada y real
+      it: Confrontare pressione richiesta e reale
+      nl: Vergelijk gevraagde en werkelijke turbodruk
+    - en: Inspect boost hoses and intercooler connections
+      ro: Inspectați furtunurile turbo și conexiunile intercoolerului
+      de: Ladeluftschläuche und Ladeluftkühleranschlüsse prüfen
+      fr: Contrôler les durites de suralimentation et connexions intercooler
+      es: Inspeccionar manguitos de sobrealimentación y conexiones del intercooler
+      it: Ispezionare tubi sovralimentazione e connessioni intercooler
+      nl: Controleer turboslangen en intercooleraansluitingen
+    - en: Test actuator operation
+      ro: Testați funcționarea actuatorului
+      de: Stellgliedfunktion prüfen
+      fr: Tester le fonctionnement de l'actionneur
+      es: Probar el actuador
+      it: Testare l'attuatore
+      nl: Test de actuatorwerking
+  keywords:
+    - turbo
+    - boost pressure
+    - boost control
+    - limp mode
+    - presiune turbo
+    - Ladedruck
+    - suralimentation
+    - sobrealimentación
+    - sovralimentazione
+    - turbodruk
+  related_dtcs: []
+  difficulty: advanced
+
+
+- id: vw_oxygen_sensor_fault
+  vehicle:
+    models:
+      - jetta
+      - golf
+      - polo
+      - passat
+      - tiguan
+      - touran
+      - t_roc
+      - t_cross
+      - taigo
+      - arteon
+      - caddy
+      - transporter
+      - caravelle
+      - multivan
+      - sharan
+    generations:
+      - jetta_mk5
+      - jetta_mk6
+      - jetta_mk7
+      - golf_mk6
+      - golf_mk7
+      - golf_mk8
+      - polo_mk5
+      - polo_mk6
+      - passat_b6
+      - passat_b7
+      - passat_b8
+      - tiguan_1
+      - tiguan_2
+      - tiguan_3
+      - touran_1
+      - touran_2
+      - t_roc_1
+      - t_roc_2
+      - t_cross_1
+      - taigo_1
+      - arteon_1
+      - arteon_2
+      - caddy_4
+      - caddy_5
+      - transporter_t5
+      - transporter_t6
+      - transporter_t6_1
+      - caravelle_t5
+      - caravelle_t6
+      - multivan_t5
+      - multivan_t6
+      - multivan_t7
+      - sharan_2
+  category: diagnostics
+  system: exhaust
+  title:
+    en: Oxygen sensor fault
+    ro: Defecțiune sondă lambda
+    de: Fehler der Lambdasonde
+    fr: Défaut de sonde lambda
+    es: Fallo del sensor de oxígeno
+    it: Guasto della sonda lambda
+    nl: Storing van de lambdasensor
+  description:
+    en: An oxygen-sensor fault can affect fuel-mixture control and emissions monitoring.
+    ro: O defecțiune a sondei lambda poate afecta controlul amestecului și monitorizarea emisiilor.
+    de: Ein Lambdasondenfehler kann die Gemischregelung und die Emissionsüberwachung beeinflussen.
+    fr: Un défaut de sonde lambda peut affecter la régulation du mélange et la surveillance des émissions.
+    es: Un fallo del sensor de oxígeno puede afectar al control de mezcla y la supervisión de emisiones.
+    it: Un guasto della sonda lambda può influenzare la regolazione della miscela e il controllo delle emissioni.
+    nl: Een lambdastoring kan de mengselregeling en emissiebewaking beïnvloeden.
+  symptoms:
+    - en: Check engine light
+      ro: Martor Check Engine
+      de: Motorkontrollleuchte
+      fr: Voyant moteur
+      es: Testigo motor
+      it: Spia motore
+      nl: Motorstoringslampje
+    - en: Increased fuel consumption
+      ro: Consum crescut
+      de: Erhöhter Kraftstoffverbrauch
+      fr: Consommation accrue
+      es: Consumo elevado
+      it: Consumo aumentato
+      nl: Verhoogd brandstofverbruik
+    - en: Rough engine operation
+      ro: Funcționare neregulată
+      de: Unruhiger Motorlauf
+      fr: Fonctionnement moteur irrégulier
+      es: Funcionamiento irregular
+      it: Funzionamento irregolare
+      nl: Onrustige motorloop
+  possible_causes:
+    - en: Failed oxygen sensor
+      ro: Sondă lambda defectă
+      de: Lambdasonde defekt
+      fr: Sonde lambda défectueuse
+      es: Sensor de oxígeno defectuoso
+      it: Sonda lambda difettosa
+      nl: Defecte lambdasensor
+    - en: Exhaust leak
+      ro: Pierdere pe evacuare
+      de: Abgasleck
+      fr: Fuite d'échappement
+      es: Fuga de escape
+      it: Perdita scarico
+      nl: Uitlaatlek
+    - en: Wiring or heater fault
+      ro: Defecțiune cablaj sau încălzire sondă
+      de: Verkabelungs- oder Heizungsfehler
+      fr: Défaut de câblage ou de chauffage
+      es: Fallo de cableado o calefacción
+      it: Guasto cablaggio o riscaldamento
+      nl: Bedradings- of verwarmingsstoring
+  diagnostic_steps:
+    - en: Read oxygen-sensor live data
+      ro: Citiți datele live ale sondei lambda
+      de: Lambdasondenwerte auslesen
+      fr: Lire les données de la sonde lambda
+      es: Leer datos del sensor de oxígeno
+      it: Leggere i dati della sonda lambda
+      nl: Lees lambdawaarden uit
+    - en: Check sensor heater operation
+      ro: Verificați încălzirea sondei
+      de: Sondenheizung prüfen
+      fr: Contrôler le chauffage de la sonde
+      es: Comprobar el calentador del sensor
+      it: Controllare il riscaldatore della sonda
+      nl: Controleer de sensorverwarming
+    - en: Check exhaust for leaks before replacing the sensor
+      ro: Verificați evacuarea pentru pierderi înainte de înlocuirea sondei
+      de: Abgasanlage vor dem Sensortausch auf Lecks prüfen
+      fr: Vérifier les fuites d'échappement avant de remplacer la sonde
+      es: Comprobar fugas de escape antes de sustituir el sensor
+      it: Controllare perdite di scarico prima di sostituire la sonda
+      nl: Controleer de uitlaat op lekkage voordat de sensor wordt vervangen
+  keywords:
+    - oxygen sensor
+    - lambda sensor
+    - O2 sensor
+    - sondă lambda
+    - Lambdasonde
+    - sonde lambda
+    - sensor oxígeno
+    - sonda lambda
+    - lambdasensor
+  related_dtcs: []
+  difficulty: intermediate
+
+
+- id: vw_engine_misfire_general
+  vehicle:
+    models:
+      - jetta
+      - golf
+      - polo
+      - passat
+      - tiguan
+      - touran
+      - t_roc
+      - t_cross
+      - taigo
+      - arteon
+      - caddy
+      - transporter
+      - caravelle
+      - multivan
+      - sharan
+    generations:
+      - jetta_mk5
+      - jetta_mk6
+      - jetta_mk7
+      - golf_mk6
+      - golf_mk7
+      - golf_mk8
+      - polo_mk5
+      - polo_mk6
+      - passat_b6
+      - passat_b7
+      - passat_b8
+      - tiguan_1
+      - tiguan_2
+      - tiguan_3
+      - touran_1
+      - touran_2
+      - t_roc_1
+      - t_roc_2
+      - t_cross_1
+      - taigo_1
+      - arteon_1
+      - arteon_2
+      - caddy_4
+      - caddy_5
+      - transporter_t5
+      - transporter_t6
+      - transporter_t6_1
+      - caravelle_t5
+      - caravelle_t6
+      - multivan_t5
+      - multivan_t6
+      - multivan_t7
+      - sharan_2
+  category: diagnostics
+  system: engine
+  title:
+    en: Engine misfire
+    ro: Rateuri ale motorului
+    de: Fehlzündung / Verbrennungsaussetzer
+    fr: Ratés moteur
+    es: Fallos de encendido del motor
+    it: Mancate accensioni del motore
+    nl: Motorstoringen
+  description:
+    en: An engine misfire indicates unstable combustion and requires identification of whether the cause is ignition, fuel, air, compression or timing related.
+    ro: Rateurile indică o ardere instabilă și necesită stabilirea cauzei: aprindere, combustibil, aer, compresie sau distribuție.
+    de: Verbrennungsaussetzer weisen auf eine instabile Verbrennung hin. Ursache können Zündung, Kraftstoff, Luft, Kompression oder Steuerzeiten sein.
+    fr: Les ratés moteur indiquent une combustion instable. La cause peut être liée à l'allumage, au carburant, à l'air, à la compression ou au calage.
+    es: Los fallos de encendido indican una combustión inestable y pueden deberse a encendido, combustible, aire, compresión o distribución.
+    it: Le mancate accensioni indicano una combustione instabile e possono dipendere da accensione, carburante, aria, compressione o fasatura.
+    nl: Motorstoringen wijzen op instabiele verbranding en kunnen worden veroorzaakt door ontsteking, brandstof, lucht, compressie of timing.
+  symptoms:
+    - en: Rough idle
+      ro: Relanti neregulat
+      de: Unruhiger Leerlauf
+      fr: Ralenti irrégulier
+      es: Ralentí irregular
+      it: Minimo irregolare
+      nl: Onrustig stationair toerental
+    - en: Engine shaking
+      ro: Tremurături ale motorului
+      de: Motorvibrationen
+      fr: Vibrations moteur
+      es: Vibraciones del motor
+      it: Vibrazioni motore
+      nl: Motortrillingen
+    - en: Loss of power
+      ro: Pierdere de putere
+      de: Leistungsverlust
+      fr: Perte de puissance
+      es: Pérdida de potencia
+      it: Perdita di potenza
+      nl: Vermogensverlies
+    - en: Flashing engine warning light
+      ro: Martor motor care clipește
+      de: Blinkende Motorkontrollleuchte
+      fr: Voyant moteur clignotant
+      es: Testigo motor parpadeando
+      it: Spia motore lampeggiante
+      nl: Knipperend motorstoringslampje
+  possible_causes:
+    - en: Ignition fault
+      ro: Defecțiune sistem aprindere
+      de: Zündungsfehler
+      fr: Défaut d'allumage
+      es: Fallo de encendido
+      it: Guasto accensione
+      nl: Ontstekingsstoring
+    - en: Fuel-delivery fault
+      ro: Defecțiune alimentare cu combustibil
+      de: Fehler der Kraftstoffversorgung
+      fr: Défaut d'alimentation en carburant
+      es: Fallo de alimentación de combustible
+      it: Guasto alimentazione carburante
+      nl: Storing brandstoftoevoer
+    - en: Intake air leak
+      ro: Pierdere de aer pe admisie
+      de: Falschluft
+      fr: Prise d'air
+      es: Fuga de admisión
+      it: Perdita aspirazione
+      nl: Inlaatlek
+    - en: Low compression
+      ro: Compresie scăzută
+      de: Niedrige Kompression
+      fr: Compression insuffisante
+      es: Compresión baja
+      it: Compressione bassa
+      nl: Lage compressie
+  diagnostic_steps:
+    - en: Identify the affected cylinder using misfire counters
+      ro: Identificați cilindrul afectat folosind contoarele de rateuri
+      de: Betroffenen Zylinder anhand der Fehlzündungszähler bestimmen
+      fr: Identifier le cylindre concerné avec les compteurs de ratés
+      es: Identificar el cilindro afectado mediante los contadores de fallos
+      it: Identificare il cilindro interessato tramite i contatori
+      nl: Identificeer de betreffende cilinder met misfire-tellers
+    - en: Check ignition or injection components as applicable
+      ro: Verificați componentele de aprindere sau injecție, după caz
+      de: Zünd- bzw. Einspritzkomponenten prüfen
+      fr: Contrôler les composants d'allumage ou d'injection
+      es: Comprobar componentes de encendido o inyección
+      it: Controllare componenti di accensione o iniezione
+      nl: Controleer ontstekings- of injectiecomponenten
+    - en: Check compression if the fault follows the cylinder
+      ro: Verificați compresia dacă problema rămâne pe același cilindru
+      de: Kompression prüfen, wenn der Fehler zylinderbezogen bleibt
+      fr: Contrôler la compression si le défaut reste lié au cylindre
+      es: Comprobar compresión si el fallo permanece en el cilindro
+      it: Controllare la compressione se il guasto rimane sul cilindro
+      nl: Controleer compressie als de storing cilindergebonden blijft
+  keywords:
+    - engine misfire
+    - misfire
+    - combustion fault
+    - rateuri
+    - Fehlzündung
+    - ratés moteur
+    - fallos encendido
+    - mancate accensioni
+    - misfire
+  related_dtcs:
+    - P0300
+    - P0301
+    - P0302
+    - P0303
+    - P0304
+  difficulty: advanced
+
 - id: vw_modern_direct_injection_high_pressure_fuel_fault
   vehicle:
     manufacturer: volkswagen
